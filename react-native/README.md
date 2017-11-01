@@ -7,16 +7,16 @@ This repository for React Native basic training
 ## Reading Plans
 
 ### 1. Basic
-  - [ ] Getting Started
-  - [ ] Learn the Basics
-  - [ ] Props
-  - [ ] State
-  - [ ] Style
-  - [ ] Height and Width
-  - [ ] Layout with Flexbox
-  - [ ] Handling Text Input
-  - [ ] Handling Touches
-  - [ ] Using a ScrollView
+  - [x] Getting Started
+  - [x] Learn the Basics
+  - [x] Props
+  - [x] State
+  - [x] Style
+  - [x] Height and Width
+  - [x] Layout with Flexbox
+  - [x] Handling Text Input
+  - [x] Handling Touches
+  - [x] Using a ScrollView
   - [ ] Using List Views
 
 ### 2. Guide
