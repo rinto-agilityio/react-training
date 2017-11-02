@@ -8,11 +8,17 @@ import FixedDeminsionsBasics from './components/FixedDeminsionsBasics'
 import TextInput from './components/TextInput'
 import ButtonBasics from './components/ButtonBasics'
 import SampleScrollView from './components/SampleScrollView'
+import FlatListBasic from './components/FlatListBasic'
+import SectionListBasic from './components/SectionListBasic'
+import Networking from './components/Networking'
 
 export default class App extends React.Component {
   render() {
     return (
-      <SampleScrollView />
+      <Networking />
+      // <SectionListBasic />
+      // <FlatListBasic />
+      // <SampleScrollView />
       // <ButtonBasics />
       // <FixedDeminsionsBasics />
       // <View style={styles.container}>

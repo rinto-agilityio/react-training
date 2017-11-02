@@ -17,7 +17,7 @@ This repository for React Native basic training
   - [x] Handling Text Input
   - [x] Handling Touches
   - [x] Using a ScrollView
-  - [ ] Using List Views
+  - [x] Using List Views
 
 ### 2. Guide
   - [ ] Components and APIs
