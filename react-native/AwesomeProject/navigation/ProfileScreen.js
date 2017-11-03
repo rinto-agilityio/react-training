@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'react-native'
+import { Button, View, Text } from 'react-native'
 
 export default class ProfileScreen extends React.Component {
   static navigationOptions = {
@@ -8,14 +8,18 @@ export default class ProfileScreen extends React.Component {
 
   render() {
     const { navigate } = this.props.navigation
+    const { params } = this.props.navigation.state
 
     return (
-      <Button
-        title="Go back to HomeScreen"
-        onPress={
-          () => navigate('Home')
-        }
-      />
+      <View>
+        <Text>Chat with {params.user}</Text>
+        <Button
+          title="Go back to HomeScreen"
+          onPress={
+            () => navigate('Home')
+          }
+        />
+      </View>
     )
   }
 }

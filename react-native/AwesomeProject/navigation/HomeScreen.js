@@ -13,7 +13,9 @@ export default class HomeScreen extends React.Component {
       <Button
         title="Go to ProfileScreen"
         onPress={
-          () => navigate('Profile')
+          () => navigate('Profile', {
+            user: 'Chris'
+          })
         }
       />
     )
