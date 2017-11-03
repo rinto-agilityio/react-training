@@ -20,8 +20,8 @@ This repository for React Native basic training
   - [x] Using List Views
 
 ### 2. Guide
-  - [ ] Components and APIs
-  - [ ] Platform Specific Code
+  - [x] Components and APIs
+  - [x] Platform Specific Code
   - [ ] Navigating Between Screens
   - [ ] Images
   - [ ] Debugging

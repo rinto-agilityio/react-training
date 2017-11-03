@@ -41,3 +41,88 @@ A component used to select a single value from a range of values.
 
 ### Switch
 Update value via `onValueChange` callback
+
+### List Views
+Only render elements that are currently showing on the screen. This is a good for display long list of data for performance and memory
+
+### FlatList
+A performant interface for rendering simple, flat list with features:
+  - Fully cross-platform.
+  - Optional horizontal mode.
+  - Configurable viewability callbacks.
+  - Header support.
+  - Footer support.
+  - Separator support.
+  - Pull to Refresh.
+  - Scroll loading.
+  - ScrollToIndex support.
+
+For multiple FlatList, if you need section support, use `<SectionList>`
+
+For complex example, use `PureComponent` for performance optimization and avoiding bugs
+
+### SectionList
+A performant interface for rendering sectioned lists, supporting the most handy features:
+  - Fully cross-platform.
+  - Configurable viewability callbacks.
+  - List header support.
+  - List footer support.
+  - Item separator support.
+  - Section header support.
+  - Section separator support.
+  - Heterogeneous data and item rendering support.
+  - Pull to Refresh.
+  - Scroll loading.
+
+## iOS Components and APIs
+  - ActionSheetIOS
+  - AlertIOS: Create an iOS alert dialog with a message or create a prompt for user input: `AlertIOS.alert` and `AlertIOS.prompt`
+  - DatePickerIOS: Render a date/time picker. Update `date` prop via `onDateChange` callback
+  - ImagePickerIOS
+  - NavigatorIOS
+  - ProgressViewIOS
+  - PushNotificationIOS
+  - SegmentedControlIOS: The selected index can be changed on the fly by assigning the `selectIndex` prop to a state variable
+  - TabBarIOS
+
+## Android Components and APIs
+  - BackHandler: Detect hardware button presses for back navigation
+  - DatePickerAndroid
+  - DrawerLayoutAndroid: Rendered with `renderNavigationView` and direct children are the main view. The navigation view is initially not visible on the screen, but can be pulled in from the side of the window specified by the `drawerPosition` prop and its width can be set by the `drawerWidth` prop
+  - PermissionsAndroid
+  - ProgressBarAndroid: Used to indicate that the app is loading or there is some activity in the app
+  - TimePickerAndroid
+  - ToastAndroid:
+    + `show()` function to show toast message
+    + `SHORT` and `LONG` properties for toast duration
+    + `TOP`, `BOTTOM` and `CENTER` properties for toast position
+  - ToolbarAndroid: Most use to display a logo, navigation icon (e.g. hamburger menu), a title & subtitle and a list of actions
+  - ViewPagerAndroid: Container that allows to flip left and right between child views
+
+## Other Components and APIs
+  - ActivityIndicator: Displays a circular loading indicator
+  - Alert: Launches an alert dialog with the specified title and message
+  - Animated: The `Animated` library is designed to make animations fluid, powerful, and easy to build and maintain
+  - CameraRoll: `CameraRoll` provides access to the local camera roll / gallery. Before using this you must link the `RCTCameraRoll` library
+  - Clipboard: Clipboard gives you an interface for setting and getting content from Clipboard
+  - Dimensions
+  - KeyboardAvoidingView: Solve the common problem of views that need to move out of the way of the virtual keyboard
+  - Linking: Give a general interface to interact with both incoming and outgoing app links
+  - Modal: A simple way to present content above an enclosing view
+  - PixelRatio: PixelRatio class gives access to the device pixel density
+  - RefreshControl: This component is used inside a ScrollView or ListView to add pull to refresh functionality
+  - StatusBar: Control the app status bar
+    + Usage with `Navigator` to have multiple `StatusBar`
+  - WebView: Renders web content in a native view
+
+## Platform Specific Code
+React Native provides two ways to easily organize your code and separate it by platform:
+  - Using the `Platform` module.
+  - Using platform-specific file extensions.
+
+### Platform module
+  - `Platform.OS`: Detect device platform
+  - `Platform.Version`: Detect platform version
+
+### Platform-specific extensions
+React Native will detect when a file has a `.ios.` or `.android.` extension and load the relevant platform file when required from other components. React Native will automatically pick up the right file based on the running platform
