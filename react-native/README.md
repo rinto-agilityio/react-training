@@ -22,9 +22,9 @@ This repository for React Native basic training
 ### 2. Guide
   - [x] Components and APIs
   - [x] Platform Specific Code
-  - [ ] Navigating Between Screens
-  - [ ] Images
-  - [ ] Debugging
+  - [x] Navigating Between Screens
+  - [x] Images
+  - [x] Debugging
   - [ ] JavaScript Environment
   - [ ] Running On Device
 

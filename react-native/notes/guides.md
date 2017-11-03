@@ -126,3 +126,77 @@ React Native provides two ways to easily organize your code and separate it by p
 
 ### Platform-specific extensions
 React Native will detect when a file has a `.ios.` or `.android.` extension and load the relevant platform file when required from other components. React Native will automatically pick up the right file based on the running platform
+
+## Navigating Between Screens
+Navigator is managing the presentation of, and transition between, multiple screens
+
+### React Navigation
+This is standalone lib that allows to set up the screens of an app similar to the router on web app
+
+## Images
+### Static Image Resources
+- The image name is resolved the same way JS modules are resolved. The packager will pick the correct file for the platform with platform-specific file extensions with `.ios.` and `.android.`
+
+- If you need to scale the image dynamically (i.e. via flex), you may need to manually set `{ width: undefined, height: undefined }` on the style attribute
+
+### Static Non-Image Resources
+Most common file types are supported including `.mp3`, `.wav`, `.mp4`, `.mov`, `.html` and `.pdf`
+
+### Images From Hybrid App's Resources
+You can still use images that are already bundled into the app
+
+### Network Images
+### Uri Data Images
+### Cache Control (iOS Only)
+Add `cache: 'only-if-cached'` property to `<Image>`
+
+### Local Filesystem Images
+### Why Not Automatically Size Everything?
+Static images loaded from the app bundle via the `require('./my-icon.png')` syntax can be automatically sized because their dimensions are available immediately at the time of mounting
+
+### Source as an object
+In React Native, the `src` attribute is named `source` and doesn't take a string but an object with a `uri` attribute
+Eg: `<Image source={{uri: 'something.jpg'}} />`
+
+### Background Image via Nesting
+Use the `<ImageBackground>` component, which has the same props as `<Image>`, and add whatever children to it you would like to layer on top of it
+
+### iOS Border Radius Style
+  - `borderTopLeftRadius`
+  - `borderTopRightRadius`
+  - `borderBottomLeftRadius`
+  - `borderBottomRightRadius`
+
+## Debugging
+### Enabling Keyboard Shortcuts
+To enable them, from xCode, open the `Hardware > Keyboard` and make sure that "Connect Hardware Keyboard" is checked
+
+### Accessing the In-App Developer Menu
+### Reloading JavaScript
+#### Automatic reloading
+Enable `Live Reload` or `Hot Reload` from Developer Menu
+
+### In-app Errors and Warnings
+#### Errors
+  - Default display in full screen alert with red background
+  - Use `console.error()` to manually trigger one
+
+#### Warnings
+  - Default display on screen with yellow background at the bottom of iOS simulator (knowns as YellowBoxes). Click on the alerts to show more information or to dismiss them
+  - Use `console.warn()` to trigger a YellowBox
+  - Disable YellowBoxes by using `console.disableYellowBox = true`
+  - Specific ignore warnings by `console.ignoredYellowBox = ['Warning: ...'];`
+
+### Chrome Developer Tools
+To debug the JavaScript code in Chrome, select "Debug JS Remotely" from the Developer Menu, access the debug tools on browser at http://localhost:8081/debugger-ui
+
+#### Debugging using a custom JavaScript debugger
+To use a custom JavaScript debugger in place of Chrome Developer Tools, set the `REACT_DEBUGGER` environment variable to a command that will start your custom debugger
+
+### React Developer Tools
+Install `react-devtools` package globally, then run `react-devtools` from terminal to launch standalone DevTools
+
+#### Integration with React Native Inspector
+#### Inspecting Component Instances
+Inspect the props and state of the React components in the browser console
+#### Performance Monitor
