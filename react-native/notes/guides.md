@@ -200,3 +200,16 @@ Install `react-devtools` package globally, then run `react-devtools` from termin
 #### Inspecting Component Instances
 Inspect the props and state of the React components in the browser console
 #### Performance Monitor
+
+## JavaScript Environment
+### JavaScript Runtime
+  - On iOS simulators and devices, Android emulators and devices: Uses JavaScriptCore which is the JavaScript engine that powers Safari
+  - When using Chrome debugging, it runs all the JavaScript code within Chrome itself and communicates with native code via WebSocket using V8
+
+### JavaScript Syntax Transformers
+As of version 0.5.0, React Native ships with the Babel JavaScript compiler
+
+### Polyfills
+
+## Running On Device
+Not done yet.

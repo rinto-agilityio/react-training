@@ -25,16 +25,16 @@ This repository for React Native basic training
   - [x] Navigating Between Screens
   - [x] Images
   - [x] Debugging
-  - [ ] JavaScript Environment
+  - [x] JavaScript Environment
   - [ ] Running On Device
 
 ### 3. Guide iOS
-  - [ ] Linking Libraries
-  - [ ] Running On Simulator
+  - [x] Linking Libraries
+  - [x] Running On Simulator
 
 ### 4. Guide Android
-  - [ ] Generating Signed APK
-  - [ ] Building React Native from source
+  - [x] Generating Signed APK
+  - [x] Building React Native from source
 
 ### 5. Components
   - [ ] ActivityIndicator
