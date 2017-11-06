@@ -37,12 +37,12 @@ This repository for React Native basic training
   - [x] Building React Native from source
 
 ### 5. Components
-  - [ ] ActivityIndicator
-  - [ ] Button
-  - [ ] FlatList
-  - [ ] Image
-  - [ ] KeyboardAvoidingView
-  - [ ] ListView
+  - [x] ActivityIndicator
+  - [x] Button
+  - [x] FlatList
+  - [x] Image
+  - [x] KeyboardAvoidingView
+  - [x] ListView
   - [ ] Modal
   - [ ] NavigatorIOS
   - [ ] Picker
