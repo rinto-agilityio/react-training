@@ -20,43 +20,43 @@ This repository for React Native basic training
   - [x] Using List Views
 
 ### 2. Guide
-  - [ ] Components and APIs
-  - [ ] Platform Specific Code
-  - [ ] Navigating Between Screens
-  - [ ] Images
-  - [ ] Debugging
-  - [ ] JavaScript Environment
+  - [x] Components and APIs
+  - [x] Platform Specific Code
+  - [x] Navigating Between Screens
+  - [x] Images
+  - [x] Debugging
+  - [x] JavaScript Environment
   - [ ] Running On Device
 
 ### 3. Guide iOS
-  - [ ] Linking Libraries
-  - [ ] Running On Simulator
+  - [x] Linking Libraries
+  - [x] Running On Simulator
 
 ### 4. Guide Android
-  - [ ] Generating Signed APK
-  - [ ] Building React Native from source
+  - [x] Generating Signed APK
+  - [x] Building React Native from source
 
 ### 5. Components
-  - [ ] ActivityIndicator
-  - [ ] Button
-  - [ ] FlatList
-  - [ ] Image
-  - [ ] KeyboardAvoidingView
-  - [ ] ListView
-  - [ ] Modal
-  - [ ] NavigatorIOS
-  - [ ] Picker
-  - [ ] RefreshControl
-  - [ ] ScrollView
-  - [ ] SectionList
-  - [ ] Slider
-  - [ ] Switch
-  - [ ] Text
-  - [ ] TextInput
-  - [ ] TouchableHighlight
-  - [ ] TouchableNativeFeedback
-  - [ ] TouchableOpacity
-  - [ ] TouchableWithoutFeedback
-  - [ ] View
-  - [ ] VirtualizedList
-  - [ ] WebView
+  - [x] ActivityIndicator
+  - [x] Button
+  - [x] FlatList
+  - [x] Image
+  - [x] KeyboardAvoidingView
+  - [x] ListView
+  - [x] Modal
+  - [x] NavigatorIOS
+  - [x] Picker
+  - [x] RefreshControl
+  - [x] ScrollView
+  - [x] SectionList
+  - [x] Slider
+  - [x] Switch
+  - [x] Text
+  - [x] TextInput
+  - [x] TouchableHighlight
+  - [x] TouchableNativeFeedback
+  - [x] TouchableOpacity
+  - [x] TouchableWithoutFeedback
+  - [x] View
+  - [x] VirtualizedList
+  - [x] WebView
