@@ -44,19 +44,19 @@ This repository for React Native basic training
   - [x] KeyboardAvoidingView
   - [x] ListView
   - [x] Modal
-  - [ ] NavigatorIOS
-  - [ ] Picker
-  - [ ] RefreshControl
-  - [ ] ScrollView
-  - [ ] SectionList
-  - [ ] Slider
-  - [ ] Switch
-  - [ ] Text
-  - [ ] TextInput
-  - [ ] TouchableHighlight
-  - [ ] TouchableNativeFeedback
-  - [ ] TouchableOpacity
-  - [ ] TouchableWithoutFeedback
-  - [ ] View
-  - [ ] VirtualizedList
-  - [ ] WebView
+  - [x] NavigatorIOS
+  - [x] Picker
+  - [x] RefreshControl
+  - [x] ScrollView
+  - [x] SectionList
+  - [x] Slider
+  - [x] Switch
+  - [x] Text
+  - [x] TextInput
+  - [x] TouchableHighlight
+  - [x] TouchableNativeFeedback
+  - [x] TouchableOpacity
+  - [x] TouchableWithoutFeedback
+  - [x] View
+  - [x] VirtualizedList
+  - [x] WebView
