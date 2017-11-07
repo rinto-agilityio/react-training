@@ -43,7 +43,7 @@ This repository for React Native basic training
   - [x] Image
   - [x] KeyboardAvoidingView
   - [x] ListView
-  - [ ] Modal
+  - [x] Modal
   - [ ] NavigatorIOS
   - [ ] Picker
   - [ ] RefreshControl
