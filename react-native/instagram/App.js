@@ -8,14 +8,16 @@ import configureStore from "./store/store";
 import HomeContainer from "./screens/home/HomeContainer";
 import AccountContainer from "./screens/account/AccountContainer";
 import SearchContainer from "./screens/search/SearchContainer";
+import UploadContainer from "./screens/upload/UploadContainer";
 
 const { persistor, store } = configureStore();
 
 const MainApp = TabNavigator(
   {
     Home: { screen: HomeContainer },
-    Account: { screen: AccountContainer },
-    Search: { screen: SearchContainer }
+    Search: { screen: SearchContainer },
+    Upload: { screen: UploadContainer },
+    Account: { screen: AccountContainer }
   },
   {
     tabBarPosition: "bottom",
