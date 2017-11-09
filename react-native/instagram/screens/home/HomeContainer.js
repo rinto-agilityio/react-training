@@ -15,6 +15,10 @@ class HomeContainer extends React.Component {
   }
 
   render() {
+    const { homeData } = this.props;
+
+    console.log("homeData: ", homeData);
+
     return (
       <View>
         <Text>This is HomeContainer</Text>

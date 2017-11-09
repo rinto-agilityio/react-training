@@ -1,5 +1,6 @@
 import { createReducer } from "reduxsauce";
 import Immutable from "seamless-immutable";
+import { REHYDRATE } from "redux-persist/lib/constants";
 
 import { Types } from "./actions";
 
@@ -7,15 +8,21 @@ export const INITIAL_STATE = Immutable({
   data: []
 });
 
+const updatePersist = (state, action) => {
+  return state.merge({
+    ...action.payload.appSettings,
+    type: action.type
+  });
+};
+
 const getHomeDataRequest = (state, action) => {
-  console.log("state: ", state);
-  const newState = Immutable(state);
-  return newState.merge({
-    type: action.type,
-    data: [1, 2]
+  return state.merge({
+    type: action.type
   });
 };
 
 export const homeReducer = createReducer(INITIAL_STATE, {
+  [REHYDRATE]: updatePersist,
+
   [Types.GET_HOME_DATA_REQUEST]: getHomeDataRequest
 });
