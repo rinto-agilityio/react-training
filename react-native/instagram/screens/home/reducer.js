@@ -9,7 +9,11 @@ export const INITIAL_STATE = Immutable({
 
 const getHomeDataRequest = (state, action) => {
   console.log("state: ", state);
-  return state;
+  const newState = Immutable(state);
+  return newState.merge({
+    type: action.type,
+    data: [1, 2]
+  });
 };
 
 export const homeReducer = createReducer(INITIAL_STATE, {
