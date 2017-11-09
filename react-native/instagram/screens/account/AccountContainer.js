@@ -7,7 +7,7 @@ import { Creators as AccountActionCreators } from "./actions";
 
 class AccountContainer extends React.Component {
   static navigationOptions = {
-    title: "Account Screen"
+    title: "Account"
   };
 
   componentDidMount() {}

@@ -7,18 +7,15 @@ import { Creators as HomeActionCreators } from "./actions";
 
 class HomeContainer extends React.Component {
   static navigationOptions = {
-    title: "Home Screen"
+    title: "Home"
   };
 
   componentDidMount() {
     this.props.getHomeDataRequest();
-    this.props.addData(123);
   }
 
   render() {
     const { homeData } = this.props;
-
-    console.log("homeData: ", homeData);
 
     return (
       <View>
