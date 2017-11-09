@@ -1,5 +1,5 @@
-import { createReducer } from "reduxsauce";
 import Immutable from "seamless-immutable";
+import { createReducer } from "reduxsauce";
 import { REHYDRATE } from "redux-persist/lib/constants";
 
 import { Types } from "./actions";

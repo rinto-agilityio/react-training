@@ -4,6 +4,8 @@ import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/es/storage";
 
 import { homeReducer } from "../screens/home/reducer";
+import { searchReducer } from "../screens/search/reducer";
+import { accountReducer } from "../screens/account/reducer";
 
 const config = {
   key: "instagram",
@@ -14,7 +16,9 @@ const config = {
 const appReducer = persistReducer(
   config,
   combineReducers({
-    home: homeReducer
+    home: homeReducer,
+    search: searchReducer,
+    account: accountReducer
   })
 );
 
