@@ -10,8 +10,8 @@ export const INITIAL_STATE = Immutable({
 
 const updatePersist = (state, action) => {
   return state.merge({
-    ...action.payload.appSettings,
-    type: action.type
+    type: action.type,
+    ...action.payload.home
   });
 };
 
@@ -21,8 +21,15 @@ const getHomeDataRequest = (state, action) => {
   });
 };
 
+const addData = (state, action) => {
+  return state
+    .merge({ type: action.type })
+    .updateIn(["data"], arr => arr.concat([state.data.length]));
+};
+
 export const homeReducer = createReducer(INITIAL_STATE, {
   [REHYDRATE]: updatePersist,
 
-  [Types.GET_HOME_DATA_REQUEST]: getHomeDataRequest
+  [Types.GET_HOME_DATA_REQUEST]: getHomeDataRequest,
+  [Types.ADD_DATA]: addData
 });

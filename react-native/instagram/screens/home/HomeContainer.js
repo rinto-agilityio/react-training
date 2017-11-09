@@ -12,6 +12,7 @@ class HomeContainer extends React.Component {
 
   componentDidMount() {
     this.props.getHomeDataRequest();
+    this.props.addData(123);
   }
 
   render() {
