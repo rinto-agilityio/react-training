@@ -7,7 +7,7 @@ import { Creators as SearchActionCreators } from "./actions";
 
 class SearchContainer extends React.Component {
   static navigationOptions = {
-    title: "Search Screen"
+    title: "Search"
   };
 
   componentDidMount() {}

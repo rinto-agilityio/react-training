@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { StackNavigator } from "react-navigation";
+import { TabNavigator } from "react-navigation";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/es/integration/react";
 
@@ -11,11 +11,20 @@ import SearchContainer from "./screens/search/SearchContainer";
 
 const { persistor, store } = configureStore();
 
-const MainApp = StackNavigator({
-  Home: { screen: HomeContainer },
-  Account: { screen: AccountContainer },
-  Search: { screen: SearchContainer }
-});
+const MainApp = TabNavigator(
+  {
+    Home: { screen: HomeContainer },
+    Account: { screen: AccountContainer },
+    Search: { screen: SearchContainer }
+  },
+  {
+    tabBarPosition: "bottom",
+    animationEnabled: true,
+    tabBarOptions: {
+      activeTintColor: "#e91e63"
+    }
+  }
+);
 
 export default class App extends React.Component {
   render() {
