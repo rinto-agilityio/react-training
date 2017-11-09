@@ -31,7 +31,9 @@ export default class App extends React.Component {
     return (
       <Provider store={store}>
         <PersistGate persistor={persistor}>
-          <MainApp />
+          <View style={styles.container}>
+            <MainApp />
+          </View>
         </PersistGate>
       </Provider>
     );
@@ -41,6 +43,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginTop: 20,
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center"
