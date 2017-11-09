@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/es/integration/react";
 
 import configureStore from "./store/store";
+import Loading from "./components/Loading";
 
 const { persistor, store } = configureStore();
 const onBeforeLift = () => {
@@ -15,7 +16,7 @@ export default class App extends React.Component {
     return (
       <Provider store={store}>
         <PersistGate
-          loading={null}
+          loading={Loading}
           onBeforeLift={onBeforeLift}
           persistor={persistor}
         >
