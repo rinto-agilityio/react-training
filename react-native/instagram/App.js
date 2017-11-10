@@ -29,12 +29,19 @@ const MainApp = TabNavigator(
 );
 
 export default class App extends React.Component {
+  _onNavigationStateChange = (prevState, newState) => {
+    this.setState({ ...this.state, route_index: newState.index });
+  };
+
   render() {
     return (
       <Provider store={store}>
         <PersistGate persistor={persistor}>
           <View style={styles.container}>
-            <MainApp />
+            <MainApp
+              onNavigationStateChange={this._onNavigationStateChange}
+              screenProps={this.state}
+            />
           </View>
         </PersistGate>
       </Provider>
