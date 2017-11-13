@@ -16,11 +16,12 @@ export const uploadImage = imageFile => {
   let fileName = Date.now() + imageFile.fileName;
   let fileBase64 = imageFile.data;
 
-  storageRef
+  return storageRef
     .child("images")
     .child(fileName)
     .putString(fileBase64, "base64")
     .then(snapshot => {
-      console.log("snapshot: ", snapshot);
+      // console.log("snapshot: ", snapshot);
+      return snapshot;
     });
 };
