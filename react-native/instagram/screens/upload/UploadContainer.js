@@ -1,11 +1,18 @@
 import React from "react";
-import { Text } from "react-native";
+import { Text, Button } from "react-native";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import ImagePicker from "react-native-image-picker";
 
-export default class UploadContainer extends React.Component {
-  _showImagePicker() {
+import { Creators as UploadActionCreators } from "./actions";
+import { uploadImage } from "../../helpers/upload-image";
+
+class UploadContainer extends React.Component {
+  _showImagePicker = () => {
+    this.props.uploadPhotoRequest();
+
     var options = {
-      title: "Select Avatar",
+      title: "Select Photo",
       customButtons: [{ name: "fb", title: "Choose Photo from Facebook" }],
       storageOptions: {
         skipBackup: true,
@@ -22,31 +29,60 @@ export default class UploadContainer extends React.Component {
 
       if (response.didCancel) {
         console.log("User cancelled image picker");
+        this.props.uploadPhotoCancel();
       } else if (response.error) {
         console.log("ImagePicker Error: ", response.error);
       } else if (response.customButton) {
         console.log("User tapped custom button: ", response.customButton);
       } else {
-        let source = { uri: response.uri };
+        uploadImage(response)
+          .then(response => {
+            // Format data before send to reducer
+            const data = {
+              id: Date.now(),
+              like: 0,
+              comments: [],
+              display_url: response.downloadURL,
+              owner: this.props.accountData
+            };
 
-        // You can also display the image using data:
-        // let source = { uri: 'data:image/jpeg;base64,' + response.data };
-
-        this.setState({
-          avatarSource: source
-        });
+            return this.props.uploadPhotoSuccess(data);
+          })
+          .catch(error => {
+            return this.props.uploadPhotoFailure(error);
+          });
       }
     });
-  }
-
-  componentWillReceiveProps(newProps) {
-    if (newProps.screenProps.route_index === 2) {
-      // FIXME: This is hacky screen index
-      this._showImagePicker();
-    }
-  }
+  };
 
   render() {
-    return <Text>This is upload screen</Text>;
+    const { uploadData } = this.props;
+
+    return uploadData.isUploading ? (
+      <Text>Uploading images...</Text>
+    ) : (
+      <Button
+        onPress={this._showImagePicker}
+        title="Select images from Photo Gallery"
+      />
+    );
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    {
+      ...UploadActionCreators
+    },
+    dispatch
+  );
+}
+
+function mapStateToProps(state) {
+  return {
+    uploadData: state.upload,
+    accountData: state.account
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UploadContainer);

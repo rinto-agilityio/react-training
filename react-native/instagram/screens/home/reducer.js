@@ -3,6 +3,7 @@ import { createReducer } from "reduxsauce";
 import { REHYDRATE } from "redux-persist/lib/constants";
 
 import { Types } from "./actions";
+import { Types as UploadTypes } from "../upload/actions";
 
 export const INITIAL_STATE = Immutable({
   data: []
@@ -27,9 +28,16 @@ const addData = (state, action) => {
     .updateIn(["data"], arr => arr.concat([state.data.length]));
 };
 
+const addPhotoToList = (state, action) => {
+  return state
+    .merge({ type: action.type })
+    .updateIn(["data"], arr => arr.concat([action.response]));
+};
+
 export const homeReducer = createReducer(INITIAL_STATE, {
   [REHYDRATE]: updatePersist,
 
   [Types.GET_HOME_DATA_REQUEST]: getHomeDataRequest,
+  [UploadTypes.UPLOAD_PHOTO_SUCCESS]: addPhotoToList,
   [Types.ADD_DATA]: addData
 });

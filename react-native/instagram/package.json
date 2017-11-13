@@ -9,6 +9,7 @@
   "dependencies": {
     "babel-eslint": "^8.0.2",
     "expo": "^22.0.3",
+    "firebase": "^4.6.2",
     "prettier-eslint": "^8.2.1",
     "react": "16.0.0",
     "react-native": "0.50.3",

@@ -10,7 +10,9 @@ class AccountContainer extends React.Component {
     title: "Account"
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.props.loadAccountData();
+  }
 
   render() {
     const { accountData } = this.props;
