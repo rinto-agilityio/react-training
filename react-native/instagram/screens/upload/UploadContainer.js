@@ -1,6 +1,7 @@
 import React from "react";
 import { Text } from "react-native";
 import ImagePicker from "react-native-image-picker";
+import { uploadImage } from "../../helpers/upload-image";
 
 export default class UploadContainer extends React.Component {
   _showImagePicker() {
@@ -27,14 +28,8 @@ export default class UploadContainer extends React.Component {
       } else if (response.customButton) {
         console.log("User tapped custom button: ", response.customButton);
       } else {
-        let source = { uri: response.uri };
-
-        // You can also display the image using data:
-        // let source = { uri: 'data:image/jpeg;base64,' + response.data };
-
-        this.setState({
-          avatarSource: source
-        });
+        // console.log("response: ", response);
+        uploadImage(response);
       }
     });
   }
