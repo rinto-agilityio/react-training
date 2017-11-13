@@ -40,7 +40,7 @@ class UploadContainer extends React.Component {
             // Format data before send to reducer
             const data = {
               id: Date.now(),
-              like: 0,
+              likes: [],
               comments: [],
               display_url: response.downloadURL,
               owner: this.props.accountData
