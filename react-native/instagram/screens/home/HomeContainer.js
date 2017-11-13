@@ -1,9 +1,10 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, FlatList } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import { Creators as HomeActionCreators } from "./actions";
+import SinglePhoto from "./components/SinglePhoto";
 
 class HomeContainer extends React.Component {
   static navigationOptions = {
@@ -17,10 +18,12 @@ class HomeContainer extends React.Component {
   render() {
     const { homeData } = this.props;
 
+    // return <Text>No data, please upload some photos</Text>;
     return (
-      <View>
-        <Text>This is HomeContainer</Text>
-      </View>
+      <FlatList
+        data={homeData}
+        renderItem={({ item }) => <SinglePhoto key={item.id} item={item} />}
+      />
     );
   }
 }
