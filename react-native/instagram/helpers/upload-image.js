@@ -20,8 +20,6 @@ export const uploadImage = imageFile => {
     .child("images")
     .child(fileName)
     .putString(fileBase64, "base64")
-    .then(snapshot => {
-      // console.log("snapshot: ", snapshot);
-      return snapshot;
-    });
+    .then(snapshot => snapshot)
+    .catch(err => err);
 };

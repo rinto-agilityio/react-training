@@ -38,7 +38,15 @@ class UploadContainer extends React.Component {
         // console.log("response: ", response);
         uploadImage(response)
           .then(response => {
-            return this.props.uploadPhotoSuccess(response);
+            const data = {
+              id: 1646667310423083823,
+              like: 0,
+              comments: [],
+              display_url: response.downloadURL,
+              owner: this.props.accountData
+            };
+
+            return this.props.uploadPhotoSuccess(data);
           })
           .catch(error => {
             return this.props.uploadPhotoFailure(error);
@@ -72,7 +80,8 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    uploadData: state.upload
+    uploadData: state.upload,
+    accountData: state.account
   };
 }
 

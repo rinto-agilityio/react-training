@@ -34,7 +34,7 @@ const uploadPhotoCancel = (state, action) => {
 const uploadPhotoSuccess = (state, action) => {
   return state.merge({
     type: action.type,
-    data: action.response.downloadURL,
+    data: action.response,
     isUploading: false,
     error: null
   });

@@ -29,14 +29,9 @@ const addData = (state, action) => {
 };
 
 const addPhotoToList = (state, action) => {
-  const singlePhoto = {
-    url: action.response.downloadURL,
-    like: 0,
-    comments: []
-  };
   return state
     .merge({ type: action.type })
-    .updateIn(["data"], arr => arr.concat([singlePhoto]));
+    .updateIn(["data"], arr => arr.concat([action.response]));
 };
 
 export const homeReducer = createReducer(INITIAL_STATE, {
