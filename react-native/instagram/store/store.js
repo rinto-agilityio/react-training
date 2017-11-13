@@ -5,6 +5,7 @@ import storage from "redux-persist/es/storage";
 
 import { homeReducer } from "../screens/home/reducer";
 import { searchReducer } from "../screens/search/reducer";
+import { uploadReducer } from "../screens/upload/reducer";
 import { accountReducer } from "../screens/account/reducer";
 
 const config = {
@@ -18,6 +19,7 @@ const appReducer = persistReducer(
   combineReducers({
     home: homeReducer,
     search: searchReducer,
+    upload: uploadReducer,
     account: accountReducer
   })
 );
