@@ -35,11 +35,11 @@ class UploadContainer extends React.Component {
       } else if (response.customButton) {
         console.log("User tapped custom button: ", response.customButton);
       } else {
-        // console.log("response: ", response);
         uploadImage(response)
           .then(response => {
+            // Format data before send to reducer
             const data = {
-              id: 1646667310423083823,
+              id: Date.now(),
               like: 0,
               comments: [],
               display_url: response.downloadURL,

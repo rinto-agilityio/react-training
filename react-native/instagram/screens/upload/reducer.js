@@ -13,7 +13,7 @@ export const INITIAL_STATE = Immutable({
 const updatePersist = (state, action) => {
   return state.merge({
     type: action.type,
-    ...action.payload.upload
+    isUploading: false
   });
 };
 
