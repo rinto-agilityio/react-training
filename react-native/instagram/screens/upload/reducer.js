@@ -6,7 +6,8 @@ import { Types } from "./actions";
 
 export const INITIAL_STATE = Immutable({
   data: null,
-  isUploading: false
+  isUploading: false,
+  error: null
 });
 
 const updatePersist = (state, action) => {
@@ -18,13 +19,32 @@ const updatePersist = (state, action) => {
 
 const uploadPhotoRequest = (state, action) => {
   return state.merge({
-    type: action.type
+    type: action.type,
+    isUploading: true
   });
 };
 
 const uploadPhotoCancel = (state, action) => {
   return state.merge({
-    type: action.type
+    type: action.type,
+    isUploading: false
+  });
+};
+
+const uploadPhotoSuccess = (state, action) => {
+  return state.merge({
+    type: action.type,
+    data: action.response.downloadURL,
+    isUploading: false,
+    error: null
+  });
+};
+
+const uploadPhotoFailure = (state, action) => {
+  return state.merge({
+    type: action.type,
+    data: null,
+    error: action.error
   });
 };
 
@@ -32,5 +52,7 @@ export const uploadReducer = createReducer(INITIAL_STATE, {
   [REHYDRATE]: updatePersist,
 
   [Types.UPLOAD_PHOTO_REQUEST]: uploadPhotoRequest,
-  [Types.UPLOAD_PHOTO_CANCEL]: uploadPhotoCancel
+  [Types.UPLOAD_PHOTO_CANCEL]: uploadPhotoCancel,
+  [Types.UPLOAD_PHOTO_FAILURE]: uploadPhotoFailure,
+  [Types.UPLOAD_PHOTO_SUCCESS]: uploadPhotoSuccess
 });
