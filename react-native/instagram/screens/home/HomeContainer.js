@@ -27,7 +27,7 @@ class HomeContainer extends React.Component {
   render() {
     const { homeData } = this.props;
 
-    if (!homeData) {
+    if (!homeData.length) {
       return <Text>No data, please upload some photos</Text>;
     }
 
