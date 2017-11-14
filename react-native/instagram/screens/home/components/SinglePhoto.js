@@ -7,8 +7,8 @@ import CommentList from "./CommentList";
 
 export default class SinglePhoto extends React.Component {
   render() {
-    const { item, submitComment } = this.props;
-    const likeCounting = item.likes.length;
+    const { item, submitComment, toogleLike } = this.props,
+      likeCounting = item.likes.length;
 
     return (
       <View>
@@ -25,7 +25,11 @@ export default class SinglePhoto extends React.Component {
           source={{ uri: item.display_url }}
         />
         <View style={styles.footer}>
-          <PostAction />
+          <PostAction
+            postId={item.id}
+            userId={item.owner.id}
+            toogleLike={toogleLike}
+          />
           {likeCounting > 1 ? (
             <Text>{likeCounting} likes</Text>
           ) : (

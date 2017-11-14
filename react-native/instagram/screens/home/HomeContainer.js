@@ -24,6 +24,10 @@ class HomeContainer extends React.Component {
     this.props.addComment(data);
   };
 
+  toogleLike = data => {
+    this.props.toogleLike(data);
+  };
+
   render() {
     const { homeData } = this.props;
 
@@ -39,6 +43,7 @@ class HomeContainer extends React.Component {
             key={item.id}
             item={item}
             submitComment={this.addPostComment}
+            toogleLike={this.toogleLike}
           />
         )}
       />

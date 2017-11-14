@@ -1,14 +1,31 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  TouchableHighlight,
+  StyleSheet
+} from "react-native";
 
 export default class PostAction extends React.Component {
+  hanleLike() {
+    const { postId, userId, toogleLike } = this.props;
+
+    toogleLike({
+      postId,
+      userId
+    });
+  }
+
   render() {
     return (
       <View style={styles.wrapper}>
-        <Image
-          style={styles.icon}
-          source={require("../../../assets/icons/like.png")}
-        />
+        <TouchableHighlight onPress={() => this.hanleLike()}>
+          <Image
+            style={styles.icon}
+            source={require("../../../assets/icons/like.png")}
+          />
+        </TouchableHighlight>
         <Image
           style={styles.icon}
           source={require("../../../assets/icons/comment.png")}
