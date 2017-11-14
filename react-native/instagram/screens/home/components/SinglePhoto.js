@@ -1,10 +1,11 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, TextInput, Image, StyleSheet } from "react-native";
+
+import Comment from "../../../components/Comment";
 
 export default class SinglePhoto extends React.Component {
   render() {
-    const { item } = this.props;
-    console.log("item: ", item);
+    const { item, submitComment } = this.props;
 
     return (
       <View>
@@ -27,6 +28,11 @@ export default class SinglePhoto extends React.Component {
             return <Text>{comment}</Text>;
           })}
         </View>
+        <Comment
+          submitComment={submitComment}
+          owner={item.owner}
+          postId={item.id}
+        />
       </View>
     );
   }
