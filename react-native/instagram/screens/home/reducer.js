@@ -39,10 +39,30 @@ const addComment = (state, action) => {
     );
 };
 
+const toogleLike = (state, action) => {
+  let newLikes;
+  const { postId, userId } = action.data,
+    postIdx = state.data.findIndex(item => item.id === postId),
+    likes = state.data[postIdx].likes,
+    post = state.data.find(item => item.id === postId),
+    likeIdx = likes.findIndex(item => item === userId);
+
+  if (likeIdx != -1) {
+    newLikes = likes.filter(item => item !== userId);
+  } else {
+    newLikes = likes.concat([userId]);
+  }
+
+  return state
+    .merge({ type: action.type })
+    .setIn(["data", postIdx, "likes"], newLikes);
+};
+
 export const homeReducer = createReducer(INITIAL_STATE, {
   [REHYDRATE]: updatePersist,
 
   [Types.GET_HOME_DATA_REQUEST]: getHomeDataRequest,
   [UploadTypes.UPLOAD_PHOTO_SUCCESS]: addPhotoToList,
-  [Types.ADD_COMMENT]: addComment
+  [Types.ADD_COMMENT]: addComment,
+  [Types.TOOGLE_LIKE]: toogleLike
 });

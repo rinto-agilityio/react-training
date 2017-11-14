@@ -2,5 +2,6 @@ import { createActions } from "reduxsauce";
 
 export const { Types, Creators } = createActions({
   getHomeDataRequest: null,
-  addComment: ["comment"]
+  addComment: ["comment"],
+  toogleLike: ["data"]
 });
