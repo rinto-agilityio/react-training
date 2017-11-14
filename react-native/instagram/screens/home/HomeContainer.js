@@ -15,6 +15,10 @@ class HomeContainer extends React.Component {
     this.props.getHomeDataRequest();
   }
 
+  addPostComment = data => {
+    this.props.addComment(data);
+  };
+
   render() {
     const { homeData } = this.props;
 
@@ -22,7 +26,13 @@ class HomeContainer extends React.Component {
     return (
       <FlatList
         data={homeData}
-        renderItem={({ item }) => <SinglePhoto key={item.id} item={item} />}
+        renderItem={({ item }) => (
+          <SinglePhoto
+            key={item.id}
+            item={item}
+            submitComment={this.addPostComment}
+          />
+        )}
       />
     );
   }

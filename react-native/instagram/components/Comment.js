@@ -13,7 +13,7 @@ export default class Comment extends React.Component {
 
       this.props.submitComment({
         postId: postId,
-        userId: owner.id,
+        owner: owner,
         text: this.state.text
       });
 
