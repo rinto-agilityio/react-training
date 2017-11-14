@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, FlatList } from "react-native";
+import { Text, View, Image, FlatList } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
@@ -8,7 +8,12 @@ import SinglePhoto from "./components/SinglePhoto";
 
 class HomeContainer extends React.Component {
   static navigationOptions = {
-    title: "Home"
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        source={require("../../assets/icons/home.png")}
+        style={{ width: 24, height: 24 }}
+      />
+    )
   };
 
   componentDidMount() {

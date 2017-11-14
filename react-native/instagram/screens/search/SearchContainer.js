@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, Image } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
@@ -7,10 +7,13 @@ import { Creators as SearchActionCreators } from "./actions";
 
 class SearchContainer extends React.Component {
   static navigationOptions = {
-    title: "Search"
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        source={require("../../assets/icons/search.png")}
+        style={{ width: 24, height: 24 }}
+      />
+    )
   };
-
-  componentDidMount() {}
 
   render() {
     const { searchData } = this.props;

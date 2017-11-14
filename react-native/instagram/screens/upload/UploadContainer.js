@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Button } from "react-native";
+import { Text, Button, Image } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import ImagePicker from "react-native-image-picker";
@@ -8,6 +8,15 @@ import { Creators as UploadActionCreators } from "./actions";
 import { uploadImage } from "../../helpers/upload-image";
 
 class UploadContainer extends React.Component {
+  static navigationOptions = {
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        source={require("../../assets/icons/plus.png")}
+        style={{ width: 24, height: 24 }}
+      />
+    )
+  };
+
   _showImagePicker = () => {
     this.props.uploadPhotoRequest();
 

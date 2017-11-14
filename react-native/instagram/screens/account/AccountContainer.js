@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, Image } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
@@ -7,7 +7,12 @@ import { Creators as AccountActionCreators } from "./actions";
 
 class AccountContainer extends React.Component {
   static navigationOptions = {
-    title: "Account"
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        source={require("../../assets/icons/avatar.png")}
+        style={{ width: 24, height: 24 }}
+      />
+    )
   };
 
   componentDidMount() {
