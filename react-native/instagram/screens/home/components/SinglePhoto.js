@@ -2,11 +2,13 @@ import React from "react";
 import { View, Text, TextInput, Image, StyleSheet } from "react-native";
 
 import CommentInput from "../../../components/Comment";
+import PostAction from "./PostAction";
 import CommentList from "./CommentList";
 
 export default class SinglePhoto extends React.Component {
   render() {
     const { item, submitComment } = this.props;
+    const likeCounting = item.likes.length;
 
     return (
       <View>
@@ -17,14 +19,18 @@ export default class SinglePhoto extends React.Component {
           />
           <Text>{item.owner.username}</Text>
         </View>
-        <View>
-          <Image
-            resizeMode={"cover"}
-            style={styles.photo}
-            source={{ uri: item.display_url }}
-          />
-        </View>
+        <Image
+          resizeMode={"cover"}
+          style={styles.photo}
+          source={{ uri: item.display_url }}
+        />
         <View style={styles.footer}>
+          <PostAction />
+          {likeCounting > 1 ? (
+            <Text>{likeCounting} likes</Text>
+          ) : (
+            <Text>{likeCounting} like</Text>
+          )}
           <CommentList comments={item.comments} />
           <CommentInput
             submitComment={submitComment}
