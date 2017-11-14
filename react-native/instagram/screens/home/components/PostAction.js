@@ -17,6 +17,10 @@ export default class PostAction extends React.Component {
     });
   }
 
+  toogleComment() {
+    this.props.toogleComment();
+  }
+
   render() {
     const likeIcon = this.props.liked
       ? require("../../../assets/icons/liked.png")
@@ -28,10 +32,12 @@ export default class PostAction extends React.Component {
           {}
           <Image style={styles.icon} source={likeIcon} />
         </TouchableHighlight>
-        <Image
-          style={styles.icon}
-          source={require("../../../assets/icons/comment.png")}
-        />
+        <TouchableHighlight onPress={() => this.toogleComment()}>
+          <Image
+            style={styles.icon}
+            source={require("../../../assets/icons/comment.png")}
+          />
+        </TouchableHighlight>
       </View>
     );
   }

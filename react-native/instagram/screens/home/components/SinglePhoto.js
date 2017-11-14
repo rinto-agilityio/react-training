@@ -6,6 +6,19 @@ import PostAction from "./PostAction";
 import CommentList from "./CommentList";
 
 export default class SinglePhoto extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showComment: false
+    };
+  }
+
+  toogleComment = () => {
+    this.setState({
+      showComment: !this.state.showComment
+    });
+  };
+
   render() {
     const { item, submitComment, toogleLike } = this.props,
       likeCounting = item.likes.length,
@@ -31,6 +44,7 @@ export default class SinglePhoto extends React.Component {
             postId={item.id}
             userId={item.owner.id}
             toogleLike={toogleLike}
+            toogleComment={this.toogleComment}
           />
           {likeCounting > 1 ? (
             <Text>{likeCounting} likes</Text>
@@ -38,11 +52,13 @@ export default class SinglePhoto extends React.Component {
             <Text>{likeCounting} like</Text>
           )}
           <CommentList comments={item.comments} />
-          <CommentInput
-            submitComment={submitComment}
-            owner={item.owner}
-            postId={item.id}
-          />
+          {this.state.showComment && (
+            <CommentInput
+              submitComment={submitComment}
+              owner={item.owner}
+              postId={item.id}
+            />
+          )}
         </View>
       </View>
     );
