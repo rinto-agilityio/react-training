@@ -24,7 +24,7 @@ export default class SinglePhoto extends React.Component {
             source={{ uri: item.display_url }}
           />
         </View>
-        <View>
+        <View style={styles.footer}>
           <CommentList comments={item.comments} />
           <CommentInput
             submitComment={submitComment}
@@ -42,6 +42,9 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     alignItems: "center",
+    padding: 10
+  },
+  footer: {
     padding: 10
   },
   avatar: {

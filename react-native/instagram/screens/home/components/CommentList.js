@@ -9,7 +9,7 @@ export default class CommentList extends React.Component {
       <View>
         {comments.map(comment => {
           return (
-            <Text key={comment.id}>
+            <Text key={comment.id} style={styles.comment}>
               <Text style={styles.username}>{comment.owner.username}</Text>
               {": " + comment.text}
             </Text>
@@ -21,9 +21,10 @@ export default class CommentList extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  comment: {
+    marginTop: 5
+  },
   username: {
-    fontWeight: "bold",
-    marginRight: 10,
-    paddingRight: 10
+    fontWeight: "bold"
   }
 });
