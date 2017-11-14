@@ -33,11 +33,13 @@ export default class SinglePhoto extends React.Component {
           />
           <Text>{item.owner.username}</Text>
         </View>
+
         <Image
           resizeMode={"cover"}
           style={styles.photo}
           source={{ uri: item.display_url }}
         />
+
         <View style={styles.footer}>
           <PostAction
             liked={liked ? true : false}
@@ -46,12 +48,15 @@ export default class SinglePhoto extends React.Component {
             toogleLike={toogleLike}
             toogleComment={this.toogleComment}
           />
+
           {likeCounting > 1 ? (
             <Text>{likeCounting} likes</Text>
           ) : (
             <Text>{likeCounting} like</Text>
           )}
+
           <CommentList comments={item.comments} />
+
           {this.state.showComment && (
             <CommentInput
               submitComment={submitComment}
