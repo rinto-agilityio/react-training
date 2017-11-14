@@ -22,7 +22,10 @@ class HomeContainer extends React.Component {
   render() {
     const { homeData } = this.props;
 
-    // return <Text>No data, please upload some photos</Text>;
+    if (!homeData) {
+      return <Text>No data, please upload some photos</Text>;
+    }
+
     return (
       <FlatList
         data={homeData}
