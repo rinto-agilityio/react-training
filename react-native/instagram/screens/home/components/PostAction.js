@@ -9,7 +9,7 @@ import {
 
 export default class PostAction extends React.Component {
   hanleLike() {
-    const { postId, userId, toogleLike } = this.props;
+    const { postId, userId, liked, toogleLike } = this.props;
 
     toogleLike({
       postId,
@@ -18,13 +18,15 @@ export default class PostAction extends React.Component {
   }
 
   render() {
+    const likeIcon = this.props.liked
+      ? require("../../../assets/icons/liked.png")
+      : require("../../../assets/icons/like.png");
+
     return (
       <View style={styles.wrapper}>
         <TouchableHighlight onPress={() => this.hanleLike()}>
-          <Image
-            style={styles.icon}
-            source={require("../../../assets/icons/like.png")}
-          />
+          {}
+          <Image style={styles.icon} source={likeIcon} />
         </TouchableHighlight>
         <Image
           style={styles.icon}

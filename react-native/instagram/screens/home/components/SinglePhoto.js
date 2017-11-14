@@ -8,7 +8,8 @@ import CommentList from "./CommentList";
 export default class SinglePhoto extends React.Component {
   render() {
     const { item, submitComment, toogleLike } = this.props,
-      likeCounting = item.likes.length;
+      likeCounting = item.likes.length,
+      liked = item.likes.find(i => i === item.owner.id);
 
     return (
       <View>
@@ -26,6 +27,7 @@ export default class SinglePhoto extends React.Component {
         />
         <View style={styles.footer}>
           <PostAction
+            liked={liked ? true : false}
             postId={item.id}
             userId={item.owner.id}
             toogleLike={toogleLike}
