@@ -1,7 +1,8 @@
 import React from "react";
 import { View, Text, TextInput, Image, StyleSheet } from "react-native";
 
-import Comment from "../../../components/Comment";
+import CommentInput from "../../../components/Comment";
+import CommentList from "./CommentList";
 
 export default class SinglePhoto extends React.Component {
   render() {
@@ -24,15 +25,13 @@ export default class SinglePhoto extends React.Component {
           />
         </View>
         <View>
-          {item.comments.map(comment => {
-            return <Text>{comment}</Text>;
-          })}
+          <CommentList comments={item.comments} />
+          <CommentInput
+            submitComment={submitComment}
+            owner={item.owner}
+            postId={item.id}
+          />
         </View>
-        <Comment
-          submitComment={submitComment}
-          owner={item.owner}
-          postId={item.id}
-        />
       </View>
     );
   }
