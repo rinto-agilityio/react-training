@@ -22,16 +22,21 @@ const getHomeDataRequest = (state, action) => {
   });
 };
 
-const addData = (state, action) => {
-  return state
-    .merge({ type: action.type })
-    .updateIn(["data"], arr => arr.concat([state.data.length]));
-};
-
 const addPhotoToList = (state, action) => {
   return state
     .merge({ type: action.type })
     .updateIn(["data"], arr => arr.concat([action.response]));
+};
+
+const addComment = (state, action) => {
+  const comment = Immutable(action.comment),
+    postIdx = state.data.findIndex(item => item.id === comment.postId);
+
+  return state
+    .merge({ type: action.type })
+    .updateIn(["data", postIdx, "comments"], arr =>
+      arr.concat([comment.merge({ id: Date.now() }).without("postId")])
+    );
 };
 
 export const homeReducer = createReducer(INITIAL_STATE, {
@@ -39,5 +44,5 @@ export const homeReducer = createReducer(INITIAL_STATE, {
 
   [Types.GET_HOME_DATA_REQUEST]: getHomeDataRequest,
   [UploadTypes.UPLOAD_PHOTO_SUCCESS]: addPhotoToList,
-  [Types.ADD_DATA]: addData
+  [Types.ADD_COMMENT]: addComment
 });
