@@ -6,6 +6,7 @@ import { bindActionCreators } from "redux";
 import { getAccountPhotos } from "../../helpers/account-data";
 import { Creators as AccountActionCreators } from "./actions";
 import Info from "./components/Info";
+import Photos from "./components/Photos";
 
 class AccountContainer extends React.Component {
   static navigationOptions = {
@@ -31,7 +32,7 @@ class AccountContainer extends React.Component {
           <Info data={accountData} />
         </View>
         <View style={styles.photos}>
-          <Text>Photos here</Text>
+          <Photos data={myPhotos} />
         </View>
       </View>
     );
