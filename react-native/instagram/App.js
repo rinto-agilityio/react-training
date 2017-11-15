@@ -9,6 +9,7 @@ import HomeContainer from "./screens/home/HomeContainer";
 import AccountContainer from "./screens/account/AccountContainer";
 import SearchContainer from "./screens/search/SearchContainer";
 import UploadContainer from "./screens/upload/UploadContainer";
+import AppHeader from "./components/AppHeader";
 
 const { persistor, store } = configureStore();
 
@@ -29,19 +30,13 @@ const MainApp = TabNavigator(
 );
 
 export default class App extends React.Component {
-  _onNavigationStateChange = (prevState, newState) => {
-    this.setState({ ...this.state, route_index: newState.index });
-  };
-
   render() {
     return (
       <Provider store={store}>
         <PersistGate persistor={persistor}>
           <View style={styles.container}>
-            <MainApp
-              onNavigationStateChange={this._onNavigationStateChange}
-              screenProps={this.state}
-            />
+            <AppHeader />
+            <MainApp screenProps={this.state} />
           </View>
         </PersistGate>
       </Provider>
@@ -52,7 +47,6 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 20,
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center"
