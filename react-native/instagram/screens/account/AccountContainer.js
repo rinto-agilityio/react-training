@@ -31,9 +31,7 @@ class AccountContainer extends React.Component {
         <View style={styles.info}>
           <Info data={accountData} />
         </View>
-        <View style={styles.photos}>
-          <Photos data={myPhotos} />
-        </View>
+        <Photos data={myPhotos} />
       </View>
     );
   }
@@ -61,12 +59,9 @@ const styles = StyleSheet.create({
     flexDirection: "column"
   },
   info: {
-    flex: 3,
+    height: 150,
     borderBottomWidth: 1,
     borderBottomColor: "#eee"
-  },
-  photos: {
-    flex: 7
   }
 });
 export default connect(mapStateToProps, mapDispatchToProps)(AccountContainer);

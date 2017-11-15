@@ -31,7 +31,7 @@ export default class Photos extends React.Component {
  * Calculate size for each item
  */
 const layoutPadding = 0,
-  numColumns = 4,
+  numColumns = 3,
   itemMargin = 3,
   itemSize =
     (Dimensions.get("window").width -
