@@ -5,7 +5,6 @@ export default class Info extends React.Component {
   render() {
     const { data } = this.props;
 
-    console.log("data: ", data);
     return (
       <View style={styles.wrapper}>
         <View style={styles.avatarWrapper}>
