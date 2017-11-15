@@ -3,6 +3,7 @@ import { Text, View, Image } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
+import { getAccountPhotos } from "../../helpers/account-data";
 import { Creators as AccountActionCreators } from "./actions";
 
 class AccountContainer extends React.Component {
@@ -20,7 +21,10 @@ class AccountContainer extends React.Component {
   }
 
   render() {
-    const { accountData } = this.props;
+    const { accountData, allPhotos } = this.props,
+      myPhotos = getAccountPhotos(allPhotos, accountData);
+
+    console.log("myPhotos: ", myPhotos);
 
     return (
       <View>
@@ -41,7 +45,8 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    accountData: state.account
+    accountData: state.account,
+    allPhotos: state.home.data
   };
 }
 
