@@ -1,9 +1,12 @@
 import React from "react";
-import { Text, View, Image } from "react-native";
+import { Text, View, Image, StyleSheet } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
+import { getAccountPhotos } from "../../helpers/account-data";
 import { Creators as AccountActionCreators } from "./actions";
+import Info from "./components/Info";
+import Photos from "./components/Photos";
 
 class AccountContainer extends React.Component {
   static navigationOptions = {
@@ -20,11 +23,15 @@ class AccountContainer extends React.Component {
   }
 
   render() {
-    const { accountData } = this.props;
+    const { accountData, allPhotos } = this.props,
+      myPhotos = getAccountPhotos(allPhotos, accountData);
 
     return (
-      <View>
-        <Text>This is AccountContainer</Text>
+      <View style={styles.wrapper}>
+        <View style={styles.info}>
+          <Info data={accountData} />
+        </View>
+        <Photos data={myPhotos} />
       </View>
     );
   }
@@ -41,8 +48,20 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    accountData: state.account
+    accountData: state.account,
+    allPhotos: state.home.data
   };
 }
 
+const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+    flexDirection: "column"
+  },
+  info: {
+    height: 150,
+    borderBottomWidth: 1,
+    borderBottomColor: "#eee"
+  }
+});
 export default connect(mapStateToProps, mapDispatchToProps)(AccountContainer);
