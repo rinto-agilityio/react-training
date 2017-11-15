@@ -23,7 +23,7 @@ const loadAccountData = (state, action) => {
   // FIX ME: Fixed data for now, no auth yet
   return state.merge({
     type: action.type,
-    biography: "We love hard so we fall hard",
+    biography: "Personal photos",
     full_name: "Huy Nguyen",
     id: 2250323280,
     profile_pic_url:
