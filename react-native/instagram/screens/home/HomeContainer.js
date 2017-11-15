@@ -46,6 +46,7 @@ class HomeContainer extends React.Component {
             toogleLike={this.toogleLike}
           />
         )}
+        keyExtractor={(item, index) => index}
       />
     );
   }
