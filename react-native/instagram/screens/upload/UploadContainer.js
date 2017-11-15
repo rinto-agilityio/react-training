@@ -51,7 +51,7 @@ class UploadContainer extends React.Component {
               id: Date.now(),
               likes: [],
               comments: [],
-              display_url: response.downloadURL,
+              display_url: response,
               owner: this.props.accountData
             };
 
