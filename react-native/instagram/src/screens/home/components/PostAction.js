@@ -1,11 +1,7 @@
 import React from "react";
-import {
-  View,
-  Text,
-  Image,
-  TouchableHighlight,
-  StyleSheet
-} from "react-native";
+import { View, Text, Image, TouchableHighlight } from "react-native";
+
+import { styles } from "./styles/PostAction";
 
 export default class PostAction extends React.Component {
   hanleLike() {
@@ -47,15 +43,3 @@ export default class PostAction extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-    flexDirection: "row"
-  },
-  icon: {
-    width: 20,
-    height: 20,
-    marginRight: 10
-  }
-});
