@@ -1,11 +1,12 @@
 import { StyleSheet } from "react-native";
+import Theme from "../../theme";
 
 export const styles = StyleSheet.create({
   comment: {
     flex: 1,
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 10
+    marginTop: Theme.baseSpacing
   },
   avatar: {
     height: 20,
@@ -15,9 +16,9 @@ export const styles = StyleSheet.create({
   },
   commentInput: {
     height: 30,
-    paddingLeft: 10,
+    paddingLeft: Theme.baseSpacing,
     borderRadius: 15,
-    borderColor: "#a7a7a7",
+    borderColor: Theme.borderInputColor,
     borderWidth: 1,
     width: "95%"
   }
