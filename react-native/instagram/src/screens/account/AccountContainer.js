@@ -64,4 +64,5 @@ const styles = StyleSheet.create({
     borderBottomColor: "#eee"
   }
 });
+
 export default connect(mapStateToProps, mapDispatchToProps)(AccountContainer);

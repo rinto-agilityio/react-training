@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text } from "react-native";
+import { styles } from "./styles/AppHeader";
 
 export default class AppHeader extends React.Component {
   render() {
@@ -10,19 +11,3 @@ export default class AppHeader extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  wrapper: {
-    width: "100%",
-    paddingTop: 20,
-    paddingBottom: 10,
-    backgroundColor: "#f9f9f9",
-    justifyContent: "center",
-    alignItems: "center",
-    borderBottomWidth: 1,
-    borderColor: "#eee"
-  },
-  brand: {
-    fontSize: 24
-  }
-});
