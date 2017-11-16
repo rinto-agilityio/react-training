@@ -7,6 +7,7 @@ import { getAccountPhotos } from "../../helpers/account-data";
 import { Creators as AccountActionCreators } from "./actions";
 import Info from "./components/Info";
 import Photos from "./components/Photos";
+import CommonStyles from "../../theme/common";
 
 class AccountContainer extends React.Component {
   static navigationOptions = {
@@ -27,7 +28,7 @@ class AccountContainer extends React.Component {
       myPhotos = getAccountPhotos(allPhotos, accountData);
 
     return (
-      <View style={styles.wrapper}>
+      <View style={CommonStyles.layoutColumn}>
         <View style={styles.info}>
           <Info data={accountData} />
         </View>
@@ -54,10 +55,6 @@ function mapStateToProps(state) {
 }
 
 const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-    flexDirection: "column"
-  },
   info: {
     height: 150,
     borderBottomWidth: 1,

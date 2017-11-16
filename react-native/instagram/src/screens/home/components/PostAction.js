@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, Image, TouchableHighlight } from "react-native";
 
 import { styles } from "./styles/PostAction";
+import CommonStyles from "../../../theme/common";
 
 export default class PostAction extends React.Component {
   hanleLike() {
@@ -23,7 +24,7 @@ export default class PostAction extends React.Component {
       : require("../../../assets/icons/like.png");
 
     return (
-      <View style={styles.wrapper}>
+      <View style={CommonStyles.layoutRow}>
         <TouchableHighlight
           onPress={() => this.hanleLike()}
           underlayColor={"transparent"}

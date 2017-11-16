@@ -4,8 +4,6 @@ import Theme from "../../../../theme";
 
 export const styles = StyleSheet.create({
   wrapper: {
-    flex: 1,
-    flexDirection: "column",
     padding: Theme.baseSpacing
   },
   avatarWrapper: {

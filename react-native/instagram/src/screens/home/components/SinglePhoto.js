@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, TextInput, Image } from "react-native";
 
 import { styles } from "./styles/SinglePhoto";
+import CommonStyles from "../../../theme/common";
 import CommentInput from "../../../components/Comment";
 import PostAction from "./PostAction";
 import CommentList from "./CommentList";
@@ -27,7 +28,7 @@ export default class SinglePhoto extends React.Component {
 
     return (
       <View>
-        <View style={styles.header}>
+        <View style={[styles.header, CommonStyles.layoutRow]}>
           <Image
             style={styles.avatar}
             source={{ uri: item.owner.profile_pic_url }}
