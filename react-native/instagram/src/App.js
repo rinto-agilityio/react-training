@@ -4,7 +4,7 @@ import { TabNavigator } from "react-navigation";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/es/integration/react";
 
-import configureStore from "./store/store";
+import configureStore from "./config/store";
 import HomeContainer from "./screens/home/HomeContainer";
 import AccountContainer from "./screens/account/AccountContainer";
 import UploadContainer from "./screens/upload/UploadContainer";
