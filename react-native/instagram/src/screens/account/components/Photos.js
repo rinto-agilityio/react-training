@@ -1,12 +1,7 @@
 import React from "react";
-import {
-  View,
-  Image,
-  Text,
-  FlatList,
-  StyleSheet,
-  Dimensions
-} from "react-native";
+import { View, Image, Text, FlatList } from "react-native";
+
+import { styles, numColumns } from "./styles/Photos";
 
 export default class Photos extends React.Component {
   render() {
@@ -26,27 +21,3 @@ export default class Photos extends React.Component {
     );
   }
 }
-
-/**
- * Calculate size for each item
- */
-const layoutPadding = 0,
-  numColumns = 3,
-  itemMargin = 3,
-  itemSize =
-    (Dimensions.get("window").width -
-      layoutPadding * 2 -
-      itemMargin * numColumns * 2) /
-    numColumns;
-
-const styles = StyleSheet.create({
-  list: {
-    marginTop: 5,
-    padding: layoutPadding
-  },
-  item: {
-    margin: itemMargin,
-    width: itemSize,
-    height: itemSize
-  }
-});

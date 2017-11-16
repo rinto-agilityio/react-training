@@ -1,5 +1,7 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image } from "react-native";
+
+import { styles } from "./styles/Info";
 
 export default class Info extends React.Component {
   render() {
@@ -20,29 +22,3 @@ export default class Info extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-    flexDirection: "column",
-    padding: 10
-  },
-  avatarWrapper: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 10
-  },
-  avatar: {
-    width: 80,
-    height: 80,
-    borderRadius: 40
-  },
-  username: {
-    marginLeft: 20,
-    fontWeight: "bold",
-    fontSize: 28
-  },
-  fullName: {
-    fontWeight: "bold"
-  }
-});
