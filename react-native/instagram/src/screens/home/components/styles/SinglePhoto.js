@@ -1,14 +1,16 @@
 import { StyleSheet } from "react-native";
 
+import Theme from "../../../../theme";
+
 export const styles = StyleSheet.create({
   header: {
     flex: 1,
     flexDirection: "row",
     alignItems: "center",
-    padding: 10
+    padding: Theme.baseSpacing
   },
   footer: {
-    padding: 10
+    padding: Theme.baseSpacing
   },
   avatar: {
     width: 30,
