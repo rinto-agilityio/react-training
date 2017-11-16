@@ -20,10 +20,6 @@ export const styles = StyleSheet.create({
   },
   username: {
     marginLeft: 20,
-    fontWeight: "bold",
     fontSize: 28
-  },
-  fullName: {
-    fontWeight: "bold"
   }
 });
