@@ -1,0 +1,23 @@
+import { StyleSheet } from "react-native";
+
+import Theme from "../../../../theme";
+
+export const styles = StyleSheet.create({
+  wrapper: {
+    padding: Theme.baseSpacing
+  },
+  avatarWrapper: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: Theme.baseSpacing
+  },
+  avatar: {
+    width: 80,
+    height: 80,
+    borderRadius: 40
+  },
+  username: {
+    marginLeft: 20,
+    fontSize: 28
+  }
+});
