@@ -1,25 +1,22 @@
 import Comment from "./Comment";
 
-// Mocking props
-const owner = {
-  profile_pic_url: "avatar_url.png"
-};
-
 describe("Comment component", () => {
-  it("Renders correctly", () => {
-    const tree = renderer.create(<Comment owner={owner} />).toJSON();
+  let component, treeSnapshot;
+  const defaultState = { text: "" },
+    owner = {
+      profile_pic_url: "avatar_url.png"
+    };
 
-    expect(tree).toMatchSnapshot();
+  beforeEach(function() {
+    component = shallow(<Comment owner={owner} />);
+    treeSnapshot = renderer.create(<Comment owner={owner} />).toJSON();
   });
 
-  it("Comment call function when click", () => {
-    const defaultState = { text: "" };
+  it("Renders correctly", () => {
+    expect(treeSnapshot).toMatchSnapshot();
+  });
 
-    const submitComment = jest.fn();
-    const wrapper = shallow(
-      <Comment owner={owner} submitComment={submitComment} />
-    );
-
-    expect(wrapper.state()).toEqual(defaultState);
+  it("Render default state", () => {
+    expect(component.state()).toEqual(defaultState);
   });
 });
