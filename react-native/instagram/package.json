@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
+    "test-coverage": "jest --coverage",
     "updateSnapshot": "jest --updateSnapshot"
   },
   "dependencies": {
@@ -30,6 +31,7 @@
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "jest": "21.2.1",
+    "jest-cli": "^21.2.1",
     "react-dom": "^16.1.1",
     "react-test-renderer": "16.0.0"
   },
@@ -42,6 +44,8 @@
     "setupFiles": ["./src/test/setup.js"],
     "globals": {
       "window": {}
-    }
+    },
+    "collectCoverage": true,
+    "coverageFormats": ["json", "html"]
   }
 }
