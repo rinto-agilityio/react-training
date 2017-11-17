@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AppHeader renders correctly 1`] = `
+exports[`AppHeader component AppHeader renders correctly 1`] = `
 <View
   style={
     Object {

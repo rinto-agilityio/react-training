@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Comment renders correctly 1`] = `
+exports[`Comment component Renders correctly 1`] = `
 <View
   style={
     Object {
