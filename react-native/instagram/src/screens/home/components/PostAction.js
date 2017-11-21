@@ -26,12 +26,14 @@ export default class PostAction extends React.Component {
     return (
       <View style={CommonStyles.layoutRow}>
         <TouchableHighlight
+          className="icon-like"
           onPress={() => this.hanleLike()}
           underlayColor={"transparent"}
         >
           <Image style={styles.icon} source={likeIcon} />
         </TouchableHighlight>
         <TouchableHighlight
+          className="icon-comment"
           onPress={() => this.toogleComment()}
           underlayColor={"transparent"}
         >
