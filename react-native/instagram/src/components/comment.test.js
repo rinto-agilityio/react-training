@@ -5,10 +5,11 @@ describe("Comment component", () => {
   const defaultState = { text: "" },
     owner = {
       profile_pic_url: "avatar_url.png"
-    };
+    },
+    mockSubmit = jest.fn();
 
   beforeEach(() => {
-    component = shallow(<Comment owner={owner} />);
+    component = shallow(<Comment owner={owner} submitComment={mockSubmit} />);
     treeDOM = renderer.create(<Comment owner={owner} />).toJSON();
 
     textInput = component.find("TextInput");
@@ -24,6 +25,7 @@ describe("Comment component", () => {
 
   it("Renders input field with placeholder", () => {
     const expectedPlaceholder = "Add a comment";
+
     expect(textInput).toHaveLength(1);
     expect(textInput.props().placeholder).toEqual(expectedPlaceholder);
   });
@@ -41,6 +43,12 @@ describe("Comment component", () => {
 
     it.skip("Renders updated text", () => {
       expect(textInput.props().text).toEqual(newTextValue);
+    });
+
+    it("Should call submitComment if text change then submit", () => {
+      textInput.simulate("submitEditing"); // Press enter after change text
+
+      expect(mockSubmit.mock.calls.length).toEqual(1);
     });
   });
 });
