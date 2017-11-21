@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Photos component Renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "marginTop": 5,
+      "padding": 0,
+    }
+  }
+>
+  <RCTScrollView
+    data={
+      Array [
+        Object {
+          "display_url": "image01.jpg",
+        },
+        Object {
+          "display_url": "image02.jpg",
+        },
+        Object {
+          "display_url": "image03.jpg",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={3}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "image01.jpg",
+              }
+            }
+            style={
+              Object {
+                "height": 244,
+                "margin": 3,
+                "width": 244,
+              }
+            }
+          />
+          <Image
+            source={
+              Object {
+                "uri": "image02.jpg",
+              }
+            }
+            style={
+              Object {
+                "height": 244,
+                "margin": 3,
+                "width": 244,
+              }
+            }
+          />
+          <Image
+            source={
+              Object {
+                "uri": "image03.jpg",
+              }
+            }
+            style={
+              Object {
+                "height": 244,
+                "margin": 3,
+                "width": 244,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Comment component Renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "flexDirection": "row",
+      "marginTop": 10,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "avatar_url.png",
+      }
+    }
+    style={
+      Object {
+        "borderRadius": 10,
+        "height": 20,
+        "marginRight": 5,
+        "width": 20,
+      }
+    }
+  />
+  <TextInput
+    allowFontScaling={true}
+    onChangeText={[Function]}
+    onSubmitEditing={[Function]}
+    placeholder="Add a comment"
+    style={
+      Object {
+        "borderColor": "#a7a7a7",
+        "borderRadius": 15,
+        "borderWidth": 1,
+        "height": 30,
+        "paddingLeft": 10,
+        "width": "95%",
+      }
+    }
+    value=""
+  />
+</View>
+`;
