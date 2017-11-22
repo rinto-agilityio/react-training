@@ -7,7 +7,7 @@
     "test": "jest",
     "test-coverage": "jest --coverage",
     "updateSnapshot": "jest --updateSnapshot",
-    "storybook": "storybook start -p 7007"
+    "storybook": "storybook start -p 7007 NODE_ENV=storybook"
   },
   "dependencies": {
     "babel-eslint": "^8.0.2",
