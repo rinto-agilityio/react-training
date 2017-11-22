@@ -4,11 +4,7 @@ import { REHYDRATE } from "redux-persist/lib/constants";
 
 import { homeReducer, INITIAL_STATE } from "./reducer";
 
-describe.only("Home reducer", () => {
-  it("Should return the initial state", () => {
-    expect(homeReducer(undefined, {})).toEqual(INITIAL_STATE);
-  });
-
+describe("Home reducer", () => {
   it("Should handle REHYDRATE", () => {
     expect(
       homeReducer(INITIAL_STATE, {
