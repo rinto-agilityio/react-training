@@ -16,7 +16,7 @@ describe("Upload action", () => {
   it("Return correct action type for uploadPhotoSuccess", () => {
     const response = { downloadUrl: "download_image_url" };
     const expectAction = {
-      type: Types.UPLOAD_PHOTO_CANCEL,
+      type: Types.UPLOAD_PHOTO_SUCCESS,
       response: response
     };
 
@@ -26,7 +26,7 @@ describe("Upload action", () => {
   it("Return correct action type for uploadPhotoFailure", () => {
     const error = { message: "Upload failed" };
     const expectAction = {
-      type: Types.UPLOAD_PHOTO_CANCEL,
+      type: Types.UPLOAD_PHOTO_FAILURE,
       error: error
     };
 
