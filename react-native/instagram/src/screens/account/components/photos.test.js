@@ -1,7 +1,7 @@
-import { photos } from "../../../test/__mocks__/sample-data";
-import Photos from "./Photos";
+import { photos } from '../../../test/__mocks__/sample-data';
+import Photos from './Photos';
 
-describe("Photos component", () => {
+describe('Photos component', () => {
   let component, treeDOM;
 
   beforeEach(() => {
@@ -9,7 +9,7 @@ describe("Photos component", () => {
     component = shallow(<Photos data={photos} />);
   });
 
-  it("Renders correctly", () => {
+  it('Renders correctly', () => {
     expect(treeDOM).toMatchSnapshot();
   });
 });

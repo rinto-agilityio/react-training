@@ -1,8 +1,8 @@
-import React from "react";
-import { View, Text, Image } from "react-native";
+import React from 'react';
+import { View, Text, Image } from 'react-native';
 
-import { styles } from "./styles/Info";
-import CommonStyles from "../../../theme/common";
+import { styles } from './styles/Info';
+import CommonStyles from '../../../theme/common';
 
 export default class Info extends React.Component {
   render() {
@@ -18,7 +18,7 @@ export default class Info extends React.Component {
         </View>
         <Text>
           <Text style={CommonStyles.textBold}>{data.full_name}</Text>
-          {" - "}
+          {' - '}
           {data.biography}
         </Text>
       </View>

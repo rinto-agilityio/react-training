@@ -1,9 +1,9 @@
-import Immutable from "seamless-immutable";
-import { createReducer } from "reduxsauce";
-import { REHYDRATE } from "redux-persist/lib/constants";
+import Immutable from 'seamless-immutable';
+import { createReducer } from 'reduxsauce';
+import { REHYDRATE } from 'redux-persist/lib/constants';
 
-import { users } from "../../test/__mocks__/sample-data";
-import { Types } from "./actions";
+import { users } from '../../test/__mocks__/sample-data';
+import { Types } from './actions';
 
 export const INITIAL_STATE = Immutable({
   biography: null,

@@ -1,15 +1,15 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   textBold: {
-    fontWeight: "bold"
+    fontWeight: 'bold'
   },
   layoutRow: {
     flex: 1,
-    flexDirection: "row"
+    flexDirection: 'row'
   },
   layoutColumn: {
     flex: 1,
-    flexDirection: "column"
+    flexDirection: 'column'
   }
 });

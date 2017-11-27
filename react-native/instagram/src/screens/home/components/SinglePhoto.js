@@ -1,11 +1,11 @@
-import React from "react";
-import { View, Text, TextInput, Image } from "react-native";
+import React from 'react';
+import { View, Text, TextInput, Image } from 'react-native';
 
-import { styles } from "./styles/SinglePhoto";
-import CommonStyles from "../../../theme/common";
-import CommentInput from "../../../components/Comment";
-import PostAction from "./PostAction";
-import CommentList from "./CommentList";
+import { styles } from './styles/SinglePhoto';
+import CommonStyles from '../../../theme/common';
+import CommentInput from '../../../components/Comment';
+import PostAction from './PostAction';
+import CommentList from './CommentList';
 
 export default class SinglePhoto extends React.Component {
   constructor(props) {
@@ -37,7 +37,7 @@ export default class SinglePhoto extends React.Component {
         </View>
 
         <Image
-          resizeMode={"cover"}
+          resizeMode={'cover'}
           style={styles.photo}
           source={{ uri: item.display_url }}
         />

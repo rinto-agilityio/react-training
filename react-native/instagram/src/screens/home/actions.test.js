@@ -1,17 +1,17 @@
-import { Types, Creators } from "./actions";
+import { Types, Creators } from './actions';
 
-import { comments } from "../../test/__mocks__/sample-data";
+import { comments } from '../../test/__mocks__/sample-data';
 
-describe("Home actions", () => {
+describe('Home actions', () => {
   const mockComment = comments[0];
 
-  it("Return correct action type for getHomeDataRequest", () => {
+  it('Return correct action type for getHomeDataRequest', () => {
     const expectAction = { type: Types.GET_HOME_DATA_REQUEST };
 
     expect(Creators.getHomeDataRequest()).toEqual(expectAction);
   });
 
-  it("Return correct action type and comment for addComment", () => {
+  it('Return correct action type and comment for addComment', () => {
     const comment = {
       postId: mockComment.postId,
       owner: mockComment.owner,
@@ -26,7 +26,7 @@ describe("Home actions", () => {
     expect(Creators.addComment(comment)).toEqual(expectAction);
   });
 
-  it("Return correct action type and data for toogleLike", () => {
+  it('Return correct action type and data for toogleLike', () => {
     const data = {
       postId: mockComment.postId,
       userId: mockComment.owner.id

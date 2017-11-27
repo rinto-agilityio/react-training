@@ -1,14 +1,14 @@
-import { combineReducers, createStore, applyMiddleware, compose } from "redux";
-import { logger } from "redux-logger";
-import { persistStore, persistReducer } from "redux-persist";
-import storage from "redux-persist/es/storage";
+import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
+import { logger } from 'redux-logger';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/es/storage';
 
-import { homeReducer } from "../screens/home/reducer";
-import { uploadReducer } from "../screens/upload/reducer";
-import { accountReducer } from "../screens/account/reducer";
+import { homeReducer } from '../screens/home/reducer';
+import { uploadReducer } from '../screens/upload/reducer';
+import { accountReducer } from '../screens/account/reducer';
 
 const config = {
-  key: "instagram",
+  key: 'instagram',
   storage,
   debug: true
 };

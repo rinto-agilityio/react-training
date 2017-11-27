@@ -1,4 +1,4 @@
-import { Dimensions, StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from 'react-native';
 
 export const numColumns = 3;
 /**
@@ -7,7 +7,7 @@ export const numColumns = 3;
 const layoutPadding = 0,
   itemMargin = 3,
   itemSize =
-    (Dimensions.get("window").width -
+    (Dimensions.get('window').width -
       layoutPadding * 2 -
       itemMargin * numColumns * 2) /
     numColumns;

@@ -1,12 +1,12 @@
-import { Types } from "./actions";
-import { Types as UploadTypes } from "../upload/actions";
-import { REHYDRATE } from "redux-persist/lib/constants";
+import { Types } from './actions';
+import { Types as UploadTypes } from '../upload/actions';
+import { REHYDRATE } from 'redux-persist/lib/constants';
 
-import { photos, users } from "../../test/__mocks__/sample-data";
-import { homeReducer, INITIAL_STATE } from "./reducer";
+import { photos, users } from '../../test/__mocks__/sample-data';
+import { homeReducer, INITIAL_STATE } from './reducer';
 
-describe("Home reducer", () => {
-  it("Should handle REHYDRATE", () => {
+describe('Home reducer', () => {
+  it('Should handle REHYDRATE', () => {
     expect(
       homeReducer(INITIAL_STATE, {
         type: REHYDRATE,
@@ -21,7 +21,7 @@ describe("Home reducer", () => {
     );
   });
 
-  it("Should handle GET_HOME_DATA_REQUEST", () => {
+  it('Should handle GET_HOME_DATA_REQUEST', () => {
     expect(
       homeReducer(INITIAL_STATE, {
         type: Types.GET_HOME_DATA_REQUEST
@@ -33,7 +33,7 @@ describe("Home reducer", () => {
     );
   });
 
-  it("Add a new photo to data", () => {
+  it('Add a new photo to data', () => {
     const newState = homeReducer(INITIAL_STATE, {
       type: UploadTypes.UPLOAD_PHOTO_SUCCESS,
       response: {
@@ -43,14 +43,14 @@ describe("Home reducer", () => {
     expect(newState.data.length).toEqual(INITIAL_STATE.data.length + 1);
   });
 
-  describe("Fixed data for state", () => {
+  describe('Fixed data for state', () => {
     const mockUser = users[1];
     const mockUserId = 1,
       homeState = INITIAL_STATE.merge({
         data: photos
       });
 
-    it("Should add a new comment to post", () => {
+    it('Should add a new comment to post', () => {
       const postIdx = 1;
 
       const newState = homeReducer(homeState, {
@@ -58,7 +58,7 @@ describe("Home reducer", () => {
         comment: {
           postId: homeState.data[postIdx].id,
           owner: mockUser,
-          text: "My comment"
+          text: 'My comment'
         }
       });
 
@@ -67,7 +67,7 @@ describe("Home reducer", () => {
       );
     });
 
-    it("Should handle TOOGLE_LIKE: Increase like counting", () => {
+    it('Should handle TOOGLE_LIKE: Increase like counting', () => {
       const postIdx = 0;
 
       const newState = homeReducer(homeState, {
@@ -83,7 +83,7 @@ describe("Home reducer", () => {
       );
     });
 
-    it("Should handle TOOGLE_LIKE: Decrease like counting", () => {
+    it('Should handle TOOGLE_LIKE: Decrease like counting', () => {
       const postIdx = 1; // This has some like in mock data
 
       const newState = homeReducer(homeState, {

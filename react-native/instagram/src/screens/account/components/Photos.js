@@ -1,7 +1,7 @@
-import React from "react";
-import { View, Image, Text, FlatList } from "react-native";
+import React from 'react';
+import { View, Image, Text, FlatList } from 'react-native';
 
-import { styles, numColumns } from "./styles/Photos";
+import { styles, numColumns } from './styles/Photos';
 
 export default class Photos extends React.Component {
   render() {

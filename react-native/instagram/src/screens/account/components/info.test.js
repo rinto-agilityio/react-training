@@ -1,14 +1,14 @@
-import { users } from "../../../test/__mocks__/sample-data";
-import Info from "./Info";
+import { users } from '../../../test/__mocks__/sample-data';
+import Info from './Info';
 
-describe("Info component", () => {
+describe('Info component', () => {
   let treeDOM;
 
   beforeEach(() => {
     treeDOM = renderer.create(<Info data={users[0]} />);
   });
 
-  it("Renders correctly", () => {
+  it('Renders correctly', () => {
     expect(treeDOM).toMatchSnapshot();
   });
 });
