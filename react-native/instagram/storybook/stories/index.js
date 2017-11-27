@@ -5,3 +5,6 @@ require("../../src/components/comment.stories");
 
 require("../../src/screens/account/components/info.stories");
 require("../../src/screens/account/components/photo.stories");
+require("../../src/screens/home/components/commentList.stories");
+require("../../src/screens/home/components/postAction.stories");
+require("../../src/screens/home/components/singlePhoto.stories");
