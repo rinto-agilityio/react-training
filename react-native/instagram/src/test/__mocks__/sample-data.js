@@ -41,7 +41,7 @@ export const photos = [
     display_url:
       "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-15/e35/23498828_2151213871773296_819155850823204864_n.jpg",
     comments: [],
-    likes: [],
+    likes: [users[1].id, users[2].id],
     owner: users[1]
   },
   {
@@ -91,5 +91,28 @@ export const photos = [
     comments: [],
     likes: [],
     owner: users[1]
+  }
+];
+
+export const comments = [
+  {
+    id: 1,
+    text: "Awesome photo",
+    owner: users[0]
+  },
+  {
+    id: 2,
+    text: "Woow beautiful color.",
+    owner: users[1]
+  },
+  {
+    id: 3,
+    text: "This is art",
+    owner: users[0]
+  },
+  {
+    id: 4,
+    text: "Wow this is a fresh concept",
+    owner: users[2]
   }
 ];
