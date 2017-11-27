@@ -1,32 +1,35 @@
 # Instagram app
 
-## Testing notes
-I'm using `Jest` for snapshot testing
+Clone instagram app without auth:
 
-### Configuration
-Update `package.json` for Jest config
-1. `transformIgnorePatterns` config, [detail](https://gitlab.asoft-python.com/g-huynguyenvan/react-training/issues/4)
-```json
-"transformIgnorePatterns": [
-  "node_modules/(?!react-native|react-navigation)/"
-]
+* User can post new photo
+* Show full-width of screen at HomeScreen (the default screen)
+* Show list 3 photos in a single row at AccountScreen, the number items in a row
+  is flexible
+
+## Usage
+
+Run app, run unit test or storybook via `npm` or `yarn` (recommend)
+
+### Run app
+
+```
+yarn start
 ```
 
-2. `testMatch` config, check [official document](https://facebook.github.io/jest/docs/en/configuration.html#testmatch-array-string)
-```json
-"testMatch": ["**/src/**/*.test.js"]
+### Run unit test
+
+```
+yarn test
 ```
 
-3. `setupFiles` config to load mocks libs/variables, [detail](https://gitlab.asoft-python.com/g-huynguyenvan/react-training/issues/5)
-```json
-"setupFiles": ["./src/test/setup.js"]
+### Run storybook
+
+```
+yarn storybook
 ```
 
-4. `globals` config, [detail](https://gitlab.asoft-python.com/g-huynguyenvan/react-training/issues/6)
-```json
-"globals": {
-  "window": {}
-}
-```
+## Notes
 
-The `setup.js` file will mocking some 3rd libs
+* App only run on iOS for now
+* [Unit testing notes and configurations (for developer only)](notes/unit-testing.md)
