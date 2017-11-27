@@ -6,7 +6,8 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "test-coverage": "jest --coverage",
-    "updateSnapshot": "jest --updateSnapshot"
+    "updateSnapshot": "jest --updateSnapshot",
+    "storybook": "storybook start -p 7007 NODE_ENV=storybook"
   },
   "dependencies": {
     "babel-eslint": "^8.0.2",
@@ -26,12 +27,16 @@
     "seamless-immutable": "^7.1.2"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.2.16",
+    "@storybook/addon-links": "^3.2.16",
+    "@storybook/react-native": "^3.2.16",
     "babel-jest": "21.2.0",
     "babel-preset-react-native": "4.0.0",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "jest": "21.2.1",
     "jest-cli": "^21.2.1",
+    "prop-types": "^15.6.0",
     "react-dom": "^16.1.1",
     "react-test-renderer": "16.0.0"
   },
