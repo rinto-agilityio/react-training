@@ -2,6 +2,7 @@ import { Types } from "./actions";
 import { Types as UploadTypes } from "../upload/actions";
 import { REHYDRATE } from "redux-persist/lib/constants";
 
+import { photos, users } from "../../test/__mocks__/sample-data";
 import { homeReducer, INITIAL_STATE } from "./reducer";
 
 describe("Home reducer", () => {
@@ -43,12 +44,10 @@ describe("Home reducer", () => {
   });
 
   describe("Fixed data for state", () => {
+    const mockUser = users[1];
     const mockUserId = 1,
       homeState = INITIAL_STATE.merge({
-        data: [
-          { id: 1, comments: [], likes: [] },
-          { id: 2, comments: [], likes: [mockUserId] }
-        ]
+        data: photos
       });
 
     it("Should add a new comment to post", () => {
@@ -58,7 +57,7 @@ describe("Home reducer", () => {
         type: Types.ADD_COMMENT,
         comment: {
           postId: homeState.data[postIdx].id,
-          owner: {},
+          owner: mockUser,
           text: "My comment"
         }
       });
@@ -75,7 +74,7 @@ describe("Home reducer", () => {
         type: Types.TOOGLE_LIKE,
         data: {
           postId: homeState.data[postIdx].id,
-          userId: mockUserId
+          userId: mockUser.id
         }
       });
 
@@ -85,13 +84,13 @@ describe("Home reducer", () => {
     });
 
     it("Should handle TOOGLE_LIKE: Decrease like counting", () => {
-      const postIdx = 1;
+      const postIdx = 1; // This has some like in mock data
 
       const newState = homeReducer(homeState, {
         type: Types.TOOGLE_LIKE,
         data: {
           postId: homeState.data[postIdx].id,
-          userId: mockUserId
+          userId: mockUser.id
         }
       });
 

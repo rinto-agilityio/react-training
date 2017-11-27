@@ -97,21 +97,25 @@ export const photos = [
 export const comments = [
   {
     id: 1,
+    postId: photos[0],
     text: "Awesome photo",
     owner: users[0]
   },
   {
     id: 2,
+    postId: photos[0],
     text: "Woow beautiful color.",
     owner: users[1]
   },
   {
     id: 3,
+    postId: photos[1],
     text: "This is art",
     owner: users[0]
   },
   {
     id: 4,
+    postId: photos[2],
     text: "Wow this is a fresh concept",
     owner: users[2]
   }
