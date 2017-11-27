@@ -1,20 +1,20 @@
-import { Types, Creators } from "./actions";
+import { Types, Creators } from './actions';
 
-describe("Upload action", () => {
-  it("Return correct action type for uploadPhotoRequest", () => {
+describe('Upload action', () => {
+  it('Return correct action type for uploadPhotoRequest', () => {
     const expectAction = { type: Types.UPLOAD_PHOTO_REQUEST };
 
     expect(Creators.uploadPhotoRequest()).toEqual(expectAction);
   });
 
-  it("Return correct action type for uploadPhotoCancel", () => {
+  it('Return correct action type for uploadPhotoCancel', () => {
     const expectAction = { type: Types.UPLOAD_PHOTO_CANCEL };
 
     expect(Creators.uploadPhotoCancel()).toEqual(expectAction);
   });
 
-  it("Return correct action type for uploadPhotoSuccess", () => {
-    const response = { downloadUrl: "download_image_url" };
+  it('Return correct action type for uploadPhotoSuccess', () => {
+    const response = { downloadUrl: 'download_image_url' };
     const expectAction = {
       type: Types.UPLOAD_PHOTO_SUCCESS,
       response: response
@@ -23,8 +23,8 @@ describe("Upload action", () => {
     expect(Creators.uploadPhotoSuccess(response)).toEqual(expectAction);
   });
 
-  it("Return correct action type for uploadPhotoFailure", () => {
-    const error = { message: "Upload failed" };
+  it('Return correct action type for uploadPhotoFailure', () => {
+    const error = { message: 'Upload failed' };
     const expectAction = {
       type: Types.UPLOAD_PHOTO_FAILURE,
       error: error

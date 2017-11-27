@@ -1,9 +1,9 @@
-import Immutable from "seamless-immutable";
-import { createReducer } from "reduxsauce";
-import { REHYDRATE } from "redux-persist/lib/constants";
+import Immutable from 'seamless-immutable';
+import { createReducer } from 'reduxsauce';
+import { REHYDRATE } from 'redux-persist/lib/constants';
 
-import { Types } from "./actions";
-import { Types as UploadTypes } from "../upload/actions";
+import { Types } from './actions';
+import { Types as UploadTypes } from '../upload/actions';
 
 export const INITIAL_STATE = Immutable({
   data: []
@@ -25,7 +25,7 @@ const getHomeDataRequest = (state, action) => {
 const addPhotoToList = (state, action) => {
   return state
     .merge({ type: action.type })
-    .updateIn(["data"], arr => arr.concat([action.response]));
+    .updateIn(['data'], arr => arr.concat([action.response]));
 };
 
 const addComment = (state, action) => {
@@ -34,8 +34,8 @@ const addComment = (state, action) => {
 
   return state
     .merge({ type: action.type })
-    .updateIn(["data", postIdx, "comments"], arr =>
-      arr.concat([comment.merge({ id: Date.now() }).without("postId")])
+    .updateIn(['data', postIdx, 'comments'], arr =>
+      arr.concat([comment.merge({ id: Date.now() }).without('postId')])
     );
 };
 
@@ -55,7 +55,7 @@ const toogleLike = (state, action) => {
 
   return state
     .merge({ type: action.type })
-    .setIn(["data", postIdx, "likes"], newLikes);
+    .setIn(['data', postIdx, 'likes'], newLikes);
 };
 
 export const homeReducer = createReducer(INITIAL_STATE, {

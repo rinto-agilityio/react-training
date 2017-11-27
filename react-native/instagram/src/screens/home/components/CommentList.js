@@ -1,8 +1,8 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React from 'react';
+import { View, Text } from 'react-native';
 
-import { styles } from "./styles/CommentList";
-import CommonStyles from "../../../theme/common";
+import { styles } from './styles/CommentList';
+import CommonStyles from '../../../theme/common';
 export default class CommentList extends React.Component {
   render() {
     const { comments } = this.props;
@@ -15,7 +15,7 @@ export default class CommentList extends React.Component {
               <Text style={CommonStyles.textBold}>
                 {comment.owner.username}
               </Text>
-              {": " + comment.text}
+              {': ' + comment.text}
             </Text>
           );
         })}

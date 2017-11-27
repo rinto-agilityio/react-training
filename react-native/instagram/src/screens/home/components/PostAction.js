@@ -1,8 +1,8 @@
-import React from "react";
-import { View, Text, Image, TouchableHighlight } from "react-native";
+import React from 'react';
+import { View, Text, Image, TouchableHighlight } from 'react-native';
 
-import { styles } from "./styles/PostAction";
-import CommonStyles from "../../../theme/common";
+import { styles } from './styles/PostAction';
+import CommonStyles from '../../../theme/common';
 
 export default class PostAction extends React.Component {
   hanleLike() {
@@ -20,26 +20,26 @@ export default class PostAction extends React.Component {
 
   render() {
     const likeIcon = this.props.liked
-      ? require("../../../assets/icons/liked.png")
-      : require("../../../assets/icons/like.png");
+      ? require('../../../assets/icons/liked.png')
+      : require('../../../assets/icons/like.png');
 
     return (
       <View style={CommonStyles.layoutRow}>
         <TouchableHighlight
           className="icon-like"
           onPress={() => this.hanleLike()}
-          underlayColor={"transparent"}
+          underlayColor={'transparent'}
         >
           <Image style={styles.icon} source={likeIcon} />
         </TouchableHighlight>
         <TouchableHighlight
           className="icon-comment"
           onPress={() => this.toogleComment()}
-          underlayColor={"transparent"}
+          underlayColor={'transparent'}
         >
           <Image
             style={styles.icon}
-            source={require("../../../assets/icons/comment.png")}
+            source={require('../../../assets/icons/comment.png')}
           />
         </TouchableHighlight>
       </View>

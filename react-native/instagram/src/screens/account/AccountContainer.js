@@ -1,19 +1,19 @@
-import React from "react";
-import { Text, View, Image, StyleSheet } from "react-native";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
+import React from 'react';
+import { Text, View, Image, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-import { getAccountPhotos } from "../../helpers/account-data";
-import { Creators as AccountActionCreators } from "./actions";
-import Info from "./components/Info";
-import Photos from "./components/Photos";
-import CommonStyles from "../../theme/common";
+import { getAccountPhotos } from '../../helpers/account-data';
+import { Creators as AccountActionCreators } from './actions';
+import Info from './components/Info';
+import Photos from './components/Photos';
+import CommonStyles from '../../theme/common';
 
 class AccountContainer extends React.Component {
   static navigationOptions = {
     tabBarIcon: ({ tintColor }) => (
       <Image
-        source={require("../../assets/icons/avatar.png")}
+        source={require('../../assets/icons/avatar.png')}
         style={{ width: 24, height: 24 }}
       />
     )
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   info: {
     height: 150,
     borderBottomWidth: 1,
-    borderBottomColor: "#eee"
+    borderBottomColor: '#eee'
   }
 });
 

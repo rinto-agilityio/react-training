@@ -1,15 +1,15 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { TabNavigator } from "react-navigation";
-import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/es/integration/react";
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { TabNavigator } from 'react-navigation';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/es/integration/react';
 
-import configureStore from "./config/store";
-import HomeContainer from "./screens/home/HomeContainer";
-import AccountContainer from "./screens/account/AccountContainer";
-import UploadContainer from "./screens/upload/UploadContainer";
-import AppHeader from "./components/AppHeader";
-import Theme from "./theme";
+import configureStore from './config/store';
+import HomeContainer from './screens/home/HomeContainer';
+import AccountContainer from './screens/account/AccountContainer';
+import UploadContainer from './screens/upload/UploadContainer';
+import AppHeader from './components/AppHeader';
+import Theme from './theme';
 
 const { persistor, store } = configureStore();
 
@@ -20,10 +20,10 @@ const MainApp = TabNavigator(
     Account: { screen: AccountContainer }
   },
   {
-    tabBarPosition: "bottom",
+    tabBarPosition: 'bottom',
     animationEnabled: true,
     tabBarOptions: {
-      activeTintColor: "#e91e63"
+      activeTintColor: '#e91e63'
     }
   }
 );
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Theme.bgColor,
-    alignItems: "center",
-    justifyContent: "center"
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });

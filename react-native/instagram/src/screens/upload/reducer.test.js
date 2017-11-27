@@ -1,10 +1,10 @@
-import { Types } from "./actions";
-import { REHYDRATE } from "redux-persist/lib/constants";
+import { Types } from './actions';
+import { REHYDRATE } from 'redux-persist/lib/constants';
 
-import { uploadReducer, INITIAL_STATE } from "./reducer";
+import { uploadReducer, INITIAL_STATE } from './reducer';
 
-describe("Upload reducer", () => {
-  it("Should handle REHYDRATE", () => {
+describe('Upload reducer', () => {
+  it('Should handle REHYDRATE', () => {
     expect(uploadReducer(INITIAL_STATE, { type: REHYDRATE })).toEqual(
       INITIAL_STATE.merge({
         type: REHYDRATE,
@@ -13,7 +13,7 @@ describe("Upload reducer", () => {
     );
   });
 
-  it("Should handle UPLOAD_PHOTO_REQUEST", () => {
+  it('Should handle UPLOAD_PHOTO_REQUEST', () => {
     expect(
       uploadReducer(INITIAL_STATE, {
         type: Types.UPLOAD_PHOTO_REQUEST
@@ -26,7 +26,7 @@ describe("Upload reducer", () => {
     );
   });
 
-  it("Should handle UPLOAD_PHOTO_CANCEL", () => {
+  it('Should handle UPLOAD_PHOTO_CANCEL', () => {
     expect(
       uploadReducer(INITIAL_STATE, {
         type: Types.UPLOAD_PHOTO_CANCEL
@@ -39,10 +39,10 @@ describe("Upload reducer", () => {
     );
   });
 
-  it("Should handle UPLOAD_PHOTO_FAILURE", () => {
+  it('Should handle UPLOAD_PHOTO_FAILURE', () => {
     // Mocking error from api || firebase
     const error = {
-      message: "Upload failed"
+      message: 'Upload failed'
     };
 
     expect(
@@ -59,10 +59,10 @@ describe("Upload reducer", () => {
     );
   });
 
-  it("Should handle UPLOAD_PHOTO_SUCCESS", () => {
+  it('Should handle UPLOAD_PHOTO_SUCCESS', () => {
     // Mocking response from api || firebase
     const response = {
-      downloadUrl: "download_image_url"
+      downloadUrl: 'download_image_url'
     };
 
     expect(

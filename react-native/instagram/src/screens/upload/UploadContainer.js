@@ -1,17 +1,17 @@
-import React from "react";
-import { Text, Button, Image } from "react-native";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import ImagePicker from "react-native-image-picker";
+import React from 'react';
+import { Text, Button, Image } from 'react-native';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import ImagePicker from 'react-native-image-picker';
 
-import { Creators as UploadActionCreators } from "./actions";
-import { uploadImage } from "../../helpers/upload-image";
+import { Creators as UploadActionCreators } from './actions';
+import { uploadImage } from '../../helpers/upload-image';
 
 class UploadContainer extends React.Component {
   static navigationOptions = {
     tabBarIcon: ({ tintColor }) => (
       <Image
-        source={require("../../assets/icons/plus.png")}
+        source={require('../../assets/icons/plus.png')}
         style={{ width: 24, height: 24 }}
       />
     )
@@ -21,11 +21,11 @@ class UploadContainer extends React.Component {
     this.props.uploadPhotoRequest();
 
     var options = {
-      title: "Select Photo",
-      customButtons: [{ name: "fb", title: "Choose Photo from Facebook" }],
+      title: 'Select Photo',
+      customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }],
       storageOptions: {
         skipBackup: true,
-        path: "images"
+        path: 'images'
       }
     };
 
@@ -34,15 +34,15 @@ class UploadContainer extends React.Component {
      * The second arg is the callback which sends object: response (more info below in README)
      */
     ImagePicker.showImagePicker(options, response => {
-      console.log("Response = ", response);
+      console.log('Response = ', response);
 
       if (response.didCancel) {
-        console.log("User cancelled image picker");
+        console.log('User cancelled image picker');
         this.props.uploadPhotoCancel();
       } else if (response.error) {
-        console.log("ImagePicker Error: ", response.error);
+        console.log('ImagePicker Error: ', response.error);
       } else if (response.customButton) {
-        console.log("User tapped custom button: ", response.customButton);
+        console.log('User tapped custom button: ', response.customButton);
       } else {
         uploadImage(response)
           .then(response => {

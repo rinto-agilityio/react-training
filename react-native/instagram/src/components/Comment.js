@@ -1,12 +1,12 @@
-import React from "react";
-import { View, TextInput, Image } from "react-native";
+import React from 'react';
+import { View, TextInput, Image } from 'react-native';
 
-import { styles } from "./styles/Comment";
+import { styles } from './styles/Comment';
 
 export default class Comment extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { text: "" };
+    this.state = { text: '' };
   }
 
   submitComment = () => {
@@ -19,7 +19,7 @@ export default class Comment extends React.Component {
         text: this.state.text
       });
 
-      this.setState({ text: "" });
+      this.setState({ text: '' });
     }
   };
 

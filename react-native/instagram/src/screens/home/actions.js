@@ -1,7 +1,7 @@
-import { createActions } from "reduxsauce";
+import { createActions } from 'reduxsauce';
 
 export const { Types, Creators } = createActions({
   getHomeDataRequest: null,
-  addComment: ["comment"],
-  toogleLike: ["data"]
+  addComment: ['comment'],
+  toogleLike: ['data']
 });

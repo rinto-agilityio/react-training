@@ -1,10 +1,10 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
-import Theme from "../../../../theme";
+import Theme from '../../../../theme';
 
 export const styles = StyleSheet.create({
   header: {
-    alignItems: "center",
+    alignItems: 'center',
     padding: Theme.baseSpacing
   },
   footer: {
@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     marginRight: 10
   },
   photo: {
-    width: "100%",
+    width: '100%',
     height: 300
   }
 });
