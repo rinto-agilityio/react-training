@@ -1,20 +1,10 @@
+import { photos } from "../../../test/__mocks__/sample-data";
 import SinglePhoto from "./SinglePhoto";
 
 describe("SinglePhoto component", () => {
-  const item = {
-    id: 1,
-    display_url: "",
-    comments: [],
-    likes: [],
-    owner: {
-      profile_pic_url: "profile.jpg",
-      username: "user01",
-      biography: "React-Native developer"
-    }
-  };
+  const item = photos[0];
 
   beforeEach(() => {
-    // let submitComment, toogleLike;
     const component = shallow(<SinglePhoto item={item} />);
   });
 
