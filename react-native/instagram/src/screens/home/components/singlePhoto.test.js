@@ -1,20 +1,11 @@
+import { photos } from "../../../test/__mocks__/sample-data";
 import SinglePhoto from "./SinglePhoto";
 
 describe("SinglePhoto component", () => {
-  const item = {
-    id: 1,
-    display_url: "",
-    comments: [],
-    likes: [],
-    owner: {
-      profile_pic_url: "profile.jpg",
-      username: "user01",
-      biography: "React-Native developer"
-    }
-  };
+  const item = photos[0],
+    item2 = photos[1]; // This data has some likes
 
   beforeEach(() => {
-    // let submitComment, toogleLike;
     const component = shallow(<SinglePhoto item={item} />);
   });
 
@@ -25,18 +16,6 @@ describe("SinglePhoto component", () => {
   });
 
   it("Renders correctly like photo", () => {
-    const item2 = {
-      id: 1,
-      display_url: "",
-      comments: [],
-      likes: [123, 456],
-      owner: {
-        id: 123,
-        profile_pic_url: "profile.jpg",
-        username: "user01",
-        biography: "React-Native developer"
-      }
-    };
     const treeDOM = renderer.create(<SinglePhoto item={item2} />).toJSON();
 
     expect(treeDOM).toMatchSnapshot();

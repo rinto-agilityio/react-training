@@ -1,22 +1,12 @@
+import { photos } from "../../../test/__mocks__/sample-data";
 import Photos from "./Photos";
 
 describe("Photos component", () => {
   let component, treeDOM;
-  const data = [
-    {
-      display_url: "image01.jpg"
-    },
-    {
-      display_url: "image02.jpg"
-    },
-    {
-      display_url: "image03.jpg"
-    }
-  ];
 
   beforeEach(() => {
-    treeDOM = renderer.create(<Photos data={data} />).toJSON();
-    component = shallow(<Photos data={data} />);
+    treeDOM = renderer.create(<Photos data={photos} />).toJSON();
+    component = shallow(<Photos data={photos} />);
   });
 
   it("Renders correctly", () => {

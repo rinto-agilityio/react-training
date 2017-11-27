@@ -1,6 +1,10 @@
 import { Types, Creators } from "./actions";
 
+import { comments } from "../../test/__mocks__/sample-data";
+
 describe("Home actions", () => {
+  const mockComment = comments[0];
+
   it("Return correct action type for getHomeDataRequest", () => {
     const expectAction = { type: Types.GET_HOME_DATA_REQUEST };
 
@@ -9,9 +13,9 @@ describe("Home actions", () => {
 
   it("Return correct action type and comment for addComment", () => {
     const comment = {
-      postId: 1,
-      owner: {},
-      text: "My comment"
+      postId: mockComment.postId,
+      owner: mockComment.owner,
+      text: mockComment.text
     };
 
     const expectAction = {
@@ -24,8 +28,8 @@ describe("Home actions", () => {
 
   it("Return correct action type and data for toogleLike", () => {
     const data = {
-      postId: 1,
-      userId: 10
+      postId: mockComment.postId,
+      userId: mockComment.owner.id
     };
     const expectAction = {
       type: Types.TOOGLE_LIKE,

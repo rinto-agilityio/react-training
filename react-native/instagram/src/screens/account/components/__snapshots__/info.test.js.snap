@@ -26,7 +26,7 @@ exports[`Info component Renders correctly 1`] = `
     <Image
       source={
         Object {
-          "uri": "profile.jpg",
+          "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-19/s150x150/14719833_310540259320655_1605122788543168512_a.jpg",
         }
       }
       style={
@@ -53,7 +53,7 @@ exports[`Info component Renders correctly 1`] = `
         ]
       }
     >
-      user01
+      instagram
     </Text>
   </View>
   <Text
@@ -70,9 +70,11 @@ exports[`Info component Renders correctly 1`] = `
           "fontWeight": "bold",
         }
       }
-    />
+    >
+      Instagram
+    </Text>
      - 
-    React-Native developer
+    Discovering — and telling — stories from around the world. Curated by Instagram's community team.
   </Text>
 </View>
 `;

@@ -19,7 +19,7 @@ exports[`SinglePhoto component Renders correctly like photo 1`] = `
     <Image
       source={
         Object {
-          "uri": "profile.jpg",
+          "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-19/s150x150/19764837_461147117574705_5216900266812506112_a.jpg",
         }
       }
       style={
@@ -36,14 +36,14 @@ exports[`SinglePhoto component Renders correctly like photo 1`] = `
       allowFontScaling={true}
       ellipsizeMode="tail"
     >
-      user01
+      phorgasm
     </Text>
   </View>
   <Image
     resizeMode="cover"
     source={
       Object {
-        "uri": "",
+        "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-15/e35/23498828_2151213871773296_819155850823204864_n.jpg",
       }
     }
     style={
@@ -185,7 +185,7 @@ exports[`SinglePhoto component Renders correctly without like 1`] = `
     <Image
       source={
         Object {
-          "uri": "profile.jpg",
+          "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-19/s150x150/14719833_310540259320655_1605122788543168512_a.jpg",
         }
       }
       style={
@@ -202,14 +202,14 @@ exports[`SinglePhoto component Renders correctly without like 1`] = `
       allowFontScaling={true}
       ellipsizeMode="tail"
     >
-      user01
+      instagram
     </Text>
   </View>
   <Image
     resizeMode="cover"
     source={
       Object {
-        "uri": "",
+        "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-15/e35/23734057_146614452628759_6006637352594702336_n.jpg",
       }
     }
     style={

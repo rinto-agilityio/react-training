@@ -1,11 +1,10 @@
+import { users } from "../test/__mocks__/sample-data";
 import Comment from "./Comment";
 
 describe("Comment component", () => {
   let component, treeDOM, textInput;
   const defaultState = { text: "" },
-    owner = {
-      profile_pic_url: "avatar_url.png"
-    },
+    owner = users[0],
     mockSubmit = jest.fn();
 
   beforeEach(() => {
