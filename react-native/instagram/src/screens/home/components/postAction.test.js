@@ -1,13 +1,19 @@
+import { users, photos } from '../../../test/__mocks__/sample-data';
 import PostAction from './PostAction';
 
 describe('PostAction component', () => {
   let imageUri, iconLike, iconComment;
-  const mockToogleComment = jest.fn(),
+  const userId = users[0].id,
+    postId = photos[0].id,
+    mockToogleComment = jest.fn(),
     mockToogleLike = jest.fn();
 
   beforeEach(() => {
     const component = shallow(
       <PostAction
+        userId={userId}
+        postId={postId}
+        liked={false}
         toogleLike={mockToogleLike}
         toogleComment={mockToogleComment}
       />
@@ -18,13 +24,17 @@ describe('PostAction component', () => {
   });
 
   it('Renders correctly for new image', () => {
-    const treeDOM = renderer.create(<PostAction liked={false} />).toJSON();
+    const treeDOM = renderer
+      .create(<PostAction userId={userId} postId={postId} liked={false} />)
+      .toJSON();
 
     expect(treeDOM).toMatchSnapshot();
   });
 
   it('Renders correctly for like image', () => {
-    const treeDOM = renderer.create(<PostAction liked={true} />).toJSON();
+    const treeDOM = renderer
+      .create(<PostAction userId={userId} postId={postId} liked={true} />)
+      .toJSON();
 
     expect(treeDOM).toMatchSnapshot();
   });

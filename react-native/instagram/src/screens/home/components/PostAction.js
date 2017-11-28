@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image, TouchableHighlight } from 'react-native';
+import PropTypes from 'prop-types';
 
 import { styles } from './styles/PostAction';
 import CommonStyles from '../../../themes/common';
@@ -45,6 +46,14 @@ const PostAction = ({ postId, userId, liked, toogleLike, toogleComment }) => {
       </TouchableHighlight>
     </View>
   );
+};
+
+PostAction.propTypes = {
+  postId: PropTypes.number.isRequired,
+  userId: PropTypes.number.isRequired,
+  liked: PropTypes.bool.isRequired,
+  toogleLike: PropTypes.func,
+  toogleComment: PropTypes.func
 };
 
 export default PostAction;

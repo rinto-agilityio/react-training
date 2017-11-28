@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, TextInput, Image } from 'react-native';
+import PropTypes from 'prop-types';
 
 import { styles } from './styles/SinglePhoto';
 import CommonStyles from '../../../themes/common';
@@ -7,9 +8,9 @@ import CommentInput from '../../../components/Comment';
 import PostAction from './PostAction';
 import CommentList from './CommentList';
 
-export default class SinglePhoto extends React.Component {
-  constructor(props) {
-    super(props);
+class SinglePhoto extends React.Component {
+  constructor() {
+    super();
     this.state = {
       showComment: false
     };
@@ -71,3 +72,11 @@ export default class SinglePhoto extends React.Component {
     );
   }
 }
+
+SinglePhoto.propTypes = {
+  item: PropTypes.object.isRequired,
+  submitComment: PropTypes.func,
+  toogleLike: PropTypes.func
+};
+
+export default SinglePhoto;

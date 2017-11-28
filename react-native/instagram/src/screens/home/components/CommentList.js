@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import PropTypes from 'prop-types';
 
 import { styles } from './styles/CommentList';
 import CommonStyles from '../../../themes/common';
@@ -16,5 +17,9 @@ const CommentList = ({ comments }) => (
     })}
   </View>
 );
+
+CommentList.propTypes = {
+  comments: PropTypes.array
+};
 
 export default CommentList;
