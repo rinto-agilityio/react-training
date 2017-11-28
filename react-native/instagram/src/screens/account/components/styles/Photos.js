@@ -1,6 +1,7 @@
-import { Dimensions, StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native'
 
-export const numColumns = 3;
+export const numColumns = 3
+
 /**
  * Calculate size for each item
  */
@@ -10,7 +11,7 @@ const layoutPadding = 0,
     (Dimensions.get('window').width -
       layoutPadding * 2 -
       itemMargin * numColumns * 2) /
-    numColumns;
+    numColumns
 
 export const styles = StyleSheet.create({
   list: {
@@ -22,4 +23,4 @@ export const styles = StyleSheet.create({
     width: itemSize,
     height: itemSize
   }
-});
+})

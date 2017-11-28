@@ -1,9 +1,9 @@
-import React from 'react';
-import { View, Text, Image, TouchableHighlight } from 'react-native';
-import PropTypes from 'prop-types';
+import React from 'react'
+import { View, Text, Image, TouchableHighlight } from 'react-native'
+import PropTypes from 'prop-types'
 
-import { styles } from './styles/PostAction';
-import CommonStyles from '../../../themes/common';
+import { styles } from './styles/PostAction'
+import CommonStyles from '../../../themes/common'
 
 const PostAction = ({ postId, userId, liked, toogleLike, toogleComment }) => {
   /**
@@ -13,17 +13,17 @@ const PostAction = ({ postId, userId, liked, toogleLike, toogleComment }) => {
     toogleLike({
       postId,
       userId
-    });
-  };
+    })
+  }
 
   // Display comment input for user
   const handleComment = () => {
-    toogleComment();
-  };
+    toogleComment()
+  }
 
   const likeIcon = liked
     ? require('../../../assets/icons/liked.png')
-    : require('../../../assets/icons/like.png');
+    : require('../../../assets/icons/like.png')
 
   return (
     <View style={CommonStyles.layoutRow}>
@@ -45,8 +45,8 @@ const PostAction = ({ postId, userId, liked, toogleLike, toogleComment }) => {
         />
       </TouchableHighlight>
     </View>
-  );
-};
+  )
+}
 
 PostAction.propTypes = {
   postId: PropTypes.number.isRequired,
@@ -54,6 +54,6 @@ PostAction.propTypes = {
   liked: PropTypes.bool.isRequired,
   toogleLike: PropTypes.func,
   toogleComment: PropTypes.func
-};
+}
 
-export default PostAction;
+export default PostAction

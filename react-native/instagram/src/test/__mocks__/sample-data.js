@@ -25,7 +25,7 @@ export const users = [
       'https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-19/s150x150/22430071_182024072367522_8088673099232313344_n.jpg',
     username: 'intercontinentaldanang'
   }
-];
+]
 
 export const photos = [
   {
@@ -92,7 +92,7 @@ export const photos = [
     likes: [],
     owner: users[1]
   }
-];
+]
 
 export const comments = [
   {
@@ -119,4 +119,4 @@ export const comments = [
     text: 'Wow this is a fresh concept',
     owner: users[2]
   }
-];
+]

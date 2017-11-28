@@ -1,17 +1,17 @@
-import React from 'react';
-import { Text, View } from 'react-native';
-import { TabNavigator } from 'react-navigation';
-import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/es/integration/react';
+import React from 'react'
+import { Text, View } from 'react-native'
+import { TabNavigator } from 'react-navigation'
+import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/es/integration/react'
 
-import configureStore from './config/store';
-import HomeContainer from './screens/home/HomeContainer';
-import AccountContainer from './screens/account/AccountContainer';
-import UploadContainer from './screens/upload/UploadContainer';
-import AppHeader from './components/AppHeader';
-import { styles } from './styles/App';
+import configureStore from './config/store'
+import HomeContainer from './screens/home/HomeContainer'
+import AccountContainer from './screens/account/AccountContainer'
+import UploadContainer from './screens/upload/UploadContainer'
+import AppHeader from './components/AppHeader'
+import { styles } from './styles/App'
 
-const { persistor, store } = configureStore();
+const { persistor, store } = configureStore()
 
 const MainApp = TabNavigator(
   {
@@ -26,7 +26,7 @@ const MainApp = TabNavigator(
       activeTintColor: '#e91e63'
     }
   }
-);
+)
 
 export default class App extends React.Component {
   render() {
@@ -39,6 +39,6 @@ export default class App extends React.Component {
           </View>
         </PersistGate>
       </Provider>
-    );
+    )
   }
 }

@@ -1,14 +1,14 @@
-import React from 'react';
-import { Text, View, Image } from 'react-native';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import React from 'react'
+import { Text, View, Image } from 'react-native'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
-import { getAccountPhotos } from '../../helpers/account-data';
-import { Creators as AccountActionCreators } from './actions';
-import Info from './components/Info';
-import Photos from './components/Photos';
-import CommonStyles from '../../themes/common';
-import { styles } from './styles/AccountContainer';
+import { getAccountPhotos } from '../../helpers/account-data'
+import { Creators as AccountActionCreators } from './actions'
+import Info from './components/Info'
+import Photos from './components/Photos'
+import CommonStyles from '../../themes/common'
+import { styles } from './styles/AccountContainer'
 
 class AccountContainer extends React.Component {
   static navigationOptions = {
@@ -18,15 +18,15 @@ class AccountContainer extends React.Component {
         style={{ width: 24, height: 24 }}
       />
     )
-  };
+  }
 
   componentDidMount() {
-    this.props.loadAccountData();
+    this.props.loadAccountData()
   }
 
   render() {
     const { accountData, allPhotos } = this.props,
-      myPhotos = getAccountPhotos(allPhotos, accountData);
+      myPhotos = getAccountPhotos(allPhotos, accountData)
 
     return (
       <View style={CommonStyles.layoutColumn}>
@@ -35,7 +35,7 @@ class AccountContainer extends React.Component {
         </View>
         <Photos data={myPhotos} />
       </View>
-    );
+    )
   }
 }
 
@@ -45,14 +45,14 @@ const mapDispatchToProps = dispatch => {
       ...AccountActionCreators
     },
     dispatch
-  );
-};
+  )
+}
 
 const mapStateToProps = state => {
   return {
     accountData: state.account,
     allPhotos: state.home.data
-  };
-};
+  }
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(AccountContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(AccountContainer)

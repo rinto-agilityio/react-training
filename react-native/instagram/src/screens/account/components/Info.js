@@ -1,9 +1,9 @@
-import React from 'react';
-import { View, Text, Image } from 'react-native';
-import PropTypes from 'prop-types';
+import React from 'react'
+import { View, Text, Image } from 'react-native'
+import PropTypes from 'prop-types'
 
-import { styles } from './styles/Info';
-import CommonStyles from '../../../themes/common';
+import { styles } from './styles/Info'
+import CommonStyles from '../../../themes/common'
 
 const Info = ({ data }) => (
   <View style={[styles.wrapper, CommonStyles.layoutColumn]}>
@@ -19,10 +19,10 @@ const Info = ({ data }) => (
       {data.biography}
     </Text>
   </View>
-);
+)
 
 Info.propTypes = {
   data: PropTypes.object.isRequired
-};
+}
 
-export default Info;
+export default Info

@@ -1,7 +1,7 @@
-import { Types } from './actions';
-import { REHYDRATE } from 'redux-persist/lib/constants';
+import { Types } from './actions'
+import { REHYDRATE } from 'redux-persist/lib/constants'
 
-import { uploadReducer, INITIAL_STATE } from './reducer';
+import { uploadReducer, INITIAL_STATE } from './reducer'
 
 describe('Upload reducer', () => {
   it('Should handle REHYDRATE', () => {
@@ -10,8 +10,8 @@ describe('Upload reducer', () => {
         type: REHYDRATE,
         isUploading: false
       })
-    );
-  });
+    )
+  })
 
   it('Should handle UPLOAD_PHOTO_REQUEST', () => {
     expect(
@@ -23,8 +23,8 @@ describe('Upload reducer', () => {
         type: Types.UPLOAD_PHOTO_REQUEST,
         isUploading: true
       })
-    );
-  });
+    )
+  })
 
   it('Should handle UPLOAD_PHOTO_CANCEL', () => {
     expect(
@@ -36,14 +36,14 @@ describe('Upload reducer', () => {
         type: Types.UPLOAD_PHOTO_CANCEL,
         isUploading: false
       })
-    );
-  });
+    )
+  })
 
   it('Should handle UPLOAD_PHOTO_FAILURE', () => {
     // Mocking error from api || firebase
     const error = {
       message: 'Upload failed'
-    };
+    }
 
     expect(
       uploadReducer(INITIAL_STATE, {
@@ -56,14 +56,14 @@ describe('Upload reducer', () => {
         data: null,
         error: error
       })
-    );
-  });
+    )
+  })
 
   it('Should handle UPLOAD_PHOTO_SUCCESS', () => {
     // Mocking response from api || firebase
     const response = {
       downloadUrl: 'download_image_url'
-    };
+    }
 
     expect(
       uploadReducer(INITIAL_STATE, {
@@ -77,6 +77,6 @@ describe('Upload reducer', () => {
         isUploading: false,
         error: null
       })
-    );
-  });
-});
+    )
+  })
+})

@@ -6,4 +6,4 @@ export default {
   borderColor: '#eee',
   borderInputColor: '#a7a7a7',
   fontSizeLarge: 24
-};
+}

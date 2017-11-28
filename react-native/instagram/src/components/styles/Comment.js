@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import Themes from '../../themes';
+import { StyleSheet } from 'react-native'
+import Themes from '../../themes'
 
 export const styles = StyleSheet.create({
   comment: {
@@ -22,4 +22,4 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     width: '95%'
   }
-});
+})

@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
   icon: {
@@ -6,4 +6,4 @@ export const styles = StyleSheet.create({
     height: 20,
     marginRight: 10
   }
-});
+})

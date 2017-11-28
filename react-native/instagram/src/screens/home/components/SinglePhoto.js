@@ -1,31 +1,31 @@
-import React from 'react';
-import { View, Text, TextInput, Image } from 'react-native';
-import PropTypes from 'prop-types';
+import React from 'react'
+import { View, Text, TextInput, Image } from 'react-native'
+import PropTypes from 'prop-types'
 
-import { styles } from './styles/SinglePhoto';
-import CommonStyles from '../../../themes/common';
-import CommentInput from '../../../components/Comment';
-import PostAction from './PostAction';
-import CommentList from './CommentList';
+import { styles } from './styles/SinglePhoto'
+import CommonStyles from '../../../themes/common'
+import CommentInput from '../../../components/Comment'
+import PostAction from './PostAction'
+import CommentList from './CommentList'
 
 class SinglePhoto extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
       showComment: false
-    };
+    }
   }
 
   toogleComment = () => {
     this.setState({
       showComment: !this.state.showComment
-    });
-  };
+    })
+  }
 
   render() {
     const { item, submitComment, toogleLike } = this.props,
       likeCounting = item.likes.length,
-      liked = item.likes.find(i => i === item.owner.id);
+      liked = item.likes.find(i => i === item.owner.id)
 
     return (
       <View>
@@ -69,7 +69,7 @@ class SinglePhoto extends React.Component {
           )}
         </View>
       </View>
-    );
+    )
   }
 }
 
@@ -77,6 +77,6 @@ SinglePhoto.propTypes = {
   item: PropTypes.object.isRequired,
   submitComment: PropTypes.func,
   toogleLike: PropTypes.func
-};
+}
 
-export default SinglePhoto;
+export default SinglePhoto

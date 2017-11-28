@@ -1,9 +1,9 @@
-import { Types } from './actions';
-import { Types as UploadTypes } from '../upload/actions';
-import { REHYDRATE } from 'redux-persist/lib/constants';
+import { Types } from './actions'
+import { Types as UploadTypes } from '../upload/actions'
+import { REHYDRATE } from 'redux-persist/lib/constants'
 
-import { photos, users } from '../../test/__mocks__/sample-data';
-import { homeReducer, INITIAL_STATE } from './reducer';
+import { photos, users } from '../../test/__mocks__/sample-data'
+import { homeReducer, INITIAL_STATE } from './reducer'
 
 describe('Home reducer', () => {
   it('Should handle REHYDRATE', () => {
@@ -18,8 +18,8 @@ describe('Home reducer', () => {
       INITIAL_STATE.merge({
         type: REHYDRATE
       })
-    );
-  });
+    )
+  })
 
   it('Should handle GET_HOME_DATA_REQUEST', () => {
     expect(
@@ -30,8 +30,8 @@ describe('Home reducer', () => {
       INITIAL_STATE.merge({
         type: Types.GET_HOME_DATA_REQUEST
       })
-    );
-  });
+    )
+  })
 
   it('Add a new photo to data', () => {
     const newState = homeReducer(INITIAL_STATE, {
@@ -39,19 +39,19 @@ describe('Home reducer', () => {
       response: {
         id: Date.now()
       }
-    });
-    expect(newState.data.length).toEqual(INITIAL_STATE.data.length + 1);
-  });
+    })
+    expect(newState.data.length).toEqual(INITIAL_STATE.data.length + 1)
+  })
 
   describe('Fixed data for state', () => {
-    const mockUser = users[1];
+    const mockUser = users[1]
     const mockUserId = 1,
       homeState = INITIAL_STATE.merge({
         data: photos
-      });
+      })
 
     it('Should add a new comment to post', () => {
-      const postIdx = 1;
+      const postIdx = 1
 
       const newState = homeReducer(homeState, {
         type: Types.ADD_COMMENT,
@@ -60,15 +60,15 @@ describe('Home reducer', () => {
           owner: mockUser,
           text: 'My comment'
         }
-      });
+      })
 
       expect(newState.data[postIdx].comments.length).toEqual(
         homeState.data[postIdx].comments.length + 1
-      );
-    });
+      )
+    })
 
     it('Should handle TOOGLE_LIKE: Increase like counting', () => {
-      const postIdx = 0;
+      const postIdx = 0
 
       const newState = homeReducer(homeState, {
         type: Types.TOOGLE_LIKE,
@@ -76,15 +76,15 @@ describe('Home reducer', () => {
           postId: homeState.data[postIdx].id,
           userId: mockUser.id
         }
-      });
+      })
 
       expect(newState.data[postIdx].likes.length).toEqual(
         homeState.data[postIdx].likes.length + 1
-      );
-    });
+      )
+    })
 
     it('Should handle TOOGLE_LIKE: Decrease like counting', () => {
-      const postIdx = 1; // This has some like in mock data
+      const postIdx = 1 // This has some like in mock data
 
       const newState = homeReducer(homeState, {
         type: Types.TOOGLE_LIKE,
@@ -92,11 +92,11 @@ describe('Home reducer', () => {
           postId: homeState.data[postIdx].id,
           userId: mockUser.id
         }
-      });
+      })
 
       expect(newState.data[postIdx].likes.length).toEqual(
         homeState.data[postIdx].likes.length - 1
-      );
-    });
-  });
-});
+      )
+    })
+  })
+})

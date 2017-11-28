@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
   info: {
@@ -6,4 +6,4 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#eee'
   }
-});
+})

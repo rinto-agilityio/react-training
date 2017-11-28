@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
-import Themes from '../../../../themes';
+import Themes from '../../../../themes'
 
 export const styles = StyleSheet.create({
   header: {
@@ -20,4 +20,4 @@ export const styles = StyleSheet.create({
     width: '100%',
     height: 300
   }
-});
+})

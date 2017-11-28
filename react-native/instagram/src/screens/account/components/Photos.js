@@ -1,8 +1,8 @@
-import React from 'react';
-import { View, Image, Text, FlatList } from 'react-native';
-import PropTypes from 'prop-types';
+import React from 'react'
+import { View, Image, Text, FlatList } from 'react-native'
+import PropTypes from 'prop-types'
 
-import { styles, numColumns } from './styles/Photos';
+import { styles, numColumns } from './styles/Photos'
 
 const Photos = ({ data }) => (
   <View style={styles.list}>
@@ -15,10 +15,10 @@ const Photos = ({ data }) => (
       numColumns={numColumns}
     />
   </View>
-);
+)
 
 Photos.propTypes = {
   data: PropTypes.array.isRequired
-};
+}
 
-export default Photos;
+export default Photos

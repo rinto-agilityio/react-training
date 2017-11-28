@@ -1,10 +1,10 @@
-import React from 'react';
-import { Text, View, Image, FlatList } from 'react-native';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import React from 'react'
+import { Text, View, Image, FlatList } from 'react-native'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
-import { Creators as HomeActionCreators } from './actions';
-import SinglePhoto from './components/SinglePhoto';
+import { Creators as HomeActionCreators } from './actions'
+import SinglePhoto from './components/SinglePhoto'
 
 class HomeContainer extends React.Component {
   static navigationOptions = {
@@ -14,25 +14,25 @@ class HomeContainer extends React.Component {
         style={{ width: 24, height: 24 }}
       />
     )
-  };
+  }
 
   componentDidMount() {
-    this.props.getHomeDataRequest();
+    this.props.getHomeDataRequest()
   }
 
   addPostComment = data => {
-    this.props.addComment(data);
-  };
+    this.props.addComment(data)
+  }
 
   toogleLike = data => {
-    this.props.toogleLike(data);
-  };
+    this.props.toogleLike(data)
+  }
 
   render() {
-    const { homeData } = this.props;
+    const { homeData } = this.props
 
     if (!homeData.length) {
-      return <Text>No data, please upload some photos</Text>;
+      return <Text>No data, please upload some photos</Text>
     }
 
     return (
@@ -48,7 +48,7 @@ class HomeContainer extends React.Component {
         )}
         keyExtractor={(item, index) => index}
       />
-    );
+    )
   }
 }
 
@@ -58,13 +58,13 @@ const mapDispatchToProps = dispatch => {
       ...HomeActionCreators
     },
     dispatch
-  );
-};
+  )
+}
 
 const mapStateToProps = state => {
   return {
     homeData: state.home.data
-  };
-};
+  }
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer)

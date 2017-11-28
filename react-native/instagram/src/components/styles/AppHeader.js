@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import Themes from '../../themes';
+import { StyleSheet } from 'react-native'
+import Themes from '../../themes'
 
 export const styles = StyleSheet.create({
   wrapper: {
@@ -15,4 +15,4 @@ export const styles = StyleSheet.create({
   brand: {
     fontSize: Themes.fontSizeLarge
   }
-});
+})

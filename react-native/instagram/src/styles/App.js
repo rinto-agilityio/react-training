@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import Themes from '../themes';
+import { StyleSheet } from 'react-native'
+import Themes from '../themes'
 
 export const styles = StyleSheet.create({
   container: {
@@ -8,4 +8,4 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   }
-});
+})
