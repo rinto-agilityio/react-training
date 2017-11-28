@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
+import PropTypes from 'prop-types';
 
 import { styles } from './styles/Info';
 import CommonStyles from '../../../themes/common';
@@ -19,5 +20,9 @@ const Info = ({ data }) => (
     </Text>
   </View>
 );
+
+Info.propTypes = {
+  data: PropTypes.object.isRequired
+};
 
 export default Info;
