@@ -54,6 +54,7 @@
     "coverageFormats": ["json", "html"]
   },
   "prettier": {
-    "singleQuote": true
+    "singleQuote": true,
+    "semi": false
   }
 }
