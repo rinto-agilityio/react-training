@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { TabNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/es/integration/react';
@@ -9,7 +9,7 @@ import HomeContainer from './screens/home/HomeContainer';
 import AccountContainer from './screens/account/AccountContainer';
 import UploadContainer from './screens/upload/UploadContainer';
 import AppHeader from './components/AppHeader';
-import Themes from './themes';
+import { styles } from './styles/App';
 
 const { persistor, store } = configureStore();
 
@@ -42,12 +42,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: Themes.bgColor,
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-});
