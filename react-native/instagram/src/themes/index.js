@@ -4,5 +4,6 @@ export default {
   bgColor: '#fff',
   navigatorBgColor: '#f9f9f9',
   borderColor: '#eee',
-  borderInputColor: '#a7a7a7'
+  borderInputColor: '#a7a7a7',
+  fontSizeLarge: 24
 };

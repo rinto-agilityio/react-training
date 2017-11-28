@@ -18,6 +18,6 @@ export const styles = StyleSheet.create({
   },
   username: {
     marginLeft: 20,
-    fontSize: 28
+    fontSize: Themes.fontSizeLarge
   }
 });

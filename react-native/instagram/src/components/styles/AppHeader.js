@@ -13,6 +13,6 @@ export const styles = StyleSheet.create({
     borderColor: Themes.borderColor
   },
   brand: {
-    fontSize: 24
+    fontSize: Themes.fontSizeLarge
   }
 });
