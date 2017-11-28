@@ -4,24 +4,20 @@ import { View, Text, Image } from 'react-native';
 import { styles } from './styles/Info';
 import CommonStyles from '../../../themes/common';
 
-export default class Info extends React.Component {
-  render() {
-    const { data } = this.props;
+const Info = ({ data }) => (
+  <View style={[styles.wrapper, CommonStyles.layoutColumn]}>
+    <View style={styles.avatarWrapper}>
+      <Image style={styles.avatar} source={{ uri: data.profile_pic_url }} />
+      <Text style={[styles.username, CommonStyles.textBold]}>
+        {data.username}
+      </Text>
+    </View>
+    <Text>
+      <Text style={CommonStyles.textBold}>{data.full_name}</Text>
+      {' - '}
+      {data.biography}
+    </Text>
+  </View>
+);
 
-    return (
-      <View style={[styles.wrapper, CommonStyles.layoutColumn]}>
-        <View style={styles.avatarWrapper}>
-          <Image style={styles.avatar} source={{ uri: data.profile_pic_url }} />
-          <Text style={[styles.username, CommonStyles.textBold]}>
-            {data.username}
-          </Text>
-        </View>
-        <Text>
-          <Text style={CommonStyles.textBold}>{data.full_name}</Text>
-          {' - '}
-          {data.biography}
-        </Text>
-      </View>
-    );
-  }
-}
+export default Info;
