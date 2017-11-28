@@ -44,7 +44,7 @@ exports[`Info component Renders correctly 1`] = `
       style={
         Array [
           Object {
-            "fontSize": 28,
+            "fontSize": 24,
             "marginLeft": 20,
           },
           Object {
