@@ -20,7 +20,7 @@ class UploadContainer extends React.Component {
   _showImagePicker = () => {
     this.props.uploadPhotoRequest();
 
-    var options = {
+    const options = {
       title: 'Select Photo',
       customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }],
       storageOptions: {
@@ -78,20 +78,20 @@ class UploadContainer extends React.Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = dispatch => {
   return bindActionCreators(
     {
       ...UploadActionCreators
     },
     dispatch
   );
-}
+};
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
   return {
     uploadData: state.upload,
     accountData: state.account
   };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(UploadContainer);

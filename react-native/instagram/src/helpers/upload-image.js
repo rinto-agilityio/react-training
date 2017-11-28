@@ -2,8 +2,8 @@ import * as firebase from 'firebase';
 import RNFetchBlob from 'react-native-fetch-blob';
 import { Platform } from 'react-native';
 
-const Blob = RNFetchBlob.polyfill.Blob;
-const fs = RNFetchBlob.fs;
+const Blob = RNFetchBlob.polyfill.Blob,
+  fs = RNFetchBlob.fs;
 
 window.XMLHttpRequest = RNFetchBlob.polyfill.XMLHttpRequest;
 window.Blob = Blob;
@@ -17,8 +17,8 @@ const fbConfig = {
   messagingSenderId: '201897093582'
 };
 
-const fbApp = firebase.initializeApp(fbConfig);
-var storageRef = firebase.storage().ref();
+const fbApp = firebase.initializeApp(fbConfig),
+  storageRef = firebase.storage().ref();
 
 export const uploadImage = imageFile => {
   const fileUri = imageFile.uri,

@@ -52,19 +52,19 @@ class HomeContainer extends React.Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = dispatch => {
   return bindActionCreators(
     {
       ...HomeActionCreators
     },
     dispatch
   );
-}
+};
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
   return {
     homeData: state.home.data
   };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);
