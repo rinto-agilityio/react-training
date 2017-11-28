@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 
 import { styles } from './styles/CommentList';
-import CommonStyles from '../../../theme/common';
+import CommonStyles from '../../../themes/common';
 export default class CommentList extends React.Component {
   render() {
     const { comments } = this.props;

@@ -7,7 +7,7 @@ import { getAccountPhotos } from '../../helpers/account-data';
 import { Creators as AccountActionCreators } from './actions';
 import Info from './components/Info';
 import Photos from './components/Photos';
-import CommonStyles from '../../theme/common';
+import CommonStyles from '../../themes/common';
 
 class AccountContainer extends React.Component {
   static navigationOptions = {

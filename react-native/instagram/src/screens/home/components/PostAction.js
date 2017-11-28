@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image, TouchableHighlight } from 'react-native';
 
 import { styles } from './styles/PostAction';
-import CommonStyles from '../../../theme/common';
+import CommonStyles from '../../../themes/common';
 
 export default class PostAction extends React.Component {
   hanleLike() {

@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image } from 'react-native';
 
 import { styles } from './styles/Info';
-import CommonStyles from '../../../theme/common';
+import CommonStyles from '../../../themes/common';
 
 export default class Info extends React.Component {
   render() {
