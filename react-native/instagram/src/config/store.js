@@ -22,7 +22,14 @@ const appReducer = persistReducer(
   })
 )
 
-const middleware = [logger]
+let middleware = []
+
+/**
+ * Add some middlewares for development mode
+ */
+if (process.env.NODE_ENV === 'development') {
+  middleware = [...middleware, logger]
+}
 
 export default function configureStore() {
   const store = createStore(appReducer, compose(applyMiddleware(...middleware)))
