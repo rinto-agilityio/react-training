@@ -1,15 +1,15 @@
 import { StyleSheet } from 'react-native';
 
-import Theme from '../../../../theme';
+import Themes from '../../../../themes';
 
 export const styles = StyleSheet.create({
   wrapper: {
-    padding: Theme.baseSpacing
+    padding: Themes.baseSpacing
   },
   avatarWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: Theme.baseSpacing
+    marginBottom: Themes.baseSpacing
   },
   avatar: {
     width: 80,

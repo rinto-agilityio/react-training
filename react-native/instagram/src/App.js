@@ -9,7 +9,7 @@ import HomeContainer from './screens/home/HomeContainer';
 import AccountContainer from './screens/account/AccountContainer';
 import UploadContainer from './screens/upload/UploadContainer';
 import AppHeader from './components/AppHeader';
-import Theme from './theme';
+import Themes from './themes';
 
 const { persistor, store } = configureStore();
 
@@ -46,7 +46,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Theme.bgColor,
+    backgroundColor: Themes.bgColor,
     alignItems: 'center',
     justifyContent: 'center'
   }

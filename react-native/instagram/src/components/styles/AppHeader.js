@@ -1,16 +1,16 @@
-import { StyleSheet } from "react-native";
-import Theme from "../../theme";
+import { StyleSheet } from 'react-native';
+import Themes from '../../themes';
 
 export const styles = StyleSheet.create({
   wrapper: {
-    width: "100%",
+    width: '100%',
     paddingTop: 20,
-    paddingBottom: Theme.baseSpacing,
-    backgroundColor: Theme.navigatorBgColor,
-    justifyContent: "center",
-    alignItems: "center",
+    paddingBottom: Themes.baseSpacing,
+    backgroundColor: Themes.navigatorBgColor,
+    justifyContent: 'center',
+    alignItems: 'center',
     borderBottomWidth: 1,
-    borderColor: Theme.borderColor
+    borderColor: Themes.borderColor
   },
   brand: {
     fontSize: 24
