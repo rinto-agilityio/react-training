@@ -1,19 +1,20 @@
 import React from 'react';
 import { View, TextInput, Image } from 'react-native';
+import PropTypes from 'prop-types';
 
 import { styles } from './styles/Comment';
 
-export default class Comment extends React.Component {
-  constructor(props) {
-    super(props);
+class Comment extends React.Component {
+  constructor() {
+    super();
     this.state = { text: '' };
   }
 
   submitComment = () => {
     if (this.state.text) {
-      const { postId, owner } = this.props;
+      const { postId, owner, submitComment } = this.props;
 
-      this.props.submitComment({
+      submitComment({
         postId: postId,
         owner: owner,
         text: this.state.text
@@ -40,3 +41,11 @@ export default class Comment extends React.Component {
     );
   }
 }
+
+Comment.propTypes = {
+  postId: PropTypes.number.isRequired,
+  owner: PropTypes.object.isRequired,
+  submitComment: PropTypes.func
+};
+
+export default Comment;

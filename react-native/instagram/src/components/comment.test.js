@@ -1,15 +1,20 @@
-import { users } from '../test/__mocks__/sample-data';
+import { users, photos } from '../test/__mocks__/sample-data';
 import Comment from './Comment';
 
 describe('Comment component', () => {
   let component, treeDOM, textInput;
   const defaultState = { text: '' },
+    postId = photos[0].id,
     owner = users[0],
     mockSubmit = jest.fn();
 
   beforeEach(() => {
-    component = shallow(<Comment owner={owner} submitComment={mockSubmit} />);
-    treeDOM = renderer.create(<Comment owner={owner} />).toJSON();
+    component = shallow(
+      <Comment owner={owner} submitComment={mockSubmit} postId={postId} />
+    );
+    treeDOM = renderer
+      .create(<Comment owner={owner} postId={postId} />)
+      .toJSON();
 
     textInput = component.find('TextInput');
   });
