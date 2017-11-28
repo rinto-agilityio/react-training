@@ -10,7 +10,8 @@ export const INITIAL_STATE = Immutable({
 })
 
 const updatePersist = (state, action) => {
-  const homePayload = action.payload ? action.payload.home : null
+  const homePayload =
+    action.payload && action.payload.home ? action.payload.home : {}
 
   return state.merge({
     type: action.type,

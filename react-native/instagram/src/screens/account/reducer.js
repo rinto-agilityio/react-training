@@ -14,7 +14,8 @@ export const INITIAL_STATE = Immutable({
 })
 
 const updatePersist = (state, action) => {
-  const accountPayload = action.payload ? action.payload.account : null
+  const accountPayload =
+    action.payload && action.payload.account ? action.payload.account : users[0]
 
   return state.merge({
     type: action.type,
