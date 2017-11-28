@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet } from 'react-native';
+import { Text, View, Image } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -8,6 +8,7 @@ import { Creators as AccountActionCreators } from './actions';
 import Info from './components/Info';
 import Photos from './components/Photos';
 import CommonStyles from '../../themes/common';
+import { styles } from './styles/AccountContainer';
 
 class AccountContainer extends React.Component {
   static navigationOptions = {
@@ -53,13 +54,5 @@ function mapStateToProps(state) {
     allPhotos: state.home.data
   };
 }
-
-const styles = StyleSheet.create({
-  info: {
-    height: 150,
-    borderBottomWidth: 1,
-    borderBottomColor: '#eee'
-  }
-});
 
 export default connect(mapStateToProps, mapDispatchToProps)(AccountContainer);
