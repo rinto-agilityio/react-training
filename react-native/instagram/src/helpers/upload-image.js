@@ -1,6 +1,14 @@
 import * as firebase from 'firebase'
 import RNFetchBlob from 'react-native-fetch-blob'
 import { Platform } from 'react-native'
+import {
+  FIREBASE_API_KEY,
+  FIREBASE_AUTH_DOMAIN,
+  FIREBASE_DATABASE_URL,
+  FIREBASE_PROJECT_ID,
+  FIREBASE_STORAGE_BUCKET,
+  FIREBASE_MESSAGING_SENDER_ID
+} from 'react-native-dotenv'
 
 const Blob = RNFetchBlob.polyfill.Blob,
   fs = RNFetchBlob.fs
@@ -9,12 +17,12 @@ window.XMLHttpRequest = RNFetchBlob.polyfill.XMLHttpRequest
 window.Blob = Blob
 
 const fbConfig = {
-  apiKey: 'AIzaSyCZpGh86wxsZM8H_PyZVKsk_MnjopqYDyY',
-  authDomain: 'instagram-rn.firebaseapp.com',
-  databaseURL: 'https://instagram-rn.firebaseio.com',
-  projectId: 'instagram-rn',
-  storageBucket: 'gs://instagram-rn.appspot.com',
-  messagingSenderId: '201897093582'
+  apiKey: FIREBASE_API_KEY,
+  authDomain: FIREBASE_AUTH_DOMAIN,
+  databaseURL: FIREBASE_DATABASE_URL,
+  projectId: FIREBASE_PROJECT_ID,
+  storageBucket: FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: FIREBASE_MESSAGING_SENDER_ID
 }
 
 const fbApp = firebase.initializeApp(fbConfig),
