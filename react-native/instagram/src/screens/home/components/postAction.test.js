@@ -5,7 +5,7 @@ describe('PostAction component', () => {
   let imageUri, iconLike, iconComment
   const userId = users[0].id,
     postId = photos[0].id,
-    mockToogleComment = jest.fn(),
+    mockToogleCommentBox = jest.fn(),
     mockToogleLike = jest.fn()
 
   beforeEach(() => {
@@ -13,9 +13,9 @@ describe('PostAction component', () => {
       <PostAction
         userId={userId}
         postId={postId}
-        liked={false}
+        isLiked={false}
         toogleLike={mockToogleLike}
-        toogleComment={mockToogleComment}
+        toogleCommentBox={mockToogleCommentBox}
       />
     )
 
@@ -25,7 +25,7 @@ describe('PostAction component', () => {
 
   it('Renders correctly for new image', () => {
     const treeDOM = renderer
-      .create(<PostAction userId={userId} postId={postId} liked={false} />)
+      .create(<PostAction userId={userId} postId={postId} isLiked={false} />)
       .toJSON()
 
     expect(treeDOM).toMatchSnapshot()
@@ -33,7 +33,7 @@ describe('PostAction component', () => {
 
   it('Renders correctly for like image', () => {
     const treeDOM = renderer
-      .create(<PostAction userId={userId} postId={postId} liked={true} />)
+      .create(<PostAction userId={userId} postId={postId} isLiked={true} />)
       .toJSON()
 
     expect(treeDOM).toMatchSnapshot()
@@ -48,6 +48,6 @@ describe('PostAction component', () => {
   it('Should call toogleComment if click on icon like', () => {
     iconComment.simulate('press')
 
-    expect(mockToogleComment.mock.calls.length).toEqual(1)
+    expect(mockToogleCommentBox.mock.calls.length).toEqual(1)
   })
 })
