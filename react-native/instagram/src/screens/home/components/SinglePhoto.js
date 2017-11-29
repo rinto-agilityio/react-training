@@ -11,16 +11,17 @@ import CommentList from './CommentList'
 class SinglePhoto extends React.Component {
   state = { showComment: false }
 
-  toogleComment = () => {
+  toogleCommentBox = () => {
     this.setState(prevState => ({
       showComment: !prevState.showComment
     }))
   }
 
   render() {
-    const { item, submitComment, toogleLike } = this.props,
+    const { showComment } = this.state,
+      { item, submitComment, toogleLike } = this.props,
       likeCounting = item.likes.length,
-      liked = item.likes.find(i => i === item.owner.id)
+      isLiked = item.likes.find(i => i === item.owner.id) ? true : false
 
     return (
       <View>
@@ -40,11 +41,11 @@ class SinglePhoto extends React.Component {
 
         <View style={styles.footer}>
           <PostAction
-            liked={liked ? true : false}
+            isLiked={isLiked}
             postId={item.id}
             userId={item.owner.id}
             toogleLike={toogleLike}
-            toogleComment={this.toogleComment}
+            toogleCommentBox={this.toogleCommentBox}
           />
 
           {likeCounting > 1 ? (
@@ -55,7 +56,7 @@ class SinglePhoto extends React.Component {
 
           <CommentList comments={item.comments} />
 
-          {this.state.showComment && (
+          {showComment && (
             <CommentInput
               submitComment={submitComment}
               owner={item.owner}
