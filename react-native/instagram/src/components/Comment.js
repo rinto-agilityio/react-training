@@ -5,11 +5,11 @@ import PropTypes from 'prop-types'
 import { styles } from './styles/Comment'
 
 class Comment extends React.Component {
-  constructor() {
-    super()
-    this.state = { text: '' }
-  }
+  state = { text: '' }
 
+  /**
+   * Add comment for this photo
+   */
   submitComment = () => {
     if (this.state.text) {
       const { postId, owner, submitComment } = this.props

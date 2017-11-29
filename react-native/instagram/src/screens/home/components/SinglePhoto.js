@@ -9,17 +9,12 @@ import PostAction from './PostAction'
 import CommentList from './CommentList'
 
 class SinglePhoto extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      showComment: false
-    }
-  }
+  state = { showComment: false }
 
   toogleComment = () => {
-    this.setState({
-      showComment: !this.state.showComment
-    })
+    this.setState(prevState => ({
+      showComment: !prevState.showComment
+    }))
   }
 
   render() {
