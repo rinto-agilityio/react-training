@@ -6,9 +6,7 @@ import { styles } from './styles/PostAction'
 import CommonStyles from '../../../themes/common'
 
 const PostAction = ({ postId, userId, liked, toogleLike, toogleComment }) => {
-  /**
-   * User like or remove liked on a photo
-   */
+  // User like or remove liked on a photo
   const hanleLike = () => {
     toogleLike({
       postId,
@@ -16,7 +14,7 @@ const PostAction = ({ postId, userId, liked, toogleLike, toogleComment }) => {
     })
   }
 
-  // Display comment input for user
+  // Toggle comment input on single photo
   const handleComment = () => {
     toogleComment()
   }

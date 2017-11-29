@@ -11,13 +11,14 @@ class Comment extends React.Component {
    * Add comment for this photo
    */
   submitComment = () => {
-    if (this.state.text) {
+    const { text } = this.state
+    if (text) {
       const { postId, owner, submitComment } = this.props
 
       submitComment({
-        postId: postId,
-        owner: owner,
-        text: this.state.text
+        postId,
+        owner,
+        text
       })
 
       this.setState({ text: '' })
