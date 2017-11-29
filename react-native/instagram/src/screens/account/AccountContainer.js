@@ -21,6 +21,9 @@ class AccountContainer extends React.Component {
   }
 
   componentDidMount() {
+    /**
+     * Update data, load new images of current user to show at AccountScreen
+     */
     this.props.loadAccountData()
   }
 
