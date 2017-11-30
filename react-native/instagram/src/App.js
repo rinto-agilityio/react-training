@@ -10,7 +10,7 @@ import AccountContainer from './screens/account/AccountContainer'
 import UploadContainer from './screens/upload/UploadContainer'
 import AppHeader from './components/AppHeader'
 import { styles } from './styles/App'
-import { Themes } from './themes'
+import Themes from '@themes'
 
 const { persistor, store } = configureStore()
 
@@ -24,22 +24,20 @@ const MainApp = TabNavigator(
     tabBarPosition: Themes.tabBarPosition,
     animationEnabled: true,
     tabBarOptions: {
-      activeTintColor: Themes.tapBarTextActiveColor
+      activeTintColor: Themes.tabBarTextActiveColor
     }
   }
 )
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <PersistGate persistor={persistor}>
-          <View style={styles.container}>
-            <AppHeader />
-            <MainApp screenProps={this.state} />
-          </View>
-        </PersistGate>
-      </Provider>
-    )
-  }
-}
+const App = () => (
+  <Provider store={store}>
+    <PersistGate persistor={persistor}>
+      <View style={styles.container}>
+        <AppHeader />
+        <MainApp screenProps={this.state} />
+      </View>
+    </PersistGate>
+  </Provider>
+)
+
+export default App

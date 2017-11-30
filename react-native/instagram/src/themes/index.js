@@ -6,6 +6,6 @@ export default {
   borderColor: '#eee',
   borderInputColor: '#a7a7a7',
   fontSizeLarge: 24,
-  tapBarTextActiveColor: '#e91e63',
-  tapBarPosition: 'bottom'
+  tabBarPosition: 'bottom',
+  tabBarTextActiveColor: '#000'
 }
