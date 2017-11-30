@@ -23,6 +23,10 @@ const Info = ({ data }) => (
   </View>
 )
 
+Info.defaultProps = {
+  data: {}
+}
+
 Info.propTypes = {
   data: PropTypes.object.isRequired
 }

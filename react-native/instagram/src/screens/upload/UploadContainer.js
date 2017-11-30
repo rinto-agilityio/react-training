@@ -25,9 +25,10 @@ class UploadContainer extends React.Component {
   _showImagePicker = () => {
     this.props.uploadPhotoRequest()
 
+    // Config selection dialog on screen
     const options = {
       title: 'Select Photo',
-      customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }],
+      customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }], // Add custom method to select image
       storageOptions: {
         skipBackup: true,
         path: 'images'
@@ -42,11 +43,12 @@ class UploadContainer extends React.Component {
       console.log('Response = ', response)
 
       if (response.didCancel) {
-        console.log('User cancelled image picker')
+        // User cancelled image picker
         this.props.uploadPhotoCancel()
       } else if (response.error) {
         console.log('ImagePicker Error: ', response.error)
       } else if (response.customButton) {
+        // This is for custom method
         console.log('User tapped custom button: ', response.customButton)
       } else {
         uploadImage(response)

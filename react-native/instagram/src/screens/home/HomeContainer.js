@@ -23,6 +23,9 @@ class HomeContainer extends React.Component {
     )
   }
 
+  /**
+   * Fetching new data for Home page
+   */
   componentDidMount() {
     this.props.getHomeDataRequest()
   }

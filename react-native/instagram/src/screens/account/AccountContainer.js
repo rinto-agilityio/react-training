@@ -26,10 +26,11 @@ class AccountContainer extends React.Component {
     )
   }
 
+  /**
+   * Update data for current user
+   * Filter photos of current user from all photos in the system of all users
+   */
   componentDidMount() {
-    /**
-     * Update data, load new images of current user to show at AccountScreen
-     */
     this.props.loadAccountData()
   }
 

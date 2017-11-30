@@ -73,6 +73,10 @@ class SinglePhoto extends React.Component {
   }
 }
 
+SinglePhoto.defaultProps = {
+  item: {}
+}
+
 SinglePhoto.propTypes = {
   item: PropTypes.object.isRequired,
   submitComment: PropTypes.func,

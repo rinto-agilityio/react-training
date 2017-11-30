@@ -54,6 +54,12 @@ const PostAction = ({
   )
 }
 
+PostAction.defaultProps = {
+  postId: Date.now(),
+  userId: Date.now(),
+  isLiked: false
+}
+
 PostAction.propTypes = {
   postId: PropTypes.number.isRequired,
   userId: PropTypes.number.isRequired,

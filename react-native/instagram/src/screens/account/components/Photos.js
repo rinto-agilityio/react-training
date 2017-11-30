@@ -19,6 +19,10 @@ const Photos = ({ data }) => (
   </View>
 )
 
+Photos.defaultProps = {
+  data: []
+}
+
 Photos.propTypes = {
   data: PropTypes.array.isRequired
 }

@@ -48,6 +48,11 @@ class Comment extends React.Component {
   }
 }
 
+Comment.defaultProps = {
+  postId: Date.now(),
+  owner: {}
+}
+
 Comment.propTypes = {
   postId: PropTypes.number.isRequired,
   owner: PropTypes.object.isRequired,
