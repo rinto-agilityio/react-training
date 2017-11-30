@@ -28,8 +28,8 @@ const PostAction = ({
   }
 
   const likeIcon = isLiked
-    ? require('../../../assets/icons/liked.png')
-    : require('../../../assets/icons/like.png')
+    ? require('@assets/icons/liked.png')
+    : require('@assets/icons/like.png')
 
   return (
     <View style={CommonStyles.layoutRow}>
@@ -47,7 +47,7 @@ const PostAction = ({
       >
         <Image
           style={styles.icon}
-          source={require('../../../assets/icons/comment.png')}
+          source={require('@assets/icons/comment.png')}
         />
       </TouchableHighlight>
     </View>

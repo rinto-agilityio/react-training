@@ -10,7 +10,7 @@ class HomeContainer extends React.Component {
   static navigationOptions = {
     tabBarIcon: ({ tintColor }) => (
       <Image
-        source={require('../../assets/icons/home.png')}
+        source={require('@assets/icons/home.png')}
         style={{ width: 24, height: 24 }}
       />
     )

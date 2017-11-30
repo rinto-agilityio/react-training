@@ -13,7 +13,7 @@ class UploadContainer extends React.Component {
   static navigationOptions = {
     tabBarIcon: ({ tintColor }) => (
       <Image
-        source={require('../../assets/icons/plus.png')}
+        source={require('@assets/icons/plus.png')}
         style={{ width: 24, height: 24 }}
       />
     )
