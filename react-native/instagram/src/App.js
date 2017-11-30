@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/es/integration/react'
 
 // App Store config
-import configureStore from './config/store'
+import configureStore from '@configs/store'
 
 // Containers and components
 import HomeContainer from '@screens/home/HomeContainer'
