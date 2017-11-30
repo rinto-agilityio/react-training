@@ -5,5 +5,7 @@ export default {
   navigatorBgColor: '#f9f9f9',
   borderColor: '#eee',
   borderInputColor: '#a7a7a7',
-  fontSizeLarge: 24
+  fontSizeLarge: 24,
+  tapBarTextActiveColor: '#e91e63',
+  tapBarPosition: 'bottom'
 }

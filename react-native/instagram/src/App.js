@@ -10,6 +10,7 @@ import AccountContainer from './screens/account/AccountContainer'
 import UploadContainer from './screens/upload/UploadContainer'
 import AppHeader from './components/AppHeader'
 import { styles } from './styles/App'
+import { Themes } from './themes'
 
 const { persistor, store } = configureStore()
 
@@ -20,10 +21,10 @@ const MainApp = TabNavigator(
     Account: { screen: AccountContainer }
   },
   {
-    tabBarPosition: 'bottom',
+    tabBarPosition: Themes.tabBarPosition,
     animationEnabled: true,
     tabBarOptions: {
-      activeTintColor: '#e91e63'
+      activeTintColor: Themes.tapBarTextActiveColor
     }
   }
 )
