@@ -10,7 +10,7 @@ import CommentList from './CommentList'
 
 // Styles
 import CommonStyles from '@themes/common'
-import { styles } from './styles/SinglePhoto'
+import { styles } from './styles/SinglePhotoStyles'
 
 class SinglePhoto extends React.Component {
   state = { showComment: false }

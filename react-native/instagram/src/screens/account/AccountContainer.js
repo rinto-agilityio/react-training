@@ -14,7 +14,7 @@ import Photos from './components/Photos'
 
 // Styles
 import CommonStyles from '@themes/common'
-import { styles } from './styles/AccountContainer'
+import { styles } from './styles/AccountContainerStyles'
 
 class AccountContainer extends React.Component {
   static navigationOptions = {

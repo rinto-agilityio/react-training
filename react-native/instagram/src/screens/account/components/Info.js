@@ -4,7 +4,7 @@ import { View, Text, Image } from 'react-native'
 import PropTypes from 'prop-types'
 
 // Styles
-import { styles } from './styles/Info'
+import { styles } from './styles/InfoStyles'
 import CommonStyles from '@themes/common'
 
 const Info = ({ data }) => (

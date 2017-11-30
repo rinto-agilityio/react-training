@@ -1,8 +1,10 @@
+// Third party libs
 import React from 'react'
 import { View, Image, Text, FlatList } from 'react-native'
 import PropTypes from 'prop-types'
 
-import { styles, numColumns } from './styles/Photos'
+// Styles
+import { styles, numColumns } from './styles/PhotosStyles'
 
 const Photos = ({ data }) => (
   <View style={styles.list}>

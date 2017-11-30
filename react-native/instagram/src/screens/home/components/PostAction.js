@@ -4,7 +4,7 @@ import { View, Text, Image, TouchableHighlight } from 'react-native'
 import PropTypes from 'prop-types'
 
 // Styles
-import { styles } from './styles/PostAction'
+import { styles } from './styles/PostActionStyles'
 import CommonStyles from '@themes/common'
 
 const PostAction = ({

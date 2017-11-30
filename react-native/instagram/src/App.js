@@ -15,7 +15,7 @@ import UploadContainer from '@screens/upload/UploadContainer'
 import AppHeader from './components/AppHeader'
 
 // Styles
-import { styles } from './styles/App'
+import { styles } from './styles/AppStyles'
 import Themes from '@themes'
 
 const { persistor, store } = configureStore()
