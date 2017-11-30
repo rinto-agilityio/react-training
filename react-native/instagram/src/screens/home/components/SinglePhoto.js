@@ -4,7 +4,7 @@ import { View, Text, TextInput, Image } from 'react-native'
 import PropTypes from 'prop-types'
 
 // Components
-import CommentInput from '../../../components/Comment'
+import CommentInput from '@common/components/Comment'
 import PostAction from './PostAction'
 import CommentList from './CommentList'
 
