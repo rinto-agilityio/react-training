@@ -24,11 +24,10 @@ const appReducer = persistReducer(
   })
 )
 
+// Necessary middlewares for all env
 let middleware = []
 
-/**
- * Add some middlewares for development mode
- */
+// Add some middlewares for development mode
 if (process.env.NODE_ENV === 'development') {
   middleware = [...middleware, logger]
 }
