@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import { styles } from './styles/AppHeader'
+import { styles } from './styles/AppHeaderStyles'
 
 const AppHeader = () => (
   <View style={styles.wrapper}>

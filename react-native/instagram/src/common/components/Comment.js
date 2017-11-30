@@ -2,7 +2,7 @@ import React from 'react'
 import { View, TextInput, Image } from 'react-native'
 import PropTypes from 'prop-types'
 
-import { styles } from './styles/Comment'
+import { styles } from './styles/CommentStyles'
 
 class Comment extends React.Component {
   state = { text: '' }
