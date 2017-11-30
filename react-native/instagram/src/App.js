@@ -1,14 +1,20 @@
+// Third party libs
 import React from 'react'
 import { Text, View } from 'react-native'
 import { TabNavigator } from 'react-navigation'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/es/integration/react'
 
+// App Store config
 import configureStore from './config/store'
+
+// Containers and components
 import HomeContainer from './screens/home/HomeContainer'
 import AccountContainer from './screens/account/AccountContainer'
 import UploadContainer from './screens/upload/UploadContainer'
 import AppHeader from './components/AppHeader'
+
+// Styles
 import { styles } from './styles/App'
 import Themes from '@themes'
 

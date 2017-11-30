@@ -1,3 +1,4 @@
+// Third party libs
 import React from 'react'
 import { Text, View, Image } from 'react-native'
 import { connect } from 'react-redux'
@@ -5,9 +6,13 @@ import { bindActionCreators } from 'redux'
 
 import { getAccountPhotos } from '../../helpers/account-data'
 import { Creators as AccountActionCreators } from './actions'
+
+// Components
 import Info from './components/Info'
 import Photos from './components/Photos'
-import CommonStyles from '../../themes/common'
+
+// Styles
+import CommonStyles from '@themes/common'
 import { styles } from './styles/AccountContainer'
 
 class AccountContainer extends React.Component {

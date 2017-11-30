@@ -1,12 +1,16 @@
+// Third party libs
 import React from 'react'
 import { View, Text, TextInput, Image } from 'react-native'
 import PropTypes from 'prop-types'
 
-import { styles } from './styles/SinglePhoto'
-import CommonStyles from '../../../themes/common'
+// Components
 import CommentInput from '../../../components/Comment'
 import PostAction from './PostAction'
 import CommentList from './CommentList'
+
+// Styles
+import CommonStyles from '@themes/common'
+import { styles } from './styles/SinglePhoto'
 
 class SinglePhoto extends React.Component {
   state = { showComment: false }

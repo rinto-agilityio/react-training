@@ -1,9 +1,11 @@
+// Third party libs
 import React from 'react'
 import { View, Text, Image, TouchableHighlight } from 'react-native'
 import PropTypes from 'prop-types'
 
+// Styles
 import { styles } from './styles/PostAction'
-import CommonStyles from '../../../themes/common'
+import CommonStyles from '@themes/common'
 
 const PostAction = ({
   postId,
