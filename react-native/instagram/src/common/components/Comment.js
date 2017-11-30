@@ -25,6 +25,11 @@ class Comment extends React.Component {
     }
   }
 
+  // Reset state after unmount
+  componentWillUnmount() {
+    this.setState({ text: '' })
+  }
+
   render() {
     const { owner } = this.props
 
