@@ -4,7 +4,8 @@ import { Text, View, Image } from 'react-native'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { getAccountPhotos } from '../../helpers/account-data'
+// Helpers
+import { getAccountPhotos } from '@helpers/account-data'
 import { Creators as AccountActionCreators } from './actions'
 
 // Components

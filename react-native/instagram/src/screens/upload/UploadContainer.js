@@ -1,11 +1,13 @@
+// Third party libs
 import React from 'react'
 import { Text, Button, Image } from 'react-native'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import ImagePicker from 'react-native-image-picker'
 
+// Helpers
+import { uploadImage } from '@helpers/upload-image'
 import { Creators as UploadActionCreators } from './actions'
-import { uploadImage } from '../../helpers/upload-image'
 
 class UploadContainer extends React.Component {
   static navigationOptions = {
