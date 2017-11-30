@@ -9,12 +9,10 @@ import { getAccountPhotos } from '@helpers/account-data'
 import { Creators as AccountActionCreators } from './actions'
 
 // Components
-import Info from './components/Info'
-import Photos from './components/Photos'
+import AccountScreen from './components/AccountScreen'
 
 // Styles
 import CommonStyles from '@themes/common'
-import { styles } from './styles/AccountContainerStyles'
 
 class AccountContainer extends React.Component {
   static navigationOptions = {
@@ -38,14 +36,7 @@ class AccountContainer extends React.Component {
     const { accountData, allPhotos } = this.props,
       myPhotos = getAccountPhotos(allPhotos, accountData)
 
-    return (
-      <View style={CommonStyles.layoutColumn}>
-        <View style={styles.info}>
-          <Info data={accountData} />
-        </View>
-        <Photos data={myPhotos} />
-      </View>
-    )
+    return <AccountScreen accountData={accountData} myPhotos={myPhotos} />
   }
 }
 

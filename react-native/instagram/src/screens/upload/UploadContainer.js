@@ -73,15 +73,11 @@ class UploadContainer extends React.Component {
 
   render() {
     const { uploadData } = this.props
+    const ButtonTitle = uploadData.isUploading
+      ? 'Uploading images...'
+      : 'Select images from Photo Gallery'
 
-    return uploadData.isUploading ? (
-      <Text>Uploading images...</Text>
-    ) : (
-      <Button
-        onPress={this._showImagePicker}
-        title="Select images from Photo Gallery"
-      />
-    )
+    return <Button onPress={this._showImagePicker} title={ButtonTitle} />
   }
 }
 
