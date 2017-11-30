@@ -18,10 +18,10 @@ import { styles } from './styles/AccountContainer'
 
 class AccountContainer extends React.Component {
   static navigationOptions = {
-    tabBarIcon: ({ tintColor }) => (
+    tabBarIcon: () => (
       <Image
         source={require('@assets/icons/avatar.png')}
-        style={{ width: 24, height: 24 }}
+        style={CommonStyles.tabBarIcon}
       />
     )
   }

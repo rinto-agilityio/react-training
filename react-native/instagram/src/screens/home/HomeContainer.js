@@ -1,17 +1,24 @@
+// Third party libs
 import React from 'react'
 import { Text, View, Image, FlatList } from 'react-native'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
+// Helpers
 import { Creators as HomeActionCreators } from './actions'
+
+// Components
 import SinglePhoto from './components/SinglePhoto'
+
+// Styles
+import CommonStyles from '@themes/common'
 
 class HomeContainer extends React.Component {
   static navigationOptions = {
-    tabBarIcon: ({ tintColor }) => (
+    tabBarIcon: () => (
       <Image
         source={require('@assets/icons/home.png')}
-        style={{ width: 24, height: 24 }}
+        style={CommonStyles.tabBarIcon}
       />
     )
   }

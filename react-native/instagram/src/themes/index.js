@@ -7,5 +7,6 @@ export default {
   borderInputColor: '#a7a7a7',
   fontSizeLarge: 24,
   tabBarPosition: 'bottom',
-  tabBarTextActiveColor: '#000'
+  tabBarTextActiveColor: '#000',
+  tabBarIconSize: 24
 }

@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native'
 
+import Themes from '@themes'
+
 export default StyleSheet.create({
   textBold: {
     fontWeight: 'bold'
@@ -11,5 +13,9 @@ export default StyleSheet.create({
   layoutColumn: {
     flex: 1,
     flexDirection: 'column'
+  },
+  tabBarIcon: {
+    width: Themes.tabBarIconSize,
+    height: Themes.tabBarIconSize
   }
 })
