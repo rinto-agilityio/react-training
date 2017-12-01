@@ -34,6 +34,18 @@ describe('Comment component', () => {
     expect(textInput.props().placeholder).toEqual(expectedPlaceholder)
   })
 
+  it('Reset state when after unmount', () => {
+    component.instance().componentWillUnmount()
+
+    expect(component.state()).toEqual(defaultState)
+  })
+
+  it('Should not call submitComment if text is empty', () => {
+    textInput.simulate('submitEditing') // Press enter to submit text
+
+    expect(mockSubmit.mock.calls.length).toEqual(0)
+  })
+
   describe('When text changes', () => {
     const newTextValue = 'new Text Value'
 
