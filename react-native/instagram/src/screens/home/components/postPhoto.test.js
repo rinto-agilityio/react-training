@@ -1,0 +1,1 @@
+import PostPhoto from './PostPhoto'

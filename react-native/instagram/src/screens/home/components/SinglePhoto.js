@@ -7,8 +7,8 @@ import PropTypes from 'prop-types'
 import CommentInput from '@common/components/Comment'
 import PostAction from './PostAction'
 import CommentList from './CommentList'
-import PostAuthor from '@common/components/PostAuthor'
-import PostPhoto from '@common/components/PostPhoto'
+import PostAuthor from './PostAuthor'
+import PostPhoto from './PostPhoto'
 
 // Styles
 import CommonStyles from '@themes/common'
