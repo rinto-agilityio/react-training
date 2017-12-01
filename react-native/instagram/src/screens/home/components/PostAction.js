@@ -15,7 +15,7 @@ const PostAction = ({
   toogleCommentBox
 }) => {
   // User like or remove liked on a photo
-  const handleClickIconLike = () => {
+  const _handleClickIconLike = () => {
     toogleLike({
       postId,
       userId
@@ -23,7 +23,7 @@ const PostAction = ({
   }
 
   // Toggle comment input on single photo
-  const handleClickIconComment = () => {
+  const _handleClickIconComment = () => {
     toogleCommentBox()
   }
 
@@ -35,14 +35,14 @@ const PostAction = ({
     <View style={CommonStyles.layoutRow}>
       <TouchableHighlight
         className="icon-like"
-        onPress={() => handleClickIconLike()}
+        onPress={() => _handleClickIconLike()}
         underlayColor={'transparent'}
       >
         <Image style={styles.icon} source={likeIcon} />
       </TouchableHighlight>
       <TouchableHighlight
         className="icon-comment"
-        onPress={() => handleClickIconComment()}
+        onPress={() => _handleClickIconComment()}
         underlayColor={'transparent'}
       >
         <Image

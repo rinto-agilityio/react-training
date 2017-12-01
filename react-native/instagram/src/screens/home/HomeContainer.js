@@ -23,18 +23,16 @@ class HomeContainer extends React.Component {
     )
   }
 
-  /**
-   * Fetching new data for Home page
-   */
+  // Fetching new data for Home page
   componentDidMount() {
     this.props.getHomeDataRequest()
   }
 
-  addPostComment = data => {
+  _addPostComment = data => {
     this.props.addComment(data)
   }
 
-  toogleLike = data => {
+  _toogleLike = data => {
     this.props.toogleLike(data)
   }
 
@@ -52,8 +50,8 @@ class HomeContainer extends React.Component {
           <SinglePhoto
             key={item.id}
             item={item}
-            submitComment={this.addPostComment}
-            toogleLike={this.toogleLike}
+            submitComment={this._addPostComment}
+            toogleLike={this._toogleLike}
           />
         )}
         keyExtractor={(item, index) => index}

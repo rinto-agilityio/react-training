@@ -33,8 +33,8 @@ class AccountContainer extends React.Component {
   }
 
   render() {
-    const { accountData, allPhotos } = this.props,
-      myPhotos = getAccountPhotos(allPhotos, accountData)
+    const { accountData, allPhotos } = this.props
+    const myPhotos = getAccountPhotos(allPhotos, accountData)
 
     return <AccountScreen accountData={accountData} myPhotos={myPhotos} />
   }

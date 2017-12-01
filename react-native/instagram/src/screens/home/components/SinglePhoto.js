@@ -15,7 +15,7 @@ import { styles } from './styles/SinglePhotoStyles'
 class SinglePhoto extends React.Component {
   state = { showComment: false }
 
-  toogleCommentBox = () => {
+  _toogleCommentBox = () => {
     this.setState(prevState => ({
       showComment: !prevState.showComment
     }))
@@ -49,7 +49,7 @@ class SinglePhoto extends React.Component {
             postId={item.id}
             userId={item.owner.id}
             toogleLike={toogleLike}
-            toogleCommentBox={this.toogleCommentBox}
+            toogleCommentBox={this._toogleCommentBox}
           />
 
           {likeCounting > 1 ? (
