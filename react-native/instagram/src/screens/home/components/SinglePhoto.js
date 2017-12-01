@@ -1,18 +1,12 @@
 // Third party libs
 import React from 'react'
-import { View, Text, TextInput, Image } from 'react-native'
+import { View } from 'react-native'
 import PropTypes from 'prop-types'
 
 // Components
-import CommentInput from '@common/components/Comment'
-import PostAction from './PostAction'
-import CommentList from './CommentList'
 import PostAuthor from './PostAuthor'
 import PostPhoto from './PostPhoto'
-
-// Styles
-import CommonStyles from '@themes/common'
-import { styles } from './styles/SinglePhotoStyles'
+import PostFooter from './PostFooter'
 
 class SinglePhoto extends React.Component {
   state = { showComment: false }
@@ -36,32 +30,17 @@ class SinglePhoto extends React.Component {
           username={item.owner.username}
         />
         <PostPhoto display_url={item.display_url} />
-
-        <View style={styles.footer}>
-          <PostAction
-            isLiked={isLiked}
-            postId={item.id}
-            userId={item.owner.id}
-            toogleLike={toogleLike}
-            toogleCommentBox={this._toogleCommentBox}
-          />
-
-          {likeCounting > 1 ? (
-            <Text>{likeCounting} likes</Text>
-          ) : (
-            <Text>{likeCounting} like</Text>
-          )}
-
-          <CommentList comments={item.comments} />
-
-          {showComment && (
-            <CommentInput
-              submitComment={submitComment}
-              owner={item.owner}
-              postId={item.id}
-            />
-          )}
-        </View>
+        <PostFooter
+          isLiked={isLiked}
+          postId={item.id}
+          likeCounting={likeCounting}
+          comments={item.comments}
+          owner={item.owner}
+          showComment={showComment}
+          submitComment={submitComment}
+          toogleLike={toogleLike}
+          toogleCommentBox={this._toogleCommentBox}
+        />
       </View>
     )
   }
