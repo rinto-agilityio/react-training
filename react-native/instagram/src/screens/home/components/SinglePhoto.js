@@ -8,6 +8,7 @@ import CommentInput from '@common/components/Comment'
 import PostAction from './PostAction'
 import CommentList from './CommentList'
 import PostAuthor from '@common/components/PostAuthor'
+import PostPhoto from '@common/components/PostPhoto'
 
 // Styles
 import CommonStyles from '@themes/common'
@@ -34,12 +35,8 @@ class SinglePhoto extends React.Component {
           profile_pic_url={item.owner.profile_pic_url}
           username={item.owner.username}
         />
+        <PostPhoto display_url={item.display_url} />
 
-        <Image
-          resizeMode={'cover'}
-          style={styles.photo}
-          source={{ uri: item.display_url }}
-        />
         <View style={styles.footer}>
           <PostAction
             isLiked={isLiked}
