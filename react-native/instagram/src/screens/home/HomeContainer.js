@@ -14,6 +14,10 @@ import SinglePhoto from './components/SinglePhoto'
 import CommonStyles from '@themes/common'
 
 class HomeContainer extends React.Component {
+  /* 
+   * Can't create common component for icon, error with source props
+   * navigationOptions.tabBarIcon not allow to import custom component
+   */
   static navigationOptions = {
     tabBarIcon: () => (
       <Image
