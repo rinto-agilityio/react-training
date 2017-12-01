@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 import CommentInput from '@common/components/Comment'
 import PostAction from './PostAction'
 import CommentList from './CommentList'
+import PostAuthor from '@common/components/PostAuthor'
 
 // Styles
 import CommonStyles from '@themes/common'
@@ -29,20 +30,16 @@ class SinglePhoto extends React.Component {
 
     return (
       <View>
-        <View style={[styles.header, CommonStyles.layoutRow]}>
-          <Image
-            style={styles.avatar}
-            source={{ uri: item.owner.profile_pic_url }}
-          />
-          <Text>{item.owner.username}</Text>
-        </View>
+        <PostAuthor
+          profile_pic_url={item.owner.profile_pic_url}
+          username={item.owner.username}
+        />
 
         <Image
           resizeMode={'cover'}
           style={styles.photo}
           source={{ uri: item.display_url }}
         />
-
         <View style={styles.footer}>
           <PostAction
             isLiked={isLiked}

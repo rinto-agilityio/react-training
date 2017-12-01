@@ -2,7 +2,7 @@ import { Types } from './actions'
 import { Types as UploadTypes } from '../upload/actions'
 import { REHYDRATE } from 'redux-persist/lib/constants'
 
-import { photos, users } from '../../test/__mocks__/sample-data'
+import { photos, users } from '@test/__mocks__/sample-data'
 import { homeReducer, INITIAL_STATE } from './reducer'
 
 describe('Home reducer', () => {
