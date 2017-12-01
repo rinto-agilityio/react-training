@@ -1,4 +1,6 @@
 // FIXME: Dynamic require all *.stories.js files
+// Require new components
+// Add textcenter for all stories
 
 require('@common/components/appHeader.stories')
 require('@common/components/comment.stories')
