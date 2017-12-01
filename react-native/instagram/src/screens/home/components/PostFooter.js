@@ -31,14 +31,15 @@ const PostFooter = ({
       toogleCommentBox={toogleCommentBox}
     />
 
-    {likeCounting > 1 ? (
-      <Text>{likeCounting} likes</Text>
-    ) : (
-      <Text>{likeCounting} like</Text>
-    )}
+    {/* Display like(s) number for this post */}
+    <Text>
+      {likeCounting + ' '}
+      {likeCounting > 1 ? 'likes' : 'like'}
+    </Text>
 
     <CommentList comments={comments} />
 
+    {/* Show/hide input for comment */}
     {showComment && (
       <CommentInput
         submitComment={submitComment}

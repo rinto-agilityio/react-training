@@ -8,5 +8,6 @@ export default {
   fontSizeLarge: 24,
   tabBarPosition: 'bottom',
   tabBarTextActiveColor: '#000',
-  tabBarIconSize: 24
+  tabBarIconSize: 24,
+  iconSize: 24
 }
