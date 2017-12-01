@@ -3,7 +3,7 @@ import { createReducer } from 'reduxsauce'
 import { REHYDRATE } from 'redux-persist/lib/constants'
 
 import { Types } from './actions'
-import { Types as UploadTypes } from '../upload/actions'
+import { Types as UploadTypes } from '@screens/upload/actions'
 
 export const INITIAL_STATE = Immutable({
   data: []
@@ -65,7 +65,7 @@ export const homeReducer = createReducer(INITIAL_STATE, {
   [REHYDRATE]: updatePersist,
 
   [Types.GET_HOME_DATA_REQUEST]: getHomeDataRequest,
-  [UploadTypes.UPLOAD_PHOTO_SUCCESS]: addPhotoToList,
   [Types.ADD_COMMENT]: addComment,
-  [Types.TOOGLE_LIKE]: toogleLike
+  [Types.TOOGLE_LIKE]: toogleLike,
+  [UploadTypes.UPLOAD_PHOTO_SUCCESS]: addPhotoToList
 })

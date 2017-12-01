@@ -1,7 +1,7 @@
 import { Types } from './actions'
 import { REHYDRATE } from 'redux-persist/lib/constants'
 
-import { users } from '../../test/__mocks__/sample-data'
+import { users } from '@test/__mocks__/sample-data'
 import { accountReducer, INITIAL_STATE } from './reducer'
 
 describe('Account reducer', () => {
