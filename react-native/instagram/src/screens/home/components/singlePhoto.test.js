@@ -1,4 +1,4 @@
-import { photos } from '../../../test/__mocks__/sample-data'
+import { photos } from '@test/__mocks__/sample-data'
 import SinglePhoto from './SinglePhoto'
 
 describe('SinglePhoto component', () => {

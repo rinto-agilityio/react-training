@@ -1,4 +1,4 @@
-import { users } from '../../../test/__mocks__/sample-data'
+import { users } from '@test/__mocks__/sample-data'
 import Info from './Info'
 
 describe('Info component', () => {

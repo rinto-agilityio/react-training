@@ -1,4 +1,4 @@
-import { users, photos } from '../../../test/__mocks__/sample-data'
+import { users, photos } from '@test/__mocks__/sample-data'
 import PostAction from './PostAction'
 
 describe('PostAction component', () => {

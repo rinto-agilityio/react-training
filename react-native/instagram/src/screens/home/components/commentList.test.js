@@ -1,4 +1,4 @@
-import { comments } from '../../../test/__mocks__/sample-data'
+import { comments } from '@test/__mocks__/sample-data'
 import CommentList from './CommentList'
 
 describe('CommentList component', () => {
