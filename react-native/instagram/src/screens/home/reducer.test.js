@@ -6,19 +6,33 @@ import { photos, users } from '../../test/__mocks__/sample-data'
 import { homeReducer, INITIAL_STATE } from './reducer'
 
 describe('Home reducer', () => {
-  it('Should handle REHYDRATE', () => {
-    expect(
-      homeReducer(INITIAL_STATE, {
-        type: REHYDRATE,
-        payload: {
-          home: {}
-        }
-      })
-    ).toEqual(
-      INITIAL_STATE.merge({
-        type: REHYDRATE
-      })
-    )
+  describe('Should handle REHYDRATE', () => {
+    it('Get data from localStorage', () => {
+      expect(
+        homeReducer(INITIAL_STATE, {
+          type: REHYDRATE,
+          payload: {
+            home: {}
+          }
+        })
+      ).toEqual(
+        INITIAL_STATE.merge({
+          type: REHYDRATE
+        })
+      )
+    })
+
+    it('Should get default data', () => {
+      expect(
+        homeReducer(INITIAL_STATE, {
+          type: REHYDRATE
+        })
+      ).toEqual(
+        INITIAL_STATE.merge({
+          type: REHYDRATE
+        })
+      )
+    })
   })
 
   it('Should handle GET_HOME_DATA_REQUEST', () => {
