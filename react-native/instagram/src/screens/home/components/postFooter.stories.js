@@ -1,0 +1,27 @@
+import React from 'react'
+import { storiesOf } from '@storybook/react-native'
+import { action } from '@storybook/addon-actions'
+
+// Config
+import { photos } from '@test/__mocks__/sample-data'
+
+// Component
+import PostFooter from './PostFooter'
+
+// Mocking data for component
+const { id, comments, owner, likes } = photos[0],
+  isLiked = false,
+  showComment = false
+
+storiesOf('Components', module).add('PostFooter', () => (
+  <PostFooter
+    isLiked={isLiked}
+    showComment={showComment}
+    postId={id}
+    likeCounting={likes.length}
+    comments={comments}
+    owner={owner}
+    toogleLike={action('toogleLike')}
+    toogleCommentBox={action('toogleCommentBox')}
+  />
+))

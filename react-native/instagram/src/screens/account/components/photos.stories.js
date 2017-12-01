@@ -1,7 +1,12 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react-native'
 
-import { photos } from '../../../test/__mocks__/sample-data'
+// Mocking
+import { photos } from '@test/__mocks__/sample-data'
+
+// Components
 import Photo from './Photos'
 
-storiesOf('AccountScreen', module).add('Photo', () => <Photo data={photos} />)
+storiesOf('Components', module).add('AccountPhotos', () => (
+  <Photo data={photos} />
+))

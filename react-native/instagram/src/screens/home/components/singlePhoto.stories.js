@@ -1,9 +1,10 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react-native'
 
+// Mocking
 import { photos } from '@test/__mocks__/sample-data'
+
+// Component
 import SinglePhoto from './SinglePhoto'
 
-storiesOf('HomeScreen', module).add('SinglePhoto', () => (
-  <SinglePhoto item={photos[0]} />
-))
+storiesOf('Screens', module).add('Home', () => <SinglePhoto item={photos[0]} />)

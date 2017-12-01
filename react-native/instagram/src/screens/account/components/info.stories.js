@@ -1,7 +1,12 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react-native'
 
-import { users } from '../../../test/__mocks__/sample-data'
+// Mocking
+import { users } from '@test/__mocks__/sample-data'
+
+// Component
 import Info from './Info'
 
-storiesOf('AccountScreen', module).add('Info', () => <Info data={users[0]} />)
+storiesOf('Components', module).add('AccountInfo', () => (
+  <Info data={users[0]} />
+))
