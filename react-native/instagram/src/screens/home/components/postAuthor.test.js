@@ -1,5 +1,8 @@
-import { users } from '@test/__mocks__/sample-data'
+// Components
 import PostAuthor from './PostAuthor'
+
+// Mocking data
+import { users } from '@test/__mocks__/sample-data'
 
 describe('PostAuthor component', () => {
   const user = users[0]

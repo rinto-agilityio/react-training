@@ -1,4 +1,4 @@
-// Third party libs
+// Libs
 import React from 'react'
 import { Text, Button, Image } from 'react-native'
 import { connect } from 'react-redux'

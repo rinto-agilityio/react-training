@@ -1,15 +1,15 @@
+// Libs
 import React from 'react'
 import { View, TextInput, Image } from 'react-native'
 import PropTypes from 'prop-types'
 
+// Styles
 import { styles } from './styles/CommentStyles'
 
 class Comment extends React.Component {
   state = { text: '' }
 
-  /**
-   * Add comment for this photo
-   */
+  // Add comment for this photo
   submitComment = () => {
     const { text } = this.state
     if (text) {
@@ -49,7 +49,7 @@ class Comment extends React.Component {
 }
 
 Comment.defaultProps = {
-  postId: Date.now(),
+  postId: 0,
   owner: {}
 }
 

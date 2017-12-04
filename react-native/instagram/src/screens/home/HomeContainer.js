@@ -1,4 +1,4 @@
-// Third party libs
+// Libs
 import React from 'react'
 import { Text, View, Image, FlatList } from 'react-native'
 import { connect } from 'react-redux'
@@ -37,6 +37,7 @@ class HomeContainer extends React.Component {
     const { homeData } = this.props
 
     if (!homeData.length) {
+      // TODO: Replace text by constant
       return <Text>No data, please upload some photos</Text>
     }
 

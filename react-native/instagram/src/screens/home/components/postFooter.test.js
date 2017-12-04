@@ -1,5 +1,8 @@
-import { photos } from '@test/__mocks__/sample-data'
+// Components
 import PostFooter from './PostFooter'
+
+// Mocking data
+import { photos } from '@test/__mocks__/sample-data'
 
 describe('PostFooter component', () => {
   const singlePost = photos[1],

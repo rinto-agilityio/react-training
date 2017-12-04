@@ -1,7 +1,9 @@
+// Libs
 import Immutable from 'seamless-immutable'
 import { createReducer } from 'reduxsauce'
 import { REHYDRATE } from 'redux-persist/lib/constants'
 
+// Helpers
 import { Types } from './actions'
 
 export const INITIAL_STATE = Immutable({

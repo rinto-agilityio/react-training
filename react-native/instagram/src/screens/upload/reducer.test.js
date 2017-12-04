@@ -1,6 +1,8 @@
+// Libs
 import { Types } from './actions'
 import { REHYDRATE } from 'redux-persist/lib/constants'
 
+// Helpers
 import { uploadReducer, INITIAL_STATE } from './reducer'
 
 describe('Upload reducer', () => {

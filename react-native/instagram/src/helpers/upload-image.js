@@ -1,4 +1,4 @@
-// Third party libs
+// Libs
 import RNFetchBlob from 'react-native-fetch-blob'
 import { Platform } from 'react-native'
 import { storageRef } from '@configs/firebase'
@@ -18,7 +18,7 @@ window.Blob = Blob
 export const uploadImage = imageFile => {
   const fileUri = imageFile.uri,
     fileBase64 = imageFile.data,
-    fileName = Date.now() + imageFile.fileName, // Custom filename to avoid override file on server
+    fileName = Date.now() + imageFile.fileName, // Custom filename to avoid override old files on server
     fileNameArr = fileName.split('.'),
     fileType = fileNameArr[fileNameArr.length - 1]
 

@@ -1,7 +1,7 @@
 import AppHeader from './AppHeader'
 
 describe('AppHeader component', () => {
-  it('AppHeader renders correctly', () => {
+  it('Renders correctly', () => {
     const treeDOM = renderer.create(<AppHeader />).toJSON()
 
     expect(treeDOM).toMatchSnapshot()

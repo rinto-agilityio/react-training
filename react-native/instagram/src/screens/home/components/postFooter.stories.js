@@ -2,13 +2,12 @@ import React from 'react'
 import { storiesOf } from '@storybook/react-native'
 import { action } from '@storybook/addon-actions'
 
-// Config
-import { photos } from '@test/__mocks__/sample-data'
-
 // Component
 import PostFooter from './PostFooter'
 
-// Mocking data for component
+// Mocking data
+import { photos } from '@test/__mocks__/sample-data'
+
 const { id, comments, owner, likes } = photos[0],
   isLiked = false,
   showComment = false

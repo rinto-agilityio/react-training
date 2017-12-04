@@ -1,5 +1,8 @@
-import { users, photos } from '@test/__mocks__/sample-data'
+// Components
 import PostAction from './PostAction'
+
+// Mocking data
+import { users, photos } from '@test/__mocks__/sample-data'
 
 describe('PostAction component', () => {
   let imageUri, iconLike, iconComment

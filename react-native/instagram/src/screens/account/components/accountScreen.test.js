@@ -1,6 +1,8 @@
-import { users, photos } from '@test/__mocks__/sample-data'
-
+// Components
 import AccountScreen from './AccountScreen'
+
+// Mocking data
+import { users, photos } from '@test/__mocks__/sample-data'
 
 describe('AccountScreen', () => {
   let treeDOM

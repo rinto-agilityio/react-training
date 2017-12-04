@@ -1,10 +1,11 @@
+// Libs
 import React from 'react'
 import { storiesOf } from '@storybook/react-native'
 
-// Config
+// Mocking data
 import { users } from '@test/__mocks__/sample-data'
 
-// Component
+// Components
 import PostAuthor from './PostAuthor'
 
 const { profile_pic_url, username } = users[0]

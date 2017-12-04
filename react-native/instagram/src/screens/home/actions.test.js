@@ -1,6 +1,8 @@
+// Libs
 import { Types, Creators } from './actions'
 
-import { comments } from '../../test/__mocks__/sample-data'
+// Mocking data
+import { comments } from '@test/__mocks__/sample-data'
 
 describe('Home actions', () => {
   const mockComment = comments[0]

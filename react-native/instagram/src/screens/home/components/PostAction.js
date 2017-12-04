@@ -14,7 +14,7 @@ const PostAction = ({
   toogleLike,
   toogleCommentBox
 }) => {
-  // User like or remove liked on a photo
+  // User like or remove liked a photo
   const _handleClickIconLike = () => {
     toogleLike({
       postId,
@@ -55,8 +55,8 @@ const PostAction = ({
 }
 
 PostAction.defaultProps = {
-  postId: Date.now(),
-  userId: Date.now(),
+  postId: 0,
+  userId: 0,
   isLiked: false
 }
 

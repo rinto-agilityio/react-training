@@ -1,3 +1,4 @@
+// Components
 import TabBarIcon from './TabBarIcon'
 
 describe('TabBarIcon component', () => {

@@ -1,5 +1,8 @@
-import { users } from '@test/__mocks__/sample-data'
+// Components
 import Info from './Info'
+
+// Mocking data
+import { users } from '@test/__mocks__/sample-data'
 
 describe('Info component', () => {
   let treeDOM

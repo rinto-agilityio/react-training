@@ -1,4 +1,4 @@
-// Third party libs
+// Libs
 import React from 'react'
 import { View, Image, Text, FlatList } from 'react-native'
 import PropTypes from 'prop-types'

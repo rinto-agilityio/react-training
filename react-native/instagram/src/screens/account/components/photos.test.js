@@ -1,5 +1,8 @@
-import { photos } from '@test/__mocks__/sample-data'
+// Components
 import Photos from './Photos'
+
+// Mocking data
+import { photos } from '@test/__mocks__/sample-data'
 
 describe('Photos component', () => {
   let component, treeDOM

@@ -1,11 +1,15 @@
+// Libs
 import { Types } from './actions'
 import { REHYDRATE } from 'redux-persist/lib/constants'
 
-import { users } from '@test/__mocks__/sample-data'
+// Helpers
 import { accountReducer, INITIAL_STATE } from './reducer'
 
+// Mocking data
+import { users } from '@test/__mocks__/sample-data'
+
 describe('Account reducer', () => {
-  describe('Should handle REHYDRATE', () => {
+  describe('Handle REHYDRATE', () => {
     it('Should load data from localStorage', () => {
       expect(
         accountReducer(INITIAL_STATE, {

@@ -4,8 +4,8 @@ import { View, Text } from 'react-native'
 import PropTypes from 'prop-types'
 
 // Styles
-import { styles } from './styles/CommentListStyles'
 import CommonStyles from '@themes/common'
+import { styles } from './styles/CommentListStyles'
 
 const CommentList = ({ comments }) => (
   <View>

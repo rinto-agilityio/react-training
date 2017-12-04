@@ -1,9 +1,13 @@
-import { Types } from './actions'
-import { Types as UploadTypes } from '../upload/actions'
+// Libs
 import { REHYDRATE } from 'redux-persist/lib/constants'
 
-import { photos, users } from '@test/__mocks__/sample-data'
+// Helpers
+import { Types } from './actions'
+import { Types as UploadTypes } from '../upload/actions'
 import { homeReducer, INITIAL_STATE } from './reducer'
+
+// Mocking data
+import { photos, users } from '@test/__mocks__/sample-data'
 
 describe('Home reducer', () => {
   describe('Should handle REHYDRATE', () => {
