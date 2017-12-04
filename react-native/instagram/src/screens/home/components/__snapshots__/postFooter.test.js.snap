@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostFooter component Renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "padding": 10,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+          },
+          undefined,
+        ]
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../src/assets/icons/liked.png",
+          }
+        }
+        style={
+          Object {
+            "height": 24,
+            "marginRight": 10,
+            "width": 24,
+          }
+        }
+      />
+    </View>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+          },
+          undefined,
+        ]
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../src/assets/icons/comment.png",
+          }
+        }
+        style={
+          Object {
+            "height": 24,
+            "marginRight": 10,
+            "width": 24,
+          }
+        }
+      />
+    </View>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    2 
+    likes
+  </Text>
+  <View />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "row",
+        "marginTop": 10,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-19/s150x150/19764837_461147117574705_5216900266812506112_a.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 10,
+          "height": 20,
+          "marginRight": 5,
+          "width": 20,
+        }
+      }
+    />
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      onSubmitEditing={[Function]}
+      placeholder="Add a comment"
+      style={
+        Object {
+          "borderColor": "#a7a7a7",
+          "borderRadius": 15,
+          "borderWidth": 1,
+          "height": 30,
+          "paddingLeft": 10,
+          "width": "95%",
+        }
+      }
+      value=""
+    />
+  </View>
+</View>
+`;
