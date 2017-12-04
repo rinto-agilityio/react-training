@@ -6,6 +6,5 @@
  * @param {object} account
  */
 export const getAccountPhotos = (allPhotos, account) => {
-  // FIXME: App didn't support auth yet, only 1 user for now, so, return all photos
   return allPhotos
 }

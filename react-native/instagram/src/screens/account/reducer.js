@@ -25,8 +25,10 @@ const updatePersist = (state, action) => {
   })
 }
 
+/**
+ * This is no auth yet, fixed data for current user
+ */
 const loadAccountData = (state, action) => {
-  // FIXME: Fixed data for now, no auth yet
   return state.merge({
     type: action.type,
     ...users[0]
