@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux'
 
 // Helpers
 import { Creators as HomeActionCreators } from './actions'
+import { MESSAGE_NODATA } from '@constants'
 
 // Components
 import SinglePhoto from './components/SinglePhoto'
