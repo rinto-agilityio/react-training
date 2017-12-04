@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostAuthor component Renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "padding": 10,
+      },
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+      },
+    ]
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-19/s150x150/14719833_310540259320655_1605122788543168512_a.jpg",
+      }
+    }
+    style={
+      Object {
+        "borderRadius": 15,
+        "height": 30,
+        "marginRight": 10,
+        "width": 30,
+      }
+    }
+  />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    instagram
+  </Text>
+</View>
+`;
