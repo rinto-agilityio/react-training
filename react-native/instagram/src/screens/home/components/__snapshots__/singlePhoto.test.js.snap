@@ -103,9 +103,9 @@ exports[`SinglePhoto component Renders correctly like photo 1`] = `
           }
           style={
             Object {
-              "height": 20,
+              "height": 24,
               "marginRight": 10,
-              "width": 20,
+              "width": 24,
             }
           }
         />
@@ -145,9 +145,9 @@ exports[`SinglePhoto component Renders correctly like photo 1`] = `
           }
           style={
             Object {
-              "height": 20,
+              "height": 24,
               "marginRight": 10,
-              "width": 20,
+              "width": 24,
             }
           }
         />
@@ -158,8 +158,8 @@ exports[`SinglePhoto component Renders correctly like photo 1`] = `
       allowFontScaling={true}
       ellipsizeMode="tail"
     >
-      2
-       likes
+      2 
+      likes
     </Text>
     <View />
   </View>
@@ -269,9 +269,9 @@ exports[`SinglePhoto component Renders correctly without like 1`] = `
           }
           style={
             Object {
-              "height": 20,
+              "height": 24,
               "marginRight": 10,
-              "width": 20,
+              "width": 24,
             }
           }
         />
@@ -311,9 +311,9 @@ exports[`SinglePhoto component Renders correctly without like 1`] = `
           }
           style={
             Object {
-              "height": 20,
+              "height": 24,
               "marginRight": 10,
-              "width": 20,
+              "width": 24,
             }
           }
         />
@@ -324,8 +324,8 @@ exports[`SinglePhoto component Renders correctly without like 1`] = `
       allowFontScaling={true}
       ellipsizeMode="tail"
     >
-      0
-       like
+      0 
+      like
     </Text>
     <View />
   </View>
