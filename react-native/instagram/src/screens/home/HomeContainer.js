@@ -1,6 +1,6 @@
 // Libs
 import React from 'react'
-import { Text, View, Image, FlatList } from 'react-native'
+import { Text, View, FlatList } from 'react-native'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 

@@ -1,6 +1,6 @@
 // Libs
 import React from 'react'
-import { Text, Button, Image } from 'react-native'
+import { Text, Button } from 'react-native'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import ImagePicker from 'react-native-image-picker'
@@ -43,8 +43,6 @@ class UploadContainer extends React.Component {
      * The second arg is the callback which sends object: response (more info below in README)
      */
     ImagePicker.showImagePicker(options, response => {
-      console.log('Response = ', response)
-
       if (response.didCancel) {
         // User cancelled image picker
         this.props.uploadPhotoCancel()
