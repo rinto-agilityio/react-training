@@ -9,6 +9,6 @@ const iconHome = require('@assets/icons/home.png'),
   iconAccount = require('@assets/icons/avatar.png')
 
 storiesOf('Components', module)
-  .add('TabBarIcon - Home', () => <TabBarIcon source={iconHome} />)
-  .add('TabBarIcon - Upload', () => <TabBarIcon source={iconUpload} />)
-  .add('TabBarIcon - Account', () => <TabBarIcon source={iconAccount} />)
+  .add('Icon Home', () => <TabBarIcon source={iconHome} />)
+  .add('Icon Upload', () => <TabBarIcon source={iconUpload} />)
+  .add('Icon Account', () => <TabBarIcon source={iconAccount} />)
