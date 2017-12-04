@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react-native'
 
-import TabBarIcon from './TabBarIcon'
+import Icon from './Icon'
 
 // Define assets path
 const iconHome = require('@assets/icons/home.png'),
@@ -9,6 +9,6 @@ const iconHome = require('@assets/icons/home.png'),
   iconAccount = require('@assets/icons/avatar.png')
 
 storiesOf('Components', module)
-  .add('Icon Home', () => <TabBarIcon source={iconHome} />)
-  .add('Icon Upload', () => <TabBarIcon source={iconUpload} />)
-  .add('Icon Account', () => <TabBarIcon source={iconAccount} />)
+  .add('Icon Home', () => <Icon source={iconHome} />)
+  .add('Icon Upload', () => <Icon source={iconUpload} />)
+  .add('Icon Account', () => <Icon source={iconAccount} />)

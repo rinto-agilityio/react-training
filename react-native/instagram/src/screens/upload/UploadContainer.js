@@ -10,11 +10,19 @@ import { uploadImage } from '@helpers/upload-image'
 import { Creators as UploadActionCreators } from './actions'
 
 // Components
-import TabBarIcon from '@common/components/TabBarIcon'
+import Icon from '@common/components/Icon'
+
+// Styles
+import CommonStyles from '@themes/common'
 
 class UploadContainer extends React.Component {
   static navigationOptions = {
-    tabBarIcon: () => <TabBarIcon source={require('@assets/icons/plus.png')} />
+    tabBarIcon: () => (
+      <Icon
+        style={CommonStyles.tabBarIcon}
+        source={require('@assets/icons/plus.png')}
+      />
+    )
   }
 
   _showImagePicker = () => {

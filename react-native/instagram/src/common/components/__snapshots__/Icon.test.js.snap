@@ -1,17 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TabBarIcon component Renders correctly 1`] = `
+exports[`Icon component Renders correctly 1`] = `
 <Image
   source={
     Object {
       "testUri": "../../../src/assets/icons/home.png",
     }
   }
-  style={
-    Object {
-      "height": 24,
-      "width": 24,
-    }
-  }
+  style={undefined}
 />
 `;

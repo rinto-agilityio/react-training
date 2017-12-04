@@ -10,12 +10,18 @@ import { Creators as AccountActionCreators } from './actions'
 
 // Components
 import AccountScreen from './components/AccountScreen'
-import TabBarIcon from '@common/components/TabBarIcon'
+import Icon from '@common/components/Icon'
+
+// Styles
+import CommonStyles from '@themes/common'
 
 class AccountContainer extends React.Component {
   static navigationOptions = {
     tabBarIcon: () => (
-      <TabBarIcon source={require('@assets/icons/avatar.png')} />
+      <Icon
+        style={CommonStyles.tabBarIcon}
+        source={require('@assets/icons/avatar.png')}
+      />
     )
   }
 
