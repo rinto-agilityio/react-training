@@ -37,8 +37,7 @@ class HomeContainer extends React.Component {
     const { homeData } = this.props
 
     if (!homeData.length) {
-      // TODO: Replace text by constant
-      return <Text>No data, please upload some photos</Text>
+      return <Text>{MESSAGE_NODATA}</Text>
     }
 
     return (
