@@ -29,3 +29,33 @@ exports[`AppHeader component AppHeader renders correctly 1`] = `
   </Text>
 </View>
 `;
+
+exports[`AppHeader component Renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#f9f9f9",
+      "borderBottomWidth": 1,
+      "borderColor": "#eee",
+      "justifyContent": "center",
+      "paddingBottom": 10,
+      "paddingTop": 20,
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "fontSize": 24,
+      }
+    }
+  >
+    Instagram
+  </Text>
+</View>
+`;
