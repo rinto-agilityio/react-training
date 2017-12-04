@@ -9,17 +9,12 @@ import ImagePicker from 'react-native-image-picker'
 import { uploadImage } from '@helpers/upload-image'
 import { Creators as UploadActionCreators } from './actions'
 
-// Styles
-import CommonStyles from '@themes/common'
+// Components
+import TabBarIcon from '@common/components/TabBarIcon'
 
 class UploadContainer extends React.Component {
   static navigationOptions = {
-    tabBarIcon: () => (
-      <Image
-        source={require('@assets/icons/plus.png')}
-        style={CommonStyles.tabBarIcon}
-      />
-    )
+    tabBarIcon: () => <TabBarIcon source={require('@assets/icons/plus.png')} />
   }
 
   _showImagePicker = () => {

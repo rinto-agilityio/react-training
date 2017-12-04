@@ -9,9 +9,7 @@ import { Creators as HomeActionCreators } from './actions'
 
 // Components
 import SinglePhoto from './components/SinglePhoto'
-
-// Styles
-import CommonStyles from '@themes/common'
+import TabBarIcon from '@common/components/TabBarIcon'
 
 class HomeContainer extends React.Component {
   /* 
@@ -19,12 +17,7 @@ class HomeContainer extends React.Component {
    * navigationOptions.tabBarIcon not allow to import custom component
    */
   static navigationOptions = {
-    tabBarIcon: () => (
-      <Image
-        source={require('@assets/icons/home.png')}
-        style={CommonStyles.tabBarIcon}
-      />
-    )
+    tabBarIcon: () => <TabBarIcon source={require('@assets/icons/home.png')} />
   }
 
   // Fetching new data for Home page
