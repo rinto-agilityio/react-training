@@ -40,7 +40,7 @@ const App = () => (
     <PersistGate persistor={persistor}>
       <View style={styles.container}>
         <AppHeader />
-        <MainApp screenProps={this.state} />
+        <MainApp />
       </View>
     </PersistGate>
   </Provider>
