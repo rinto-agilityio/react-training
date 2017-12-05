@@ -38,6 +38,7 @@ class Comment extends React.Component {
         <Image style={styles.avatar} source={{ uri: owner.profile_pic_url }} />
         <TextInput
           style={styles.commentInput}
+          underlineColorAndroid="transparent"
           placeholder="Add a comment"
           value={this.state.text}
           onChangeText={text => this.setState({ text })}

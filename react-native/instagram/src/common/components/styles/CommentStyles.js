@@ -9,15 +9,15 @@ export const styles = StyleSheet.create({
     marginTop: Themes.baseSpacing
   },
   avatar: {
-    height: 20,
-    width: 20,
-    borderRadius: 10,
+    height: 30,
+    width: 30,
+    borderRadius: 15,
     marginRight: 5
   },
   commentInput: {
-    height: 30,
+    height: 40, // Handle padding default on Android
     paddingLeft: Themes.baseSpacing,
-    borderRadius: 15,
+    borderRadius: 20,
     borderColor: Themes.borderInputColor,
     borderWidth: 1,
     width: '95%'
