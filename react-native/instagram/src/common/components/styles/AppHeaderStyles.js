@@ -4,7 +4,7 @@ import Themes from '@themes'
 export const styles = StyleSheet.create({
   wrapper: {
     width: '100%',
-    paddingTop: 20,
+    paddingTop: Themes.appPaddingTop,
     paddingBottom: Themes.baseSpacing,
     backgroundColor: Themes.navigatorBgColor,
     justifyContent: 'center',

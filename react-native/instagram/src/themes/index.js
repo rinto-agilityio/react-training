@@ -1,5 +1,8 @@
+import { Platform } from 'react-native'
+
 // Base theme config for app
 export default {
+  appPaddingTop: Platform.OS === 'ios' ? 20 : 10,
   baseSpacing: 10,
   bgColor: '#fff',
   navigatorBgColor: '#f9f9f9',
