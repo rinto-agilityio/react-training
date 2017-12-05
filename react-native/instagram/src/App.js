@@ -1,6 +1,6 @@
-// Third party libs
+// Libs
 import React from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 import { TabNavigator } from 'react-navigation'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/es/integration/react'
@@ -30,6 +30,8 @@ const MainApp = TabNavigator(
     tabBarPosition: Themes.tabBarPosition,
     animationEnabled: true,
     tabBarOptions: {
+      showLabel: false,
+      showIcon: true,
       activeTintColor: Themes.tabBarTextActiveColor
     }
   }
