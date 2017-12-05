@@ -30,7 +30,7 @@ const getHomeDataRequest = (state, action) => {
 const addPhotoToList = (state, action) => {
   return state
     .merge({ type: action.type })
-    .updateIn(['data'], arr => arr.concat([action.response]))
+    .updateIn(['data'], arr => [action.response].concat(arr))
 }
 
 const addComment = (state, action) => {
