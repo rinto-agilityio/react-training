@@ -128,10 +128,10 @@ exports[`PostFooter component Renders correctly with comment input 1`] = `
       }
       style={
         Object {
-          "borderRadius": 10,
-          "height": 20,
-          "marginRight": 5,
-          "width": 20,
+          "borderRadius": 15,
+          "height": 30,
+          "marginRight": "2%",
+          "width": "5%",
         }
       }
     />
@@ -143,13 +143,14 @@ exports[`PostFooter component Renders correctly with comment input 1`] = `
       style={
         Object {
           "borderColor": "#a7a7a7",
-          "borderRadius": 15,
+          "borderRadius": 20,
           "borderWidth": 1,
-          "height": 30,
+          "height": 40,
           "paddingLeft": 10,
-          "width": "95%",
+          "width": "93%",
         }
       }
+      underlineColorAndroid="transparent"
       value=""
     />
   </View>
