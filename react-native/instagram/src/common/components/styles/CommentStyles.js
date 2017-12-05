@@ -12,7 +12,8 @@ export const styles = StyleSheet.create({
     height: 30,
     width: 30,
     borderRadius: 15,
-    marginRight: 5
+    width: '5%',
+    marginRight: '2%'
   },
   commentInput: {
     height: 40, // Handle padding default on Android
@@ -20,6 +21,6 @@ export const styles = StyleSheet.create({
     borderRadius: 20,
     borderColor: Themes.borderInputColor,
     borderWidth: 1,
-    width: '95%'
+    width: '93%'
   }
 })
