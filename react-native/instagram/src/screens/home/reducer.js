@@ -12,6 +12,10 @@ export const INITIAL_STATE = Immutable({
 })
 
 const updatePersist = (state, action) => {
+  /**
+   * Redux persist throw error if no data in this case
+   * So, set default empty data for the first time install app
+   */
   const homePayload =
     action.payload && action.payload.home ? action.payload.home : {}
 
