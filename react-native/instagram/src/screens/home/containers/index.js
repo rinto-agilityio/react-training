@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux'
 
 // Helpers
 import { Creators as HomeActionCreators } from '../actions'
-import { MESSAGE_NODATA } from '@constants'
+import { NO_PHOTOS } from '@constants/messages'
 
 // Components
 import SinglePhoto from '../components/SinglePhoto'
@@ -42,7 +42,7 @@ class HomeContainer extends React.Component {
     const { homeData } = this.props
 
     if (!homeData.length) {
-      return <Text>{MESSAGE_NODATA}</Text>
+      return <Text>{NO_PHOTOS}</Text>
     }
 
     return (
