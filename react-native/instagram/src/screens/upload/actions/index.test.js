@@ -1,4 +1,4 @@
-import { Types, Creators } from './actions'
+import { Types, Creators } from './'
 
 describe('Upload action', () => {
   it('Return correct action type for uploadPhotoRequest', () => {

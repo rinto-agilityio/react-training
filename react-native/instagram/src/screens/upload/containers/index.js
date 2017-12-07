@@ -7,7 +7,7 @@ import ImagePicker from 'react-native-image-picker'
 
 // Helpers
 import { uploadImage } from '@helpers/upload-image'
-import { Creators as UploadActionCreators } from './actions'
+import { Creators as UploadActionCreators } from '../actions'
 
 // Components
 import Icon from '@common/components/Icon'

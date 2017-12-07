@@ -3,7 +3,7 @@ import { Types } from './actions'
 import { REHYDRATE } from 'redux-persist/lib/constants'
 
 // Helpers
-import { uploadReducer, INITIAL_STATE } from './reducer'
+import { uploadReducer, INITIAL_STATE } from './'
 
 describe('Upload reducer', () => {
   it('Should handle REHYDRATE', () => {

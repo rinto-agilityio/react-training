@@ -11,7 +11,7 @@ import configureStore from '@configs/store'
 // Containers and components
 import HomeContainer from '@screens/home/containers'
 import AccountContainer from '@screens/account/containers'
-import UploadContainer from '@screens/upload/UploadContainer'
+import UploadContainer from '@screens/upload/containers'
 import AppHeader from '@common/components/AppHeader'
 
 // Styles

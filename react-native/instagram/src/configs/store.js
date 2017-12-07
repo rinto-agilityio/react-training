@@ -6,7 +6,7 @@ import storage from 'redux-persist/es/storage'
 
 // Reducers
 import { homeReducer } from '@screens/home/reducers'
-import { uploadReducer } from '@screens/upload/reducer'
+import { uploadReducer } from '@screens/upload/reducers'
 import { accountReducer } from '@screens/account/reducers'
 
 const config = {
