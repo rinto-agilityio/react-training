@@ -3,7 +3,7 @@ import { Types } from './actions'
 import { REHYDRATE } from 'redux-persist/lib/constants'
 
 // Helpers
-import { accountReducer, INITIAL_STATE } from './reducer'
+import { accountReducer, INITIAL_STATE } from './'
 
 // Mocking data
 import { users } from '@test/__mocks__/sample-data'

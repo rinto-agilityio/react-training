@@ -6,10 +6,10 @@ import { bindActionCreators } from 'redux'
 
 // Helpers
 import { getAccountPhotos } from '@helpers/account-data'
-import { Creators as AccountActionCreators } from './actions'
+import { Creators as AccountActionCreators } from '../actions'
 
 // Components
-import AccountScreen from './components/AccountScreen'
+import AccountScreen from '../components/AccountScreen'
 import Icon from '@common/components/Icon'
 
 // Styles

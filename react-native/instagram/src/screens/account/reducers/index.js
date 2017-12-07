@@ -5,7 +5,7 @@ import { REHYDRATE } from 'redux-persist/lib/constants'
 
 // Helpers
 import { users } from '@test/__mocks__/sample-data'
-import { Types } from './actions'
+import { Types } from '../actions'
 
 export const INITIAL_STATE = Immutable({
   biography: null,
