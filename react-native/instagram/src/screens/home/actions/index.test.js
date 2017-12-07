@@ -1,5 +1,5 @@
 // Libs
-import { Types, Creators } from './actions'
+import { Types, Creators } from './'
 
 // Mocking data
 import { comments } from '@test/__mocks__/sample-data'

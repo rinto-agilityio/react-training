@@ -5,11 +5,11 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 // Helpers
-import { Creators as HomeActionCreators } from './actions'
+import { Creators as HomeActionCreators } from '../actions'
 import { MESSAGE_NODATA } from '@constants'
 
 // Components
-import SinglePhoto from './components/SinglePhoto'
+import SinglePhoto from '../components/SinglePhoto'
 import Icon from '@common/components/Icon'
 
 // Styles

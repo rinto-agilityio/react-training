@@ -5,7 +5,7 @@ import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/es/storage'
 
 // Reducers
-import { homeReducer } from '@screens/home/reducer'
+import { homeReducer } from '@screens/home/reducers'
 import { uploadReducer } from '@screens/upload/reducer'
 import { accountReducer } from '@screens/account/reducer'
 

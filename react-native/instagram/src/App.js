@@ -9,7 +9,7 @@ import { PersistGate } from 'redux-persist/es/integration/react'
 import configureStore from '@configs/store'
 
 // Containers and components
-import HomeContainer from '@screens/home/HomeContainer'
+import HomeContainer from '@screens/home/containers'
 import AccountContainer from '@screens/account/AccountContainer'
 import UploadContainer from '@screens/upload/UploadContainer'
 import AppHeader from '@common/components/AppHeader'
