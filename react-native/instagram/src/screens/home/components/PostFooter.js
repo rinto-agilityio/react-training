@@ -34,10 +34,7 @@ const PostFooter = ({
     />
 
     {/* Display like(s) number for this post */}
-    <Text>
-      {likeCounting + ' '}
-      {likeCounting > 1 ? 'likes' : 'like'}
-    </Text>
+    <Text>{[likeCounting, ' like', likeCounting > 1 && 's'].join('')}</Text>
 
     <CommentList comments={comments} />
 
