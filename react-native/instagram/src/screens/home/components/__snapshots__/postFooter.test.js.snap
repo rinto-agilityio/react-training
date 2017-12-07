@@ -106,8 +106,7 @@ exports[`PostFooter component Renders correctly with comment input 1`] = `
     allowFontScaling={true}
     ellipsizeMode="tail"
   >
-    2 
-    likes
+    2 likes
   </Text>
   <View />
   <View
@@ -128,8 +127,8 @@ exports[`PostFooter component Renders correctly with comment input 1`] = `
       }
       style={
         Object {
-          "borderRadius": 15,
-          "height": 30,
+          "borderRadius": 11.25,
+          "height": 22.5,
           "marginRight": "2%",
           "width": "5%",
         }
@@ -143,9 +142,9 @@ exports[`PostFooter component Renders correctly with comment input 1`] = `
       style={
         Object {
           "borderColor": "#a7a7a7",
-          "borderRadius": 20,
+          "borderRadius": 15,
           "borderWidth": 1,
-          "height": 40,
+          "height": 30,
           "paddingLeft": 10,
           "width": "93%",
         }
@@ -263,8 +262,7 @@ exports[`PostFooter component Renders correctly without comment input 1`] = `
     allowFontScaling={true}
     ellipsizeMode="tail"
   >
-    2 
-    likes
+    2 likes
   </Text>
   <View />
 </View>
