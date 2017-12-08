@@ -7,48 +7,24 @@ import PropTypes from 'prop-types'
 import { styles } from './styles/PostActionStyles'
 import CommonStyles from '@themes/common'
 
-const PostAction = ({
-  postId,
-  userId,
-  isLiked,
-  toggleLike,
-  toggleCommentBox
-}) => {
+const PostAction = ({ postId, userId, isLiked, toggleLike, toggleCommentBox }) => {
   // User like or remove liked a photo
-  const _handleClickIconLike = () => {
+  const _handleTouchIconLike = () => {
     toggleLike({
       postId,
       userId
     })
   }
 
-  // Toggle comment input on single photo
-  const _handleClickIconComment = () => {
-    toggleCommentBox()
-  }
-
-  const likeIcon = isLiked
-    ? require('@assets/icons/liked.png')
-    : require('@assets/icons/like.png')
+  const likeIcon = isLiked ? require('@assets/icons/liked.png') : require('@assets/icons/like.png')
 
   return (
     <View style={CommonStyles.layoutRow}>
-      <TouchableHighlight
-        className="icon-like"
-        onPress={() => _handleClickIconLike()}
-        underlayColor={'transparent'}
-      >
+      <TouchableHighlight className="icon-like" onPress={() => _handleTouchIconLike()} underlayColor={'transparent'}>
         <Image style={styles.icon} source={likeIcon} />
       </TouchableHighlight>
-      <TouchableHighlight
-        className="icon-comment"
-        onPress={() => _handleClickIconComment()}
-        underlayColor={'transparent'}
-      >
-        <Image
-          style={styles.icon}
-          source={require('@assets/icons/comment.png')}
-        />
+      <TouchableHighlight className="icon-comment" onPress={() => toggleCommentBox()} underlayColor={'transparent'}>
+        <Image style={styles.icon} source={require('@assets/icons/comment.png')} />
       </TouchableHighlight>
     </View>
   )
