@@ -14,13 +14,14 @@ import Icon from '@common/components/Icon'
 
 // Styles
 import CommonStyles from '@themes/common'
+import Icons from '@themes/icons'
 
 class AccountContainer extends React.Component {
   static navigationOptions = {
     tabBarIcon: () => (
       <Icon
         style={CommonStyles.tabBarIcon}
-        source={require('@assets/icons/avatar.png')}
+        source={Icons.avatar}
       />
     )
   }

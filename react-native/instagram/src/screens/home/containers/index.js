@@ -14,13 +14,14 @@ import Icon from '@common/components/Icon'
 
 // Styles
 import CommonStyles from '@themes/common'
+import Icons from '@themes/icons'
 
 class HomeContainer extends React.Component {
   static navigationOptions = {
     tabBarIcon: () => (
       <Icon
         style={CommonStyles.tabBarIcon}
-        source={require('@assets/icons/home.png')}
+        source={Icons.home}
       />
     )
   }

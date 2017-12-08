@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 // Styles
 import { styles } from './styles/PostActionStyles'
 import CommonStyles from '@themes/common'
+import Icons from '@themes/icons'
 
 const PostAction = ({
   postId,
@@ -22,9 +23,7 @@ const PostAction = ({
     })
   }
 
-  const likeIcon = isLiked
-    ? require('@assets/icons/liked.png')
-    : require('@assets/icons/like.png')
+  const likeIcon = isLiked ? Icons.liked : Icons.like
 
   return (
     <View style={CommonStyles.layoutRow}>

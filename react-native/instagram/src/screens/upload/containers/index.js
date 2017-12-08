@@ -14,13 +14,14 @@ import Icon from '@common/components/Icon'
 
 // Styles
 import CommonStyles from '@themes/common'
+import Icons from '@themes/icons'
 
 class UploadContainer extends React.Component {
   static navigationOptions = {
     tabBarIcon: () => (
       <Icon
         style={CommonStyles.tabBarIcon}
-        source={require('@assets/icons/plus.png')}
+        source={Icons.plus}
       />
     )
   }
