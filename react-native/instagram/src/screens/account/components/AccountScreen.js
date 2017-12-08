@@ -21,13 +21,12 @@ const AccountScreen = ({ owner, photos }) => (
 )
 
 AccountScreen.defaultProps = {
-  owner: {},
   photos: []
 }
 
 AccountScreen.propTypes = {
   owner: PropTypes.object.isRequired,
-  photos: PropTypes.array.isRequired
+  photos: PropTypes.array
 }
 
 export default AccountScreen

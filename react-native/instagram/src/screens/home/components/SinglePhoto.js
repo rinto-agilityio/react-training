@@ -46,14 +46,10 @@ class SinglePhoto extends React.Component {
   }
 }
 
-SinglePhoto.defaultProps = {
-  item: {}
-}
-
 SinglePhoto.propTypes = {
   item: PropTypes.object.isRequired,
-  submitComment: PropTypes.func,
-  toggleLike: PropTypes.func
+  submitComment: PropTypes.func.isRequired,
+  toggleLike: PropTypes.func.isRequired
 }
 
 export default SinglePhoto

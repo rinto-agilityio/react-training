@@ -24,7 +24,7 @@ Photos.defaultProps = {
 }
 
 Photos.propTypes = {
-  photos: PropTypes.array.isRequired
+  photos: PropTypes.array
 }
 
 export default Photos

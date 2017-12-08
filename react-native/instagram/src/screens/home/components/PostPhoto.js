@@ -19,7 +19,7 @@ PostPhoto.defaultProps = {
 }
 
 PostPhoto.propTypes = {
-  uri: PropTypes.string.isRequired
+  uri: PropTypes.string
 }
 
 export default PostPhoto

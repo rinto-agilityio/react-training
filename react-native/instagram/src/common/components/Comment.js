@@ -56,15 +56,10 @@ class Comment extends React.Component {
   }
 }
 
-Comment.defaultProps = {
-  postId: 0,
-  owner: {}
-}
-
 Comment.propTypes = {
   postId: PropTypes.number.isRequired,
   owner: PropTypes.object.isRequired,
-  submitComment: PropTypes.func
+  submitComment: PropTypes.func.isRequired
 }
 
 export default Comment

@@ -13,11 +13,6 @@ const PostAuthor = ({ avatar, username }) =>
     <Text>{username}</Text>
   </View>
 
-PostAuthor.defaultProps = {
-  avatar: '',
-  username: ''
-}
-
 PostAuthor.propTypes = {
   avatar: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired

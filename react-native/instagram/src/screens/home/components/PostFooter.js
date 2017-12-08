@@ -50,24 +50,20 @@ const PostFooter = ({
 )
 
 PostFooter.defaultProps = {
-  isLiked: false,
-  postId: 0,
   likeCounting: 0,
-  comments: [],
-  showComment: false,
-  owner: {}
+  comments: []
 }
 
 PostFooter.propTypes = {
+  likeCounting: PropTypes.number,
+  comments: PropTypes.array,
   isLiked: PropTypes.bool.isRequired,
-  postId: PropTypes.number.isRequired,
-  likeCounting: PropTypes.number.isRequired,
-  comments: PropTypes.array.isRequired,
   showComment: PropTypes.bool.isRequired,
+  postId: PropTypes.number.isRequired,
   owner: PropTypes.object.isRequired,
-  submitComment: PropTypes.func,
-  toggleLike: PropTypes.func,
-  toggleCommentBox: PropTypes.func
+  submitComment: PropTypes.func.isRequired,
+  toggleLike: PropTypes.func.isRequired,
+  toggleCommentBox: PropTypes.func.isRequired
 }
 
 export default PostFooter

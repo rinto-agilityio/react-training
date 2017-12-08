@@ -23,10 +23,6 @@ const Info = ({ owner }) => (
   </View>
 )
 
-Info.defaultProps = {
-  owner: {}
-}
-
 Info.propTypes = {
   owner: PropTypes.object.isRequired
 }

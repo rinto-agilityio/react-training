@@ -48,18 +48,12 @@ const PostAction = ({
   )
 }
 
-PostAction.defaultProps = {
-  postId: 0,
-  userId: 0,
-  isLiked: false
-}
-
 PostAction.propTypes = {
   postId: PropTypes.number.isRequired,
   userId: PropTypes.number.isRequired,
   isLiked: PropTypes.bool.isRequired,
-  toggleLike: PropTypes.func,
-  toggleCommentBox: PropTypes.func
+  toggleLike: PropTypes.func.isRequired,
+  toggleCommentBox: PropTypes.func.isRequired
 }
 
 export default PostAction
