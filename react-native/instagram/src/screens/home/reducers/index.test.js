@@ -85,11 +85,11 @@ describe('Home reducer', () => {
       )
     })
 
-    it('Should handle TOOGLE_LIKE: Increase like counting', () => {
+    it('Should handle TOGGLE_LIKE: Increase like counting', () => {
       const postIdx = 0
 
       const newState = homeReducer(homeState, {
-        type: Types.TOOGLE_LIKE,
+        type: Types.TOGGLE_LIKE,
         data: {
           postId: homeState.data[postIdx].id,
           userId: mockUser.id
@@ -101,11 +101,11 @@ describe('Home reducer', () => {
       )
     })
 
-    it('Should handle TOOGLE_LIKE: Decrease like counting', () => {
+    it('Should handle TOGGLE_LIKE: Decrease like counting', () => {
       const postIdx = 1 // This has some like in mock data
 
       const newState = homeReducer(homeState, {
-        type: Types.TOOGLE_LIKE,
+        type: Types.TOGGLE_LIKE,
         data: {
           postId: homeState.data[postIdx].id,
           userId: mockUser.id

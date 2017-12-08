@@ -11,12 +11,12 @@ const PostAction = ({
   postId,
   userId,
   isLiked,
-  toogleLike,
-  toogleCommentBox
+  toggleLike,
+  toggleCommentBox
 }) => {
   // User like or remove liked a photo
   const _handleClickIconLike = () => {
-    toogleLike({
+    toggleLike({
       postId,
       userId
     })
@@ -24,7 +24,7 @@ const PostAction = ({
 
   // Toggle comment input on single photo
   const _handleClickIconComment = () => {
-    toogleCommentBox()
+    toggleCommentBox()
   }
 
   const likeIcon = isLiked
@@ -64,8 +64,8 @@ PostAction.propTypes = {
   postId: PropTypes.number.isRequired,
   userId: PropTypes.number.isRequired,
   isLiked: PropTypes.bool.isRequired,
-  toogleLike: PropTypes.func,
-  toogleCommentBox: PropTypes.func
+  toggleLike: PropTypes.func,
+  toggleCommentBox: PropTypes.func
 }
 
 export default PostAction

@@ -28,16 +28,16 @@ describe('Home actions', () => {
     expect(Creators.addComment(comment)).toEqual(expectAction)
   })
 
-  it('Return correct action type and data for toogleLike', () => {
+  it('Return correct action type and data for toggleLike', () => {
     const data = {
       postId: mockComment.postId,
       userId: mockComment.owner.id
     }
     const expectAction = {
-      type: Types.TOOGLE_LIKE,
+      type: Types.TOGGLE_LIKE,
       data: data
     }
 
-    expect(Creators.toogleLike(data)).toEqual(expectAction)
+    expect(Creators.toggleLike(data)).toEqual(expectAction)
   })
 })

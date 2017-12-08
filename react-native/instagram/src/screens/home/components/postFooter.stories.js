@@ -20,7 +20,7 @@ storiesOf('Components', module).add('PostFooter', () => (
     likeCounting={likes.length}
     comments={comments}
     owner={owner}
-    toogleLike={action('toogleLike')}
-    toogleCommentBox={action('toogleCommentBox')}
+    toggleLike={action('toggleLike')}
+    toggleCommentBox={action('toggleCommentBox')}
   />
 ))

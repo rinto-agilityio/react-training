@@ -8,8 +8,8 @@ describe('PostAction component', () => {
   let imageUri, iconLike, iconComment
   const userId = users[0].id,
     postId = photos[0].id,
-    mockToogleCommentBox = jest.fn(),
-    mockToogleLike = jest.fn()
+    mocktoggleCommentBox = jest.fn(),
+    mocktoggleLike = jest.fn()
 
   beforeEach(() => {
     const component = shallow(
@@ -17,8 +17,8 @@ describe('PostAction component', () => {
         userId={userId}
         postId={postId}
         isLiked={false}
-        toogleLike={mockToogleLike}
-        toogleCommentBox={mockToogleCommentBox}
+        toggleLike={mocktoggleLike}
+        toggleCommentBox={mocktoggleCommentBox}
       />
     )
 
@@ -42,15 +42,15 @@ describe('PostAction component', () => {
     expect(treeDOM).toMatchSnapshot()
   })
 
-  it('Should call toogleLike if click on icon like', () => {
+  it('Should call toggleLike if click on icon like', () => {
     iconLike.simulate('press')
 
-    expect(mockToogleLike.mock.calls.length).toEqual(1)
+    expect(mocktoggleLike.mock.calls.length).toEqual(1)
   })
 
-  it('Should call toogleComment if click on icon like', () => {
+  it('Should call toggleComment if click on icon like', () => {
     iconComment.simulate('press')
 
-    expect(mockToogleCommentBox.mock.calls.length).toEqual(1)
+    expect(mocktoggleCommentBox.mock.calls.length).toEqual(1)
   })
 })

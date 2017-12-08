@@ -8,7 +8,7 @@ import PostAction from './PostAction'
 
 storiesOf('Components', module).add('PostAction', () => (
   <PostAction
-    toogleLike={action('toogleLike')}
-    toogleCommentBox={action('toogleCommentBox')}
+    toggleLike={action('toggleLike')}
+    toggleCommentBox={action('toggleCommentBox')}
   />
 ))

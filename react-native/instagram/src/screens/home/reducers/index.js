@@ -48,7 +48,7 @@ const addComment = (state, action) => {
     )
 }
 
-const toogleLike = (state, action) => {
+const toggleLike = (state, action) => {
   let newLikes
   const { postId, userId } = action.data,
     postIdx = state.data.findIndex(item => item.id === postId),
@@ -72,6 +72,6 @@ export const homeReducer = createReducer(INITIAL_STATE, {
 
   [Types.GET_HOME_DATA_REQUEST]: getHomeDataRequest,
   [Types.ADD_COMMENT]: addComment,
-  [Types.TOOGLE_LIKE]: toogleLike,
+  [Types.TOGGLE_LIKE]: toggleLike,
   [UploadTypes.UPLOAD_PHOTO_SUCCESS]: addPhotoToList
 })

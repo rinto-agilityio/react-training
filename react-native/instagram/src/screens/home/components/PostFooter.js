@@ -20,8 +20,8 @@ const PostFooter = ({
   showComment,
   submitComment,
   owner,
-  toogleLike,
-  toogleCommentBox
+  toggleLike,
+  toggleCommentBox
 }) => (
   <View style={styles.footer}>
     {/* Display icon like and comment */}
@@ -29,23 +29,17 @@ const PostFooter = ({
       isLiked={isLiked}
       postId={postId}
       userId={owner.id}
-      toogleLike={toogleLike}
-      toogleCommentBox={toogleCommentBox}
+      toggleLike={toggleLike}
+      toggleCommentBox={toggleCommentBox}
     />
 
     {/* Display like(s) number for this post */}
-    <Text>{[likeCounting, ' like', likeCounting > 1 && 's'].join('')}</Text>
+    <Text>{[likeCounting, ' like', likeCounting !== 1 ? 's' : ''].join('')}</Text>
 
     <CommentList comments={comments} />
 
     {/* Show/hide input for comment */}
-    {showComment && (
-      <CommentInput
-        submitComment={submitComment}
-        owner={owner}
-        postId={postId}
-      />
-    )}
+    {showComment && <CommentInput submitComment={submitComment} owner={owner} postId={postId} />}
   </View>
 )
 
@@ -66,8 +60,8 @@ PostFooter.propTypes = {
   showComment: PropTypes.bool.isRequired,
   owner: PropTypes.object.isRequired,
   submitComment: PropTypes.func,
-  toogleLike: PropTypes.func,
-  toogleCommentBox: PropTypes.func
+  toggleLike: PropTypes.func,
+  toggleCommentBox: PropTypes.func
 }
 
 export default PostFooter

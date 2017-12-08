@@ -34,8 +34,8 @@ class HomeContainer extends React.Component {
     this.props.addComment(data)
   }
 
-  _toogleLike = data => {
-    this.props.toogleLike(data)
+  _toggleLike = data => {
+    this.props.toggleLike(data)
   }
 
   render() {
@@ -53,7 +53,7 @@ class HomeContainer extends React.Component {
             key={item.id}
             item={item}
             submitComment={this._addPostComment}
-            toogleLike={this._toogleLike}
+            toggleLike={this._toggleLike}
           />
         )}
         keyExtractor={(item, index) => index}

@@ -11,7 +11,7 @@ import PostFooter from './PostFooter'
 class SinglePhoto extends React.Component {
   state = { showComment: false }
 
-  _toogleCommentBox = () => {
+  _toggleCommentBox = () => {
     this.setState(prevState => ({
       showComment: !prevState.showComment
     }))
@@ -19,7 +19,7 @@ class SinglePhoto extends React.Component {
 
   render() {
     const { showComment } = this.state,
-      { item, submitComment, toogleLike } = this.props,
+      { item, submitComment, toggleLike } = this.props,
       likeCounting = item.likes.length,
       isLiked = item.likes.find(i => i === item.owner.id) ? true : false
 
@@ -38,8 +38,8 @@ class SinglePhoto extends React.Component {
           owner={item.owner}
           showComment={showComment}
           submitComment={submitComment}
-          toogleLike={toogleLike}
-          toogleCommentBox={this._toogleCommentBox}
+          toggleLike={toggleLike}
+          toggleCommentBox={this._toggleCommentBox}
         />
       </View>
     )
@@ -53,7 +53,7 @@ SinglePhoto.defaultProps = {
 SinglePhoto.propTypes = {
   item: PropTypes.object.isRequired,
   submitComment: PropTypes.func,
-  toogleLike: PropTypes.func
+  toggleLike: PropTypes.func
 }
 
 export default SinglePhoto

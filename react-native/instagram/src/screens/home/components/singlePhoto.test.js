@@ -28,7 +28,7 @@ describe('SinglePhoto component', () => {
   it('Change state after click comment icon', () => {
     const initialState = component.state()
 
-    component.instance()._toogleCommentBox()
+    component.instance()._toggleCommentBox()
 
     expect(initialState.showComment).toEqual(!component.state().showComment)
   })

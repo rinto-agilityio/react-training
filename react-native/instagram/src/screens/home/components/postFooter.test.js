@@ -8,8 +8,8 @@ describe('PostFooter component', () => {
   const singlePost = photos[1],
     defaultShowComment = false,
     mockSubmitComment = jest.fn(),
-    mockToogleLike = jest.fn(),
-    mockToogleCommentBox = jest.fn()
+    mocktoggleLike = jest.fn(),
+    mocktoggleCommentBox = jest.fn()
 
   it('Renders correctly without comment input', () => {
     const treeDOM = renderer
@@ -22,8 +22,8 @@ describe('PostFooter component', () => {
           owner={singlePost.owner}
           showComment={defaultShowComment}
           submitComment={mockSubmitComment}
-          toogleLike={mockToogleLike}
-          toogleCommentBox={mockToogleCommentBox}
+          toggleLike={mocktoggleLike}
+          toggleCommentBox={mocktoggleCommentBox}
         />
       )
       .toJSON()
@@ -42,8 +42,8 @@ describe('PostFooter component', () => {
           owner={singlePost.owner}
           showComment={!defaultShowComment}
           submitComment={mockSubmitComment}
-          toogleLike={mockToogleLike}
-          toogleCommentBox={mockToogleCommentBox}
+          toggleLike={mocktoggleLike}
+          toggleCommentBox={mocktoggleCommentBox}
         />
       )
       .toJSON()
