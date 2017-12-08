@@ -41,7 +41,7 @@ const PostAction = ({
       >
         <Image
           style={styles.icon}
-          source={require('@assets/icons/comment.png')}
+          source={Icons.comment}
         />
       </TouchableHighlight>
     </View>
