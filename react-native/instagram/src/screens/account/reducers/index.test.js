@@ -1,5 +1,5 @@
 // Libs
-import { Types } from './actions'
+import { Types } from '../actions'
 import { REHYDRATE } from 'redux-persist/lib/constants'
 
 // Helpers

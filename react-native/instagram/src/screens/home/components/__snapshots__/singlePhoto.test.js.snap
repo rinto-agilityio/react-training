@@ -323,7 +323,7 @@ exports[`SinglePhoto component Renders correctly without like 1`] = `
       allowFontScaling={true}
       ellipsizeMode="tail"
     >
-      0 likefalse
+      0 likes
     </Text>
     <View />
   </View>
