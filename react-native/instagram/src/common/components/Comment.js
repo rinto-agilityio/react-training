@@ -9,9 +9,15 @@ import { styles } from './styles/CommentStyles'
 class Comment extends React.Component {
   state = { text: '' }
 
+  // Reset state after unmount
+  componentWillUnmount() {
+    this._resetTextInput()
+  }
+
   // Add comment for this photo
-  submitComment = () => {
+  _submitComment = () => {
     const { text } = this.state
+
     if (text) {
       const { postId, owner, submitComment } = this.props
 
@@ -21,17 +27,18 @@ class Comment extends React.Component {
         text
       })
 
-      this.setState({ text: '' })
+      this._resetTextInput()
     }
   }
 
-  // Reset state after unmount
-  componentWillUnmount() {
+  // Reset input value after submit or component unmount
+  _resetTextInput = () => {
     this.setState({ text: '' })
   }
 
   render() {
-    const { owner } = this.props
+    const { owner } = this.props,
+          { text } = this.state
 
     return (
       <View style={styles.comment}>
@@ -40,9 +47,9 @@ class Comment extends React.Component {
           style={styles.commentInput}
           underlineColorAndroid="transparent"
           placeholder="Add a comment"
-          value={this.state.text}
+          value={text}
           onChangeText={text => this.setState({ text })}
-          onSubmitEditing={this.submitComment}
+          onSubmitEditing={this._submitComment}
         />
       </View>
     )

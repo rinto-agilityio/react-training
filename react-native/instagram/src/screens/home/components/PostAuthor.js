@@ -7,20 +7,19 @@ import PropTypes from 'prop-types'
 import CommonStyles from '@themes/common'
 import { styles } from './styles/PostAuthorStyles'
 
-const PostAuthor = ({ profile_pic_url, username }) => (
+const PostAuthor = ({ avatar, username }) =>
   <View style={[styles.header, CommonStyles.layoutRow]}>
-    <Image style={styles.avatar} source={{ uri: profile_pic_url }} />
+    <Image style={styles.avatar} source={{ uri: avatar }} />
     <Text>{username}</Text>
   </View>
-)
 
 PostAuthor.defaultProps = {
-  profile_pic_url: '',
+  avatar: '',
   username: ''
 }
 
 PostAuthor.propTypes = {
-  profile_pic_url: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired
 }
 

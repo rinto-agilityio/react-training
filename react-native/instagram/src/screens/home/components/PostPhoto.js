@@ -6,20 +6,20 @@ import PropTypes from 'prop-types'
 // Styles
 import { styles } from './styles/PostPhotoStyles'
 
-const PostPhoto = ({ display_url }) => (
+const PostPhoto = ({ uri }) => (
   <Image
     resizeMode={'cover'}
     style={styles.photo}
-    source={{ uri: display_url }}
+    source={{ uri: uri }}
   />
 )
 
 PostPhoto.defaultProps = {
-  display_url: ''
+  uri: ''
 }
 
 PostPhoto.propTypes = {
-  display_url: PropTypes.string.isRequired
+  uri: PropTypes.string.isRequired
 }
 
 export default PostPhoto

@@ -39,7 +39,13 @@ const PostFooter = ({
     <CommentList comments={comments} />
 
     {/* Show/hide input for comment */}
-    {showComment && <CommentInput submitComment={submitComment} owner={owner} postId={postId} />}
+    {showComment &&
+      <CommentInput
+        submitComment={submitComment}
+        owner={owner}
+        postId={postId}
+      />
+    }
   </View>
 )
 

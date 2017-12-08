@@ -26,10 +26,10 @@ class SinglePhoto extends React.Component {
     return (
       <View>
         <PostAuthor
-          profile_pic_url={item.owner.profile_pic_url}
+          avatar={item.owner.profile_pic_url}
           username={item.owner.username}
         />
-        <PostPhoto display_url={item.display_url} />
+        <PostPhoto uri={item.display_url} />
         <PostFooter
           isLiked={isLiked}
           postId={item.id}
