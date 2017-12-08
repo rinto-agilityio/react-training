@@ -3,10 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start":
-      "node node_modules/react-native/local-cli/cli.js start NODE_ENV=development",
-    "build":
-      "node node_modules/react-native/local-cli/cli.js start NODE_ENV=production",
+    "start": "node node_modules/react-native/local-cli/cli.js start NODE_ENV=development",
+    "build": "node node_modules/react-native/local-cli/cli.js start NODE_ENV=production",
     "test": "jest",
     "test-coverage": "jest --coverage",
     "updateSnapshot": "jest --updateSnapshot",
@@ -46,9 +44,7 @@
   "jest": {
     "preset": "react-native",
     "testMatch": ["**/src/**/*.test.js"],
-    "transformIgnorePatterns": [
-      "node_modules/(?!react-native|react-navigation)/"
-    ],
+    "transformIgnorePatterns": ["node_modules/(?!react-native|react-navigation)/"],
     "setupFiles": ["./src/test/setup.js"],
     "globals": {
       "window": {}
@@ -58,7 +54,6 @@
   },
   "prettier": {
     "singleQuote": true,
-    "semi": false,
-    "printWidth": 120
+    "semi": false
   }
 }
