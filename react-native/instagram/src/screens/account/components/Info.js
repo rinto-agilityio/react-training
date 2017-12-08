@@ -7,28 +7,28 @@ import PropTypes from 'prop-types'
 import { styles } from './styles/InfoStyles'
 import CommonStyles from '@themes/common'
 
-const Info = ({ data }) => (
+const Info = ({ owner }) => (
   <View style={[styles.wrapper, CommonStyles.layoutColumn]}>
     <View style={styles.avatarWrapper}>
-      <Image style={styles.avatar} source={{ uri: data.profile_pic_url }} />
+      <Image style={styles.avatar} source={{ uri: owner.profile_pic_url }} />
       <Text style={[styles.username, CommonStyles.textBold]}>
-        {data.username}
+        {owner.username}
       </Text>
     </View>
     <Text>
-      <Text style={CommonStyles.textBold}>{data.full_name}</Text>
+      <Text style={CommonStyles.textBold}>{owner.full_name}</Text>
       {' - '}
-      {data.biography}
+      {owner.biography}
     </Text>
   </View>
 )
 
 Info.defaultProps = {
-  data: {}
+  owner: {}
 }
 
 Info.propTypes = {
-  data: PropTypes.object.isRequired
+  owner: PropTypes.object.isRequired
 }
 
 export default Info

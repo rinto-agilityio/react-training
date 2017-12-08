@@ -26,7 +26,7 @@ exports[`Info component Renders correctly 1`] = `
     <Image
       source={
         Object {
-          "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-19/s150x150/14719833_310540259320655_1605122788543168512_a.jpg",
+          "uri": undefined,
         }
       }
       style={
@@ -52,9 +52,7 @@ exports[`Info component Renders correctly 1`] = `
           },
         ]
       }
-    >
-      instagram
-    </Text>
+    />
   </View>
   <Text
     accessible={true}
@@ -70,11 +68,8 @@ exports[`Info component Renders correctly 1`] = `
           "fontWeight": "bold",
         }
       }
-    >
-      Instagram
-    </Text>
+    />
      - 
-    Discovering — and telling — stories from around the world. Curated by Instagram's community team.
   </Text>
 </View>
 `;

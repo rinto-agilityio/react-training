@@ -11,23 +11,23 @@ import Photos from './Photos'
 import CommonStyles from '@themes/common'
 import { styles } from './styles/AccountScreenStyles'
 
-const AccountScreen = ({ accountData, myPhotos }) => (
+const AccountScreen = ({ owner, photos }) => (
   <View style={CommonStyles.layoutColumn}>
     <View style={styles.info}>
-      <Info data={accountData} />
+      <Info owner={owner} />
     </View>
-    <Photos data={myPhotos} />
+    <Photos photos={photos} />
   </View>
 )
 
 AccountScreen.defaultProps = {
-  accountData: {},
-  myPhotos: []
+  owner: {},
+  photos: []
 }
 
 AccountScreen.propTypes = {
-  accountData: PropTypes.object.isRequired,
-  myPhotos: PropTypes.array.isRequired
+  owner: PropTypes.object.isRequired,
+  photos: PropTypes.array.isRequired
 }
 
 export default AccountScreen

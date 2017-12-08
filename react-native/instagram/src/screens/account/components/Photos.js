@@ -6,10 +6,10 @@ import PropTypes from 'prop-types'
 // Styles
 import { styles, numColumns } from './styles/PhotosStyles'
 
-const Photos = ({ data }) => (
+const Photos = ({ photos }) => (
   <View style={styles.list}>
     <FlatList
-      data={data}
+      photos={photos}
       renderItem={({ item }) => (
         <Image style={styles.item} source={{ uri: item.display_url }} />
       )}
@@ -20,11 +20,11 @@ const Photos = ({ data }) => (
 )
 
 Photos.defaultProps = {
-  data: []
+  photos: []
 }
 
 Photos.propTypes = {
-  data: PropTypes.array.isRequired
+  photos: PropTypes.array.isRequired
 }
 
 export default Photos
