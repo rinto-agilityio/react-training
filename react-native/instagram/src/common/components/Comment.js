@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 
 // Styles
 import { styles } from './styles/CommentStyles'
+import CommonStyles from '@themes/common'
 
 class Comment extends React.Component {
   state = { text: '' }
@@ -41,7 +42,7 @@ class Comment extends React.Component {
           { text } = this.state
 
     return (
-      <View style={styles.comment}>
+      <View style={[CommonStyles.layoutRow, styles.comment]}>
         <Image style={styles.avatar} source={{ uri: owner.profile_pic_url }} />
         <TextInput
           style={styles.commentInput}

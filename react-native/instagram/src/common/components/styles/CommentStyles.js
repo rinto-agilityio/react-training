@@ -3,8 +3,6 @@ import Themes from '@themes'
 
 export const styles = StyleSheet.create({
   comment: {
-    flex: 1,
-    flexDirection: 'row',
     alignItems: 'center',
     marginTop: Themes.baseSpacing
   },
@@ -12,8 +10,7 @@ export const styles = StyleSheet.create({
     height: Themes.textInputHeight * 0.75,
     width: Themes.textInputHeight * 0.75,
     borderRadius: Themes.textInputHeight * 0.75 / 2,
-    width: '5%',
-    marginRight: '2%'
+    width: '5%'
   },
   commentInput: {
     height: Themes.textInputHeight, // Handle padding default on Android
@@ -21,6 +18,7 @@ export const styles = StyleSheet.create({
     borderRadius: Themes.textInputHeight / 2,
     borderColor: Themes.borderInputColor,
     borderWidth: 1,
-    width: '93%'
+    width: '93%',
+    marginLeft: 5
   }
 })

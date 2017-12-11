@@ -1,6 +1,6 @@
 // Libs
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, TextInput } from 'react-native'
 import PropTypes from 'prop-types'
 
 // Components
@@ -23,7 +23,7 @@ const PostFooter = ({
   toggleLike,
   toggleCommentBox
 }) => (
-  <View style={styles.footer}>
+  <View style={[CommonStyles.layoutColumn, styles.footer]}>
     {/* Display icon like and comment */}
     <PostAction
       isLiked={isLiked}
@@ -38,14 +38,11 @@ const PostFooter = ({
 
     <CommentList comments={comments} />
 
-    {/* Show/hide input for comment */}
-    {showComment &&
-      <CommentInput
-        submitComment={submitComment}
-        owner={owner}
-        postId={postId}
-      />
-    }
+    <CommentInput
+      submitComment={submitComment}
+      owner={owner}
+      postId={postId}
+    />
   </View>
 )
 
