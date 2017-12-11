@@ -13,18 +13,18 @@ Clone instagram app without authentication:
 
 ## Usage
 
-Please install packages follow
-[react-native doucments](https://facebook.github.io/react-native/docs/getting-started.html), there're:
+### 1. Install packages
+Please follow [react-native doucments](https://facebook.github.io/react-native/docs/getting-started.html) to install:
 
-* react-native-cli
-* Xcode
-* Android Studio or Genymotion
+  * react-native-cli
+  * Xcode
+  * Android Studio or Genymotion
 
-### Config `.env`
+### 2. Config environments
 
 Please check `.env.example` keys in app. Copy content into `.env` then replace by real environment keys
 
-### Run app
+### 3. Run app
 
 Run command below to install dependencies: `npm install` or `yarn`
 
@@ -32,13 +32,13 @@ Run app on iOS simulator: `react-native run-ios`
 
 Run app on Android emulator: `react-native run-android`
 
-### Run unit test
+### 4. Run unit test
 
 ```
 yarn test
 ```
 
-### Run storybook
+### 5. Run storybook
 
 ```
 yarn storybook
