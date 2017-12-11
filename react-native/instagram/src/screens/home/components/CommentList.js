@@ -9,14 +9,12 @@ import { styles } from './styles/CommentListStyles'
 
 const CommentList = ({ comments }) => (
   <View>
-    {comments.map(comment => {
-      return (
-        <Text key={comment.id} style={styles.comment}>
-          <Text style={CommonStyles.textBold}>{comment.owner.username}</Text>
-          {': ' + comment.text}
-        </Text>
-      )
-    })}
+    {comments.map(comment =>
+      <Text key={comment.id} style={styles.comment}>
+        <Text style={CommonStyles.textBold}>{comment.owner.username}</Text>
+        {': ' + comment.text}
+      </Text>
+    )}
   </View>
 )
 

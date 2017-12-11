@@ -13,7 +13,6 @@ import Icon from '@common/components/Icon'
 import CommonStyles from '@themes/common'
 import Icons from '@themes/icons'
 
-// TODO: Change to function/stateless component
 class HomeScreen extends React.Component {
   static navigationOptions = {
     tabBarIcon: () => (
