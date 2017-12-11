@@ -20,6 +20,10 @@ Please install packages follow
 * Xcode
 * Android Studio or Genymotion
 
+### Config `.env`
+
+Please check `.env.example` keys in app. Copy content into `.env` then replace by real environment keys
+
 ### Run app
 
 Run command below to install dependencies: `npm install` or `yarn`
