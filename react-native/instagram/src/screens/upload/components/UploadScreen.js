@@ -13,7 +13,6 @@ import Icon from '@common/components/Icon'
 import CommonStyles from '@themes/common'
 import Icons from '@themes/icons'
 
-// TODO: Change to function/stateless component
 class UploadScreen extends React.Component {
   static navigationOptions = {
     tabBarIcon: () => (
@@ -72,8 +71,7 @@ class UploadScreen extends React.Component {
   }
 
   render() {
-    const { uploadData } = this.props,
-          ButtonTitle = uploadData.isUploading
+    const ButtonTitle = this.props.uploadData.isUploading
                         ? 'Uploading images...'
                         : 'Select images from Photo Gallery'
 
