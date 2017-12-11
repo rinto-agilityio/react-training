@@ -72,10 +72,10 @@ class UploadScreen extends React.Component {
   }
 
   render() {
-    const { uploadData } = this.props
-    const ButtonTitle = uploadData.isUploading
-      ? 'Uploading images...'
-      : 'Select images from Photo Gallery'
+    const { uploadData } = this.props,
+          ButtonTitle = uploadData.isUploading
+                        ? 'Uploading images...'
+                        : 'Select images from Photo Gallery'
 
     return <Button onPress={this._showImagePicker} title={ButtonTitle} />
   }
