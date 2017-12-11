@@ -11,7 +11,10 @@ const Photos = ({ photos }) => (
     <FlatList
       data={photos}
       renderItem={({ item }) => (
-        <Image style={styles.item} source={{ uri: item.display_url }} />
+        <Image
+          style={styles.item}
+          source={{ uri: item.display_url }}
+        />
       )}
       keyExtractor={(item, index) => index}
       numColumns={numColumns}
