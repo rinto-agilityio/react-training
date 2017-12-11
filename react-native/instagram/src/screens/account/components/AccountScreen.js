@@ -16,7 +16,6 @@ import CommonStyles from '@themes/common'
 import Icons from '@themes/icons'
 import { styles } from './styles/AccountScreenStyles'
 
-// TODO: Change to function/stateless component and add defaultProps, PropTypes
 class AccountScreen extends React.Component {
   static navigationOptions = {
     tabBarIcon: () => (
@@ -48,6 +47,16 @@ class AccountScreen extends React.Component {
       </View>
     )
   }
+}
+
+AccountScreen.defaultProps = {
+  allPhotos: []
+}
+
+AccountScreen.propTypes = {
+  allPhotos: PropTypes.array,
+  accountData: PropTypes.object.isRequired,
+  loadAccountData: PropTypes.func.isRequired
 }
 
 export default AccountScreen

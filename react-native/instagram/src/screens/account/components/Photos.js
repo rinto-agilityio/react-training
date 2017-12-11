@@ -9,7 +9,7 @@ import { styles, numColumns } from './styles/PhotosStyles'
 const Photos = ({ photos }) => (
   <View style={styles.list}>
     <FlatList
-      photos={photos}
+      data={photos}
       renderItem={({ item }) => (
         <Image style={styles.item} source={{ uri: item.display_url }} />
       )}
