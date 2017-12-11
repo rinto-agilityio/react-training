@@ -1,6 +1,6 @@
 // Libs
 import React from 'react'
-import { Text, View, FlatList } from 'react-native'
+import { Text, View, FlatList, KeyboardAvoidingView } from 'react-native'
 
 // Helpers
 import { NO_PHOTOS } from '@constants/messages'
@@ -45,18 +45,23 @@ class HomeScreen extends React.Component {
     }
 
     return (
-      <FlatList
-        data={homeData}
-        renderItem={({ item }) => (
-          <SinglePhoto
-            key={item.id}
-            item={item}
-            submitComment={this._addPostComment}
-            toggleLike={this._toggleLike}
-          />
-        )}
-        keyExtractor={(item, index) => index}
-      />
+      <KeyboardAvoidingView behavior="padding">
+        <FlatList
+          data={homeData}
+          renderItem={({ item }) => (
+            <SinglePhoto
+              key={item.id}
+              item={item}
+              submitComment={this._addPostComment}
+              toggleLike={this._toggleLike}
+            />
+          )}
+          keyExtractor={(item, index) => index}
+        />
+
+        {/* This is hacky for auto-scroll when keyboard display on iOS */}
+        <View style={{ height: 60 }} />
+      </KeyboardAvoidingView>
     )
   }
 }
