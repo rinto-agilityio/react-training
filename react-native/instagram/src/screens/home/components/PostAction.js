@@ -12,8 +12,7 @@ const PostAction = ({
   postId,
   userId,
   isLiked,
-  toggleLike,
-  toggleCommentBox
+  toggleLike
 }) => {
   // User like or remove liked a photo
   const _handleTouchIconLike = () => {
@@ -34,16 +33,6 @@ const PostAction = ({
       >
         <Image style={styles.icon} source={likeIcon} />
       </TouchableHighlight>
-      <TouchableHighlight
-        className="icon-comment"
-        onPress={() => toggleCommentBox()}
-        underlayColor={'transparent'}
-      >
-        <Image
-          style={styles.icon}
-          source={Icons.comment}
-        />
-      </TouchableHighlight>
     </View>
   )
 }
@@ -52,8 +41,7 @@ PostAction.propTypes = {
   postId: PropTypes.number.isRequired,
   userId: PropTypes.number.isRequired,
   isLiked: PropTypes.bool.isRequired,
-  toggleLike: PropTypes.func.isRequired,
-  toggleCommentBox: PropTypes.func.isRequired
+  toggleLike: PropTypes.func.isRequired
 }
 
 export default PostAction
