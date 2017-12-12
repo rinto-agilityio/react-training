@@ -1,5 +1,5 @@
 // Libs
-import { combineReducers, createStore, applyMiddleware, compose } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import { logger } from 'redux-logger'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/es/storage'
