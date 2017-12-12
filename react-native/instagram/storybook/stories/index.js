@@ -13,7 +13,7 @@ require('@screens/home/components/post/action.stories')
 require('@screens/account/components/info.stories')
 require('@screens/account/components/photos.stories')
 
-require('@screens/home/components/singlePhoto.stories')
+require('@screens/home/components/postItem.stories')
 
 // Screens
 require('@screens/account/components/accountScreen.stories')
