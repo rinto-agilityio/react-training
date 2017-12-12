@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 // Components
 import PostAction from './Action'
-import CommentList from '../CommentList'
+import CommentList from './CommentList'
 import CommentInput from '@common/components/Comment'
 
 // Styles

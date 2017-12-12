@@ -5,7 +5,7 @@ require('@common/components/appHeader.stories')
 
 // Components
 require('@common/components/comment.stories')
-require('@screens/home/components/commentList.stories')
+require('@screens/home/components/post/commentList.stories')
 require('@screens/home/components/post/photo.stories')
 require('@screens/home/components/post/author.stories')
 // require('@screens/home/components/post/footer.stories')
