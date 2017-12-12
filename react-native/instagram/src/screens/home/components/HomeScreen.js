@@ -6,7 +6,7 @@ import { Text, View, FlatList, KeyboardAvoidingView } from 'react-native'
 import { NO_PHOTOS } from '@constants/messages'
 
 // Components
-import SinglePhoto from '../components/SinglePhoto'
+import PostItem from '../components/PostItem'
 import Icon from '@common/components/Icon'
 
 // Styles
@@ -48,7 +48,7 @@ class HomeScreen extends React.Component {
         <FlatList
           data={homeData}
           renderItem={({ item }) => (
-            <SinglePhoto
+            <PostItem
               key={item.id}
               item={item}
               submitComment={this._addPostComment}

@@ -11,7 +11,7 @@ describe('PostAuthor component', () => {
     const treeDOM = renderer
       .create(
         <PostAuthor
-          profile_pic_url={user.profile_pic_url}
+          avatar={user.profile_pic_url}
           username={user.username}
         />
       )

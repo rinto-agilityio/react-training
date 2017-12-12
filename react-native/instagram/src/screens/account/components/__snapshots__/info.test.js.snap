@@ -1,3 +1,80 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Info component Renders correctly 1`] = `undefined`;
+exports[`Info component Renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "padding": 10,
+      },
+      Object {
+        "flex": 1,
+        "flexDirection": "column",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "marginBottom": 10,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-19/s150x150/14719833_310540259320655_1605122788543168512_a.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 40,
+          "height": 80,
+          "width": 80,
+        }
+      }
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontSize": 24,
+            "marginLeft": 20,
+          },
+          Object {
+            "fontWeight": "bold",
+          },
+        ]
+      }
+    >
+      instagram
+    </Text>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Instagram
+    </Text>
+     - 
+    Discovering — and telling — stories from around the world. Curated by Instagram's community team.
+  </Text>
+</View>
+`;

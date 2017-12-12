@@ -1,11 +1,13 @@
 // Components
 import Icon from './Icon'
 
+// Styles
+import Icons from '@themes/icons'
+
 describe('Icon component', () => {
-  const iconHome = require('@assets/icons/home.png')
 
   it('Renders correctly', () => {
-    const treeDOM = renderer.create(<Icon source={iconHome} />).toJSON()
+    const treeDOM = renderer.create(<Icon source={Icons.home} />).toJSON()
 
     expect(treeDOM).toMatchSnapshot()
   })

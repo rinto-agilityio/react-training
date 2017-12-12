@@ -18,7 +18,7 @@ exports[`PostAuthor component Renders correctly 1`] = `
   <Image
     source={
       Object {
-        "uri": undefined,
+        "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-19/s150x150/14719833_310540259320655_1605122788543168512_a.jpg",
       }
     }
     style={

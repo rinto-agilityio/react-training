@@ -8,7 +8,7 @@ describe('Info component', () => {
   let treeDOM
 
   beforeEach(() => {
-    treeDOM = renderer.create(<Info data={users[0]} />)
+    treeDOM = renderer.create(<Info owner={users[0]} />)
   })
 
   it('Renders correctly', () => {

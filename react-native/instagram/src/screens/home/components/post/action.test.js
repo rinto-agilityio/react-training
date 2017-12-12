@@ -5,11 +5,10 @@ import PostAction from './Action'
 import { users, photos } from '@test/__mocks__/sample-data'
 
 describe('PostAction component', () => {
-  let imageUri, iconLike, iconComment
-  const userId = users[0].id,
-    postId = photos[0].id,
-    mocktoggleCommentBox = jest.fn(),
-    mocktoggleLike = jest.fn()
+  let imageUri, iconLike
+  const mocktoggleLike = jest.fn(),
+        userId = users[0].id,
+        postId = photos[0].id
 
   beforeEach(() => {
     const component = shallow(
@@ -18,17 +17,22 @@ describe('PostAction component', () => {
         postId={postId}
         isLiked={false}
         toggleLike={mocktoggleLike}
-        toggleCommentBox={mocktoggleCommentBox}
       />
     )
 
     iconLike = component.find('TouchableHighlight.icon-like')
-    iconComment = component.find('TouchableHighlight.icon-comment')
   })
 
   it('Renders correctly for new image', () => {
     const treeDOM = renderer
-      .create(<PostAction userId={userId} postId={postId} isLiked={false} />)
+      .create(
+        <PostAction
+          userId={userId}
+          postId={postId}
+          isLiked={false}
+          toggleLike={mocktoggleLike}
+        />
+      )
       .toJSON()
 
     expect(treeDOM).toMatchSnapshot()
@@ -36,7 +40,14 @@ describe('PostAction component', () => {
 
   it('Renders correctly for like image', () => {
     const treeDOM = renderer
-      .create(<PostAction userId={userId} postId={postId} isLiked={true} />)
+      .create(
+        <PostAction
+          userId={userId}
+          postId={postId}
+          isLiked={true}
+          toggleLike={mocktoggleLike}
+        />
+      )
       .toJSON()
 
     expect(treeDOM).toMatchSnapshot()
@@ -46,11 +57,5 @@ describe('PostAction component', () => {
     iconLike.simulate('press')
 
     expect(mocktoggleLike.mock.calls.length).toEqual(1)
-  })
-
-  it('Should call toggleComment if click on icon like', () => {
-    iconComment.simulate('press')
-
-    expect(mocktoggleCommentBox.mock.calls.length).toEqual(1)
   })
 })

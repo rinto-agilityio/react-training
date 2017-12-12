@@ -4,16 +4,26 @@ import Comment from './Comment'
 describe('Comment component', () => {
   let component, treeDOM, textInput
   const defaultState = { text: '' },
-    postId = photos[0].id,
-    owner = users[0],
-    mockSubmit = jest.fn()
+        postId = photos[0].id,
+        owner = users[0],
+        mockSubmitComment = jest.fn()
 
   beforeEach(() => {
     component = shallow(
-      <Comment owner={owner} submitComment={mockSubmit} postId={postId} />
+      <Comment
+        owner={owner}
+        postId={postId}
+        submitComment={mockSubmitComment}
+      />
     )
     treeDOM = renderer
-      .create(<Comment owner={owner} postId={postId} />)
+      .create(
+        <Comment
+          owner={owner}
+          postId={postId}
+          submitComment={mockSubmitComment}
+        />
+      )
       .toJSON()
 
     textInput = component.find('TextInput')
@@ -43,7 +53,7 @@ describe('Comment component', () => {
   it('Should not call submitComment if text is empty', () => {
     textInput.simulate('submitEditing') // Press enter to submit text
 
-    expect(mockSubmit.mock.calls.length).toEqual(0)
+    expect(mockSubmitComment.mock.calls.length).toEqual(0)
   })
 
   describe('When text changes', () => {
@@ -64,7 +74,7 @@ describe('Comment component', () => {
     it('Should call submitComment if text change then submit', () => {
       textInput.simulate('submitEditing') // Press enter after change text
 
-      expect(mockSubmit.mock.calls.length).toEqual(1)
+      expect(mockSubmitComment.mock.calls.length).toEqual(1)
     })
   })
 })

@@ -6,12 +6,17 @@ import { users, photos } from '@test/__mocks__/sample-data'
 
 describe('AccountScreen', () => {
   let treeDOM
-  const accountData = users[0],
-    myPhotos = photos
+  const mockLoadAccountData = jest.fn(),
+        accountData = users[0],
+        allPhotos = photos
 
   beforeEach(() => {
     treeDOM = renderer.create(
-      <AccountScreen accountData={accountData} myPhotos={myPhotos} />
+      <AccountScreen
+        accountData={accountData}
+        allPhotos={allPhotos}
+        loadAccountData={mockLoadAccountData}
+      />
     )
   })
 

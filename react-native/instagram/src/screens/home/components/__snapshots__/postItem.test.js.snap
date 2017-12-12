@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SinglePhoto component Renders correctly like photo 1`] = `
+exports[`PostItem component Renders correctly like photo 1`] = `
 <View>
   <View
     style={
@@ -177,7 +177,7 @@ exports[`SinglePhoto component Renders correctly like photo 1`] = `
 </View>
 `;
 
-exports[`SinglePhoto component Renders correctly without like 1`] = `
+exports[`PostItem component Renders correctly without like 1`] = `
 <View>
   <View
     style={
