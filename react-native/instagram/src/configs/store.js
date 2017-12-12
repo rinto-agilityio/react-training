@@ -10,17 +10,19 @@ import { PERSIST_STORE_KEY } from 'react-native-dotenv'
 // Reducers
 import rootReducer from './rootReducer'
 
+const isProduction = process.env.NODE_ENV === 'production' ? true : false
+
 const config = {
   key: PERSIST_STORE_KEY,
   storage,
-  debug: true
+  debug: isProduction ? false : true
 }
 
 // Necessary middlewares for all env
 let middleware = []
 
-// Add some middlewares for development mode
-if (process.env.NODE_ENV === 'development') {
+// Add some middlewares if not production mode
+if (!isProduction) {
   middleware.push(logger)
 }
 
