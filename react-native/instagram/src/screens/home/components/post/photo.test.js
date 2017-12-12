@@ -1,5 +1,5 @@
 // Components
-import PostPhoto from './PostPhoto'
+import PostPhoto from './Photo'
 
 // Mocking data
 import { photos } from '@test/__mocks__/sample-data'

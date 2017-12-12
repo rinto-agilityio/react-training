@@ -39,49 +39,7 @@ exports[`PostAction component Renders correctly for like image 1`] = `
     <Image
       source={
         Object {
-          "testUri": "../../../src/assets/icons/liked.png",
-        }
-      }
-      style={
-        Object {
-          "height": 24,
-          "marginRight": 10,
-          "width": 24,
-        }
-      }
-    />
-  </View>
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
-        undefined,
-      ]
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
-  >
-    <Image
-      source={
-        Object {
-          "testUri": "../../../src/assets/icons/comment.png",
+          "testUri": "../../../src/assets/icons/heart-red.png",
         }
       }
       style={
@@ -135,49 +93,7 @@ exports[`PostAction component Renders correctly for new image 1`] = `
     <Image
       source={
         Object {
-          "testUri": "../../../src/assets/icons/like.png",
-        }
-      }
-      style={
-        Object {
-          "height": 24,
-          "marginRight": 10,
-          "width": 24,
-        }
-      }
-    />
-  </View>
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
-        undefined,
-      ]
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
-  >
-    <Image
-      source={
-        Object {
-          "testUri": "../../../src/assets/icons/comment.png",
+          "testUri": "../../../src/assets/icons/heart.png",
         }
       }
       style={

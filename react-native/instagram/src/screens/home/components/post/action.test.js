@@ -1,5 +1,5 @@
 // Components
-import PostAction from './PostAction'
+import PostAction from './Action'
 
 // Mocking data
 import { users, photos } from '@test/__mocks__/sample-data'

@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react-native'
 import { action } from '@storybook/addon-actions'
 
 // Components
-import PostAction from './PostAction'
+import PostAction from './Action'
 
 storiesOf('Components', module).add('PostAction', () => (
   <PostAction

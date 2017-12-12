@@ -3,9 +3,15 @@
 exports[`PostFooter component Renders correctly with comment input 1`] = `
 <View
   style={
-    Object {
-      "padding": 10,
-    }
+    Array [
+      Object {
+        "flex": 1,
+        "flexDirection": "column",
+      },
+      Object {
+        "padding": 10,
+      },
+    ]
   }
 >
   <View
@@ -46,49 +52,7 @@ exports[`PostFooter component Renders correctly with comment input 1`] = `
       <Image
         source={
           Object {
-            "testUri": "../../../src/assets/icons/liked.png",
-          }
-        }
-        style={
-          Object {
-            "height": 24,
-            "marginRight": 10,
-            "width": 24,
-          }
-        }
-      />
-    </View>
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
-      isTVSelectable={true}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Array [
-          Object {
-            "backgroundColor": "transparent",
-          },
-          undefined,
-        ]
-      }
-      testID={undefined}
-      tvParallaxProperties={undefined}
-    >
-      <Image
-        source={
-          Object {
-            "testUri": "../../../src/assets/icons/comment.png",
+            "testUri": "../../../src/assets/icons/heart-red.png",
           }
         }
         style={
@@ -111,12 +75,16 @@ exports[`PostFooter component Renders correctly with comment input 1`] = `
   <View />
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "flexDirection": "row",
-        "marginTop": 10,
-      }
+      Array [
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        },
+        Object {
+          "alignItems": "center",
+          "marginTop": 10,
+        },
+      ]
     }
   >
     <Image
@@ -129,7 +97,6 @@ exports[`PostFooter component Renders correctly with comment input 1`] = `
         Object {
           "borderRadius": 11.25,
           "height": 22.5,
-          "marginRight": "2%",
           "width": "5%",
         }
       }
@@ -145,6 +112,7 @@ exports[`PostFooter component Renders correctly with comment input 1`] = `
           "borderRadius": 15,
           "borderWidth": 1,
           "height": 30,
+          "marginLeft": 5,
           "paddingLeft": 10,
           "width": "93%",
         }
@@ -159,9 +127,15 @@ exports[`PostFooter component Renders correctly with comment input 1`] = `
 exports[`PostFooter component Renders correctly without comment input 1`] = `
 <View
   style={
-    Object {
-      "padding": 10,
-    }
+    Array [
+      Object {
+        "flex": 1,
+        "flexDirection": "column",
+      },
+      Object {
+        "padding": 10,
+      },
+    ]
   }
 >
   <View
@@ -202,49 +176,7 @@ exports[`PostFooter component Renders correctly without comment input 1`] = `
       <Image
         source={
           Object {
-            "testUri": "../../../src/assets/icons/liked.png",
-          }
-        }
-        style={
-          Object {
-            "height": 24,
-            "marginRight": 10,
-            "width": 24,
-          }
-        }
-      />
-    </View>
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
-      isTVSelectable={true}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Array [
-          Object {
-            "backgroundColor": "transparent",
-          },
-          undefined,
-        ]
-      }
-      testID={undefined}
-      tvParallaxProperties={undefined}
-    >
-      <Image
-        source={
-          Object {
-            "testUri": "../../../src/assets/icons/comment.png",
+            "testUri": "../../../src/assets/icons/heart-red.png",
           }
         }
         style={
@@ -265,5 +197,53 @@ exports[`PostFooter component Renders correctly without comment input 1`] = `
     2 likes
   </Text>
   <View />
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        },
+        Object {
+          "alignItems": "center",
+          "marginTop": 10,
+        },
+      ]
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-19/s150x150/19764837_461147117574705_5216900266812506112_a.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 11.25,
+          "height": 22.5,
+          "width": "5%",
+        }
+      }
+    />
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      onSubmitEditing={[Function]}
+      placeholder="Add a comment"
+      style={
+        Object {
+          "borderColor": "#a7a7a7",
+          "borderRadius": 15,
+          "borderWidth": 1,
+          "height": 30,
+          "marginLeft": 5,
+          "paddingLeft": 10,
+          "width": "93%",
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
 </View>
 `;

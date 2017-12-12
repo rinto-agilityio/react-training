@@ -4,13 +4,13 @@ import { View, Text, TextInput } from 'react-native'
 import PropTypes from 'prop-types'
 
 // Components
-import PostAction from './PostAction'
-import CommentList from './CommentList'
+import PostAction from './Action'
+import CommentList from '../CommentList'
 import CommentInput from '@common/components/Comment'
 
 // Styles
 import CommonStyles from '@themes/common'
-import { styles } from './styles/PostFooterStyles'
+import { styles } from './styles/FooterStyles'
 
 const PostFooter = ({
   isLiked,

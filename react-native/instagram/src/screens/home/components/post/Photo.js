@@ -4,7 +4,7 @@ import { Image } from 'react-native'
 import PropTypes from 'prop-types'
 
 // Styles
-import { styles } from './styles/PostPhotoStyles'
+import { styles } from './styles/PhotoStyles'
 
 const PostPhoto = ({ uri }) => (
   <Image

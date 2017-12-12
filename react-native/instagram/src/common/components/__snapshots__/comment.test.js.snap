@@ -3,12 +3,16 @@
 exports[`Comment component Renders correctly 1`] = `
 <View
   style={
-    Object {
-      "alignItems": "center",
-      "flex": 1,
-      "flexDirection": "row",
-      "marginTop": 10,
-    }
+    Array [
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+      },
+      Object {
+        "alignItems": "center",
+        "marginTop": 10,
+      },
+    ]
   }
 >
   <Image
@@ -21,7 +25,6 @@ exports[`Comment component Renders correctly 1`] = `
       Object {
         "borderRadius": 11.25,
         "height": 22.5,
-        "marginRight": "2%",
         "width": "5%",
       }
     }
@@ -37,6 +40,7 @@ exports[`Comment component Renders correctly 1`] = `
         "borderRadius": 15,
         "borderWidth": 1,
         "height": 30,
+        "marginLeft": 5,
         "paddingLeft": 10,
         "width": "93%",
       }

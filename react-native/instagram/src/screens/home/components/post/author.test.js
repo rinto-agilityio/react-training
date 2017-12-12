@@ -1,5 +1,5 @@
 // Components
-import PostAuthor from './PostAuthor'
+import PostAuthor from './Author'
 
 // Mocking data
 import { users } from '@test/__mocks__/sample-data'

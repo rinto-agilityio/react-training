@@ -18,7 +18,7 @@ exports[`PostAuthor component Renders correctly 1`] = `
   <Image
     source={
       Object {
-        "uri": "",
+        "uri": undefined,
       }
     }
     style={

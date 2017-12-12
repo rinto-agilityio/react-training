@@ -1,5 +1,5 @@
 // Components
-import PostFooter from './PostFooter'
+import PostFooter from './Footer'
 
 // Mocking data
 import { photos } from '@test/__mocks__/sample-data'

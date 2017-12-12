@@ -4,9 +4,9 @@ import { View } from 'react-native'
 import PropTypes from 'prop-types'
 
 // Components
-import PostAuthor from './PostAuthor'
-import PostPhoto from './PostPhoto'
-import PostFooter from './PostFooter'
+import PostAuthor from './post/Author'
+import PostPhoto from './post/Photo'
+import PostFooter from './post/Footer'
 
 const SinglePhoto = ({ item, submitComment, toggleLike }) => {
   const likeCounting = item.likes.length,

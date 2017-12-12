@@ -7,6 +7,6 @@ exports[`Icon component Renders correctly 1`] = `
       "testUri": "../../../src/assets/icons/home.png",
     }
   }
-  style={undefined}
+  style={0}
 />
 `;

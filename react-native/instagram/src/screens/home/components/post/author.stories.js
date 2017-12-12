@@ -6,7 +6,7 @@ import { storiesOf } from '@storybook/react-native'
 import { users } from '@test/__mocks__/sample-data'
 
 // Components
-import PostAuthor from './PostAuthor'
+import PostAuthor from './Author'
 
 const { profile_pic_url, username } = users[0]
 
