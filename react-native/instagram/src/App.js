@@ -1,48 +1,27 @@
 // Libs
 import React from 'react'
 import { View } from 'react-native'
-import { TabNavigator } from 'react-navigation'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/es/integration/react'
 
-// App Store config
+// App config
 import configureStore from '@configs/store'
+import MainNavigator from '@configs/navigator'
 
-// Containers and components
-import HomeContainer from '@screens/home/containers'
-import AccountContainer from '@screens/account/containers'
-import UploadContainer from '@screens/upload/containers'
+// Components
 import AppHeader from '@common/components/AppHeader'
 
 // Styles
 import { styles } from './styles/AppStyles'
-import Themes from '@themes'
 
 const { persistor, store } = configureStore()
-
-const MainApp = TabNavigator(
-  {
-    Home: { screen: HomeContainer },
-    Upload: { screen: UploadContainer },
-    Account: { screen: AccountContainer }
-  },
-  {
-    tabBarPosition: Themes.tabBarPosition,
-    animationEnabled: true,
-    tabBarOptions: {
-      showLabel: false,
-      showIcon: true,
-      activeTintColor: Themes.tabBarTextActiveColor
-    }
-  }
-)
 
 const App = () => (
   <Provider store={store}>
     <PersistGate persistor={persistor}>
       <View style={styles.container}>
         <AppHeader />
-        <MainApp />
+        <MainNavigator />
       </View>
     </PersistGate>
   </Provider>
