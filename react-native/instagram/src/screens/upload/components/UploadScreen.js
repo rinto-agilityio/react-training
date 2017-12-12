@@ -24,12 +24,22 @@ class UploadScreen extends React.Component {
   }
 
   _showImagePicker = () => {
-    this.props.uploadPhotoRequest()
+    const { accountData,
+            uploadPhotoRequest,
+            uploadPhotoCancel,
+            uploadPhotoSuccess,
+            uploadPhotoFailure } = this.props
 
-    // Config selection dialog on screen
+    // Dispatch an action upload photo
+    uploadPhotoRequest()
+
+    /**
+     * Config selection dialog on screen
+     * For custom option, use customButtons, eg:
+     * customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }]
+     */
     const options = {
       title: 'Select Photo',
-      customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }], // Add custom method to select image
       storageOptions: {
         skipBackup: true,
         path: 'images'
@@ -42,13 +52,10 @@ class UploadScreen extends React.Component {
      */
     ImagePicker.showImagePicker(options, response => {
       if (response.didCancel) {
-        // User cancelled image picker
-        this.props.uploadPhotoCancel()
+        uploadPhotoCancel()
       } else if (response.error) {
-        console.log('ImagePicker Error: ', response.error)
-      } else if (response.customButton) {
-        // This is for custom method
-        console.log('User tapped custom button: ', response.customButton)
+        // Upload error
+        // console.log('ImagePicker Error: ', response.error)
       } else {
         uploadImage(response)
           .then(response => {
@@ -58,13 +65,13 @@ class UploadScreen extends React.Component {
               likes: [],
               comments: [],
               display_url: response,
-              owner: this.props.accountData
+              owner: accountData
             }
 
-            return this.props.uploadPhotoSuccess(data)
+            return uploadPhotoSuccess(data)
           })
           .catch(error => {
-            return this.props.uploadPhotoFailure(error)
+            return uploadPhotoFailure(error)
           })
       }
     })
