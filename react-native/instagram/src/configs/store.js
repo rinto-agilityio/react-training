@@ -4,11 +4,14 @@ import { logger } from 'redux-logger'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/es/storage'
 
+// .env value config
+import { PERSIST_STORE_KEY } from 'react-native-dotenv'
+
 // Reducers
 import rootReducer from './rootReducer'
 
 const config = {
-  key: 'instagram',
+  key: PERSIST_STORE_KEY,
   storage,
   debug: true
 }
