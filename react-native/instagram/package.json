@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start NODE_ENV=development",
-    "build": "node node_modules/react-native/local-cli/cli.js start NODE_ENV=production",
+    "start":
+      "node node_modules/react-native/local-cli/cli.js start NODE_ENV=development",
+    "build":
+      "node node_modules/react-native/local-cli/cli.js start NODE_ENV=production",
     "test": "jest",
     "test-coverage": "jest --coverage",
     "updateSnapshot": "jest --updateSnapshot",
@@ -35,6 +37,8 @@
     "babel-preset-react-native": "4.0.0",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
+    "eslint": "^4.13.1",
+    "eslint-plugin-react": "^7.5.1",
     "jest": "21.2.1",
     "jest-cli": "^21.2.1",
     "prettier-eslint": "^8.2.2",
@@ -44,7 +48,9 @@
   "jest": {
     "preset": "react-native",
     "testMatch": ["**/src/**/*.test.js"],
-    "transformIgnorePatterns": ["node_modules/(?!react-native|react-navigation)/"],
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|react-navigation)/"
+    ],
     "setupFiles": ["./src/test/setup.js"],
     "globals": {
       "window": {}

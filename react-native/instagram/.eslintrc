@@ -1,8 +1,4 @@
 {
-  "parser": "babel-eslint",
-  "extends": "airbnb",
-  "plugins": [
-    "react",
-    "import"
-  ]
+  "plugins": ["react"],
+  "extends": ["eslint:all", "plugin:react/all"]
 }
