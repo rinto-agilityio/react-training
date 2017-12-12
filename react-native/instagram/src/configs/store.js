@@ -1,13 +1,11 @@
-// Third party libs
+// Libs
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux'
 import { logger } from 'redux-logger'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/es/storage'
 
 // Reducers
-import { homeReducer } from '@screens/home/reducers'
-import { uploadReducer } from '@screens/upload/reducers'
-import { accountReducer } from '@screens/account/reducers'
+import rootReducer from './rootReducer'
 
 const config = {
   key: 'instagram',
@@ -15,26 +13,19 @@ const config = {
   debug: true
 }
 
-const appReducer = persistReducer(
-  config,
-  combineReducers({
-    home: homeReducer,
-    upload: uploadReducer,
-    account: accountReducer
-  })
-)
-
 // Necessary middlewares for all env
 let middleware = []
 
 // Add some middlewares for development mode
 if (process.env.NODE_ENV === 'development') {
-  middleware = [...middleware, logger]
+  middleware.push(logger)
 }
 
 const configureStore = () => {
-  const store = createStore(appReducer, compose(applyMiddleware(...middleware)))
-
+  const store = createStore(
+    persistReducer(config, rootReducer),
+    compose(applyMiddleware(...middleware))
+  )
   const persistor = persistStore(store)
 
   return { persistor, store }
