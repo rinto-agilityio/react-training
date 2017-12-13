@@ -1,6 +1,6 @@
 // Libs
 import React from 'react'
-import { Text, View, FlatList, KeyboardAvoidingView } from 'react-native'
+import { Text, View, FlatList, ListView, KeyboardAvoidingView } from 'react-native'
 
 // Helpers
 import { NO_PHOTOS } from '@constants/messages'
@@ -36,6 +36,47 @@ class HomeScreen extends React.Component {
     this.props.toggleLike(data)
   }
 
+  /**
+   * This for testing perfomance only
+   * Should use FlatList or SectionList
+   */
+  _renderListView = (data) => {
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
+    const datasource = ds.cloneWithRows(data)
+
+    return (
+      <ListView
+        dataSource={datasource}
+        renderRow={(item) => (
+          <PostItem
+            key={item.id}
+            item={item}
+            submitComment={this._addPostComment}
+            toggleLike={this._toggleLike}
+          />
+        )}
+      />
+    )
+  }
+
+  /**
+   * Render all items on screen
+   */
+  _renderFlatList = (data) => (
+    <FlatList
+      data={data}
+      renderItem={({ item }) => (
+        <PostItem
+          key={item.id}
+          item={item}
+          submitComment={this._addPostComment}
+          toggleLike={this._toggleLike}
+        />
+      )}
+      keyExtractor={(item, index) => index}
+    />
+  )
+
   render() {
     const { homeData } = this.props
 
@@ -45,18 +86,7 @@ class HomeScreen extends React.Component {
 
     return (
       <KeyboardAvoidingView behavior="padding">
-        <FlatList
-          data={homeData}
-          renderItem={({ item }) => (
-            <PostItem
-              key={item.id}
-              item={item}
-              submitComment={this._addPostComment}
-              toggleLike={this._toggleLike}
-            />
-          )}
-          keyExtractor={(item, index) => index}
-        />
+        {this._renderFlatList(homeData)}
 
         {/* This is hacky for auto-scroll when keyboard display on iOS */}
         <View style={{ height: 60 }} />
