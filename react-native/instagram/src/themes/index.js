@@ -1,9 +1,10 @@
-import { Platform } from 'react-native'
+// Helpers
+import { isIOS } from '@helpers/device-info'
 
 // Base theme config for app
 export default {
-  appPaddingTop: Platform.OS === 'ios' ? 20 : 10,
-  textInputHeight: Platform.OS === 'ios' ? 30 : 40, // Android has padding by default
+  appPaddingTop: isIOS() ? 20 : 10,
+  textInputHeight: isIOS() ? 30 : 40, // Android has padding by default
   baseSpacing: 10,
   bgColor: '#fff',
   navigatorBgColor: '#f9f9f9',

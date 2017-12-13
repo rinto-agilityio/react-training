@@ -3,6 +3,9 @@ import RNFetchBlob from 'react-native-fetch-blob'
 import { Platform } from 'react-native'
 import { storageRef } from '@configs/firebase'
 
+// Helpers
+import { isIOS } from '@helpers/device-info'
+
 const Blob = RNFetchBlob.polyfill.Blob,
       fs = RNFetchBlob.fs
 
@@ -25,7 +28,7 @@ export const uploadImage = imageFile => {
   return new Promise((resolve, reject) => {
     let uploadBlob = null
     const imageRef = storageRef.child('images').child(fileName),
-          uploadUri = Platform.OS === 'ios'
+          uploadUri = isIOS()
                       ? fileUri.replace('file://', '')
                       : fileUri
 

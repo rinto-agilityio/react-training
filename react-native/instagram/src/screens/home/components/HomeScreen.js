@@ -5,12 +5,12 @@ import {
   View,
   FlatList,
   ListView,
-  KeyboardAvoidingView,
-  Platform
+  KeyboardAvoidingView
 } from 'react-native'
 
 // Helpers
 import { NO_PHOTOS } from '@constants/messages'
+import { isIOS } from '@helpers/device-info'
 
 // Components
 import PostItem from '../components/PostItem'
@@ -93,7 +93,7 @@ class HomeScreen extends React.Component {
 
     return (
       <KeyboardAvoidingView
-        behavior={(Platform.OS === 'ios') ? 'padding' : null}
+        behavior={isIOS() ? 'padding' : null}
       >
         {this._renderListView(homeData)}
 
