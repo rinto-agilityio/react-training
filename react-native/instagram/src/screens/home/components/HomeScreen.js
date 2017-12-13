@@ -1,6 +1,13 @@
 // Libs
 import React from 'react'
-import { Text, View, FlatList, ListView, KeyboardAvoidingView } from 'react-native'
+import {
+  Text,
+  View,
+  FlatList,
+  ListView,
+  KeyboardAvoidingView,
+  Platform
+} from 'react-native'
 
 // Helpers
 import { NO_PHOTOS } from '@constants/messages'
@@ -41,8 +48,8 @@ class HomeScreen extends React.Component {
    * Should use FlatList or SectionList
    */
   _renderListView = (data) => {
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
-    const datasource = ds.cloneWithRows(data)
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}),
+          datasource = ds.cloneWithRows(data)
 
     return (
       <ListView
@@ -85,8 +92,10 @@ class HomeScreen extends React.Component {
     }
 
     return (
-      <KeyboardAvoidingView behavior="padding">
-        {this._renderFlatList(homeData)}
+      <KeyboardAvoidingView
+        behavior={(Platform.OS === 'ios') ? 'padding' : null}
+      >
+        {this._renderListView(homeData)}
 
         {/* This is hacky for auto-scroll when keyboard display on iOS */}
         <View style={{ height: 60 }} />
