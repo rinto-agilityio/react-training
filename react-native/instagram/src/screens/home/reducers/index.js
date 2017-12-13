@@ -90,8 +90,8 @@ const fakeGetHomeDataRequest = (state, action) => {
 export const homeReducer = createReducer(INITIAL_STATE, {
   [REHYDRATE]: updatePersist,
 
-  // [Types.GET_HOME_DATA_REQUEST]: fakeGetHomeDataRequest, // This for performance testing only
-  [Types.GET_HOME_DATA_REQUEST]: getHomeDataRequest,
+  [Types.GET_HOME_DATA_REQUEST]: fakeGetHomeDataRequest, // This for performance testing only
+  // [Types.GET_HOME_DATA_REQUEST]: getHomeDataRequest,
   [Types.ADD_COMMENT]: addComment,
   [Types.TOGGLE_LIKE]: toggleLike,
 

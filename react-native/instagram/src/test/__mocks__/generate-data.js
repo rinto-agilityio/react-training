@@ -9,10 +9,12 @@ import { photos } from './sample-data'
  * @param {number} amount
  */
 export const generateFeeds = (amount) => {
-  const sampleFeed = Immutable(photos[0])
   let feeds = []
 
   for (let i = 1; i < amount; i++) {
+    const randomIndex = Math.floor(Math.random() * photos.length),
+          sampleFeed = Immutable(photos[randomIndex])
+
     feeds.push(sampleFeed.without('id').setIn(['id'], i))
   }
 
