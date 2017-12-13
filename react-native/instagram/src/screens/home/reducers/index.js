@@ -6,6 +6,7 @@ import { REHYDRATE } from 'redux-persist/lib/constants'
 // Helpers
 import { Types } from '../actions'
 import { Types as UploadTypes } from '@screens/upload/actions'
+import { generateFeeds } from '@test/__mocks__/generate-data'
 
 export const INITIAL_STATE = Immutable({
   data: []
@@ -72,10 +73,26 @@ const toggleLike = (state, action) => {
   })
 }
 
+/**
+ * This is fake function get fake data to test render performance
+ * @param {object} state
+ * @param {string} action
+ */
+const fakeGetHomeDataRequest = (state, action) => {
+  console.log('fakeGetHomeDataRequest: ');
+  const numberItems = 1000
+
+  return state.merge({
+    type: action.type,
+    data: generateFeeds(numberItems)
+  })
+}
+
 export const homeReducer = createReducer(INITIAL_STATE, {
   [REHYDRATE]: updatePersist,
 
-  [Types.GET_HOME_DATA_REQUEST]: getHomeDataRequest,
+  [Types.GET_HOME_DATA_REQUEST]: fakeGetHomeDataRequest, // This for testing
+  // [Types.GET_HOME_DATA_REQUEST]: getHomeDataRequest,
   [Types.ADD_COMMENT]: addComment,
   [Types.TOGGLE_LIKE]: toggleLike,
 
