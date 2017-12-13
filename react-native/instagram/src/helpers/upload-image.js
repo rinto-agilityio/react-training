@@ -21,9 +21,8 @@ window.Blob = Blob
 export const uploadImage = imageFile => {
   const fileUri = imageFile.uri,
         fileBase64 = imageFile.data,
-        fileName = Date.now() + imageFile.fileName, // Custom filename to avoid override old files on server
-        fileNameArr = fileName.split('.'),
-        fileType = fileNameArr[fileNameArr.length - 1]
+        fileName = generateFileName(imageFile.fileName),
+        fileType = getFileType(imageFile.fileName)
 
   return new Promise((resolve, reject) => {
     let uploadBlob = null
@@ -51,4 +50,23 @@ export const uploadImage = imageFile => {
         reject(error)
       })
   })
+}
+
+/**
+ * Avoid override old files on server
+ * Generate new file name with timestamp + old Filename
+ * @param {string} fileName
+ */
+const generateFileName = fileName => {
+  return Date.now() + fileName
+}
+
+/**
+ * Get file type by the last point of fileName
+ * @param {string} fileName
+ */
+const getFileType = fileName => {
+  const fileNameArr = fileName.split('.')
+
+  return fileNameArr[fileNameArr.length - 1]
 }
