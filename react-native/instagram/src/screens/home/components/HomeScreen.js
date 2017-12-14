@@ -1,12 +1,7 @@
 // Libs
+import { FlatList, KeyboardAvoidingView, ListView, Text, View } from 'react-native'
+import PropTypes from 'prop-types'
 import React from 'react'
-import {
-  Text,
-  View,
-  FlatList,
-  ListView,
-  KeyboardAvoidingView
-} from 'react-native'
 
 // Helpers
 import { NO_PHOTOS } from '@constants/messages'
@@ -22,27 +17,32 @@ import Icons from '@themes/icons'
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
-    tabBarIcon: () => (
-      <Icon style={CommonStyles.tabBarIcon} source={Icons.home} />
-    )
+    tabBarIcon: () => <Icon source={Icons.home} style={CommonStyles.tabBarIcon} />
   }
 
   // Fetching new data for Home page
   componentDidMount() {
-    this.props.getHomeDataRequest()
+    const { getHomeDataRequest } = this.props
+
+    getHomeDataRequest()
   }
 
   _addPostComment = data => {
-    this.props.addComment(data)
+    const { addComment } = this.props
+
+    addComment(data)
   }
 
   _toggleLike = data => {
-    this.props.toggleLike(data)
+    const { toggleLike } = this.props
+
+    toggleLike(data)
   }
 
   /**
-   * This for testing perfomance only
-   * Should use FlatList or SectionList
+   * This for testing perfomance only. Should use FlatList or SectionList
+   * @param {array} data - List feeds
+   * @returns {component} - List PostItem component
    */
   _renderListView = data => {
     const ds = new ListView.DataSource({
@@ -67,10 +67,13 @@ class HomeScreen extends React.Component {
 
   /**
    * Render all items on screen
+   * @param {array} data - List feeds
+   * @returns {component} - List PostItem component
    */
   _renderFlatList = data => (
     <FlatList
       data={data}
+      keyExtractor={(item, index) => index}
       renderItem={({ item }) => (
         <PostItem
           key={item.id}
@@ -79,7 +82,6 @@ class HomeScreen extends React.Component {
           toggleLike={this._toggleLike}
         />
       )}
-      keyExtractor={(item, index) => index}
     />
   )
 
@@ -95,10 +97,17 @@ class HomeScreen extends React.Component {
         {this._renderListView(homeData)}
 
         {/* This is hacky for auto-scroll when keyboard display on iOS */}
-        <View style={{ height: 60 }} />
+        <View style={CommonStyles.keyboardPadding} />
       </KeyboardAvoidingView>
     )
   }
+}
+
+HomeScreen.propTypes = {
+  addComment: PropTypes.func.isRequired,
+  getHomeDataRequest: PropTypes.func.isRequired,
+  homeData: PropTypes.array.isRequired,
+  toggleLike: PropTypes.func.isRequired
 }
 
 export default HomeScreen

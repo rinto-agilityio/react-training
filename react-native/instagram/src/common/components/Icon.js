@@ -3,7 +3,7 @@ import React from 'react'
 import { Image } from 'react-native'
 import PropTypes from 'prop-types'
 
-const Icon = ({ style, source }) => <Image style={style} source={source} />
+const Icon = ({ style, source }) => <Image source={source} style={style} />
 
 Icon.defaultProps = {
   style: 0
@@ -14,8 +14,8 @@ Icon.defaultProps = {
  * If I use another type, it will show warning on simulator/emulator
  */
 Icon.propTypes = {
-  style: PropTypes.number,
-  source: PropTypes.number.isRequired
+  source: PropTypes.number.isRequired,
+  style: PropTypes.number
 }
 
 export default Icon

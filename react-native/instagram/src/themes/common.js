@@ -3,19 +3,22 @@ import { StyleSheet } from 'react-native'
 import Themes from '@themes'
 
 export default StyleSheet.create({
-  textBold: {
-    fontWeight: 'bold'
-  },
-  layoutRow: {
-    flex: 1,
-    flexDirection: 'row'
+  keyboardPadding: {
+    height: 60
   },
   layoutColumn: {
     flex: 1,
     flexDirection: 'column'
   },
+  layoutRow: {
+    flex: 1,
+    flexDirection: 'row'
+  },
   tabBarIcon: {
-    width: Themes.tabBarIconSize,
-    height: Themes.tabBarIconSize
+    height: Themes.tabBarIconSize,
+    width: Themes.tabBarIconSize
+  },
+  textBold: {
+    fontWeight: 'bold'
   }
 })

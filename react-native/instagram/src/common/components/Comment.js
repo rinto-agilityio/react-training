@@ -16,15 +16,15 @@ class Comment extends React.Component {
   }
 
   // Add comment for this photo
-  _submitComment = () => {
+  handleSubmitComment = () => {
     const { text } = this.state
 
     if (text) {
       const { postId, owner, submitComment } = this.props
 
       submitComment({
-        postId,
         owner,
+        postId,
         text
       })
 
@@ -32,25 +32,32 @@ class Comment extends React.Component {
     }
   }
 
+  /* eslint-disable react/no-set-state */
+  handleTextChange = text => {
+    this.setState({ text })
+  }
+
   // Reset input value after submit or component unmount
   _resetTextInput = () => {
     this.setState({ text: '' })
   }
 
+  /* eslint-enable react/no-set-state */
+
   render() {
     const { owner } = this.props,
-          { text } = this.state
+      { text } = this.state
 
     return (
       <View style={[CommonStyles.layoutRow, styles.comment]}>
-        <Image style={styles.avatar} source={{ uri: owner.profile_pic_url }} />
+        <Image source={{ uri: owner.profile_pic_url }} style={styles.avatar} />
         <TextInput
+          onChangeText={this.handleTextChange}
+          onSubmitEditing={this.handleSubmitComment}
+          placeholder="Add a comment"
           style={styles.commentInput}
           underlineColorAndroid="transparent"
-          placeholder="Add a comment"
           value={text}
-          onChangeText={text => this.setState({ text })}
-          onSubmitEditing={this._submitComment}
         />
       </View>
     )
@@ -58,8 +65,8 @@ class Comment extends React.Component {
 }
 
 Comment.propTypes = {
-  postId: PropTypes.number.isRequired,
   owner: PropTypes.object.isRequired,
+  postId: PropTypes.number.isRequired,
   submitComment: PropTypes.func.isRequired
 }
 
