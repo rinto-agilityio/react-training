@@ -19,10 +19,7 @@ import { styles } from './styles/AccountScreenStyles'
 class AccountScreen extends React.Component {
   static navigationOptions = {
     tabBarIcon: () => (
-      <Icon
-        style={CommonStyles.tabBarIcon}
-        source={Icons.avatar}
-      />
+      <Icon style={CommonStyles.tabBarIcon} source={Icons.avatar} />
     )
   }
 
@@ -36,7 +33,7 @@ class AccountScreen extends React.Component {
 
   render() {
     const { accountData, allPhotos } = this.props,
-          myPhotos = getAccountPhotos(allPhotos, accountData)
+      myPhotos = getAccountPhotos(allPhotos, accountData)
 
     return (
       <View style={CommonStyles.layoutColumn}>

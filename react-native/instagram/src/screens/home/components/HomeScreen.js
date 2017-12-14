@@ -23,10 +23,7 @@ import Icons from '@themes/icons'
 class HomeScreen extends React.Component {
   static navigationOptions = {
     tabBarIcon: () => (
-      <Icon
-        style={CommonStyles.tabBarIcon}
-        source={Icons.home}
-      />
+      <Icon style={CommonStyles.tabBarIcon} source={Icons.home} />
     )
   }
 
@@ -47,14 +44,16 @@ class HomeScreen extends React.Component {
    * This for testing perfomance only
    * Should use FlatList or SectionList
    */
-  _renderListView = (data) => {
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}),
-          datasource = ds.cloneWithRows(data)
+  _renderListView = data => {
+    const ds = new ListView.DataSource({
+        rowHasChanged: (r1, r2) => r1 !== r2
+      }),
+      datasource = ds.cloneWithRows(data)
 
     return (
       <ListView
         dataSource={datasource}
-        renderRow={(item) => (
+        renderRow={item => (
           <PostItem
             key={item.id}
             item={item}
@@ -69,7 +68,7 @@ class HomeScreen extends React.Component {
   /**
    * Render all items on screen
    */
-  _renderFlatList = (data) => (
+  _renderFlatList = data => (
     <FlatList
       data={data}
       renderItem={({ item }) => (
@@ -92,9 +91,7 @@ class HomeScreen extends React.Component {
     }
 
     return (
-      <KeyboardAvoidingView
-        behavior={isIOS() ? 'padding' : null}
-      >
+      <KeyboardAvoidingView behavior={isIOS() ? 'padding' : null}>
         {this._renderListView(homeData)}
 
         {/* This is hacky for auto-scroll when keyboard display on iOS */}

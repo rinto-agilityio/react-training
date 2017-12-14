@@ -16,19 +16,18 @@ import Icons from '@themes/icons'
 class UploadScreen extends React.Component {
   static navigationOptions = {
     tabBarIcon: () => (
-      <Icon
-        style={CommonStyles.tabBarIcon}
-        source={Icons.plus}
-      />
+      <Icon style={CommonStyles.tabBarIcon} source={Icons.plus} />
     )
   }
 
   _showImagePicker = () => {
-    const { accountData,
-            uploadPhotoRequest,
-            uploadPhotoCancel,
-            uploadPhotoSuccess,
-            uploadPhotoFailure } = this.props
+    const {
+      accountData,
+      uploadPhotoRequest,
+      uploadPhotoCancel,
+      uploadPhotoSuccess,
+      uploadPhotoFailure
+    } = this.props
 
     // Dispatch an action upload photo
     uploadPhotoRequest()
@@ -79,8 +78,8 @@ class UploadScreen extends React.Component {
 
   render() {
     const ButtonTitle = this.props.uploadData.isUploading
-                        ? 'Uploading images...'
-                        : 'Select images from Photo Gallery'
+      ? 'Uploading images...'
+      : 'Select images from Photo Gallery'
 
     return <Button onPress={this._showImagePicker} title={ButtonTitle} />
   }
