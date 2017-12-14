@@ -25,7 +25,11 @@
     "sort-vars": "off",
     "no-underscore-dangle": ["error", { "allowAfterThis": true }],
     "no-invalid-this": "off",
+    "sort-imports": "off",
     "import/no-extraneous-dependencies": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "never",
+    "import/first": "never",
     "react/forbid-prop-types": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
