@@ -23,6 +23,7 @@
     "arrow-parens": [2, "as-needed"],
     "one-var": ["error", { "initialized": "always", "uninitialized": "never" }],
     "sort-vars": "off",
+    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
 }
