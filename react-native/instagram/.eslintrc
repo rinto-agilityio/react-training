@@ -20,6 +20,7 @@
         "functions": "ignore"
       }
     ],
+    "arrow-parens": [2, "as-needed"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
 }
