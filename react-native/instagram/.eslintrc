@@ -21,13 +21,15 @@
       }
     ],
     "arrow-parens": [2, "as-needed"],
-    "one-var": ["error", { "initialized": "always", "uninitialized": "never" }],
+    "one-var": ["error", "always"],
+    "one-var-declaration-per-line": ["error", "initializations"],
     "sort-vars": "off",
     "no-ternary": "off",
     "no-underscore-dangle": ["error", { "allowAfterThis": true }],
     "no-inline-comments": "off",
     "no-invalid-this": "off",
     "sort-imports": "off",
+    "init-declarations": ["error", "never", { "ignoreForLoopInit": true }],
     "import/no-extraneous-dependencies": "off",
     "import/no-unresolved": "off",
     "import/extensions": "never",
@@ -35,5 +37,8 @@
     "react/forbid-prop-types": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+  },
+  "env": {
+    "jest": true
   }
 }
