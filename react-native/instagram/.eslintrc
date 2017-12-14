@@ -24,6 +24,9 @@
     "one-var": ["error", { "initialized": "always", "uninitialized": "never" }],
     "sort-vars": "off",
     "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    "no-invalid-this": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/forbid-prop-types": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
 }
