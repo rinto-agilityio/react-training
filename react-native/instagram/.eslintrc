@@ -1,4 +1,19 @@
 {
   "plugins": ["react"],
-  "extends": ["eslint:all", "plugin:react/all"]
+  "extends": ["eslint:recommended", "roc", "eslint:all", "plugin:react/all"],
+  "rules": {
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "never",
+        "objects": "never",
+        "imports": "never",
+        "exports": "never",
+        "functions": "ignore"
+      }
+    ],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+  }
 }
