@@ -1,8 +1,14 @@
 {
-  "plugins": ["react"],
-  "extends": ["eslint:recommended", "roc", "eslint:all", "plugin:react/all"],
+  "plugins": ["react", "react-native"],
+  "extends": [
+    "eslint:recommended",
+    "roc",
+    "eslint:all",
+    "plugin:react/all",
+    "plugin:react-native/all"
+  ],
   "rules": {
-    "semi": ["error", "always"],
+    "semi": ["error", "never"],
     "quotes": ["error", "single"],
     "comma-dangle": [
       "error",
