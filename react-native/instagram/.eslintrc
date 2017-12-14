@@ -23,7 +23,9 @@
     "arrow-parens": [2, "as-needed"],
     "one-var": ["error", { "initialized": "always", "uninitialized": "never" }],
     "sort-vars": "off",
+    "no-ternary": "off",
     "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    "no-inline-comments": "off",
     "no-invalid-this": "off",
     "sort-imports": "off",
     "import/no-extraneous-dependencies": "off",
@@ -31,6 +33,7 @@
     "import/extensions": "never",
     "import/first": "never",
     "react/forbid-prop-types": "off",
+    "react/jsx-one-expression-per-line": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
 }
