@@ -12,15 +12,14 @@ import {
 } from 'react-native-dotenv'
 
 const fbConfig = {
-  apiKey: FIREBASE_API_KEY,
-  authDomain: FIREBASE_AUTH_DOMAIN,
-  databaseURL: FIREBASE_DATABASE_URL,
-  messagingSenderId: FIREBASE_MESSAGING_SENDER_ID,
-  projectId: FIREBASE_PROJECT_ID,
-  storageBucket: FIREBASE_STORAGE_BUCKET
-}
+    apiKey: FIREBASE_API_KEY,
+    authDomain: FIREBASE_AUTH_DOMAIN,
+    databaseURL: FIREBASE_DATABASE_URL,
+    messagingSenderId: FIREBASE_MESSAGING_SENDER_ID,
+    projectId: FIREBASE_PROJECT_ID,
+    storageBucket: FIREBASE_STORAGE_BUCKET
+  },
+  fbApp = firebase.initializeApp(fbConfig),
+  storageRef = firebase.storage().ref()
 
-/* eslint-disable one-var */
-export const fbApp = firebase.initializeApp(fbConfig)
-export const storageRef = firebase.storage().ref()
-/* eslint-enable */
+export { fbApp, storageRef }

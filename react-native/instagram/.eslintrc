@@ -1,4 +1,11 @@
 {
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
   "plugins": ["react", "react-native"],
   "extends": [
     "eslint:recommended",
@@ -39,6 +46,8 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   },
   "env": {
+    "browser": true,
+    "node": true,
     "jest": true
   }
 }
