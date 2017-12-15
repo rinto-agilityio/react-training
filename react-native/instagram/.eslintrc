@@ -7,13 +7,7 @@
     }
   },
   "plugins": ["react", "react-native"],
-  "extends": [
-    "eslint:recommended",
-    "roc",
-    "eslint:all",
-    "plugin:react/all",
-    "plugin:react-native/all"
-  ],
+  "extends": ["eslint:recommended", "eslint:all", "plugin:react/all", "plugin:react-native/all"],
   "rules": {
     "semi": ["error", "never"],
     "quotes": ["error", "single"],
@@ -36,6 +30,7 @@
     "no-inline-comments": "off",
     "no-invalid-this": "off",
     "sort-imports": "off",
+    "sort-keys": "off",
     "init-declarations": ["error", "never", { "ignoreForLoopInit": true }],
     "import/no-extraneous-dependencies": "off",
     "import/no-unresolved": "off",
