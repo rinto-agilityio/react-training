@@ -41,9 +41,11 @@
     "import/no-unresolved": "off",
     "import/extensions": "never",
     "import/first": "never",
+    "react/sort-prop-types": "off",
     "react/forbid-prop-types": "off",
     "react/jsx-one-expression-per-line": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-sort-props": "off"
   },
   "env": {
     "browser": true,
