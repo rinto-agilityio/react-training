@@ -8,7 +8,10 @@ import { styles } from './styles/CommentStyles'
 import CommonStyles from '@themes/common'
 
 class Comment extends React.Component {
-  state = { text: '' }
+  constructor() {
+    super()
+    this.refTextValue = null
+  }
 
   // Reset state after unmount
   componentWillUnmount() {
@@ -17,47 +20,40 @@ class Comment extends React.Component {
 
   // Add comment for this photo
   handleSubmitComment = () => {
-    const { text } = this.state
+    const { _lastNativeText } = this.refTextValue
 
-    if (text) {
+    if (_lastNativeText) {
       const { postId, owner, submitComment } = this.props
 
       submitComment({
         owner,
         postId,
-        text
+        text: _lastNativeText
       })
 
       this._resetTextInput()
     }
   }
 
-  /* eslint-disable react/no-set-state */
-  handleTextChange = text => {
-    this.setState({ text })
-  }
-
-  // Reset input value after submit or component unmount
+  // Reset TextInput value
   _resetTextInput = () => {
-    this.setState({ text: '' })
+    this.refTextValue.clear()
   }
-
-  /* eslint-enable react/no-set-state */
 
   render() {
-    const { owner } = this.props,
-      { text } = this.state
+    const { owner } = this.props
 
     return (
       <View style={[CommonStyles.layoutRow, styles.comment]}>
         <Image source={{ uri: owner.profile_pic_url }} style={styles.avatar} />
         <TextInput
-          onChangeText={this.handleTextChange}
+          ref={text => {
+            this.refTextValue = text
+          }}
           onSubmitEditing={this.handleSubmitComment}
           placeholder="Add a comment"
           style={styles.commentInput}
           underlineColorAndroid="transparent"
-          value={text}
         />
       </View>
     )
