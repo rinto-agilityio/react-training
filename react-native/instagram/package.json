@@ -45,7 +45,8 @@
     "jest-cli": "^21.2.1",
     "prettier-eslint": "^8.2.2",
     "react-dom": "^16.1.1",
-    "react-test-renderer": "16.0.0"
+    "react-test-renderer": "16.0.0",
+    "redux-saga": "^0.16.0"
   },
   "jest": {
     "preset": "react-native",
