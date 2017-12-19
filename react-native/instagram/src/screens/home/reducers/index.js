@@ -9,13 +9,11 @@ import { Types as UploadTypes } from '@screens/upload/actions'
 import { generateFeeds } from '@test/__mocks__/generate-data'
 
 const INITIAL_STATE = Immutable({
-    data: []
+    data: [],
+    isFetching: false,
+    error: null
   }),
   updatePersist = (state, action) => {
-    /**
-     * Redux persist throw error if no data in this case
-     * So, set default empty data for the first time install app
-     */
     const { payload } = action,
       homePayload = payload && payload.home ? payload.home : {}
 
@@ -26,6 +24,14 @@ const INITIAL_STATE = Immutable({
   },
   getHomeDataRequest = (state, action) => state.merge({
     type: action.type
+  }),
+  getHomeDataSuccess = (state, action) => state.merge({
+    type: action.type,
+    data: action.response
+  }),
+  getHomeDataFailure = (state, action) => state.merge({
+    type: action.type,
+    error: action.error
   }),
   addPhotoToList = (state, action) => state.merge({
     type: action.type,
@@ -82,6 +88,8 @@ const INITIAL_STATE = Immutable({
 
     // [Types.GET_HOME_DATA_REQUEST]: fakeGetHomeDataRequest, // This for performance testing only
     [Types.GET_HOME_DATA_REQUEST]: getHomeDataRequest,
+    [Types.GET_HOME_DATA_SUCCESS]: getHomeDataSuccess,
+    [Types.GET_HOME_DATA_FAILURE]: getHomeDataFailure,
     [Types.ADD_COMMENT]: addComment,
     [Types.TOGGLE_LIKE]: toggleLike,
 

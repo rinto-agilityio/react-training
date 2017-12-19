@@ -2,18 +2,17 @@
 import { fbDatabase } from '@configs/firebase'
 
 // Helpers
-import { photos } from '@test/__mocks__/sample-data'
 import { getListAsArray } from './firebase'
 
 const dbRef = fbDatabase.ref('feeds'),
 
   /**
    * Wrapp response with status for successful case
-   * @param {[array, object]} response - Response data
+   * @param {[array, object]} data - Response data
    * @return {object} - object with success status
    */
-  wrapperResponseSuccessful = response => ({
-    response,
+  wrapperResponseSuccessful = data => ({
+    data,
     ok: true
   }),
 

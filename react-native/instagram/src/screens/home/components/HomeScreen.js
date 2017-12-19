@@ -94,7 +94,7 @@ class HomeScreen extends React.Component {
 
     return (
       <KeyboardAvoidingView behavior={isIOS() ? 'padding' : null}>
-        {this._renderListView(homeData)}
+        {this._renderFlatList(homeData)}
 
         {/* This is hacky for auto-scroll when keyboard display on iOS */}
         <View style={CommonStyles.keyboardPadding} />
