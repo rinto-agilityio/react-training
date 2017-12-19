@@ -30,6 +30,7 @@
     "no-underscore-dangle": ["error", { "allowAfterThis": true }],
     "no-inline-comments": "off",
     "no-invalid-this": "off",
+    "no-negated-condition": "off",
     "sort-imports": "off",
     "sort-keys": "off",
     "init-declarations": ["error", "never", { "ignoreForLoopInit": true }],
