@@ -20,6 +20,7 @@ const fbConfig = {
     storageBucket: FIREBASE_STORAGE_BUCKET
   },
   fbApp = firebase.initializeApp(fbConfig),
+  fbDatabase = firebase.database(),
   storageRef = firebase.storage().ref()
 
-export { fbApp, storageRef }
+export { fbApp, fbDatabase, storageRef }

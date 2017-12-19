@@ -25,4 +25,15 @@ const dbRef = fbDatabase.ref('feeds'),
   wrapperResponseFailure = error => ({
     error,
     ok: false
-  })
+  }),
+
+  /**
+   * Get all feeds
+   * @returns {object} - Response with status
+   */
+  getAllFeeds = () => dbRef
+    .once('value')
+    .then(snapshot => wrapperResponseSuccessful(getListAsArray(snapshot)))
+    .catch(err => wrapperResponseFailure(err))
+
+export { getAllFeeds }
