@@ -10,16 +10,13 @@ import { PERSIST_STORE_KEY } from 'react-native-dotenv'
 // Reducers
 import rootReducer from './rootReducer'
 
-const isProduction = process.env.NODE_ENV === 'production' ? true : false
-
-const config = {
-  key: PERSIST_STORE_KEY,
-  storage,
-  debug: isProduction ? false : true
-}
-
-// Necessary middlewares for all env
-let middleware = []
+const isProduction = process.env.NODE_ENV === 'production',
+  middleware = [],
+  config = {
+    key: PERSIST_STORE_KEY,
+    storage,
+    debug: !isProduction
+  }
 
 // Add some middlewares if not production mode
 if (!isProduction) {
@@ -28,10 +25,10 @@ if (!isProduction) {
 
 const configureStore = () => {
   const store = createStore(
-    persistReducer(config, rootReducer),
-    compose(applyMiddleware(...middleware))
-  )
-  const persistor = persistStore(store)
+      persistReducer(config, rootReducer),
+      compose(applyMiddleware(...middleware))
+    ),
+    persistor = persistStore(store)
 
   return { persistor, store }
 }

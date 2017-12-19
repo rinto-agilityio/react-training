@@ -4,7 +4,7 @@ import { Text, Button } from 'react-native'
 import ImagePicker from 'react-native-image-picker'
 
 // Helpers
-import { uploadImage } from '@helpers/upload-image'
+import uploadImage from '@helpers/upload-image'
 
 // Components
 import Icon from '@common/components/Icon'
@@ -15,9 +15,7 @@ import Icons from '@themes/icons'
 
 class UploadScreen extends React.Component {
   static navigationOptions = {
-    tabBarIcon: () => (
-      <Icon style={CommonStyles.tabBarIcon} source={Icons.plus} />
-    )
+    tabBarIcon: () => <Icon style={CommonStyles.tabBarIcon} source={Icons.plus} />
   }
 
   _showImagePicker = () => {
@@ -53,8 +51,11 @@ class UploadScreen extends React.Component {
       if (response.didCancel) {
         uploadPhotoCancel()
       } else if (response.error) {
-        // Upload error
-        // console.log('ImagePicker Error: ', response.error)
+
+        /*
+         * Upload error
+         * console.log('ImagePicker Error: ', response.error)
+         */
       } else {
         uploadImage(response)
           .then(response => {
@@ -69,9 +70,7 @@ class UploadScreen extends React.Component {
 
             return uploadPhotoSuccess(data)
           })
-          .catch(error => {
-            return uploadPhotoFailure(error)
-          })
+          .catch(error => uploadPhotoFailure(error))
       }
     })
   }
