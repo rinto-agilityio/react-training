@@ -2,7 +2,6 @@
 import React from 'react'
 import { View } from 'react-native'
 import PropTypes from 'prop-types'
-import _ from 'lodash'
 
 // Components
 import PostAuthor from './post/Author'
@@ -11,7 +10,7 @@ import PostFooter from './post/Footer'
 
 const PostItem = ({ item, submitComment, toggleLike }) => {
   const likeCounting = item.likes.length,
-    isLiked = !!_.find(item.likes, i => i === item.owner.id)
+    isLiked = !!item.likes.find(i => i === item.owner.id)
 
   return (
     <View>

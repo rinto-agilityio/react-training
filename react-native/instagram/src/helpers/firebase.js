@@ -8,27 +8,52 @@
  * @return {array} items
  */
 const getListAsArray = collection => {
-  const list = []
+    const list = []
 
-  collection.forEach(item => {
-    const singleFeed = item.val()
+    collection.forEach(item => {
+      const singleFeed = item.val(),
+        likeArr = [],
+        commentArr = []
 
-    // Update id the same with key on firebase database
-    singleFeed.id = item.key
+      /*
+       * Set default empty likes, comments
+       * Or convert from collection to array
+       */
+      if (singleFeed.likes) {
+        singleFeed.likes.forEach(userId => {
+          likeArr.push(userId)
+        })
+      }
+      if (singleFeed.comments) {
+        singleFeed.comments.forEach(comment => {
+          commentArr.push(comment)
+        })
+      }
 
-    // Set default likes, comments
-    if (!singleFeed.likes) {
-      singleFeed.likes = []
-    }
+      singleFeed.id = item.key
+      singleFeed.likes = likeArr
+      singleFeed.comments = commentArr
 
-    if (!singleFeed.comments) {
-      singleFeed.comments = []
-    }
+      list.push(singleFeed)
+    })
 
-    list.push(singleFeed)
-  })
+    return list
+  },
 
-  return list
-}
+  /**
+   * @param {collection} snapshot - Snapshot firebase
+   * @returns {array} snapshot array
+   */
+  snapshotToArray = snapshot => {
+    const returnArr = []
 
-export { getListAsArray }
+    snapshot.forEach(childSnapshot => {
+      const item = childSnapshot.val()
+      item.key = childSnapshot.key
+      returnArr.push(item)
+    })
+
+    return returnArr
+  }
+
+export { getListAsArray, snapshotToArray }
