@@ -20,13 +20,14 @@ const getListAsArray = collection => {
        * Or convert from collection to array
        */
       if (singleFeed.likes) {
-        singleFeed.likes.forEach(userId => {
-          likeArr.push(userId)
+        item.child('likes').forEach(userId => {
+          likeArr.push(userId.val())
         })
       }
+
       if (singleFeed.comments) {
-        singleFeed.comments.forEach(comment => {
-          commentArr.push(comment)
+        item.child('comments').forEach(comment => {
+          commentArr.push(comment.val())
         })
       }
 
