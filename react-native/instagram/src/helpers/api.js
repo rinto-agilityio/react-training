@@ -49,6 +49,26 @@ const dbRef = fbDatabase.ref('feeds'),
       .set(feed)
       .then(() => wrapperResponseSuccessful(feed))
       .catch(err => wrapperResponseFailure(err))
+  },
+
+  /**
+   * // TODO: Find better way to find and get/set data
+   * @param {object} data - feedId and userId
+   * @returns {bool} status
+   */
+  postToggleLike = data => {
+    const { userId, postId } = data
+
+    dbRef
+      .child(`${postId}/likes/${userId}`)
+      .once('value')
+      .then(snapshot => {
+        const newValue = snapshot.val() ? null : userId
+
+        return dbRef.child(`${postId}/likes/${userId}`).set(newValue)
+      })
+      .then(() => wrapperResponseSuccessful(null))
+      .catch(err => wrapperResponseFailure(err))
   }
 
-export { getAllFeeds, postNewFeed }
+export { getAllFeeds, postNewFeed, postToggleLike }

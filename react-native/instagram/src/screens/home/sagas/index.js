@@ -1,9 +1,9 @@
 // Libs
-import { takeLatest, call, put } from 'redux-saga/effects'
+import { takeLatest, takeEvery, call, put } from 'redux-saga/effects'
 import { Types } from '../actions'
 
 // Helpers
-import { getAllFeeds } from '@helpers/api'
+import { getAllFeeds, postToggleLike } from '@helpers/api'
 
 /**
  * Dispatch an action
@@ -33,8 +33,21 @@ function* getHomeDataRequest() {
 }
 
 /**
+ * @param {object} action - Action type and like data: userId and feedId
+ * @returns {object} - Dispatch action
+ */
+function* toggleLike(action) {
+  const { data } = action
+
+  yield call(postToggleLike, data)
+}
+
+/**
  * @returns {array} yield list
  */
 export default function* homeSaga() {
-  return yield [takeLatest(Types.GET_HOME_DATA_REQUEST, getHomeDataRequest)]
+  return yield [
+    takeLatest(Types.GET_HOME_DATA_REQUEST, getHomeDataRequest),
+    takeEvery(Types.TOGGLE_LIKE, toggleLike)
+  ]
 }
