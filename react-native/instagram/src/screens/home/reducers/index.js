@@ -37,7 +37,11 @@ const INITIAL_STATE = Immutable({
     type: action.type,
     data: [action.response].concat(state.data)
   }),
-  addComment = (state, action) => {
+  addComment = (state, action) => state.merge({
+    type: action.type
+  }),
+  addCommentSuccess = (state, action) => {
+    console.log('action: ', action)
     const comment = Immutable(action.comment),
       postIdx = state.data.findIndex(item => item.id === comment.postId),
       newData = state.data.updateIn([postIdx, 'comments'], arr => arr.concat([comment.merge({ id: Date.now() }).without('postId')]))
@@ -47,6 +51,9 @@ const INITIAL_STATE = Immutable({
       data: newData
     })
   },
+  addCommentFailure = (state, action) => state.merge({
+    type: action.type
+  }),
   toggleLike = (state, action) => {
     let newLikes
     const notFoundIndex = -1,
@@ -90,7 +97,10 @@ const INITIAL_STATE = Immutable({
     [Types.GET_HOME_DATA_REQUEST]: getHomeDataRequest,
     [Types.GET_HOME_DATA_SUCCESS]: getHomeDataSuccess,
     [Types.GET_HOME_DATA_FAILURE]: getHomeDataFailure,
+
     [Types.ADD_COMMENT]: addComment,
+    [Types.ADD_COMMENT_SUCCESS]: addCommentSuccess,
+    [Types.ADD_COMMENT_FAILURE]: addCommentFailure,
     [Types.TOGGLE_LIKE]: toggleLike,
 
     [UploadTypes.UPLOAD_PHOTO_SUCCESS]: addPhotoToList

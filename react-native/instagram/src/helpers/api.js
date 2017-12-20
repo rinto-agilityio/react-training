@@ -69,6 +69,21 @@ const dbRef = fbDatabase.ref('feeds'),
       })
       .then(() => wrapperResponseSuccessful(null))
       .catch(err => wrapperResponseFailure(err))
+  },
+
+  /**
+   * @param {object} comment - Comment
+   * @returns {object} - Dispatch action
+   */
+  postNewComment = comment => {
+    // Generate key from firebase
+    const commentId = dbRef.child(`${comment.postId}/comments`).push().key
+
+    return dbRef
+      .child(`${comment.postId}/comments/${commentId}`)
+      .set(comment)
+      .then(() => wrapperResponseSuccessful(comment))
+      .catch(err => wrapperResponseFailure(err))
   }
 
-export { getAllFeeds, postNewFeed, postToggleLike }
+export { getAllFeeds, postNewFeed, postToggleLike, postNewComment }
