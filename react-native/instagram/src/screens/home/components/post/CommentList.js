@@ -2,6 +2,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 import PropTypes from 'prop-types'
+import _ from 'lodash'
 
 // Styles
 import CommonStyles from '@themes/common'
@@ -9,12 +10,12 @@ import { styles } from './styles/CommentListStyles'
 
 const CommentList = ({ comments }) => (
   <View>
-    {comments.map(comment =>
+    {_.map(comments, comment => (
       <Text key={comment.id} style={styles.comment}>
         <Text style={CommonStyles.textBold}>{comment.owner.username}</Text>
-        {': ' + comment.text}
+        {`: ${comment.text}`}
       </Text>
-    )}
+    ))}
   </View>
 )
 
