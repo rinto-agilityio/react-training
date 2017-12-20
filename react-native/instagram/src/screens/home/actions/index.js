@@ -5,7 +5,7 @@ export const { Types, Creators } = createActions({
   getHomeDataSuccess: ['response'],
   getHomeDataFailure: ['error'],
 
-  addComment: ['comment'],
+  addCommentRequest: ['comment'],
   addCommentSuccess: ['response'],
   addCommentFailure: ['error'],
 

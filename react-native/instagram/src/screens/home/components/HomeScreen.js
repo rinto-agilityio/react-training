@@ -28,9 +28,9 @@ class HomeScreen extends React.Component {
   }
 
   _addPostComment = data => {
-    const { addComment } = this.props
+    const { addCommentRequest } = this.props
 
-    addComment(data)
+    addCommentRequest(data)
   }
 
   _toggleLike = data => {
@@ -104,7 +104,7 @@ class HomeScreen extends React.Component {
 }
 
 HomeScreen.propTypes = {
-  addComment: PropTypes.func.isRequired,
+  addCommentRequest: PropTypes.func.isRequired,
   getHomeDataRequest: PropTypes.func.isRequired,
   homeData: PropTypes.array.isRequired,
   toggleLike: PropTypes.func.isRequired

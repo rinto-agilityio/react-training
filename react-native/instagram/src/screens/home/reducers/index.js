@@ -37,7 +37,7 @@ const INITIAL_STATE = Immutable({
     type: action.type,
     data: [action.response].concat(state.data)
   }),
-  addComment = (state, action) => state.merge({
+  addCommentRequest = (state, action) => state.merge({
     type: action.type
   }),
   addCommentSuccess = (state, action) => {
@@ -97,7 +97,7 @@ const INITIAL_STATE = Immutable({
     [Types.GET_HOME_DATA_SUCCESS]: getHomeDataSuccess,
     [Types.GET_HOME_DATA_FAILURE]: getHomeDataFailure,
 
-    [Types.ADD_COMMENT]: addComment,
+    [Types.ADD_COMMENT_REQUEST]: addCommentRequest,
     [Types.ADD_COMMENT_SUCCESS]: addCommentSuccess,
     [Types.ADD_COMMENT_FAILURE]: addCommentFailure,
     [Types.TOGGLE_LIKE]: toggleLike,

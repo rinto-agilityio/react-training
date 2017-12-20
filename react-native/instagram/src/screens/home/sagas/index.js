@@ -46,7 +46,7 @@ function* toggleLike(action) {
  * @param {object} action - Action type and data
  * @returns {object} - Dispatch action
  */
-function* addComment(action) {
+function* addCommentRequest(action) {
   try {
     const response = yield call(postNewComment, action.comment)
 
@@ -76,6 +76,6 @@ export default function* homeSaga() {
   return yield [
     takeLatest(Types.GET_HOME_DATA_REQUEST, getHomeDataRequest),
     takeEvery(Types.TOGGLE_LIKE, toggleLike),
-    takeEvery(Types.ADD_COMMENT, addComment)
+    takeEvery(Types.ADD_COMMENT_REQUEST, addCommentRequest)
   ]
 }
