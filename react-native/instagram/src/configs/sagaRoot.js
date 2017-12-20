@@ -1,4 +1,4 @@
-import homeSaga from '@screens/home/saga'
+import homeSaga from '@screens/home/sagas'
 
 /**
  * @returns {object} sagaRoot
