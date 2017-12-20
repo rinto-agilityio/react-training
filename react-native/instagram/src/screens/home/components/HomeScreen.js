@@ -20,11 +20,12 @@ class HomeScreen extends React.Component {
     tabBarIcon: () => <Icon source={Icons.home} style={CommonStyles.tabBarIcon} />
   }
 
-  // Fetching new data for Home page
   componentDidMount() {
-    const { getHomeDataRequest } = this.props
+    this._fetchingData()
+  }
 
-    getHomeDataRequest()
+  handlePullToRefresh = () => {
+    this._fetchingData()
   }
 
   _addPostComment = data => {
@@ -37,6 +38,13 @@ class HomeScreen extends React.Component {
     const { toggleLike } = this.props
 
     toggleLike(data)
+  }
+
+  // Fetching new data for Home page
+  _fetchingData = () => {
+    const { getHomeDataRequest } = this.props
+
+    getHomeDataRequest()
   }
 
   /**
@@ -74,6 +82,8 @@ class HomeScreen extends React.Component {
     <FlatList
       data={data}
       keyExtractor={(item, index) => index}
+      onRefresh={this.handlePullToRefresh}
+      refreshing={false}
       renderItem={({ item }) => (
         <PostItem
           key={item.id}
