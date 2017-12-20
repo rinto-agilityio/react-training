@@ -6,55 +6,41 @@ import { REHYDRATE } from 'redux-persist/lib/constants'
 // Helpers
 import { Types } from '../actions'
 
-export const INITIAL_STATE = Immutable({
-  data: null,
-  isUploading: false,
-  error: null
-})
-
-const updatePersist = (state, action) => {
-  return state.merge({
+const INITIAL_STATE = Immutable({
+    data: null,
+    isUploading: false,
+    error: null
+  }),
+  updatePersist = (state, action) => state.merge({
     type: action.type,
     isUploading: false
-  })
-}
-
-const uploadPhotoRequest = (state, action) => {
-  return state.merge({
+  }),
+  uploadPhotoRequest = (state, action) => state.merge({
     type: action.type,
     isUploading: true
-  })
-}
-
-const uploadPhotoCancel = (state, action) => {
-  return state.merge({
+  }),
+  uploadPhotoCancel = (state, action) => state.merge({
     type: action.type,
     isUploading: false
-  })
-}
-
-const uploadPhotoSuccess = (state, action) => {
-  return state.merge({
+  }),
+  uploadPhotoSuccess = (state, action) => state.merge({
     type: action.type,
     data: action.response,
     isUploading: false,
     error: null
-  })
-}
-
-const uploadPhotoFailure = (state, action) => {
-  return state.merge({
+  }),
+  uploadPhotoFailure = (state, action) => state.merge({
     type: action.type,
     data: null,
     error: action.error
+  }),
+  uploadReducer = createReducer(INITIAL_STATE, {
+    [REHYDRATE]: updatePersist,
+
+    [Types.UPLOAD_PHOTO_REQUEST]: uploadPhotoRequest,
+    [Types.UPLOAD_PHOTO_CANCEL]: uploadPhotoCancel,
+    [Types.UPLOAD_PHOTO_FAILURE]: uploadPhotoFailure,
+    [Types.UPLOAD_PHOTO_SUCCESS]: uploadPhotoSuccess
   })
-}
 
-export const uploadReducer = createReducer(INITIAL_STATE, {
-  [REHYDRATE]: updatePersist,
-
-  [Types.UPLOAD_PHOTO_REQUEST]: uploadPhotoRequest,
-  [Types.UPLOAD_PHOTO_CANCEL]: uploadPhotoCancel,
-  [Types.UPLOAD_PHOTO_FAILURE]: uploadPhotoFailure,
-  [Types.UPLOAD_PHOTO_SUCCESS]: uploadPhotoSuccess
-})
+export { INITIAL_STATE, uploadReducer }
