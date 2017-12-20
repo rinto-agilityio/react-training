@@ -33,6 +33,22 @@ const dbRef = fbDatabase.ref('feeds'),
   getAllFeeds = () => dbRef
     .once('value')
     .then(snapshot => wrapperResponseSuccessful(getListAsArray(snapshot)))
-    .catch(err => wrapperResponseFailure(err))
+    .catch(err => wrapperResponseFailure(err)),
 
-export { getAllFeeds }
+  /**
+   * Add new feed
+   * @param {object} feed  Feed content
+   * @returns {object} feed
+   */
+  postNewFeed = feed => {
+    // Generate key from firebase
+    const feedId = dbRef.push().key
+
+    return dbRef
+      .child(feedId)
+      .set(feed)
+      .then(() => wrapperResponseSuccessful(feed))
+      .catch(err => wrapperResponseFailure(err))
+  }
+
+export { getAllFeeds, postNewFeed }
