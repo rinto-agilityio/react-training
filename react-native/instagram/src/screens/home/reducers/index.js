@@ -41,8 +41,7 @@ const INITIAL_STATE = Immutable({
     type: action.type
   }),
   addCommentSuccess = (state, action) => {
-    console.log('action: ', action)
-    const comment = Immutable(action.comment),
+    const comment = Immutable(action.response),
       postIdx = state.data.findIndex(item => item.id === comment.postId),
       newData = state.data.updateIn([postIdx, 'comments'], arr => arr.concat([comment.merge({ id: Date.now() }).without('postId')]))
 

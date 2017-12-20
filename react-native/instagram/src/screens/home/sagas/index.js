@@ -3,7 +3,7 @@ import { takeLatest, takeEvery, call, put } from 'redux-saga/effects'
 import { Types } from '../actions'
 
 // Helpers
-import { getAllFeeds, postToggleLike } from '@helpers/api'
+import { getAllFeeds, postToggleLike, postNewComment } from '@helpers/api'
 
 /**
  * Dispatch an action
@@ -43,11 +43,39 @@ function* toggleLike(action) {
 }
 
 /**
+ * @param {object} action - Action type and data
+ * @returns {object} - Dispatch action
+ */
+function* addComment(action) {
+  try {
+    const response = yield call(postNewComment, action.comment)
+
+    if (response && response.ok) {
+      return yield put({
+        type: Types.ADD_COMMENT_SUCCESS,
+        response: response.data
+      })
+    }
+
+    return yield put({
+      type: Types.ADD_COMMENT_FAILURE,
+      error: response.error
+    })
+  } catch (error) {
+    return yield put({
+      type: Types.ADD_COMMENT_FAILURE,
+      error
+    })
+  }
+}
+
+/**
  * @returns {array} yield list
  */
 export default function* homeSaga() {
   return yield [
     takeLatest(Types.GET_HOME_DATA_REQUEST, getHomeDataRequest),
-    takeEvery(Types.TOGGLE_LIKE, toggleLike)
+    takeEvery(Types.TOGGLE_LIKE, toggleLike),
+    takeEvery(Types.ADD_COMMENT, addComment)
   ]
 }
