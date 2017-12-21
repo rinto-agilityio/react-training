@@ -10,6 +10,7 @@ import MainNavigator from '@configs/navigator'
 
 // Components
 import AppHeader from '@common/components/AppHeader'
+import ErrorContainer from '@screens/error/containers'
 
 // Styles
 import { styles } from './styles/AppStyles'
@@ -21,6 +22,7 @@ const App = () => (
     <PersistGate persistor={persistor}>
       <View style={styles.container}>
         <AppHeader />
+        <ErrorContainer />
         <MainNavigator />
       </View>
     </PersistGate>
