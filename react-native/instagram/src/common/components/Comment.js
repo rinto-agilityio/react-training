@@ -62,7 +62,7 @@ class Comment extends React.Component {
 
 Comment.propTypes = {
   owner: PropTypes.object.isRequired,
-  postId: PropTypes.number.isRequired,
+  postId: PropTypes.string.isRequired,
   submitComment: PropTypes.func.isRequired
 }
 

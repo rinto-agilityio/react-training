@@ -1,6 +1,6 @@
 // Libs
 import React from 'react'
-import { View, Text, TextInput } from 'react-native'
+import { View, Text } from 'react-native'
 import PropTypes from 'prop-types'
 
 // Components
@@ -52,7 +52,7 @@ PostFooter.propTypes = {
   likeCounting: PropTypes.number,
   comments: PropTypes.array,
   isLiked: PropTypes.bool.isRequired,
-  postId: PropTypes.number.isRequired,
+  postId: PropTypes.string.isRequired,
   owner: PropTypes.object.isRequired,
   submitComment: PropTypes.func.isRequired,
   toggleLike: PropTypes.func.isRequired

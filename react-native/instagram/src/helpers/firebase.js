@@ -27,7 +27,10 @@ const getListAsArray = collection => {
 
       if (singleFeed.comments) {
         item.child('comments').forEach(comment => {
-          commentArr.push(comment.val())
+          commentArr.push({
+            id: comment.key,
+            ...comment.val()
+          })
         })
       }
 

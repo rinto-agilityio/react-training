@@ -1,6 +1,6 @@
 // Third party libs
 import React from 'react'
-import { View, Text, Image, TouchableHighlight } from 'react-native'
+import { View, Image, TouchableHighlight } from 'react-native'
 import PropTypes from 'prop-types'
 
 // Styles
@@ -15,21 +15,20 @@ const PostAction = ({
   toggleLike
 }) => {
   // User like or remove liked a photo
-  const _handleTouchIconLike = () => {
-    toggleLike({
-      postId,
-      userId
-    })
-  }
-
-  const likeIcon = isLiked ? Icons.liked : Icons.like
+  const handleTouchIconLike = () => {
+      toggleLike({
+        postId,
+        userId
+      })
+    },
+    likeIcon = isLiked ? Icons.liked : Icons.like
 
   return (
     <View style={CommonStyles.layoutRow}>
       <TouchableHighlight
         className="icon-like"
-        onPress={() => _handleTouchIconLike()}
-        underlayColor={'transparent'}
+        onPress={() => handleTouchIconLike()}
+        underlayColor="transparent"
       >
         <Image style={styles.icon} source={likeIcon} />
       </TouchableHighlight>
@@ -38,7 +37,7 @@ const PostAction = ({
 }
 
 PostAction.propTypes = {
-  postId: PropTypes.number.isRequired,
+  postId: PropTypes.string.isRequired,
   userId: PropTypes.number.isRequired,
   isLiked: PropTypes.bool.isRequired,
   toggleLike: PropTypes.func.isRequired
