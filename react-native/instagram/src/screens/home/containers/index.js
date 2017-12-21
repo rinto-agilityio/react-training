@@ -8,19 +8,14 @@ import { Creators as HomeActionCreators } from '../actions'
 // Components
 import HomeScreen from '../components/HomeScreen'
 
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators(
+const mapDispatchToProps = dispatch => bindActionCreators(
     {
       ...HomeActionCreators
     },
     dispatch
-  )
-}
-
-const mapStateToProps = state => {
-  return {
+  ),
+  mapStateToProps = state => ({
     homeData: state.home.data
-  }
-}
+  })
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen)
