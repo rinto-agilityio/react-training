@@ -1,9 +1,11 @@
 // Libs
 import { takeLatest, takeEvery, call, put } from 'redux-saga/effects'
 import { Types } from '../actions'
+import { Types as ErrorTypes } from '@common/reducers/errors'
 
 // Helpers
 import { getAllFeeds, postToggleLike, postNewComment } from '@helpers/api'
+import ERROR_TYPES from '@constants/error-types'
 
 /**
  * Dispatch an action
@@ -20,15 +22,27 @@ function* getHomeDataRequest() {
       })
     }
 
-    return yield put({
-      type: Types.GET_HOME_DATA_FAILURE,
-      error: response.error
-    })
+    return yield [
+      put({ type: Types.GET_HOME_DATA_FAILURE, error: response.error }),
+      put({
+        type: ErrorTypes.ADD_ERROR,
+        error: {
+          message: response.error.message,
+          type: ERROR_TYPES.API
+        }
+      })
+    ]
   } catch (error) {
-    return yield put({
-      type: Types.GET_HOME_DATA_FAILURE,
-      error
-    })
+    return yield [
+      put({ type: Types.GET_HOME_DATA_FAILURE, error }),
+      put({
+        type: ErrorTypes.ADD_ERROR,
+        error: {
+          message: error.message,
+          type: ERROR_TYPES.API
+        }
+      })
+    ]
   }
 }
 
