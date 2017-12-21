@@ -5,7 +5,7 @@ import { combineReducers } from 'redux'
 import { homeReducer } from '@screens/home/reducers'
 import { uploadReducer } from '@screens/upload/reducers'
 import { accountReducer } from '@screens/account/reducers'
-import { errorReducer } from '@common/reducers/errors'
+import { errorReducer } from '@screens/error/reducers'
 
 const rootReducer = combineReducers({
   home: homeReducer,
