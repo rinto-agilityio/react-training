@@ -13,30 +13,29 @@ describe('Home actions', () => {
     expect(Creators.getHomeDataRequest()).toEqual(expectAction)
   })
 
-  it('Return correct action type and comment for addComment', () => {
+  it('Return correct action type and comment for addCommentRequest', () => {
     const comment = {
-      postId: mockComment.postId,
-      owner: mockComment.owner,
-      text: mockComment.text
-    }
+        postId: mockComment.postId,
+        owner: mockComment.owner,
+        text: mockComment.text
+      },
+      expectAction = {
+        type: Types.ADD_COMMENT_REQUEST,
+        comment
+      }
 
-    const expectAction = {
-      type: Types.ADD_COMMENT,
-      comment: comment
-    }
-
-    expect(Creators.addComment(comment)).toEqual(expectAction)
+    expect(Creators.addCommentRequest(comment)).toEqual(expectAction)
   })
 
   it('Return correct action type and data for toggleLike', () => {
     const data = {
-      postId: mockComment.postId,
-      userId: mockComment.owner.id
-    }
-    const expectAction = {
-      type: Types.TOGGLE_LIKE,
-      data: data
-    }
+        postId: mockComment.postId,
+        userId: mockComment.owner.id
+      },
+      expectAction = {
+        type: Types.TOGGLE_LIKE,
+        data
+      }
 
     expect(Creators.toggleLike(data)).toEqual(expectAction)
   })

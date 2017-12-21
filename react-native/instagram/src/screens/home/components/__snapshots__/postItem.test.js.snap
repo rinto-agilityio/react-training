@@ -155,7 +155,6 @@ exports[`PostItem component Renders correctly like photo 1`] = `
       />
       <TextInput
         allowFontScaling={true}
-        onChangeText={[Function]}
         onSubmitEditing={[Function]}
         placeholder="Add a comment"
         style={
@@ -170,7 +169,6 @@ exports[`PostItem component Renders correctly like photo 1`] = `
           }
         }
         underlineColorAndroid="transparent"
-        value=""
       />
     </View>
   </View>
@@ -332,7 +330,6 @@ exports[`PostItem component Renders correctly without like 1`] = `
       />
       <TextInput
         allowFontScaling={true}
-        onChangeText={[Function]}
         onSubmitEditing={[Function]}
         placeholder="Add a comment"
         style={
@@ -347,7 +344,6 @@ exports[`PostItem component Renders correctly without like 1`] = `
           }
         }
         underlineColorAndroid="transparent"
-        value=""
       />
     </View>
   </View>

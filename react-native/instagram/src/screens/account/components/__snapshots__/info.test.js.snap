@@ -74,7 +74,7 @@ exports[`Info component Renders correctly 1`] = `
       Instagram
     </Text>
      - 
-    Discovering — and telling — stories from around the world. Curated by Instagram's community team.
+    Discovering — and telling — stories from around the world. Curated by Instagram community team.
   </Text>
 </View>
 `;

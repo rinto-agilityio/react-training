@@ -8,10 +8,9 @@ import { styles } from './styles/CommentStyles'
 import CommonStyles from '@themes/common'
 
 class Comment extends React.Component {
-  constructor() {
-    super()
-    this.refTextValue = null
-  }
+  // constructor() {
+  //   super()
+  // }
 
   // Reset state after unmount
   componentWillUnmount() {
@@ -21,6 +20,8 @@ class Comment extends React.Component {
   // Add comment for this photo
   handleSubmitComment = () => {
     const { _lastNativeText } = this.refTextValue
+
+    console.log('this.refTextValue: ', this.refTextValue)
 
     if (_lastNativeText) {
       const { postId, owner, submitComment } = this.props

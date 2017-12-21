@@ -103,7 +103,6 @@ exports[`PostFooter component Renders correctly with comment input 1`] = `
     />
     <TextInput
       allowFontScaling={true}
-      onChangeText={[Function]}
       onSubmitEditing={[Function]}
       placeholder="Add a comment"
       style={
@@ -118,7 +117,6 @@ exports[`PostFooter component Renders correctly with comment input 1`] = `
         }
       }
       underlineColorAndroid="transparent"
-      value=""
     />
   </View>
 </View>
@@ -227,7 +225,6 @@ exports[`PostFooter component Renders correctly without comment input 1`] = `
     />
     <TextInput
       allowFontScaling={true}
-      onChangeText={[Function]}
       onSubmitEditing={[Function]}
       placeholder="Add a comment"
       style={
@@ -242,7 +239,6 @@ exports[`PostFooter component Renders correctly without comment input 1`] = `
         }
       }
       underlineColorAndroid="transparent"
-      value=""
     />
   </View>
 </View>

@@ -31,7 +31,6 @@ exports[`Comment component Renders correctly 1`] = `
   />
   <TextInput
     allowFontScaling={true}
-    onChangeText={[Function]}
     onSubmitEditing={[Function]}
     placeholder="Add a comment"
     style={
@@ -46,7 +45,6 @@ exports[`Comment component Renders correctly 1`] = `
       }
     }
     underlineColorAndroid="transparent"
-    value=""
   />
 </View>
 `;

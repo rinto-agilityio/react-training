@@ -62,59 +62,53 @@ describe('Home reducer', () => {
   })
 
   describe('Fixed data for state', () => {
-    const mockUser = users[1]
-    const mockUserId = 1,
+    const mockUser = users[1],
       homeState = INITIAL_STATE.merge({
         data: photos
       })
 
     it('Should add a new comment to post', () => {
-      const postIdx = 1
+      const postIdx = 1,
+        newState = homeReducer(homeState, {
+          type: Types.ADD_COMMENT_SUCCESS,
+          response: {
+            postId: homeState.data[postIdx].id,
+            owner: mockUser,
+            text: 'My comment'
+          }
+        })
 
-      const newState = homeReducer(homeState, {
-        type: Types.ADD_COMMENT,
-        comment: {
-          postId: homeState.data[postIdx].id,
-          owner: mockUser,
-          text: 'My comment'
-        }
-      })
-
-      expect(newState.data[postIdx].comments.length).toEqual(
-        homeState.data[postIdx].comments.length + 1
-      )
+      expect(newState.data[postIdx].comments.length)
+        .toEqual(homeState.data[postIdx].comments.length + 1)
     })
 
     it('Should handle TOGGLE_LIKE: Increase like counting', () => {
-      const postIdx = 0
+      const postIdx = 0,
+        newState = homeReducer(homeState, {
+          type: Types.TOGGLE_LIKE,
+          data: {
+            postId: homeState.data[postIdx].id,
+            userId: mockUser.id
+          }
+        })
 
-      const newState = homeReducer(homeState, {
-        type: Types.TOGGLE_LIKE,
-        data: {
-          postId: homeState.data[postIdx].id,
-          userId: mockUser.id
-        }
-      })
-
-      expect(newState.data[postIdx].likes.length).toEqual(
-        homeState.data[postIdx].likes.length + 1
-      )
+      expect(newState.data[postIdx].likes.length)
+        .toEqual(homeState.data[postIdx].likes.length + 1)
     })
 
     it('Should handle TOGGLE_LIKE: Decrease like counting', () => {
-      const postIdx = 1 // This has some like in mock data
+      // This has some like in mock data
+      const postIdx = 1,
+        newState = homeReducer(homeState, {
+          type: Types.TOGGLE_LIKE,
+          data: {
+            postId: homeState.data[postIdx].id,
+            userId: mockUser.id
+          }
+        })
 
-      const newState = homeReducer(homeState, {
-        type: Types.TOGGLE_LIKE,
-        data: {
-          postId: homeState.data[postIdx].id,
-          userId: mockUser.id
-        }
-      })
-
-      expect(newState.data[postIdx].likes.length).toEqual(
-        homeState.data[postIdx].likes.length - 1
-      )
+      expect(newState.data[postIdx].likes.length)
+        .toEqual(homeState.data[postIdx].likes.length - 1)
     })
   })
 })
