@@ -5,5 +5,8 @@ import uploadSaga from '@screens/upload/sagas'
  * @returns {object} sagaRoot
  */
 export default function* sagaRoot() {
-  yield [homeSaga(), uploadSaga()]
+  yield [
+    homeSaga(),
+    uploadSaga()
+  ]
 }
