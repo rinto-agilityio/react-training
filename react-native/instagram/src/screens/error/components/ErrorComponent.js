@@ -1,12 +1,44 @@
 // Libs
 import React from 'react'
-import { View, Text } from 'react-native'
+import { Alert } from 'react-native'
 import PropTypes from 'prop-types'
 
-const ErrorComponent = () => (
-  <View>
-    <Text>Error dialog here</Text>
-  </View>
-)
+const showAlert = error => {
+  if (!error.errorType && !error.message) {
+    return null
+  }
+
+  Alert.alert(
+    `${error.errorType} Error`,
+    error.message,
+    { cancelable: true }
+  )
+
+  return null
+}
+
+class ErrorComponent extends React.Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    const { error: nextPropsError } = nextProps,
+      { error: thisPropsError } = this.props
+
+    if (!nextPropsError.message &&
+      nextPropsError.message !== thisPropsError.message) {
+      return false
+    }
+
+    return true
+  }
+
+  render() {
+    const { error } = this.props
+
+    return showAlert(error)
+  }
+}
+
+ErrorComponent.propTypes = {
+  error: PropTypes.object.isRequired
+}
 
 export default ErrorComponent
