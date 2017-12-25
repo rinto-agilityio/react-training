@@ -6,7 +6,7 @@ import ErrorComponent from '../components/ErrorComponent'
 
 const mapDispatchToProps = {},
   mapStateToProps = state => ({
-    errors: state.error
+    error: state.error
   })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ErrorComponent)

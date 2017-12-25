@@ -8,7 +8,7 @@ import Types from '../actions'
 
 const INITIAL_STATE = Immutable({
     message: null,
-    apiType: null
+    errorType: null
   }),
 
   /**
@@ -20,18 +20,18 @@ const INITIAL_STATE = Immutable({
   updatePersist = (state, action) => Immutable(state).merge({
     type: action.type,
     message: null,
-    apiType: null
+    errorType: null
   }),
 
   addError = (state, action) => Immutable(state).merge({
     type: action.type,
-    apiType: action.error.type,
+    errorType: action.error.type,
     message: action.error.message
   }),
 
   clearError = (state, action) => Immutable(state).merge({
     type: action.type,
-    apiType: null,
+    errorType: null,
     message: null
   }),
 
