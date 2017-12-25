@@ -1,6 +1,6 @@
 // Libs
 import React from 'react'
-import { Alert } from 'react-native'
+import { Alert, NetInfo } from 'react-native'
 import PropTypes from 'prop-types'
 
 const showAlert = error => {
@@ -18,6 +18,19 @@ const showAlert = error => {
 }
 
 class ErrorComponent extends React.Component {
+  handleConnectionChange = (isConnected) => {
+    console.log('isConnected: ', isConnected);
+    if (!isConnected) {
+      console.log('Dispatch action ADD_ERROR for offline')
+    } else {
+      console.log('Should not dispatch here')
+    }
+  }
+
+  componentDidMount() {
+    NetInfo.isConnected.addEventListener('connectionChange', this.handleConnectionChange)
+  }
+
   shouldComponentUpdate(nextProps, nextState) {
     const { error: nextPropsError } = nextProps,
       { error: thisPropsError } = this.props
@@ -28,6 +41,10 @@ class ErrorComponent extends React.Component {
     }
 
     return true
+  }
+
+  componentWillUnmount() {
+    NetInfo.isConnected.removeEventListener('connectionChange', this.handleConnectionChange)
   }
 
   render() {

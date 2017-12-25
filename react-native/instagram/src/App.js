@@ -15,18 +15,17 @@ import ErrorContainer from '@screens/error/containers'
 // Styles
 import { styles } from './styles/AppStyles'
 
-const { persistor, store } = configureStore()
-
-const App = () => (
-  <Provider store={store}>
-    <PersistGate persistor={persistor}>
-      <View style={styles.container}>
-        <AppHeader />
-        <ErrorContainer />
-        <MainNavigator />
-      </View>
-    </PersistGate>
-  </Provider>
-)
+const { persistor, store } = configureStore(),
+  App = () => (
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <View style={styles.container}>
+          <AppHeader />
+          <ErrorContainer />
+          <MainNavigator />
+        </View>
+      </PersistGate>
+    </Provider>
+  )
 
 export default App
