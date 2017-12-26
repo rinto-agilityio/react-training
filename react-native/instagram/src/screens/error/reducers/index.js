@@ -4,7 +4,7 @@ import { createReducer } from 'reduxsauce'
 import { REHYDRATE } from 'redux-persist/lib/constants'
 
 // Helpers
-import Types from '../actions'
+import { Types } from '../actions'
 
 const INITIAL_STATE = Immutable({
     message: null,

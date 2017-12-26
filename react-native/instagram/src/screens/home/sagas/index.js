@@ -1,7 +1,7 @@
 // Libs
 import { takeLatest, takeEvery, call, put, all } from 'redux-saga/effects'
 import { Types } from '../actions'
-import ErrorTypes from '@screens/error/actions'
+import { Types as ErrorTypes } from '@screens/error/actions'
 
 // Helpers
 import { getAllFeeds, postToggleLike, postNewComment } from '@helpers/api'

@@ -1,9 +1,7 @@
 // Libs
-import { createTypes } from 'reduxsauce'
+import { createActions } from 'reduxsauce'
 
-const Types = createTypes(`
-  ADD_ERROR
-  CLEAR_ERROR
-`)
-
-export default Types
+export const { Types, Creators } = createActions({
+  addError: ['error'],
+  clearError: null
+})
