@@ -1,4 +1,6 @@
-const NO_PHOTOS = 'Please upload some photos',
-  MESSAGE_NO_NETWORK = 'No Network Connection'
+const MESSAGES = {
+  NO_PHOTOS: 'Please upload some photos',
+  NO_NETWORK: 'No Network Connection'
+}
 
-export { NO_PHOTOS, MESSAGE_NO_NETWORK }
+export default MESSAGES

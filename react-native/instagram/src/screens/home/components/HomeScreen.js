@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 // Helpers
-import { NO_PHOTOS } from '@constants/messages'
+import MESSAGES from '@constants/messages'
 import { isIOS } from '@helpers/device-info'
 
 // Components
@@ -99,7 +99,7 @@ class HomeScreen extends React.Component {
     const { homeData } = this.props
 
     if (!homeData.length) {
-      return <Text>{NO_PHOTOS}</Text>
+      return <Text>{MESSAGES.NO_PHOTOS}</Text>
     }
 
     return (

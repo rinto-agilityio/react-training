@@ -4,7 +4,7 @@ import { Alert, NetInfo } from 'react-native'
 import PropTypes from 'prop-types'
 
 // Helpers
-import { MESSAGE_NO_NETWORK } from '@constants/messages'
+import MESSAGES from '@constants/messages'
 import ERROR_TYPES from '@constants/error-types'
 
 const showAlert = error => {
@@ -50,8 +50,9 @@ class ErrorComponent extends React.Component {
   handleConnectionChange = isConnected => {
     if (!isConnected) {
       const { addError } = this.props
+
       addError({
-        message: MESSAGE_NO_NETWORK,
+        message: MESSAGES.NO_NETWORK,
         type: ERROR_TYPES.NETWORK
       })
     }
