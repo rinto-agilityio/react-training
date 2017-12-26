@@ -20,10 +20,6 @@ class HomeScreen extends React.Component {
     tabBarIcon: () => <Icon source={Icons.home} style={CommonStyles.tabBarIcon} />
   }
 
-  componentDidMount() {
-    this._fetchingData()
-  }
-
   handlePullToRefresh = () => {
     this._fetchingData()
   }

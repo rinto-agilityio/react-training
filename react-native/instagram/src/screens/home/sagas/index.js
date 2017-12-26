@@ -49,8 +49,9 @@ function* toggleLike(action) {
  */
 function* addCommentRequest(action) {
   try {
-    const response = yield call(postNewComment, action.comment)
+    return yield call(postNewComment, action.comment)
 
+    /*
     if (response && response.ok) {
       return yield put({
         type: Types.ADD_COMMENT_SUCCESS,
@@ -62,6 +63,7 @@ function* addCommentRequest(action) {
       type: Types.ADD_COMMENT_FAILURE,
       error: response.error
     })
+    */
   } catch (error) {
     return yield put({
       type: Types.ADD_COMMENT_FAILURE,

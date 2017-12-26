@@ -12,8 +12,9 @@ import { postNewFeed } from '@helpers/api'
  */
 function* uploadPhotoRequest(action) {
   try {
-    const response = yield call(postNewFeed, action.feed)
+    return yield call(postNewFeed, action.feed)
 
+    /*
     if (response && response.ok) {
       return yield put({
         type: Types.UPLOAD_PHOTO_SUCCESS,
@@ -25,6 +26,7 @@ function* uploadPhotoRequest(action) {
       type: Types.UPLOAD_PHOTO_FAILURE,
       error: response.error
     })
+    */
   } catch (error) {
     return yield put({
       type: Types.UPLOAD_PHOTO_FAILURE,
