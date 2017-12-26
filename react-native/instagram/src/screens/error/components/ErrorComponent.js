@@ -8,15 +8,15 @@ import MESSAGES from '@constants/messages'
 import ERROR_TYPES from '@constants/error-types'
 
 const showAlert = error => {
-  if (!error.errorType && !error.message) {
-    return null
-  }
+  const { errorType, message } = error
 
-  Alert.alert(
-    `${error.errorType} Error`,
-    error.message,
-    { cancelable: true }
-  )
+  if (errorType && message) {
+    Alert.alert(
+      `${errorType} Error`,
+      message,
+      { cancelable: true }
+    )
+  }
 
   return null
 }
