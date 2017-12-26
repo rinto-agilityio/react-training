@@ -3,6 +3,10 @@ import React from 'react'
 import { Alert, NetInfo } from 'react-native'
 import PropTypes from 'prop-types'
 
+// Helpers
+import { MESSAGE_NO_NETWORK } from '@constants/messages'
+import ERROR_TYPES from '@constants/error-types'
+
 const showAlert = error => {
   if (!error.errorType && !error.message) {
     return null
@@ -18,15 +22,6 @@ const showAlert = error => {
 }
 
 class ErrorComponent extends React.Component {
-  handleConnectionChange = (isConnected) => {
-    console.log('isConnected: ', isConnected);
-    if (!isConnected) {
-      console.log('Dispatch action ADD_ERROR for offline')
-    } else {
-      console.log('Should not dispatch here')
-    }
-  }
-
   componentDidMount() {
     NetInfo.isConnected.addEventListener('connectionChange', this.handleConnectionChange)
   }
@@ -47,6 +42,21 @@ class ErrorComponent extends React.Component {
     NetInfo.isConnected.removeEventListener('connectionChange', this.handleConnectionChange)
   }
 
+  /**
+   * Show alert if no network connection
+   * @param {bool} isConnected - Connect status
+   * @returns {object} Dispatch an action
+   */
+  handleConnectionChange = isConnected => {
+    if (!isConnected) {
+      const { addError } = this.props
+      addError({
+        message: MESSAGE_NO_NETWORK,
+        type: ERROR_TYPES.NETWORK
+      })
+    }
+  }
+
   render() {
     const { error } = this.props
 
@@ -55,7 +65,8 @@ class ErrorComponent extends React.Component {
 }
 
 ErrorComponent.propTypes = {
-  error: PropTypes.object.isRequired
+  error: PropTypes.object.isRequired,
+  addError: PropTypes.func.isRequired
 }
 
 export default ErrorComponent
