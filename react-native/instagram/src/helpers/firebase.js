@@ -27,8 +27,8 @@ const getListAsArray = collection => {
 
       if (singleFeed.comments) {
         // Make api error for error alert
-        item.child('comments').ref().forEach(comment => {
-        // item.child('comments').forEach(comment => {
+        // item.child('comments').ref().forEach(comment => {
+        item.child('comments').forEach(comment => {
           commentArr.push({
             id: comment.key,
             ...comment.val()
