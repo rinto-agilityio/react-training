@@ -8,10 +8,6 @@ import { styles } from './styles/CommentStyles'
 import CommonStyles from '@themes/common'
 
 class Comment extends React.Component {
-  // constructor() {
-  //   super()
-  // }
-
   // Reset state after unmount
   componentWillUnmount() {
     this._resetTextInput()
@@ -20,8 +16,6 @@ class Comment extends React.Component {
   // Add comment for this photo
   handleSubmitComment = () => {
     const { _lastNativeText } = this.refTextValue
-
-    console.log('this.refTextValue: ', this.refTextValue)
 
     if (_lastNativeText) {
       const { postId, owner, submitComment } = this.props
@@ -46,7 +40,10 @@ class Comment extends React.Component {
 
     return (
       <View style={[CommonStyles.layoutRow, styles.comment]}>
-        <Image source={{ uri: owner.profile_pic_url }} style={styles.avatar} />
+        <Image
+          source={{ uri: owner.profile_pic_url }}
+          style={styles.avatar}
+        />
         <TextInput
           ref={text => {
             this.refTextValue = text

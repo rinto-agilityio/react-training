@@ -1,6 +1,6 @@
 // Libs
 import React from 'react'
-import { Text, View, Image } from 'react-native'
+import { View } from 'react-native'
 import PropTypes from 'prop-types'
 
 // Components
@@ -26,9 +26,12 @@ class AccountScreen extends React.Component {
   /**
    * Update data for current user
    * Filter photos of current user from all photos in the system of all users
+   * @returns {void}
    */
   componentDidMount() {
-    this.props.loadAccountData()
+    const { loadAccountData } = this.props
+
+    loadAccountData()
   }
 
   render() {

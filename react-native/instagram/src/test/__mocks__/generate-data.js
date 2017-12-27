@@ -6,17 +6,21 @@ import { photos } from './sample-data'
 
 /**
  * Generate feeds from sample data
- * @param {number} amount
+ * @param {number} amount Number item
+ * @returns {array} feeds - Feeds
  */
-export const generateFeeds = (amount) => {
-  let feeds = []
+const generateFeeds = amount => {
+  const firstIdx = 1
+  let feeds
 
-  for (let i = 1; i < amount; i++) {
+  for (let idx = firstIdx; idx < amount; idx++) {
     const randomIndex = Math.floor(Math.random() * photos.length),
-          sampleFeed = Immutable(photos[randomIndex])
+      sampleFeed = Immutable(photos[randomIndex])
 
-    feeds.push(sampleFeed.without('id').setIn(['id'], i))
+    feeds.push(sampleFeed.without('id').setIn(['id'], idx))
   }
 
   return feeds
 }
+
+export { generateFeeds }

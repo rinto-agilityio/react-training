@@ -5,7 +5,6 @@ import Icon from './Icon'
 import Icons from '@themes/icons'
 
 describe('Icon component', () => {
-
   it('Renders correctly', () => {
     const treeDOM = renderer.create(<Icon source={Icons.home} />).toJSON()
 

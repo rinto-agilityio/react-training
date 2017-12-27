@@ -13,7 +13,7 @@ import AppHeader from '@common/components/AppHeader'
 import ErrorContainer from '@screens/error/containers'
 
 // Styles
-import { styles } from './styles/AppStyles'
+import styles from './styles/AppStyles'
 
 const { persistor, store } = configureStore(),
   App = () => (

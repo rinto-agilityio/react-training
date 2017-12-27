@@ -1,6 +1,4 @@
-jest.mock('react-native-fetch-blob', () => {
-  return {
-    DocumentDir: () => {},
-    polyfill: () => {}
-  }
-})
+jest.mock('react-native-fetch-blob', () => ({
+  DocumentDir: () => {},
+  polyfill: () => {}
+}))

@@ -1,10 +1,15 @@
 // Helpers
 import { isIOS } from '@helpers/device-info'
 
+const appHeadingIOS = 20,
+  appHeadingAndroid = 10,
+  textInputHeightIOS = 30,
+  textInputHeightAndroid = 40
+
 // Base theme config for app
 export default {
-  appPaddingTop: isIOS() ? 20 : 10,
-  textInputHeight: isIOS() ? 30 : 40, // Android has padding by default
+  appPaddingTop: isIOS() ? appHeadingIOS : appHeadingAndroid,
+  textInputHeight: isIOS() ? textInputHeightIOS : textInputHeightAndroid,
   baseSpacing: 10,
   bgColor: '#fff',
   navigatorBgColor: '#f9f9f9',

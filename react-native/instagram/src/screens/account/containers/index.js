@@ -8,20 +8,15 @@ import { Creators as AccountActionCreators } from '../actions'
 // Components
 import AccountScreen from '../components/AccountScreen'
 
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators(
+const mapDispatchToProps = dispatch => bindActionCreators(
     {
       ...AccountActionCreators
     },
     dispatch
-  )
-}
-
-const mapStateToProps = state => {
-  return {
+  ),
+  mapStateToProps = state => ({
     accountData: state.account,
     allPhotos: state.home.data
-  }
-}
+  })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AccountScreen)

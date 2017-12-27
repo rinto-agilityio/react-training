@@ -23,7 +23,8 @@ const showAlert = error => {
 
 class ErrorComponent extends React.Component {
   componentDidMount() {
-    NetInfo.isConnected.addEventListener('connectionChange', this.handleConnectionChange)
+    NetInfo.isConnected
+      .addEventListener('connectionChange', this.handleConnectionChange)
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -39,7 +40,8 @@ class ErrorComponent extends React.Component {
   }
 
   componentWillUnmount() {
-    NetInfo.isConnected.removeEventListener('connectionChange', this.handleConnectionChange)
+    NetInfo.isConnected
+      .removeEventListener('connectionChange', this.handleConnectionChange)
   }
 
   /**

@@ -5,11 +5,10 @@ import Photos from './Photos'
 import { photos } from '@test/__mocks__/sample-data'
 
 describe('Photos component', () => {
-  let component, treeDOM
+  let treeDOM
 
   beforeEach(() => {
     treeDOM = renderer.create(<Photos data={photos} />).toJSON()
-    component = shallow(<Photos data={photos} />)
   })
 
   it('Renders correctly', () => {

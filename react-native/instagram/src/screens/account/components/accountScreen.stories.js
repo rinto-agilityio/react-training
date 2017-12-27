@@ -8,6 +8,7 @@ import AccountScreen from './AccountScreen'
 // Mocking data
 import { users, photos } from '@test/__mocks__/sample-data'
 
-storiesOf('Screens', module).add('Account', () => (
-  <AccountScreen accountData={users[0]} myPhotos={photos} />
-))
+storiesOf('Screens', module)
+  .add('Account', () => (
+    <AccountScreen accountData={users[0]} myPhotos={photos} />
+  ))

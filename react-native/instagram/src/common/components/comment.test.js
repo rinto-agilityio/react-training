@@ -15,15 +15,14 @@ describe('Comment component', () => {
         submitComment={mockSubmitComment}
       />
     )
-    treeDOM = renderer
-      .create(
-        <Comment
-          owner={owner}
-          postId={postId}
-          submitComment={mockSubmitComment}
-        />
-      )
-      .toJSON()
+
+    treeDOM = renderer.create(
+      <Comment
+        owner={owner}
+        postId={postId}
+        submitComment={mockSubmitComment}
+      />
+    ).toJSON()
 
     textInput = component.find('TextInput')
   })
@@ -33,18 +32,21 @@ describe('Comment component', () => {
   })
 
   it('Renders input field with placeholder', () => {
-    const expectedPlaceholder = 'Add a comment'
+    const expectedPlaceholder = 'Add a comment',
+      textInputLength = 1
 
-    expect(textInput).toHaveLength(1)
+    expect(textInput).toHaveLength(textInputLength)
     expect(textInput.props().placeholder).toEqual(expectedPlaceholder)
   })
 
   // Can't mock ref for TextInput
   it.skip('Should not call submitComment if text is empty', () => {
+    const mockingFuncCall = 0
+
     // Press enter to submit text
     textInput.simulate('submitEditing')
 
-    expect(mockSubmitComment.mock.calls.length).toEqual(0)
+    expect(mockSubmitComment.mock.calls.length).toEqual(mockingFuncCall)
   })
 
   describe('When text changes', () => {
@@ -60,10 +62,12 @@ describe('Comment component', () => {
     })
 
     it.skip('Should call submitComment if text change then submit', () => {
+      const mockingFuncCall = 1
+
       // Press enter after change text
       textInput.simulate('submitEditing')
 
-      expect(mockSubmitComment.mock.calls.length).toEqual(1)
+      expect(mockSubmitComment.mock.calls.length).toEqual(mockingFuncCall)
     })
   })
 })

@@ -8,6 +8,5 @@ import { photos } from '@test/__mocks__/sample-data'
 // Components
 import Photo from './Photos'
 
-storiesOf('Components', module).add('AccountPhotos', () => (
-  <Photo data={photos} />
-))
+storiesOf('Components', module)
+  .add('AccountPhotos', () => (<Photo data={photos} />))

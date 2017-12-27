@@ -28,10 +28,10 @@ if (!isProduction) {
 
 const configureStore = () => {
   const store = createStore(
-      persistReducer(config, rootReducer),
-      compose(applyMiddleware(...middleware))
-    ),
-    persistor = persistStore(store)
+    persistReducer(config, rootReducer),
+    compose(applyMiddleware(...middleware))
+  ),
+  persistor = persistStore(store)
 
   // Run saga
   sagaMiddleware.run(sagaRoot)
