@@ -38,7 +38,7 @@ const PostAction = ({
 
 PostAction.propTypes = {
   postId: PropTypes.string.isRequired,
-  userId: PropTypes.number.isRequired,
+  userId: PropTypes.string.isRequired,
   isLiked: PropTypes.bool.isRequired,
   toggleLike: PropTypes.func.isRequired
 }
