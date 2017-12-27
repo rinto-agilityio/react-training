@@ -15,7 +15,7 @@ import ErrorContainer from '@screens/error/containers'
 // Styles
 import styles from './styles/AppStyles'
 
-// console.log('Test precommit')
+console.log('Test precommit')
 
 const { persistor, store } = configureStore(),
   App = () => (
