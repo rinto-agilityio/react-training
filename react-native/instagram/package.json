@@ -67,9 +67,5 @@
       "json",
       "html"
     ]
-  },
-  "prettier": {
-    "singleQuote": true,
-    "semi": false
   }
 }
