@@ -50,5 +50,9 @@
     "browser": true,
     "node": true,
     "jest": true
+  },
+  "globals": {
+    "shallow": true,
+    "renderer": true
   }
 }
