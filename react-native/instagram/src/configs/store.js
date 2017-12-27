@@ -9,8 +9,8 @@ import createSagaMiddleware from 'redux-saga'
 import { PERSIST_STORE_KEY } from 'react-native-dotenv'
 
 // Helpers
-import sagaRoot from './sagaRoot'
-import rootReducer from './rootReducer'
+import sagaRoot from '@sagas'
+import rootReducer from '@reducers'
 
 const sagaMiddleware = createSagaMiddleware(),
   isProduction = process.env.NODE_ENV === 'production',
