@@ -10,7 +10,7 @@ import PostFooter from './post/Footer'
 
 const PostItem = ({ item, submitComment, toggleLike }) => {
   const likeCounting = item.likes.length,
-    isLiked = !!item.likes.find(i => i === item.owner.id)
+    isLiked = !!item.likes.find(userId => userId === item.owner.id)
 
   return (
     <View>
