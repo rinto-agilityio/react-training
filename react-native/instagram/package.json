@@ -8,7 +8,8 @@
     "test": "jest",
     "test-coverage": "jest --coverage",
     "updateSnapshot": "jest --updateSnapshot",
-    "storybook": "storybook start -p 7007 NODE_ENV=storybook"
+    "storybook": "storybook start -p 7007 NODE_ENV=storybook",
+    "precommit": "eslint src/App.js"
   },
   "dependencies": {
     "firebase": "^4.6.2",
@@ -41,6 +42,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
     "eslint-plugin-react-native": "^3.2.0",
+    "husky": "^0.14.3",
     "jest": "21.2.1",
     "jest-cli": "^21.2.1",
     "prettier-eslint": "^8.2.2",
