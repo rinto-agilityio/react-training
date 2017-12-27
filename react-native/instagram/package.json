@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start NODE_ENV=development",
-    "build": "node node_modules/react-native/local-cli/cli.js start NODE_ENV=production",
+    "start":
+      "node node_modules/react-native/local-cli/cli.js start NODE_ENV=development",
+    "build":
+      "node node_modules/react-native/local-cli/cli.js start NODE_ENV=production",
     "test": "jest",
     "test-coverage": "jest --coverage",
     "updateSnapshot": "jest --updateSnapshot",
@@ -53,9 +55,6 @@
     "redux-saga": "^0.16.0"
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "eslint"
-    ]
+    "*.js": ["prettier --write", "eslint"]
   }
 }
