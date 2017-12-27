@@ -33,6 +33,7 @@
     "no-invalid-this": "off",
     "no-negated-condition": "off",
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-process-env": "off",
     "multiline-comment-style": "off",
     "array-element-newline": ["error", { "minItems": 3 }],
     "sort-imports": "off",

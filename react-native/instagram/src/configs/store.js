@@ -26,12 +26,13 @@ if (!isProduction) {
   middleware.push(logger)
 }
 
+// eslint-disable-next-line one-var
 const configureStore = () => {
   const store = createStore(
-    persistReducer(config, rootReducer),
-    compose(applyMiddleware(...middleware))
-  ),
-  persistor = persistStore(store)
+      persistReducer(config, rootReducer),
+      compose(applyMiddleware(...middleware))
+    ),
+    persistor = persistStore(store)
 
   // Run saga
   sagaMiddleware.run(sagaRoot)

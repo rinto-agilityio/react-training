@@ -10,7 +10,7 @@
     "updateSnapshot": "jest --updateSnapshot",
     "storybook": "storybook start -p 7007 NODE_ENV=storybook",
     "precommit": "lint-staged",
-    "eslint": "eslint src/**/*.js"
+    "eslint-all": "eslint src/**/*.js"
   },
   "dependencies": {
     "firebase": "^4.6.2",
