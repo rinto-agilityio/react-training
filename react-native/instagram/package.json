@@ -9,7 +9,8 @@
     "test-coverage": "jest --coverage",
     "updateSnapshot": "jest --updateSnapshot",
     "storybook": "storybook start -p 7007 NODE_ENV=storybook",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "eslint": "eslint src/**/*.js"
   },
   "dependencies": {
     "firebase": "^4.6.2",
