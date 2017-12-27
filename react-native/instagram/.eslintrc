@@ -32,6 +32,7 @@
     "no-inline-comments": "off",
     "no-invalid-this": "off",
     "no-negated-condition": "off",
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "multiline-comment-style": "off",
     "array-element-newline": ["error", { "minItems": 3 }],
     "sort-imports": "off",
