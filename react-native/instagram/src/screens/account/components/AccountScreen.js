@@ -9,7 +9,7 @@ import Photos from './Photos'
 import Icon from '@common/components/Icon'
 
 // Helpers
-import { getAccountPhotos } from '@helpers/account-data'
+import getAccountPhotos from '@helpers/account-data'
 
 // Styles
 import CommonStyles from '@themes/common'

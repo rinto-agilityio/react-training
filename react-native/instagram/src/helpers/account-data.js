@@ -6,4 +6,8 @@
  * @param {object} account - Account info
  * @returns {array} - Photos of current account
  */
-export const getAccountPhotos = (allPhotos, account) => allPhotos
+const getAccountPhotos = (allPhotos, account) => {
+  return allPhotos.filter(photo => photo.owner.id === account.id)
+}
+
+export default getAccountPhotos

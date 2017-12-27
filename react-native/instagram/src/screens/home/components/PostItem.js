@@ -14,7 +14,10 @@ const PostItem = ({ item, submitComment, toggleLike }) => {
 
   return (
     <View>
-      <PostAuthor avatar={item.owner.profile_pic_url} username={item.owner.username} />
+      <PostAuthor
+        avatar={item.owner.profile_pic_url}
+        username={item.owner.username}
+      />
       <PostPhoto uri={item.display_url} />
       <PostFooter
         isLiked={isLiked}

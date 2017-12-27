@@ -1,1 +1,5 @@
-export const NAME = 'Instagram'
+const APP = {
+  NAME: 'Instagram'
+}
+
+export default APP
