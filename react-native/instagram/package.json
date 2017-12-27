@@ -47,16 +47,5 @@
     "react-dom": "^16.1.1",
     "react-test-renderer": "16.0.0",
     "redux-saga": "^0.16.0"
-  },
-  "jest": {
-    "preset": "react-native",
-    "testMatch": ["**/src/**/*.test.js"],
-    "transformIgnorePatterns": ["node_modules/(?!react-native|react-navigation)/"],
-    "setupFiles": ["./src/test/setup.js"],
-    "globals": {
-      "window": {}
-    },
-    "collectCoverage": true,
-    "coverageFormats": ["json", "html"]
   }
 }
