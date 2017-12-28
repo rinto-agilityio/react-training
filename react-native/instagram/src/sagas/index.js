@@ -8,9 +8,5 @@ import listChanges from './listen-changes'
  * @returns {object} sagaRoot
  */
 export default function* sagaRoot() {
-  return yield [
-    homeSaga(),
-    uploadSaga(),
-    listChanges()
-  ]
+  return yield [homeSaga(), uploadSaga(), listChanges()]
 }
