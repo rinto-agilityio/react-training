@@ -8,7 +8,7 @@ import PostAuthor from './post/Author'
 import PostPhoto from './post/Photo'
 import PostFooter from './post/Footer'
 
-const PostItem = ({ item, submitComment, toggleLike }) => {
+const Feed = ({ item, submitComment, toggleLike }) => {
   const likeCounting = item.likes.length,
     isLiked = !!item.likes.find(userId => userId === item.owner.id)
 
@@ -32,10 +32,10 @@ const PostItem = ({ item, submitComment, toggleLike }) => {
   )
 }
 
-PostItem.propTypes = {
+Feed.propTypes = {
   item: PropTypes.object.isRequired,
   submitComment: PropTypes.func.isRequired,
   toggleLike: PropTypes.func.isRequired
 }
 
-export default PostItem
+export default Feed

@@ -1,4 +1,6 @@
-// TODO: Dynamic require all *.stories.js files
+/**
+ * TODO: Dynamic require all *.stories.js files
+ */
 
 // Layout
 require('@common/components/appHeader.stories')
@@ -13,7 +15,7 @@ require('@screens/home/components/post/action.stories')
 require('@screens/account/components/info.stories')
 require('@screens/account/components/photos.stories')
 
-require('@screens/home/components/postItem.stories')
+require('@screens/home/components/feed.stories')
 
 // Screens
 require('@screens/account/components/accountScreen.stories')

@@ -14,7 +14,7 @@ import MESSAGES from '@constants/messages'
 import { isIOS } from '@helpers/device-info'
 
 // Components
-import PostItem from '../components/PostItem'
+import Feed from '../components/Feed'
 import Icon from '@common/components/Icon'
 
 // Styles
@@ -54,7 +54,7 @@ class HomeScreen extends React.Component {
   /**
    * This for testing perfomance only. Should use FlatList or SectionList
    * @param {array} data - List feeds
-   * @returns {component} - List PostItem component
+   * @returns {component} - List Feed component
    */
   _renderListView = data => {
     const ds = new ListView.DataSource({
@@ -66,7 +66,7 @@ class HomeScreen extends React.Component {
       <ListView
         dataSource={datasource}
         renderRow={item => (
-          <PostItem
+          <Feed
             key={item.id}
             item={item}
             submitComment={this._addPostComment}
@@ -89,7 +89,7 @@ class HomeScreen extends React.Component {
       onRefresh={this.handlePullToRefresh}
       refreshing={false}
       renderItem={({ item }) => (
-        <PostItem
+        <Feed
           key={item.id}
           item={item}
           submitComment={this._addPostComment}
