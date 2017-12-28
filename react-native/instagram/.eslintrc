@@ -6,12 +6,13 @@
       "jsx": true
     }
   },
-  "plugins": ["react", "react-native"],
+  "plugins": ["react", "react-native", "prettier"],
   "extends": [
     "eslint:recommended",
     "eslint:all",
     "plugin:react/all",
-    "plugin:react-native/all"
+    "plugin:react-native/all",
+    "prettier"
   ],
   "rules": {
     "semi": ["error", "never"],
@@ -42,7 +43,6 @@
     "multiline-comment-style": "off",
     "max-len": ["error", { "code": 80 }],
     "arrow-body-style": "off",
-    "array-element-newline": ["error", { "minItems": 3 }],
     "sort-imports": "off",
     "sort-keys": "off",
     "init-declarations": ["error", "never", { "ignoreForLoopInit": true }],
@@ -57,6 +57,7 @@
     "react/jsx-sort-props": "off"
   },
   "env": {
+    "es6": true,
     "browser": true,
     "node": true,
     "jest": true
