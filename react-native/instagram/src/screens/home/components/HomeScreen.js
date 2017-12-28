@@ -1,5 +1,11 @@
 // Libs
-import { FlatList, KeyboardAvoidingView, ListView, Text, View } from 'react-native'
+import {
+  FlatList,
+  KeyboardAvoidingView,
+  ListView,
+  Text,
+  View
+} from 'react-native'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -17,7 +23,9 @@ import Icons from '@themes/icons'
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
-    tabBarIcon: () => <Icon source={Icons.home} style={CommonStyles.tabBarIcon} />
+    tabBarIcon: () => (
+      <Icon source={Icons.home} style={CommonStyles.tabBarIcon} />
+    )
   }
 
   handlePullToRefresh = () => {
