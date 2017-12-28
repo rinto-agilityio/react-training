@@ -54,7 +54,8 @@
     "react/forbid-prop-types": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/jsx-sort-props": "off"
+    "react/jsx-sort-props": "off",
+    "react/jsx-no-literals": "off"
   },
   "env": {
     "es6": true,
