@@ -4,16 +4,11 @@ import { View, Image, TouchableHighlight } from 'react-native'
 import PropTypes from 'prop-types'
 
 // Styles
-import { styles } from './styles/ActionStyles'
+import styles from './styles/ActionStyles'
 import CommonStyles from '@themes/common'
 import Icons from '@themes/icons'
 
-const PostAction = ({
-  postId,
-  userId,
-  isLiked,
-  toggleLike
-}) => {
+const FeedAction = ({ postId, userId, isLiked, toggleLike }) => {
   // User like or remove liked a photo
   const handleTouchIconLike = () => {
       toggleLike({
@@ -36,11 +31,11 @@ const PostAction = ({
   )
 }
 
-PostAction.propTypes = {
+FeedAction.propTypes = {
   postId: PropTypes.string.isRequired,
   userId: PropTypes.string.isRequired,
   isLiked: PropTypes.bool.isRequired,
   toggleLike: PropTypes.func.isRequired
 }
 
-export default PostAction
+export default FeedAction

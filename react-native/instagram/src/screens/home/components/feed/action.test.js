@@ -5,10 +5,10 @@ import PostAction from './Action'
 import { users, photos } from '@test/__mocks__/sample-data'
 
 describe('PostAction component', () => {
-  let imageUri, iconLike
+  let iconLike
   const mocktoggleLike = jest.fn(),
-        userId = users[0].id,
-        postId = photos[0].id
+    userId = users[0].id,
+    postId = photos[0].id
 
   beforeEach(() => {
     const component = shallow(
@@ -44,7 +44,7 @@ describe('PostAction component', () => {
         <PostAction
           userId={userId}
           postId={postId}
-          isLiked={true}
+          isLiked
           toggleLike={mocktoggleLike}
         />
       )
@@ -54,8 +54,10 @@ describe('PostAction component', () => {
   })
 
   it('Should call toggleLike if click on icon like', () => {
+    const mockingCallCount = 1
+
     iconLike.simulate('press')
 
-    expect(mocktoggleLike.mock.calls.length).toEqual(1)
+    expect(mocktoggleLike.mock.calls.length).toEqual(mockingCallCount)
   })
 })

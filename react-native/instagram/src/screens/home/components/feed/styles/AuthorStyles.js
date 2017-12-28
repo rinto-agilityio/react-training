@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 
 import Themes from '@themes'
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   header: {
     alignItems: 'center',
     padding: Themes.baseSpacing
@@ -14,3 +14,5 @@ export const styles = StyleSheet.create({
     marginRight: 10
   }
 })
+
+export default styles

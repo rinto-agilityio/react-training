@@ -4,9 +4,9 @@ import { View } from 'react-native'
 import PropTypes from 'prop-types'
 
 // Components
-import PostAuthor from './post/Author'
-import PostPhoto from './post/Photo'
-import PostFooter from './post/Footer'
+import FeedAuthor from './feed/Author'
+import FeedPhoto from './feed/Photo'
+import FeedFooter from './feed/Footer'
 
 const Feed = ({ item, submitComment, toggleLike }) => {
   const likeCounting = item.likes.length,
@@ -14,12 +14,12 @@ const Feed = ({ item, submitComment, toggleLike }) => {
 
   return (
     <View>
-      <PostAuthor
+      <FeedAuthor
         avatar={item.owner.profile_pic_url}
         username={item.owner.username}
       />
-      <PostPhoto uri={item.display_url} />
-      <PostFooter
+      <FeedPhoto uri={item.display_url} />
+      <FeedFooter
         isLiked={isLiked}
         postId={item.id}
         likeCounting={likeCounting}

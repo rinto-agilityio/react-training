@@ -5,7 +5,8 @@ import PostFooter from './Footer'
 import { photos } from '@test/__mocks__/sample-data'
 
 describe('PostFooter component', () => {
-  const singlePost = photos[1],
+  const emptyArrayLength = 0,
+    singlePost = photos[1],
     defaultShowComment = false,
     mockSubmitComment = jest.fn(),
     mocktoggleLike = jest.fn(),
@@ -15,7 +16,7 @@ describe('PostFooter component', () => {
     const treeDOM = renderer
       .create(
         <PostFooter
-          isLiked={singlePost.likes.length > 0 ? true : false}
+          isLiked={singlePost.likes.length > emptyArrayLength}
           postId={singlePost.id}
           likeCounting={singlePost.likes.length}
           comments={singlePost.comments}
@@ -35,7 +36,7 @@ describe('PostFooter component', () => {
     const treeDOM = renderer
       .create(
         <PostFooter
-          isLiked={singlePost.likes.length > 0 ? true : false}
+          isLiked={singlePost.likes.length > emptyArrayLength}
           postId={singlePost.id}
           likeCounting={singlePost.likes.length}
           comments={singlePost.comments}

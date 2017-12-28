@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 // Styles
 import CommonStyles from '@themes/common'
-import { styles } from './styles/CommentListStyles'
+import styles from './styles/CommentListStyles'
 
 const CommentList = ({ comments }) => (
   <View>
