@@ -16,6 +16,7 @@ const MainNavigator = TabNavigator(
     Account: { screen: AccountContainer }
   },
   {
+    initialRouteName: 'Home',
     tabBarPosition: Themes.tabBarPosition,
     animationEnabled: true,
     tabBarOptions: {
