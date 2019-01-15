@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { ThemeProvider } from 'styled-components'
 
 // Themes
@@ -6,9 +6,10 @@ import { GlobalStyle } from '../theme/globalStyle'
 import { SiteThemeContext, SiteThemeProvider } from '../contexts/ThemeContext'
 
 // Components
-import Header from './Header'
-import BookList from './Book/List'
 import Loading from './Loading'
+import Header from './Header'
+
+const BookList = React.lazy(() => import('./Book/List'))
 
 const App = () => (
   <SiteThemeProvider>
@@ -18,8 +19,9 @@ const App = () => (
           <React.Fragment>
             <GlobalStyle />
             <Header />
-            <Loading />
-            <BookList />
+            <Suspense fallback={<Loading />}>
+              <BookList />
+            </Suspense>
           </React.Fragment>
         </ThemeProvider>
       )}

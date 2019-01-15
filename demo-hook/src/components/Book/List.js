@@ -10,6 +10,7 @@ const BookListWrapper = styled.div``
 const BookList = () => {
   const [bookList, setBookList] = useState([])
 
+  // Fetching data from API
   useEffect(async () => {
     const result = await axios('http://localhost:3001/book')
 
