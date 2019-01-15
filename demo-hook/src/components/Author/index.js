@@ -35,6 +35,8 @@ const Author = ({ match }) => {
 
   // Fetch author books
   useEffect(async () => {
+    // TODO: Check reason why author is alway null
+    // Correct way is check author.id instead of params.id, cuz author is update via useEffect above
     const { id } = match.params
 
     if (!id) return
