@@ -10,12 +10,14 @@ import { SiteThemeContext, SiteThemeProvider } from '../contexts/ThemeContext'
 import Loading from './Loading'
 import Header from './Header'
 
-const BookList = React.lazy(() => import('./Book/List'))
+const BookList = React.lazy(() => import('./BookList/List'))
+const BookDetail = React.lazy(() => import('./BookDetail'))
 
 // Split router
 const AppRouter = () => (
   <Switch>
     <Route path="/" exact component={BookList} />
+    <Route path="/book/:id" component={BookDetail} />
   </Switch>
 )
 

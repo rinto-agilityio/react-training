@@ -15,7 +15,6 @@ const Info = styled.div`
   display: inline-block;
 `
 const Title = styled.h3``
-const Description = styled.p``
 const Author = styled.p``
 
 const BookItem = ({ item }) => (
@@ -26,7 +25,6 @@ const BookItem = ({ item }) => (
     <Info>
       <Title>{item.title}</Title>
       <Author>Author: {item.author.name}</Author>
-      <Description>{item.desc}</Description>
     </Info>
   </Wrapper>
 )
