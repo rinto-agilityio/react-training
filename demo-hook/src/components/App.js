@@ -12,12 +12,14 @@ import Header from './Header'
 
 const BookList = React.lazy(() => import('./BookList'))
 const BookDetail = React.lazy(() => import('./BookDetail'))
+const Author = React.lazy(() => import('./Author'))
 
 // Split router
 const AppRouter = () => (
   <Switch>
     <Route path="/" exact component={props => <BookList {...props}/>} />
     <Route path="/book/:id" component={props => <BookDetail {...props} />} />
+    <Route path="/author/:id" component={props => <Author {...props} />} />
   </Switch>
 )
 
