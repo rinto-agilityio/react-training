@@ -7,6 +7,7 @@ import { SiteThemeContext, SiteThemeProvider } from '../contexts/ThemeContext'
 
 // Components
 import Header from './Header'
+import BookList from './Book/List'
 import Loading from './Loading'
 
 const App = () => (
@@ -18,6 +19,7 @@ const App = () => (
             <GlobalStyle />
             <Header />
             <Loading />
+            <BookList />
           </React.Fragment>
         </ThemeProvider>
       )}
