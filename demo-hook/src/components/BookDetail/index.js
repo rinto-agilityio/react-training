@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Wrapper = styled.div`
   display: grid;
@@ -36,18 +37,22 @@ const BookDetail = ({ match }) => {
   ))
 
   return (
-    <Wrapper>
-      <CoverWrapper>
-        <Cover src={book.cover} alt={book.title || 'Book cover'} />
-      </CoverWrapper>
-      <Info>
-        <Title>{book.title}</Title>
-        <Description>{book.desc}</Description>
-        <AuthorWrapper>
-          Author: {book.author && book.author.name}
-        </AuthorWrapper>
-      </Info>
-    </Wrapper>
+    <>
+      <p><Link to="/" title="Back">Back</Link></p>
+      <Wrapper>
+        <CoverWrapper>
+          <Cover src={book.cover} alt={book.title || 'Book cover'} />
+        </CoverWrapper>
+        <Info>
+          <Title>{book.title}</Title>
+          <Description>{book.desc}</Description>
+          <AuthorWrapper>
+            Author:&nbsp;
+            {book.author && <Link to={`/author/${book.author.id}`}>{book.author.name}</Link>}
+          </AuthorWrapper>
+        </Info>
+      </Wrapper>
+    </>
   )
 }
 

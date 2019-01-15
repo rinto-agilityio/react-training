@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const Title = styled.h1``
 const BookListWrapper = styled.div`
@@ -10,10 +11,11 @@ const BookListWrapper = styled.div`
 `
 
 const Item = ({ item }) => (
-  <a href="">
+  <Link to={`/book/${item.id}`} title={item.title}>
     <img src={item.cover} alt={item.title} />
-  </a>
+  </Link>
 )
+
 const BookList = () => {
   const [bookList, setBookList] = useState([])
 
