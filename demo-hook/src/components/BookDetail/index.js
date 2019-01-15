@@ -1,5 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import styled from 'styled-components'
+
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 240px auto;
+  grid-gap: 20px;
+`
+const CoverWrapper = styled.div``
+const Cover = styled.img`
+  max-width: 100%;
+`
+const Info = styled.div``
+const Title = styled.h1``
+const Description = styled.p``
+const AuthorWrapper = styled.div``
 
 const BookDetail = ({ match }) => {
   const [book, setBook] = useState({})
@@ -21,10 +36,18 @@ const BookDetail = ({ match }) => {
   ))
 
   return (
-    <>
-      <div>Book Details id: {match.params.id}</div>
-      <p>BookID: {book.id}</p>
-    </>
+    <Wrapper>
+      <CoverWrapper>
+        <Cover src={book.cover} alt={book.title || 'Book cover'} />
+      </CoverWrapper>
+      <Info>
+        <Title>{book.title}</Title>
+        <Description>{book.desc}</Description>
+        <AuthorWrapper>
+          Author: {book.author && book.author.name}
+        </AuthorWrapper>
+      </Info>
+    </Wrapper>
   )
 }
 
