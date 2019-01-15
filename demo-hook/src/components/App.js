@@ -16,8 +16,8 @@ const BookDetail = React.lazy(() => import('./BookDetail'))
 // Split router
 const AppRouter = () => (
   <Switch>
-    <Route path="/" exact component={BookList} />
-    <Route path="/book/:id" component={BookDetail} />
+    <Route path="/" exact component={props => <BookList {...props}/>} />
+    <Route path="/book/:id" component={props => <BookDetail {...props} />} />
   </Switch>
 )
 
