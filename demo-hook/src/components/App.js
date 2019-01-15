@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react'
 import { ThemeProvider } from 'styled-components'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 // Themes
 import { GlobalStyle } from '../theme/globalStyle'
@@ -11,18 +12,27 @@ import Header from './Header'
 
 const BookList = React.lazy(() => import('./Book/List'))
 
+// Split router
+const AppRouter = () => (
+  <Switch>
+    <Route path="/" exact component={BookList} />
+  </Switch>
+)
+
 const App = () => (
   <SiteThemeProvider>
     <SiteThemeContext.Consumer>
       {({ theme }) => (
         <ThemeProvider theme={theme}>
-          <React.Fragment>
-            <GlobalStyle />
-            <Header />
-            <Suspense fallback={<Loading />}>
-              <BookList />
-            </Suspense>
-          </React.Fragment>
+          <Router>
+            <React.Fragment>
+              <GlobalStyle />
+              <Header />
+              <Suspense fallback={<Loading />}>
+                <AppRouter />
+              </Suspense>
+            </React.Fragment>
+          </Router>
         </ThemeProvider>
       )}
     </SiteThemeContext.Consumer>
