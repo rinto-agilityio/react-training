@@ -10,7 +10,7 @@ import { SiteThemeContext, SiteThemeProvider } from '../contexts/ThemeContext'
 import Loading from './Loading'
 import Header from './Header'
 
-const BookList = React.lazy(() => import('./BookList/List'))
+const BookList = React.lazy(() => import('./BookList'))
 const BookDetail = React.lazy(() => import('./BookDetail'))
 
 // Split router
