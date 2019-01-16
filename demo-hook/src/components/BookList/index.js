@@ -6,14 +6,17 @@ import { Link } from 'react-router-dom'
 const Title = styled.h1``
 const BookListWrapper = styled.div`
   display: grid;
-  grid-template-columns: 300px 300px 300px 300px;
+  grid-template-columns: auto auto auto auto;
   grid-gap: 20px;
+`
+const BookItem = styled(Link)`
+  max-width: 300px;
 `
 
 const Item = ({ item }) => (
-  <Link to={`/book/${item.id}`} title={item.title}>
+  <BookItem to={`/book/${item.id}`} title={item.title}>
     <img src={item.cover} alt={item.title} />
-  </Link>
+  </BookItem>
 )
 
 const BookList = () => {
