@@ -3,6 +3,9 @@ import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+// Helpers
+import { useUpdateSiteTitle } from '../../helpers/custom-hooks'
+
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 240px auto;
@@ -31,10 +34,8 @@ const BookDetail = ({ match }) => {
     setBook(result.data)
   }, [])
 
-  // Update site title
-  useEffect(() => (
-    document.title = `${book.title}` || 'Book details'
-  ))
+  // Custom hook
+  useUpdateSiteTitle(`${book.title}` || 'Book details')
 
   return (
     <>
