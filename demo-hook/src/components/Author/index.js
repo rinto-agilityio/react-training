@@ -28,25 +28,27 @@ const Author = ({ match }) => {
   useUpdateSiteTitle(`Author: ${author.name}`)
 
   // Fetch author info
-  useEffect(async () => {
+  useEffect(() => {
     const { id } = match.params
 
     if (!id) return
 
-    const result = await axios(`http://localhost:3001/author/${id}`)
-
-    setAuthor(result.data)
+    axios
+      .get(`http://localhost:3001/author/${id}`)
+      .then(result => (
+        setAuthor(result.data)
+      ))
   }, {})
 
   // Fetch author books
   useEffect(() => {
     if (!author.id) return
 
-    (async (id) => {
-      const result = await axios(`http://localhost:3001/book?author.id=${id}`)
-
-      setAuthorBooks(result.data)
-    })(author.id)
+    axios
+      .get(`http://localhost:3001/book?author.id=${author.id}`)
+      .then(result => (
+        setAuthorBooks(result.data)
+      ))
 
   }, [author.id])
 

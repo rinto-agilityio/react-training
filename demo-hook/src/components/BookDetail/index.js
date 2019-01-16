@@ -24,14 +24,16 @@ const BookDetail = ({ match }) => {
   const [book, setBook] = useState({})
 
   // Fetching data from api for book detail
-  useEffect(async () => {
+  useEffect(() => {
     const { id } = match.params
 
     if (!id) return
 
-    const result = await axios(`http://localhost:3001/book/${id}`)
-
-    setBook(result.data)
+    axios
+      .get(`http://localhost:3001/book/${id}`)
+      .then(result => (
+        setBook(result.data)
+      ))
   }, [])
 
   // Custom hook
