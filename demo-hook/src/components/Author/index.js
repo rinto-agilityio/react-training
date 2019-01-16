@@ -3,6 +3,9 @@ import styled from 'styled-components'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
+// Helpers
+import { useUpdateSiteTitle } from '../../helpers/custom-hooks'
+
 const Wrapper = styled.div``
 const Title = styled.h1``
 const Description = styled.p``
@@ -21,6 +24,8 @@ const Item = ({ item }) => (
 const Author = ({ match }) => {
   const [author, setAuthor] = useState({})
   const [authorBooks, setAuthorBooks] = useState([])
+
+  useUpdateSiteTitle(`Author: ${author.name}`)
 
   // Fetch author info
   useEffect(async () => {
@@ -44,10 +49,6 @@ const Author = ({ match }) => {
     })(author.id)
 
   }, [author.id])
-
-  useEffect(() => {
-    document.title = `Author: ${author.name}`
-  })
 
   return (
     <Wrapper>
