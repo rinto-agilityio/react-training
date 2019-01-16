@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 // Themes
 import { SiteThemeContext } from '../contexts/ThemeContext'
@@ -17,6 +18,9 @@ const HeaderWrapper = styled.nav`
 const SiteTitle = styled.h2`
   margin: 0;
 `
+const SiteTitleLink = styled(Link)`
+  text-decoration: none;
+`
 const IconWrapper = styled.div`
   cursor: pointer;
   display: inline-block;
@@ -25,7 +29,11 @@ const IconWrapper = styled.div`
 
 const Header = () => (
   <HeaderWrapper>
-    <SiteTitle>React-hook Demo</SiteTitle>
+    <SiteTitle>
+      <SiteTitleLink to="/" title="React-hook demo">
+        React-hook Demo
+      </SiteTitleLink>
+    </SiteTitle>
     <SiteThemeContext.Consumer>
       {({ currentTheme, handleThemeChange }) => (
         <IconWrapper onClick={handleThemeChange}>
