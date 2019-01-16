@@ -6,6 +6,9 @@ import axios from 'axios'
 import Item from './Item'
 import ItemErrorBoundary from './ItemErrorBoundary'
 
+// Apply React memo for performance
+const ItemMemoWrap = React.memo(Item)
+
 const Title = styled.h1``
 const BookListWrapper = styled.div`
   display: grid;
@@ -32,7 +35,7 @@ const BookList = () => {
       <BookListWrapper>
         {bookList.map(book => (
           <ItemErrorBoundary key={book.id}>
-            <Item item={book} />
+            <ItemMemoWrap item={book} />
           </ItemErrorBoundary>
         ))}
       </BookListWrapper>
