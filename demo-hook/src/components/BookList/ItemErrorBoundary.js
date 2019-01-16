@@ -11,8 +11,6 @@ class ItemErrorBoundary extends React.Component {
   }
 
   static getDerivedStateFromError(error) {
-    console.log('getDerivedStateFromError')
-
     return { hasError: true };
   }
 
@@ -24,9 +22,9 @@ class ItemErrorBoundary extends React.Component {
 
     if (this.state.hasError) {
       return <h1>Something wrong!</h1>
-    } else {
-      return this.props.children
     }
+
+    return this.props.children
   }
 }
 
