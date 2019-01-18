@@ -1,0 +1,351 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feed component Renders correctly like photo 1`] = `
+<View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "padding": 10,
+        },
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        },
+      ]
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-19/s150x150/19764837_461147117574705_5216900266812506112_a.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 15,
+          "height": 30,
+          "marginRight": 10,
+          "width": 30,
+        }
+      }
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+    >
+      phorgasm
+    </Text>
+  </View>
+  <Image
+    resizeMode="cover"
+    source={
+      Object {
+        "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-15/e35/23498828_2151213871773296_819155850823204864_n.jpg",
+      }
+    }
+    style={
+      Object {
+        "height": 300,
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "flexDirection": "column",
+        },
+        Object {
+          "padding": 10,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+            },
+            undefined,
+          ]
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../src/assets/icons/heart-red.png",
+            }
+          }
+          style={
+            Object {
+              "height": 24,
+              "marginRight": 10,
+              "width": 24,
+            }
+          }
+        />
+      </View>
+    </View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+    >
+      2 likes
+    </Text>
+    <View />
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+          },
+          Object {
+            "alignItems": "center",
+            "marginTop": 10,
+          },
+        ]
+      }
+    >
+      <Image
+        source={
+          Object {
+            "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-19/s150x150/19764837_461147117574705_5216900266812506112_a.jpg",
+          }
+        }
+        style={
+          Object {
+            "borderRadius": 11.25,
+            "height": 22.5,
+            "width": "5%",
+          }
+        }
+      />
+      <TextInput
+        allowFontScaling={true}
+        onSubmitEditing={[Function]}
+        placeholder="Add a comment"
+        style={
+          Object {
+            "borderColor": "#a7a7a7",
+            "borderRadius": 15,
+            "borderWidth": 1,
+            "height": 30,
+            "marginLeft": 5,
+            "paddingLeft": 10,
+            "width": "93%",
+          }
+        }
+        underlineColorAndroid="transparent"
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Feed component Renders correctly without like 1`] = `
+<View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "padding": 10,
+        },
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        },
+      ]
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-19/s150x150/14719833_310540259320655_1605122788543168512_a.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 15,
+          "height": 30,
+          "marginRight": 10,
+          "width": 30,
+        }
+      }
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+    >
+      instagram
+    </Text>
+  </View>
+  <Image
+    resizeMode="cover"
+    source={
+      Object {
+        "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-15/e35/23734057_146614452628759_6006637352594702336_n.jpg",
+      }
+    }
+    style={
+      Object {
+        "height": 300,
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "flexDirection": "column",
+        },
+        Object {
+          "padding": 10,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+            },
+            undefined,
+          ]
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../src/assets/icons/heart.png",
+            }
+          }
+          style={
+            Object {
+              "height": 24,
+              "marginRight": 10,
+              "width": 24,
+            }
+          }
+        />
+      </View>
+    </View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+    >
+      0 likes
+    </Text>
+    <View />
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+          },
+          Object {
+            "alignItems": "center",
+            "marginTop": 10,
+          },
+        ]
+      }
+    >
+      <Image
+        source={
+          Object {
+            "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-19/s150x150/14719833_310540259320655_1605122788543168512_a.jpg",
+          }
+        }
+        style={
+          Object {
+            "borderRadius": 11.25,
+            "height": 22.5,
+            "width": "5%",
+          }
+        }
+      />
+      <TextInput
+        allowFontScaling={true}
+        onSubmitEditing={[Function]}
+        placeholder="Add a comment"
+        style={
+          Object {
+            "borderColor": "#a7a7a7",
+            "borderRadius": 15,
+            "borderWidth": 1,
+            "height": 30,
+            "marginLeft": 5,
+            "paddingLeft": 10,
+            "width": "93%",
+          }
+        }
+        underlineColorAndroid="transparent"
+      />
+    </View>
+  </View>
+</View>
+`;

@@ -1,0 +1,62 @@
+{
+  "name": "instagram",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start":
+      "node node_modules/react-native/local-cli/cli.js start NODE_ENV=development",
+    "build":
+      "node node_modules/react-native/local-cli/cli.js start NODE_ENV=production",
+    "test": "jest",
+    "test-coverage": "jest --coverage",
+    "updateSnapshot": "jest --updateSnapshot",
+    "storybook": "storybook start -p 7007 NODE_ENV=storybook",
+    "precommit": "lint-staged",
+    "eslint-all": "eslint src/**/*.js"
+  },
+  "dependencies": {
+    "firebase": "^4.6.2",
+    "prop-types": "^15.6.0",
+    "react": "16.0.0",
+    "react-native": "0.50.3",
+    "react-native-dotenv": "^0.1.0",
+    "react-native-fetch-blob": "^0.10.8",
+    "react-native-image-picker": "^0.26.7",
+    "react-navigation": "^1.0.0-beta.19",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^5.3.4",
+    "reduxsauce": "^0.7.0",
+    "seamless-immutable": "^7.1.2"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.2.16",
+    "@storybook/addon-links": "^3.2.16",
+    "@storybook/react-native": "^3.2.16",
+    "babel-eslint": "^8.0.3",
+    "babel-jest": "21.2.0",
+    "babel-preset-react-native": "4.0.0",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.4.0",
+    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-react-native": "^3.2.0",
+    "husky": "^0.14.3",
+    "jest": "21.2.1",
+    "jest-cli": "^21.2.1",
+    "lint-staged": "^6.0.0",
+    "prettier-eslint": "^8.2.2",
+    "react-dom": "^16.1.1",
+    "react-test-renderer": "16.0.0",
+    "redux-saga": "^0.16.0"
+  },
+  "lint-staged": {
+    "*.js": ["eslint"]
+  }
+}

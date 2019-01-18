@@ -1,0 +1,208 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccountScreen Renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "flexDirection": "column",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderBottomColor": "#eee",
+        "borderBottomWidth": 1,
+        "height": 150,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "padding": 10,
+          },
+          Object {
+            "flex": 1,
+            "flexDirection": "column",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "marginBottom": 10,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-19/s150x150/14719833_310540259320655_1605122788543168512_a.jpg",
+            }
+          }
+          style={
+            Object {
+              "borderRadius": 40,
+              "height": 80,
+              "width": 80,
+            }
+          }
+        />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "fontSize": 24,
+                "marginLeft": 20,
+              },
+              Object {
+                "fontWeight": "bold",
+              },
+            ]
+          }
+        >
+          instagram
+        </Text>
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Instagram
+        </Text>
+         - 
+        Discovering — and telling — stories from around the world. Curated by Instagram community team.
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "marginTop": 5,
+        "padding": 0,
+      }
+    }
+  >
+    <RCTScrollView
+      data={
+        Array [
+          Object {
+            "comments": Array [],
+            "display_url": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-15/e35/23734057_146614452628759_6006637352594702336_n.jpg",
+            "id": "-L0gzJq7e1GTcajt2yd4",
+            "likes": Array [],
+            "owner": Object {
+              "biography": "Discovering — and telling — stories from around the world. Curated by Instagram community team.",
+              "full_name": "Instagram",
+              "id": "-L0kmJq7e1GTcajt2yd4",
+              "profile_pic_url": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-19/s150x150/14719833_310540259320655_1605122788543168512_a.jpg",
+              "username": "instagram",
+            },
+          },
+          Object {
+            "comments": Array [],
+            "display_url": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-15/e35/23348305_134350023994689_4311291654943277056_n.jpg",
+            "id": "-L0gzJq7e1GTc9jt2yd4",
+            "likes": Array [],
+            "owner": Object {
+              "biography": "Discovering — and telling — stories from around the world. Curated by Instagram community team.",
+              "full_name": "Instagram",
+              "id": "-L0kmJq7e1GTcajt2yd4",
+              "profile_pic_url": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-19/s150x150/14719833_310540259320655_1605122788543168512_a.jpg",
+              "username": "instagram",
+            },
+          },
+        ]
+      }
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={3}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                },
+                undefined,
+              ]
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-15/e35/23734057_146614452628759_6006637352594702336_n.jpg",
+                }
+              }
+              style={
+                Object {
+                  "height": 244,
+                  "margin": 3,
+                  "width": 244,
+                }
+              }
+            />
+            <Image
+              source={
+                Object {
+                  "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-15/e35/23348305_134350023994689_4311291654943277056_n.jpg",
+                }
+              }
+              style={
+                Object {
+                  "height": 244,
+                  "margin": 3,
+                  "width": 244,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;

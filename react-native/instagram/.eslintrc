@@ -1,0 +1,71 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["react", "react-native", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "eslint:all",
+    "plugin:react/all",
+    "plugin:react-native/all",
+    "prettier"
+  ],
+  "rules": {
+    "semi": ["error", "never"],
+    "quotes": ["error", "single"],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "never",
+        "objects": "never",
+        "imports": "never",
+        "exports": "never",
+        "functions": "ignore"
+      }
+    ],
+    "arrow-parens": [2, "as-needed"],
+    "one-var": ["error", "always"],
+    "one-var-declaration-per-line": ["error", "initializations"],
+    "sort-vars": "off",
+    "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
+    "function-paren-newline": ["error", "consistent"],
+    "no-ternary": "off",
+    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    "no-inline-comments": "off",
+    "no-invalid-this": "off",
+    "no-negated-condition": "off",
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-process-env": "off",
+    "multiline-comment-style": "off",
+    "max-len": ["error", { "code": 80 }],
+    "arrow-body-style": "off",
+    "sort-imports": "off",
+    "sort-keys": "off",
+    "init-declarations": ["error", "never", { "ignoreForLoopInit": true }],
+    "import/no-extraneous-dependencies": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "never",
+    "import/first": "never",
+    "react/sort-prop-types": "off",
+    "react/forbid-prop-types": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-sort-props": "off",
+    "react/jsx-no-literals": "off"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "globals": {
+    "React": true,
+    "shallow": true,
+    "renderer": true
+  }
+}

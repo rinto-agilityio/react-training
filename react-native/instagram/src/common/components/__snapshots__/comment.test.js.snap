@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Comment component Renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+      },
+      Object {
+        "alignItems": "center",
+        "marginTop": 10,
+      },
+    ]
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://instagram.fdad3-2.fna.fbcdn.net/t51.2885-19/s150x150/14719833_310540259320655_1605122788543168512_a.jpg",
+      }
+    }
+    style={
+      Object {
+        "borderRadius": 11.25,
+        "height": 22.5,
+        "width": "5%",
+      }
+    }
+  />
+  <TextInput
+    allowFontScaling={true}
+    onSubmitEditing={[Function]}
+    placeholder="Add a comment"
+    style={
+      Object {
+        "borderColor": "#a7a7a7",
+        "borderRadius": 15,
+        "borderWidth": 1,
+        "height": 30,
+        "marginLeft": 5,
+        "paddingLeft": 10,
+        "width": "93%",
+      }
+    }
+    underlineColorAndroid="transparent"
+  />
+</View>
+`;
