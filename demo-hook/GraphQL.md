@@ -115,7 +115,46 @@ Read Best Practice secion:
     - [Caching](https://graphql.github.io/learn/caching/)
 
 ## Day 3:
-- Learning [Apollo GraphQL](https://www.apollographql.com/)
+
+Learning [Apollo GraphQL](https://www.apollographql.com/)
+
+- [Introducing the Apollo GraphQL Platform](https://blog.apollographql.com/introducing-the-apollo-graphql-platform-8ef34bb269e5)
+    - Core technology: Open source, implements the GraphQL sepc and standard resolved-based programming models: Apollo Client and Server
+    - Service: Design for large-scale enterprise environments
+    - Support GraphQL gateway: Composes separately deployed “micro-schemas” that reference each other into a single master schema, which looks to a client just like any regular GraphQL schema.
+
+- [The Apollo GraphQL platform](https://www.apollographql.com/docs/intro/platform.html)
+    - An implementation of GraphQL designed
+    - Best used as a new layer between services and app
+    - Workflows:
+      - Managing GraphQP API:
+        - Schema change validation
+        - Safelisting
+
+- [Why GraphQL](https://www.apollographql.com/docs/intro/benefits.html)
+    - Developer experience
+      - Explore your API: Integrated tools:
+        - Automatic documentation, autocomplete and more
+        - GraphQL Playground: An IDE featuring automatically generated docs for your schema and query execution with autocomplete
+        - Apollo DevTools: Chrome extenstion
+      - Simplify front-end code:
+        - Setup almost things for front-end for fetching, loading, normalizing data with single request
+      - Modern tooling
+    - Declarative data fetching:
+      - Combining and filtering the data while returning exactly what we ask for
+      - Apollo Client takes care of the request cycle from start to finish, including tracking loading and error states for you. All you have to do is describe the data your component needs and let Apollo Client do the heavy lifting
+    - Improved performance:
+      - Smaller payloads: Because combining and filter data fetching
+      - Avoid round trips: Only do single reqeust with nested data instead of call multiple RESTful API endpoints
+
+Relative articles:
+    - [Reducing our Redux code with React Apollo](https://blog.apollographql.com/reducing-our-redux-code-with-react-apollo-5091b9de9c2a)
+    - [Local state management](https://www.apollographql.com/docs/react/essentials/local-state.html)
+      - Updating local data:
+        - Direct writes: Similar to `setState` in react
+        - Resolvers
+    - [GraphQL Concepts Visualized](https://blog.apollographql.com/the-concepts-of-graphql-bc68bd819be3)
+
 - [ ] Learning Apollo Server then create simple GraphQL server with data models
 - [ ] Learning Apollo Client to apply to React app
 
