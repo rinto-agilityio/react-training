@@ -29,6 +29,10 @@ Watch videos and read documents for all sections of [How to GraphQL](https://www
 
 - Play around [Launchpad GraphQL](https://launchpad.graphql.com/new)
 - Read [Thinking in Graphs](https://graphql.org/learn/thinking-in-graphs/) to get the overview and business logic
+  - With GraphQL, you model your business domain as a graph
+  - On the client: this creates a pattern similar to Object-Oriented Programming: types that reference other type
+  - On the server: since GraphQL only defines the interface, you have the freedom to use it with any backend
+
 - Front-end benefits if use GraphQL:
   - Describer the shape of object we want to receive from the server
   - Reducing request send to server
@@ -86,8 +90,18 @@ Learning GraphQL follow [official document](https://graphql.org/learn/)
   - Union types
 
 4. Validation
-  - [ ] Execution
-  - [ ] Introspection
+  - A fragment can't refer to itself or create a cycle
+  - Have to query for a field that exists on the given type
+  - If query for a field not a scalar or an enum, we need to specify what data we want to get back from the field
+
+5. Execution
+  - GraphQL can't execute a query without a type system
+  - Each field on each type is backed by a function called the resolver which is provided by the GraphQL server developer
+  - GraphQL queries always end at scalar values
+
+6. Introspection
+  - Query schema types
+  - Can access the documentation about the type system using introspection
 
 TODO:
 - Learning [Apollo](https://www.apollographql.com/)
