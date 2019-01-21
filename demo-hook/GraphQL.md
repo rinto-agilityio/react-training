@@ -103,6 +103,17 @@ Learning GraphQL follow [official document](https://graphql.org/learn/)
   - Query schema types
   - Can access the documentation about the type system using introspection
 
+Read Best Practice secion:
+    - [Serving over HTTP](https://graphql.github.io/learn/serving-over-http/)
+      - Web Request: GraphQL should be placed after all authentication middleware, so that you have access to the same session and user information you would in your HTTP endpoint handlers
+      - Response: `{ "data": {...}, "errors": [...]}`
+      - Development mode: Use GraphiQL for testing and development
+    - [Authorization](https://graphql.github.io/learn/authorization/)
+      - Should happen in the bussiness logic layer instead
+    - [Pagination](https://graphql.github.io/learn/pagination/)
+      - **cursor-based pagination** is the most powerful of those designed
+    - [Caching](https://graphql.github.io/learn/caching/)
+
 TODO:
 - Learning [Apollo](https://www.apollographql.com/)
 - [ ] Learning Apollo Server then create simple GraphQL server with data models
