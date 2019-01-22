@@ -172,6 +172,41 @@ Relative articles:
       - Vibrant ecosystem
 
 - Apply Apollo Client to React app
+    - Queries:
+      - Fetching data
+      - Polling and refetching: To get fresh data from server (sometime data from cache is out of sync)
+      - API & props:
+        - query: A GraphQL query document
+        - pollInterval: Interval component poll data
+        - loading: Loading status
+        - networkStatus: Detail state of network request
+        - refetch: Refetching data from Query
+        - client: ApolloClient instance. Required
+      - Do example `<Query>` component with CRA follow [Getting Startted](https://www.apollographql.com/docs/react/essentials/get-started.html)
+
+    - Mutations:
+      - Updating cache:
+        - Adding items and deleteing to a list, need to update cache for Query
+        - Update cache via `cache.writeQuery`
+        - Don't need to update for single item
+      - Loading and error state
+      - API & props:
+        - mutation: A GraphQL mutation document
+        - update: Update cache after mutation
+        - client: Use to update cache: `client.writeData` and `client.readQuery`
+
+    - Local state management:
+      - Updating local data:
+        - Direct writes: `client.writeData`
+        - Resolvers
+      - Querying local data
+        - Similar to querying GraphQL server, only different is add a `@client` directive on a local fields
+
+    - Error Handling:
+      - Error policies:
+        - By default, any GraphQL Errors as network errors and end the request chain, don't save any data to the cache. Also render UI with `error` prop
+        - Other options for errorPolicy are: `none`, `ignore`, `all`
+
 
 ## Open questions:
 
