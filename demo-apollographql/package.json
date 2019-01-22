@@ -1,0 +1,18 @@
+{
+  "name": "demo-apollographql",
+  "version": "1.0.0",
+  "description": "Demo ApolloGraphQL with React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node ./server/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.3.1",
+    "graphql": "^14.1.1",
+    "lodash": "^4.17.11"
+  }
+}
