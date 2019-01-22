@@ -147,6 +147,9 @@ Learning [Apollo GraphQL](https://www.apollographql.com/)
       - Smaller payloads: Because combining and filter data fetching
       - Avoid round trips: Only do single reqeust with nested data instead of call multiple RESTful API endpoints
 
+- [x] Learning Apollo Server then create simple GraphQL server with data models
+    - Create simple GraphQL server follow [this document](https://www.apollographql.com/docs/apollo-server/essentials/schema.html)
+
 Relative articles:
     - [Reducing our Redux code with React Apollo](https://blog.apollographql.com/reducing-our-redux-code-with-react-apollo-5091b9de9c2a)
     - [Local state management](https://www.apollographql.com/docs/react/essentials/local-state.html)
@@ -155,8 +158,20 @@ Relative articles:
         - Resolvers
     - [GraphQL Concepts Visualized](https://blog.apollographql.com/the-concepts-of-graphql-bc68bd819be3)
 
-- [ ] Learning Apollo Server then create simple GraphQL server with data models
-- [ ] Learning Apollo Client to apply to React app
+
+## Day 4:
+- Learning [Apollo Client](https://www.apollographql.com/docs/react/)
+    - Introduction
+    - Why Apollo Clients?
+      - Data fetching:
+        -  All of the logic for retrieving your data, tracking loading and error states, and updating your UI is encapsulated in a single `<Query>` component
+      - Zero-config caching
+      - Combine local & remote data:
+        - Via `apollo-link-state`
+        - Syntax on client query is `@client` at the field want to combine
+      - Vibrant ecosystem
+
+- Apply Apollo Client to React app
 
 ## Open questions:
 

@@ -14,10 +14,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apollo-boost": "^0.1.27",
     "apollo-server": "^2.3.1",
     "graphql": "^14.1.1",
     "lodash": "^4.17.11",
     "react": "16.7.0-alpha.0",
+    "react-apollo": "^2.4.0",
     "react-dom": "16.7.0-alpha.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.3",
