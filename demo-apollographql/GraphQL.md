@@ -171,7 +171,7 @@ Relative articles:
         - Syntax on client query is `@client` at the field want to combine
       - Vibrant ecosystem
 
-- Apply Apollo Client to React app
+- Apollo Client for React:
     - Queries:
       - Fetching data
       - Polling and refetching: To get fresh data from server (sometime data from cache is out of sync)
@@ -186,7 +186,7 @@ Relative articles:
 
     - Mutations:
       - Updating cache:
-        - Adding items and deleteing to a list, need to update cache for Query
+        - Adding items and deleting to a list, need to update cache for Query
         - Update cache via `cache.writeQuery`
         - Don't need to update for single item
       - Loading and error state
