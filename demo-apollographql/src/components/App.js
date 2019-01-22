@@ -21,16 +21,26 @@ const QUERY_RATES = gql`
 `
 
 const ExchangeRates = () => (
-  <Query query={QUERY_RATES}>
-    {( {loading, error, data }) => {
+  <Query
+    query={QUERY_RATES}
+    // pollInterval={5000}
+    notifyOnNetworkStatusChange
+  >
+    {( {loading, error, data, refetch, networkStatus }) => {
+      if (networkStatus === 4) return "Refetching"
       if (loading) return <p>Loading...</p>
       if (error) return <p>Error !!!</p>
 
-      return data.rates.map(({ currency, rate }) => (
-        <div key={currency}>
-          <p>{currency}: {rate}</p>
-        </div>
-      ))
+      return (
+        <>
+          <button onClick={() => refetch()}>refetch!</button>
+          {data.rates.map(({ currency, rate }) => (
+            <div key={currency}>
+              <p>{currency}: {rate}</p>
+            </div>
+          ))}
+        </>
+      )
     }}
   </Query>
 )
