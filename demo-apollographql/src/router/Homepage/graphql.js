@@ -13,6 +13,7 @@ const QUERY_POST = gql`
 const QUERY_TOP_AUTHORS = gql`
   {
     authors {
+      id,
       name,
       photo
     }
