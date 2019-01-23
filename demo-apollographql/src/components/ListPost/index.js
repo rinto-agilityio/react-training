@@ -35,7 +35,7 @@ const ListPost = ({ posts }) => (
 )
 
 ListPost.propTypes = {
-  posts: PropTypes.array
+  posts: PropTypes.array.isRequired
 }
 
 export default ListPost
