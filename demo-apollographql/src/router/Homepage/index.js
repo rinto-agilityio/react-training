@@ -9,6 +9,7 @@ import {
 } from './graphql'
 
 // Components
+import Loading from '../../components/Loading'
 import Container from '../../components/Layout/Container'
 import ListPost from '../../components/ListPost'
 import ListAuthor from '../../components/ListAuthor';
@@ -24,7 +25,7 @@ const Sidebar = styled.aside``
 const LatestPost = () => (
   <Query query={QUERY_POST}>
     {( {loading, error, data }) => {
-      if (loading) return <p>Loading...</p>
+      if (loading) return <Loading />
       if (error) return <p>Error !!!</p>
 
       return <ListPost posts={data.posts} />

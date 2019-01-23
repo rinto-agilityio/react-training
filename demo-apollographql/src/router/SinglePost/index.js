@@ -5,6 +5,9 @@ import { Query } from 'react-apollo'
 // GraphQL Query
 import { QUERY_POST } from './graphql'
 
+// Components
+import Loading from '../../components/Loading'
+
 const UpdateTitle = ({ title }) => {
   useEffect(() => {
     document.title = title
@@ -21,7 +24,7 @@ const SinglePost = ({ match }) => {
       <h1>This is single post:</h1>
       <Query query={QUERY_POST} variables={{ slug }}>
         {( {loading, error, data }) => {
-          if (loading) return <p>Loading...</p>
+          if (loading) return <Loading />
           if (error) return <p>Error !!!</p>
 
           return (
