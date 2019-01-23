@@ -3,16 +3,19 @@ module.exports = {
     {
       "id": 1,
       "name": "Jake Prins",
+      "photo": "https://cdn-images-1.medium.com/fit/c/100/100/1*_SiS1xvFOqiK6TnkiGcZ2A.jpeg",
       "desc": "Maker of things"
     },
     {
       "id": 2,
       "name": "Dan Abramov",
+      "photo": "https://miro.medium.com/fit/c/240/240/1*Vko_9kRNbjQGCqyBM9OnVw.jpeg",
       "desc": "Working on @reactjs. Co-author of Redux and Create React App. Building tools for humans."
     },
     {
       "id": 3,
       "name": "Dominic Fraser",
+      "photo": "https://cdn-images-1.medium.com/fit/c/100/100/1*cYPiD5puVSryUET5TnDN0Q.png",
       "desc": "Edinburgh, Scotland."
     }
   ],
