@@ -1,18 +1,13 @@
 import React from 'react'
 import { Query } from 'react-apollo'
-import gql from 'graphql-tag'
 
-const QUERY_POST = gql`
-  {
-    posts {
-      id,
-      title,
-      content
-    }
-  }
-`
+// GraphQL
+import { QUERY_POST } from './graphql'
 
-const AllPosts = () => (
+// Components
+import ListPost from '../../components/ListPost'
+
+const Homepage = () => (
   <Query query={QUERY_POST}>
     {( {loading, error, data, refetch }) => {
       if (loading) return <p>Loading...</p>
@@ -20,25 +15,13 @@ const AllPosts = () => (
 
       return (
         <>
+          <h1>Latest post</h1>
           <button onClick={() => refetch()}>refetch!</button>
-
-          {data.posts.map(({ id, title, content }) => (
-            <div key={id}>
-              <p>[{id}]: {title}</p>
-              <p>{content}</p>
-            </div>
-          ))}
+          <ListPost posts={data.posts} />
         </>
       )
     }}
   </Query>
-)
-
-const Homepage = () => (
-  <>
-    <h1>Homepage</h1>
-    <AllPosts />
-  </>
 )
 
 export default Homepage
