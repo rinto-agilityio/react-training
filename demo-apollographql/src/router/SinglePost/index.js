@@ -36,6 +36,14 @@ const SinglePost = ({ match }) => {
   )
 }
 
+UpdateTitle.defaultProps = {
+  title: 'Single Post'
+}
+
+UpdateTitle.propTypes = {
+  title: PropTypes.string
+}
+
 SinglePost.propTypes = {
   match: PropTypes.object.isRequired
 }

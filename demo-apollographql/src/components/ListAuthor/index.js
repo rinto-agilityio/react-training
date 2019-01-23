@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const ListAuthorWrapper = styled.section`
   background-color: #fff;
@@ -37,5 +38,9 @@ const ListAuthor = ({ authors }) => (
     ))}
   </ListAuthorWrapper>
 )
+
+ListAuthor.propTypes = {
+  authors: PropTypes.array.isRequired
+}
 
 export default ListAuthor
