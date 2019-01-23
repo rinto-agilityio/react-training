@@ -13,6 +13,7 @@ const typeDefs = gql`
   type Post {
     id: Int!,
     title: String,
+    slug: String,
     content: String,
     author: Author
   }
@@ -29,6 +30,7 @@ const typeDefs = gql`
   # (A "Mutation" type will be covered later on.)
   type Query {
     posts: [Post],
+    post(slug: String!): Post,
     authors: [Author],
     author(id: Int!): Author
   }
@@ -37,6 +39,7 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     posts: () => posts,
+    post: (_, { slug }) => find(posts, { slug: slug }),
     authors: () => authors,
     author: (_, { id }) => find(authors, { id: id }),
   },
