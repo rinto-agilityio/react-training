@@ -5,6 +5,7 @@ const QUERY_POST = gql`
     posts {
       id,
       title,
+      slug,
       content
     }
   }

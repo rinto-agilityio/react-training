@@ -16,13 +16,14 @@ const client = new ApolloClient({
 
 // Screen
 const Homepage = React.lazy(() => import('./router/Homepage'))
+const SinglePost = React.lazy(() => import('./router/SinglePost'))
 
 // Router config
 const AppRouter = () => (
   <Switch>
     <Route path="/" exact component={props => <Homepage {...props}/>} />
-    {/* <Route path="/book/:id" component={props => <BookDetail {...props} />} />
-    <Route path="/author/:id" component={props => <Author {...props} />} /> */}
+    <Route path="/post/:slug" component={props => <SinglePost {...props} />} />
+    {/* <Route path="/author/:id" component={props => <Author {...props} />} /> */}
   </Switch>
 )
 
