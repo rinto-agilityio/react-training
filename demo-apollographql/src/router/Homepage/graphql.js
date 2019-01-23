@@ -10,6 +10,16 @@ const QUERY_POST = gql`
   }
 `
 
+const QUERY_TOP_AUTHORS = gql`
+  {
+    authors {
+      name,
+      photo
+    }
+  }
+`
+
 export {
-  QUERY_POST
+  QUERY_POST,
+  QUERY_TOP_AUTHORS,
 }
