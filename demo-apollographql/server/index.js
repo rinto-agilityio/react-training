@@ -1,24 +1,18 @@
 const { ApolloServer, gql } = require('apollo-server');
 const { find, filter } = require('lodash');
 
-const DB = require('./db');
-
-// This is a (sample) collection of books we'll be able to query
-// the GraphQL server for.  A more complete example might fetch
-// from an existing data source like a REST API or database.
-const books = DB.book
-const authors = DB.author
+// Data from database
+const { authors, posts } = require('./db');
 
 // Type definitions define the "shape" of your data and specify
 // which ways the data can be fetched from the GraphQL server.
 const typeDefs = gql`
   # Comments in GraphQL are defined with the hash (#) symbol.
 
-  # This "Book" type can be used in other type declarations.
-  type Book {
+  # This "Post" type can be used in other type declarations.
+  type Post {
     id: Int!,
     title: String,
-    cover: String,
     author: Author
   }
 
@@ -26,29 +20,27 @@ const typeDefs = gql`
     id: Int!,
     name: String,
     desc: String,
-    books: [Book]
+    posts: [Post]
   }
 
   # The "Query" type is the root of all GraphQL queries.
   # (A "Mutation" type will be covered later on.)
   type Query {
-    books: [Book],
+    posts: [Post],
     author(id: Int!): Author
   }
 `;
 
-// Resolvers define the technique for fetching the types in the
-// schema.  We'll retrieve books from the "books" array above.
 const resolvers = {
   Query: {
-    books: () => books,
+    posts: () => posts,
     author: (_, { id }) => find(authors, { id: id }),
   },
-  Book: {
-    author: (book) => find(authors, { id: book.authorId })
+  Post: {
+    author: (post) => find(authors, { id: post.authorId })
   },
   Author: {
-    books: (author) => filter(books, { authorId: author.id })
+    posts: (author) => filter(posts, { authorId: author.id })
   },
 };
 

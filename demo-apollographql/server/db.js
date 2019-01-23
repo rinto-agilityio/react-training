@@ -1,70 +1,82 @@
 module.exports = {
-  "book": [
+  "authors": [
     {
       "id": 1,
-      "title": "Suicidal: Why We Kill Ourselves",
-      "cover": "https://images.gr-assets.com/books/1529080938l/39105401.jpg",
-      "authorId": 1,
-      "desc": "For much of his thirties, Jesse Bering thought he was probably going to kill himself. He was a successful psychologist and writer, with books to his name and bylines in major magazines. But none of that mattered. The impulse to take his own life remained. At times it felt all but inescapable."
+      "name": "Jake Prins",
+      "desc": "Maker of things"
     },
     {
       "id": 2,
-      "title": "Gods and Robots: Myths, Machines, and Ancient Dreams of Technology",
-      "cover": "https://images.gr-assets.com/books/1530986148l/40740411.jpg",
-      "authorId": 2,
-      "desc": "The fascinating untold story of how the ancients imagined robots and other forms of artificial life—and even invented real automated machines."
+      "name": "Dan Abramov",
+      "desc": "Working on @reactjs. Co-author of Redux and Create React App. Building tools for humans."
     },
     {
       "id": 3,
-      "title": "The Amazons: Lives and Legends of Warrior Women Across the Ancient World",
-      "cover": "https://images.gr-assets.com/books/1406800535l/21981621.jpg",
+      "name": "Dominic Fraser",
+      "desc": "Edinburgh, Scotland."
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Mocking ES and CommonJS modules with jest.mock()",
+      "authorId": 3,
+      "content": "In order for a unit test to be worthwhile it must be reliable; it should not be reliant on hopeful consistency of external dependencies in order to pass. External dependencies can include any modules/packages external to the test subject, requests to a database, or requests to an API. If running the same test several times without change can result in different outcomes, the test loses value. If trust in the test is lost, less focus is inevitably paid to test failures."
+    },
+    {
+      "id": 2,
+      "title": "Making Sense of React Hooks",
       "authorId": 2,
-      "desc": "Amazons--fierce warrior women dwelling on the fringes of the known world--were the mythic archenemies of the ancient Greeks. Heracles and Achilles displayed their valor in duels with Amazon queens, and the Athenians reveled in their victory over a powerful Amazon army. In historical times, Cyrus of Persia, Alexander the Great."
+      "content": "We know that components and top-down data flow help us organize a large UI into small, independent, reusable pieces. However, we often can’t break complex components down any further because the logic is stateful and can’t be extracted to a function or another component. Sometimes that’s what people mean when they say React doesn’t let them “separate concerns.”"
+    },
+    {
+      "id": 3,
+      "title": "Why side projects are so damn important",
+      "authorId": 1,
+      "content": "Learning and mastering a new skill can be tough, but with enough persistence and motivation there is a lot we can achieve. Like learning how to code, it can be hard, frustrating and time-consuming. In the end, the most important thing to do is to keep going and gain experience."
     },
     {
       "id": 4,
-      "title": "In Search of the Canary Tree: The Story of a Scientist, a Cypress, and a Changing World",
-      "cover": "https://images.gr-assets.com/books/1538454062l/39324259.jpg",
+      "title": "Progressive enhancement with CSS Grid",
       "authorId": 3,
-      "desc": "The surprisingly hopeful story of one woman's search for resiliency in a warming world."
+      "content": "CSS Grid (Grid) has been out for some time now, with full support in major modern browsers. I’ll leave others to dive into why it’s so great and what new design possibilities it makes so easy to explore. If you have been looking for the best way to support responsive web designs, I’ve yet to see anyone that doesn’t love Grid. It’s simple to use, yet extremely powerful and flexible."
     },
     {
       "id": 5,
-      "title": "In Search of the Canary Tree: The Story of a Scientist, a Cypress, and a Changing World",
-      "cover": "https://images.gr-assets.com/books/1515529573l/35820369.jpg",
-      "authorId": 3,
-      "desc": "The dinosaurs. Sixty-six million years ago, the Earth’s most fearsome creatures vanished. Today they remain one of our planet’s great mysteries. Now The Rise and Fall of the Dinosaurs reveals their extraordinary, 200-million-year-long story as never before."
+      "title": "React Components, Elements, and Instances",
+      "authorId": 2,
+      "content": "Many people get confused by the difference between components, their instances, and elements in React. Why are there three different terms to refer to something that is painted on screen?\nIf you’re new to React, you probably only worked with component classes and instances before. For example, you may declare a Button component by creating a class. When the program is running, you may have several instances of this component on screen, each with its own properties and local state. This is the traditional object oriented UI programming. Why introduce elements?"
     },
     {
       "id": 6,
-      "title": "The Wake Up",
-      "cover": "https://images.gr-assets.com/books/1508260090l/35122155.jpg",
-      "authorId": 1,
-      "desc": "From New York Times bestselling author Catherine Ryan Hyde comes a hauntingly emotional novel of how one man’s life changes forever when he rediscovers his ability to feel the pain of others."
+      "title": "The Evolution of Flux Frameworks",
+      "authorId": 2,
+      "content": "There has been no shortage of great Flux implementations, such as Flummox, Alt, or Fluxible. Most of them are focused on making Flux easier to use with the server rendering and reducing the boilerplate. They also often provide convenience utilities like higher-order components and asynchronous action helpers. Still, under the hood, many of them are built on top of the original Flux Dispatcher."
     },
     {
       "id": 7,
-      "title": "The End of Animal Farming: How Scientists, Entrepreneurs, and Activists Are Building an Animal-Free Food System",
-      "cover": "https://images.gr-assets.com/books/1521659245l/37858349.jpg",
+      "title": "How to Create and Publish a Chrome Extension in 20 minutes",
       "authorId": 1,
-      "desc": "A bold yet realistic vision of how technology and social change are creating a food system in which we no longer use animals to produce meat, dairy, or eggs."
-    }
-  ],
-  "author": [
-    {
-      "id": 1,
-      "name": "Jesse Bering",
-      "desc": "Aresearch psychologist and Director of the Centre for Science Communication at the University of Otago in Dunedin, New Zealand. \nAn award-winning science writer specializing in human behaviour, his first book, The Belief Instinct (2011), was included on the American Library Association’s Top 25 Books of the Year. This was followed by a collection of his previously published essays, Why Is the Penis Shaped Like That? (2012), and Perv (2013), a taboo-breaking work that received widespread critical acclaim and was named as a New York Times Editor’s Choice. His most recent book, Suicidal, will be released in late 2018 (published in the UK as A Very Human Ending). All of his books have been translated into many different languages."
+      "content": "Ever wondered what it would be like to create a Chrome extension? Well, I’m here to tell you just how easy it is. Follow these steps and your idea will turn into reality and you’ll be able to publish a real extension in the Chrome Web Store in no time."
     },
     {
-      "id": 2,
-      "name": "Adrienne Mayor",
-      "desc": ""
+      "id": 8,
+      "title": "You Might Not Need Redux",
+      "authorId": 2,
+      "content": "People often choose Redux before they need it. “What if our app doesn’t scale without it?” Later, developers frown at the indirection Redux introduced to their code. “Why do I have to touch three files to get a simple feature working?” Why indeed!"
     },
     {
-      "id": 3,
-      "name": "Lauren E. Oakes",
-      "desc": ""
+      "id": 9,
+      "title": "What are encryption keys and how do they work?",
+      "authorId": 3,
+      "content": "In cryptography a ‘key’ is a piece of information used in combination with an algorithm (a ‘cipher’) to transform plaintext into ciphertext (encryption) and vice versa (decryption).\nA cipher can be ‘reciprocal’ if it is used for both encryption and decryption, or ‘non-reciprocal’ if a transformation to the key is required when using it in reverse."
+    },
+    
+    {
+      "id": 10,
+      "title": "Here’s what I learned at the world’s biggest React conference",
+      "authorId": 1,
+      "content": "In her talk, Tracy showed why reactive programming can be a more efficient way to code. She also discussed how it has been adopted by industry leaders such as Netflix, Slack, Microsoft, and Facebook as the new standard for developing applications. It seems very promising, especially libraries like RxJS, that help developers deliver complex features quicker with less, more maintainable code."
     }
   ]
 }
