@@ -208,6 +208,15 @@ Relative articles:
         - Other options for errorPolicy are: `none`, `ignore`, `all`
 
 
+## Day 5:
+- Read articles:
+    - Why GraphQL: Advantages, Disadvantages & Alternatives [Part1](https://www.robinwieruch.de/why-graphql-advantages-disadvantages-alternatives/) and [Part2](https://www.robinwieruch.de/why-apollo-advantages-disadvantages-alternatives/)
+    - [Confused when Apollo abandoned Redux](https://github.com/apollographql/apollo-client/issues/2593)
+    - [apollo-link-state](https://www.apollographql.com/docs/link/links/state.html)
+      - Store for local data
+    - [The future of state management](https://blog.apollographql.com/the-future-of-state-management-dd410864cae2)
+
+
 ## Open questions:
 
 1. What's benefits of GraphQL?
