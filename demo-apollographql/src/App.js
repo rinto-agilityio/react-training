@@ -2,6 +2,9 @@ import React, { Suspense } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { ApolloProvider } from 'react-apollo'
 import ApolloClient from 'apollo-boost'
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { ApolloLink } from 'apollo-link';
+import { withClientState } from 'apollo-link-state';
 
 // Theme
 import { GlobalStyle } from './theme/globalStyle'
@@ -10,11 +13,30 @@ import { GlobalStyle } from './theme/globalStyle'
 import Header from './components/Header'
 
 // ApolloGraphQL Config
+const defaults = {
+  app: {
+    __typename: 'ApolloDemo',
+    currentPageName: 'Apollo Demo'
+  }
+}
+
+const cache = new InMemoryCache();
+const stateLink = withClientState({
+  cache,
+  defaults,
+})
+
+
 const client = new ApolloClient({
   uri: "http://localhost:4000/",
+  cache,
+  link: ApolloLink.from([
+    stateLink
+  ])
 })
 
 // Screen
+const PageInfo = React.lazy(() => import('./router/PageInfo'))
 const Homepage = React.lazy(() => import('./router/Homepage'))
 const SinglePost = React.lazy(() => import('./router/SinglePost'))
 
@@ -34,6 +56,7 @@ const App = () => (
         <>
           <GlobalStyle />
           <Header />
+          <PageInfo />
           <AppRouter />
         </>
       </Suspense>

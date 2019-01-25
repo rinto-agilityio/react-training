@@ -12,7 +12,7 @@ import {
 import Loading from '../../components/Loading'
 import Container from '../../components/Layout/Container'
 import ListPost from '../../components/ListPost'
-import ListAuthor from '../../components/ListAuthor';
+import ListAuthor from '../../components/ListAuthor'
 
 const Wrapper = styled.div`
   display: grid;
