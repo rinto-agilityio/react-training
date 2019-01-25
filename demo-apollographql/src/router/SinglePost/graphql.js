@@ -5,7 +5,11 @@ const QUERY_POST = gql`
     post(slug: $slug) {
       id,
       slug,
-      title
+      title,
+      content,
+      author {
+        name
+      }
     }
   }
 `

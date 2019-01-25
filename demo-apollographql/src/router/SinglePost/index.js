@@ -6,7 +6,9 @@ import { Query } from 'react-apollo'
 import { QUERY_POST } from './graphql'
 
 // Components
+import Container from '../../components/Layout/Container'
 import Loading from '../../components/Loading'
+import Post from './components/Post'
 
 const UpdateTitle = ({ title }) => {
   useEffect(() => {
@@ -20,22 +22,26 @@ const SinglePost = ({ match }) => {
   const { slug } = match.params
 
   return (
-    <>
-      <h1>This is single post:</h1>
-      <Query query={QUERY_POST} variables={{ slug }}>
-        {( {loading, error, data }) => {
-          if (loading) return <Loading />
-          if (error) return <p>Error !!!</p>
+    <Query query={QUERY_POST} variables={{ slug }}>
+      {( {loading, error, data }) => {
+        if (loading) return <Loading />
+        if (error) return <p>Error !!!</p>
 
-          return (
-            <>
-              <UpdateTitle title={data.post.title} />
-              <h2>{data.post.title}</h2>
-            </>
-          )
-        }}
-      </Query>
-    </>
+        const { post: { title, content, author } } = data
+        console.log('data: ', data)
+
+        return (
+          <Container>
+            <UpdateTitle title={data.post.title} />
+            <Post
+              title={title}
+              content={content}
+              author={author}
+            />
+          </Container>
+        )
+      }}
+    </Query>
   )
 }
 
