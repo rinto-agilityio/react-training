@@ -2,13 +2,13 @@ import gql from 'graphql-tag'
 
 export default {
   Mutation: {
-    updatePageName: (_, { name }, { cache }) => {
+    updatePageTitle: (_, { pageTitle }, { cache }) => {
 
       cache.writeData({
         data: {
           app: {
             __typename: 'ApolloDemo',
-            currentPageName: name
+            pageTitle: pageTitle
           }
         }
       })

@@ -1,39 +1,40 @@
 import React from 'react'
-import { Query } from 'react-apollo'
+import { Query, Mutation } from 'react-apollo'
 import gql from 'graphql-tag'
 
 // Doing GraphQL
-const getPageNameQuery = gql`
+const getPageTitleQuery = gql`
   query {
     app @client {
-      currentPageName
+      pageTitle
     }
+  }
+`
+
+const UPDATE_PAGE_TITLE = gql`
+  mutation UpdatePageTitle($name: String!) {
+    updatePageTitle(name: $name) @client
   }
 `
 
 const PageInfo = () => {
   return (
-    <Query query={getPageNameQuery}>
+    <Query query={getPageTitleQuery}>
       {({ loading, error, data, client }) => {
         if (error) return <h1>Error...</h1>;
         if (loading || !data) return <h1>Loading...</h1>;
 
-        // console.log('client: ', client)
-        console.log('data: ', data)
-
         return (
           <>
-            <h1>{data.app.currentPageName}</h1>
-            <button
-              onClick={() => client.writeData({
-                data: {
-                  app: {
-                    __typename: 'ApolloDemo',
-                    currentPageName: 'New pagename'
-                  }
-                }
-              })}
-            >Update</button>
+            <h1>{data.app.pageTitle}</h1>
+            <Mutation
+              mutation={UPDATE_PAGE_TITLE}
+              variables={{ pageTitle: 'New pagename ABCD'}}
+            >
+              {updatePageTitle => (
+                <button onClick={updatePageTitle}>Update-Mutation</button>
+              )}
+            </Mutation>
           </>
         )
       }}
