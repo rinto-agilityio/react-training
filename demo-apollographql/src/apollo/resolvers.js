@@ -1,5 +1,3 @@
-import gql from 'graphql-tag'
-
 export default {
   Mutation: {
     updatePageTitle: (_, { pageTitle }, { cache }) => {
@@ -8,7 +6,7 @@ export default {
         data: {
           app: {
             __typename: 'ApolloDemo',
-            pageTitle: pageTitle
+            pageTitle,
           }
         }
       })

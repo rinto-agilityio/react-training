@@ -1,26 +1,12 @@
 import React from 'react'
 import { Query, Mutation } from 'react-apollo'
-import gql from 'graphql-tag'
 
-// Doing GraphQL
-const getPageTitleQuery = gql`
-  query {
-    app @client {
-      pageTitle
-    }
-  }
-`
-
-const UPDATE_PAGE_TITLE = gql`
-  mutation UpdatePageTitle($name: String!) {
-    updatePageTitle(name: $name) @client
-  }
-`
+import { QUERY_PAGE_TITLE, UPDATE_PAGE_TITLE } from '../../grapql/pageTitle'
 
 const PageInfo = () => {
   return (
-    <Query query={getPageTitleQuery}>
-      {({ loading, error, data, client }) => {
+    <Query query={QUERY_PAGE_TITLE}>
+      {({ loading, error, data }) => {
         if (error) return <h1>Error...</h1>;
         if (loading || !data) return <h1>Loading...</h1>;
 
