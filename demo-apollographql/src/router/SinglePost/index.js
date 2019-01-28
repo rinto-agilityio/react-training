@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Query } from 'react-apollo'
 
@@ -9,14 +9,6 @@ import { QUERY_POST } from './graphql'
 import Container from '../../components/Layout/Container'
 import Loading from '../../components/Loading'
 import Post from './components/Post'
-
-const UpdateTitle = ({ title }) => {
-  useEffect(() => {
-    document.title = title
-  })
-
-  return null
-}
 
 const SinglePost = ({ match }) => {
   const { slug } = match.params
@@ -32,7 +24,6 @@ const SinglePost = ({ match }) => {
 
         return (
           <Container>
-            <UpdateTitle title={data.post.title} />
             <Post
               title={title}
               content={content}
@@ -43,14 +34,6 @@ const SinglePost = ({ match }) => {
       }}
     </Query>
   )
-}
-
-UpdateTitle.defaultProps = {
-  title: 'Single Post'
-}
-
-UpdateTitle.propTypes = {
-  title: PropTypes.string
 }
 
 SinglePost.propTypes = {

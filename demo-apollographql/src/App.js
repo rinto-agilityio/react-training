@@ -11,7 +11,6 @@ import Header from './components/Header'
 
 
 // Screen
-const PageInfo = React.lazy(() => import('./router/PageInfo'))
 const Homepage = React.lazy(() => import('./router/Homepage'))
 const SinglePost = React.lazy(() => import('./router/SinglePost'))
 
@@ -20,7 +19,6 @@ const AppRouter = () => (
   <Switch>
     <Route path="/" exact component={props => <Homepage {...props}/>} />
     <Route path="/post/:slug" component={props => <SinglePost {...props} />} />
-    {/* <Route path="/author/:id" component={props => <Author {...props} />} /> */}
   </Switch>
 )
 
@@ -31,7 +29,6 @@ const App = () => (
         <>
           <GlobalStyle />
           <Header />
-          <PageInfo />
           <AppRouter />
         </>
       </Suspense>
