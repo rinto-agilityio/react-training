@@ -208,7 +208,7 @@ Relative articles:
         - Other options for errorPolicy are: `none`, `ignore`, `all`
 
 
-## Day 5:
+## Day 5: (Doing practice)
 - Read articles:
     - Why GraphQL: Advantages, Disadvantages & Alternatives [Part1](https://www.robinwieruch.de/why-graphql-advantages-disadvantages-alternatives/) and [Part2](https://www.robinwieruch.de/why-apollo-advantages-disadvantages-alternatives/)
     - [Confused when Apollo abandoned Redux](https://github.com/apollographql/apollo-client/issues/2593)
@@ -216,6 +216,15 @@ Relative articles:
       - Store for local data
     - [The future of state management](https://blog.apollographql.com/the-future-of-state-management-dd410864cae2)
 
+## Day 6: (Doing practice)
+- Read articles:
+    - [Life Without Redux: Using Apollo for Local State](https://medium.com/the-notice-board/life-without-redux-using-apollo-for-local-state-d32b020ff4d3)
+    - [Local state management](https://www.apollographql.com/docs/react/essentials/local-state.html)
+
+## Day 7: (Doing practice) Implement app structure
+- Read aritcles:
+    - [Use a render prop](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce)
+    - [Tutorial: Render Props in React Apollo 2.1](https://www.prisma.io/blog/tutorial-render-props-in-react-apollo-2-1-199e9e2bd01e)
 
 ## Open questions:
 
