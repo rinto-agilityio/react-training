@@ -3,10 +3,7 @@ import { Query } from 'react-apollo'
 import styled from 'styled-components'
 
 // GraphQL
-import {
-  QUERY_POST,
-  QUERY_TOP_AUTHORS,
-} from './graphql'
+import { QUERY_LATESTPOST_AND_TOP_AUTHORS } from './graphql'
 
 // Components
 import Loading from '../../components/Loading'
@@ -22,40 +19,27 @@ const Wrapper = styled.div`
 const MainContent = styled.section``
 const Sidebar = styled.aside``
 
-const LatestPost = () => (
-  <Query query={QUERY_POST}>
-    {( {loading, error, data }) => {
-      if (loading) return <Loading />
-      if (error) return <p>Error !!!</p>
-
-      return <ListPost posts={data.posts} />
-    }}
-  </Query>
-)
-
-const TopAuthor = () => (
-  <Query query={QUERY_TOP_AUTHORS}>
-    {( {loading, error, data }) => {
-      if (loading) return <p>Loading...</p>
-      if (error) return <p>Error !!!</p>
-
-      return <ListAuthor authors={data.authors} />
-    }}
-  </Query>
-)
-
 const Homepage = () => (
-  <Container>
-    <Wrapper>
-      <MainContent>
-        <h1>Latest post</h1>
-        <LatestPost />
-      </MainContent>
-      <Sidebar>
-        <TopAuthor />
-      </Sidebar>
-    </Wrapper>
-  </Container>
+  <Query query={QUERY_LATESTPOST_AND_TOP_AUTHORS}>
+    {({ loading, error, data }) => {
+      if (loading) return <Loading />
+      if (error) return <p>Erroor!</p>
+
+      return (
+        <Container>
+          <Wrapper>
+            <MainContent>
+              <h1>Latest post</h1>
+              <ListPost posts={data.posts} />
+            </MainContent>
+            <Sidebar>
+              <ListAuthor authors={data.authors} />
+            </Sidebar>
+          </Wrapper>
+        </Container>
+      )
+    }}
+  </Query>
 )
 
 export default Homepage
