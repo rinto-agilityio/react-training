@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const ListAuthorWrapper = styled.section`
   background-color: #fff;
@@ -9,7 +10,7 @@ const Title = styled.h3`
   margin: 1rem auto;
   text-align: center;
 `
-const AuthorWrapper = styled.div`
+const AuthorWrapper = styled(Link)`
   display: flex;
   margin-bottom: 2rem;
 `

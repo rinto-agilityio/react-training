@@ -13,7 +13,7 @@ const ListAuthor = ({ authors }) => (
   <ListAuthorWrapper>
     <Title>Top Authors</Title>
     {authors.map(author => (
-      <AuthorWrapper key={author.id}>
+      <AuthorWrapper key={author.id} to={`/author/${author.id}`}>
         <AuthorPhoto src={author.photo} alt={author.name} />
         <AuthorName>{author.name}</AuthorName>
       </AuthorWrapper>

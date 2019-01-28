@@ -5,7 +5,7 @@ import {
   Title,
   Content,
   Author,
-} from './styles/Post'
+} from './Post.style'
 
 const Post = ({ title, fullContent, author }) => (
   <PostWrapper>
