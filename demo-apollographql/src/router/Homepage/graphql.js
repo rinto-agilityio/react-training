@@ -1,6 +1,6 @@
 import gql from 'graphql-tag'
 
-const QUERY_LATESTPOST_AND_TOP_AUTHORS = gql`
+const QUERY_LATEST_POST_AND_TOP_AUTHORS = gql`
   {
     posts {
       id,
@@ -17,5 +17,5 @@ const QUERY_LATESTPOST_AND_TOP_AUTHORS = gql`
 `
 
 export {
-  QUERY_LATESTPOST_AND_TOP_AUTHORS,
+  QUERY_LATEST_POST_AND_TOP_AUTHORS,
 }

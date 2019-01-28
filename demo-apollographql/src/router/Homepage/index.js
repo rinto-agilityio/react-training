@@ -3,7 +3,7 @@ import { Query } from 'react-apollo'
 import styled from 'styled-components'
 
 // GraphQL
-import { QUERY_LATESTPOST_AND_TOP_AUTHORS } from './graphql'
+import { QUERY_LATEST_POST_AND_TOP_AUTHORS } from './graphql'
 
 // Components
 import Loading from '../../components/Loading'
@@ -20,7 +20,7 @@ const MainContent = styled.section``
 const Sidebar = styled.aside``
 
 const Homepage = () => (
-  <Query query={QUERY_LATESTPOST_AND_TOP_AUTHORS}>
+  <Query query={QUERY_LATEST_POST_AND_TOP_AUTHORS}>
     {({ loading, error, data }) => {
       if (loading) return <Loading />
       if (error) return <p>Erroor!</p>
