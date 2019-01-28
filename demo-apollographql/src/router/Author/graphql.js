@@ -9,6 +9,7 @@ const QUERY_AUTHOR = gql`
       desc,
       posts {
         title,
+        slug,
         content,
       }
     }
