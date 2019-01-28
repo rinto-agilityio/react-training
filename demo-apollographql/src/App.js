@@ -13,12 +13,14 @@ import Header from './components/Header'
 // Screen
 const Homepage = React.lazy(() => import('./router/Homepage'))
 const Post = React.lazy(() => import('./router/Post'))
+const Author = React.lazy(() => import('./router/Author'))
 
 // Router config
 const AppRouter = () => (
   <Switch>
     <Route path="/" exact component={props => <Homepage {...props}/>} />
     <Route path="/post/:slug" component={props => <Post {...props} />} />
+    <Route path="/author/:id" component={props => <Author {...props} />} />
   </Switch>
 )
 
