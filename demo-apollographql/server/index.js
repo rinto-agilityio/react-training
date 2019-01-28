@@ -15,6 +15,7 @@ const typeDefs = gql`
     title: String,
     slug: String,
     content: String,
+    fullContent: String,
     author: Author
   }
 
