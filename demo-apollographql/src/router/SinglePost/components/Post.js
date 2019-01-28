@@ -7,10 +7,10 @@ import {
   Author,
 } from './styles/Post'
 
-const Post = ({ title, content, author }) => (
+const Post = ({ title, fullContent, author }) => (
   <PostWrapper>
     <Title>{title}</Title>
-    <Content>{content}</Content>
+    <Content dangerouslySetInnerHTML={{__html: fullContent}} />
     <Author>{author.name}</Author>
   </PostWrapper>
 )

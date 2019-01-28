@@ -19,14 +19,13 @@ const SinglePost = ({ match }) => {
         if (loading) return <Loading />
         if (error) return <p>Error !!!</p>
 
-        const { post: { title, content, author } } = data
-        console.log('data: ', data)
+        const { post: { title, fullContent, author } } = data
 
         return (
           <Container>
             <Post
               title={title}
-              content={content}
+              fullContent={fullContent}
               author={author}
             />
           </Container>

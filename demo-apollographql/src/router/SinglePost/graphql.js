@@ -6,7 +6,7 @@ const QUERY_POST = gql`
       id,
       slug,
       title,
-      content,
+      fullContent,
       author {
         name
       }
