@@ -233,10 +233,44 @@ Relative articles:
 ## Open questions:
 
 1. What's benefits of GraphQL?
+```
+  - Resolved overfetching
+  - Optimize re-structure data shape on client-side
+  - Wrapping data structure inside component
+```
+
 2. App size with GraphQL?
+```
+  - Good for large scale app
+```
+
 3. Front-end design data structure want to get:
-    - Good/bad points?
-    - Conflict team coding with Back-end?
-3. Is there any case duplicate container?
-4. How Apollo manage data, source truth?
-5. Can Apollo integration with Redux? Or other lib?
+    a, Good points:
+    ```
+      - Don't need to re-structure data structure return from api.
+      - Reduce payload for unnecessary fields
+      - Don't need smart component (Container in Redux pattern)
+    ```
+    b, Bad points:
+    ```
+      - Parent component don't know Childrent component can request data from api or not, or maybe data fetching duplicate with similar component
+    ```
+    c, Conflict team coding with Back-end?
+    ```
+      Front-end maybe request fields didn't support by GraphQL API
+    ```
+
+4. Is there any case duplicate container?
+```
+I don't think duplicate container.
+```
+
+5. How Apollo manage data, source truth?
+```
+Single source of truth for **all data** in our client application
+```
+
+6. Can Apollo integration with Redux? Or other lib?
+```
+Yes, it can, but don't need to use Redux or MobX. Apollo Client support to manage remote and local data from GraphQL server (with apollo-link-state)
+```
