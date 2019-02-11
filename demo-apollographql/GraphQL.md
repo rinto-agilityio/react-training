@@ -227,6 +227,7 @@ Relative articles:
     - [Tutorial: Render Props in React Apollo 2.1](https://www.prisma.io/blog/tutorial-render-props-in-react-apollo-2-1-199e9e2bd01e)
     - [The Problem with HTML in React and GraphQL](https://medium.com/@wonderboymusic/the-problem-with-html-in-react-and-graphql-6af9789352f6)
     - [Boilerplate for a Basic Fullstack GraphQL App with React](https://github.com/nikolasburk/react-apollo-tutorial)
+    - [Organization structure for fragment composition in large react-apollo apps](https://stackoverflow.com/questions/48017187/organization-structure-for-fragment-composition-in-large-react-apollo-apps)
 
 
 ## Open questions:
