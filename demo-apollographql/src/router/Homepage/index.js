@@ -26,7 +26,6 @@ const Homepage = () => (
       if (error) return <p>Erroor!</p>
 
       return (
-        <Container>
           <Wrapper>
             <MainContent>
               <h1>Latest post</h1>
@@ -36,7 +35,6 @@ const Homepage = () => (
               <ListAuthor authors={data.authors} />
             </Sidebar>
           </Wrapper>
-        </Container>
       )
     }}
   </Query>

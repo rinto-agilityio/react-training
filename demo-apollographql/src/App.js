@@ -8,6 +8,7 @@ import { GlobalStyle } from './theme/globalStyle'
 
 // Components
 import Header from './components/Header'
+import Grid from '@material-ui/core/Grid'
 
 
 // Screen
@@ -17,11 +18,13 @@ const Author = React.lazy(() => import('./router/Author'))
 
 // Router config
 const AppRouter = () => (
-  <Switch>
-    <Route path="/" exact component={props => <Homepage {...props}/>} />
-    <Route path="/post/:slug" component={props => <Post {...props} />} />
-    <Route path="/author/:id" component={props => <Author {...props} />} />
-  </Switch>
+  <Grid container>
+    <Switch>
+      <Route path="/" exact component={props => <Homepage {...props}/>} />
+      <Route path="/post/:slug" component={props => <Post {...props} />} />
+      <Route path="/author/:id" component={props => <Author {...props} />} />
+    </Switch>
+  </Grid>
 )
 
 const App = () => (
