@@ -12,7 +12,7 @@ const Author = React.lazy(() => import('./router/Author'))
 
 const styles = theme => ({
   mainContainer: {
-    padding: '1rem'
+    padding: '1rem',
   }
 })
 

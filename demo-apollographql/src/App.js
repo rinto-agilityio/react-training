@@ -11,11 +11,12 @@ import { GlobalStyle } from './theme/globalStyle'
 
 // Components
 import Header from './components/Header'
+import Loading from './components/Loading'
 
 const App = () => (
   <ApolloProvider client={client}>
     <Router>
-      <Suspense fallback={<div>...</div>}>
+      <Suspense fallback={<Loading />}>
         <>
           <GlobalStyle />
           <Header />
