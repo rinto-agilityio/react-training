@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 import Loading from './index'
 
 describe('Components', () => {
-  describe('Loading', () => {
+  describe('<Loading />', () => {
     it('Renders without crashring', () => {
       shallow(<Loading />)
     })

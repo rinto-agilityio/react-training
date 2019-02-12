@@ -20,12 +20,12 @@ const mockData = [
 ]
 
 describe('Components', () => {
-  describe('ListPost', () => {
-    it.only('Check test running', () => {
+  describe('<ListPost />', () => {
+    it('Check test running', () => {
 
       const wrapper = shallow(<ListPost posts={mockData} />)
 
-      expect(wrapper.find('.test-classname').length).toEqual(3)
+      expect(wrapper.find('.test-classname').length).toEqual(mockData.length)
     })
   })
 })
