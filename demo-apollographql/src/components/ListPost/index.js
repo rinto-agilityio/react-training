@@ -1,27 +1,37 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import { Link } from 'react-router-dom'
 
-import {
-  ListPostWrapper,
-  SinglePostWrapper,
-  StyledLink,
-} from './index.style'
+// Components
+import Paper from '@material-ui/core/Paper'
 
-const ListPost = ({ posts }) => (
-  <ListPostWrapper>
+const styles = ({
+  wrapper: {
+    padding: '1rem',
+    marginBottom: '1rem'
+  },
+  link: {
+    color: 'inherit',
+    textDecoration: 'none',
+  }
+})
+
+const ListPost = ({ posts, classes }) => (
+  <>
     {posts.map(post => (
-      <SinglePostWrapper key={post.id}>
-        <StyledLink to={`post/${post.slug}`} title={post.title}>
+      <Paper key={post.id} className={classes.wrapper}>
+        <Link to={`post/${post.slug}`} title={post.title} className={classes.link}>
           <h2>{post.title}</h2>
           <p>{post.content}</p>
-        </StyledLink>
-      </SinglePostWrapper>
+        </Link>
+      </Paper>
     ))}
-  </ListPostWrapper>
+  </>
 )
 
 ListPost.propTypes = {
   posts: PropTypes.array.isRequired
 }
 
-export default ListPost
+export default withStyles(styles)(ListPost)

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Query } from 'react-apollo'
+import { withStyles } from '@material-ui/core/styles'
 import styled from 'styled-components'
 
 // GraphQL
@@ -14,15 +15,14 @@ import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 
-const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: auto 300px;
-  grid-column-gap: 1rem;
-`
-const MainContent = styled.section``
-const Sidebar = styled.aside``
 
-const Homepage = () => (
+const styles = theme => ({
+  title: {
+    marginBottom: '1rem',
+  }
+})
+
+const Homepage = ({ classes }) => (
   <Query query={QUERY_LATEST_POST_AND_TOP_AUTHORS}>
     {({ loading, error, data }) => {
       if (loading) return <Loading />
@@ -30,13 +30,13 @@ const Homepage = () => (
 
       return (
         <>
-          <Grid item xs sm={9}>
-            <Typography component="h2" variant="h3">
+          <Grid item xs={12} md={9}>
+            <Typography component="h2" variant="h3" className={classes.title}>
               Latest post
             </Typography>
             <ListPost posts={data.posts} />
           </Grid>
-          <Grid item xs sm={3}>
+          <Grid item xs={12} md={3}>
             <Paper>
               <ListAuthor authors={data.authors} />
             </Paper>
@@ -47,4 +47,4 @@ const Homepage = () => (
   </Query>
 )
 
-export default Homepage
+export default withStyles(styles)(Homepage)
