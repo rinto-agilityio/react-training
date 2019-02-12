@@ -18,7 +18,14 @@ const styles = theme => ({
 
 // Router config
 const AppRouter = ({ classes }) => (
-  <Grid container className={classes.mainContainer}>
+  <Grid
+    container
+    direction="row"
+    justify="space-between"
+    alignItems="flex-start"
+    spacing={40}
+    className={classes.mainContainer}
+  >
     <Switch>
       <Route path="/" exact component={props => <Homepage {...props}/>} />
       <Route path="/post/:slug" component={props => <Post {...props} />} />
