@@ -18,16 +18,16 @@ const styles = ({
 })
 
 const ListPost = ({ posts, classes }) => (
-  <>
+  <div id="test-jest-id">
     {posts.map(post => (
       <Paper key={post.id} className={classes.wrapper}>
         <Link to={`post/${post.slug}`} title={post.title} className={classes.link}>
-          <h2>{post.title}</h2>
+          <h2 className="test-classname">{post.title}</h2>
           <p>{post.content}</p>
         </Link>
       </Paper>
     ))}
-  </>
+  </div>
 )
 
 ListPost.defaultProps = {
