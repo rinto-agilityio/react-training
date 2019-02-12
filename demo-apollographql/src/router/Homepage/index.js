@@ -1,7 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Query } from 'react-apollo'
 import { withStyles } from '@material-ui/core/styles'
-import styled from 'styled-components'
 
 // GraphQL
 import { QUERY_LATEST_POST_AND_TOP_AUTHORS } from './graphql'
@@ -46,5 +46,13 @@ const Homepage = ({ classes }) => (
     }}
   </Query>
 )
+
+Homepage.defaultProps = {
+  classes: {}
+}
+
+Homepage.propTypes = {
+  classes: PropTypes.object
+}
 
 export default withStyles(styles)(Homepage)

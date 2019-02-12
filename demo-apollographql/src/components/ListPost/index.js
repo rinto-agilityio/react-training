@@ -30,8 +30,13 @@ const ListPost = ({ posts, classes }) => (
   </>
 )
 
+ListPost.defaultProps = {
+  classes: {}
+}
+
 ListPost.propTypes = {
-  posts: PropTypes.array.isRequired
+  posts: PropTypes.array.isRequired,
+  classes: PropTypes.object
 }
 
 export default withStyles(styles)(ListPost)
