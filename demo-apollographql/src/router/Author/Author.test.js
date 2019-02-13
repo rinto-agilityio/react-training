@@ -18,14 +18,16 @@ const author = {
   "posts": []
 }
 
-const mocks = [
+const mockRequest = {
+  query: QUERY_AUTHOR,
+  variables: {
+    id: author.id,
+  },
+}
+
+const mockRequestSuccess = [
   {
-    request: {
-      query: QUERY_AUTHOR,
-      variables: {
-        id: author.id,
-      },
-    },
+    request: mockRequest,
     result: {
       data: {
         author: author
@@ -34,7 +36,7 @@ const mocks = [
   }
 ]
 
-const mockQueryError = [
+const mockRequestError = [
   {
     request: {
       query: QUERY_AUTHOR,
@@ -67,7 +69,7 @@ describe('Container', () => {
 
     it('Render without error', () => {
       mount(
-        <MockedProvider mocks={mocks} addTypename={false}>
+        <MockedProvider mocks={mockRequestSuccess} addTypename={false}>
           <Author match={mockProps} />
         </MockedProvider>
       )
@@ -75,7 +77,7 @@ describe('Container', () => {
 
     it('Render correct author name from graph query: QUERY_AUTHOR', async () => {
       const wrapper = mount(
-        <MockedProvider mocks={mocks} addTypename={false}>
+        <MockedProvider mocks={mockRequestSuccess} addTypename={false}>
           <Author match={mockProps} />
         </MockedProvider>
       )
@@ -89,7 +91,7 @@ describe('Container', () => {
 
     it('Should show error on UI', async () => {
       const wrapper = mount(
-        <MockedProvider mocks={mockQueryError} addTypename={false}>
+        <MockedProvider mocks={mockRequestError} addTypename={false}>
           <Author match={mockProps} />
         </MockedProvider>
       )
