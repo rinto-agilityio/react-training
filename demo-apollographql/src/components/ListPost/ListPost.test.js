@@ -3,6 +3,7 @@ import { shallow } from 'enzyme'
 
 // Components
 import ListPost from './index'
+import { ItemWrapper } from './ListPost.style'
 
 const mockData = [
   {
@@ -21,11 +22,10 @@ const mockData = [
 
 describe('Components', () => {
   describe('<ListPost />', () => {
-    it('Check test running', () => {
-
+    it(`Render ${mockData.length} child components`, () => {
       const wrapper = shallow(<ListPost posts={mockData} />)
 
-      expect(wrapper.find('.test-classname').length).toEqual(mockData.length)
+      expect(wrapper.find(ItemWrapper).length).toEqual(mockData.length)
     })
   })
 })
