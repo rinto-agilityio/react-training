@@ -15,25 +15,16 @@ import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 
-
-const styles = theme => ({
-  title: {
-    marginBottom: '1rem',
-  }
-})
-
-const Homepage = ({ classes }) => (
+const Homepage = () => (
   <Query query={QUERY_LATEST_POST_AND_TOP_AUTHORS}>
-    {({ loading, error, data }) => {
+    {( {loading, error, data }) => {
       if (loading) return <Loading />
       if (error) return <p>Error !!!</p>
-
-      console.log('data.posts: ', data.posts)
 
       return (
         <>
           <Grid item xs={12} md={9}>
-            <Typography component="h2" variant="h3" className={classes.title}>
+            <Typography component="h2" variant="h3">
               Latest post
             </Typography>
             <ListPost posts={data.posts} />
@@ -49,12 +40,4 @@ const Homepage = ({ classes }) => (
   </Query>
 )
 
-Homepage.defaultProps = {
-  classes: {}
-}
-
-Homepage.propTypes = {
-  classes: PropTypes.object
-}
-
-export default withStyles(styles)(Homepage)
+export default Homepage
