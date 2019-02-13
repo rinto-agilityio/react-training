@@ -10,7 +10,7 @@ const appTitle = 'GraphQL & React'
 
 describe('Components', () => {
   describe('<Header />', () => {
-    it.only(`Render correct app title`, () => {
+    it(`Render correct app title`, () => {
       const wrapper = mount(
         <MemoryRouter>
           <Header />
