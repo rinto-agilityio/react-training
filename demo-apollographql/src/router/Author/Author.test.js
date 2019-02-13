@@ -38,12 +38,7 @@ const mockRequestSuccess = [
 
 const mockRequestError = [
   {
-    request: {
-      query: QUERY_AUTHOR,
-      variables: {
-        id: author.id,
-      },
-    },
+    request: mockRequest,
     error: new Error('This is error')
   }
 ]
