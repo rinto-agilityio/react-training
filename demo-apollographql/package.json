@@ -48,7 +48,7 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
-      "!src/theme/**.*",
+      "!src/{apollo,theme}/**.*",
       "!src/**/graphql.js",
       "!src/**/*.{style,stories}.{js,jsx}"
     ]

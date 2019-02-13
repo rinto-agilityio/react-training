@@ -26,7 +26,9 @@ const Homepage = ({ classes }) => (
   <Query query={QUERY_LATEST_POST_AND_TOP_AUTHORS}>
     {({ loading, error, data }) => {
       if (loading) return <Loading />
-      if (error) return <p>Erroor!</p>
+      if (error) return <p>Error !!!</p>
+
+      console.log('data.posts: ', data.posts)
 
       return (
         <>
