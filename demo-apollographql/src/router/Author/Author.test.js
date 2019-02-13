@@ -7,6 +7,7 @@ import { QUERY_AUTHOR } from './graphql'
 
 // Components
 import Author from './index'
+import Loading from '../../components/Loading'
 
 // Mocking data response from for GraphQL server
 const author = {
@@ -33,6 +34,18 @@ const mocks = [
   }
 ]
 
+const mockQueryError = [
+  {
+    request: {
+      query: QUERY_AUTHOR,
+      variables: {
+        id: author.id,
+      },
+    },
+    error: new Error('This is error')
+  }
+]
+
 // Mocking match props for router
 const mockProps = {
   params: {
@@ -42,6 +55,16 @@ const mockProps = {
 
 describe('Container', () => {
   describe('Author', () => {
+    it('Render <Loading /> for the first time', () => {
+      const wrapper = mount(
+        <MockedProvider mocks={[]}>
+          <Author match={mockProps} />
+        </MockedProvider>
+      )
+
+      expect(wrapper.find(Loading).length).toEqual(1)
+    })
+
     it('Render without error', () => {
       mount(
         <MockedProvider mocks={mocks} addTypename={false}>
@@ -62,6 +85,20 @@ describe('Container', () => {
       wrapper.update()
 
       expect(wrapper.find('h1').text()).toEqual(author.name)
+    })
+
+    it('Should show error on UI', async () => {
+      const wrapper = mount(
+        <MockedProvider mocks={mockQueryError} addTypename={false}>
+          <Author match={mockProps} />
+        </MockedProvider>
+      )
+
+      await new Promise(resolve => setTimeout(resolve))
+
+      wrapper.update()
+
+      expect(wrapper.html()).toContain('Error !!!')
     })
   })
 })
