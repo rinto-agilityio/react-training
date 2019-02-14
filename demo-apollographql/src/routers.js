@@ -6,9 +6,9 @@ import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 
 // Screen
-const Homepage = React.lazy(() => import('./router/Homepage'))
-const Post = React.lazy(() => import('./router/Post'))
-const Author = React.lazy(() => import('./router/Author'))
+const Homepage = React.lazy(() => import('./pages/Homepage'))
+const Post = React.lazy(() => import('./pages/Post'))
+const Author = React.lazy(() => import('./pages/Author'))
 
 const styles = theme => ({
   mainContainer: {
