@@ -60,9 +60,9 @@ describe('Pages', () => {
 
     it('Render without error', () => {
       mount(
-          <MockedProvider mocks={mockRequestSuccess} addTypename={false}>
-            <Post match={mockProps} />
-          </MockedProvider>
+        <MockedProvider mocks={mockRequestSuccess} addTypename={false}>
+          <Post match={mockProps} />
+        </MockedProvider>
       )
     })
 
@@ -70,11 +70,9 @@ describe('Pages', () => {
       const postTitle = mockRequestSuccess[0].result.data.post.title
 
       const wrapper = mount(
-        <MemoryRouter>
-          <MockedProvider mocks={mockRequestSuccess} addTypename={false}>
-            <Post match={mockProps} />
-          </MockedProvider>
-        </MemoryRouter>
+        <MockedProvider mocks={mockRequestSuccess} addTypename={false}>
+          <Post match={mockProps} />
+        </MockedProvider>
       )
 
       await new Promise(resolve => setTimeout(resolve))
@@ -82,7 +80,20 @@ describe('Pages', () => {
       wrapper.update()
 
       expect(wrapper.find('h1').render().text()).toEqual(postTitle)
+    })
 
+    it('Show error component on UI', async () => {
+      const wrapper = mount(
+        <MockedProvider mocks={mockRequestError} addTypename={false}>
+          <Post match={mockProps} />
+        </MockedProvider>
+      )
+
+      await new Promise(resolve => setTimeout(resolve))
+
+      wrapper.update()
+
+      expect(wrapper.html()).toContain('Error !!!')
     })
   })
 })
