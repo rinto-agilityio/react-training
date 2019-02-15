@@ -48,3 +48,11 @@ yarn test -- --coverage
 [ ] Unit testing for [Suspense + React.lazy](https://github.com/airbnb/enzyme/issues/1917)
 
 [ ] Unit testing for [React router with React.lazy](https://github.com/airbnb/enzyme/issues/1460#issuecomment-442893257)
+
+## TODO:
+[ ] Code spliting
+[ ] Update Jest configs out of package.json
+[ ] Unit test for props
+[ ] Unit test with snapshot
+[ ] Answer question: When use `mount`, when `shallow` with Enzyme
+[ ] Review naming convention
