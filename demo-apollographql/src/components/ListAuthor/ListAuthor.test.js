@@ -8,20 +8,7 @@ import ListItem from '@material-ui/core/ListItem'
 import Typography from '@material-ui/core/Typography'
 
 // Data mock
-const mockData = [
-  {
-    "id": 1,
-    "name": "Jake Prins",
-    "photo": "https://cdn-images-1.medium.com/fit/c/100/100/1*_SiS1xvFOqiK6TnkiGcZ2A.jpeg",
-    "desc": "Maker of things"
-  },
-  {
-    "id": 2,
-    "name": "Dan Abramov",
-    "photo": "https://miro.medium.com/fit/c/240/240/1*Vko_9kRNbjQGCqyBM9OnVw.jpeg",
-    "desc": "Working on @reactjs. Co-author of Redux and Create React App. Building tools for humans."
-  }
-]
+import authors from './__mocks/db'
 
 const componentTitle = 'Top Authors'
 
@@ -30,7 +17,7 @@ describe('Components', () => {
     let wrapper
 
     beforeEach(() => {
-      wrapper = shallow(<ListAuthor authors={mockData} />)
+      wrapper = shallow(<ListAuthor authors={authors} />)
     })
 
     it('Render correct title', () => {
@@ -41,8 +28,8 @@ describe('Components', () => {
       expect(wrapper.find(StyledCard).children().length).toEqual(2)
     })
 
-    it(`Render correct items length: ${mockData.length}`, () => {
-      expect(wrapper.find(ListItem).length).toEqual(mockData.length)
+    it(`Render correct items length: ${authors.length}`, () => {
+      expect(wrapper.find(ListItem).length).toEqual(authors.length)
     })
   })
 })

@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom'
 import ListAuthor from './index'
 
 // Mock data
-import { authors } from '../../../server/db'
+import authors from './__mocks/db'
 
 storiesOf('List', module)
   .add('Authors', () => (
