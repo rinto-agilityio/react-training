@@ -5,27 +5,15 @@ import { shallow } from 'enzyme'
 import ListPost from './index'
 import { ItemWrapper } from './ListPost.style'
 
-const mockData = [
-  {
-    id: 1,
-    slug: 'post1',
-    title: 'Post 1',
-    content: ''
-  },
-  {
-    id: 2,
-    slug: 'post2',
-    title: 'Post 2',
-    content: ''
-  }
-]
+// Mock data
+import posts from './__mocks/db'
 
 describe('Components', () => {
   describe('<ListPost />', () => {
-    it(`Render ${mockData.length} child components`, () => {
-      const wrapper = shallow(<ListPost posts={mockData} />)
+    it(`Render ${posts.length} child components`, () => {
+      const wrapper = shallow(<ListPost posts={posts} />)
 
-      expect(wrapper.find(ItemWrapper).length).toEqual(mockData.length)
+      expect(wrapper.find(ItemWrapper).length).toEqual(posts.length)
     })
   })
 })
