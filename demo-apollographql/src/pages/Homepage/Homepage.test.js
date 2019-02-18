@@ -9,7 +9,6 @@ import { QUERY_LATEST_POST_AND_TOP_AUTHORS } from './graphql'
 // Components
 import Loading from '../../components/Loading'
 import Homepage from './index'
-import ListItem from '@material-ui/core/ListItem'
 
 // Mocking data
 import * as MockData from '../../../server/db'
