@@ -10,7 +10,7 @@ module.exports = {
   ],
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  setupFiles: ['<rootDir>/src/setup-tests.js'],
+  setupFiles: ['<rootDir>/src/setupTests.js'],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: 'coverage',
