@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components <Header /> Render correct snapshot 1`] = `
+<div
+  className="MuiGrid-container-1 sc-bdVaJa fEhXQk"
+>
+  <div
+    className="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
+  >
+    <div
+      className="MuiPaper-root-98 MuiPaper-elevation2-102 MuiPaper-rounded-99 sc-bwzfXH dAuxoL"
+    >
+      <h1
+        className="MuiTypography-root-125 MuiTypography-h3-139"
+      >
+        <a
+          className="sc-htpNat llgiPg"
+          href="/"
+          onClick={[Function]}
+          title="React-hook demo"
+        >
+          GraphQL & React
+        </a>
+      </h1>
+    </div>
+  </div>
+</div>
+`;
