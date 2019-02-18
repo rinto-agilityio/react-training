@@ -21,14 +21,14 @@ describe('Components', () => {
       expect(wrapper.find(StyledLink).filter({ to: '/'}).render().text()).toEqual(appTitle)
     })
 
-    it('Render correct snapshot', () => {
+    it('Snapshot renders correctly', () => {
       const tree = renderer
-      .create(
-        <MemoryRouter>
-          <Header />
-        </MemoryRouter>
-      )
-      .toJSON()
+        .create(
+          <MemoryRouter>
+            <Header />
+          </MemoryRouter>
+        )
+        .toJSON()
 
       expect(tree).toMatchSnapshot()
     })
