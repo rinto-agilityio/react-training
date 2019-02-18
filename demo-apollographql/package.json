@@ -52,8 +52,5 @@
     "node-fetch": "^2.3.0",
     "react-testing-library": "^5.8.0",
     "sinon": "^7.2.3"
-  },
-  "setupFiles": [
-    "jest-prop-type-error"
-  ]
+  }
 }
