@@ -51,7 +51,7 @@ yarn test -- --coverage
 
 ## TODO:
 [ ] Code spliting
-[ ] Update Jest configs out of package.json
+[x] Update Jest configs out of package.json
 [ ] Unit test for props
 [ ] Unit test with snapshot
 [ ] Answer question: When use `mount`, when `shallow` with Enzyme
