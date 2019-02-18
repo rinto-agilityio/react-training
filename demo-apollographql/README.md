@@ -54,5 +54,5 @@ yarn test -- --coverage
 [x] Update Jest configs out of package.json
 [ ] Unit test for props
 [ ] Unit test with snapshot
-[ ] Answer question: When use `mount`, when `shallow` with Enzyme
+[x] Answer question: When to use `mount` or `shallow` with Enzyme
 [ ] Review naming convention
