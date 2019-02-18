@@ -64,5 +64,18 @@ describe('Components', () => {
 
       expect(typeof (HeaderComponent.prop('siteTitle'))).toBeString()
     })
+
+    it.only('Check Jest config for prop-types', () => {
+      const props = {
+        siteTitle: 123
+      },
+      HeaderComponent = mount(
+        <MemoryRouter>
+          <Header {...props} />
+        </MemoryRouter>
+      )
+
+      expect(typeof (HeaderComponent.prop('siteTitle'))).toBeString()
+    })
   })
 })
