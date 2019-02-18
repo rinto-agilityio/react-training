@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Components <Header /> Render correct snapshot 1`] = `
+exports[`Components <Header /> Snapshot renders correctly 1`] = `
 <div
   className="MuiGrid-container-1 sc-bdVaJa fEhXQk"
 >

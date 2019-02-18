@@ -53,6 +53,6 @@ yarn test -- --coverage
 [ ] Code spliting
 [x] Update Jest configs out of package.json
 [ ] Unit test for props
-[ ] Unit test with snapshot
+[x] Unit test with snapshot
 [x] Answer question: When to use `mount` or `shallow` with Enzyme
 [ ] Review naming convention
