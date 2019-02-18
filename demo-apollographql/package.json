@@ -8,6 +8,7 @@
     "build": "react-scripts build",
     "test": "jest --watch",
     "test-coverage": "jest --coverage --colors",
+    "test-update-snapshot": "jest --updateSnapshot",
     "eject": "react-scripts eject",
     "server": "node ./server/index.js",
     "storybook": "start-storybook -p 9009 -s public",
