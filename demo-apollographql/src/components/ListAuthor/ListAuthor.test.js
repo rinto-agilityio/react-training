@@ -1,5 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import renderer from 'react-test-renderer'
+import { MemoryRouter } from 'react-router-dom'
 
 // Components
 import ListAuthor from './index'
@@ -18,6 +20,18 @@ describe('Components', () => {
 
     beforeEach(() => {
       wrapper = shallow(<ListAuthor authors={authors} />)
+    })
+
+    it('Snapshot renders correctly', () => {
+      const tree = renderer
+        .create(
+          <MemoryRouter>
+            <ListAuthor authors={authors} />
+          </MemoryRouter>
+        )
+        .toJSON()
+
+      expect(tree).toMatchSnapshot()
     })
 
     it('Render correct title', () => {

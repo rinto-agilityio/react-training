@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components <ListAuthor /> Snapshot renders correctly 1`] = `
+<div
+  className="MuiPaper-root-2 MuiPaper-elevation1-5 MuiPaper-rounded-3 MuiCard-root-1 sc-bdVaJa hUdpvK"
+>
+  <h3
+    className="MuiTypography-root-29 MuiTypography-h5-45"
+  >
+    Top Authors
+  </h3>
+  <ul
+    className="MuiList-root-65 MuiList-padding-66"
+  >
+    <a
+      className="sc-bwzfXH dBasTA"
+      href="/author/1"
+      onClick={[Function]}
+    >
+      <li
+        className="MuiListItem-root-69 MuiListItem-default-72 MuiListItem-dense-73 MuiListItem-gutters-77"
+        disabled={false}
+      >
+        <div
+          className="MuiAvatar-root-84"
+        >
+          <img
+            alt="Jake Prins"
+            className="MuiAvatar-img-86"
+            src="https://cdn-images-1.medium.com/fit/c/100/100/1*_SiS1xvFOqiK6TnkiGcZ2A.jpeg"
+          />
+        </div>
+        <div
+          className="MuiListItemText-root-87"
+        >
+          <span
+            className="MuiTypography-root-29 MuiTypography-subheading-36 MuiListItemText-primary-90"
+          >
+            Jake Prins
+          </span>
+        </div>
+      </li>
+    </a>
+    <a
+      className="sc-bwzfXH dBasTA"
+      href="/author/2"
+      onClick={[Function]}
+    >
+      <li
+        className="MuiListItem-root-69 MuiListItem-default-72 MuiListItem-dense-73 MuiListItem-gutters-77"
+        disabled={false}
+      >
+        <div
+          className="MuiAvatar-root-84"
+        >
+          <img
+            alt="Dan Abramov"
+            className="MuiAvatar-img-86"
+            src="https://miro.medium.com/fit/c/240/240/1*Vko_9kRNbjQGCqyBM9OnVw.jpeg"
+          />
+        </div>
+        <div
+          className="MuiListItemText-root-87"
+        >
+          <span
+            className="MuiTypography-root-29 MuiTypography-subheading-36 MuiListItemText-primary-90"
+          >
+            Dan Abramov
+          </span>
+        </div>
+      </li>
+    </a>
+    <a
+      className="sc-bwzfXH dBasTA"
+      href="/author/3"
+      onClick={[Function]}
+    >
+      <li
+        className="MuiListItem-root-69 MuiListItem-default-72 MuiListItem-dense-73 MuiListItem-gutters-77"
+        disabled={false}
+      >
+        <div
+          className="MuiAvatar-root-84"
+        >
+          <img
+            alt="Dominic Fraser"
+            className="MuiAvatar-img-86"
+            src="https://cdn-images-1.medium.com/fit/c/100/100/1*cYPiD5puVSryUET5TnDN0Q.png"
+          />
+        </div>
+        <div
+          className="MuiListItemText-root-87"
+        >
+          <span
+            className="MuiTypography-root-29 MuiTypography-subheading-36 MuiListItemText-primary-90"
+          >
+            Dominic Fraser
+          </span>
+        </div>
+      </li>
+    </a>
+  </ul>
+</div>
+`;
