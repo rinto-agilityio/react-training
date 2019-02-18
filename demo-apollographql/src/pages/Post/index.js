@@ -6,7 +6,7 @@ import { Query } from 'react-apollo'
 import { QUERY_POST } from './graphql'
 
 // Components
-import Container from '../../components/Layout/Container'
+import Grid from '@material-ui/core/Grid'
 import Loading from '../../components/Loading'
 import Post from './components/Post'
 
@@ -22,13 +22,13 @@ const SinglePost = ({ match }) => {
         const { post: { title, fullContent, author } } = data
 
         return (
-          <Container>
+          <Grid item xs={12}>
             <Post
               title={title}
               fullContent={fullContent}
               author={author}
             />
-          </Container>
+          </Grid>
         )
       }}
     </Query>
