@@ -50,7 +50,7 @@
     "enzyme-adapter-react-16": "^1.9.1",
     "jest-prop-type-error": "^1.1.0",
     "node-fetch": "^2.3.0",
-    "react-testing-library": "^5.8.0",
+    "react-test-renderer": "^16.8.2",
     "sinon": "^7.2.3"
   }
 }
