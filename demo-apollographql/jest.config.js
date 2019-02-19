@@ -3,10 +3,10 @@ module.exports = {
   clearMocks: true,
 
   collectCoverageFrom: [
-    "src/**/*.{js,jsx}",
-    "!src/{apollo,theme,stories}/**.*",
-    "!src/**/graphql.js",
-    "!src/**/*.{style,story}.{js,jsx}"
+    "<rootDir>/src/**/*.{js,jsx}",
+    "!<rootDir>/src/{apollo,theme,stories,test}/**.*", // Configuration
+    "!<rootDir>/src/**/graphql.js",
+    "!<rootDir>/src/**/*.{style,story}.{js,jsx}"
   ],
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
