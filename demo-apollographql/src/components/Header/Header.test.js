@@ -52,9 +52,9 @@ describe('Components', () => {
     })
 
     // Testing proptypes
-    it('Render empty site title with empty value', () => {
+    it('Check prop type for title is string', () => {
       const props = {
-              siteTitle: 'ABCD'
+              siteTitle: 'String site title'
             },
             HeaderComponent = mount(
               <MemoryRouter>
@@ -62,20 +62,7 @@ describe('Components', () => {
               </MemoryRouter>
             )
 
-      expect(typeof (HeaderComponent.prop('siteTitle'))).toBeString()
-    })
-
-    it.only('Check Jest config for prop-types', () => {
-      const props = {
-        siteTitle: 123
-      },
-      HeaderComponent = mount(
-        <MemoryRouter>
-          <Header {...props} />
-        </MemoryRouter>
-      )
-
-      expect(typeof (HeaderComponent.prop('siteTitle'))).toBeString()
+      expect(HeaderComponent.find('a').text()).toBeString()
     })
   })
 })

@@ -14,9 +14,5 @@ describe('Components', () => {
 
       expect(tree).toMatchSnapshot()
     })
-
-    it('Renders without crashring', () => {
-      shallow(<Loading />)
-    })
   })
 })
