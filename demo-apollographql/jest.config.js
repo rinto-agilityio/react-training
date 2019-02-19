@@ -4,6 +4,7 @@ module.exports = {
 
   collectCoverageFrom: [
     "<rootDir>/src/**/*.{js,jsx}",
+    "!<rootDir>/src/index.js", // CRA index
     "!<rootDir>/src/{apollo,theme,stories,test}/**.*", // Configuration
     "!<rootDir>/src/**/graphql.js",
     "!<rootDir>/src/**/*.{style,story}.{js,jsx}"
