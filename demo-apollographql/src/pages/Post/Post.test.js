@@ -1,7 +1,6 @@
 import React from 'react'
 import { MockedProvider } from 'react-apollo/test-utils'
 import { mount } from 'enzyme'
-import { MemoryRouter } from 'react-router-dom'
 
 // Components
 import Loading from '../../components/Loading'
