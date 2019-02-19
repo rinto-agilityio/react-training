@@ -1,104 +1,254 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Components <ListAuthor /> Snapshot renders correctly 1`] = `
-<div
-  className="MuiPaper-root-2 MuiPaper-elevation1-5 MuiPaper-rounded-3 MuiCard-root-1 sc-bdVaJa hUdpvK"
->
-  <h3
-    className="MuiTypography-root-29 MuiTypography-h5-45"
+exports[`Components <ListAuthor /> Render correctly ListAuthor component 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MemoryRouter
+    keyLength={0}
   >
-    Top Authors
-  </h3>
-  <ul
-    className="MuiList-root-65 MuiList-padding-66"
-  >
-    <a
-      className="sc-bwzfXH dBasTA"
-      href="/author/1"
-      onClick={[Function]}
-    >
-      <li
-        className="MuiListItem-root-69 MuiListItem-default-72 MuiListItem-dense-73 MuiListItem-gutters-77"
-        disabled={false}
-      >
-        <div
-          className="MuiAvatar-root-84"
-        >
-          <img
-            alt="Jake Prins"
-            className="MuiAvatar-img-86"
-            src="https://cdn-images-1.medium.com/fit/c/100/100/1*_SiS1xvFOqiK6TnkiGcZ2A.jpeg"
-          />
-        </div>
-        <div
-          className="MuiListItemText-root-87"
-        >
-          <span
-            className="MuiTypography-root-29 MuiTypography-subheading-36 MuiListItemText-primary-90"
-          >
-            Jake Prins
-          </span>
-        </div>
-      </li>
-    </a>
-    <a
-      className="sc-bwzfXH dBasTA"
-      href="/author/2"
-      onClick={[Function]}
-    >
-      <li
-        className="MuiListItem-root-69 MuiListItem-default-72 MuiListItem-dense-73 MuiListItem-gutters-77"
-        disabled={false}
-      >
-        <div
-          className="MuiAvatar-root-84"
-        >
-          <img
-            alt="Dan Abramov"
-            className="MuiAvatar-img-86"
-            src="https://miro.medium.com/fit/c/240/240/1*Vko_9kRNbjQGCqyBM9OnVw.jpeg"
-          />
-        </div>
-        <div
-          className="MuiListItemText-root-87"
-        >
-          <span
-            className="MuiTypography-root-29 MuiTypography-subheading-36 MuiListItemText-primary-90"
-          >
-            Dan Abramov
-          </span>
-        </div>
-      </li>
-    </a>
-    <a
-      className="sc-bwzfXH dBasTA"
-      href="/author/3"
-      onClick={[Function]}
-    >
-      <li
-        className="MuiListItem-root-69 MuiListItem-default-72 MuiListItem-dense-73 MuiListItem-gutters-77"
-        disabled={false}
-      >
-        <div
-          className="MuiAvatar-root-84"
-        >
-          <img
-            alt="Dominic Fraser"
-            className="MuiAvatar-img-86"
-            src="https://cdn-images-1.medium.com/fit/c/100/100/1*cYPiD5puVSryUET5TnDN0Q.png"
-          />
-        </div>
-        <div
-          className="MuiListItemText-root-87"
-        >
-          <span
-            className="MuiTypography-root-29 MuiTypography-subheading-36 MuiListItemText-primary-90"
-          >
-            Dominic Fraser
-          </span>
-        </div>
-      </li>
-    </a>
-  </ul>
-</div>
+    <ListAuthor
+      authors={
+        Array [
+          Object {
+            "desc": "Maker of things",
+            "id": 1,
+            "name": "Jake Prins",
+            "photo": "https://cdn-images-1.medium.com/fit/c/100/100/1*_SiS1xvFOqiK6TnkiGcZ2A.jpeg",
+          },
+          Object {
+            "desc": "Working on @reactjs. Co-author of Redux and Create React App. Building tools for humans.",
+            "id": 2,
+            "name": "Dan Abramov",
+            "photo": "https://miro.medium.com/fit/c/240/240/1*Vko_9kRNbjQGCqyBM9OnVw.jpeg",
+          },
+          Object {
+            "desc": "Edinburgh, Scotland.",
+            "id": 3,
+            "name": "Dominic Fraser",
+            "photo": "https://cdn-images-1.medium.com/fit/c/100/100/1*cYPiD5puVSryUET5TnDN0Q.png",
+          },
+        ]
+      }
+      title="Top Authors"
+    />
+  </MemoryRouter>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <ListAuthor
+        authors={
+          Array [
+            Object {
+              "desc": "Maker of things",
+              "id": 1,
+              "name": "Jake Prins",
+              "photo": "https://cdn-images-1.medium.com/fit/c/100/100/1*_SiS1xvFOqiK6TnkiGcZ2A.jpeg",
+            },
+            Object {
+              "desc": "Working on @reactjs. Co-author of Redux and Create React App. Building tools for humans.",
+              "id": 2,
+              "name": "Dan Abramov",
+              "photo": "https://miro.medium.com/fit/c/240/240/1*Vko_9kRNbjQGCqyBM9OnVw.jpeg",
+            },
+            Object {
+              "desc": "Edinburgh, Scotland.",
+              "id": 3,
+              "name": "Dominic Fraser",
+              "photo": "https://cdn-images-1.medium.com/fit/c/100/100/1*cYPiD5puVSryUET5TnDN0Q.png",
+            },
+          ]
+        }
+        title="Top Authors"
+      />,
+      "history": Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      },
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "authors": Array [
+          Object {
+            "desc": "Maker of things",
+            "id": 1,
+            "name": "Jake Prins",
+            "photo": "https://cdn-images-1.medium.com/fit/c/100/100/1*_SiS1xvFOqiK6TnkiGcZ2A.jpeg",
+          },
+          Object {
+            "desc": "Working on @reactjs. Co-author of Redux and Create React App. Building tools for humans.",
+            "id": 2,
+            "name": "Dan Abramov",
+            "photo": "https://miro.medium.com/fit/c/240/240/1*Vko_9kRNbjQGCqyBM9OnVw.jpeg",
+          },
+          Object {
+            "desc": "Edinburgh, Scotland.",
+            "id": 3,
+            "name": "Dominic Fraser",
+            "photo": "https://cdn-images-1.medium.com/fit/c/100/100/1*cYPiD5puVSryUET5TnDN0Q.png",
+          },
+        ],
+        "title": "Top Authors",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <ListAuthor
+          authors={
+            Array [
+              Object {
+                "desc": "Maker of things",
+                "id": 1,
+                "name": "Jake Prins",
+                "photo": "https://cdn-images-1.medium.com/fit/c/100/100/1*_SiS1xvFOqiK6TnkiGcZ2A.jpeg",
+              },
+              Object {
+                "desc": "Working on @reactjs. Co-author of Redux and Create React App. Building tools for humans.",
+                "id": 2,
+                "name": "Dan Abramov",
+                "photo": "https://miro.medium.com/fit/c/240/240/1*Vko_9kRNbjQGCqyBM9OnVw.jpeg",
+              },
+              Object {
+                "desc": "Edinburgh, Scotland.",
+                "id": 3,
+                "name": "Dominic Fraser",
+                "photo": "https://cdn-images-1.medium.com/fit/c/100/100/1*cYPiD5puVSryUET5TnDN0Q.png",
+              },
+            ]
+          }
+          title="Top Authors"
+        />,
+        "history": Object {
+          "action": "POP",
+          "block": [Function],
+          "canGo": [Function],
+          "createHref": [Function],
+          "entries": Array [
+            Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+          ],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "index": 0,
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        },
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "authors": Array [
+            Object {
+              "desc": "Maker of things",
+              "id": 1,
+              "name": "Jake Prins",
+              "photo": "https://cdn-images-1.medium.com/fit/c/100/100/1*_SiS1xvFOqiK6TnkiGcZ2A.jpeg",
+            },
+            Object {
+              "desc": "Working on @reactjs. Co-author of Redux and Create React App. Building tools for humans.",
+              "id": 2,
+              "name": "Dan Abramov",
+              "photo": "https://miro.medium.com/fit/c/240/240/1*Vko_9kRNbjQGCqyBM9OnVw.jpeg",
+            },
+            Object {
+              "desc": "Edinburgh, Scotland.",
+              "id": 3,
+              "name": "Dominic Fraser",
+              "photo": "https://cdn-images-1.medium.com/fit/c/100/100/1*cYPiD5puVSryUET5TnDN0Q.png",
+            },
+          ],
+          "title": "Top Authors",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
 `;

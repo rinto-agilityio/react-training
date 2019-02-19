@@ -19,19 +19,15 @@ describe('Components', () => {
     let wrapper
 
     beforeEach(() => {
-      wrapper = shallow(<ListAuthor authors={authors} />)
+      wrapper = shallow(
+        <MemoryRouter keyLength={0}>
+          <ListAuthor authors={authors} />
+        </MemoryRouter>
+      )
     })
 
-    it('Snapshot renders correctly', () => {
-      const tree = renderer
-        .create(
-          <MemoryRouter>
-            <ListAuthor authors={authors} />
-          </MemoryRouter>
-        )
-        .toJSON()
-
-      expect(tree).toMatchSnapshot()
+    it('Render correctly ListAuthor component', () => {
+      expect(wrapper).toMatchSnapshot()
     })
 
     it('Render correct title', () => {
