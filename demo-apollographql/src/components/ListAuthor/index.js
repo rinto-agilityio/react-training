@@ -10,10 +10,10 @@ import ListItemText from '@material-ui/core/ListItemText'
 import Avatar from '@material-ui/core/Avatar'
 import { StyledCard, StyledLink } from './ListAuthor.style'
 
-const ListAuthor = ({ authors }) => (
+const ListAuthor = ({ title, authors }) => (
   <StyledCard>
     <Typography component="h3" variant="h5">
-      Top Authors
+      {title}
     </Typography>
 
     <List>
@@ -34,8 +34,14 @@ const ListAuthor = ({ authors }) => (
   </StyledCard>
 )
 
+ListAuthor.defaultProps = {
+  title: 'Top Authors',
+  authors: []
+}
+
 ListAuthor.propTypes = {
-  authors: PropTypes.array.isRequired
+  title: PropTypes.string,
+  authors: PropTypes.array
 }
 
 export default ListAuthor
