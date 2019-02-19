@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components <SinglePost /> Render correctly SinglePost component 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MemoryRouter
+    keyLength={0}
+  >
+    <SinglePost
+      author={
+        Object {
+          "desc": "Maker of things",
+          "id": 1,
+          "name": "Jake Prins",
+          "photo": "https://cdn-images-1.medium.com/fit/c/100/100/1*_SiS1xvFOqiK6TnkiGcZ2A.jpeg",
+        }
+      }
+      fullContent="<p name=\\"444d\\" id=\\"444d\\" class=\\"graf graf--p graf-after--figure\\"><a href=\\"https://medium.com/codeclan/testing-react-with-jest-and-enzyme-20505fec4675\\" data-href=\\"https://medium.com/codeclan/testing-react-with-jest-and-enzyme-20505fec4675\\" class=\\"markup--anchor markup--p-anchor\\" target=\\"_blank\\"><em class=\\"markup--em markup--p-em\\">Previously</em></a><em class=\\"markup--em markup--p-em\\"> we introduced the basics of using </em><a href=\\"https://jestjs.io/docs/en/getting-started\\" data-href=\\"https://jestjs.io/docs/en/getting-started\\" class=\\"markup--anchor markup--p-anchor\\" rel=\\"noopener nofollow\\" target=\\"_blank\\"><em class=\\"markup--em markup--p-em\\">Jest</em></a><em class=\\"markup--em markup--p-em\\"> as a test runner, assertion library, and mocking library. If you have not used Jest before I recommend reading through the linked post first.</em></p><p name=\\"066f\\" id=\\"066f\\" class=\\"graf graf--p graf-after--p\\">In order for a unit test to be worthwhile it must be reliable; it should not be reliant on hopeful consistency of external dependencies in order to pass. External dependencies can include any <a href=\\"https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/\\" data-href=\\"https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/\\" class=\\"markup--anchor markup--p-anchor\\" rel=\\"nofollow noopener\\" target=\\"_blank\\">modules/packages</a> external to the test subject, requests to a database, or requests to an API. If running the same test several times without change can result in different outcomes, the test loses value. If trust in the test is lost, less focus is inevitably paid to test failures.</p><p name=\\"2e8f\\" id=\\"2e8f\\" class=\\"graf graf--p graf-after--p\\">Unit tests aim to test small units of code in isolation, testing how each behaves with specific input. The responsibility of testing how different parts of a system work together lies with integration tests.</p>"
+      title="Mocking ES and CommonJS modules with jest.mock()"
+    />
+  </MemoryRouter>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <SinglePost
+        author={
+          Object {
+            "desc": "Maker of things",
+            "id": 1,
+            "name": "Jake Prins",
+            "photo": "https://cdn-images-1.medium.com/fit/c/100/100/1*_SiS1xvFOqiK6TnkiGcZ2A.jpeg",
+          }
+        }
+        fullContent="<p name=\\"444d\\" id=\\"444d\\" class=\\"graf graf--p graf-after--figure\\"><a href=\\"https://medium.com/codeclan/testing-react-with-jest-and-enzyme-20505fec4675\\" data-href=\\"https://medium.com/codeclan/testing-react-with-jest-and-enzyme-20505fec4675\\" class=\\"markup--anchor markup--p-anchor\\" target=\\"_blank\\"><em class=\\"markup--em markup--p-em\\">Previously</em></a><em class=\\"markup--em markup--p-em\\"> we introduced the basics of using </em><a href=\\"https://jestjs.io/docs/en/getting-started\\" data-href=\\"https://jestjs.io/docs/en/getting-started\\" class=\\"markup--anchor markup--p-anchor\\" rel=\\"noopener nofollow\\" target=\\"_blank\\"><em class=\\"markup--em markup--p-em\\">Jest</em></a><em class=\\"markup--em markup--p-em\\"> as a test runner, assertion library, and mocking library. If you have not used Jest before I recommend reading through the linked post first.</em></p><p name=\\"066f\\" id=\\"066f\\" class=\\"graf graf--p graf-after--p\\">In order for a unit test to be worthwhile it must be reliable; it should not be reliant on hopeful consistency of external dependencies in order to pass. External dependencies can include any <a href=\\"https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/\\" data-href=\\"https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/\\" class=\\"markup--anchor markup--p-anchor\\" rel=\\"nofollow noopener\\" target=\\"_blank\\">modules/packages</a> external to the test subject, requests to a database, or requests to an API. If running the same test several times without change can result in different outcomes, the test loses value. If trust in the test is lost, less focus is inevitably paid to test failures.</p><p name=\\"2e8f\\" id=\\"2e8f\\" class=\\"graf graf--p graf-after--p\\">Unit tests aim to test small units of code in isolation, testing how each behaves with specific input. The responsibility of testing how different parts of a system work together lies with integration tests.</p>"
+        title="Mocking ES and CommonJS modules with jest.mock()"
+      />,
+      "history": Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      },
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "author": Object {
+          "desc": "Maker of things",
+          "id": 1,
+          "name": "Jake Prins",
+          "photo": "https://cdn-images-1.medium.com/fit/c/100/100/1*_SiS1xvFOqiK6TnkiGcZ2A.jpeg",
+        },
+        "fullContent": "<p name=\\"444d\\" id=\\"444d\\" class=\\"graf graf--p graf-after--figure\\"><a href=\\"https://medium.com/codeclan/testing-react-with-jest-and-enzyme-20505fec4675\\" data-href=\\"https://medium.com/codeclan/testing-react-with-jest-and-enzyme-20505fec4675\\" class=\\"markup--anchor markup--p-anchor\\" target=\\"_blank\\"><em class=\\"markup--em markup--p-em\\">Previously</em></a><em class=\\"markup--em markup--p-em\\"> we introduced the basics of using </em><a href=\\"https://jestjs.io/docs/en/getting-started\\" data-href=\\"https://jestjs.io/docs/en/getting-started\\" class=\\"markup--anchor markup--p-anchor\\" rel=\\"noopener nofollow\\" target=\\"_blank\\"><em class=\\"markup--em markup--p-em\\">Jest</em></a><em class=\\"markup--em markup--p-em\\"> as a test runner, assertion library, and mocking library. If you have not used Jest before I recommend reading through the linked post first.</em></p><p name=\\"066f\\" id=\\"066f\\" class=\\"graf graf--p graf-after--p\\">In order for a unit test to be worthwhile it must be reliable; it should not be reliant on hopeful consistency of external dependencies in order to pass. External dependencies can include any <a href=\\"https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/\\" data-href=\\"https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/\\" class=\\"markup--anchor markup--p-anchor\\" rel=\\"nofollow noopener\\" target=\\"_blank\\">modules/packages</a> external to the test subject, requests to a database, or requests to an API. If running the same test several times without change can result in different outcomes, the test loses value. If trust in the test is lost, less focus is inevitably paid to test failures.</p><p name=\\"2e8f\\" id=\\"2e8f\\" class=\\"graf graf--p graf-after--p\\">Unit tests aim to test small units of code in isolation, testing how each behaves with specific input. The responsibility of testing how different parts of a system work together lies with integration tests.</p>",
+        "title": "Mocking ES and CommonJS modules with jest.mock()",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <SinglePost
+          author={
+            Object {
+              "desc": "Maker of things",
+              "id": 1,
+              "name": "Jake Prins",
+              "photo": "https://cdn-images-1.medium.com/fit/c/100/100/1*_SiS1xvFOqiK6TnkiGcZ2A.jpeg",
+            }
+          }
+          fullContent="<p name=\\"444d\\" id=\\"444d\\" class=\\"graf graf--p graf-after--figure\\"><a href=\\"https://medium.com/codeclan/testing-react-with-jest-and-enzyme-20505fec4675\\" data-href=\\"https://medium.com/codeclan/testing-react-with-jest-and-enzyme-20505fec4675\\" class=\\"markup--anchor markup--p-anchor\\" target=\\"_blank\\"><em class=\\"markup--em markup--p-em\\">Previously</em></a><em class=\\"markup--em markup--p-em\\"> we introduced the basics of using </em><a href=\\"https://jestjs.io/docs/en/getting-started\\" data-href=\\"https://jestjs.io/docs/en/getting-started\\" class=\\"markup--anchor markup--p-anchor\\" rel=\\"noopener nofollow\\" target=\\"_blank\\"><em class=\\"markup--em markup--p-em\\">Jest</em></a><em class=\\"markup--em markup--p-em\\"> as a test runner, assertion library, and mocking library. If you have not used Jest before I recommend reading through the linked post first.</em></p><p name=\\"066f\\" id=\\"066f\\" class=\\"graf graf--p graf-after--p\\">In order for a unit test to be worthwhile it must be reliable; it should not be reliant on hopeful consistency of external dependencies in order to pass. External dependencies can include any <a href=\\"https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/\\" data-href=\\"https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/\\" class=\\"markup--anchor markup--p-anchor\\" rel=\\"nofollow noopener\\" target=\\"_blank\\">modules/packages</a> external to the test subject, requests to a database, or requests to an API. If running the same test several times without change can result in different outcomes, the test loses value. If trust in the test is lost, less focus is inevitably paid to test failures.</p><p name=\\"2e8f\\" id=\\"2e8f\\" class=\\"graf graf--p graf-after--p\\">Unit tests aim to test small units of code in isolation, testing how each behaves with specific input. The responsibility of testing how different parts of a system work together lies with integration tests.</p>"
+          title="Mocking ES and CommonJS modules with jest.mock()"
+        />,
+        "history": Object {
+          "action": "POP",
+          "block": [Function],
+          "canGo": [Function],
+          "createHref": [Function],
+          "entries": Array [
+            Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+          ],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "index": 0,
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        },
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "author": Object {
+            "desc": "Maker of things",
+            "id": 1,
+            "name": "Jake Prins",
+            "photo": "https://cdn-images-1.medium.com/fit/c/100/100/1*_SiS1xvFOqiK6TnkiGcZ2A.jpeg",
+          },
+          "fullContent": "<p name=\\"444d\\" id=\\"444d\\" class=\\"graf graf--p graf-after--figure\\"><a href=\\"https://medium.com/codeclan/testing-react-with-jest-and-enzyme-20505fec4675\\" data-href=\\"https://medium.com/codeclan/testing-react-with-jest-and-enzyme-20505fec4675\\" class=\\"markup--anchor markup--p-anchor\\" target=\\"_blank\\"><em class=\\"markup--em markup--p-em\\">Previously</em></a><em class=\\"markup--em markup--p-em\\"> we introduced the basics of using </em><a href=\\"https://jestjs.io/docs/en/getting-started\\" data-href=\\"https://jestjs.io/docs/en/getting-started\\" class=\\"markup--anchor markup--p-anchor\\" rel=\\"noopener nofollow\\" target=\\"_blank\\"><em class=\\"markup--em markup--p-em\\">Jest</em></a><em class=\\"markup--em markup--p-em\\"> as a test runner, assertion library, and mocking library. If you have not used Jest before I recommend reading through the linked post first.</em></p><p name=\\"066f\\" id=\\"066f\\" class=\\"graf graf--p graf-after--p\\">In order for a unit test to be worthwhile it must be reliable; it should not be reliant on hopeful consistency of external dependencies in order to pass. External dependencies can include any <a href=\\"https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/\\" data-href=\\"https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/\\" class=\\"markup--anchor markup--p-anchor\\" rel=\\"nofollow noopener\\" target=\\"_blank\\">modules/packages</a> external to the test subject, requests to a database, or requests to an API. If running the same test several times without change can result in different outcomes, the test loses value. If trust in the test is lost, less focus is inevitably paid to test failures.</p><p name=\\"2e8f\\" id=\\"2e8f\\" class=\\"graf graf--p graf-after--p\\">Unit tests aim to test small units of code in isolation, testing how each behaves with specific input. The responsibility of testing how different parts of a system work together lies with integration tests.</p>",
+          "title": "Mocking ES and CommonJS modules with jest.mock()",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
