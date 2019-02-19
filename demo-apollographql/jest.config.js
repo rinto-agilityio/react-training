@@ -11,7 +11,7 @@ module.exports = {
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
   setupFiles: [
-    '<rootDir>/src/setupTests.js',
+    '<rootDir>/src/test/setupTests.js',
     '<rootDir>/src/test/throw-on-prop-type-error.js',
   ],
 
