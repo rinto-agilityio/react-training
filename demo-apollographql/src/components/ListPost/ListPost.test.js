@@ -1,6 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
-import renderer from 'react-test-renderer'
+import { shallow, mount } from 'enzyme'
 import { MemoryRouter } from 'react-router-dom'
 
 // Components
@@ -12,22 +11,52 @@ import posts from './__mocks/db'
 
 describe('Components', () => {
   describe('<ListPost />', () => {
-    it('Snapshot renders correctly', () => {
-      const tree = renderer
-        .create(
-          <MemoryRouter>
-            <ListPost posts={posts} />
-          </MemoryRouter>
-        )
-        .toJSON()
+    const props = {
+      posts: posts
+    }
 
-        expect(tree).toMatchSnapshot()
+    // Testing snapshot
+    it('Render correctly ListPost component', () => {
+      const ListPostComponent = shallow(
+        <MemoryRouter keyLength={0}>
+          <ListPost {...props} />
+        </MemoryRouter>
+      )
+
+      expect(ListPostComponent).toMatchSnapshot()
     })
 
-    it(`Render ${posts.length} child components`, () => {
-      const wrapper = shallow(<ListPost posts={posts} />)
+    // Testing props
+    it(`Render ${props.posts.length} child components`, () => {
+      const ListPostComponent = mount(
+        <MemoryRouter keyLength={0}>
+          <ListPost {...props} />
+        </MemoryRouter>
+      )
 
-      expect(wrapper.find(ItemWrapper).length).toEqual(posts.length)
+      expect(ListPostComponent.find(ItemWrapper).length).toEqual(props.posts.length)
+    })
+
+    // Testing props
+    it('Render 0 child components if props is empty', () => {
+      const ListPostComponent = mount(
+        <MemoryRouter keyLength={0}>
+          <ListPost />
+        </MemoryRouter>
+      )
+
+      expect(ListPostComponent.find(ItemWrapper).length).toEqual(0)
+    })
+
+    // Testing props type
+    it('Check prop type', () => {
+      const ListPostComponent = mount(
+        <MemoryRouter keyLength={0}>
+          <ListPost {...props} />
+        </MemoryRouter>
+      )
+
+      expect(ListPostComponent.find(ListPost).props().posts).toBeArray()
     })
   })
 })
