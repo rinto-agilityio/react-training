@@ -8,7 +8,7 @@ import ListPost from '../../../../components/ListPost'
 
 const LatestPosts = ({ title, posts }) => (
   <Grid item xs={12} md={9}>
-    <Typography component="h2" variant="h3">
+    <Typography component="h3" variant="h3">
       {title}
     </Typography>
     <ListPost posts={posts} />
