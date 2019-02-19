@@ -17,6 +17,10 @@ const ListPost = ({ posts }) => (
   </>
 )
 
+ListPost.defaultProps = {
+  posts: []
+}
+
 ListPost.propTypes = {
   posts: PropTypes.array.isRequired,
 }

@@ -40,8 +40,8 @@ ListAuthor.defaultProps = {
 }
 
 ListAuthor.propTypes = {
-  title: PropTypes.string,
-  authors: PropTypes.array
+  title: PropTypes.string.isRequired,
+  authors: PropTypes.array.isRequired
 }
 
 export default ListAuthor
