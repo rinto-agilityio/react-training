@@ -1,13 +1,10 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import renderer from 'react-test-renderer'
 import { MemoryRouter } from 'react-router-dom'
 
 // Components
 import ListAuthor from './index'
-import { StyledCard } from './ListAuthor.style'
 import ListItem from '@material-ui/core/ListItem'
-import Typography from '@material-ui/core/Typography'
 
 // Data mock
 import authors from './__mocks/db'
@@ -21,6 +18,7 @@ describe('Components', () => {
       authors: authors
     }
 
+    // Testing snapshot
     it('Render correctly ListAuthor component', () => {
       const ListAuthorComponent = shallow(
         <MemoryRouter keyLength={0}>
@@ -31,22 +29,49 @@ describe('Components', () => {
       expect(ListAuthorComponent).toMatchSnapshot()
     })
 
-    // it('Render correct title', () => {
-    //   const ListAuthorComponent = mount(
-    //     <MemoryRouter>
-    //       <ListAuthor {...props} />
-    //     </MemoryRouter>
-    //   )
+    // Testing props
+    it('Render correct title', () => {
+      const ListAuthorComponent = mount(
+        <MemoryRouter>
+          <ListAuthor {...props} />
+        </MemoryRouter>
+      )
 
-    //   expect(wrapper.find('h3').render().text()).toEqual(props.title)
-    // })
+      expect(ListAuthorComponent.find('h3').render().text()).toEqual(props.title)
+    })
 
-    // it('Render correct child elements: Title and List', () => {
-    //   expect(wrapper.find(StyledCard).children().length).toEqual(2)
-    // })
+    // Testing props
+    it('Render default title if prop is empty', () => {
+      const ListAuthorComponent = mount(
+        <MemoryRouter>
+          <ListAuthor />
+        </MemoryRouter>
+      )
 
-    // it(`Render correct items length: ${authors.length}`, () => {
-    //   expect(wrapper.find(ListItem).length).toEqual(authors.length)
-    // })
+      expect(ListAuthorComponent.find('h3').render().text().length).toBeGreaterThan(0)
+    })
+
+    // Testing props
+    it(`Render correct items length: ${authors.length}`, () => {
+      const ListAuthorComponent = mount(
+        <MemoryRouter>
+          <ListAuthor {...props} />
+        </MemoryRouter>
+      )
+
+      expect(ListAuthorComponent.find(ListItem).length).toEqual(props.authors.length)
+    })
+
+    // Testing prop type
+    it('Check prop types', () => {
+      const ListAuthorComponent = mount(
+        <MemoryRouter>
+          <ListAuthor {...props} />
+        </MemoryRouter>
+      )
+
+      expect(ListAuthorComponent.find(ListAuthor).props().title).toBeString()
+      expect(ListAuthorComponent.find(ListAuthor).props().authors).toBeArray()
+    })
   })
 })
