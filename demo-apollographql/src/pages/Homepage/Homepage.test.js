@@ -9,6 +9,8 @@ import { QUERY_LATEST_POST_AND_TOP_AUTHORS } from './graphql'
 // Components
 import Loading from '../../components/Loading'
 import Homepage from './index'
+import LatestPosts from './components/LatestPosts'
+import TopAuthors from './components/TopAuthors'
 
 // Mocking data
 import * as MockData from '../../../server/db'
@@ -59,8 +61,7 @@ describe('Screen', () => {
       )
     })
 
-    it('Render correct title element tag for Latest Post', async () => {
-      const postTitleElementTag = 'h3'
+    it('Render correctly 2 sections for LatestPosts and TopAuthors', async () => {
 
       const wrapper = mount(
         <MemoryRouter>
@@ -74,8 +75,8 @@ describe('Screen', () => {
 
       wrapper.update()
 
-      expect(wrapper.find(postTitleElementTag).length).toEqual(1)
-
+      expect(wrapper.find(LatestPosts).length).toEqual(1)
+      expect(wrapper.find(TopAuthors).length).toEqual(1)
     })
 
     it('Should show error on UI', async () => {
