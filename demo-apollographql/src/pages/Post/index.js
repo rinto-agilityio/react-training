@@ -8,9 +8,9 @@ import { QUERY_POST } from './graphql'
 // Components
 import Grid from '@material-ui/core/Grid'
 import Loading from '../../components/Loading'
-import Post from './components/Post'
+import SinglePost from './components/SinglePost'
 
-const SinglePost = ({ match }) => {
+const Post = ({ match }) => {
   const { slug } = match.params
 
   return (
@@ -23,7 +23,7 @@ const SinglePost = ({ match }) => {
 
         return (
           <Grid item xs={12}>
-            <Post
+            <SinglePost
               title={title}
               fullContent={fullContent}
               author={author}
@@ -35,8 +35,12 @@ const SinglePost = ({ match }) => {
   )
 }
 
-SinglePost.propTypes = {
+Post.defaultProps = {
+  match: {}
+}
+
+Post.propTypes = {
   match: PropTypes.object.isRequired
 }
 
-export default SinglePost
+export default Post

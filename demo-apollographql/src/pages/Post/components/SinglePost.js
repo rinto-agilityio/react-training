@@ -15,7 +15,7 @@ const styles = ({
   }
 })
 
-const Post = ({ title, fullContent, author, classes }) => (
+const SinglePost = ({ title, fullContent, author, classes }) => (
   <Paper className={classes.paper}>
     <Typography component="h1" variant="h3">{title}</Typography>
     <div dangerouslySetInnerHTML={{__html: fullContent}} />
@@ -30,4 +30,4 @@ const Post = ({ title, fullContent, author, classes }) => (
   </Paper>
 )
 
-export default withStyles(styles)(Post)
+export default withStyles(styles)(SinglePost)
