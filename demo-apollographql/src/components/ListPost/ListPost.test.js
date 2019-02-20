@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme'
 import { MemoryRouter } from 'react-router-dom'
 
 // Components
-import ListPost from './index'
+import ListPost from './ListPost'
 import { ItemWrapper } from './ListPost.style'
 
 // Mock data

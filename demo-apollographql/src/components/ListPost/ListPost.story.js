@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { MemoryRouter } from 'react-router-dom'
 
 // Components
-import ListPost from './index'
+import ListPost from './ListPost'
 
 // Mock data
 import posts from './__mocks/db'
