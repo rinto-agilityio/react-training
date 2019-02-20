@@ -55,4 +55,4 @@ yarn test -- --coverage
 [x] Unit test for props
 [x] Unit test with snapshot
 [x] Answer question: When to use `mount` or `shallow` with Enzyme
-[ ] Review naming convention
+[x] Review naming convention
