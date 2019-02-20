@@ -6,8 +6,7 @@ module.exports = {
     "<rootDir>/src/**/*.{js,jsx}",
     "!<rootDir>/src/index.js", // CRA index
     "!<rootDir>/src/{apollo,theme,stories,test}/**.*", // Configuration
-    "!<rootDir>/src/**/graphql.js",
-    "!<rootDir>/src/**/*.{style,story}.{js,jsx}"
+    "!<rootDir>/src/**/*.{graphql,style,story}.{js,jsx}"
   ],
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
