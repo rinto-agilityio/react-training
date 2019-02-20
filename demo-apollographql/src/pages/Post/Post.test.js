@@ -9,7 +9,7 @@ import SinglePost from './components/SinglePost'
 
 // Mocking data
 import * as MockData from '../../../server/db'
-import { QUERY_POST } from './graphql'
+import { QUERY_POST } from './Post.graphql'
 
 const mockRequest = {
   query: QUERY_POST,

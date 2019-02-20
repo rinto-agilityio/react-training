@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme'
 import { MemoryRouter } from 'react-router-dom'
 
 // Components
-import SinglePost from './index'
+import SinglePost from './SinglePost'
 
 // Mock data
 import { posts, authors } from '../../../../../server/db'
