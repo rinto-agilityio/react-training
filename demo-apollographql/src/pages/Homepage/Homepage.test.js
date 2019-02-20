@@ -8,7 +8,7 @@ import { QUERY_LATEST_POST_AND_TOP_AUTHORS } from './Homepage.graphql'
 
 // Components
 import Loading from '../../components/Loading'
-import Homepage from './index'
+import Homepage from './Homepage'
 import LatestPosts from './components/LatestPosts'
 import TopAuthors from './components/TopAuthors'
 

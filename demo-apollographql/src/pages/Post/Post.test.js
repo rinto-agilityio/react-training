@@ -4,7 +4,7 @@ import { mount } from 'enzyme'
 
 // Components
 import Loading from '../../components/Loading'
-import Post from './index'
+import Post from './Post'
 import SinglePost from './components/SinglePost'
 
 // Mocking data
