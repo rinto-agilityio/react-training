@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
 
 // Components
-import Loading from './index'
+import Loading from './Loading'
 
 describe('Components', () => {
   describe('<Loading />', () => {
