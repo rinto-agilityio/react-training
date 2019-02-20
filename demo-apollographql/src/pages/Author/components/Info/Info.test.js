@@ -1,12 +1,11 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-// import { MemoryRouter } from 'react-router-dom'
 
 // Data mock
 import { authors } from '../../../../../server/db'
 
 // Components
-import Info from './index'
+import Info from './Info'
 
 describe('Component', () => {
   describe('Info', () => {

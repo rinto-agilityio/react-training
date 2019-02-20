@@ -3,10 +3,10 @@ import { MockedProvider } from 'react-apollo/test-utils'
 import { mount } from 'enzyme'
 
 // GraphQL Query
-import { QUERY_AUTHOR } from './graphql'
+import { QUERY_AUTHOR } from './Author.graphql'
 
 // Components
-import Author from './index'
+import Author from './Author'
 import Loading from '../../components/Loading'
 
 // Mocking data response from for GraphQL server
