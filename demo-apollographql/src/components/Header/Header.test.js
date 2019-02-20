@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom'
 import renderer from 'react-test-renderer'
 
 // Components
-import Header from './index'
+import Header from './Header'
 import { StyledLink } from './Header.style'
 
 const appTitle = 'GraphQL & React'
