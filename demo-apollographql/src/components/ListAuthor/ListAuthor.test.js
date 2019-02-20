@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme'
 import { MemoryRouter } from 'react-router-dom'
 
 // Components
-import ListAuthor from './index'
+import ListAuthor from './ListAuthor'
 import ListItem from '@material-ui/core/ListItem'
 
 // Data mock
