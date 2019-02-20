@@ -6,9 +6,8 @@ import { MemoryRouter } from 'react-router-dom'
 import { posts } from '../../../../../server/db'
 
 // Components
-import ListItem from '@material-ui/core/ListItem'
 import List from '@material-ui/core/List'
-import TopAuthors from './index'
+import TopAuthors from './TopAuthors'
 
 describe('Component', () => {
   describe('TopAuthors', () => {

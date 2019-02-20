@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom'
 import { posts } from '../../../../../server/db'
 
 // Components
-import LatestPosts from './index'
+import LatestPosts from './LatestPosts'
 
 describe('Component', () => {
   describe('LatestPosts', () => {

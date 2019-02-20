@@ -4,7 +4,7 @@ import { mount } from 'enzyme'
 import { MemoryRouter } from 'react-router-dom'
 
 // GraphQL
-import { QUERY_LATEST_POST_AND_TOP_AUTHORS } from './graphql'
+import { QUERY_LATEST_POST_AND_TOP_AUTHORS } from './Homepage.graphql'
 
 // Components
 import Loading from '../../components/Loading'
