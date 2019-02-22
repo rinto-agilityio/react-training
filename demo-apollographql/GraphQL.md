@@ -147,6 +147,9 @@ Learning [Apollo GraphQL](https://www.apollographql.com/)
       - Smaller payloads: Because combining and filter data fetching
       - Avoid round trips: Only do single reqeust with nested data instead of call multiple RESTful API endpoints
 
+- [x] Learning Apollo Server then create simple GraphQL server with data models
+    - Create simple GraphQL server follow [this document](https://www.apollographql.com/docs/apollo-server/essentials/schema.html)
+
 Relative articles:
     - [Reducing our Redux code with React Apollo](https://blog.apollographql.com/reducing-our-redux-code-with-react-apollo-5091b9de9c2a)
     - [Local state management](https://www.apollographql.com/docs/react/essentials/local-state.html)
@@ -155,16 +158,119 @@ Relative articles:
         - Resolvers
     - [GraphQL Concepts Visualized](https://blog.apollographql.com/the-concepts-of-graphql-bc68bd819be3)
 
-- [ ] Learning Apollo Server then create simple GraphQL server with data models
-- [ ] Learning Apollo Client to apply to React app
+
+## Day 4:
+- Learning [Apollo Client](https://www.apollographql.com/docs/react/)
+    - Introduction
+    - Why Apollo Clients?
+      - Data fetching:
+        -  All of the logic for retrieving your data, tracking loading and error states, and updating your UI is encapsulated in a single `<Query>` component
+      - Zero-config caching
+      - Combine local & remote data:
+        - Via `apollo-link-state`
+        - Syntax on client query is `@client` at the field want to combine
+      - Vibrant ecosystem
+
+- Apollo Client for React:
+    - Queries:
+      - Fetching data
+      - Polling and refetching: To get fresh data from server (sometime data from cache is out of sync)
+      - API & props:
+        - query: A GraphQL query document
+        - pollInterval: Interval component poll data
+        - loading: Loading status
+        - networkStatus: Detail state of network request
+        - refetch: Refetching data from Query
+        - client: ApolloClient instance. Required
+      - Do example `<Query>` component with CRA follow [Getting Startted](https://www.apollographql.com/docs/react/essentials/get-started.html)
+
+    - Mutations:
+      - Updating cache:
+        - Adding items and deleting to a list, need to update cache for Query
+        - Update cache via `cache.writeQuery`
+        - Don't need to update for single item
+      - Loading and error state
+      - API & props:
+        - mutation: A GraphQL mutation document
+        - update: Update cache after mutation
+        - client: Use to update cache: `client.writeData` and `client.readQuery`
+
+    - Local state management:
+      - Updating local data:
+        - Direct writes: `client.writeData`
+        - Resolvers
+      - Querying local data
+        - Similar to querying GraphQL server, only different is add a `@client` directive on a local fields
+
+    - Error Handling:
+      - Error policies:
+        - By default, any GraphQL Errors as network errors and end the request chain, don't save any data to the cache. Also render UI with `error` prop
+        - Other options for errorPolicy are: `none`, `ignore`, `all`
+
+
+## Day 5: (Doing practice)
+- Read articles:
+    - Why GraphQL: Advantages, Disadvantages & Alternatives [Part1](https://www.robinwieruch.de/why-graphql-advantages-disadvantages-alternatives/) and [Part2](https://www.robinwieruch.de/why-apollo-advantages-disadvantages-alternatives/)
+    - [Confused when Apollo abandoned Redux](https://github.com/apollographql/apollo-client/issues/2593)
+    - [apollo-link-state](https://www.apollographql.com/docs/link/links/state.html)
+      - Store for local data
+    - [The future of state management](https://blog.apollographql.com/the-future-of-state-management-dd410864cae2)
+
+## Day 6: (Doing practice)
+- Read articles:
+    - [Life Without Redux: Using Apollo for Local State](https://medium.com/the-notice-board/life-without-redux-using-apollo-for-local-state-d32b020ff4d3)
+    - [Local state management](https://www.apollographql.com/docs/react/essentials/local-state.html)
+
+## Day 7: (Doing practice) Implement app structure
+- Read aritcles:
+    - [Use a render prop](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce)
+    - [Tutorial: Render Props in React Apollo 2.1](https://www.prisma.io/blog/tutorial-render-props-in-react-apollo-2-1-199e9e2bd01e)
+    - [The Problem with HTML in React and GraphQL](https://medium.com/@wonderboymusic/the-problem-with-html-in-react-and-graphql-6af9789352f6)
+    - [Boilerplate for a Basic Fullstack GraphQL App with React](https://github.com/nikolasburk/react-apollo-tutorial)
+    - [Organization structure for fragment composition in large react-apollo apps](https://stackoverflow.com/questions/48017187/organization-structure-for-fragment-composition-in-large-react-apollo-apps)
+
 
 ## Open questions:
 
 1. What's benefits of GraphQL?
+```
+  - Resolved overfetching
+  - Optimize re-structure data shape on client-side
+  - Wrapping data structure inside component
+```
+
 2. App size with GraphQL?
+```
+  - Good for large scale app
+```
+
 3. Front-end design data structure want to get:
-    - Good/bad points?
-    - Conflict team coding with Back-end?
-3. Is there any case duplicate container?
-4. How Apollo manage data, source truth?
-5. Can Apollo integration with Redux? Or other lib?
+    a, Good points:
+    ```
+      - Don't need to re-structure data structure return from api.
+      - Reduce payload for unnecessary fields
+      - Don't need smart component (Container in Redux pattern)
+    ```
+    b, Bad points:
+    ```
+      - Parent component don't know Childrent component can request data from api or not, or maybe data fetching duplicate with similar component
+    ```
+    c, Conflict team coding with Back-end?
+    ```
+      Front-end maybe request fields didn't support by GraphQL API
+    ```
+
+4. Is there any case duplicate container?
+```
+I don't think duplicate container.
+```
+
+5. How Apollo manage data, source truth?
+```
+Single source of truth for **all data** in our client application
+```
+
+6. Can Apollo integration with Redux? Or other lib?
+```
+Yes, it can, but don't need to use Redux or MobX. Apollo Client support to manage remote and local data from GraphQL server (with apollo-link-state)
+```

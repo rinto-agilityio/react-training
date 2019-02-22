@@ -1,0 +1,58 @@
+{
+  "name": "demo-apollographql",
+  "version": "1.0.0",
+  "description": "Demo ApolloGraphQL with React",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest --watch",
+    "test-coverage": "jest --coverage --colors",
+    "test-update-snapshot": "jest --updateSnapshot",
+    "eject": "react-scripts eject",
+    "server": "node ./server/index.js",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^3.9.2",
+    "apollo-boost": "^0.1.27",
+    "apollo-cache-inmemory": "^1.4.2",
+    "apollo-link": "^1.2.6",
+    "apollo-link-state": "^0.4.2",
+    "apollo-server": "^2.3.1",
+    "graphql": "^14.1.1",
+    "lodash": "^4.17.11",
+    "prop-types": "^15.6.2",
+    "react": "^16.8.1",
+    "react-apollo": "^2.4.0",
+    "react-dom": "^16.8.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.3",
+    "styled-components": "^4.1.3"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@storybook/addon-actions": "^4.1.11",
+    "@storybook/addon-links": "^4.1.11",
+    "@storybook/addons": "^4.1.11",
+    "@storybook/react": "^4.1.11",
+    "babel-loader": "^8.0.4",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "jest-extended": "^0.11.1",
+    "jest-prop-type-error": "^1.1.0",
+    "node-fetch": "^2.3.0",
+    "react-test-renderer": "^16.8.2",
+    "sinon": "^7.2.3"
+  }
+}
