@@ -1,0 +1,41 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true,
+      "node": true,
+      "jest": true
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "sourceType": "module"
+    },
+    "plugins": ["react", "babel-plugin-styled-components"],
+    "extends": ["eslint:recommended", "plugin:react/all"],
+    "rules": {
+      "react/jsx-uses-react": "error",
+      "react/jsx-uses-vars": "error",
+      "react/jsx-indent-props": ["error", 2],
+      "react/jsx-indent": ["error", 2],
+      "react/jsx-max-props-per-line": [0],
+      "react/jsx-one-expression-per-line": 0,
+      "react/jsx-max-depth": [0],
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "react/no-set-state": 0,
+      "react/jsx-no-literals": 0,
+      "react/forbid-prop-types": 0,
+      "react/jsx-no-bind": [
+        1,
+        {
+          "ignoreRefs": true,
+          "allowArrowFunctions": true,
+          "allowFunctions": true,
+          "allowBind": true
+        }
+      ]
+    }
+  }
+  
