@@ -1,6 +1,6 @@
 //import lib
 import React from 'react';
-import {ThemeContext, themes} from '../contexts/ThemeContext';
+import { Provider, themes } from '../contexts/ContextWrapper';
 
 //import components
 import ThemedButton from './ThemedButton'
@@ -14,6 +14,7 @@ class Toolbar extends React.Component {
     };
 
   }
+
   toggleTheme = () => {
     this.setState(state => ({
       theme:
@@ -28,9 +29,9 @@ class Toolbar extends React.Component {
     // pass the theme down explicitly anymore.
     return (
       <div>
-        <ThemeContext.Provider value={this.state}>
+        <Provider value={this.state}>
           <ThemedButton />
-        </ThemeContext.Provider>
+        </Provider>
       </div>
     );
   }
