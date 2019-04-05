@@ -20,12 +20,12 @@ export const { Provider, Consumer } = React.createContext({
 
 export function ContextWrapper(WrappedComponent) {
   return function Wrapper(props) {
-      return(
-        <Consumer>
-          { value => (
-            <WrappedComponent {...props} {...value} />
-          )}
-        </Consumer>
-      )
-    }
+    return(
+      <Consumer>
+        { value => (
+          <WrappedComponent {...props} {...value} />
+        )}
+      </Consumer>
+    )
+  }
 }
