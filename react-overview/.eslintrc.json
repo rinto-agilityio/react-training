@@ -13,7 +13,7 @@
       },
       "sourceType": "module"
     },
-    "plugins": ["react", "babel-plugin-styled-components"],
+    "plugins": ["react", "babel-plugin-styled-components", "react-hooks"],
     "extends": ["eslint:recommended", "plugin:react/all"],
     "rules": {
       "react/jsx-uses-react": "error",
@@ -35,7 +35,8 @@
           "allowFunctions": true,
           "allowBind": true
         }
-      ]
+      ],
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn"
     }
   }
-  

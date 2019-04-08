@@ -46,7 +46,7 @@ const FormUpdateAccount = () => {
 
   return (
     <div className='wrapper-profile-form'>
-      <form>
+      <form className='form-wrap'>
         <label>FORM UPDATE PROFILE</label>
         <div className='input-group'>
           <label htmlFor="username" className='label'>New Username</label>

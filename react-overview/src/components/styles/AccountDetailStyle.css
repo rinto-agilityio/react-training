@@ -29,3 +29,9 @@
   min-width: 300px;
   height: 30px;
 }
+
+.form-wrap {
+  border: 1px solid;
+  padding: 38px;
+  margin-top: 28px;
+}

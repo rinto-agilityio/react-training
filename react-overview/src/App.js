@@ -8,6 +8,7 @@ import './App.css';
 // import Toolbar from './components/Toolbar'
 import NavigationBar from './components/NavigationBar'
 import AccountProfile from './components/AccountProfile/index'
+import Home from './components/homepage/Home'
 
 //import providers
 import AccountProvider from './providers/AccountProvider'
@@ -24,7 +25,7 @@ const App = () => {
               <Route
                 exact
                 path='/'
-                render={() => <div>Home Page</div>}
+                render={Home}
               />
               <Route
                 exact
