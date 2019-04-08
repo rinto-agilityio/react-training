@@ -1,46 +1,82 @@
-import  React, { useState } from 'react'
+import  React, { useState, useContext } from 'react'
 
-import { AccountContextWrapper } from '../../contexts/AccountContextWrapper'
+//contexts
+import AccountContext from '../../contexts/AccountContext'
 
-const FormUpdateAccount = context => {
+//Types
+import
+  { TYPES }
+from '../../constants/AcctionTypes'
 
-  const [ account, setAccount ] = useState(context)
+//styles
+import '../styles/AccountDetailStyle.css'
 
-  const handleOnChange = ({ target: { value, name }}) => {
-    setAccount({
-     [name]: value
+const FormUpdateAccount = () => {
+
+  // Use the values of contexts
+  const accountContext = useContext(AccountContext)
+
+  const [account, setAccount ] = useState(accountContext.state);
+
+  /**
+   * Handle onChange
+   * @param {event}
+   * Update state count when user onChange
+   */
+  const handleOnChange = (e) => {
+
+    const { name, value } = e.target;
+
+    setAccount(prevState => ({
+      ...prevState,
+      [name]: value
+    }))
+  }
+
+  /**
+   * dispath action update infor profile user when click save button
+   */
+  const handleSubmitSave = (e) => {
+    e.preventDefault()
+    accountContext.dispatch({
+      type: TYPES.UPDATE_PROFILE,
+      data: account
     })
   }
 
   return (
-    <div>
+    <div className='wrapper-profile-form'>
       <form>
-        <></>
-        <label htmlFor="username">New Username</label>
-        <div>
-          <input
-            type="text"
-            name="username"
-            value={context.username}
-            onChange={handleOnChange}
-          />
+        <label>FORM UPDATE PROFILE</label>
+        <div className='input-group'>
+          <label htmlFor="username" className='label'>New Username</label>
+          <div className='field-name'>
+            <input
+              type="text"
+              name="username"
+              value={account.username}
+              onChange={handleOnChange}
+            />
+          </div>
         </div>
-        <label htmlFor="membershipLevel">Membership Level</label>
-        <div>
-          <select
-            value={context.membershipLevel}
-            name="membershipLevel"
-            onChange={handleOnChange}
-          >
-            <option value='Bronze'>Bronze</option>
-            <option value='Silver'>Silver</option>
-            <option value='Gold'>Gold</option>
-          </select>
+        <div className='input-group'>
+          <label htmlFor="membershipLevel" className='label'>Membership Level</label>
+          <div className='field-name'>
+            <select
+              value={account.membershipLevel}
+              name="membershipLevel"
+              onChange={handleOnChange}
+            >
+              <option value='Bronze'>Bronze</option>
+              <option value='Silver'>Silver</option>
+              <option value='Gold'>Gold</option>
+            </select>
+          </div>
         </div>
-        <button>Save</button>
+        <button onClick={handleSubmitSave}>Save</button>
       </form>
     </div>
   )
 }
 
-export default AccountContextWrapper(FormUpdateAccount)
+export default FormUpdateAccount

@@ -2,12 +2,12 @@ import React from 'react'
 
 //components
 import AccountDetails from './AccountDetail'
-import AccountUpdate from './FormUpdateAccount'
+import FormUpdateAccount from './FormUpdateAccount'
 
 const AccountProfile = () => (
   <>
     <AccountDetails />
-    <AccountUpdate />
+    <FormUpdateAccount />
   </>
 )
 

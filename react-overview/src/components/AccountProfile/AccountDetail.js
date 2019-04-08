@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-import { AccountContextWrapper } from '../../contexts/AccountContextWrapper'
+//contexts
+import AccountContext from '../../contexts/AccountContext'
 
-const AccountDetails = account => (
-  <div>
-    <p>Username: {account.username}</p>
-    <p>Date Joined: {account.dateJoined}</p>
-    <p>Membership Level: {account.membershipLevel}</p>
-  </div>
-)
+//style
+import '../styles/AccountDetailStyle.css'
+const AccountDetails = () => {
 
-export default AccountContextWrapper(AccountDetails)
+  // Use the values of contexts
+  const accountContext = useContext(AccountContext)
+
+  const { state } = accountContext
+
+  return (
+    <div className='account-detail'>
+      <p>Username: {state.account.username}</p>
+      <p>Date Joined: {state.account.dateJoined}</p>
+      <p>Membership Level: {state.account.membershipLevel}</p>
+    </div>
+  )
+}
+
+export default AccountDetails

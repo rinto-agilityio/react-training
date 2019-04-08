@@ -1,19 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-
-//import context
-import { AccountContextWrapper } from '../contexts/AccountContextWrapper'
+import { NavLink } from 'react-router-dom'
 
 //styles
 import './styles/NavigationBarStyle.css'
 
-const NavigationBar = account => {
+const NavigationBar = () => {
+
   return (
     <div className='navigation-wrap'>
-      <Link to="/">Home</Link>
-      <Link to="/account/profile">{account.username}</Link>
+      <NavLink to="/" exact activeClassName='active'>Home</NavLink>
+      <NavLink to="/account/profile" activeClassName='active'>PROFILE</NavLink>
     </div>
   )
 }
 
-export default AccountContextWrapper(NavigationBar)
+export default NavigationBar
