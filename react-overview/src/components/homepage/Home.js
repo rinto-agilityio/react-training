@@ -3,12 +3,15 @@ import React from 'react'
 //components
 import Product from '../product/Product'
 
+//import providers
+import ProductProvider from '../../providers/ProductProvider'
+
 const Home = () => {
 
   return (
-    <div className='account-detail'>
+    <ProductProvider>
      <Product />
-    </div>
+    </ProductProvider>
   )
 }
 
