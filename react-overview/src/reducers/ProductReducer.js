@@ -3,11 +3,14 @@ import
 from '../constants/AcctionTypes'
 
 export const ProductReducer = (state, action) => {
+  console.log('action', action);
+  console.log('state', state);
 
   switch(action.type) {
-    case TYPES.GET_PRODUCT_SUCCESS:
+    case TYPES.GET_PRODUCTS_SUCCESS:
       return state.merge({
-        ...state
+        ...state,
+        products: action.data
       });
 
     default:

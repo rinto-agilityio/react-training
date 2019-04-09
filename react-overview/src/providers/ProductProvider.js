@@ -13,11 +13,13 @@ let initState = Immutable({
 
 const ProductProvider = ({children}) => {
   let [state, dispatch] = useReducer(ProductReducer, initState);
+  console.log('state-------', state);
 
   const ProductContextValues = {
     state,
     dispatch
   }
+  console.log('ProductContextValues', ProductContextValues);
 
   return <ProductContext.Provider
     value={ProductContextValues}
