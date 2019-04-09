@@ -11,11 +11,24 @@
     "react-router-dom": "^4.4.0-beta.8",
     "react-scripts": "2.1.8"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/components/**/*.js",
+      "src/pages/**/*.js",
+      "!<rootDir>/src/components/**",
+      "!<rootDir>/src/index.js",
+      "!<rootDir>/src/stories/**",
+      "!<rootDir>/src/**/index.js",
+      "!<rootDir>/src/App.js",
+      "!<rootDir>/src/serviceWorker.js"
+    ]
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test-coverage": "yarn test --coverage"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,11 +40,21 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
     "apisauce": "^1.0.2",
-    "dotenv": "^7.0.0",
-    "prop-types": "^15.7.2",
-    "seamless-immutable": "^7.1.4",
     "babel-cli": "^6.26.0",
-    "babel-preset-flow": "^6.23.0"
+    "babel-preset-flow": "^6.23.0",
+    "dotenv": "^7.0.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "eslint": "5.12.0",
+    "eslint-plugin-react": "^7.12.4",
+    "flow-bin": "^0.95.1",
+    "jest": "23.6.0",
+    "prop-types": "^15.7.2",
+    "react-test-renderer": "^16.8.6",
+    "seamless-immutable": "^7.1.4"
   }
 }
