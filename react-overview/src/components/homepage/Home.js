@@ -1,5 +1,5 @@
 import React from 'react'
-
+import '../../setupTests'
 //components
 import Product from '../product/Product'
 
@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <ProductProvider>
-     <Product />
+      <Product />
     </ProductProvider>
   )
 }
