@@ -53,8 +53,10 @@
     "eslint-plugin-react": "^7.12.4",
     "flow-bin": "^0.95.1",
     "jest": "23.6.0",
+    "jest-enzyme": "^7.0.2",
     "prop-types": "^15.7.2",
     "react-test-renderer": "^16.8.6",
-    "seamless-immutable": "^7.1.4"
+    "seamless-immutable": "^7.1.4",
+    "sion": "^0.0.1"
   }
 }
