@@ -7,9 +7,16 @@ import * as serviceWorker from './serviceWorker';
 // Apollo config
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
+import { createHttpLink } from 'apollo-link-http'
+import { InMemoryCache } from 'apollo-cache-inmemory'
 
+const httpLink = createHttpLink( {
+  uri: "https://plp0mopxq.sse.codesandbox.io"
+} )
 const client = new ApolloClient({
-  uri: "https://32ypr38l61.sse.codesandbox.io"
+  link: httpLink,
+  cache: new InMemoryCache(),
+  connectToDevTools: true
 });
 
 ReactDOM.render(
