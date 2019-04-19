@@ -1,21 +1,50 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import 'dotenv/config';
 
+import 'cross-fetch/polyfill';
 // Apollo config
-import ApolloClient from 'apollo-boost';
+import ApolloClient from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
-import { createHttpLink } from 'apollo-link-http'
+import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
+import { onError } from 'apollo-link-error';
+import { ApolloLink } from 'apollo-link';
 
-const httpLink = createHttpLink( {
-  uri: "https://plp0mopxq.sse.codesandbox.io"
-} )
+import * as dotenv from "dotenv";
+
+dotenv.config();
+
+const GITHUB_BASE_URL = 'https://api.github.com/graphql';
+
+const errorLink = onError(({ graphQLErrors, networkError }) => {
+  if (graphQLErrors) {
+    console.log(graphQLErrors)
+  }
+
+  if (networkError) {
+    console.log(networkError)
+  }
+});  
+
+const httpLink = new HttpLink({
+  uri: GITHUB_BASE_URL,
+  headers: {
+    authorization: `Bearer ${
+      process.env.REACT_APP_GITHUB_PERSONAL_ACCESS_TOKEN
+    }`,
+  },
+});
+
+const link = ApolloLink.from([errorLink, httpLink]);
+
+const cache = new InMemoryCache();
+
 const client = new ApolloClient({
-  link: httpLink,
-  cache: new InMemoryCache(),
+  link: link,
+  cache: cache,
   connectToDevTools: true
 });
 

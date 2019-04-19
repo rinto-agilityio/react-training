@@ -3,8 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/dotenv": "^6.1.1",
     "apollo-boost": "^0.3.1",
+    "apollo-cache-inmemory": "^1.5.1",
+    "apollo-client": "^2.5.1",
+    "apollo-link": "^1.2.11",
+    "apollo-link-error": "^1.1.10",
+    "apollo-link-http": "^1.5.14",
+    "cross-fetch": "^3.0.2",
     "graphql": "^14.2.1",
+    "graphql-tag": "^2.10.1",
     "react": "^16.8.6",
     "react-apollo": "^2.5.4",
     "react-dom": "^16.8.6",
@@ -15,6 +23,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "apisauce": "^1.0.2",
+    "babel-cli": "^6.26.0",
+    "dotenv": "^7.0.0"
   },
   "eslintConfig": {
     "extends": "react-app"
