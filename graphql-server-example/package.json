@@ -1,0 +1,20 @@
+{
+  "name": "graphql-server-example",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "db:migration": "./node_modules/.bin/sequelize --options-path=database/options.js db:migrate",
+    "db:drop": "./node_modules/.bin/sequelize --options-path=database/options.js db:migrate:undo:all",
+    "db:seed": "./node_modules/.bin/sequelize --options-path=database/options.js db:seed:all",
+    "server": "node ./src/index.js"
+  },
+  "author": "Huy Nguyen",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server": "^2.4.8",
+    "graphql": "^14.1.1",
+    "sequelize": "^5.1.1",
+    "sequelize-cli": "^5.4.0",
+    "sqlite3": "^4.0.6"
+  }
+}
