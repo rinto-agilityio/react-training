@@ -1,11 +1,16 @@
-const { posts, authors } = require( './mockData' )
+const {
+  getData,
+  setData
+} = require('./helpers/index')
 
-  // Resolvers define the technique for fetching the types in the
-  // schema.  We'll retrieve users from the "users" array above.
-  const resolvers = {
+const authors = getData('./data/Authors.json')
+const posts = getData('./data/Posts.json')
+
+// Resolvers define the technique for fetching the types in the
+// schema.  We'll retrieve users from the "users" array above.
+const resolvers = {
   Query: {
     getAuthors: () => {
-      console.log('authors', authors)
       return { success: true, message: "Get authors List Success", authors: authors };
     },
     getAuthor: (_, { id }) => authors.find(author => author.id === id),
@@ -16,7 +21,17 @@ const { posts, authors } = require( './mockData' )
   },
   Mutation: {
     createAuthor: (_, { author }) => {
-      return { success: true, message: "Add New Author Success", authors: [...author, author] };
+
+      setData('./data/Authors.json', [...authors, author])
+
+      return {
+        success: true,
+        message: "Add New Author Success",
+        authors: [
+          ...authors,
+          author
+        ]
+      };
     },
     createPost: (_, { post }) => {
       return { success: true, message: "Add New Post Success", authors: [...posts, post] };

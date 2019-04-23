@@ -16,6 +16,13 @@ const typeDefs = gql`
     author: Author!
   }
 
+  input AuthorInput {
+    id: ID!
+    name: String!
+    email: String
+  }
+
+
   interface QueryResponse {
     success: Boolean!
     message: String!
@@ -41,11 +48,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    createAuthor (
-      name: String!
-      email: String!
-      password: String
-    ): Author!
+    createAuthor (author: AuthorInput!): AuthorsResponse!
 
     createPost(
       id: ID!

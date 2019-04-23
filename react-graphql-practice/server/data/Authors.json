@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Account1",
+    "email": "rin.to@gmail.com",
+    "posts": []
+  },
+  {
+    "id": 2,
+    "name": "Account2",
+    "email": "huy.nguyenvan@gmail.com",
+    "posts": []
+  },
+  {
+    "id": "4",
+    "name": "account 6",
+    "email": "rin2@gmail.com"
+  },
+  {
+    "id": "4",
+    "name": "account 7",
+    "email": "rin2@gmail.com"
+  },
+  {
+    "id": "4",
+    "name": "account 7",
+    "email": "rin2@gmail.com"
+  }
+]
