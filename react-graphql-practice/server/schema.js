@@ -48,7 +48,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    createAuthor (author: AuthorInput!): AuthorsResponse!
+    createAuthor(author: AuthorInput!): AuthorsResponse!
 
     createPost(
       id: ID!
