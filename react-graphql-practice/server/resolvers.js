@@ -1,3 +1,5 @@
+const _ = require('lodash');
+
 const {
   getData,
   setData
@@ -13,7 +15,17 @@ const resolvers = {
     getAuthors: () => {
       return { success: true, message: "Get authors List Success", authors: authors };
     },
-    getAuthor: (_, { id }) => authors.find(author => author.id === id),
+    signIn: (parent, args, context, info) => {
+      const findUser = _.find(authors, { email: args.email, password: args.password })
+      console.log('signIn', args)
+      let userRes = {}
+      if (findUser) {
+        userRes = Object.assign(userRes, {success: true, message: "SignIn Success", author: findUser})
+      } else {
+        userRes = Object.assign(userRes, {success: true, message: "SignIn Failed", author: null})
+      }
+      return userRes;
+    },
 
     getPosts: () => {
       return { success: true, message: 'Get Posts success', posts: posts}

@@ -3,6 +3,7 @@
     "id": 1,
     "name": "Account1",
     "email": "rin.to@gmail.com",
+    "password": "123456",
     "posts": []
   },
   {

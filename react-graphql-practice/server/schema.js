@@ -6,6 +6,7 @@ const typeDefs = gql`
     id: ID!
     name: String
     email: String
+    password: String
     posts: [Post!]!
   }
 
@@ -20,6 +21,7 @@ const typeDefs = gql`
     id: ID!
     name: String!
     email: String
+    password: String
   }
 
 
@@ -34,6 +36,12 @@ const typeDefs = gql`
     authors: [Author!]
   }
 
+  type SignInResponse implements QueryResponse {
+    success: Boolean!
+    message: String!
+    author: Author!
+  }
+
   type PostResponse implements QueryResponse {
     success: Boolean!
     message: String!
@@ -42,7 +50,7 @@ const typeDefs = gql`
 
   type Query {
     getAuthors: AuthorsResponse
-    getAuthor(id: ID!): Author
+    signIn(email: String!, password: String!): SignInResponse
     getPosts: PostResponse
     getPost(id: ID!): Post
   }
