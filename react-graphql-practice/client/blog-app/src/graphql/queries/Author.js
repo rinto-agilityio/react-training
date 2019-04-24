@@ -6,8 +6,10 @@ const SIGN_IN = gql`
       success
       message
       author {
+        id
         name
         email
+        password
       }
     }
   }

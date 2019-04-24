@@ -7,26 +7,26 @@ import LOGGED_USER from '../../graphql/queries/Logged';
 //styles
 import './HeaderStyle.css';
 
-const currentUser = {
-  name: 'rinto',
-  avarta: 'https://previews.123rf.com/images/tuktukdesign/tuktukdesign1606/tuktukdesign160600105/59070189-user-icon-man-profile-businessman-avatar-person-icon-in-vector-illustration.jpg'
-}
+// const currentUser = {
+//   name: 'rinto',
+//   avarta: 'https://previews.123rf.com/images/tuktukdesign/tuktukdesign1606/tuktukdesign160600105/59070189-user-icon-man-profile-businessman-avatar-person-icon-in-vector-illustration.jpg'
+// }
 
-const image = (
-  currentUser.avarta ?
+// const renderImage = data => (
+//   data.loggedUser.name ?
 
-  (
-    <img
-      className='user-avarta'
-      src={currentUser.avarta}
-      alt='user-profile'
-      />
-  )
-  :
-  (
-    <div></div>
-  )
-)
+//   (
+//     <img
+//       className='user-avarta'
+//       src={data.loggedUser.name}
+//       alt='user-profile'
+//       />
+//   )
+//   :
+//   (
+//     <div></div>
+//   )
+// )
 const Header = () => {
   return (
     <Query
@@ -46,11 +46,11 @@ const Header = () => {
               </h1>
             </div>
             <div className='login-bar'>
-              {currentUser ?
+              {data && data.loggedUser ?
                 (
                   <>
                     <p>
-                      Hello, {currentUser.name}
+                      Hello, {data.loggedUser.email}
                     </p>
                   </>
                 )
@@ -61,7 +61,7 @@ const Header = () => {
                   </Link>
                 )
               }
-              <NavDropdown title={image} id="nav-dropdown">
+              <NavDropdown title={'abc'} id="nav-dropdown">
                 <NavDropdown.Item onClick={()=>{}} >Logout</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
               </NavDropdown>

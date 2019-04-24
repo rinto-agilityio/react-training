@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Query } from 'react-apollo';
 import SIGN_IN from '../../graphql/queries/Author';
+import { Form, Button } from "react-bootstrap";
 
 const Login = props  => {
   const email = useRef( '' )
@@ -21,8 +22,10 @@ const Login = props  => {
         password: password.current ? password.current.value : ''
       }}
       onCompleted={(data) => {
+        console.log('data', data)
         if (data.signIn.success) {
           localStorage.setItem('userLoged', JSON.stringify(data.signIn.author));
+          props.history.push('/');
         }
       }}
     >
@@ -32,9 +35,26 @@ const Login = props  => {
 
         return (
           <div className='authentication-form'>
-            <input ref={email} type='text' />
-            <input ref={password} type='password' />
-            <button onClick={() => handleSignIn(data)}>Sign In</button>
+            <Form onSubmit={() => handleSignIn(data)}>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control ref={email} type="email" placeholder="Enter email" />
+                <Form.Text className="text-muted">
+                  We'll never share your email with anyone else.
+                </Form.Text>
+              </Form.Group>
+
+              <Form.Group controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control ref={password} type="password" placeholder="Password" />
+              </Form.Group>
+              <Form.Group controlId="formBasicChecbox">
+                <Form.Check type="checkbox" label="Check me out" />
+              </Form.Group>
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+            </Form>;
           </div>
         )
       }

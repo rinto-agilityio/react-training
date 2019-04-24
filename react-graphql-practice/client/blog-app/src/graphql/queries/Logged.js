@@ -5,6 +5,7 @@ const LOGGED_USER = gql`
     loggedUser @client {
       email
       password
+      name
     }
   }
 `;
