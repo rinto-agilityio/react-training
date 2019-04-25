@@ -1,39 +1,52 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NavDropdown } from 'react-bootstrap';
+
+
 import { Query } from 'react-apollo';
+
+//query
 import LOGGED_USER from '../../graphql/queries/Logged';
+
+//components
+import Image from '../commons/Image'
 
 //styles
 import './HeaderStyle.css';
 
-// const currentUser = {
-//   name: 'rinto',
-//   avarta: 'https://previews.123rf.com/images/tuktukdesign/tuktukdesign1606/tuktukdesign160600105/59070189-user-icon-man-profile-businessman-avatar-person-icon-in-vector-illustration.jpg'
-// }
-
-// const renderImage = data => (
-//   data.loggedUser.name ?
-
-//   (
-//     <img
-//       className='user-avarta'
-//       src={data.loggedUser.name}
-//       alt='user-profile'
-//       />
-//   )
-//   :
-//   (
-//     <div></div>
-//   )
-// )
 const Header = () => {
+  const node = useRef();
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    // add when mounted
+    document.addEventListener("mousedown", handleClick);
+    // return function to be called when unmounted
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+  }, []);
+
+  const handleClick = e => {
+    if (node.current || node.current.contains(e.target)) {
+      return;
+    }
+    setOpen(false)
+  }
+
+  const handleLogout = client => {
+    client.resetStore();
+    localStorage.removeItem('userLoged');
+  }
+
   return (
     <Query
       query={LOGGED_USER}
+      // fetchPolicy={'cache-only'}
     >
       {({ data, client }) => {
-        console.log('data', data)
+        console.log(client)
+        const { loggedUser } = data
         return (
           <header className="header">
             <div className='logo-wrap'>
@@ -46,11 +59,11 @@ const Header = () => {
               </h1>
             </div>
             <div className='login-bar'>
-              {data && data.loggedUser ?
+              {loggedUser ?
                 (
                   <>
                     <p>
-                      Hello, {data.loggedUser.email}
+                      {loggedUser.name}
                     </p>
                   </>
                 )
@@ -61,18 +74,26 @@ const Header = () => {
                   </Link>
                 )
               }
-              <NavDropdown title={'abc'} id="nav-dropdown">
-                <NavDropdown.Item onClick={()=>{}} >Logout</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+              <NavDropdown
+                ref={node}
+                onClick={e => setOpen(!open)}
+                title={<Image avarta={loggedUser && loggedUser.avatar} />}
+                id="nav-dropdown"
+              >
+                {
+                  open &&
+                  <>
+                    <NavDropdown.Item onClick={()=>handleLogout(client)} >Logout</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                  </>
+                }
               </NavDropdown>
             </div>
-
           </header>
         )
       }}
     </Query>
   )
-
 }
 
 export default memo(Header);
