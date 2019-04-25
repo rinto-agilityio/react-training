@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 //helpers
-import PrivateRoute from './helpers/PrivateRoute';
+import PrivateRoute from './utils/PrivateRoute';
 
 //import components
 const HomePage = React.lazy(() => import('./pages/home/HomePage'));
