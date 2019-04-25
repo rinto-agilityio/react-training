@@ -6,6 +6,7 @@ const LOGGED_USER = gql`
       email
       password
       name
+      avatar
     }
   }
 `;

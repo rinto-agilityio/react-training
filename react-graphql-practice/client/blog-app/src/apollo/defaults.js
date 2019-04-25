@@ -1,6 +1,8 @@
 export default {
-  app: {
-    __typename: 'apollo-cache',
-    author: ''
+  author: {
+    __typename: 'Author',
+    email: '',
+    name: '',
+    password: ''
   }
 }

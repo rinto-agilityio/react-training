@@ -4,12 +4,15 @@
     "name": "Account1",
     "email": "rin.to@gmail.com",
     "password": "123456",
+    "avatar": "https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584__340.png",
     "posts": []
   },
   {
     "id": 2,
     "name": "Account2",
     "email": "huy.nguyenvan@gmail.com",
+    "password": "123456",
+    "avatar": "https://previews.123rf.com/images/yupiramos/yupiramos1606/yupiramos160611261/58637085-cartoon-avatar-man-with-brown-hair-wearing-eyeglasses-front-view-over-isolated-background-vector-ill.jpg",
     "posts": []
   },
   {

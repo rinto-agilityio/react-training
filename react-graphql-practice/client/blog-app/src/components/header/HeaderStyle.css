@@ -20,6 +20,7 @@
   display: flex;
   margin-right: 20px;
   color: #f1f1f1;
+  align-items: center;
 }
 
 .login-bar .nav-item .dropdown-menu {
@@ -40,6 +41,6 @@
 }
 
 .user-avarta {
-  width: 30px;
+  width: 70px;
 }
 

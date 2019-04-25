@@ -10,6 +10,7 @@ const SIGN_IN = gql`
         name
         email
         password
+        avatar
       }
     }
   }

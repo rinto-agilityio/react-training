@@ -1,41 +1,54 @@
-import React, { useRef, useState } from 'react';
-import { Query } from 'react-apollo';
-import SIGN_IN from '../../graphql/queries/Author';
+import React, { useRef } from 'react';
+import { ApolloConsumer } from 'react-apollo';
 import { Form, Button } from "react-bootstrap";
 
-const Login = props  => {
-  const email = useRef( '' )
-  const password = useRef( '' )
-  const [isLoging, setIsLoging] = useState(false);
+//query
+import SIGN_IN from '../../graphql/queries/Author';
+// import LOGGED_USER from '../../graphql/queries/Logged';
 
-  const handleSignIn = (data) => {
-    setIsLoging(true);
-    console.log('data', data)
-  };
-  console.log('isLoging', isLoging)
-  return (
-    <Query
-      query={SIGN_IN}
-      skip={!isLoging}
-      variables={{
+const Login = props  => {
+  const email = useRef('')
+  const password = useRef('')
+
+  const handleSignIn = (event, client) => {
+    event.preventDefault();
+    client.query({
+      query: SIGN_IN,
+      variables: {
         email: email.current ? email.current.value : '',
         password: password.current ? password.current.value : ''
-      }}
-      onCompleted={(data) => {
-        console.log('data', data)
-        if (data.signIn.success) {
-          localStorage.setItem('userLoged', JSON.stringify(data.signIn.author));
-          props.history.push('/');
-        }
-      }}
-    >
-      {({ loading, error, data }) => {
-        if (loading) return <p>Loading...</p>;
-        if (error) return <p>Error :(</p>;
+      }
+    }).then(response => {
+      const { author } = response.data.signIn
 
-        return (
+      const loginUser = {
+        __typename: 'loggedUser',
+        email: author.email,
+        name: author.name,
+        avatar: author.avatar,
+        password: author.password
+      };
+
+      console.log(client)
+      client.writeData({
+        data: {
+          loggedUser: loginUser,
+        }
+      });
+
+      localStorage.setItem('userLoged', JSON.stringify(author));
+
+      props.history.push('/');
+
+    })
+  };
+
+  return (
+    <ApolloConsumer>
+      {
+        client => (
           <div className='authentication-form'>
-            <Form onSubmit={() => handleSignIn(data)}>
+            <Form onSubmit={(event) => handleSignIn(event, client)}>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control ref={email} type="email" placeholder="Enter email" />
@@ -58,8 +71,7 @@ const Login = props  => {
           </div>
         )
       }
-      }
-    </Query>
+    </ApolloConsumer>
   )
 }
 
