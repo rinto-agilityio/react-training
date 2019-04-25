@@ -1,10 +1,12 @@
 import React, { useRef } from 'react';
 import { ApolloConsumer } from 'react-apollo';
-import { Form, Button } from "react-bootstrap";
 
 //query
 import SIGN_IN from '../../graphql/queries/Author';
 // import LOGGED_USER from '../../graphql/queries/Logged';
+
+//import css
+import './LoginStyle.css'
 
 const Login = props  => {
   const email = useRef('')
@@ -47,28 +49,26 @@ const Login = props  => {
     <ApolloConsumer>
       {
         client => (
-          <div className='authentication-form'>
-            <Form onSubmit={(event) => handleSignIn(event, client)}>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control ref={email} type="email" placeholder="Enter email" />
-                <Form.Text className="text-muted">
-                  We'll never share your email with anyone else.
-                </Form.Text>
-              </Form.Group>
-
-              <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control ref={password} type="password" placeholder="Password" />
-              </Form.Group>
-              <Form.Group controlId="formBasicChecbox">
-                <Form.Check type="checkbox" label="Check me out" />
-              </Form.Group>
-              <Button variant="primary" type="submit">
-                Submit
-              </Button>
-            </Form>;
+          
+          <div className="login-wrap">
+            <div className="titleWrap">
+              <p>Welcome To Blog</p>
+            </div>
+            <div className='authentication-form'>
+              <form onSubmit={(event) => handleSignIn(event, client)} className='form-group'>
+                <label className='field-group'>
+                  Name:
+                  <input type='email' ref={email} />
+                </label>
+                <label>
+                  Name:
+                  <input type='password' ref={password} />
+                </label>
+                <input type='submit' value='Submit' className='button-login' />
+              </form>
+            </div>
           </div>
+          
         )
       }
     </ApolloConsumer>
