@@ -1,31 +1,37 @@
 import React from 'react'
-
-import PropTypes from 'prop-types'
+import { Query } from 'react-apollo';
 import {
   Route,
   Redirect
 } from 'react-router-dom'
 
-const PrivateRoute = ({ component: Component, isAuthenticated, loginPath, path}) => (
-  <Route render={props => (
-    isAuthenticated || (!isAuthenticated && loginPath === path) ? (
-      <Component />
-    ) : (
-      <Redirect to={{
-        pathname: loginPath
-      }} />
-    )
-  )} />
+//query
+import LOGGED_USER from '../graphql/queries/Logged'
+
+//prop type
+import PropTypes from 'prop-types'
+
+const PrivateRoute = ({ component, loginPath, path}) => (
+  <Query query={LOGGED_USER}>
+    {({ data, error }) => {
+      if (error || !data.loggedUser) {
+        return <Redirect to={{
+           pathname: loginPath
+        }} />;
+      }
+      return <Route exact path={path} component={component} />;
+    }}
+  </Query>
 )
 
 PrivateRoute.propTypes = {
-  isAuthenticated: PropTypes.bool,
-  loginPath: PropTypes.string
+  loginPath: PropTypes.string,
+  component: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
 }
 
 PrivateRoute.defaultProps = {
-  isAuthenticated: false,
-  loginPath: ''
+  loginPath: '',
+  component: null
 }
 
 export default PrivateRoute

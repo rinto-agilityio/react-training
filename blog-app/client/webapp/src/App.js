@@ -2,7 +2,7 @@ import React, { Suspense, useState, useEffect } from 'react';
 
 //style
 import './App.css';
-import './themes/bootstrap/bootstrap.css'
+// import './themes/bootstrap/bootstrap.css'
 
 import { ApolloProvider } from 'react-apollo'
 import { ApolloClient } from 'apollo-client';
@@ -18,6 +18,7 @@ import defaults from './apollo/defaults'
 import AppRoute from './AppRoute'
 
 function App() {
+
   const [client, setClient] = useState(null)
 
   async function createClient() {
@@ -60,14 +61,17 @@ function App() {
       ]),
       cache
     });
+
+    //update state
     setClient(client)
   }
 
   useEffect(() => {
     createClient()
   },[])
+
   return !client ? (
-    null
+    <p>Loading....</p>
   ) : (
     <div className="App">
       <ApolloProvider client={client}>

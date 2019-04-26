@@ -11,7 +11,8 @@ const Image = props => {
         className='user-avarta'
         src={avarta}
         alt='user-profile'
-        />
+        ref={props.ref}
+      />
     )
     :
     (

@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import { ApolloConsumer } from 'react-apollo';
+import { Form, Button } from 'react-bootstrap';
 
 //query
 import SIGN_IN from '../../graphql/queries/Author';
-// import LOGGED_USER from '../../graphql/queries/Logged';
 
 //import css
 import './LoginStyle.css'
@@ -13,7 +13,9 @@ const Login = props  => {
   const password = useRef('')
 
   const handleSignIn = (event, client) => {
+
     event.preventDefault();
+
     client.query({
       query: SIGN_IN,
       variables: {
@@ -21,6 +23,7 @@ const Login = props  => {
         password: password.current ? password.current.value : ''
       }
     }).then(response => {
+
       const { author } = response.data.signIn
 
       const loginUser = {
@@ -31,7 +34,6 @@ const Login = props  => {
         password: author.password
       };
 
-      console.log(client)
       client.writeData({
         data: {
           loggedUser: loginUser,
@@ -49,26 +51,23 @@ const Login = props  => {
     <ApolloConsumer>
       {
         client => (
-          
+
           <div className="login-wrap">
             <div className="titleWrap">
               <p>Welcome To Blog</p>
             </div>
             <div className='authentication-form'>
-              <form onSubmit={(event) => handleSignIn(event, client)} className='form-group'>
-                <label className='field-group'>
-                  Name:
-                  <input type='email' ref={email} />
-                </label>
-                <label>
-                  Name:
-                  <input type='password' ref={password} />
-                </label>
-                <input type='submit' value='Submit' className='button-login' />
-              </form>
+              <Form onSubmit={(event) => handleSignIn(event, client)}>
+                <Form.Group >
+                  <Form.Control type='email' ref={email} placeholder='Enter email' />
+                </Form.Group>
+                <Form.Group >
+                  <Form.Control type='password' ref={password} placeholder='Password' />
+                </Form.Group>
+                <Button type='submit'>Login</Button>
+              </Form>
             </div>
           </div>
-          
         )
       }
     </ApolloConsumer>

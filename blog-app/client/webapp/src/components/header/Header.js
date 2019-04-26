@@ -1,7 +1,5 @@
-import React, { memo, useEffect, useRef, useState } from 'react';
+import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
-import { NavDropdown } from 'react-bootstrap';
-
 
 import { Query } from 'react-apollo';
 
@@ -10,31 +8,16 @@ import LOGGED_USER from '../../graphql/queries/Logged';
 
 //components
 import Image from '../commons/Image'
+import Dropdown from '../commons/Dropdown'
 
 //styles
 import './HeaderStyle.css';
 
 const Header = () => {
-  const node = useRef();
-  const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    // add when mounted
-    document.addEventListener("mousedown", handleClick);
-    // return function to be called when unmounted
-    return () => {
-      document.removeEventListener("mousedown", handleClick);
-    };
-  }, []);
-
-  const handleClick = e => {
-    if (node.current || node.current.contains(e.target)) {
-      return;
-    }
-    setOpen(false)
-  }
-
-  const handleLogout = client => {
+  const handleLogout = (event, client) => {
+    event.stopPropagation()
+    console.log('aaaaaaaaaaaaa')
     client.resetStore();
     localStorage.removeItem('userLoged');
   }
@@ -42,10 +25,9 @@ const Header = () => {
   return (
     <Query
       query={LOGGED_USER}
-      // fetchPolicy={'cache-only'}
+      fetchPolicy={'cache-only'}
     >
       {({ data, client }) => {
-        console.log(client)
         const { loggedUser } = data
         return (
           <header className="header">
@@ -62,7 +44,7 @@ const Header = () => {
               {loggedUser ?
                 (
                   <>
-                    <p>
+                    <p className='account-name'>
                       {loggedUser.name}
                     </p>
                   </>
@@ -74,20 +56,19 @@ const Header = () => {
                   </Link>
                 )
               }
-              <NavDropdown
-                ref={node}
-                onClick={e => setOpen(!open)}
-                title={<Image avarta={loggedUser && loggedUser.avatar} />}
-                id="nav-dropdown"
-              >
-                {
-                  open &&
-                  <>
-                    <NavDropdown.Item onClick={()=>handleLogout(client)} >Logout</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                  </>
-                }
-              </NavDropdown>
+
+              <Image avarta={loggedUser && loggedUser.avatar}/>
+
+              <Dropdown
+                items={[
+                  <Link
+                    onClick={(event)=>handleLogout(event, client)}
+                  >
+                    Log Out
+                  </Link>
+                ]}
+              />
+
             </div>
           </header>
         )

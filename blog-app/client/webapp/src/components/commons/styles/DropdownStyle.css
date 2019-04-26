@@ -1,0 +1,21 @@
+.arrow-down {
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid rgb(229, 230, 240);
+  position: relative;
+}
+
+.dropdown-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu-wrap {
+  position: absolute;
+  background: rgb(27, 229, 236);
+  padding-left: 0;
+  margin-top: 10px;
+}
