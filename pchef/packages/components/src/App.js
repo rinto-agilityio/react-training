@@ -6,8 +6,8 @@
  * @flow
  */
 
-import React, { Component, useState } from 'react';
-import {Platform, StyleSheet, Text, View, Button} from 'react-native';
+import React, { Component } from 'react';
+import {Platform, StyleSheet, Text, View} from 'react-native';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -15,20 +15,6 @@ const instructions = Platform.select({
     'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
-
-const Counting = () => {
-  const [count, setCount] = useState(0)
-
-  return (
-    <View>
-      <Text>Clicked {count} times</Text>
-      <Button
-        title="Click me"
-        onPress={() => setCount(count + 1)}
-      />
-    </View>
-  )
-}
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -39,7 +25,6 @@ export default class App extends Component<Props> {
         <Text style={styles.instructions}>Test live reload on device</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-        <Counting />
       </View>
     );
   }
