@@ -1,6 +1,10 @@
 import React, { useRef } from 'react';
 import { ApolloConsumer } from 'react-apollo';
 import { Form, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
+//component
+import SignUp from './SignUp'
 
 //query
 import SIGN_IN from '../../graphql/queries/Author';
@@ -65,7 +69,12 @@ const Login = props  => {
                   <Form.Control type='password' ref={password} placeholder='Password' />
                 </Form.Group>
                 <Button type='submit'>Login</Button>
+                <Link></Link>
               </Form>
+              <p>
+                Not Register?
+                <Link to={'/signUp'} component={SignUp}>Create Account</Link>
+              </p>
             </div>
           </div>
         )

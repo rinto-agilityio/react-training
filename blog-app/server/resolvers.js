@@ -32,17 +32,14 @@ const resolvers = {
     }
   },
   Mutation: {
-    createAuthor: (_, { author }) => {
+    signUp: (_, { author }) => {
 
       setData('./data/Authors.json', [...authors, author])
 
       return {
         success: true,
         message: "Add New Author Success",
-        authors: [
-          ...authors,
-          author
-        ]
+        author: author
       };
     },
     createPost: (_, { post }) => {

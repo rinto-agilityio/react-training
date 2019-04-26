@@ -14,10 +14,8 @@ import Dropdown from '../commons/Dropdown'
 import './HeaderStyle.css';
 
 const Header = () => {
-
   const handleLogout = (event, client) => {
     event.stopPropagation()
-    console.log('aaaaaaaaaaaaa')
     client.resetStore();
     localStorage.removeItem('userLoged');
   }
@@ -68,7 +66,6 @@ const Header = () => {
                   </Link>
                 ]}
               />
-
             </div>
           </header>
         )
