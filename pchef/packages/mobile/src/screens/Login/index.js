@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
 // Login
 const Login = () => (
   <View style={styles.container}>
-    <Text>dfdfdf</Text>
+    <Text>test</Text>
   </View>
 );
 
