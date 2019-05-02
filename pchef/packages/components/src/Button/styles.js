@@ -12,19 +12,13 @@ const styles = StyleSheet.create({
   title: {
     color: '#fff',
   },
-  smallWeb: {
+  small: {
     width: 100,
     height: 40,
   },
-  largeWeb: {
+  large: {
     width: 200,
     height: 40,
-  },
-  smallMobile: {
-    width: 100,
-  },
-  largeMobile: {
-    width: '100%',
   },
 });
 
