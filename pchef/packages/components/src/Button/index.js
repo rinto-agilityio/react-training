@@ -5,21 +5,33 @@ import { TouchableOpacity, StyleSheet, Text } from 'react-native';
 // Styles
 import styles from './styles';
 
-const Button = (props) => (
+const Button = ({
+  onClick,
+  customStyle,
+  size,
+  title,
+}) => (
   <TouchableOpacity
-    onPress={props.onClick}
+    onPress={onClick}
     style={[
-      props.customStyle,
+      customStyle,
       styles.button,
-      props.isWeb ? styles[`${props.size}Web`] : styles[`${props.size}Mobile`]
+      styles[size]
     ]}
   >
     <Text
       style={styles.title}
     >
-      {props.title}
+      {title}
     </Text>
   </TouchableOpacity>
 )
 
 export default Button
+
+Button.defaultProps = {
+  onClick: () => {},
+  customStyle: {},
+  size: 'small',
+  title: '',
+}

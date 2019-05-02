@@ -7,9 +7,9 @@ import Button from 'components/src/Button'
 
 const App = () => (
   <>
-    <Counting />
+  <Counting />
     <AppComponent />
-    <Button isWeb title="Click me" size="small" />
+    <Button title="Click me" size="small" />
   </>
 )
 
