@@ -27,6 +27,7 @@ function App() {
         switch (object.__typename) {
           //loggedUser is whatever type "me" query resolves to
           case 'loggedUser': return object.__typename;
+          case 'PostResponse': return object.__typename;
           default: return object.id || object._id;
         }
       }
