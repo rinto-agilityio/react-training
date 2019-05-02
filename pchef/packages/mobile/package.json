@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js --verbose start",
+    "start": "node ../../node_modules/react-native/local-cli/cli.js start --projectRoot ../../",
     "storybook": "storybook start -p 7007 | react-native start --projectRoot storybook",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
