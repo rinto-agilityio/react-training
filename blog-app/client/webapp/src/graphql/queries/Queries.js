@@ -14,6 +14,7 @@ export const GET_AUTHORS = gql`
 export const LOGGED_USER = gql`
   query loggedUser {
     loggedUser @client {
+      id
       email
       password
       name
@@ -33,6 +34,22 @@ export const SIGN_IN = gql`
         email
         password
         avatar
+      }
+    }
+  }
+`;
+
+export const GET_POST = gql`
+  query getPostsByAuthor($authorId: ID!) {
+    getPostsByAuthor(authorId: $authorId) {
+      success
+      message
+      posts {
+        title
+        content
+        author {
+          name
+        }
       }
     }
   }

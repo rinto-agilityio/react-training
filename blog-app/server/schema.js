@@ -61,8 +61,9 @@ const typeDefs = gql`
 
     createPost(
       id: ID!
-      title: String!
-      content: String!
+      title: String
+      content: String
+      authorId: ID!
     ): Post!
   }
 `;

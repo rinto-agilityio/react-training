@@ -33,6 +33,7 @@ const Login = props  => {
 
       const loginUser = {
         __typename: 'loggedUser',
+        id: author.id,
         email: author.email,
         name: author.name,
         avatar: author.avatar,

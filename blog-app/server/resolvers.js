@@ -16,9 +16,7 @@ const resolvers = {
       return { success: true, message: "Get authors List Success", authors: authors };
     },
     signIn: (parent, args, context, info) => {
-      console.log('args', args)
       const findUser = _.find(authors, { email: args.email, password: args.password })
-      console.log(findUser)
       let userRes = {}
       if (findUser) {
         userRes = Object.assign(userRes, {success: true, message: "SignIn Success", author: findUser})
@@ -28,20 +26,24 @@ const resolvers = {
       return userRes;
     },
 
-    // getPosts: () => {
-    //   return { success: true, message: 'Get Posts success', posts: posts}
-    // }
+    getPostsByAuthor: (parent, args) => {
+      console.log('run.........')
+
+      const postsOfAuthor =  posts.filter(post => post.author.id == args.authorId)
+
+      return { success: true, message: 'Get Posts success', posts: postsOfAuthor}
+    }
   },
   Mutation: {
     signUp: (parent, args) => {
       const author =  {
-        id: args.id, 
-        email: args.email, 
-        password: args.password, 
+        id: args.id,
+        email: args.email,
+        password: args.password,
         name: args.name
       }
 
-      setData('./data/Authors.json', [...authors, author ])
+      setData('./data/Authors.json', [...authors, author])
 
       return {
         success: true,
@@ -49,9 +51,19 @@ const resolvers = {
         author: author
       };
     },
-    // createPost: (_, { post }) => {
-    //   return { success: true, message: "Add New Post Success", authors: [...posts, post] };
-    // }
+    createPost: (_, args) => {
+      const author = authors.find(author => author.id == args.authorId)
+      const newPost = {
+        id: args.id,
+        title: args.title,
+        content: args.content,
+        author: author
+      }
+
+      setData('./data/Posts.json', [...posts, newPost])
+
+      return  newPost
+    }
   }
 };
 

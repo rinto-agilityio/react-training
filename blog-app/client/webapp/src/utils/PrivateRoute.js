@@ -11,18 +11,28 @@ import { LOGGED_USER } from '../graphql/queries/Queries'
 //prop type
 import PropTypes from 'prop-types'
 
-const PrivateRoute = ({ component, loginPath, path}) => (
-  <Query query= { LOGGED_USER } >
-    {({ data, error }) => {
-      if (error || !data.loggedUser) {
-        return <Redirect to={{
-           pathname: loginPath
-        }} />;
-      }
-      return <Route exact path={path} component={component} />;
-    }}
-  </Query>
-)
+const PrivateRoute = ({ component: Component, loginPath, path, ...rest}) => {
+  return (
+    <Query query= { LOGGED_USER } >
+      {({ data, error }) => {
+        const isAuthenticated = (error || !data.loggedUser) ? false : true
+        return (
+          <Route {...rest} render={props => {
+            return (
+              isAuthenticated || (!isAuthenticated && loginPath === path) ? (
+                <Component path={path} {...props} {...rest} />
+              ) : (
+                <Redirect to={{
+                  pathname: loginPath
+                }} />
+              )
+            )
+          }} />
+        )
+      }}
+    </Query>
+  )
+}
 
 PrivateRoute.propTypes = {
   loginPath: PropTypes.string,

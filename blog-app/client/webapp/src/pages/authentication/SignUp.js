@@ -22,7 +22,7 @@ const SignUp = props  => {
 			id: `${ Date.now()}`,
 			email: email.current ? email.current.value : '',
 			password: password.current ? password.current.value : '',
-			name: name.current ? name.current.value : '' 
+			name: name.current ? name.current.value : ''
 		}})
 	};
 
@@ -52,11 +52,11 @@ const SignUp = props  => {
 							<Link></Link>
 						</Form>
 					</div>
-				</div>	
+				</div>
 			)
 			}}
 		</Mutation>
-	)  
+	)
 }
 
 export default SignUp;
