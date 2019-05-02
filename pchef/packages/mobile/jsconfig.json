@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["./components/*"],
+      "@constants/*": ["./constants/*"],
+      "@helpers/*": ["./helpers/*"],
+      "@homeScreen/*": ["./screens/Home/*"],
+      "@loginScreen/*": ["./screens/Login/*"],
+      "@categoryScreen/*": ["./screens/Category/*"],
+      "@detailScreen/*": ["./screens/Detail/*"],
+      "@themes/*": ["./themes/*"],
+      "@graphql/*": ["./graphql/*"],
+      "@assets/*": ["./assets/*"],
+      "@mocks/*": ["./mocks/*"],
+      "@configs/*": ["./configs/*"],
+      "@router/*": ["./router/*"]
+    }
+  }
+}
