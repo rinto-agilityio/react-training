@@ -13,7 +13,8 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "jest",
-    "eject": "react-app-rewired eject"
+    "eject": "react-app-rewired eject",
+    "eslint": "../../node_modules/.bin/eslint --ext .jsx,.js src/"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,6 +37,10 @@
     "babel-preset-flow": "^6.23.0",
     "enzyme": "^3.9.0",
     "enzyme-to-json": "^3.3.5",
+    "eslint-config-jest-enzyme": "^7.0.2",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-jest": "^22.5.1",
+    "eslint-plugin-prettier": "^3.0.1",
     "flow-bin": "^0.98.0",
     "flow-typed": "^2.5.1",
     "husky": "^2.2.0",
