@@ -13,6 +13,10 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:update": "jest --updateSnapshot",
+    "test:watch": "jest --watch",
+    "test:watchAll": "jest --watchAll",
     "eject": "react-app-rewired eject",
     "eslint": "../../node_modules/.bin/eslint --ext .jsx,.js src/"
   },
