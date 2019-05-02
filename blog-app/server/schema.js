@@ -52,12 +52,12 @@ const typeDefs = gql`
   type Query {
     getAuthors: AuthorsResponse
     signIn(email: String!, password: String!): SignInResponse
-    getPosts: PostResponse
+    getPostsByAuthor(authorId: ID!): PostResponse
     getPost(id: ID!): Post
   }
 
   type Mutation {
-    signUp(author: AuthorInput!): AuthorsResponse
+    signUp(id: ID!, email: String!, password: String!, name: String): SignInResponse
 
     createPost(
       id: ID!

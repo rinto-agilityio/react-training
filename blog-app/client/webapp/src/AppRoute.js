@@ -8,6 +8,7 @@ import PrivateRoute from './utils/PrivateRoute';
 //import components
 const HomePage = React.lazy(() => import('./pages/home/HomePage'));
 const Login = React.lazy(() => import ('./pages/authentication/Login'))
+const SignUp = React.lazy(() => import ('./pages/authentication/SignUp'))
 
 const loginPath = '/login/';
 
@@ -16,6 +17,7 @@ const AppRoute = () => {
     <BrowserRouter>
       <Switch>
         <Route path={loginPath} component={Login}/>
+        <Route path={'/signUp'} component={SignUp}/>
         <PrivateRoute loginPath={loginPath} path='/' component={HomePage} />
       </Switch>
     </BrowserRouter>

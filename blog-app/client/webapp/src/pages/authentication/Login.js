@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import SignUp from './SignUp'
 
 //query
-import SIGN_IN from '../../graphql/queries/Author';
+import { SIGN_IN } from '../../graphql/queries/Queries';
 
 //import css
 import './LoginStyle.css'
@@ -25,7 +25,8 @@ const Login = props  => {
       variables: {
         email: email.current ? email.current.value : '',
         password: password.current ? password.current.value : ''
-      }
+      },
+      options: { fetchPolicy: 'cache-and-network' }
     }).then(response => {
 
       const { author } = response.data.signIn
