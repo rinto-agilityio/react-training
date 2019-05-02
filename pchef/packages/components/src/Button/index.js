@@ -30,8 +30,7 @@ const Button = ({
 export default Button
 
 Button.defaultProps = {
-  onClick: () => {},
+  onClick: () => { },
   customStyle: {},
-  size: 'small',
-  title: '',
+  size: 'default',
 }
