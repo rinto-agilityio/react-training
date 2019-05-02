@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { ApolloConsumer } from 'react-apollo';
 
 //helpers
 import PrivateRoute from './utils/PrivateRoute';
@@ -14,13 +15,21 @@ const loginPath = '/login/';
 
 const AppRoute = () => {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path={loginPath} component={Login}/>
-        <Route path={'/signUp'} component={SignUp}/>
-        <PrivateRoute loginPath={loginPath} path='/' component={HomePage} />
-      </Switch>
-    </BrowserRouter>
+    <ApolloConsumer >
+    {
+      client => {
+        return (
+          <BrowserRouter>
+            <Switch>
+              <Route path={loginPath} component={Login}/>
+              <Route path={'/signUp'} component={SignUp}/>
+              <PrivateRoute loginPath={loginPath} path='/' component={HomePage} accessClient={client}/>
+            </Switch>
+          </BrowserRouter>
+        )
+      }
+    }
+    </ApolloConsumer>
   )
 
 };
