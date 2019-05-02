@@ -1,6 +1,6 @@
 // libs
 import React from 'react';
-import { TouchableOpacity, StyleSheet, Text } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 
 // Styles
 import styles from './styles';
@@ -32,5 +32,5 @@ export default Button
 Button.defaultProps = {
   onClick: () => { },
   customStyle: {},
-  size: 'default',
+  size: 'medium',
 }

@@ -2,7 +2,7 @@
 import { StyleSheet } from 'react-native';
 
 // Themes
-import COLORS from '../../../themes/Colors';
+import { COLORS, METRICS } from '../../../themes';
 
 // Create style for button
 const styles = StyleSheet.create({
@@ -15,16 +15,17 @@ const styles = StyleSheet.create({
   title: {
     color: COLORS.white,
   },
-  default: {
-    width: 'auto',
-  },
   small: {
-    width: 100,
-    height: 40,
+    minHeight: 30,
+    padding: METRICS.smallPadding,
   },
   medium: {
-    width: 200,
-    height: 40,
+    minHeight: 40,
+    padding: METRICS.mediumPadding,
+  },
+  large: {
+    minHeight: 40,
+    padding: METRICS.largePadding,
   },
 });
 
