@@ -3,23 +3,65 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ../../node_modules/react-native/local-cli/cli.js start --projectRoot ../../",
-    "test": "jest"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "storybook": "storybook start -p 7007 | react-native start --projectRoot storybook",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "test": "jest",
+    "coverage": "jest --coverage --u --detectOpenHandles"
   },
   "dependencies": {
+    "apollo-boost": "^0.3.1",
+    "apollo-cache-inmemory": "^1.5.1",
+    "apollo-link-firebase": "^1.1.0",
+    "components": "*",
+    "firebase": "^5.11.0",
     "react": "16.8.3",
+    "react-apollo": "^2.5.5",
     "react-native": "0.59.5",
-    "components": "*"
+    "react-navigation": "^3.9.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/runtime": "^7.4.3",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@storybook/react-native": "^4.1.18",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^24.7.1",
+    "enzyme": "^3.9.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-jest-enzyme": "^7.0.2",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
     "jest": "^24.7.1",
     "metro-react-native-babel-preset": "^0.53.1",
+    "prettier": "^1.17.0",
+    "react-native-dotenv": "^0.2.0",
     "react-test-renderer": "16.8.3"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "setupTestFrameworkScriptFile": "<rootDir>src/configs/jest.js",
+    "testPathIgnorePatterns": [
+      "<rootDir>src/configs/jest.js"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    }
+  },
+  "config": {
+    "react-native-storybook-loader": {
+      "searchDir": [
+        "./storybook"
+      ],
+      "pattern": "**/*.stories.js",
+      "outputFile": "./storybook/storyLoader.js"
+    }
   }
 }
