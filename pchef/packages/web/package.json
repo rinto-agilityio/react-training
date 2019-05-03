@@ -18,7 +18,9 @@
     "test:watch": "jest --watch",
     "test:watchAll": "jest --watchAll",
     "eject": "react-app-rewired eject",
-    "eslint": "../../node_modules/.bin/eslint --ext .jsx,.js src/"
+    "eslint": "../../node_modules/.bin/eslint --ext .jsx,.js src/",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,6 +43,13 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
     "babel-cli": "^6.26.0",
+    "@babel/core": "^7.4.4",
+    "@storybook/addon-actions": "4.1.18",
+    "@storybook/addon-links": "4.1.18",
+    "@storybook/addons": "4.1.18",
+    "@storybook/react": "4.1.18",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-react-native-web": "^0.11.2",
     "babel-preset-env": "^1.7.0",
     "babel-preset-flow": "^6.23.0",
