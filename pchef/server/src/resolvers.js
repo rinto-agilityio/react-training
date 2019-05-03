@@ -9,8 +9,8 @@ const {
 const resolvers = {
   Query: {
     // Category
-    category(_, { key }, {}) {
-      return getDocument(`categories/${key}`)
+    category(_, { id }, {}) {
+      return getDocument(`categories/${id}`)
     },
 
     allCategories() {
@@ -18,8 +18,8 @@ const resolvers = {
     },
 
     // Recipe
-    recipe(_, { key }, {}) {
-      return getDocument(`recipes/${key}`)
+    recipe(_, { id }, {}) {
+      return getDocument(`recipes/${id}`)
     }
   },
 
