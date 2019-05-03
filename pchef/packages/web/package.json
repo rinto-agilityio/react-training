@@ -69,5 +69,21 @@
   "engines": {
     "node": ">= 10.15.3",
     "yarn": ">= 1.15.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && flow check"
+    }
+  },
+  "lint-staged": {
+    "{src}/**/*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{png,jpeg,jpg,gif,svg}": [
+      "imagemin-lint-staged",
+      "git add"
+    ]
   }
 }
