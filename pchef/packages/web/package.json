@@ -13,7 +13,9 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject"
+    "eject": "react-app-rewired eject",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,6 +33,13 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@storybook/addon-actions": "4.1.18",
+    "@storybook/addon-links": "4.1.18",
+    "@storybook/addons": "4.1.18",
+    "@storybook/react": "4.1.18",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-react-native-web": "^0.11.2",
     "react-app-rewired": "^2.1.3"
   },
