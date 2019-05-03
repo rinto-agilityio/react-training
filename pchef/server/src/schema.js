@@ -11,6 +11,13 @@ const typeDefs = gql`
     category(key: String!): Category
     allCategories: [Category]!
   }
+
+  type Mutation {
+    createCategory(
+      title: String!
+      img_url: String!
+    ): Category!
+  }
 `
 
 module.exports = typeDefs

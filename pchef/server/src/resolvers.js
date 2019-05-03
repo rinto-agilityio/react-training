@@ -2,7 +2,8 @@ const {
   mapDocumentToEntity,
   mapCollectionToEntities,
   getDocument,
-  getCollection
+  getCollection,
+  addDocument
 } = require('./helpers/firestore')
 
 const resolvers = {
@@ -13,6 +14,14 @@ const resolvers = {
 
     allCategories() {
       return getCollection('categories')
+    }
+  },
+
+  Mutation: {
+    createCategory (_, data, {}) {
+      return {
+        id: addDocument('categories', data)
+      }
     }
   }
 }
