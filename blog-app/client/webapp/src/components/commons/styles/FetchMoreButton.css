@@ -1,0 +1,9 @@
+.fetch-more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fetch-more-button {
+  margin: 20px 0;
+}
