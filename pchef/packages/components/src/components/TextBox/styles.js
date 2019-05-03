@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   },
   default: {
     height: 40,
-    borderColor: COLORS.gray,
+    borderColor: COLORS.graySolid,
     borderBottomWidth: 1,
     fontSize: METRICS.fontSize.medium,
     flex: 1,
