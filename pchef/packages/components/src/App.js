@@ -6,9 +6,8 @@
  * @flow
  */
 
-import React, { useRef } from 'react';
-import { Platform, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import TextBox from './TextBox';
+import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
