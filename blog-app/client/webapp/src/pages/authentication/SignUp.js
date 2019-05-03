@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Mutation } from 'react-apollo';
@@ -15,6 +15,8 @@ const SignUp = props  => {
   const password = useRef('')
   const name = useRef('')
 
+  const [error, setError] = useState('')
+
   const handleSignUp = (event, signUp) => {
 
     event.preventDefault();
@@ -30,8 +32,15 @@ const SignUp = props  => {
     <Mutation
       mutation={CREATE_USER}
       onCompleted={ () => props.history.push('/login') }
+      onError={(graphQLErrors, networkError) => {
+        if (graphQLErrors) {
+          return graphQLErrors.Error
+        }
+      }}
+      errorPolicy="all"
     >
       {(signUp, { data, loading, error }) => {
+        console.log('error', error)
         return (
         <div className="login-wrap">
           <div className="titleWrap">

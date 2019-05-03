@@ -90,12 +90,28 @@ const resolvers = {
   },
   Mutation: {
     signUp: (parent, args) => {
-      const author =  {
-        id: args.id,
-        email: args.email,
-        password: args.password,
-        name: args.name
+      console.log('args', args);
+
+      if ( !args.name ) {
+        throw new Error( 'username - Name is required' );
       }
+
+      if ( !args.email ) {
+        throw new Error( 'email - Email is required' );
+      }
+
+      if ( !args.password ) {
+        throw new Error( 'Password is required' );
+      }
+
+      if (_.find(authors, {email: args.email})) {
+        throw new Error('This email already exists')
+      }
+
+      const author = {
+        ...args
+      };
+
 
       setData('./data/Authors.json', [...authors, author])
 
