@@ -13,6 +13,7 @@ import { persistCache } from 'apollo-cache-persist';
 
 import { withClientState } from 'apollo-link-state';
 import { ApolloLink } from 'apollo-link';
+import { onError } from "apollo-link-error";
 
 import resolvers from './apollo/resolvers'
 import defaults from './apollo/defaults'
@@ -38,7 +39,16 @@ function App() {
     const httpLink = createHttpLink({
       uri: 'http://localhost:4000',
     });
+    const linkError = onError(({ graphQLErrors, networkError }) => {
+      if (graphQLErrors) {
+        console.log(graphQLErrors)
+      }
 
+      if (networkError) {
+        console.log(networkError)
+      }
+
+    })
     const stateLink = withClientState({
       cache,
       resolvers,
@@ -57,6 +67,7 @@ function App() {
 
     const client = new ApolloClient({
       link: ApolloLink.from([
+        linkError,
         httpLink,
         stateLink,
         cache
