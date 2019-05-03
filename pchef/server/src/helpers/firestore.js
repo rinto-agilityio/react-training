@@ -7,13 +7,18 @@ const mapCollectionToEntities = collection => (
 )
 
 // Query data from FireStore
-const getDocument = path => db.doc(path).get().then(mapDocumentToEntity)
-const getCollection = path => db.collection(path).get().then(mapCollectionToEntities)
+const getDocument = path => (
+  db.doc(path).get().then(mapDocumentToEntity)
+)
+
+const getCollection = path => (
+  db.collection(path).get().then(mapCollectionToEntities)
+)
 
 // Add data
-const addDocument = (path, data) => {
-  return db.collection(path).add(data).then(docRef => docRef.id)
-}
+const addDocument = (path, data) => (
+  db.collection(path).add(data).then(docRef => docRef.id)
+)
 
 module.exports= {
   mapDocumentToEntity,
