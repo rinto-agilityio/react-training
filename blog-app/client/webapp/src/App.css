@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+.wrap-loading {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+.wrap-loading .spinner-border {
+  width: 80px;
+  height: 80px;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;

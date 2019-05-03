@@ -72,7 +72,7 @@ const CreatePost = ({user, pageInfo, handleCloseModal, history}) => {
       }}
     >
       {(createPost, { data, loading, error }) => {
-        if (loading) return "Loading...";
+        if (loading) return "Loading.............................";
         if (error) return `Error! ${error.message}`;
         return (
           <div className='create-post'>

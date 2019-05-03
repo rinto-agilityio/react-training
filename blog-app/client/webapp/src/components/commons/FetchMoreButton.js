@@ -1,4 +1,5 @@
 import React from 'react';
+import { Spinner } from 'react-bootstrap'
 
 import './styles/FetchMoreButton.css';
 
@@ -12,7 +13,9 @@ const FetchMoreButton = ({
 }) => (
   <div className="fetch-more">
     {loading ? (
-      "Loading..."
+      <div>
+        <Spinner animation="border" variant="primary" />
+      </div>
     ) : (
       hasNextPage && (
         <button

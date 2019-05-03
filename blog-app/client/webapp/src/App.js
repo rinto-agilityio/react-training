@@ -1,4 +1,5 @@
 import React, { Suspense, useState, useEffect } from 'react';
+import { Spinner } from 'react-bootstrap'
 
 //style
 import './App.css';
@@ -72,11 +73,13 @@ function App() {
   },[])
 
   return !client ? (
-    <p>Loading....</p>
+    <div className='wrap-loading'>
+      <Spinner animation="border" variant="primary" />
+    </div>
   ) : (
     <div className="App">
       <ApolloProvider client={client}>
-        <Suspense fallback={()=> <p>Loading....</p>}>
+        <Suspense fallback={()=> <Spinner animation="border" variant="primary" />}>
           <AppRoute />
         </Suspense>
       </ApolloProvider>

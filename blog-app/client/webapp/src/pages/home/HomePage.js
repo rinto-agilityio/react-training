@@ -1,5 +1,5 @@
 import React, { memo, useState } from 'react';
-import { Button } from 'react-bootstrap'
+import { Button, Spinner } from 'react-bootstrap'
 import { Query } from 'react-apollo'
 
 //components
@@ -39,7 +39,7 @@ const HomePage = props => {
       fetchPolicy='cache-and-network'
     >
       {({ loading, error, data, fetchMore }) => {
-      if (loading) return "Loading...";
+      if (loading) return <Spinner animation="border" variant="primary" />;
       if (error) return `Error! ${error.message}`;
 
       return (
