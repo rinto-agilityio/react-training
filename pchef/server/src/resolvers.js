@@ -1,3 +1,4 @@
+const { map } = require('lodash')
 const {
   mapDocumentToEntity,
   mapCollectionToEntities,
@@ -27,6 +28,19 @@ const resolvers = {
 
     allCategories() {
       return getCollection('categories')
+        .then(categories => {
+          return map(categories, category => {
+            return getCollectionWithCondition(
+              'recipes',
+              'category_id', '==', category.id
+            )
+            .then(recipes => {
+              category.recipes = recipes
+  
+              return category
+            })
+          })
+        })
     },
 
     // Recipe
