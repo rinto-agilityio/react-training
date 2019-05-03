@@ -7,14 +7,14 @@
  */
 
 // Libs
-import React, { memo } from 'react';
+import React from 'react';
 import { TextInput, View } from 'react-native';
 
 // Styles
 import { styles } from './styles';
-import { COLORS } from 'themes/Colors';
 
 // Themes
+import { COLORS } from '../../themes';
 
 const TextBox = ({
   multiline,

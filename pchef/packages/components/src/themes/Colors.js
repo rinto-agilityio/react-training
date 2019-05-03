@@ -1,4 +1,4 @@
-export const COLORS = {
+export default {
   // Basic
   black: '#000',
 

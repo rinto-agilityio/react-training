@@ -2,7 +2,7 @@
 import { StyleSheet } from 'react-native';
 
 // Themes
-import { COLORS } from 'themes/Colors';
+import { COLORS } from '../../themes';
 
 export const styles = StyleSheet.create({
   container: {
@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   },
   default: {
     height: 40,
-    borderBottomColor: COLORS.inputBorder,
+    borderColor: COLORS.inputBorder,
     borderBottomWidth: 1,
     fontSize: 18,
     flex: 1,
