@@ -15,6 +15,13 @@ const getCollection = path => (
   db.collection(path).get().then(mapCollectionToEntities)
 )
 
+const getCollectionWithCondition = (path, fieldName, operation, value) => (
+  db.collection(path)
+    .where(fieldName, operation, value)
+    .get()
+    .then(mapCollectionToEntities)
+)
+
 // Add data
 const addDocument = (path, data) => (
   db.collection(path).add(data).then(docRef => docRef.id)
@@ -26,6 +33,7 @@ module.exports= {
 
   getDocument,
   getCollection,
+  getCollectionWithCondition,
 
   addDocument
 }
