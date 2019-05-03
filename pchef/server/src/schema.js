@@ -4,12 +4,29 @@ const typeDefs = gql`
   type Category {
     id: String!
     title: String!
-    img_url: String!
+    img_url: String
+  }
+
+  type Recipe {
+    id: String!
+    category_id: String!
+    cooking_type_id: String!
+    title: String
+    sub_title: String
+    img_url: String
+    description: String
+    is_draft: Boolean
+    modify_date: Int
+    published_date: Int
+    views: Int
+    votes: [String]
   }
 
   type Query {
     category(key: String!): Category
     allCategories: [Category]!
+
+    recipe(key: String!) : Recipe
   }
 
   type Mutation {

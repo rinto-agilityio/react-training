@@ -8,12 +8,18 @@ const {
 
 const resolvers = {
   Query: {
+    // Category
     category(_, { key }, {}) {
       return getDocument(`categories/${key}`)
     },
 
     allCategories() {
       return getCollection('categories')
+    },
+
+    // Recipe
+    recipe(_, { key }, {}) {
+      return getDocument(`recipes/${key}`)
     }
   },
 
