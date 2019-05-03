@@ -27,11 +27,65 @@ const resolvers = {
     },
 
     getPostsByAuthor: (parent, args) => {
-      console.log('run.........')
+      const { first, after } = args
 
-      const postsOfAuthor =  posts.filter(post => post.author.id == args.authorId)
+      const postWithAuthor = posts.filter(post => post.author.id == args.authorId)
+      const totalCount = postWithAuthor.length;
+      if (first < 0) {
+        throw ('First must be positive');
+      }
 
-      return { success: true, message: 'Get Posts success', posts: postsOfAuthor}
+      let start = 0;
+      console.log('after', after)
+      if (after) {
+        const buff = new Buffer(after, 'base64');
+        const id = buff.toString('ascii');
+
+        const index = postWithAuthor.findIndex((post) => post.id === id);
+
+        if (index === -1) {
+          throw ('After does not exist');
+        }
+
+        start = index + 1;
+      }
+
+      const postsList = first === undefined ?
+        postWithAuthor :
+        postWithAuthor.slice(start, start + first);
+
+      let endCursor = '';
+
+      const postsPagination = postsList.map(post => {
+        const buffer = new Buffer(post.id);
+        endCursor = buffer.toString('base64');
+        return ({
+          id: post.id,
+          title: post.title,
+          content: post.content,
+          author: post.author,
+          cursor: endCursor,
+        });
+      })
+
+      const hasNextPage = start + first < totalCount;
+
+      const pageInfo = endCursor !== undefined ?
+      {
+        endCursor,
+        hasNextPage,
+      } :
+      {
+        hasNextPage,
+      };
+
+      const result = {
+        postsPagination,
+        pageInfo,
+        totalCount,
+      };
+
+      return { success: true, message: 'Get Posts success', totalCount: result.totalCount, pageInfo: result.pageInfo, posts: result.postsPagination }
     }
   },
   Mutation: {

@@ -2,6 +2,7 @@ import React, { memo, useRef } from 'react';
 import { Button } from 'react-bootstrap';
 import { Mutation } from 'react-apollo';
 import { Form } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 //components
 import Input from '../../components/commons/Input';
@@ -14,10 +15,9 @@ import { CREATE_POST } from '../../graphql/mutations/mutation';
 
 import { GET_POST } from '../../graphql/queries/Queries'
 
-const CreatePost = props => {
+const CreatePost = ({user, pageInfo, handleCloseModal, history}) => {
   const title = useRef('')
   const content = useRef('')
-
   const handleCreatePost = (event, createPost) => {
     event.preventDefault();
     createPost({
@@ -25,7 +25,7 @@ const CreatePost = props => {
         id: `${ Date.now()}`,
         title: title.current ? title.current.value : '',
         content: content.current ? content.current.value : '',
-        authorId: props.user.id
+        authorId: user.id
       },
       optimisticResponse: {
         __typename: 'Mutation',
@@ -36,7 +36,7 @@ const CreatePost = props => {
           content: content.current ? content.current.value : '',
           author: {
             __typename: 'Author',
-            name: props.user.name
+            name: user.name
           }
         }
       }
@@ -46,12 +46,22 @@ const CreatePost = props => {
     <Mutation
       mutation={ CREATE_POST }
       onCompleted={ () => {
-        props.handleCloseModal()
+        history.push('/')
+        handleCloseModal()
       }}
+
+      refetchQueries={[{ query: GET_POST, variables: {authorId: user.id, after: pageInfo.endCursor, first: 5}}]}
+
       update={(cache, { data: { createPost } }) => {
+
         // read cache
-        const data = cache.readQuery({ query: GET_POST, variables: {authorId: props.user.id} });
-        data.getPostsByAuthor.posts.push(createPost)
+        const data = cache.readQuery({ query: GET_POST, variables: {authorId: user.id, first: 5}});
+
+        data.getPostsByAuthor.posts.unshift(createPost)
+
+        if (data.getPostsByAuthor.posts.length > 5) {
+          data.getPostsByAuthor.posts.pop()
+        }
 
         // write back to cache
         cache.writeQuery({
@@ -89,4 +99,11 @@ const CreatePost = props => {
   )
 }
 
+CreatePost.propTypes = {
+  pageInfo: PropTypes.object
+};
+
+CreatePost.defaultProps = {
+  pageInfo: {}
+};
 export default memo(CreatePost);

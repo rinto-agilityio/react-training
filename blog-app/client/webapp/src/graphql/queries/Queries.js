@@ -40,8 +40,8 @@ export const SIGN_IN = gql`
 `;
 
 export const GET_POST = gql`
-  query getPostsByAuthor($authorId: ID!) {
-    getPostsByAuthor(authorId: $authorId) {
+  query getPostsByAuthor($authorId: ID!, $after: String, $first: Int ) {
+    getPostsByAuthor(authorId: $authorId, after: $after, first: $first) {
       success
       message
       posts {
@@ -51,6 +51,11 @@ export const GET_POST = gql`
           name
         }
       }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+      totalCount
     }
   }
 `;

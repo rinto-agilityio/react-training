@@ -16,6 +16,7 @@ const typeDefs = gql`
     title: String!
     content: String!
     author: Author!
+    cursor: String!
   }
 
   input AuthorInput {
@@ -46,13 +47,20 @@ const typeDefs = gql`
   type PostResponse implements QueryResponse {
     success: Boolean!
     message: String!
+    totalCount: Int!
+    pageInfo: PageInfo!
     posts: [Post!]
+  }
+
+  type PageInfo {
+    endCursor: String
+    hasNextPage: Boolean!
   }
 
   type Query {
     getAuthors: AuthorsResponse
     signIn(email: String!, password: String!): SignInResponse
-    getPostsByAuthor(authorId: ID!): PostResponse
+    getPostsByAuthor(authorId: ID!, after: String, first: Int): PostResponse
     getPost(id: ID!): Post
   }
 

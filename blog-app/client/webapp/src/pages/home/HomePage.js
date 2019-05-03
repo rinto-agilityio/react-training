@@ -7,6 +7,7 @@ import Header from '../../components/header/Header'
 import PrimaryModal from '../../components/commons/PrimaryModal'
 import CreatePost from './CreatePost'
 import PostList from '../../components/Posts/PostList'
+
 //style
 import './HomePageStyle.css'
 
@@ -20,7 +21,6 @@ const HomePage = props => {
   const user = accessClient.readQuery({query: LOGGED_USER})
 
   const [isCreatePost, setIsCreatePost] = useState(false)
-
   const handleCreatePost = () => {
     setIsCreatePost(true)
   }
@@ -32,12 +32,16 @@ const HomePage = props => {
   return (
     <Query
       query={GET_POST}
-      variables={{authorId: user.loggedUser.id}}
+      variables={{
+        authorId: user.loggedUser.id,
+        first: 5
+      }}
       fetchPolicy='cache-and-network'
     >
-      {({ loading, error, data }) => {
+      {({ loading, error, data, fetchMore }) => {
       if (loading) return "Loading...";
       if (error) return `Error! ${error.message}`;
+
       return (
         <div className='container'>
           <Header />
@@ -51,6 +55,9 @@ const HomePage = props => {
             <div>
               <PostList
                 data={data && data.getPostsByAuthor.posts}
+                pageInfo={ data && data.getPostsByAuthor.pageInfo }
+                loading={loading}
+                fetchMore={fetchMore}
               />
             </div>
 
