@@ -18,32 +18,17 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-
-function App() {
-  const inputRef = useRef(null)
-  const textareaRef = useRef(null)
-
-  return (
-    <View>
-      <Text style={styles.welcome}>Welcome to React Native monorepo!</Text>
-      <Text style={styles.instructions}>Test live reload on device</Text>
-      <Text style={styles.instructions}>To get started, edit App.js</Text>
-      <Text style={styles.instructions}>{instructions}</Text>
-      <View>
-        <TouchableOpacity
-          title="Click me"
-          onPress={() => alert(textareaRef.current && textareaRef.current._lastNativeText)}
-        >
-          <Text>Click</Text>
-        </TouchableOpacity>
+export default class App extends Component<Props> {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>Welcome to React Native monorepo!</Text>
+        <Text style={styles.instructions}>Test live reload on device</Text>
+        <Text style={styles.instructions}>To get started, edit App.js</Text>
+        <Text style={styles.instructions}>{instructions}</Text>
       </View>
-      <TextBox refInput={inputRef} />
-      <TextBox
-        refInput={textareaRef}
-        multiline={true}
-      />
-    </View>
-  );
+    );
+  }
 }
 
 export default App
