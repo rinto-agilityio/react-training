@@ -12,9 +12,9 @@ import { TextInput, View } from 'react-native';
 
 // Styles
 import { styles } from './styles';
+import { COLORS } from 'themes/Colors';
 
 // Themes
-import { COLORS } from '../../../themes/Colors';
 
 const TextBox = ({
   multiline,
@@ -29,23 +29,23 @@ const TextBox = ({
   refInput,
   onSubmitEditing
 }) => (
-  <View style={styles.container}>
-    <TextInput
-      multiline={multiline}
-      autoCapitalize={autoCapitalize}
-      autoCorrect={autoCorrect}
-      defaultValue={defaultValue}
-      placeholder={placeholder}
-      multiline={multiline}
-      editable={editable}
-      numberOfLines={numberOfLines}
-      style={[styles.default, customStyle]}
-      ref={refInput}
-      placeholderTextColor={placeholderTextColor}
-      onSubmitEditing={onSubmitEditing}
-    />
-  </View>
-)
+    <View style={styles.container}>
+      <TextInput
+        multiline={multiline}
+        autoCapitalize={autoCapitalize}
+        autoCorrect={autoCorrect}
+        defaultValue={defaultValue}
+        placeholder={placeholder}
+        multiline={multiline}
+        editable={editable}
+        numberOfLines={numberOfLines}
+        style={[styles.default, customStyle]}
+        ref={refInput}
+        placeholderTextColor={placeholderTextColor}
+        onSubmitEditing={onSubmitEditing}
+      />
+    </View>
+  )
 
 TextBox.defaultProps = {
   multiline: false,

@@ -6,8 +6,9 @@
  * @flow
  */
 
-import React, { Component } from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import React, { useRef } from 'react';
+import { Platform, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import TextBox from './TextBox';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -17,18 +18,35 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native monorepo!</Text>
-        <Text style={styles.instructions}>Test live reload on device</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+
+function App() {
+  const inputRef = useRef(null)
+  const textareaRef = useRef(null)
+
+  return (
+    <View>
+      <Text style={styles.welcome}>Welcome to React Native monorepo!</Text>
+      <Text style={styles.instructions}>Test live reload on device</Text>
+      <Text style={styles.instructions}>To get started, edit App.js</Text>
+      <Text style={styles.instructions}>{instructions}</Text>
+      <View>
+        <TouchableOpacity
+          title="Click me"
+          onPress={() => alert(textareaRef.current && textareaRef.current._lastNativeText)}
+        >
+          <Text>Click</Text>
+        </TouchableOpacity>
       </View>
-    );
-  }
+      <TextBox refInput={inputRef} />
+      <TextBox
+        refInput={textareaRef}
+        multiline={true}
+      />
+    </View>
+  );
 }
+
+export default App
 
 const styles = StyleSheet.create({
   container: {
