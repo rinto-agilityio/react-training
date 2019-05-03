@@ -12,8 +12,8 @@ import PostList from '../../components/Posts/PostList'
 import './HomePageStyle.css'
 
 //queries
-import { LOGGED_USER, GET_POST } from '../../graphql/queries/Queries'
-
+import { LOGGED_USER } from '../../graphql/author/queries'
+import { GET_POST } from '../../graphql/post/queries'
 const HomePage = props => {
 
   const { accessClient } = props

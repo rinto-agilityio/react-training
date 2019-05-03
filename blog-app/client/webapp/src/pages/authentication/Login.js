@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import SignUp from './SignUp'
 
 //query
-import { SIGN_IN } from '../../graphql/queries/Queries';
+import { SIGN_IN } from '../../graphql/author/queries';
 
 //import css
 import './LoginStyle.css'

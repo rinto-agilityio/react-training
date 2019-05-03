@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Mutation } from 'react-apollo';
 
 //mutation
-import { CREATE_USER } from '../../graphql/mutations/mutation';
+import { CREATE_USER } from '../../graphql/author/mutations';
 
 //import css
 import './LoginStyle.css'

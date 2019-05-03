@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import FetchMoreButton from '../../components/commons/FetchMoreButton'
 import AppConfig  from '../../configs/AppConfig'
+
 //components
 import PostItem from './PostItem'
 

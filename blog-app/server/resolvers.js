@@ -36,7 +36,7 @@ const resolvers = {
       }
 
       let start = 0;
-      console.log('after', after)
+
       if (after) {
         const buff = new Buffer(after, 'base64');
         const id = buff.toString('ascii');

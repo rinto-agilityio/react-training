@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom'
 
 //query
-import { LOGGED_USER } from '../graphql/queries/Queries'
+import { LOGGED_USER } from '../graphql/author/queries'
 
 //prop type
 import PropTypes from 'prop-types'

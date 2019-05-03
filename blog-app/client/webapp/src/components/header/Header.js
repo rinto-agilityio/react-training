@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Query } from 'react-apollo';
 
 //query
-import { LOGGED_USER } from '../../graphql/queries/Queries';
+import { LOGGED_USER } from '../../graphql/author/queries';
 
 //components
 import Image from '../commons/Image'

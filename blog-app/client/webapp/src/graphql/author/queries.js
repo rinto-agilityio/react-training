@@ -38,24 +38,3 @@ export const SIGN_IN = gql`
     }
   }
 `;
-
-export const GET_POST = gql`
-  query getPostsByAuthor($authorId: ID!, $after: String, $first: Int ) {
-    getPostsByAuthor(authorId: $authorId, after: $after, first: $first) {
-      success
-      message
-      posts {
-        title
-        content
-        author {
-          name
-        }
-      }
-      pageInfo {
-        endCursor
-        hasNextPage
-      }
-      totalCount
-    }
-  }
-`;
