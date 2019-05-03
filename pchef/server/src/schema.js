@@ -35,6 +35,20 @@ const typeDefs = gql`
       title: String!
       img_url: String!
     ): Category!
+
+    createRecipe(
+      category_id: String!
+      cooking_type_id: String!
+      title: String
+      sub_title: String
+      img_url: String
+      description: String
+      is_draft: Boolean
+      modify_date: Int
+      published_date: Int
+      views: Int
+      votes: [String]
+    ): Recipe!
   }
 `
 

@@ -32,6 +32,12 @@ const resolvers = {
       return {
         id: addDocument('categories', data)
       }
+    },
+
+    createRecipe (_, data, {}) {
+      return {
+        id: addDocument('recipes', data)
+      }
     }
   }
 }
