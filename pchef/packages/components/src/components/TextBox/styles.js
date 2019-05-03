@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   },
   default: {
     height: 40,
-    borderColor: COLORS.inputBorder,
+    borderColor: COLORS.gray,
     borderBottomWidth: 1,
     fontSize: 18,
     flex: 1,
