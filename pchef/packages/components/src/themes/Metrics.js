@@ -7,7 +7,10 @@ export default {
   largeMargin: 20,
   fontSize: {
     small: 14,
-    medium: 18
+    medium: 18,
+    large: 20
   },
-  mediumInput: 40
+  smallInput: 20,
+  mediumInput: 40,
+  largeInput: 60
 }
