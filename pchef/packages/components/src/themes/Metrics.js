@@ -8,5 +8,6 @@ export default {
   fontSize: {
     small: 14,
     medium: 18
-  }
+  },
+  mediumInput: 40
 }

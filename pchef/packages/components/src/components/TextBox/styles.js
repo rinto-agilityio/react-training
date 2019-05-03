@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     flex: 1
   },
   default: {
-    height: 40,
+    height: METRICS.mediumInput,
     borderColor: COLORS.graySolid,
     borderBottomWidth: 1,
     fontSize: METRICS.fontSize.medium,
