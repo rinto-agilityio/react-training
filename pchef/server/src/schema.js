@@ -5,6 +5,7 @@ const typeDefs = gql`
     id: String!
     title: String!
     img_url: String
+    recipes: [Recipe]
   }
 
   type Recipe {

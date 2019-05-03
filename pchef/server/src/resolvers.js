@@ -3,6 +3,7 @@ const {
   mapCollectionToEntities,
   getDocument,
   getCollection,
+  getCollectionWithCondition,
   addDocument
 } = require('./helpers/firestore')
 
@@ -11,6 +12,17 @@ const resolvers = {
     // Category
     category(_, { id }, {}) {
       return getDocument(`categories/${id}`)
+        .then(category => {
+          return getCollectionWithCondition(
+            'recipes',
+            'category_id', '==', id
+          )
+          .then(recipes => {
+            category.recipes = recipes
+
+            return category
+          })
+        })
     },
 
     allCategories() {
