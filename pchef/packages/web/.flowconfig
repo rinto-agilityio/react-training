@@ -20,9 +20,11 @@
 
 [include]
 ./src
+../components
 
 [libs]
 flow-typed
+./type-def-lib
 
 [lints]
 
