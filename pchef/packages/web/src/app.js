@@ -1,9 +1,9 @@
 import React from 'react'
 
 // Components
-import AppComponent from 'components/src/App'
-import Counting from 'components/src/Counting'
-import Button from 'components/src/Button'
+import AppComponent from 'components/src/components/App'
+import Counting from 'components/src/components/Counting'
+import Button from 'components/src/components/Button'
 
 const App = () => (
   <>

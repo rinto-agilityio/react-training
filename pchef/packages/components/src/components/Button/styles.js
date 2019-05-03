@@ -2,7 +2,7 @@
 import { StyleSheet } from 'react-native';
 
 // Themes
-import { COLORS, METRICS } from '../../../themes';
+import { COLORS, METRICS } from '../../themes';
 
 // Create style for button
 const styles = StyleSheet.create({
