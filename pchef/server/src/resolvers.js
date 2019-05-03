@@ -20,6 +20,10 @@ const resolvers = {
     // Recipe
     recipe(_, { id }, {}) {
       return getDocument(`recipes/${id}`)
+    },
+
+    allRecipes() {
+      return getCollection('recipes')
     }
   },
 

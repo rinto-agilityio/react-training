@@ -23,10 +23,11 @@ const typeDefs = gql`
   }
 
   type Query {
-    category(id: String!): Category
-    allCategories: [Category]!
+    category(id: String!): Category!
+    allCategories: [Category]
 
-    recipe(id: String!) : Recipe
+    recipe(id: String!) : Recipe!
+    allRecipes: [Recipe]
   }
 
   type Mutation {
