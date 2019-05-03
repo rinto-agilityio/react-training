@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node ../../node_modules/react-native/local-cli/cli.js start --projectRoot ../../",
     "storybook": "storybook start -p 7007 | react-native start",
+    "link": "node ../../node_modules/react-native/local-cli/cli.js link react-native-gesture-handler --verbose",
     "android": "node ../../node_modules/react-native/local-cli/cli.js run-android",
     "ios": "node ../../node_modules/react-native/local-cli/cli.js run-ios",
     "test": "jest",
@@ -18,16 +19,17 @@
     "apollo-link-firebase": "^1.1.0",
     "components": "*",
     "firebase": "^5.11.0",
-    "fs": "^0.0.1-security",
     "graphql": "^14.2.1",
     "path": "^0.12.7",
     "react": "16.8.3",
     "react-apollo": "^2.5.5",
-    "react-native": "^0.59.6",
+    "react-native": "0.59.6",
+    "react-native-gesture-handler": "^1.2.1",
     "react-navigation": "^3.9.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.4",
     "@babel/preset-flow": "^7.0.0",
     "@babel/runtime": "^7.4.3",
     "@storybook/react-native": "^4.1.18",
@@ -57,7 +59,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && flow"
     }
   },
   "lint-staged": {
