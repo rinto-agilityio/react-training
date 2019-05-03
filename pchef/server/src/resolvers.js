@@ -8,11 +8,11 @@ const {
 const resolvers = {
   Query: {
     category(_, { key }, {}) {
-      return getDocument(`Category/${key}`)
+      return getDocument(`categories/${key}`)
     },
 
     allCategories() {
-      return getCollection('Category')
+      return getCollection('categories')
     }
   }
 }
