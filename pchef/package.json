@@ -8,13 +8,11 @@
     "nohoist": []
   },
   "husky": {
-    "rootDir": "../..",
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "rootDir": "../..",
     "*.js": [
       "prettier",
       "eslint --cache --fix",
