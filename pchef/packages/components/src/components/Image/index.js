@@ -10,7 +10,8 @@ const ImageComponent = ({
   handleTouch,
   url,
   customBtnStyle,
-  customImageStyle
+  customImageStyle,
+  resizeMethod
 }) => (
     <TouchableOpacity
       style={customBtnStyle}
@@ -19,7 +20,7 @@ const ImageComponent = ({
     >
       <Image
         source={url}
-        resizeMethod="resize"
+        resizeMethod={resizeMethod}
         style={[styles.image, customImageStyle]}
       />
     </TouchableOpacity>
@@ -29,8 +30,9 @@ ImageComponent.defaultProps = {
   disabled: false,
   customImageStyle: {},
   customBtnStyle: {},
-  handleTouch: () => { },
-  url: ''
+  url: '',
+  resizeMethod: 'resize',
+  handleTouch: () => {}
 }
 
 export default ImageComponent
