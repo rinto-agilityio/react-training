@@ -25,14 +25,12 @@ const updateQuery = (previousResult, { fetchMoreResult }) => {
 };
 
 const PostList = ({data, loading, fetchMore, pageInfo }) => {
-  console.log('pageInfo', pageInfo);
 
   const listPosts = data.map((post, index) => {
     return (
       <PostItem
         key={index}
-        title={post.title}
-        content={post.content}
+        post={post}
       />
     )
   })
@@ -55,14 +53,14 @@ const PostList = ({data, loading, fetchMore, pageInfo }) => {
 
 PostList.propTypes = {
   data: PropTypes.array,
-  loading: PropTypes.object,
+  loading: PropTypes.bool,
   fetchMore: PropTypes.func,
   pageInfo: PropTypes.object
 };
 
 PostList.defaultProps = {
   data: [],
-  loading: {},
+  loading: false,
   fetchMore: () => {},
   pageInfo: {}
 };

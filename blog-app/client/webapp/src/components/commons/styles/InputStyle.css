@@ -3,3 +3,7 @@
   flex-direction: column;
   align-items: center;
 }
+
+.input-wrap .input-field {
+  width: 100%;
+}
