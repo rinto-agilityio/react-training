@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 //components
 import Input from '../../components/commons/Input';
+import TextArea from '../../components/commons/TextArea'
 
 //style
 import './CreatePostStyle.css';
@@ -18,14 +19,16 @@ import { GET_POST } from '../../graphql/post/queries';
 const CreatePost = ({user, pageInfo, handleCloseModal, history}) => {
   const title = useRef('')
   const content = useRef('')
+
   const handleCreatePost = (event, createPost) => {
+
     event.preventDefault();
     createPost({
       variables: {
         id: `${ Date.now()}`,
         title: title.current ? title.current.value : '',
         content: content.current ? content.current.value : '',
-        authorId: user.id
+        authorId: user.id,
       },
       optimisticResponse: {
         __typename: 'Mutation',
@@ -74,23 +77,24 @@ const CreatePost = ({user, pageInfo, handleCloseModal, history}) => {
       {(createPost, { data, loading, error }) => {
         if (loading) return "Loading.............................";
         if (error) return `Error! ${error.message}`;
+
         return (
           <div className='create-post'>
-            <Form onSubmit={e => handleCreatePost(e, createPost)}>
+            <Form onSubmit={e => handleCreatePost(e, createPost)} className='form-new-post'>
               <Input
                 placeholder='input title'
                 onRef={title}
               />
-              <div>
-                <textarea
-                  placeholder='input content'
-                  ref={content}
-                />
+
+              <TextArea
+                placeholder='input content'
+                onRef={content}
+              />
+
+              <div className='button-save-post'>
+                <Button variant="primary" type="submit">Save</Button>
               </div>
 
-              <div>
-                <Button variant="primary" type="submit">Create Post</Button>
-              </div>
             </Form>
         </div>
         )
