@@ -18,7 +18,7 @@ storiesOf('Button', module)
     />
   ))
 
-  .add('Size medium', () => (
+  .add('Size default', () => (
     <Button
       title="Click me"
       size="medium"
