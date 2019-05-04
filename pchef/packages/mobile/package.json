@@ -59,11 +59,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && flow"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.js": [
+      "flow check",
       "prettier",
       "eslint --cache --fix",
       "git add"
