@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
 // Component
-import Icon from 'components/src/components/Icon'
+import Icon from 'shared/src/components/Icon'
 
 storiesOf('Icon', module)
   .add('Have label', () => (

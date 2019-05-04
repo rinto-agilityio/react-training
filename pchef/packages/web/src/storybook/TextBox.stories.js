@@ -4,10 +4,10 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
 // Themes
-import { COLORS } from 'components/src/themes'
+import { COLORS } from 'shared/src/themes'
 
 // Component
-import TextBox from 'components/src/components/TextBox'
+import TextBox from 'shared/src/components/TextBox'
 
 const inputField = React.createRef()
 

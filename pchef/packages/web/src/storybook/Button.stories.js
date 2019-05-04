@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
 // Component
-import Button from 'components/src/components/Button'
+import Button from 'shared/src/components/Button'
 
 storiesOf('Button', module)
   .add('Size small', () => (
