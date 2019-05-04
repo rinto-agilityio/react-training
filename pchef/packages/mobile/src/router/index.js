@@ -1,11 +1,11 @@
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 import ROUTES from '@constants/routes';
 import RecipeDetail from '@recipeDetailScreen/index';
 import Login from '@loginScreen/index';
 import Home from '@homeScreen/index';
 import Category from '@categoryScreen/index';
 
-export default createStackNavigator(
+const appRouter = createStackNavigator(
   {
     Login: {
       screen: Login,
@@ -40,3 +40,5 @@ export default createStackNavigator(
     initialRouteName: ROUTES.LOGIN,
   }
 );
+
+export default createAppContainer(appRouter);
