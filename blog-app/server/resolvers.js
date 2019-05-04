@@ -1,10 +1,14 @@
-const _ = require('lodash');
 
+const { UserInputError } = require('apollo-server');
+const _ = require('lodash');
+const { PubSub } = require('apollo-server');
+const Types = require('./Types')
 const {
   getData,
   setData
 } = require('./helpers/index')
 
+const pubsub = new PubSub();
 const authors = getData('./data/Authors.json')
 const posts = getData('./data/Posts.json')
 
@@ -92,20 +96,28 @@ const resolvers = {
     signUp: (parent, args) => {
       console.log('args', args);
 
-      if ( !args.name ) {
-        throw new Error( 'username - Name is required' );
+      const validationErrors = {};
+      if (!args.name) {
+        validationErrors.name = ('Name is required')
       }
 
       if ( !args.email ) {
-        throw new Error( 'email - Email is required' );
+        validationErrors.email = ('Email is required')
       }
 
       if ( !args.password ) {
-        throw new Error( 'Password is required' );
+        validationErrors.password = ('Password is required')
       }
 
       if (_.find(authors, {email: args.email})) {
-        throw new Error('This email already exists')
+        validationErrors.email = ('This email already exists')
+      }
+
+      if (Object.keys(validationErrors).length > 0) {
+        throw new UserInputError(
+          'Failed to get events due to validation errors',
+          { validationErrors }
+        );
       }
 
       const author = {
@@ -122,18 +134,30 @@ const resolvers = {
       };
     },
     createPost: (_, args) => {
+      console.log('args', args)
       const author = authors.find(author => author.id == args.authorId)
+
       const newPost = {
         id: args.id,
         title: args.title,
         content: args.content,
+        imageUrl: args.imageUrl,
         author: author
       }
 
+      console.log('newPost', newPost)
+
       setData('./data/Posts.json', [...posts, newPost])
+
+      pubsub.publish(Types.POST_ADDED, {postAdded: newPost});
 
       return  newPost
     }
+  },
+  Subscription: {
+    postAdded: {
+      subscribe: () => pubsub.asyncIterator([Types.POST_ADDED])
+    },
   }
 };
 

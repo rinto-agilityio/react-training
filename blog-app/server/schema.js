@@ -74,6 +74,11 @@ const typeDefs = gql`
       authorId: ID!
     ): Post!
   }
+
+  type Subscription {
+    postAdded: Post
+  }
+
 `;
 
 module.exports = { typeDefs };

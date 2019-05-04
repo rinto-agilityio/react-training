@@ -14,10 +14,10 @@ import './HomePageStyle.css'
 //queries
 import { LOGGED_USER } from '../../graphql/author/queries'
 import { GET_POST } from '../../graphql/post/queries'
+
 const HomePage = props => {
 
   const { accessClient } = props
-  console.log('accessClient', accessClient)
   const user = accessClient.readQuery({query: LOGGED_USER})
 
   const [isCreatePost, setIsCreatePost] = useState(false)
@@ -41,7 +41,6 @@ const HomePage = props => {
       {({ loading, error, data, fetchMore }) => {
       if (loading) return <Spinner animation="border" variant="primary" />;
       if (error) return `Error! ${error.message}`;
-
       return (
         <div className='container'>
           <Header />
