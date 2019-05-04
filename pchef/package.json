@@ -6,5 +6,21 @@
       "packages/*"
     ],
     "nohoist": []
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier",
+      "eslint --cache --fix",
+      "git add"
+    ],
+    "tests/**/*.js": [
+      "jest --coverage --u",
+      "git add"
+    ]
   }
 }

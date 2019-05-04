@@ -57,23 +57,6 @@
     "react-test-renderer": "16.8.3",
     "storybook": "^1.0.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "flow check",
-      "prettier",
-      "eslint --cache --fix",
-      "git add"
-    ],
-    "tests/**/*.js": [
-      "jest --coverage --u",
-      "git add"
-    ]
-  },
   "jest": {
     "preset": "react-native",
     "setupTestFrameworkScriptFile": "<rootDir>src/configs/jest.js",
