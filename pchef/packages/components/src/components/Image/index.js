@@ -31,7 +31,7 @@ ImageComponent.defaultProps = {
   customImageStyle: {},
   customBtnStyle: {},
   url: '',
-  resizeMethod: 'resize',
+  resizeMethod: 'auto',
   handleTouch: () => {}
 }
 
