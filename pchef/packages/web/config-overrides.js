@@ -12,7 +12,7 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath)
 module.exports = override(
   babelInclude([
     resolveApp('src'),
-    resolveApp('../components/src'),
+    resolveApp('../shared/src'),
     // 3rd lib: react-native-elements
     resolveApp('../../node_modules/react-native-elements'),
     resolveApp('../../node_modules/react-native-ratings'),
