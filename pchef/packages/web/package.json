@@ -38,6 +38,8 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "customize-cra": "^0.2.12",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",

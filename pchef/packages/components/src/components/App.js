@@ -8,6 +8,7 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Button } from 'react-native-elements'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -21,6 +22,10 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
+        <Button
+          title="Test RNE Button"
+          onPress={() => console.log('RNE button')}
+        />
         <Text style={styles.welcome}>Welcome to React Native monorepo!</Text>
         <Text style={styles.instructions}>Test live reload on device</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
