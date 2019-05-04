@@ -26,7 +26,10 @@
     "react-native": "0.59.6",
     "react-native-fs": "^2.13.3",
     "react-native-gesture-handler": "^1.2.1",
-    "react-navigation": "^3.9.1"
+    "react-navigation": "^3.9.1",
+    "shared": "*",
+    "react-native-elements": "1.1.0",
+    "react-native-vector-icons": "6.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
@@ -80,5 +83,9 @@
       "pattern": "**/*.stories.js",
       "outputFile": "./storybook/storyLoader.js"
     }
+  },
+  "engines": {
+    "node": ">= 10.15.3",
+    "yarn": ">= 1.15.2"
   }
 }
