@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ../../node_modules/react-native/local-cli/cli.js start --projectRoot ../../",
-    "storybook": "storybook start -p 7007 | react-native start",
+    "storybook": "storybook start -p 7007 | node ../../node_modules/react-native/local-cli/cli.js start --projectRoot storybook",
     "link": "node ../../node_modules/react-native/local-cli/cli.js link react-native-gesture-handler --verbose",
     "android": "node ../../node_modules/react-native/local-cli/cli.js run-android",
     "ios": "node ../../node_modules/react-native/local-cli/cli.js run-ios",
@@ -24,6 +24,7 @@
     "react": "16.8.3",
     "react-apollo": "^2.5.5",
     "react-native": "0.59.6",
+    "react-native-fs": "^2.13.3",
     "react-native-gesture-handler": "^1.2.1",
     "react-navigation": "^3.9.1"
   },
@@ -38,6 +39,7 @@
     "babel-jest": "^24.7.1",
     "babel-preset-flow": "^6.23.0",
     "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-jest-enzyme": "^7.0.2",
@@ -58,10 +60,13 @@
     "storybook": "^1.0.0"
   },
   "jest": {
+    "rootDir": "../..",
     "preset": "react-native",
-    "setupTestFrameworkScriptFile": "<rootDir>src/configs/jest.js",
+    "setupFiles": [
+      "<rootDir>/packages/mobile/src/configs/jest.js"
+    ],
     "testPathIgnorePatterns": [
-      "<rootDir>src/configs/jest.js"
+      "<rootDir>/packages/mobile/src/configs/jest.js"
     ],
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
