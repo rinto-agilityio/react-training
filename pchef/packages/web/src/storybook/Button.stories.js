@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions'
 // Component
 import Button from 'components/src/components/Button'
 
-storiesOf('Modal', module)
+storiesOf('Button', module)
   .add('Size small', () => (
     <Button
       title="Click me"
