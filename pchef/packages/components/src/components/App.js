@@ -8,7 +8,6 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import ImageComponent from '../components/Image'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -26,11 +25,6 @@ export default class App extends Component<Props> {
         <Text style={styles.instructions}>Test live reload on device</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-        {/* Image component */}
-        <ImageComponent
-          url={{ uri: 'https://i.pinimg.com/originals/81/e5/c8/81e5c86e2e7328311737cb22c51f5ec0.jpg' }}
-          disabled={true}
-        />
       </View>
     );
   }
