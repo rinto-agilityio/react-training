@@ -10,4 +10,5 @@ export default {
   darkWhite: '#aeaeae',
   green: '#3e94f6',
   baseBlue: '#42a5f5',
+  grayDarker: '#808080'
 }
