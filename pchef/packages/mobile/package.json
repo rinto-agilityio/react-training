@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ../../node_modules/react-native/local-cli/cli.js start --projectRoot ../../",
-    "storybook": "storybook start -p 7007 | node ../../node_modules/react-native/local-cli/cli.js start --projectRoot storybook",
+    "storybook": "storybook start -p 7007",
     "link": "node ../../node_modules/react-native/local-cli/cli.js link react-native-gesture-handler --verbose",
     "android": "node ../../node_modules/react-native/local-cli/cli.js run-android",
     "ios": "node ../../node_modules/react-native/local-cli/cli.js run-ios",
