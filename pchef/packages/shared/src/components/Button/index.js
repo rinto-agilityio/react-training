@@ -1,30 +1,49 @@
 // libs
 import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { Button as ButtonComponent } from 'react-native-elements'
 
 // Styles
 import styles from './styles';
 
 type Props = {
   onClick?: () => void,
-  customStyle?: {},
+  buttonStyle?: Object,
+  typeName?: string,
+  title: string,
+  titleStyle?: Object,
   size?: string,
-  title: string
-};
+}
 
-const Button = ({ onClick, customStyle, size, title }: Props) => (
-  <TouchableOpacity
-    onPress={onClick}
-    style={[customStyle, styles.button, styles[size]]}
-  >
-    <Text style={styles.title}>{title}</Text>
-  </TouchableOpacity>
-);
-
-export default Button;
+const Button = ({
+  onClick,
+  buttonStyle,
+  typeName,
+  title,
+  titleStyle,
+  size,
+}: Props) => (
+    <ButtonComponent
+      title={title}
+      type={typeName}
+      buttonStyle={[
+        buttonStyle,
+        styles.button,
+        styles[size]
+      ]}
+      titleStyle={[
+        titleStyle,
+        styles.title
+      ]}
+      onPress={onClick}
+    />
+  )
 
 Button.defaultProps = {
   onClick: () => {},
-  customStyle: {},
+  buttonStyle: {},
+  titleStyle: {},
+  typeName: 'outline',
   size: 'medium'
-};
+}
+
+export default Button
