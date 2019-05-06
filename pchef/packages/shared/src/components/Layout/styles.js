@@ -1,7 +1,7 @@
 // Lib
 import { StyleSheet } from 'react-native';
 
-// Create style for button
+// Create style for layout
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
