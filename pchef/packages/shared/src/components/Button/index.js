@@ -5,32 +5,26 @@ import { TouchableOpacity, Text } from 'react-native';
 // Styles
 import styles from './styles';
 
-const Button = ({
-  onClick,
-  customStyle,
-  size,
-  title,
-}) => (
+type Props = {
+  onClick?: () => void,
+  customStyle?: {},
+  size?: string,
+  title: string
+};
+
+const Button = ({ onClick, customStyle, size, title }: Props) => (
   <TouchableOpacity
     onPress={onClick}
-    style={[
-      customStyle,
-      styles.button,
-      styles[size]
-    ]}
+    style={[customStyle, styles.button, styles[size]]}
   >
-    <Text
-      style={styles.title}
-    >
-      {title}
-    </Text>
+    <Text style={styles.title}>{title}</Text>
   </TouchableOpacity>
-)
+);
 
-export default Button
+export default Button;
 
 Button.defaultProps = {
-  onClick: () => { },
+  onClick: () => {},
   customStyle: {},
-  size: 'medium',
-}
+  size: 'medium'
+};

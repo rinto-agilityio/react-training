@@ -16,6 +16,20 @@ import { styles } from './styles';
 // Themes
 import { COLORS } from '../../themes';
 
+type Props = {
+  multiline: boolean,
+  autoCapitalize: string,
+  autoCorrect: boolean,
+  customStyle: {},
+  editable: boolean,
+  placeholder: string,
+  placeholderTextColor: string,
+  numberOfLines: number,
+  defaultValue: string,
+  refInput: { current: HTMLInputElement | null },
+  onSubmitEditing: () => void
+};
+
 const TextBox = ({
   multiline,
   autoCapitalize,
@@ -28,24 +42,23 @@ const TextBox = ({
   defaultValue,
   refInput,
   onSubmitEditing
-}) => (
-    <View style={styles.container}>
-      <TextInput
-        multiline={multiline}
-        autoCapitalize={autoCapitalize}
-        autoCorrect={autoCorrect}
-        defaultValue={defaultValue}
-        placeholder={placeholder}
-        multiline={multiline}
-        editable={editable}
-        numberOfLines={numberOfLines}
-        style={[styles.default, customStyle]}
-        ref={refInput}
-        placeholderTextColor={placeholderTextColor}
-        onSubmitEditing={onSubmitEditing}
-      />
-    </View>
-  )
+}: Props) => (
+  <View style={styles.container}>
+    <TextInput
+      multiline={multiline}
+      autoCapitalize={autoCapitalize}
+      autoCorrect={autoCorrect}
+      defaultValue={defaultValue}
+      placeholder={placeholder}
+      editable={editable}
+      numberOfLines={numberOfLines}
+      style={[styles.default, customStyle]}
+      ref={refInput}
+      placeholderTextColor={placeholderTextColor}
+      onSubmitEditing={onSubmitEditing}
+    />
+  </View>
+);
 
 TextBox.defaultProps = {
   multiline: false,
@@ -56,6 +69,6 @@ TextBox.defaultProps = {
   placeholder: '',
   customStyle: {},
   placeholderTextColor: COLORS.black
-}
+};
 
-export default TextBox
+export default TextBox;
