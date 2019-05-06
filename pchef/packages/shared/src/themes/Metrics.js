@@ -13,4 +13,4 @@ export default {
   smallInput: 20,
   mediumInput: 40,
   largeInput: 60
-}
+};

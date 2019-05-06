@@ -13,17 +13,17 @@ const styles = StyleSheet.create({
     padding: 10
   },
   title: {
-    color: COLORS.white,
+    color: COLORS.white
   },
   small: {
-    padding: METRICS.smallPadding,
+    padding: METRICS.smallPadding
   },
   medium: {
-    padding: METRICS.mediumPadding,
+    padding: METRICS.mediumPadding
   },
   large: {
-    padding: METRICS.largePadding,
-  },
+    padding: METRICS.largePadding
+  }
 });
 
 export default styles;

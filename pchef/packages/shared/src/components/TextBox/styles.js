@@ -16,5 +16,5 @@ export const styles = StyleSheet.create({
     fontSize: METRICS.fontSize.medium,
     flex: 1,
     color: COLORS.black
-  },
+  }
 });
