@@ -18,7 +18,15 @@ import styles from './styles'
 // Themes
 import { COLORS, METRICS } from '../../themes';
 
-const CalendarComponent = ({ selectedDay, dayRange }) => (
+type Props = {
+  selectedDay: string,
+  dayRange: {},
+}
+
+const CalendarComponent = ({
+  selectedDay,
+  dayRange
+}: Props) => (
   <View style={styles.container}>
     <Calendar
       // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined

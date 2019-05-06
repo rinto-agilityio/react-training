@@ -6,6 +6,11 @@ body,
   height: 100%;
 }
 
+@font-face {
+  src: url('fonts/FontAwesome.ttf');
+  font-family: FontAwesome;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
