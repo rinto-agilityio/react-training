@@ -1,11 +1,11 @@
 [ignore]
 ; We fork some components by platform
 .*/node_modules/.*
-.*/config-overrides.j
-<PROJECT_ROOT>/.storybook/.*
-<PROJECT_ROOT>/src/config/.*
+.*/.storybook/*
+.*\.config\.js
+.*/config/.*
 .*/coverage/.*
-.*\.test\.js
+.*\test\.js
 .*\.stories\.js
 
 
@@ -19,11 +19,9 @@
 .*/Libraries/polyfills/.*
 
 [include]
-./src
-../shared
+./packages
 
 [libs]
-flow-typed
 ./type-def-lib
 
 [lints]
