@@ -34,7 +34,6 @@ const typeDefs = gql`
 
   type AuthPayload {
     token: String
-    user: User
   }
 
   type Query {
@@ -69,6 +68,11 @@ const typeDefs = gql`
       email: String!
       password: String!
       name: String!
+    ): AuthPayload!
+
+    signInUser(
+      email: String!
+      password: String!
     ): AuthPayload!
   }
 `
