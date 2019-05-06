@@ -1,0 +1,1 @@
+export const calendarTiltleFormat = 'MMMM yyyy'
