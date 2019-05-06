@@ -16,20 +16,22 @@
   "dependencies": {
     "apollo-boost": "^0.3.1",
     "apollo-cache-inmemory": "^1.5.1",
-    "apollo-link-firebase": "^1.1.0",
+    "apollo-link": "^1.2.11",
+    "apollo-link-http": "^1.5.14",
+    "apollo-link-ws": "^1.0.17",
+    "apollo-utilities": "^1.2.1",
     "components": "*",
-    "firebase": "^5.11.0",
     "graphql": "^14.2.1",
     "path": "^0.12.7",
     "react": "16.8.3",
     "react-apollo": "^2.5.5",
     "react-native": "0.59.6",
+    "react-native-elements": "1.1.0",
     "react-native-fs": "^2.13.3",
     "react-native-gesture-handler": "^1.2.1",
+    "react-native-vector-icons": "6.4.2",
     "react-navigation": "^3.9.1",
-    "shared": "*",
-    "react-native-elements": "1.1.0",
-    "react-native-vector-icons": "6.4.2"
+    "shared": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
