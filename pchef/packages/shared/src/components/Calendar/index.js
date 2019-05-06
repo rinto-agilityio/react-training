@@ -22,7 +22,7 @@ import { COLORS, METRICS } from '../../themes'
 import { CALENDAR_TITLE_FORMAT } from '../../constants'
 
 // Helpers
-import { getDateForCalendar } from '../../helpers'
+import { getDateForCalendar } from '../../helpers/date-time'
 
 type Props = {
   selectedDay: string,
@@ -32,7 +32,8 @@ type Props = {
   },
   customWrapperStyles: {},
   customCalendarStyles: {},
-  customThemes: {}
+  customThemes: {},
+  onSelectDay: () => void
 }
 
 const CalendarComponent = ({
@@ -40,7 +41,8 @@ const CalendarComponent = ({
   dayRange,
   customCalendarStyles,
   customThemes,
-  customWrapperStyles
+  customWrapperStyles,
+  onSelectDay
 }: Props) => (
   <View style={[styles.container, customWrapperStyles]}>
     <Calendar
@@ -49,9 +51,7 @@ const CalendarComponent = ({
       // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
       maxDate={dayRange.maxDate}
       // Handler which gets executed on day press. Default = undefined
-      onDayPress={day => { console.log('selected day', day) }}
-      // Handler which gets executed on day long press. Default = undefined
-      onDayLongPress={day => { console.log('selected day', day) }}
+      onDayPress={onSelectDay}
       // Month format in calendar title, example: May 2019
       monthFormat={CALENDAR_TITLE_FORMAT}
       style={[styles.calendar, customCalendarStyles]}
@@ -81,7 +81,8 @@ CalendarComponent.defaultProps = {
   dayRange: {},
   customWrapperStyles: {},
   customCalendarStyles: {},
-  customThemes: {}
+  customThemes: {},
+  onSelectDay: () => {}
 }
 
 export default CalendarComponent
