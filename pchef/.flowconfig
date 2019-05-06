@@ -2,8 +2,10 @@
 ; We fork some components by platform
 .*/node_modules/.*
 .*/.storybook/*
+.*/storybook/*
 .*\.config\.js
 .*/config/.*
+.*/configs/.*
 .*/coverage/.*
 .*\test\.js
 .*\.stories\.js
