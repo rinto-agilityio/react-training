@@ -17,7 +17,7 @@
   },
   "parser": "babel-eslint",
   "rules": {
-    "semi": [2, "never"],
+    "semi": [2, "always"],
     "react/prefer-stateless-function": 0,
     "no-sequences": 0,
     "react/destructuring-assignment": [2, "always"],
@@ -27,7 +27,6 @@
       { "props": "never", "children": "never" }
     ],
     "import/no-self-import": 0,
-    "no-use-before-define": ["error", { "functions": true, "classes": true }],
     "import/no-extraneous-dependencies": 0,
     "import/no-unresolved": 0,
     "no-unneeded-ternary": 0,
