@@ -7,7 +7,10 @@ const {
   getCollectionWithCondition,
   addDocument
 } = require('./helpers/firestore')
-const { createUserWithEmailAndPassword } = require('./helpers/auth')
+const {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword
+} = require('./helpers/auth')
 
 const resolvers = {
   Query: {
@@ -70,7 +73,16 @@ const resolvers = {
     createUser (_, { email, password, name }, {}) {
       return createUserWithEmailAndPassword(email, password, name)
         .then(token => ({
-          email,
+          token
+        }))
+        .catch(error =>{
+          console.log('resolver error: ', error.message)
+        })
+    },
+
+    signInUser (_, { email, password }, {}) {
+      return signInWithEmailAndPassword(email, password)
+        .then(token => ({
           token
         }))
         .catch(error =>{

@@ -10,10 +10,7 @@ const createUserWithEmailAndPassword = (email, password, name) => (
       return addDocument('users', { email, name })
         .then(uid => data.user.refreshToken)
     })
-    .catch(error => {
-      console.log('err message: ', error.message)
-      return error
-    })
+    .catch(error => error)
 )
 
 const signInWithEmailAndPassword = (email, password) => (
@@ -21,10 +18,7 @@ const signInWithEmailAndPassword = (email, password) => (
     .then(data => {
       return data.user.refreshToken
     })
-    .catch(error => {
-      console.log('err message: ', error.message)
-      return error
-    })
+    .catch(error => error)
 )
 
 module.exports= {
