@@ -11,4 +11,5 @@ firebase.initializeApp({
 
 module.exports = {
   db: firebase.firestore(),
+  auth: firebase.auth(),
 }
