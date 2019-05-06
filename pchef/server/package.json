@@ -10,6 +10,7 @@
     "apollo-server": "^2.4.8",
     "dotenv": "^7.0.0",
     "firebase": "^5.11.0",
+    "firebase-admin": "^7.3.0",
     "graphql": "^14.2.1",
     "lodash": "^4.17.11"
   },
