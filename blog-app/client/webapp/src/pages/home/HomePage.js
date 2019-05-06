@@ -11,6 +11,8 @@ import PostList from '../../components/Posts/PostList'
 //style
 import './HomePageStyle.css'
 
+import { POST_ADDED } from '../../graphql/post/subcriptions'
+
 //queries
 import { LOGGED_USER } from '../../graphql/author/queries'
 import { GET_POST } from '../../graphql/post/queries'
@@ -19,7 +21,7 @@ const HomePage = props => {
 
   const { accessClient } = props
   const user = accessClient.readQuery({query: LOGGED_USER})
-
+  console.log('user', user)
   const [isCreatePost, setIsCreatePost] = useState(false)
   const handleCreatePost = () => {
     setIsCreatePost(true)
@@ -27,6 +29,20 @@ const HomePage = props => {
 
   const handleCloseModal = () => {
     setIsCreatePost(false)
+  }
+
+  const handleSubcriptionNewPost = subscribeToMore => {
+    subscribeToMore({
+      document: POST_ADDED,
+      updateQuery: (prev, { subscriptionData }) => {
+
+        if (!subscriptionData.data) return prev;
+        const newPost = subscriptionData.data.postAdded;
+        return Object.assign({}, prev.getPostsByAuthor, {
+          posts: [newPost, ...prev.getPostsByAuthor.posts]
+        });
+      }
+    })
   }
 
   return (
@@ -38,9 +54,10 @@ const HomePage = props => {
       }}
       fetchPolicy='cache-and-network'
     >
-      {({ loading, error, data, fetchMore }) => {
+      {({ loading, error, data, fetchMore, subscribeToMore }) => {
       if (loading) return <Spinner animation="border" variant="primary" />;
       if (error) return `Error! ${error.message}`;
+
       return (
         <div className='container'>
           <Header />
@@ -53,10 +70,12 @@ const HomePage = props => {
             </Button>
             <div>
               <PostList
-                data={data && data.getPostsByAuthor.posts}
+                posts={data && data.getPostsByAuthor.posts}
                 pageInfo={ data && data.getPostsByAuthor.pageInfo }
                 loading={loading}
                 fetchMore={fetchMore}
+                handleSubcriptionNewPost={handleSubcriptionNewPost}
+                subscribeToMore={subscribeToMore}
               />
             </div>
 

@@ -1,10 +1,11 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import FetchMoreButton from '../../components/commons/FetchMoreButton'
 import AppConfig  from '../../configs/AppConfig'
 
 //components
 import PostItem from './PostItem'
+
 
 const updateQuery = (previousResult, { fetchMoreResult }) => {
 
@@ -24,9 +25,13 @@ const updateQuery = (previousResult, { fetchMoreResult }) => {
   };
 };
 
-const PostList = ({data, loading, fetchMore, pageInfo }) => {
+const PostList = ({posts, loading, fetchMore, pageInfo, handleSubcriptionNewPost, subscribeToMore }) => {
 
-  const listPosts = data.map((post, index) => {
+  useEffect(() =>
+    handleSubcriptionNewPost(subscribeToMore)
+  );
+
+  const listPosts = posts.map((post, index) => {
     return (
       <PostItem
         key={index}
