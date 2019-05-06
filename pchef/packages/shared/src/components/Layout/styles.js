@@ -28,6 +28,12 @@ const styles = StyleSheet.create({
   },
   halfSize: {
     width: '50%',
+  },
+  oneThirdSize: {
+    width: '30%'
+  },
+  aQuarterSize: {
+    width: '25%'
   }
 });
 
