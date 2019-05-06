@@ -10,12 +10,14 @@ storiesOf('Icon', module)
   .add('Have label', () => (
     <Icon
       label="Label"
+      name="hourglass"
       onClick={action('clicked')}
     />
   ))
 
   .add('Without label', () => (
     <Icon
+      name="hourglass"
       onClick={action('clicked')}
     />
   ))
