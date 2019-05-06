@@ -6,18 +6,18 @@ import styles from './styles';
 
 type Props = {
   children?: React.Node,
-  type?: string,
-  position?: string,
+  direction?: string,
+  childPosition?: string,
   flexGrow?: number,
 };
 
-const Layout = ({ children, type, position, flexGrow }: Props) => {
+const Layout = ({ children, direction, childPosition, flexGrow }: Props) => {
   return (
     <View 
     style={[
       styles.container,
-      styles[type],
-      styles[position],
+      styles[direction],
+      styles[childPosition],
       {flexGrow: flexGrow} 
     ]} 
     >
