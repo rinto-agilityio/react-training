@@ -25,3 +25,7 @@ declare module '@router/index' {
 declare module '@configs/firebase' {
   declare module.exports: any;
 }
+
+declare module '@constants/api' {
+  declare module.exports: any;
+}
