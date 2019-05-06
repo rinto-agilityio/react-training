@@ -25,11 +25,9 @@ const styles = StyleSheet.create({
   },
   fullSize: {
     width: '100%',
-    backgroundColor: 'red'
   },
   halfSize: {
     width: '50%',
-    backgroundColor: 'red'
   }
 });
 
