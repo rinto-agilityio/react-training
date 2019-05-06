@@ -5,38 +5,31 @@ import Login from '@screen/Login';
 import Home from '@screen/Home';
 import Category from '@screen/Category';
 
+// app router
 const appRouter = createStackNavigator(
   {
     Login: {
       screen: Login,
       headerMode: 'none',
-      navigationOptions: {
-        header: null,
-      },
     },
     Home: {
       screen: Home,
       headerMode: 'none',
-      navigationOptions: {
-        header: null,
-      },
     },
     Category: {
       screen: Category,
       headerMode: 'none',
-      navigationOptions: {
-        header: null,
-      },
     },
     RecipeDetail: {
       screen: RecipeDetail,
       headerMode: 'none',
-      navigationOptions: {
-        header: null,
-      },
     },
   },
   {
+    navigationOptions: {
+      header: null,
+    },
+    headerMode: 'none',
     initialRouteName: ROUTES.LOGIN,
   }
 );
