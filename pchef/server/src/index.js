@@ -4,10 +4,33 @@ require('dotenv').config()
 const { ApolloServer } = require('apollo-server')
 const typeDefs = require('./schema')
 const resolvers = require('./resolvers')
+const { getUserInfoByToken } = require('./helpers/auth')
+
+// Constants
+const HEADER_TOKEN_NAME = 'authorization'
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers
+  resolvers,
+  context: async ({ req }) => {
+    let authToken = null
+    let currentUser = null
+
+    try {
+      authToken = req.headers[HEADER_TOKEN_NAME]
+
+      if (authToken) {
+        currentUser = await getUserInfoByToken(authToken)
+      }
+    } catch (error) {
+      console.warn(`Unable to authenticate using auth token: ${authToken}`);
+    }
+
+    return {
+      authToken,
+      currentUser
+    }
+  }
 })
 
 server
