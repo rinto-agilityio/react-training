@@ -19,7 +19,10 @@ import styles from './styles'
 import { COLORS, METRICS } from '../../themes'
 
 // Constants
-import { calendarTiltleFormat } from '../../constants'
+import { CALENDAR_TITLE_FORMAT } from '../../constants'
+
+// Helpers
+import { getDateForCalendar } from '../../helpers'
 
 type Props = {
   selectedDay: string,
@@ -50,7 +53,7 @@ const CalendarComponent = ({
       // Handler which gets executed on day long press. Default = undefined
       onDayLongPress={day => { console.log('selected day', day) }}
       // Month format in calendar title, example: May 2019
-      monthFormat={calendarTiltleFormat}
+      monthFormat={CALENDAR_TITLE_FORMAT}
       style={[styles.calendar, customCalendarStyles]}
       theme={{
         selectedDayBackgroundColor: COLORS.baseBlue,
@@ -74,7 +77,7 @@ const CalendarComponent = ({
 )
 
 CalendarComponent.defaultProps = {
-  selectedDay: '2019-05-04', // Format of selected day props is YYYY-MM-DD
+  selectedDay: getDateForCalendar(Date.now()), // Format of selected day props is YYYY-MM-DD
   dayRange: {},
   customWrapperStyles: {},
   customCalendarStyles: {},

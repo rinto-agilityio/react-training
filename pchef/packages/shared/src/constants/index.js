@@ -1,1 +1,1 @@
-export const calendarTiltleFormat = 'MMMM yyyy'
+export const CALENDAR_TITLE_FORMAT = 'MMMM yyyy'
