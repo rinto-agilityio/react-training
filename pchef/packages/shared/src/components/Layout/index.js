@@ -3,16 +3,14 @@ import { View, Text } from 'react-native';
 
 // Styles
 import styles from './styles'
-const Layout = ({ children, type, size }) => {
+const Layout = ({ children, type, size, position }) => {
   return (
     <View style={[
-      styles.flex,
+      styles.container,
       styles[type],
-      styles[size]
+      styles[size],
+      styles[position]
     ]}>
-      <Text>Layout component 0</Text>
-      <Text>Layout component 1</Text>
-      <Text>Layout component 2</Text>
       {children}    
     </View>
   )

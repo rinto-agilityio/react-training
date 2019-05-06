@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 
 // Create style for button
 const styles = StyleSheet.create({
-  flex: {
+  container: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -15,12 +15,21 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row'
   },
-
+  left: {
+    alignItems: 'flex-start',
+    justifyContent: 'end',
+  },
+  right: {
+    alignItems: 'flex-end',
+    justifyContent: 'start',
+  },
   fullSize: {
-    width: '100%'
+    width: '100%',
+    backgroundColor: 'red'
   },
   halfSize: {
-    width: '50%'
+    width: '50%',
+    backgroundColor: 'red'
   }
 });
 
