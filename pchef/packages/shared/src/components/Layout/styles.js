@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    backgroundColor: 'red'
   },
   column: {
     flexDirection: 'column'
@@ -17,17 +18,17 @@ const styles = StyleSheet.create({
   },
   left: {
     alignItems: 'flex-start',
-    justifyContent: 'end',
+    justifyContent: 'end'
   },
   right: {
     alignItems: 'flex-end',
-    justifyContent: 'start',
+    justifyContent: 'start'
   },
   fullSize: {
-    width: '100%',
+    flex: 1
   },
   halfSize: {
-    width: '50%',
+    width: '50%'
   },
   oneThirdSize: {
     width: '30%'

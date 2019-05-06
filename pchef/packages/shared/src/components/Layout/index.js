@@ -1,9 +1,17 @@
-import React from 'react';
+import * as React from 'react';
 import { View } from 'react-native';
 
 // Styles
-import styles from './styles'
-const Layout = ({ children, type, size, position }) => {
+import styles from './styles';
+
+type Props = {
+  children?: React.Node,
+  type?: string,
+  size?: string,
+  position?: string,
+};
+
+const Layout = ({ children, type, size, position }: Props) => {
   return (
     <View style={[
       styles.container,
@@ -13,14 +21,7 @@ const Layout = ({ children, type, size, position }) => {
     ]}>
       {children}    
     </View>
-  )
-}
+  );
+};
 
-Layout.defaultProps = {
-  children: [],
-  type: '',
-  size: '',
-  position: ''
-}
-
-export default Layout
+export default Layout;
