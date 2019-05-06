@@ -1,7 +1,7 @@
 /**
  * Get full date for calendar by format YYYY-MM-DD
  */
-export const getDateForCalendar = date => {
+export const getDateForCalendar = (date: number) => {
   const dayFormat = new Date(date)
   const year = dayFormat.getFullYear()
   const month = dayFormat.getMonth() + 1

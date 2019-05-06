@@ -10,24 +10,36 @@
 import React from 'react'
 import { View } from 'react-native'
 import { Calendar } from 'react-native-calendars'
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 // Styles
 import styles from './styles'
 
 // Themes
-import { COLORS, METRICS } from '../../themes';
+import { COLORS, METRICS } from '../../themes'
+
+// Constants
+import { calendarTiltleFormat } from '../../constants'
 
 type Props = {
   selectedDay: string,
-  dayRange: {},
+  dayRange: {
+    minDate: string,
+    maxDate: string
+  },
+  customWrapperStyles: {},
+  customCalendarStyles: {},
+  customThemes: {}
 }
 
 const CalendarComponent = ({
   selectedDay,
-  dayRange
+  dayRange,
+  customCalendarStyles,
+  customThemes,
+  customWrapperStyles
 }: Props) => (
-  <View style={styles.container}>
+  <View style={[styles.container, customWrapperStyles]}>
     <Calendar
       // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
       minDate={dayRange.minDate}
@@ -38,12 +50,13 @@ const CalendarComponent = ({
       // Handler which gets executed on day long press. Default = undefined
       onDayLongPress={day => { console.log('selected day', day) }}
       // Month format in calendar title, example: May 2019
-      monthFormat={'MMMM yyyy'}
-      style={styles.calendar}
+      monthFormat={calendarTiltleFormat}
+      style={[styles.calendar, customCalendarStyles]}
       theme={{
         selectedDayBackgroundColor: COLORS.baseBlue,
         selectedDayTextColor: COLORS.white,
-        todayTextColor: COLORS.darkBlue
+        todayTextColor: COLORS.darkBlue,
+        ...customThemes
       }}
       markedDates={{
         [selectedDay]: {selected: true}
@@ -62,7 +75,10 @@ const CalendarComponent = ({
 
 CalendarComponent.defaultProps = {
   selectedDay: '2019-05-04', // Format of selected day props is YYYY-MM-DD
-  dayRange: {}
+  dayRange: {},
+  customWrapperStyles: {},
+  customCalendarStyles: {},
+  customThemes: {}
 }
 
 export default CalendarComponent
