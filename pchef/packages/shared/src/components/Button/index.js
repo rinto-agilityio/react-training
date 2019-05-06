@@ -6,9 +6,9 @@ import { Button as ButtonComponent } from 'react-native-elements'
 import styles from './styles';
 
 type Props = {
-  onClick?: Function,
+  onClick?: () => void,
   buttonStyle?: Object,
-  type?: string,
+  typeName?: string,
   title: string,
   titleStyle?: Object,
   size?: string,
@@ -17,14 +17,14 @@ type Props = {
 const Button = ({
   onClick,
   buttonStyle,
-  type,
+  typeName,
   title,
   titleStyle,
   size,
 }: Props) => (
     <ButtonComponent
       title={title}
-      type={type}
+      type={typeName}
       buttonStyle={[
         buttonStyle,
         styles.button,
@@ -44,6 +44,6 @@ Button.defaultProps = {
   onClick: () => {},
   buttonStyle: {},
   titleStyle: {},
-  type: 'outline',
+  typeName: 'outline',
   size: 'medium'
 }

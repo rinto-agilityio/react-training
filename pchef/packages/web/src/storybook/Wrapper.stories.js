@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions'
 
 // Component
 import Button from 'shared/src/components/Button'
-import Wrapper from 'shared/src/components/Wrapper'
+import Wrapper from 'shared/src/layout/Wrapper'
 
 storiesOf('Wrapper', module)
   .add('Wrapper children', () => (
