@@ -9,4 +9,6 @@ firebase.initializeApp({
   storageBucket: process.env.storageBucket,
 })
 
-module.exports = firebase.firestore()
+module.exports = {
+  db: firebase.firestore(),
+}

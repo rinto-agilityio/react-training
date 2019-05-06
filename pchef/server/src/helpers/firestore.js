@@ -1,4 +1,4 @@
-const db = require('../config/database')
+const { db } = require('../config/firebase')
 
 // Format data return for FireStore Document and Collections
 const mapDocumentToEntity = doc => ({ id: doc.id, ...doc.data() })
