@@ -11,7 +11,7 @@ type Props = {
   flexGrow?: number,
 };
 
-const Layout = ({ children, direction, childPosition, flexGrow }: Props) => {
+const Wrapper = ({ children, direction, childPosition, flexGrow }: Props) => {
   return (
     <View 
     style={[
@@ -26,4 +26,4 @@ const Layout = ({ children, direction, childPosition, flexGrow }: Props) => {
   );
 };
 
-export default Layout;
+export default Wrapper;
