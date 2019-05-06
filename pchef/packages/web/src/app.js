@@ -11,21 +11,23 @@ import Wrapper from 'shared/src/layout/Wrapper'
 const App = () => (
   <>
     <Counting />
-    <Icon />
-      <Wrapper direction="row" >
-        <Wrapper flexGrow={1}>
-          <Text> item 1</Text>
-          <Text> item 2</Text>
-          <Text> item 3</Text>
-        </Wrapper>
-        <Wrapper flexGrow={3} direction="row" childPosition="spaceAround">
-          <Text> item a</Text>
-          <Text> item b</Text>
-          <Text> item c</Text>
-        </Wrapper>
+    <Icon name="hourglass" />
+    <Wrapper direction="row" >
+      <Wrapper flexGrow={1}>
+        <Text> item 1</Text>
+        <Text> item 2</Text>
+        <Text> item 3</Text>
       </Wrapper>
+      <Wrapper flexGrow={3} direction="row" childPosition="spaceAround">
+        <Text> item a</Text>
+        <Text> item b</Text>
+        <Text> item c</Text>
+      </Wrapper>
+    </Wrapper>
     <AppComponent />
-    <Button title="Click me" size="small" />
+    <Wrapper>
+      <Button title="Click me" size="small" />
+    </Wrapper>
   </>
 )
 
