@@ -38,8 +38,6 @@ const Button = ({
     />
   )
 
-export default Button
-
 Button.defaultProps = {
   onClick: () => {},
   buttonStyle: {},
@@ -47,3 +45,5 @@ Button.defaultProps = {
   typeName: 'outline',
   size: 'medium'
 }
+
+export default Button

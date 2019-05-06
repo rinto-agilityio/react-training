@@ -40,8 +40,6 @@ const Icon = ({
   </View>
 );
 
-export default Icon;
-
 Icon.defaultProps = {
   label: '',
   type: 'font-awesome',
@@ -50,3 +48,5 @@ Icon.defaultProps = {
   size: METRICS.fontSize.medium,
   color: COLORS.black
 };
+
+export default Icon;
