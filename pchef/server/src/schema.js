@@ -23,6 +23,20 @@ const typeDefs = gql`
     votes: [String]
   }
 
+  type User {
+    id: String!
+    email: String!
+    name: String!
+    avatar: String
+    favorite_recipe: [String]
+    follow_category: [String]
+  }
+
+  type AuthPayload {
+    token: String
+    user: User
+  }
+
   type Query {
     category(id: String!): Category!
     allCategories: [Category]
@@ -50,6 +64,12 @@ const typeDefs = gql`
       views: Int
       votes: [String]
     ): Recipe!
+
+    createUser(
+      email: String!
+      password: String!
+      name: String!
+    ): AuthPayload!
   }
 `
 
