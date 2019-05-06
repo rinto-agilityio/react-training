@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexWrap: 'wrap',
-    backgroundColor: 'red'
   },
   column: {
     flexDirection: 'column'
@@ -24,17 +23,11 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     justifyContent: 'start'
   },
-  fullSize: {
-    flex: 1
+  spaceAround: {
+    justifyContent: 'space-around'
   },
-  halfSize: {
-    width: '50%'
-  },
-  oneThirdSize: {
-    width: '30%'
-  },
-  aQuarterSize: {
-    width: '25%'
+  spaceBetween: {
+    justifyContent: 'space-between'
   }
 });
 
