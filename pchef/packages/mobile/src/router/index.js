@@ -1,9 +1,9 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import ROUTES from '@constants/routes';
-import RecipeDetail from '@recipeDetailScreen/index';
-import Login from '@loginScreen/index';
-import Home from '@homeScreen/index';
-import Category from '@categoryScreen/index';
+import RecipeDetail from '@screen/RecipeDetail';
+import Login from '@screen/Login';
+import Home from '@screen/Home';
+import Category from '@screen/Category';
 
 const appRouter = createStackNavigator(
   {
