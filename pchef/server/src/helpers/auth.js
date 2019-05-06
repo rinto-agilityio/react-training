@@ -1,4 +1,4 @@
-const { auth } = require('../config/firebase')
+const { auth, admin } = require('../config/firebase')
 const { addDocument } = require('./firestore')
 
 // TODO: Filter email domain:
@@ -16,12 +16,27 @@ const createUserWithEmailAndPassword = (email, password, name) => (
 const signInWithEmailAndPassword = (email, password) => (
   auth.signInWithEmailAndPassword(email, password)
     .then(data => {
-      return data.user.refreshToken
+      return data.user.getIdToken()
+        .then(token => {
+          console.log('token of user: ', token)
+          return token
+        })
     })
     .catch(error => error)
 )
 
+const getUserInfoByToken = token => {
+  return admin.auth().verifyIdToken(token)
+    .then(({ uid, email }) => ({
+        uid,
+        email
+      })
+    )
+    .catch(error => error)
+}
+
 module.exports= {
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+  getUserInfoByToken
 }
