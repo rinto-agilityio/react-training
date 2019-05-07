@@ -37,7 +37,6 @@ const addDocumentWithId = (path, id, data) => (
   db.collection(path).doc(id).set(data)
     .then(() => id)
     .catch(error => error)
-  })
 )
 
 module.exports= {

@@ -36,6 +36,10 @@ const typeDefs = gql`
     token: String
   }
 
+  type ResultsPayload {
+    results: [String]
+  }
+
   type Query {
     category(id: String!): Category!
     allCategories: [Category]
