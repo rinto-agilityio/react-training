@@ -8,7 +8,12 @@ const createUserWithEmailAndPassword = (email, password, name) => (
   auth.createUserWithEmailAndPassword(email, password)
     .then(data => {
       return addDocument('users', { email, name })
-        .then(uid => data.user.refreshToken)
+        .then(uid => {
+          return data.user.getIdToken()
+            .then(token => token)
+            .catch(error => error)
+        })
+        .catch(error => error)
     })
     .catch(error => error)
 )
@@ -21,6 +26,7 @@ const signInWithEmailAndPassword = (email, password) => (
           console.log('token of user: ', token)
           return token
         })
+        .catch(error => error)
     })
     .catch(error => error)
 )
