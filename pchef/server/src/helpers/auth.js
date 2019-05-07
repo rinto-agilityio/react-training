@@ -1,13 +1,16 @@
 const { auth, admin } = require('../config/firebase')
 const { addDocument, addDocumentWithId } = require('./firestore')
 
+// Constants
+const COLLECTION_NAME = require('../constants/collection-name')
+
 // TODO: Filter email domain:
 // https://firebase.google.com/docs/reference/node/firebase.auth.GoogleAuthProvider
 
 const createUserWithEmailAndPassword = (email, password, name) => (
   auth.createUserWithEmailAndPassword(email, password)
     .then(data => {
-      return addDocumentWithId('users', data.user.uid, { email, name })
+      return addDocumentWithId(COLLECTION_NAME.USER, data.user.uid, { email, name })
         .then(() => {
           return data.user.getIdToken()
             .then(token => token)

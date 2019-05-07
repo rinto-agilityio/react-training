@@ -1,5 +1,8 @@
 const { map } = require('lodash')
 
+// Constants
+const COLLECTION_NAME = require('./constants/collection-name')
+
 // Helpers
 const {
   mapDocumentToEntity,
@@ -21,10 +24,10 @@ const resolvers = {
   Query: {
     // Category
     category: (_, { id }, {}) => {
-      return getDocument(`categories/${id}`)
+      return getDocument(`${COLLECTION_NAME.CATEGORY}/${id}`)
         .then(category => {
           return getCollectionWithCondition(
-            'recipes',
+            COLLECTION_NAME.RECIPE,
             'category_id', '==', id
           )
           .then(recipes => {
@@ -54,31 +57,31 @@ const resolvers = {
 
     // Recipe
     recipe: (_, { id }, {}) => {
-      return getDocument(`recipes/${id}`)
+      return getDocument(`${COLLECTION_NAME.RECIPE}/${id}`)
     },
 
     allRecipes: (_, args, context) => {
-      return getCollection('recipes')
+      return getCollection(COLLECTION_NAME.RECIPE)
     }
   },
 
   Mutation: {
     createCategory: (_, data, {}) => {
       return {
-        id: addDocument('categories', data)
+        id: addDocument(COLLECTION_NAME.CATEGORY, data)
       }
     },
 
     // This method is not for all user, just admin/mod in system can create CookingType
     createCookingType: (_, data, {}) => {
       return {
-        id: addDocument('cooking_types', data)
+        id: addDocument(COLLECTION_NAME.COOKING_TYPE, data)
       }
     },
 
     createRecipe: (_, data, {}) => {
       return {
-        id: addDocument('recipes', data)
+        id: addDocument(COLLECTION_NAME.RECIPE, data)
       }
     },
 
@@ -87,9 +90,7 @@ const resolvers = {
         .then(token => ({
           token
         }))
-        .catch(error =>{
-          console.log('resolver error: ', error.message)
-        })
+        .catch(error => error)
     },
 
     signInUser: (_, { email, password }, {}) => {
@@ -122,7 +123,7 @@ const resolvers = {
     }),
 
     userToggleRecipe: authenticated((_, { categoryId }, { currentUser }) => {
-      const currentUserRef = `users/${currentUser.id}`
+      const currentUserRef = `${COLLECTION_NAME.USER}/${currentUser.id}`
 
       return getDocument(currentUserRef)
         .then(user => {
