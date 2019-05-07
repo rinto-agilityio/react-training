@@ -78,6 +78,10 @@ const typeDefs = gql`
       email: String!
       password: String!
     ): AuthPayload!
+
+    userToggleCategory(
+      categoryId: String!
+    ): ResultsPayload!
   }
 `
 
