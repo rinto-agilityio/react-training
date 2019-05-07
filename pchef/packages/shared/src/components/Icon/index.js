@@ -1,4 +1,4 @@
-// libs
+// Libs
 import React from 'react';
 import { View, Text } from 'react-native';
 import { Icon as IconComponent } from 'react-native-elements'

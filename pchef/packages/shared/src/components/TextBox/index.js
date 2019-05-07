@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 // Libs
 import React from 'react';
 import { TextInput, View } from 'react-native';
