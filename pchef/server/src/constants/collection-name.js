@@ -3,10 +3,12 @@ const USER = 'users'
 const CATEGORY = 'categories'
 const COOKING_TYPE = 'cooking_types'
 const RECIPE = 'recipes'
+const RECIPE_STEP = 'recipe_step'
 
 module.exports = {
   USER,
   CATEGORY,
   COOKING_TYPE,
-  RECIPE
+  RECIPE,
+  RECIPE_STEP,
 }

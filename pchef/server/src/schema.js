@@ -37,6 +37,16 @@ const typeDefs = gql`
     votes: [String]
   }
 
+  type RecipeStep {
+    id: String!
+    recipe_id: String!
+    title: String!
+    img_url: String
+    description: String
+    published_date: Int
+    modify_date: Int
+  }
+
   type PayloadAuth {
     token: String
   }
@@ -95,6 +105,8 @@ const typeDefs = gql`
     userToggleRecipe(
       recipeId: String!
     ): PayloadResults!
+
+    createRecipeStep(): RecipeStep!
   }
 `
 
