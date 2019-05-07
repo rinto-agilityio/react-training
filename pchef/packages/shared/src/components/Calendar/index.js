@@ -1,12 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * 
- * @format
- * @flow
- */
-
- // Libs
+// Libs
 import React from 'react'
 import { View } from 'react-native'
 import { Calendar } from 'react-native-calendars'
@@ -45,14 +37,14 @@ const CalendarComponent = ({
   onSelectDay
 }: Props) => (
   <View style={[styles.container, customWrapperStyles]}>
+    {/*
+      Pass dayRange with minDate, maxDate with format YYYY-MM-DD to enable date select (dates outside dayRange will be grayed out).
+      Custom styles and themes for calendar with customCalendarStyles and customThemes props.
+    */}
     <Calendar
-      // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
       minDate={dayRange.minDate}
-      // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
       maxDate={dayRange.maxDate}
-      // Handler which gets executed on day press. Default = undefined
       onDayPress={onSelectDay}
-      // Month format in calendar title, example: May 2019
       monthFormat={CALENDAR_TITLE_FORMAT}
       style={[styles.calendar, customCalendarStyles]}
       theme={{
