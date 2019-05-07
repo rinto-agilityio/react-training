@@ -8,6 +8,11 @@ const typeDefs = gql`
     recipes: [Recipe]
   }
 
+  type CookingType {
+    id: String!
+    name: String!
+  }
+
   type Recipe {
     id: String!
     category_id: String!
