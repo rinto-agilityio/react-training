@@ -59,6 +59,10 @@ const typeDefs = gql`
       img_url: String!
     ): Category!
 
+    createCookingType(
+      name: String!
+    ): CookingType
+
     createRecipe(
       category_id: String!
       cooking_type_id: String!

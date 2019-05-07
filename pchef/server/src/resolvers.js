@@ -69,6 +69,13 @@ const resolvers = {
       }
     },
 
+    // This method is not for all user, just admin/mod in system can create CookingType
+    createCookingType: (_, data, {}) => {
+      return {
+        id: addDocument('cooking_types', data)
+      }
+    },
+
     createRecipe: (_, data, {}) => {
       return {
         id: addDocument('recipes', data)
