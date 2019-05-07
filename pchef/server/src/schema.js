@@ -82,6 +82,10 @@ const typeDefs = gql`
     userToggleCategory(
       categoryId: String!
     ): ResultsPayload!
+
+    userToggleRecipe(
+      recipeId: String!
+    ): ResultsPayload!
   }
 `
 
