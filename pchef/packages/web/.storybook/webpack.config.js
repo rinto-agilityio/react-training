@@ -5,7 +5,6 @@ module.exports = (storybookBaseConfig, configType) => {
     ...storybookBaseConfig.module.rules,
     {
       test: /\.(js|jsx|mjs)$/,
-      exclude: [/node_modules/],
       loader: require.resolve('babel-loader'),
       options: {
         babelrc: false,

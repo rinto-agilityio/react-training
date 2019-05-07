@@ -1,20 +1,20 @@
 // Libs
-import React from 'react'
-import { View } from 'react-native'
-import { Calendar } from 'react-native-calendars'
-import Icon from 'react-native-vector-icons/FontAwesome'
+import React from 'react';
+import { View } from 'react-native';
+import { Calendar } from 'react-native-calendars';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 // Styles
-import styles from './styles'
+import styles from './styles';
 
 // Themes
-import { COLORS, METRICS } from '../../themes'
+import { COLORS, METRICS } from '../../themes';
 
 // Constants
-import { CALENDAR_TITLE_FORMAT } from '../../constants'
+import { CALENDAR_TITLE_FORMAT } from '../../constants';
 
 // Helpers
-import { getDateForCalendar } from '../../helpers/date-time'
+import { getDateForCalendar } from '../../helpers/date-time';
 
 type Props = {
   selectedDay: string,
@@ -26,7 +26,7 @@ type Props = {
   customCalendarStyles: {},
   customThemes: {},
   onSelectDay: () => void
-}
+};
 
 /**
  * Pass dayRange with minDate, maxDate with format YYYY-MM-DD to enable date select (dates outside dayRange will be grayed out).
@@ -55,7 +55,7 @@ const CalendarComponent = ({
         ...customThemes
       }}
       markedDates={{
-        [selectedDay]: {selected: true}
+        [selectedDay]: { selected: true }
       }}
       hideExtraDays={true}
       renderArrow={direction => (
@@ -67,7 +67,7 @@ const CalendarComponent = ({
       )}
     />
   </View>
-)
+);
 
 CalendarComponent.defaultProps = {
   selectedDay: getDateForCalendar(Date.now()), // Format of selected day props is YYYY-MM-DD
@@ -76,6 +76,6 @@ CalendarComponent.defaultProps = {
   customCalendarStyles: {},
   customThemes: {},
   onSelectDay: () => {}
-}
+};
 
-export default CalendarComponent
+export default CalendarComponent;
