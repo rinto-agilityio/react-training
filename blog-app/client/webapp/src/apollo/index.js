@@ -6,6 +6,7 @@ import { WebSocketLink } from 'apollo-link-ws'
 import { split } from 'apollo-link'
 import { getMainDefinition } from 'apollo-utilities'
 import typeDefs from './typeDefs'
+import resolvers from './resolvers';
 
 const cache = new InMemoryCache()
 
@@ -39,20 +40,15 @@ const client = new ApolloClient({
   cache,
   link,
   typeDefs,
-  resolvers: {
-    Query: {
-      loggedUser: () => {
-        return localStorage.getItem('userLoged') || null;
-      }
-    },
-  },
+  resolvers,
   connectToDevTools: true
 })
 
 cache.writeData({
   data: {
-    loggedUser: localStorage.getItem('userLoged')
+    loggedUser: JSON.parse(localStorage.getItem('userLoged')) || null
   }
 });
+
 
 export default client

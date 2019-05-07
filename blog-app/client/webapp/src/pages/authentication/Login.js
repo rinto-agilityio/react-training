@@ -16,11 +16,11 @@ const Login = props  => {
   const email = useRef('')
   const password = useRef('')
 
-  const handleSignIn = (event, client) => {
+  const handleSignIn = async (event, client) => {
 
     event.preventDefault();
 
-    client.query({
+    await client.query({
       query: SIGN_IN,
       variables: {
         email: email.current ? email.current.value : '',
@@ -31,18 +31,14 @@ const Login = props  => {
 
       const { author } = response.data.signIn
 
-      const loginUser = {
-        __typename: 'loggedUser',
-        id: author.id,
-        email: author.email,
-        name: author.name,
-        avatar: author.avatar,
-        password: author.password
-      };
+      // const loginUser = {
+      //   __typename: 'Author',
+      //   ...author
+      // };
 
       client.writeData({
         data: {
-          loggedUser: loginUser,
+          loggedUser: author,
         }
       });
 
