@@ -1,11 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
+// Libs
 import React, { useState } from 'react';
 import { Text, View, Button } from 'react-native';
 

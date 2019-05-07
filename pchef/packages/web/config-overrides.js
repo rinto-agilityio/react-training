@@ -17,6 +17,9 @@ module.exports = override(
     resolveApp('../../node_modules/react-native-elements'),
     resolveApp('../../node_modules/react-native-ratings'),
     resolveApp('../../node_modules/react-native-vector-icons'),
+
+    // 3rd lib: react-native-calendars
+    resolveApp('../../node_modules/react-native-calendars'),
   ]),
   addBabelPlugins(
     "@babel/plugin-proposal-class-properties",
