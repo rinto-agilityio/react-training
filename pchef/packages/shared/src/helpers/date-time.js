@@ -1,5 +1,7 @@
 /**
  * Get full date for calendar by format YYYY-MM-DD
+ * @param {number} date The number date to format
+ * @return {string} Full date with format YYYY-MM-DD
  */
 export const getDateForCalendar = (date: number) => {
   const dayFormat = new Date(date)
@@ -13,7 +15,8 @@ export const getDateForCalendar = (date: number) => {
 
 /**
  * Getting the date of next week
- * @param {Boolean} isGetMonday
+ * @param {boolean} isGetMonday The param to check is return minDate or maxDate
+ * @return {object} The day range includes minDate and maxDate 
  */
 export const getDateOfWeek = () => {
   const day = new Date()
