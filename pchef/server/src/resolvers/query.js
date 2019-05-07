@@ -55,6 +55,10 @@ const Query = {
   }),
 
   // RecipeStep
+  getRecipeStep: authenticated((_, { id }, {}) => {
+    return getDocument(`${COLLECTION_NAME.RECIPE_STEP}/${id}`)
+  }),
+
   getAllRecipeSteps: authenticated((_, { id }, {}) => {
     return getCollectionWithCondition(
         COLLECTION_NAME.RECIPE_STEP,
