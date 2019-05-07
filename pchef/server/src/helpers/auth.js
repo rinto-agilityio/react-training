@@ -34,15 +34,27 @@ const signInWithEmailAndPassword = (email, password) => (
 const getUserInfoByToken = token => {
   return admin.auth().verifyIdToken(token)
     .then(({ uid, email }) => ({
-        uid,
+        id: uid,
         email
       })
     )
-    .catch(error => error)
+    .catch(error => {
+      console.warn(error)
+      return
+    })
+}
+
+const authenticated = next => (root, args, context, info) => {
+  if (!context.currentUser) {
+    throw new Error(`Unauthenticated!`)
+  }
+
+  return next(root, args, context, info)
 }
 
 module.exports= {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  getUserInfoByToken
+  getUserInfoByToken,
+  authenticated
 }
