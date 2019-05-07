@@ -39,6 +39,11 @@ const addDocumentWithId = (path, id, data) => (
     .catch(error => error)
 )
 
+// Update data
+const updateDocument = (path, data) => (
+  db.doc(path).update(data)
+)
+
 module.exports= {
   mapDocumentToEntity,
   mapCollectionToEntities,
@@ -48,5 +53,7 @@ module.exports= {
   getCollectionWithCondition,
 
   addDocument,
-  addDocumentWithId
+  addDocumentWithId,
+
+  updateDocument
 }
