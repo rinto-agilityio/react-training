@@ -73,6 +73,8 @@ const typeDefs = gql`
 
     getRecipeStep(id: String!): RecipeStep!
     getAllRecipeSteps(id: String!): [RecipeStep]
+
+    getRecipeComments(id: String!): [Comment]
   }
 
   type Mutation {

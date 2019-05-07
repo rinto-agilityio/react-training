@@ -33,7 +33,7 @@ const Query = {
       .then(categories => {
         return map(categories, category => {
           return getCollectionWithCondition(
-            'recipes',
+            COLLECTION_NAME.RECIPE,
             'category_id', '==', category.id
           )
           .then(recipes => {
@@ -71,7 +71,16 @@ const Query = {
         return steps
       })
       .catch(error => error)
-  })
+  }),
+
+  getRecipeComments: authenticated((_, { id }, {}) => {
+    return getCollectionWithCondition(
+      COLLECTION_NAME.COMMENT,
+      'recipeId', '==', id
+    )
+    .then(comments => comments)
+    .catch(error => error)
+  }),
 }
 
 module.exports = Query
