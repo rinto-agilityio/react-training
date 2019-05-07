@@ -1,6 +1,15 @@
 const { gql } = require('apollo-server')
 
 const typeDefs = gql`
+  type User {
+    id: String!
+    email: String!
+    name: String!
+    avatar: String
+    favorite_recipe: [String]
+    follow_category: [String]
+  }
+
   type Category {
     id: String!
     title: String!
@@ -28,20 +37,11 @@ const typeDefs = gql`
     votes: [String]
   }
 
-  type User {
-    id: String!
-    email: String!
-    name: String!
-    avatar: String
-    favorite_recipe: [String]
-    follow_category: [String]
-  }
-
-  type AuthPayload {
+  type PayloadAuth {
     token: String
   }
 
-  type ResultsPayload {
+  type PayloadResults {
     results: [String]
   }
 
@@ -81,20 +81,20 @@ const typeDefs = gql`
       email: String!
       password: String!
       name: String!
-    ): AuthPayload!
+    ): PayloadAuth!
 
     signInUser(
       email: String!
       password: String!
-    ): AuthPayload!
+    ): PayloadAuth!
 
     userToggleCategory(
       categoryId: String!
-    ): ResultsPayload!
+    ): PayloadResults!
 
     userToggleRecipe(
       recipeId: String!
-    ): ResultsPayload!
+    ): PayloadResults!
   }
 `
 
