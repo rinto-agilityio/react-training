@@ -1,4 +1,6 @@
-const { map, find, filter, concat } = require('lodash')
+const { map } = require('lodash')
+
+// Helpers
 const {
   mapDocumentToEntity,
   mapCollectionToEntities,
@@ -13,6 +15,7 @@ const {
   signInWithEmailAndPassword,
   authenticated
 } = require('./helpers/auth')
+const { toggleItemInArray } = require('./helpers/handle-data')
 
 const resolvers = {
   Query: {
@@ -98,26 +101,13 @@ const resolvers = {
 
       return getDocument(currentUserRef)
         .then(user => {
-          const followedCategories = user.follow_category
-          let followedCategoriesUpdated
-
-          if (find(followedCategories, item => item === categoryId)) {
-            followedCategoriesUpdated = filter(followedCategories, item => (
-              item !== categoryId
-            ))
-          } else {
-            if (followedCategories.length) {
-              followedCategoriesUpdated = concat(followedCategories, [categoryId])
-            } else {
-              followedCategoriesUpdated = [categoryId]
-            }
-          }
+          const newCategories = toggleItemInArray(user.follow_category, categoryId)
 
           return updateDocument(currentUserRef, {
-            follow_category: followedCategoriesUpdated
+            follow_category: newCategories
           })
           .then(() => ({
-            results: followedCategoriesUpdated
+            results: newCategories
           }))
           .catch(error => error)
         })
