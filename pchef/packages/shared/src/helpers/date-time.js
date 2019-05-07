@@ -14,7 +14,9 @@ export const getDateForCalendar = (date: number) => {
 }
 
 /**
- * Getting the date of next week
+ * Getting the date range of next week with:
+ * minDate is start date of next week
+ * maxDate is end date of next week
  * @param {boolean} isGetMonday The param to check is return minDate or maxDate
  * @return {object} The day range includes minDate and maxDate 
  */
