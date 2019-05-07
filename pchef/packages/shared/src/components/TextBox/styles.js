@@ -6,15 +6,13 @@ import { COLORS, METRICS } from '../../themes';
 
 export const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    flex: 1
+    flexDirection: 'row'
   },
   default: {
     height: METRICS.mediumInput,
     borderColor: COLORS.grayDarker,
     borderBottomWidth: 1,
     fontSize: METRICS.fontSize.medium,
-    flex: 1,
     color: COLORS.black
   }
 });

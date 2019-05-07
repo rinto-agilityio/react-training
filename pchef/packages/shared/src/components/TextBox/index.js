@@ -9,17 +9,17 @@ import { styles } from './styles';
 import { COLORS } from '../../themes';
 
 type Props = {
-  multiline: boolean,
-  autoCapitalize: string,
-  autoCorrect: boolean,
-  customStyle: {},
-  editable: boolean,
-  placeholder: string,
-  placeholderTextColor: string,
-  numberOfLines: number,
-  defaultValue: string,
-  refInput: { current: HTMLInputElement | null },
-  onSubmitEditing: () => void
+  multiline?: boolean,
+  autoCapitalize?: string,
+  autoCorrect?: boolean,
+  customStyle?: {},
+  editable?: boolean,
+  placeholder?: string,
+  placeholderTextColor?: string,
+  numberOfLines?: number,
+  defaultValue?: string,
+  refInput?: { current: HTMLInputElement | null },
+  onSubmitEditing?: () => void
 };
 
 const TextBox = ({

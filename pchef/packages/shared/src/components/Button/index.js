@@ -1,6 +1,6 @@
 // libs
 import React from 'react';
-import { Button as ButtonComponent } from 'react-native-elements'
+import { Button as ButtonComponent } from 'react-native-elements';
 
 // Styles
 import styles from './styles';
@@ -26,9 +26,9 @@ const Button = ({
       title={title}
       type={typeName}
       buttonStyle={[
-        buttonStyle,
         styles.button,
-        styles[size]
+        styles[size],
+        buttonStyle
       ]}
       titleStyle={[
         titleStyle,
@@ -36,7 +36,7 @@ const Button = ({
       ]}
       onPress={onClick}
     />
-  )
+  );
 
 Button.defaultProps = {
   onClick: () => {},
@@ -44,6 +44,6 @@ Button.defaultProps = {
   titleStyle: {},
   typeName: 'outline',
   size: 'medium'
-}
+};
 
-export default Button
+export default Button;
