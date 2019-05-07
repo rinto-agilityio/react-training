@@ -6,25 +6,40 @@ import { View } from 'react-native';
 import styles from './styles';
 
 type Props = {
-  children?: React.Node,
+  children: React.Node,
   direction?: string,
   childPosition?: string,
   flexGrow?: number,
+  customStyles?: Object
 };
 
-const Wrapper = ({ children, direction, childPosition, flexGrow }: Props) => {
+const Wrapper = ({
+  children,
+  direction,
+  childPosition,
+  flexGrow,
+  customStyles
+}: Props) => {
   return (
-    <View 
+    <View
     style={[
+      customStyles,
       styles.container,
       styles[direction],
       styles[childPosition],
-      {flexGrow: flexGrow} 
-    ]} 
+      {flexGrow: flexGrow}
+    ]}
     >
-      {children}    
+      {children}
     </View>
   );
+};
+
+Wrapper.defaultProps = {
+  direction: '',
+  childPosition: '',
+  flexGrow: 0,
+  customStyles: {},
 };
 
 export default Wrapper;
