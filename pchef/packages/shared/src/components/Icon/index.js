@@ -1,35 +1,52 @@
-// libs
+// Libs
 import React from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { View, Text } from 'react-native';
+import { Icon as IconComponent } from 'react-native-elements';
 
 // Styles
 import styles from './styles';
 
+// Themes
+import { COLORS, METRICS } from '../../themes';
+
 type Props = {
-  label: string,
-  onClick: () => void,
-  customStyle: {}
+  label?: string,
+  onClick?: () => void,
+  customStyle?: {},
+  color?: string,
+  type?: string,
+  size?: number,
+  name: string
 };
 
-// [TODO] will replace to icon after config success
-const Icon = ({ label, onClick, customStyle }: Props) => (
+const Icon = ({
+  label,
+  onClick,
+  customStyle,
+  color,
+  type,
+  size,
+  name
+}: Props) => (
   <View style={styles.wrapIcon}>
-    <TouchableOpacity onPress={onClick}>
-      <Image
-        style={{ width: 20, height: 20 }}
-        source={{
-          uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'
-        }}
-      />
-    </TouchableOpacity>
+    <IconComponent
+      name={name}
+      type={type}
+      color={color}
+      size={size}
+      onPress={onClick}
+    />
     {label ? <Text style={[customStyle, styles.label]}>{label}</Text> : null}
   </View>
 );
 
-export default Icon;
-
 Icon.defaultProps = {
   label: '',
+  type: 'font-awesome',
   onClick: () => {},
-  customStyle: {}
+  customStyle: {},
+  size: METRICS.fontSize.medium,
+  color: COLORS.black
 };
+
+export default Icon;
