@@ -9,6 +9,7 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
+import Recipe from '../screens/category/components/Recipe';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -17,12 +18,21 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu'
 });
 
-type Props = {};
+type Props = {
+  size?: string
+}
+
 export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
         <Button title="Test RNE Button" onPress={() => {}} />
+        <Recipe
+          size={this.props.size}
+          image="https://vcdn-ngoisao.vnecdn.net/2018/01/19/1-8515-1516314392.jpg"
+          title="Bun Bo Hue Recipe"
+          description="2lb pork neck bones, 2lb beef bones, 1lb oxtail, 1lb brisket, 9 more ingredients"
+        />
         <Text style={styles.welcome}>Welcome to React Native monorepo!</Text>
         <Text style={styles.instructions}>Test live reload on device</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>

@@ -26,9 +26,9 @@ const Button = ({
       title={title}
       type={typeName}
       buttonStyle={[
-        buttonStyle,
         styles.button,
-        styles[size]
+        styles[size],
+        buttonStyle
       ]}
       titleStyle={[
         titleStyle,
