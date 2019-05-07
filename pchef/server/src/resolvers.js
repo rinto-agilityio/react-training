@@ -15,7 +15,7 @@ const {
 const resolvers = {
   Query: {
     // Category
-    category(_, { id }, {}) {
+    category: (_, { id }, {}) => {
       return getDocument(`categories/${id}`)
         .then(category => {
           return getCollectionWithCondition(
@@ -30,7 +30,7 @@ const resolvers = {
         })
     },
 
-    allCategories() {
+    allCategories: () => {
       return getCollection('categories')
         .then(categories => {
           return map(categories, category => {
@@ -48,29 +48,29 @@ const resolvers = {
     },
 
     // Recipe
-    recipe(_, { id }, {}) {
+    recipe: (_, { id }, {}) => {
       return getDocument(`recipes/${id}`)
     },
 
-    allRecipes() {
+    allRecipes: (_, args, context) => {
       return getCollection('recipes')
     }
   },
 
   Mutation: {
-    createCategory (_, data, {}) {
+    createCategory: (_, data, {}) => {
       return {
         id: addDocument('categories', data)
       }
     },
 
-    createRecipe (_, data, {}) {
+    createRecipe: (_, data, {}) => {
       return {
         id: addDocument('recipes', data)
       }
     },
 
-    createUser (_, { email, password, name }, {}) {
+    createUser: (_, { email, password, name }, {}) => {
       return createUserWithEmailAndPassword(email, password, name)
         .then(token => ({
           token
@@ -80,7 +80,7 @@ const resolvers = {
         })
     },
 
-    signInUser (_, { email, password }, {}) {
+    signInUser: (_, { email, password }, {}) => {
       return signInWithEmailAndPassword(email, password)
         .then(token => ({
           token
