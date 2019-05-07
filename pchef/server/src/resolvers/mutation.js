@@ -16,42 +16,35 @@ const {
 const { toggleItemInArray } = require('../helpers/handle-data')
 
 const Mutation = {
-  createCategory: (_, data, {}) => {
-    return {
-      id: addDocument(COLLECTION_NAME.CATEGORY, data)
-    }
-  },
-
-  // This method is not for all user, just admin/mod in system can create CookingType
-  createCookingType: (_, data, {}) => {
-    return {
-      id: addDocument(COLLECTION_NAME.COOKING_TYPE, data)
-    }
-  },
-
-  createRecipe: (_, data, {}) => {
-    return {
-      id: addDocument(COLLECTION_NAME.RECIPE, data)
-    }
-  },
-
-  createUser: (_, { email, password, name }, {}) => {
+  // User
+  createUser: authenticated((_, { email, password, name }, {}) => {
     return createUserWithEmailAndPassword(email, password, name)
       .then(token => ({
         token
       }))
       .catch(error => error)
-  },
+  }),
 
-  signInUser: (_, { email, password }, {}) => {
+  signInUser: authenticated((_, { email, password }, {}) => {
     return signInWithEmailAndPassword(email, password)
       .then(token => ({
         token
       }))
       .catch(error => error)
-  },
+  }),
 
-  // userToggleCategory
+  /**
+   * Category
+   * Note: This method is not for all user,
+   * just admin/mod in system can create CookingType
+   */
+  createCategory: authenticated((_, data, {}) => {
+    return {
+      id: addDocument(COLLECTION_NAME.CATEGORY, data)
+    }
+  }),
+
+  // List category user is following
   userToggleCategory: authenticated((_, { categoryId }, { currentUser }) => {
     const currentUserRef = `users/${currentUser.id}`
 
@@ -70,6 +63,25 @@ const Mutation = {
       .catch(error => error)
   }),
 
+  /**
+   * CookingType
+   * Note: This method is not for all user,
+   * just admin/mod in system can create CookingType
+   */
+  createCookingType: authenticated((_, data, {}) => {
+    return {
+      id: addDocument(COLLECTION_NAME.COOKING_TYPE, data)
+    }
+  }),
+
+  // Recipe
+  createRecipe: authenticated((_, data, {}) => {
+    return {
+      id: addDocument(COLLECTION_NAME.RECIPE, data)
+    }
+  }),
+
+  // List recipes user mark favorite
   userToggleRecipe: authenticated((_, { categoryId }, { currentUser }) => {
     const currentUserRef = `${COLLECTION_NAME.USER}/${currentUser.id}`
 
@@ -88,6 +100,7 @@ const Mutation = {
       .catch(error => error)
   }),
 
+  // RecipeStep
   createRecipeStep: authenticated((_, data, { currentUser }) => {
     return {
       id: addDocument(COLLECTION_NAME.RECIPE_STEP, data)
