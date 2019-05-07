@@ -1,5 +1,5 @@
 const { auth, admin } = require('../config/firebase')
-const { addDocument } = require('./firestore')
+const { addDocument, addDocoumentWithId } = require('./firestore')
 
 // TODO: Filter email domain:
 // https://firebase.google.com/docs/reference/node/firebase.auth.GoogleAuthProvider
@@ -7,8 +7,8 @@ const { addDocument } = require('./firestore')
 const createUserWithEmailAndPassword = (email, password, name) => (
   auth.createUserWithEmailAndPassword(email, password)
     .then(data => {
-      return addDocument('users', { email, name })
-        .then(uid => {
+      return addDocoumentWithId('users', data.user.uid, { email, name })
+        .then(() => {
           return data.user.getIdToken()
             .then(token => token)
             .catch(error => error)
