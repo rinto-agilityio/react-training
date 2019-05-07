@@ -28,6 +28,11 @@ type Props = {
   onSelectDay: () => void
 }
 
+/**
+ * Pass dayRange with minDate, maxDate with format YYYY-MM-DD to enable date select (dates outside dayRange will be grayed out).
+ * Custom styles and themes for calendar with customCalendarStyles and customThemes props.
+ * Custom month format in calendar title to MMMM yyyy (Example: May 2019)
+ */
 const CalendarComponent = ({
   selectedDay,
   dayRange,
@@ -37,10 +42,6 @@ const CalendarComponent = ({
   onSelectDay
 }: Props) => (
   <View style={[styles.container, customWrapperStyles]}>
-    {/*
-      Pass dayRange with minDate, maxDate with format YYYY-MM-DD to enable date select (dates outside dayRange will be grayed out).
-      Custom styles and themes for calendar with customCalendarStyles and customThemes props.
-    */}
     <Calendar
       minDate={dayRange.minDate}
       maxDate={dayRange.maxDate}
