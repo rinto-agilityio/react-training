@@ -1,7 +1,6 @@
 
-const { UserInputError } = require('apollo-server');
+const { UserInputError, PubSub } = require('apollo-server');
 const _ = require('lodash');
-const { PubSub } = require('apollo-server');
 const Types = require('./Types')
 const {
   getData,
@@ -14,7 +13,7 @@ const posts = getData('./data/Posts.json')
 
 // Resolvers define the technique for fetching the types in the
 // schema.  We'll retrieve users from the "users" array above.
-const resolvers = {
+module.exports = {
   Query: {
     getAuthors: () => {
       return { success: true, message: "Get authors List Success", authors: authors };
@@ -33,8 +32,10 @@ const resolvers = {
     getPostsByAuthor: (parent, args) => {
       const { first, after } = args
 
-      const postWithAuthor = posts.filter(post => post.author.id == args.authorId)
+      const postWithAuthor = posts.filter(post => post.author && post.author.id === args.authorId)
+
       const totalCount = postWithAuthor.length;
+
       if (first < 0) {
         throw ('First must be positive');
       }
@@ -94,7 +95,6 @@ const resolvers = {
   },
   Mutation: {
     signUp: (parent, args) => {
-      console.log('args', args);
 
       const validationErrors = {};
       if (!args.name) {
@@ -134,19 +134,14 @@ const resolvers = {
       };
     },
     createPost: (_, args) => {
-      console.log('args', args)
       const author = authors.find(author => author.id == args.authorId)
 
       const newPost = {
         id: args.id,
         title: args.title,
         content: args.content,
-        imageUrl: args.imageUrl,
         author: author
       }
-
-      console.log('newPost', newPost)
-
       setData('./data/Posts.json', [...posts, newPost])
 
       pubsub.publish(Types.POST_ADDED, {postAdded: newPost});
@@ -156,9 +151,8 @@ const resolvers = {
   },
   Subscription: {
     postAdded: {
-      subscribe: () => pubsub.asyncIterator([Types.POST_ADDED])
-    },
+      subscribe: () => pubsub.asyncIterator(Types.POST_ADDED)
+    }
   }
 };
 
-module.exports = { resolvers };

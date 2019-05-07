@@ -20,9 +20,11 @@ import { GET_POST } from '../../graphql/post/queries'
 const HomePage = props => {
 
   const { accessClient } = props
+
   const user = accessClient.readQuery({query: LOGGED_USER})
-  console.log('user', user)
+
   const [isCreatePost, setIsCreatePost] = useState(false)
+
   const handleCreatePost = () => {
     setIsCreatePost(true)
   }
@@ -35,29 +37,33 @@ const HomePage = props => {
     subscribeToMore({
       document: POST_ADDED,
       updateQuery: (prev, { subscriptionData }) => {
-
         if (!subscriptionData.data) return prev;
+
         const newPost = subscriptionData.data.postAdded;
-        return Object.assign({}, prev.getPostsByAuthor, {
-          posts: [newPost, ...prev.getPostsByAuthor.posts]
-        });
+        return {
+          ...prev,
+          getPostsByAuthor: {
+            ...prev.getPostsByAuthor, posts: [...prev.getPostsByAuthor.posts, newPost]
+          }
+        }
       }
     })
   }
+  console.log('accessClient', accessClient);
 
   return (
     <Query
       query={GET_POST}
+      fetchPolicy="cache-and-network"
       variables={{
         authorId: user.loggedUser.id,
         first: 5
       }}
-      fetchPolicy='cache-and-network'
     >
       {({ loading, error, data, fetchMore, subscribeToMore }) => {
       if (loading) return <Spinner animation="border" variant="primary" />;
       if (error) return `Error! ${error.message}`;
-
+        console.log('data', data)
       return (
         <div className='container'>
           <Header />
@@ -72,10 +78,9 @@ const HomePage = props => {
               <PostList
                 posts={data && data.getPostsByAuthor.posts}
                 pageInfo={ data && data.getPostsByAuthor.pageInfo }
-                loading={loading}
+                // loading={loading}
                 fetchMore={fetchMore}
-                handleSubcriptionNewPost={handleSubcriptionNewPost}
-                subscribeToMore={subscribeToMore}
+                handleSubcriptionNewPost={() => handleSubcriptionNewPost(subscribeToMore)}
               />
             </div>
 

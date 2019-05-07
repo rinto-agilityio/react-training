@@ -25,25 +25,28 @@ const updateQuery = (previousResult, { fetchMoreResult }) => {
   };
 };
 
-const PostList = ({posts, loading, fetchMore, pageInfo, handleSubcriptionNewPost, subscribeToMore }) => {
+const PostList = ({posts, fetchMore, pageInfo, handleSubcriptionNewPost }) => {
 
-  useEffect(() =>
-    handleSubcriptionNewPost(subscribeToMore)
-  );
+  useEffect(() => {
+    console.log('runn....');
 
-  const listPosts = posts.map((post, index) => {
-    return (
-      <PostItem
-        key={index}
-        post={post}
-      />
-    )
-  })
+    handleSubcriptionNewPost()
+  }, [])
+
   return (
     <>
-      {listPosts}
+      {
+        posts.map((post, index) => {
+          return (
+            <PostItem
+              key={index}
+              post={post}
+            />
+          )
+        })
+      }
       <FetchMoreButton
-        loading={loading}
+        // loading={loading}
         fetchMore={fetchMore}
         hasNextPage={pageInfo.hasNextPage}
         variables={{

@@ -1,7 +1,7 @@
-const { gql } = require( 'apollo-server' )
+const { gql } = require('apollo-server')
 
 // The GraphQL schema
-const typeDefs = gql`
+module.exports  = gql`
   type Author {
     id: ID!
     name: String
@@ -78,7 +78,5 @@ const typeDefs = gql`
   type Subscription {
     postAdded: Post
   }
-
 `;
 
-module.exports = { typeDefs };

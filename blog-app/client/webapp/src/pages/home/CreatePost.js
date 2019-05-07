@@ -1,4 +1,4 @@
-import React, { memo, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Button } from 'react-bootstrap';
 import { Mutation } from 'react-apollo';
 import { Form } from 'react-bootstrap';
@@ -29,19 +29,6 @@ const CreatePost = ({user, pageInfo, handleCloseModal, history}) => {
         title: title.current ? title.current.value : '',
         content: content.current ? content.current.value : '',
         authorId: user.id,
-      },
-      optimisticResponse: {
-        __typename: 'Mutation',
-        createPost: {
-          __typename: 'PostResponse',
-          id: `${ Date.now()}`,
-          title: title.current ? title.current.value : '',
-          content: content.current ? content.current.value : '',
-          author: {
-            __typename: 'Author',
-            name: user.name
-          }
-        }
       }
     })
   }
@@ -49,30 +36,9 @@ const CreatePost = ({user, pageInfo, handleCloseModal, history}) => {
     <Mutation
       mutation={ CREATE_POST }
       onCompleted={ () => {
-        history.push('/')
         handleCloseModal()
       }}
 
-      refetchQueries={[{ query: GET_POST, variables: {authorId: user.id, after: pageInfo.endCursor, first: 5}}]}
-
-      update={(cache, { data: { createPost } }) => {
-
-        // read cache
-        const data = cache.readQuery({ query: GET_POST, variables: {authorId: user.id, first: 5}});
-
-        data.getPostsByAuthor.posts.unshift(createPost)
-
-        if (data.getPostsByAuthor.posts.length > 5) {
-          data.getPostsByAuthor.posts.pop()
-        }
-
-        // write back to cache
-        cache.writeQuery({
-          query: GET_POST,
-          data
-        })
-
-      }}
     >
       {(createPost, { data, loading, error }) => {
         if (loading) return "Loading.............................";
@@ -110,4 +76,4 @@ CreatePost.propTypes = {
 CreatePost.defaultProps = {
   pageInfo: {}
 };
-export default memo(CreatePost);
+export default CreatePost;
