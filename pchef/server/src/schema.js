@@ -60,8 +60,10 @@ const typeDefs = gql`
     category(id: String!): Category!
     allCategories: [Category]
 
-    recipe(id: String!) : Recipe!
+    recipe(id: String!): Recipe!
     allRecipes: [Recipe]
+
+    recipeSteps(id: String!): [RecipeStep]
   }
 
   type Mutation {

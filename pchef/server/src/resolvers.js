@@ -62,7 +62,21 @@ const resolvers = {
 
     allRecipes: (_, args, context) => {
       return getCollection(COLLECTION_NAME.RECIPE)
-    }
+    },
+
+    recipeSteps: authenticated((_, { id }, {}) => {
+      return getCollectionWithCondition(
+          COLLECTION_NAME.RECIPE_STEP,
+          'recipe_id', '==', id
+        )
+        .then(steps => {
+          // category.recipes = recipes
+          console.log('steps.length: ', steps.length)
+
+          return steps
+        })
+        .catch(error => error)
+    })
   },
 
   Mutation: {
@@ -98,9 +112,7 @@ const resolvers = {
         .then(token => ({
           token
         }))
-        .catch(error =>{
-          console.log('resolver error: ', error.message)
-        })
+        .catch(error => error)
     },
 
     // userToggleCategory
