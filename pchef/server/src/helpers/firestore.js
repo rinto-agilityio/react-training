@@ -8,23 +8,29 @@ const mapCollectionToEntities = collection => (
 
 // Query data from FireStore
 const getDocument = path => (
-  db.doc(path).get().then(mapDocumentToEntity)
+  db.doc(path).get()
+    .then(mapDocumentToEntity)
+    .catch(error => error)
 )
 
 const getCollection = path => (
-  db.collection(path).get().then(mapCollectionToEntities)
+  db.collection(path).get()
+    .then(mapCollectionToEntities)
+    .catch(error => error)
 )
 
 const getCollectionWithCondition = (path, fieldName, operation, value) => (
   db.collection(path)
-    .where(fieldName, operation, value)
-    .get()
+    .where(fieldName, operation, value).get()
     .then(mapCollectionToEntities)
+    .catch(error => error)
 )
 
 // Add data
 const addDocument = (path, data) => (
-  db.collection(path).add(data).then(docRef => docRef.id)
+  db.collection(path).add(data)
+    .then(docRef => docRef.id)
+    .catch(error => error)
 )
 
 const addDocumentWithId = (path, id, data) => (
