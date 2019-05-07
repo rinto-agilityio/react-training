@@ -41,6 +41,7 @@ const typeDefs = gql`
     id: String!
     recipe_id: String!
     title: String!
+    step: Int!
     img_url: String
     description: String
     published_date: Int
@@ -106,7 +107,15 @@ const typeDefs = gql`
       recipeId: String!
     ): PayloadResults!
 
-    createRecipeStep(): RecipeStep!
+    createRecipeStep(
+      recipe_id: String!
+      title: String!
+      step: Int!
+      img_url: String
+      description: String
+      published_date: Int
+      modify_date: Int
+    ): RecipeStep!
   }
 `
 

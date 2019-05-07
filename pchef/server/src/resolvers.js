@@ -138,6 +138,12 @@ const resolvers = {
           .catch(error => error)
         })
         .catch(error => error)
+    }),
+
+    createRecipeStep: authenticated((_, data, { currentUser }) => {
+      return {
+        id: addDocument(COLLECTION_NAME.RECIPE_STEP, data)
+      }
     })
   }
 }
