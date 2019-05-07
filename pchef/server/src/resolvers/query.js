@@ -13,7 +13,7 @@ const {
 
 const Query = {
   // Category
-  category: authenticated((_, { id }, {}) => {
+  getCategory: authenticated((_, { id }, {}) => {
     return getDocument(`${COLLECTION_NAME.CATEGORY}/${id}`)
       .then(category => {
         return getCollectionWithCondition(
@@ -28,7 +28,7 @@ const Query = {
       })
   }),
 
-  allCategories: authenticated((_, args, {}) => {
+  getAllCategories: authenticated((_, args, {}) => {
     return getCollection('categories')
       .then(categories => {
         return map(categories, category => {
@@ -46,15 +46,16 @@ const Query = {
   }),
 
   // Recipe
-  recipe: authenticated((_, { id }, {}) => {
+  getRecipe: authenticated((_, { id }, {}) => {
     return getDocument(`${COLLECTION_NAME.RECIPE}/${id}`)
   }),
 
-  allRecipes: authenticated((_, args, context) => {
+  getAllRecipes: authenticated((_, args, context) => {
     return getCollection(COLLECTION_NAME.RECIPE)
   }),
 
-  recipeSteps: authenticated((_, { id }, {}) => {
+  // RecipeStep
+  getAllRecipeSteps: authenticated((_, { id }, {}) => {
     return getCollectionWithCondition(
         COLLECTION_NAME.RECIPE_STEP,
         'recipe_id', '==', id

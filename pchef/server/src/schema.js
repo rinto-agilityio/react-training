@@ -57,13 +57,13 @@ const typeDefs = gql`
   }
 
   type Query {
-    category(id: String!): Category!
-    allCategories: [Category]
+    getCategory(id: String!): Category!
+    getAllCategories: [Category]
 
-    recipe(id: String!): Recipe!
-    allRecipes: [Recipe]
+    getRecipe(id: String!): Recipe!
+    getAllRecipes: [Recipe]
 
-    recipeSteps(id: String!): [RecipeStep]
+    getAllRecipeSteps(id: String!): [RecipeStep]
   }
 
   type Mutation {
