@@ -4,17 +4,16 @@ const { map } = require('lodash')
 const COLLECTION_NAME = require('../constants/collection-name')
 
 // Helpers
+const { authenticated } = require('../helpers/auth')
 const {
   getDocument,
   getCollection,
   getCollectionWithCondition,
 } = require('../helpers/firestore')
 
-const { authenticated } = require('../helpers/auth')
-
 const Query = {
   // Category
-  category: (_, { id }, {}) => {
+  category: authenticated((_, { id }, {}) => {
     return getDocument(`${COLLECTION_NAME.CATEGORY}/${id}`)
       .then(category => {
         return getCollectionWithCondition(
@@ -27,9 +26,9 @@ const Query = {
           return category
         })
       })
-  },
+  }),
 
-  allCategories: () => {
+  allCategories: authenticated((_, args, {}) => {
     return getCollection('categories')
       .then(categories => {
         return map(categories, category => {
@@ -44,16 +43,16 @@ const Query = {
           })
         })
       })
-  },
+  }),
 
   // Recipe
-  recipe: (_, { id }, {}) => {
+  recipe: authenticated((_, { id }, {}) => {
     return getDocument(`${COLLECTION_NAME.RECIPE}/${id}`)
-  },
+  }),
 
-  allRecipes: (_, args, context) => {
+  allRecipes: authenticated((_, args, context) => {
     return getCollection(COLLECTION_NAME.RECIPE)
-  },
+  }),
 
   recipeSteps: authenticated((_, { id }, {}) => {
     return getCollectionWithCondition(
