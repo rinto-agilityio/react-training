@@ -40,6 +40,7 @@ const CalendarComponent = ({
     {/*
       Pass dayRange with minDate, maxDate with format YYYY-MM-DD to enable date select (dates outside dayRange will be grayed out).
       Custom styles and themes for calendar with customCalendarStyles and customThemes props.
+      Custom month format in calendar title to MMMM yyyy (Example: May 2019)
     */}
     <Calendar
       minDate={dayRange.minDate}
