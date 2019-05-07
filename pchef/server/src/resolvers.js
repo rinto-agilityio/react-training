@@ -1,15 +1,17 @@
-const { map } = require('lodash')
+const { map, find, filter, concat } = require('lodash')
 const {
   mapDocumentToEntity,
   mapCollectionToEntities,
   getDocument,
   getCollection,
   getCollectionWithCondition,
-  addDocument
+  addDocument,
+  updateDocument
 } = require('./helpers/firestore')
 const {
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+  authenticated
 } = require('./helpers/auth')
 
 const resolvers = {
@@ -88,7 +90,39 @@ const resolvers = {
         .catch(error =>{
           console.log('resolver error: ', error.message)
         })
-    }
+    },
+
+    // userToggleCategory
+    userToggleCategory: authenticated((_, { categoryId }, { currentUser }) => {
+      const currentUserRef = `users/${currentUser.id}`
+
+      return getDocument(currentUserRef)
+        .then(user => {
+          const followedCategories = user.follow_category
+          let followedCategoriesUpdated
+
+          if (find(followedCategories, item => item === categoryId)) {
+            followedCategoriesUpdated = filter(followedCategories, item => (
+              item !== categoryId
+            ))
+          } else {
+            if (followedCategories.length) {
+              followedCategoriesUpdated = concat(followedCategories, [categoryId])
+            } else {
+              followedCategoriesUpdated = [categoryId]
+            }
+          }
+
+          return updateDocument(currentUserRef, {
+            follow_category: followedCategoriesUpdated
+          })
+          .then(() => ({
+            results: followedCategoriesUpdated
+          }))
+          .catch(error => error)
+        })
+        .catch(error => error)
+    })
   }
 }
 
