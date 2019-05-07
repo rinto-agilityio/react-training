@@ -6,14 +6,14 @@ const typeDefs = gql`
     email: String!
     name: String!
     avatar: String
-    favorite_recipe: [String]
-    follow_category: [String]
+    favoriteRecipe: [String]
+    followCategory: [String]
   }
 
   type Category {
     id: String!
     title: String!
-    img_url: String
+    imgUrl: String
     recipes: [Recipe]
   }
 
@@ -24,36 +24,36 @@ const typeDefs = gql`
 
   type Recipe {
     id: String!
-    category_id: String!
-    cooking_type_id: String!
+    categoryId: String!
+    cookingTypeId: String!
     title: String!
-    sub_title: String
-    img_url: String
+    subTitle: String
+    imgUrl: String
     description: String
-    is_draft: Boolean!
-    modify_date: Int
-    published_date: Int
+    isDraft: Boolean!
+    modifyDate: Int
+    publishedDate: Int
     views: Int
     votes: [String]
   }
 
   type RecipeStep {
     id: String!
-    recipe_id: String!
+    recipeId: String!
     title: String!
     step: Int!
-    img_url: String
+    imgUrl: String
     description: String
-    published_date: Int
-    modify_date: Int
+    publishedDate: Int
+    modifyDate: Int
   }
 
   type Comment {
     id: String!
-    recipe_id: String!
-    user_id: String!
+    recipeId: String!
+    userId: String!
     content: String!
-    published_date: Int
+    publishedDate: Int
   }
 
   type PayloadAuth {
@@ -80,7 +80,7 @@ const typeDefs = gql`
   type Mutation {
     createCategory(
       title: String!
-      img_url: String!
+      imgUrl: String!
     ): Category!
 
     createCookingType(
@@ -88,15 +88,15 @@ const typeDefs = gql`
     ): CookingType
 
     createRecipe(
-      category_id: String!
-      cooking_type_id: String!
+      categoryId: String!
+      cookingTypeId: String!
       title: String!
-      sub_title: String
-      img_url: String
+      subTitle: String
+      imgUrl: String
       description: String
-      is_draft: Boolean! = true
-      modify_date: Int
-      published_date: Int
+      isDraft: Boolean! = true
+      modifyDate: Int
+      publishedDate: Int
       views: Int
       votes: [String]
     ): Recipe!
@@ -121,13 +121,13 @@ const typeDefs = gql`
     ): PayloadResults!
 
     createRecipeStep(
-      recipe_id: String!
+      recipeId: String!
       title: String!
       step: Int!
-      img_url: String
+      imgUrl: String
       description: String
-      published_date: Int
-      modify_date: Int
+      publishedDate: Int
+      modifyDate: Int
     ): RecipeStep!
 
     createRecipeComment(

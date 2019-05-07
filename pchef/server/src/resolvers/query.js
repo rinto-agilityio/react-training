@@ -18,7 +18,7 @@ const Query = {
       .then(category => {
         return getCollectionWithCondition(
           COLLECTION_NAME.RECIPE,
-          'category_id', '==', id
+          'categoryId', '==', id
         )
         .then(recipes => {
           category.recipes = recipes
@@ -34,7 +34,7 @@ const Query = {
         return map(categories, category => {
           return getCollectionWithCondition(
             COLLECTION_NAME.RECIPE,
-            'category_id', '==', category.id
+            'categoryId', '==', category.id
           )
           .then(recipes => {
             category.recipes = recipes
@@ -62,14 +62,9 @@ const Query = {
   getAllRecipeSteps: authenticated((_, { id }, {}) => {
     return getCollectionWithCondition(
         COLLECTION_NAME.RECIPE_STEP,
-        'recipe_id', '==', id
+        'recipeId', '==', id
       )
-      .then(steps => {
-        // category.recipes = recipes
-        console.log('steps.length: ', steps.length)
-
-        return steps
-      })
+      .then(steps => steps)
       .catch(error => error)
   }),
 

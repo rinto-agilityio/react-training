@@ -87,10 +87,10 @@ const Mutation = {
 
     return getDocument(currentUserRef)
       .then(user => {
-        const newRecipes = toggleItemInArray(user.favorite_recipe, categoryId)
+        const newRecipes = toggleItemInArray(user.favoriteRecipe, categoryId)
 
         return updateDocument(currentUserRef, {
-          favorite_recipe: newRecipes
+          favoriteRecipe: newRecipes
         })
         .then(() => ({
           results: newRecipes
