@@ -17,21 +17,21 @@ const { toggleItemInArray } = require('../helpers/handle-data')
 
 const Mutation = {
   // User
-  createUser: authenticated((_, { email, password, name }, {}) => {
+  createUser: (_, { email, password, name }, {}) => {
     return createUserWithEmailAndPassword(email, password, name)
       .then(token => ({
         token
       }))
       .catch(error => error)
-  }),
+  },
 
-  signInUser: authenticated((_, { email, password }, {}) => {
+  signInUser: (_, { email, password }, {}) => {
     return signInWithEmailAndPassword(email, password)
       .then(token => ({
         token
       }))
       .catch(error => error)
-  }),
+  },
 
   /**
    * Category
@@ -105,7 +105,19 @@ const Mutation = {
     return {
       id: addDocument(COLLECTION_NAME.RECIPE_STEP, data)
     }
-  })
+  }),
+
+  // Comment
+  createRecipeComment: authenticated((_, { recipeId, content }, { currentUser }) => {
+    return {
+      id: addDocument(COLLECTION_NAME.COMMENT, {
+        recipeId,
+        content,
+        userId: currentUser.id,
+        publishedDate: Date.now()
+      })
+    }
+  }),
 }
 
 module.exports = Mutation

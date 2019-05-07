@@ -127,6 +127,11 @@ const typeDefs = gql`
       published_date: Int
       modify_date: Int
     ): RecipeStep!
+
+    createRecipeComment(
+      recipeId: String!
+      content: String!
+    ): Comment
   }
 `
 
