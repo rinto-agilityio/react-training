@@ -16,7 +16,8 @@ type Props = {
   color?: string,
   type?: string,
   size?: number,
-  name: string
+  name: string,
+  wrapperIconStyle: Object
 };
 
 const Icon = ({
@@ -26,9 +27,13 @@ const Icon = ({
   color,
   type,
   size,
-  name
+  name,
+  wrapperIconStyle
 }: Props) => (
-  <View style={styles.wrapIcon}>
+  <View style={[
+    styles.wrapIcon,
+    wrapperIconStyle,
+  ]}>
     <IconComponent
       name={name}
       type={type}
@@ -36,7 +41,7 @@ const Icon = ({
       size={size}
       onPress={onClick}
     />
-    {label ? <Text style={[customStyle, styles.label]}>{label}</Text> : null}
+    {label ? <Text style={[styles.label, customStyle]}>{label}</Text> : null}
   </View>
 );
 
@@ -46,7 +51,8 @@ Icon.defaultProps = {
   onClick: () => {},
   customStyle: {},
   size: METRICS.fontSize.medium,
-  color: COLORS.black
+  color: COLORS.black,
+  wrapperIconStyle: {}
 };
 
 export default Icon;
