@@ -48,6 +48,14 @@ const typeDefs = gql`
     modify_date: Int
   }
 
+  type Comment {
+    id: String!
+    recipe_id: String!
+    user_id: String!
+    content: String!
+    published_date: Int
+  }
+
   type PayloadAuth {
     token: String
   }
