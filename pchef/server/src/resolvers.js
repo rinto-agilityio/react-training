@@ -112,27 +112,26 @@ const resolvers = {
           .catch(error => error)
         })
         .catch(error => error)
-    })
-  },
+    }),
 
-  userToggleRecipe: authenticated((_, { categoryId }, { currentUser }) => {
-    const currentUserRef = `users/${currentUser.id}`
+    userToggleRecipe: authenticated((_, { categoryId }, { currentUser }) => {
+      const currentUserRef = `users/${currentUser.id}`
 
-    return getDocument(currentUserRef)
-      .then(user => {
-        const newRecipes = toggleItemInArray(user.favorite_recipe, categoryId)
+      return getDocument(currentUserRef)
+        .then(user => {
+          const newRecipes = toggleItemInArray(user.favorite_recipe, categoryId)
 
-        return updateDocument(currentUserRef, {
-          favorite_recipe: newRecipes
+          return updateDocument(currentUserRef, {
+            favorite_recipe: newRecipes
+          })
+          .then(() => ({
+            results: newRecipes
+          }))
+          .catch(error => error)
         })
-        .then(() => ({
-          results: newRecipes
-        }))
         .catch(error => error)
-      })
-      .catch(error => error)
-  })
-},
+    })
+  }
 }
 
 module.exports = resolvers

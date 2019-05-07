@@ -12,11 +12,11 @@ const typeDefs = gql`
     id: String!
     category_id: String!
     cooking_type_id: String!
-    title: String
+    title: String!
     sub_title: String
     img_url: String
     description: String
-    is_draft: Boolean
+    is_draft: Boolean!
     modify_date: Int
     published_date: Int
     views: Int
@@ -57,11 +57,11 @@ const typeDefs = gql`
     createRecipe(
       category_id: String!
       cooking_type_id: String!
-      title: String
+      title: String!
       sub_title: String
       img_url: String
       description: String
-      is_draft: Boolean
+      is_draft: Boolean! = true
       modify_date: Int
       published_date: Int
       views: Int
