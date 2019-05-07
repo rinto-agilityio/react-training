@@ -27,6 +27,13 @@ const addDocument = (path, data) => (
   db.collection(path).add(data).then(docRef => docRef.id)
 )
 
+const addDocumentWithId = (path, id, data) => (
+  db.collection(path).doc(id).set(data)
+    .then(() => id)
+    .catch(error => error)
+  })
+)
+
 module.exports= {
   mapDocumentToEntity,
   mapCollectionToEntities,
@@ -35,5 +42,6 @@ module.exports= {
   getCollection,
   getCollectionWithCondition,
 
-  addDocument
+  addDocument,
+  addDocumentWithId
 }
