@@ -19,7 +19,7 @@ type Props = {
   numberOfLines?: number,
   defaultValue: string,
   refInput: { current: HTMLInputElement | null },
-  onSubmitEditing: () => void
+  onSubmitEditing: () => void,
 }
 
 const TextBox = ({

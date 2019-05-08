@@ -11,7 +11,7 @@ type Props = {
   typeName?: string,
   title: string,
   titleStyle?: Object,
-  size?: string
+  size?: string,
 }
 
 const Button = ({

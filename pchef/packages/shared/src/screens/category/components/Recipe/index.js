@@ -18,7 +18,7 @@ type Props = {
   onClickIcon?: () => void,
   size?: string,
   color?: string,
-  handleTouch?: () => void
+  handleTouch?: () => void,
 }
 
 const Recipe = ({

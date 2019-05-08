@@ -17,7 +17,7 @@ type Props = {
   type?: string,
   size?: number,
   name: string,
-  wrapperIconStyle?: Object
+  wrapperIconStyle?: Object,
 };
 
 const Icon = ({

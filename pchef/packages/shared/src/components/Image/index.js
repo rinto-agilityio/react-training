@@ -11,7 +11,7 @@ type Props = {
   url?: Object,
   customBtnStyle?: Object,
   customImageStyle?: Object,
-  resizeMethod?: string
+  resizeMethod?: string,
 }
 
 const ImageComponent = ({
