@@ -12,9 +12,10 @@ const toggleItemInArray = (collection, value) => {
   if (find(collection, item => item === value)) {
     results = filter(collection, item => item !== value)
   } else {
-    if (collection.length) {
+    if (collection && collection.length) {
       results = concat(collection, [value])
     } else {
+      // Collection is empty
       results = [value]
     }
   }

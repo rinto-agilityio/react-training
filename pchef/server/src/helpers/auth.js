@@ -7,10 +7,27 @@ const COLLECTION_NAME = require('../constants/collection-name')
 // TODO: Filter email domain:
 // https://firebase.google.com/docs/reference/node/firebase.auth.GoogleAuthProvider
 
+/**
+ * Use Firebase Admin Auth for authentication
+ * Create document in `users` collection to saving user information
+ * @param {String} email
+ * @param {String} password
+ * @param {String} name
+ * @return {String} token
+ */
 const createUserWithEmailAndPassword = (email, password, name) => (
   auth.createUserWithEmailAndPassword(email, password)
     .then(data => {
-      return addDocumentWithId(COLLECTION_NAME.USER, data.user.uid, { email, name })
+      return addDocumentWithId(
+          COLLECTION_NAME.USER,
+          data.user.uid,
+          {
+            email,
+            name,
+            favoriteRecipe: [],
+            followCategory: [],
+          }
+        )
         .then(() => {
           return data.user.getIdToken()
             .then(token => token)
