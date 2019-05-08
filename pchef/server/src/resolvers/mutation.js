@@ -77,7 +77,13 @@ const Mutation = {
   // Recipe
   createRecipe: authenticated((_, data, {}) => {
     return {
-      id: addDocument(COLLECTION_NAME.RECIPE, data)
+      id: addDocument(COLLECTION_NAME.RECIPE, {
+        ...data,
+        views: 0,
+        votes: [],
+        modifyDate: Date.now(),
+        publishedDate: Date.now()
+      })
     }
   }),
 
@@ -103,7 +109,9 @@ const Mutation = {
   // RecipeStep
   createRecipeStep: authenticated((_, data, { currentUser }) => {
     return {
-      id: addDocument(COLLECTION_NAME.RECIPE_STEP, data)
+      id: addDocument(COLLECTION_NAME.RECIPE_STEP, {
+        ...data
+      })
     }
   }),
 

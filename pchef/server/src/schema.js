@@ -95,10 +95,6 @@ const typeDefs = gql`
       imgUrl: String
       description: String
       isDraft: Boolean! = true
-      modifyDate: Int
-      publishedDate: Int
-      views: Int
-      votes: [String]
     ): Recipe!
 
     createUser(
