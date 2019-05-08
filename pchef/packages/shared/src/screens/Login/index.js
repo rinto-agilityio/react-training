@@ -6,17 +6,17 @@ import { View } from 'react-native';
 import LoginForm from './LoginForm';
 
 type Props = {
-  customStyle?: Object
+  customStyles?: Object
 }
 
-const Login = ({ customStyle }: Props) => (
+const Login = ({ customStyles }: Props) => (
   <View>
-    <LoginForm customStyle={customStyle} />
+    <LoginForm customStyles={customStyles} />
   </View>
 );
 
 Login.defaultProps = {
-  customStyle: {},
+  customStyles: {},
 }
 
 export default Login;

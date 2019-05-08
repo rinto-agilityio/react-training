@@ -30,7 +30,7 @@ const App = () => (
     <Wrapper>
       <Button title="Click me" size="small" />
     </Wrapper>
-    <Login customStyle={{ width: '40%', padding: 30 }}/>
+    <Login customStyles={{ width: '40%', padding: 30}}/>
   </>
 )
 
