@@ -28,8 +28,6 @@ const updateQuery = (previousResult, { fetchMoreResult }) => {
 const PostList = ({posts, fetchMore, pageInfo, handleSubcriptionNewPost }) => {
 
   useEffect(() => {
-    console.log('runn....');
-
     handleSubcriptionNewPost()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

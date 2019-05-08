@@ -110,7 +110,7 @@ module.exports = {
       if (!password) {
         validationErrors.password = ('Password is required')
       }
-      console.log('password', password)
+
       if (email && _.find(authors, {email: email})) {
         validationErrors.email = ('This email already exists')
       }
@@ -140,7 +140,7 @@ module.exports = {
       };
     },
     createPost: (_, args) => {
-      console.log('args', args)
+
       const author = authors.find(author => author.id == args.authorId)
 
       const newPost = {

@@ -36,14 +36,13 @@ const SignUp = props  => {
     <Mutation
       mutation={CREATE_USER}
       onCompleted={ () => props.history.push('/login') }
-      errorPolicy="all"
+      // errorPolicy="all"
     >
       {(signUp, { data, loading, error }) => {
 
         const errorSignUp = CustomError(error && error.graphQLErrors)
 
-        console.log('errorSignUp', errorSignUp)
-        return (
+      return (
         <div className="login-wrap">
           <div className="titleWrap">
             <p>Register Account</p>

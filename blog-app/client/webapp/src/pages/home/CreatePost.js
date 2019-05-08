@@ -14,8 +14,6 @@ import './CreatePostStyle.css';
 //mutations
 import { CREATE_POST } from '../../graphql/post/mutations';
 
-import { GET_POST } from '../../graphql/post/queries';
-
 const CreatePost = ({user, pageInfo, handleCloseModal, history}) => {
   const title = useRef('')
   const content = useRef('')
