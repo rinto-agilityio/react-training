@@ -19,14 +19,6 @@ const getCollection = path => (
     .catch(error => error)
 )
 
-// TODO: Should be replace by getCollectionWithConditions
-const getCollectionWithCondition = (path, fieldName, operation, value) => (
-  db.collection(path)
-    .where(fieldName, operation, value).get()
-    .then(mapCollectionToEntities)
-    .catch(error => error)
-)
-
 /**
  * Get documents of collection with multiple conditions
  * @param {String} path
@@ -69,7 +61,6 @@ module.exports= {
 
   getDocument,
   getCollection,
-  getCollectionWithCondition,
   getCollectionWithConditions,
 
   addDocument,
