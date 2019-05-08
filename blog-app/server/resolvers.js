@@ -172,8 +172,6 @@ module.exports = {
     },
 
     deletePost: (_, { id}) => {
-      console.log('post', id)
-      const post = post.find(post => post.id === id)
       let newPosts = posts.filter(postItem => postItem.id !== id)
 
       setData('./data/Posts.json', newPosts)
@@ -182,8 +180,7 @@ module.exports = {
 
       return {
         message: 'delete success',
-        success: true,
-        post: post
+        success: true
       }
     }
   },

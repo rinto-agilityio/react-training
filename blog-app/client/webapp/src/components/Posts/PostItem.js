@@ -29,7 +29,7 @@ const PostItem = ({post, user, handleOpenModal}) => {
       <button onClick={handleEditPost}>Edit</button>
       <Mutation
         mutation={DELETE_POST}
-        update={(cache, { data: { editPost } }) => {
+        update={(cache, { data: { deletePost } }) => {
 
         // read cache
         const data = cache.readQuery({ query: GET_POST, variables: {authorId: user.id, first: 5} });
