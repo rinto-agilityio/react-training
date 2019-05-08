@@ -14,11 +14,11 @@ firebase.initializeApp({
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: process.env.databaseURL
+  databaseURL: process.env.databaseURL,
 })
 
 module.exports = {
   db: firebase.firestore(),
   auth: firebase.auth(),
-  admin
+  admin,
 }

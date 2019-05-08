@@ -26,6 +26,7 @@ const typeDefs = gql`
     id: String!
     categoryId: String!
     cookingTypeId: String!
+    userId: String!
     title: String!
     isDraft: Boolean!
     subTitle: String

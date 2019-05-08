@@ -34,7 +34,7 @@ const getDocumentWithConditions = (path, conditions) => {
 
   return dbRef.get()
     .then(mapCollectionToEntities)
-    .then(results => results.length ? results[0] : null)
+    .then(results => (results.length ? results[0] : null))
     .catch(error => error)
 }
 
@@ -74,7 +74,7 @@ const updateDocument = (path, data) => (
   db.doc(path).update(data)
 )
 
-module.exports= {
+module.exports = {
   mapDocumentToEntity,
   mapCollectionToEntities,
 
@@ -86,5 +86,5 @@ module.exports= {
   addDocument,
   addDocumentWithId,
 
-  updateDocument
+  updateDocument,
 }
