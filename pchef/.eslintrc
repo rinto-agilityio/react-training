@@ -7,7 +7,8 @@
     "jest-enzyme",
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:flowtype/recommended"
+    "plugin:flowtype/recommended",
+    "airbnb"
   ],
   "env": {
     "node": true,
@@ -17,11 +18,10 @@
   },
   "parser": "babel-eslint",
   "rules": {
-    "semi": [2, "always"],
+    "semi": 0,
     "react/prefer-stateless-function": 0,
     "no-sequences": 0,
     "react/destructuring-assignment": [2, "always"],
-    "react/jsx-filename-extension": 0,
     "react/jsx-curly-brace-presence": [
       2,
       { "props": "never", "children": "never" }
@@ -45,9 +45,25 @@
     "no-return-assign": 0,
     "react/no-array-index-key": 0,
     "radix": 0,
+    "comma-dangle": 0,
     "import/prefer-default-export": 0,
     "flowtype/generic-spacing": [2, "never"],
-    "flowtype/no-types-missing-file-annotation": 0
+    "flowtype/no-types-missing-file-annotation": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "none",
+        "singleQuote": true,
+        "printWidth": 100,
+        "semi": false
+      }
+    ]
   },
   "plugins": ["react", "prettier", "jest", "import", "flowtype"]
 }
