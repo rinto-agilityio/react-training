@@ -19,12 +19,31 @@ const getCollection = path => (
     .catch(error => error)
 )
 
+// TODO: Should be replace by getCollectionWithConditions
 const getCollectionWithCondition = (path, fieldName, operation, value) => (
   db.collection(path)
     .where(fieldName, operation, value).get()
     .then(mapCollectionToEntities)
     .catch(error => error)
 )
+
+/**
+ * Get documents of collection with multiple conditions
+ * @param {String} path
+ * @param {Array} conditions
+ * @return {Array} documents
+ */
+const getCollectionWithConditions = (path, conditions) => {
+  let dbRef = db.collection(path)
+
+  conditions.forEach(({ fieldName, operator, value}) => {
+    dbRef = dbRef.where(fieldName, operator, value)
+  });
+
+  return dbRef.get()
+    .then(mapCollectionToEntities)
+    .catch(error => error)
+}
 
 // Add data
 const addDocument = (path, data) => (
@@ -51,6 +70,7 @@ module.exports= {
   getDocument,
   getCollection,
   getCollectionWithCondition,
+  getCollectionWithConditions,
 
   addDocument,
   addDocumentWithId,
