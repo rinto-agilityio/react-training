@@ -26,6 +26,12 @@ module.exports  = gql`
     password: String
   }
 
+  input PostInput {
+    id: ID
+    title: String!
+    content: String!
+    authorId: ID!
+  }
 
   interface QueryResponse {
     success: Boolean!
@@ -73,10 +79,13 @@ module.exports  = gql`
       content: String
       authorId: ID!
     ): Post!
-  }
+
+    editPost(post: PostInput): Post
+  },
 
   type Subscription {
     postAdded: Post
+    postEdit: Post
   }
 `;
 

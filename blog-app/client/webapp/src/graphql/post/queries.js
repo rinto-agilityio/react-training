@@ -6,6 +6,7 @@ export const GET_POST = gql`
       success
       message
       posts {
+        id
         title
         content
         author {

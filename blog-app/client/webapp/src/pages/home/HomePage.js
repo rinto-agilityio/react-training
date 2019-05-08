@@ -11,7 +11,7 @@ import PostList from '../../components/Posts/PostList'
 //style
 import './HomePageStyle.css'
 
-import { POST_ADDED } from '../../graphql/post/subcriptions'
+import { POST_ADDED, POST_EDIT } from '../../graphql/post/subcriptions'
 
 //queries
 import { LOGGED_USER } from '../../graphql/author/queries'
@@ -23,17 +23,28 @@ const HomePage = props => {
 
   const user = accessClient.readQuery({query: LOGGED_USER})
 
-  const [isCreatePost, setIsCreatePost] = useState(false)
+  const [isOpenModal, setIsOpenModal] = useState(false)
+  const [isEdit, setIsEdit] = useState(false)
+  const [postEditing, setPostEditing] =  useState(null)
 
-  const handleCreatePost = () => {
-    setIsCreatePost(true)
+  const handleOpenModal = (post) => {
+    if (post) {
+      setIsEdit(true)
+      setPostEditing(post)
+    } else {
+      setIsEdit(false)
+      setPostEditing(null)
+    }
+
+    setIsOpenModal(true)
   }
 
   const handleCloseModal = () => {
-    setIsCreatePost(false)
+    setIsOpenModal(false)
   }
 
   const handleSubcriptionNewPost = subscribeToMore => {
+    // eslint-disable-next-line no-unused-expressions
     subscribeToMore({
       document: POST_ADDED,
       updateQuery: (prev, { subscriptionData }) => {
@@ -48,8 +59,23 @@ const HomePage = props => {
         }
       }
     })
+    subscribeToMore({
+      document: POST_EDIT,
+      updateQuery: (prev, { subscriptionData }) => {
+
+        if (!subscriptionData.data) return prev;
+        const newPost = subscriptionData.data.postEdit;
+
+        return {
+          ...prev,
+          getPostsByAuthor: {
+            ...prev.getPostsByAuthor,
+            posts: [...prev.getPostsByAuthor.posts.map(item => item.id === newPost.id ? newPost : item)]
+          }
+        }
+      }
+    })
   }
-  console.log('accessClient', accessClient);
 
   return (
     <Query
@@ -60,17 +86,22 @@ const HomePage = props => {
         first: 5
       }}
     >
-      {({ loading, error, data, fetchMore, subscribeToMore }) => {
+      {({ loading, error, data, fetchMore, subscribeToMore, client }) => {
       if (loading) return <Spinner animation="border" variant="primary" />;
       if (error) return `Error! ${error.message}`;
-        console.log('data', data)
+      client.writeData({
+        data: {
+          post: data.getPostsByAuthor.posts
+        }
+      })
+
       return (
         <div className='container'>
           <Header />
           <div>
             <Button
               variant="primary"
-              onClick={handleCreatePost}
+              onClick={() => handleOpenModal()}
             >
               Create Post
             </Button>
@@ -81,18 +112,21 @@ const HomePage = props => {
                 // loading={loading}
                 fetchMore={fetchMore}
                 handleSubcriptionNewPost={() => handleSubcriptionNewPost(subscribeToMore)}
+                handleOpenModal={handleOpenModal}
               />
             </div>
 
             <PrimaryModal
-              show={isCreatePost}
-              title='Create New Post'
+              show={isOpenModal}
+              title={`${isEdit ? `Edit Post` : `Create Post`}`}
               onClose={handleCloseModal}
             >
               <CreatePost
                 user={user && user.loggedUser}
                 handleCloseModal={handleCloseModal}
                 history={props.history}
+                isEdit={isEdit}
+                postEditing={postEditing}
               />
             </PrimaryModal>
           </div>

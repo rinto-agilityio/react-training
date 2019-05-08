@@ -12,3 +12,13 @@ export const POST_ADDED = gql`
     }
   }
 `;
+
+export const POST_EDIT = gql`
+  subscription postEdit {
+    postEdit {
+      id
+      title
+      content
+    }
+  }
+`;

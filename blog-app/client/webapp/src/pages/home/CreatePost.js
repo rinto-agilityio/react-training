@@ -12,58 +12,133 @@ import TextArea from '../../components/commons/TextArea'
 import './CreatePostStyle.css';
 
 //mutations
-import { CREATE_POST } from '../../graphql/post/mutations';
+import { CREATE_POST, EDIT_POST } from '../../graphql/post/mutations';
 
-const CreatePost = ({user, pageInfo, handleCloseModal, history}) => {
+//queries
+import { GET_POST } from '../../graphql/post/queries'
+
+const CreatePost = ({user, pageInfo, handleCloseModal, history, isEdit, postEditing}) => {
   const title = useRef('')
   const content = useRef('')
 
-  const handleCreatePost = (event, createPost) => {
+  const handleSubmitForm = (event, muation) => {
 
     event.preventDefault();
-    createPost({
-      variables: {
-        id: `${ Date.now()}`,
-        title: title.current ? title.current.value : '',
-        content: content.current ? content.current.value : '',
-        authorId: user.id,
-      }
-    })
+    if (isEdit) {
+      muation({
+        variables: {
+          post: {
+            id: postEditing.id,
+            title: title.current ? title.current.value : '',
+            content: content.current ? content.current.value : '',
+            authorId: user.id
+          }
+        }
+      })
+    } else {
+      muation({
+        variables: {
+          id: `${ Date.now()}`,
+          title: title.current ? title.current.value : '',
+          content: content.current ? content.current.value : '',
+          authorId: user.id,
+        }
+      })
+    }
   }
+
   return (
-    <Mutation
-      mutation={ CREATE_POST }
-      onCompleted={ () => {
-        handleCloseModal()
-      }}
+    <>
+      {
+        !isEdit ?
+        <Mutation
+          mutation={ CREATE_POST }
+          onCompleted={ () => {
+            handleCloseModal()
+          }}
 
-    >
-      {(createPost, { data, loading, error }) => {
-        if (loading) return "Loading.............................";
-        if (error) return `Error! ${error.message}`;
+        >
+          {(editPost, { data, loading, error }) => {
+            if (loading) return "Loading.............................";
+            if (error) return `Error! ${error.message}`;
 
-        return (
-          <div className='create-post'>
-            <Form onSubmit={e => handleCreatePost(e, createPost)} className='form-new-post'>
-              <Input
-                placeholder='input title'
-                onRef={title}
-              />
+            return (
+              <div className='create-post'>
+                <Form onSubmit={ e => handleSubmitForm(e, editPost)} className='form-new-post'>
+                  <Input
+                    placeholder='input title'
+                    onRef={title}
+                    value={postEditing ? postEditing.title : ''}
+                  />
 
-              <TextArea
-                placeholder='input content'
-                onRef={content}
-              />
+                  <TextArea
+                    placeholder='input content'
+                    onRef={content}
+                    value={postEditing ? postEditing.content : ''}
+                  />
 
-              <div className='button-save-post'>
-                <Button variant="primary" type="submit">Save</Button>
-              </div>
+                  <div className='button-save-post'>
+                    <Button variant="primary" type="submit">Save</Button>
+                  </div>
 
-            </Form>
-        </div>
-        )
-      }}
-    </Mutation>
+                </Form>
+            </div>
+            )
+          }}
+        </Mutation>
+        :
+        <Mutation
+          mutation={ EDIT_POST }
+          onCompleted={ () => {
+            handleCloseModal()
+          }}
+          update={(cache, { data: { editPost } }) => {
+
+            // read cache
+            const data = cache.readQuery({ query: GET_POST, variables: {authorId: user.id, first: 5} });
+
+            const newData = {
+              ...data.getPostsByAuthor,
+              posts: [data.getPostsByAuthor.posts.map(item => item.id === editPost.id ? editPost : item )]
+            }
+
+            // write back to cache
+            cache.writeQuery({
+              query: GET_POST,
+              data: newData
+            })
+          }}
+        >
+          {(editPost, { data, loading, error }) => {
+            if (loading) return "Loading.............................";
+            if (error) return `Error! ${error.message}`;
+
+            return (
+              <div className='create-post'>
+                <Form onSubmit={ e => handleSubmitForm(e, editPost)} className='form-new-post'>
+                  <Input
+                    placeholder='input title'
+                    onRef={title}
+                    value={postEditing ? postEditing.title : ''}
+                  />
+
+                  <TextArea
+                    placeholder='input content'
+                    onRef={content}
+                    value={postEditing ? postEditing.content : ''}
+                  />
+
+                  <div className='button-save-post'>
+                    <Button variant="primary" type="submit">Save</Button>
+                  </div>
+
+                </Form>
+            </div>
+            )
+          }}
+        </Mutation>
+      }
+    </>
   )
 }
 
