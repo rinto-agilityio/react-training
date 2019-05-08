@@ -36,7 +36,7 @@ const getCollectionWithCondition = (path, fieldName, operation, value) => (
 const getCollectionWithConditions = (path, conditions) => {
   let dbRef = db.collection(path)
 
-  conditions.forEach(({ fieldName, operator, value}) => {
+  conditions.forEach(({ fieldName, operator, value }) => {
     dbRef = dbRef.where(fieldName, operator, value)
   });
 

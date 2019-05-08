@@ -8,17 +8,25 @@ const { authenticated } = require('../helpers/auth')
 const {
   getDocument,
   getCollection,
-  getCollectionWithCondition,
+  getCollectionWithConditions,
 } = require('../helpers/firestore')
 
 const Query = {
   // Category
   getCategory: authenticated((_, { id }, {}) => {
+    const queryConditions = [
+      {
+        fieldName: 'categoryId',
+        operator: '==',
+        value: id
+      }
+    ]
+
     return getDocument(`${COLLECTION_NAME.CATEGORY}/${id}`)
       .then(category => {
-        return getCollectionWithCondition(
+        return getCollectionWithConditions(
           COLLECTION_NAME.RECIPE,
-          'categoryId', '==', id
+          queryConditions
         )
         .then(recipes => {
           category.recipes = recipes
@@ -32,9 +40,17 @@ const Query = {
     return getCollection('categories')
       .then(categories => {
         return map(categories, category => {
-          return getCollectionWithCondition(
+          const queryConditions = [
+            {
+              fieldName: 'categoryId',
+              operator: '==',
+              value: category.id
+            }
+          ]
+
+          return getCollectionWithConditions(
             COLLECTION_NAME.RECIPE,
-            'categoryId', '==', category.id
+            queryConditions,
           )
           .then(recipes => {
             category.recipes = recipes
@@ -60,18 +76,34 @@ const Query = {
   }),
 
   getAllRecipeSteps: authenticated((_, { id }, {}) => {
-    return getCollectionWithCondition(
+    const queryConditions = [
+      {
+        fieldName: 'recipeId',
+        operator: '==',
+        value: id
+      }
+    ]
+
+    return getCollectionWithConditions(
         COLLECTION_NAME.RECIPE_STEP,
-        'recipeId', '==', id
+        queryConditions
       )
       .then(steps => steps)
       .catch(error => error)
   }),
 
   getRecipeComments: authenticated((_, { id }, {}) => {
-    return getCollectionWithCondition(
+    const queryConditions = [
+      {
+        fieldName: 'recipeId',
+        operator: '==',
+        value: id
+      }
+    ]
+
+    return getCollectionWithConditions(
       COLLECTION_NAME.COMMENT,
-      'recipeId', '==', id
+      queryConditions
     )
     .then(comments => comments)
     .catch(error => error)
