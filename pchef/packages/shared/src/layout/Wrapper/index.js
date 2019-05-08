@@ -31,13 +31,13 @@ const Wrapper = ({
   >
     {children}
   </View>
-);
+)
 
 Wrapper.defaultProps = {
   direction: 'row',
   childPosition: 'spaceAround',
   flexGrow: 0,
   customStyles: {},
-};
+}
 
 export default Wrapper
