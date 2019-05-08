@@ -27,14 +27,14 @@ const typeDefs = gql`
     categoryId: String!
     cookingTypeId: String!
     title: String!
+    isDraft: Boolean!
     subTitle: String
     imgUrl: String
     description: String
-    isDraft: Boolean!
-    modifyDate: Int
-    publishedDate: Int
     views: Int
     votes: [String]
+    modifyDate: Int!
+    publishedDate: Int!
   }
 
   type RecipeStep {
@@ -44,8 +44,8 @@ const typeDefs = gql`
     step: Int!
     imgUrl: String
     description: String
-    publishedDate: Int
-    modifyDate: Int
+    publishedDate: Int!
+    modifyDate: Int!
   }
 
   type Comment {
@@ -53,7 +53,7 @@ const typeDefs = gql`
     recipeId: String!
     userId: String!
     content: String!
-    publishedDate: Int
+    publishedDate: Int!
   }
 
   type PayloadAuth {
