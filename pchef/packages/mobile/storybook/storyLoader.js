@@ -11,5 +11,5 @@ const stories = ['./stories/components/Input.stories']
 
 module.exports = {
   loadStories,
-  stories
+  stories,
 }

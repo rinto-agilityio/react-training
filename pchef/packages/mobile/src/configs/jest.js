@@ -6,7 +6,7 @@ import renderer from 'react-test-renderer'
 configure({ adapter: new Adapter() })
 
 jest.mock('react-native-fs', () => ({
-  PicturesDirectoryPath: jest.fn()
+  PicturesDirectoryPath: jest.fn(),
 }))
 
 // Make Enzyme functions available in all test files without importing

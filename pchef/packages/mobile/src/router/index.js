@@ -10,28 +10,28 @@ const appRouter = createStackNavigator(
   {
     Login: {
       screen: Login,
-      headerMode: 'none'
+      headerMode: 'none',
     },
     Home: {
       screen: Home,
-      headerMode: 'none'
+      headerMode: 'none',
     },
     Category: {
       screen: Category,
-      headerMode: 'none'
+      headerMode: 'none',
     },
     RecipeDetail: {
       screen: RecipeDetail,
-      headerMode: 'none'
-    }
+      headerMode: 'none',
+    },
   },
   {
     navigationOptions: {
-      header: null
+      header: null,
     },
     headerMode: 'none',
-    initialRouteName: ROUTES.LOGIN
-  }
+    initialRouteName: ROUTES.LOGIN,
+  },
 )
 
 export default createAppContainer(appRouter)

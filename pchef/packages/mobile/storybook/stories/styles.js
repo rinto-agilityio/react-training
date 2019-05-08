@@ -4,21 +4,21 @@ import COLORS from '../../src/themes/colors'
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.white
+    backgroundColor: COLORS.white,
   },
   wrapper: {
     width: '90%',
     alignSelf: 'center',
-    marginTop: 50
+    marginTop: 50,
   },
   codeGuiderWrapper: {
-    marginTop: 30
+    marginTop: 30,
   },
   codeGuider: {
     padding: 10,
-    backgroundColor: COLORS.cornflowerBlue
+    backgroundColor: COLORS.cornflowerBlue,
   },
   codeGuiderText: {
-    fontWeight: 'bold'
-  }
+    fontWeight: 'bold',
+  },
 })
