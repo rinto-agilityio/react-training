@@ -101,23 +101,23 @@ module.exports = {
       const passwordRegex = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
 
       const validationErrors = {};
-      if (name) {
+      if (!name) {
         validationErrors.name = ('Name is required')
       }
 
-      if (email) {
+      if (!email) {
         validationErrors.email = ('Email is required')
       }
 
-      if (password) {
+      if (!password) {
         validationErrors.password = ('Password is required')
       }
 
-      if (_.find(authors, {email: email})) {
+      if (email && _.find(authors, {email: email})) {
         validationErrors.email = ('This email already exists')
       }
 
-      if (!passwordRegex.test(password)) {
+      if (password && !passwordRegex.test(password)) {
         validationErrors.password = ('Use 6 or more characters with a mix of letters, numbers & symbols')
       }
 
