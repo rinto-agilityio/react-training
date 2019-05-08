@@ -18,6 +18,12 @@
   },
   "parser": "babel-eslint",
   "rules": {
+    "max-len": [
+      2,
+      {
+        "code": 80
+      }
+    ],
     "semi": 0,
     "react/prefer-stateless-function": 0,
     "no-sequences": 0,
@@ -60,7 +66,7 @@
       {
         "trailingComma": "none",
         "singleQuote": true,
-        "printWidth": 100,
+        "printWidth": 80,
         "semi": false
       }
     ]
