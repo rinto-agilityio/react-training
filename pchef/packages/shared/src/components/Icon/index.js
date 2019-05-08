@@ -26,7 +26,7 @@ const Icon = ({
   color,
   type,
   size,
-  name
+  name,
 }: Props) => (
   <View style={styles.wrapIcon}>
     <IconComponent
@@ -46,7 +46,7 @@ Icon.defaultProps = {
   onClick: () => {},
   customStyle: {},
   size: METRICS.fontSize.medium,
-  color: COLORS.black
+  color: COLORS.black,
 }
 
 export default Icon

@@ -36,6 +36,6 @@ export const getDateOfWeek = () => {
 
   return {
     minDate: getDateForCalendar(startOfNextWeek),
-    maxDate: getDateForCalendar(endOfNextWeek)
+    maxDate: getDateForCalendar(endOfNextWeek),
   }
 }

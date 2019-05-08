@@ -20,7 +20,7 @@ const Button = ({
   typeName,
   title,
   titleStyle,
-  size
+  size,
 }: Props) => (
   <ButtonComponent
     title={title}
@@ -36,7 +36,7 @@ Button.defaultProps = {
   buttonStyle: {},
   titleStyle: {},
   typeName: 'outline',
-  size: 'medium'
+  size: 'medium',
 }
 
 export default Button

@@ -11,5 +11,5 @@ export default {
   green: '#3e94f6',
   baseBlue: '#42a5f5',
   darkBlue: '#2d4150',
-  grayDarker: '#808080'
+  grayDarker: '#808080',
 }

@@ -41,7 +41,7 @@ const CalendarComponent = ({
   customCalendarStyles,
   customThemes,
   customWrapperStyles,
-  onSelectDay
+  onSelectDay,
 }: Props) => (
   <View style={[styles.container, customWrapperStyles]}>
     <Calendar
@@ -54,10 +54,10 @@ const CalendarComponent = ({
         selectedDayBackgroundColor: COLORS.baseBlue,
         selectedDayTextColor: COLORS.white,
         todayTextColor: COLORS.darkBlue,
-        ...customThemes
+        ...customThemes,
       }}
       markedDates={{
-        [selectedDay]: { selected: true }
+        [selectedDay]: { selected: true },
       }}
       hideExtraDays
       renderArrow={direction => (
@@ -75,7 +75,7 @@ CalendarComponent.defaultProps = {
   customWrapperStyles: {},
   customCalendarStyles: {},
   customThemes: {},
-  onSelectDay: () => {}
+  onSelectDay: () => {},
 }
 
 export default CalendarComponent

@@ -7,6 +7,6 @@ import { METRICS } from '../../themes'
 export const styles = StyleSheet.create({
   image: {
     width: METRICS.mediumInput,
-    height: METRICS.mediumInput
-  }
+    height: METRICS.mediumInput,
+  },
 })

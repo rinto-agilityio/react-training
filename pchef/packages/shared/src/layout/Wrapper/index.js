@@ -18,7 +18,7 @@ const Wrapper = ({ children, direction, childPosition, flexGrow }: Props) => (
       styles.container,
       styles[direction],
       styles[childPosition],
-      { flexGrow }
+      { flexGrow },
     ]}
   >
     {children}
@@ -28,7 +28,7 @@ const Wrapper = ({ children, direction, childPosition, flexGrow }: Props) => (
 Wrapper.defaultProps = {
   direction: 'row',
   childPosition: 'spaceAround',
-  flexGrow: 3
+  flexGrow: 3,
 }
 
 export default Wrapper

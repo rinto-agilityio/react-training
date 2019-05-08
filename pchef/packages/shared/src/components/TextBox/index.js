@@ -33,7 +33,7 @@ const TextBox = ({
   numberOfLines,
   defaultValue,
   refInput,
-  onSubmitEditing
+  onSubmitEditing,
 }: Props) => (
   <View style={styles.container}>
     <TextInput
@@ -60,7 +60,7 @@ TextBox.defaultProps = {
   numberOfLines: 1,
   placeholder: '',
   customStyle: {},
-  placeholderTextColor: COLORS.black
+  placeholderTextColor: COLORS.black,
 }
 
 export default TextBox
