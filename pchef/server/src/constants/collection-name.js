@@ -5,6 +5,7 @@ const COOKING_TYPE = 'cooking_types'
 const RECIPE = 'recipes'
 const RECIPE_STEP = 'recipe_steps'
 const COMMENT = 'comments'
+const WISH_LIST = 'wish_list'
 
 module.exports = {
   USER,
@@ -13,4 +14,5 @@ module.exports = {
   RECIPE,
   RECIPE_STEP,
   COMMENT,
+  WISH_LIST,
 }

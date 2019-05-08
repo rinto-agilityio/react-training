@@ -56,6 +56,14 @@ const typeDefs = gql`
     publishedDate: Int!
   }
 
+  type WishList {
+    id: String!
+    categoryId: String!
+    cookingTypeId: String!
+    date: Int!
+    users: [String]
+  }
+
   type PayloadAuth {
     token: String
   }
@@ -128,6 +136,12 @@ const typeDefs = gql`
       recipeId: String!
       content: String!
     ): Comment
+
+    createWishList(
+      categoryId: String!
+      cookingTypeId: String!
+      date: Int!
+    ): WishList
   }
 `
 
