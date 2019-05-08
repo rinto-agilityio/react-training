@@ -22,6 +22,11 @@ const toggleItemInArray = (collection, value) => {
   return results
 }
 
+const findItemInArray = (collection, value) => (
+  find(collection, item => item === value)
+)
+
 module.exports = {
-  toggleItemInArray
+  toggleItemInArray,
+  findItemInArray,
 }
