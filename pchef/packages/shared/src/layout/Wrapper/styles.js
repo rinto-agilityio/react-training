@@ -17,11 +17,15 @@ const styles = StyleSheet.create({
   },
   left: {
     alignItems: 'flex-start',
-    justifyContent: 'end',
+    justifyContent: 'flex-end',
   },
   right: {
     alignItems: 'flex-end',
-    justifyContent: 'start',
+    justifyContent: 'flex-start',
+  },
+  middle: {
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
   },
   spaceAround: {
     justifyContent: 'space-around',

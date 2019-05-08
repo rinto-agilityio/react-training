@@ -11,7 +11,7 @@ type Props = {
   typeName?: string,
   title: string,
   titleStyle?: Object,
-  size?: string
+  size?: string,
 }
 
 const Button = ({
@@ -25,8 +25,8 @@ const Button = ({
   <ButtonComponent
     title={title}
     type={typeName}
-    buttonStyle={[buttonStyle, styles.button, styles[size]]}
-    titleStyle={[titleStyle, styles.title]}
+    buttonStyle={[styles.button, styles[size], buttonStyle]}
+    titleStyle={[styles.title, titleStyle]}
     onPress={onClick}
   />
 )

@@ -9,12 +9,20 @@ type Props = {
   children: React.Node,
   direction?: string,
   childPosition?: string,
-  flexGrow?: number
+  flexGrow?: number,
+  customStyles?: Object,
 }
 
-const Wrapper = ({ children, direction, childPosition, flexGrow }: Props) => (
+const Wrapper = ({
+  children,
+  direction,
+  childPosition,
+  flexGrow,
+  customStyles,
+}: Props) => (
   <View
     style={[
+      customStyles,
       styles.container,
       styles[direction],
       styles[childPosition],
@@ -28,7 +36,8 @@ const Wrapper = ({ children, direction, childPosition, flexGrow }: Props) => (
 Wrapper.defaultProps = {
   direction: 'row',
   childPosition: 'spaceAround',
-  flexGrow: 3,
+  flexGrow: 0,
+  customStyles: {},
 }
 
 export default Wrapper
