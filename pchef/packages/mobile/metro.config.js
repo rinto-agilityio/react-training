@@ -4,7 +4,7 @@
  *
  * @format
  */
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   projectRoot: path.resolve(__dirname, '../../'),
@@ -12,8 +12,8 @@ module.exports = {
     getTransformOptions: async () => ({
       transform: {
         experimentalImportSupport: false,
-        inlineRequires: false,
-      },
-    }),
-  },
-};
+        inlineRequires: false
+      }
+    })
+  }
+}
