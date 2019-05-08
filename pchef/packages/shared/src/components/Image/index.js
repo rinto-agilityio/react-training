@@ -1,9 +1,9 @@
 // Libs
-import React from 'react';
-import { Image, TouchableOpacity } from 'react-native';
+import React from 'react'
+import { Image, TouchableOpacity } from 'react-native'
 
 // Styles
-import { styles } from './styles';
+import { styles } from './styles'
 
 type Props = {
   disabled?: boolean,
@@ -12,7 +12,7 @@ type Props = {
   customBtnStyle?: Object,
   customImageStyle?: Object,
   resizeMethod?: string
-};
+}
 
 const ImageComponent = ({
   disabled,
@@ -20,7 +20,7 @@ const ImageComponent = ({
   url,
   customBtnStyle,
   customImageStyle,
-  resizeMethod
+  resizeMethod,
 }: Props) => (
   <TouchableOpacity
     style={customBtnStyle}
@@ -33,7 +33,7 @@ const ImageComponent = ({
       style={[styles.image, customImageStyle]}
     />
   </TouchableOpacity>
-);
+)
 
 ImageComponent.defaultProps = {
   disabled: false,
@@ -41,7 +41,7 @@ ImageComponent.defaultProps = {
   customBtnStyle: {},
   url: '',
   resizeMethod: 'auto',
-  handleTouch: () => {}
-};
+  handleTouch: () => {},
+}
 
-export default ImageComponent;
+export default ImageComponent

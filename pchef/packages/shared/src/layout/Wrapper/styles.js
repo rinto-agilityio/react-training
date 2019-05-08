@@ -1,5 +1,5 @@
 // Lib
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
 // Create style for layout
 const styles = StyleSheet.create({
@@ -10,29 +10,29 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   column: {
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   row: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   left: {
     alignItems: 'flex-start',
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
   },
   right: {
     alignItems: 'flex-end',
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
   },
   middle: {
     alignItems: 'flex-start',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   spaceAround: {
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
   },
   spaceBetween: {
-    justifyContent: 'space-between'
-  }
-});
+    justifyContent: 'space-between',
+  },
+})
 
-export default styles;
+export default styles

@@ -1,11 +1,11 @@
 // Lib
-import { StyleSheet, Dimensions } from 'react-native';
-
-// Define screen width
-const screenWidth = Math.round(Dimensions.get('window').width);
+import { StyleSheet, Dimensions } from 'react-native'
 
 // Thmemes
 import { METRICS } from '../../../themes'
+
+// Define screen width
+const screenWidth = Math.round(Dimensions.get('window').width)
 
 // Create style for Recipe
 const styles = StyleSheet.create({
@@ -18,16 +18,16 @@ const styles = StyleSheet.create({
   text: {
     overflow: 'hidden',
     height: 130,
-    fontSize: METRICS.fontSize.base
+    fontSize: METRICS.fontSize.base,
   },
   image: {
-    width: 150,
-    height: 150
+    width: METRICS.mediumImage,
+    height: METRICS.mediumImage,
   },
   icon: {
     position: 'absolute',
     bottom: 10,
-    right: 15
+    right: 15,
   },
   largeContent: {
     width: 700,
@@ -40,20 +40,20 @@ const styles = StyleSheet.create({
     paddingLeft: METRICS.xLargePadding,
   },
   largeImage: {
-    width: 300,
-    height: 300,
+    width: METRICS.largeImage,
+    height: METRICS.largeImage,
   },
   title: {
     fontSize: METRICS.fontSize.large,
-    paddingBottom: METRICS.mediumPadding
+    paddingBottom: METRICS.mediumPadding,
   },
   largeTitle: {
     fontSize: METRICS.fontSize.xLarge,
   },
   largeText: {
     fontSize: METRICS.fontSize.medium,
-    lineHeight: 25
-  }
+    lineHeight: 25,
+  },
 });
 
-export default styles;
+export default styles

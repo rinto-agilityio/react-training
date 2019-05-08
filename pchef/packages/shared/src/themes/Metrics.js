@@ -12,8 +12,12 @@ export default {
     medium: 18,
     large: 20,
     xLarge: 28,
+    xxLarge: 40,
   },
   smallInput: 20,
   mediumInput: 40,
-  largeInput: 60
-};
+  largeInput: 60,
+  smallImage: 100,
+  mediumImage: 150,
+  largeImage: 300,
+}

@@ -1,13 +1,13 @@
 // Libs
-import React from 'react';
-import { View, Text } from 'react-native';
-import { Icon as IconComponent } from 'react-native-elements';
+import React from 'react'
+import { View, Text } from 'react-native'
+import { Icon as IconComponent } from 'react-native-elements'
 
 // Styles
-import styles from './styles';
+import styles from './styles'
 
 // Themes
-import { COLORS, METRICS } from '../../themes';
+import { COLORS, METRICS } from '../../themes'
 
 type Props = {
   label?: string,
@@ -17,7 +17,7 @@ type Props = {
   type?: string,
   size?: number,
   name: string,
-  wrapperIconStyle: Object
+  wrapperIconStyle?: Object
 };
 
 const Icon = ({
@@ -28,12 +28,13 @@ const Icon = ({
   type,
   size,
   name,
-  wrapperIconStyle
+  wrapperIconStyle,
 }: Props) => (
   <View style={[
     styles.wrapIcon,
     wrapperIconStyle,
-  ]}>
+  ]}
+  >
     <IconComponent
       name={name}
       type={type}
@@ -43,7 +44,7 @@ const Icon = ({
     />
     {label ? <Text style={[styles.label, customStyle]}>{label}</Text> : null}
   </View>
-);
+)
 
 Icon.defaultProps = {
   label: '',
@@ -52,7 +53,7 @@ Icon.defaultProps = {
   customStyle: {},
   size: METRICS.fontSize.medium,
   color: COLORS.black,
-  wrapperIconStyle: {}
+  wrapperIconStyle: {},
 };
 
-export default Icon;
+export default Icon

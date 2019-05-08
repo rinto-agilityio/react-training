@@ -1,9 +1,9 @@
 // libs
-import React from 'react';
-import { Button as ButtonComponent } from 'react-native-elements';
+import React from 'react'
+import { Button as ButtonComponent } from 'react-native-elements'
 
 // Styles
-import styles from './styles';
+import styles from './styles'
 
 type Props = {
   onClick?: () => void,
@@ -12,7 +12,7 @@ type Props = {
   title: string,
   titleStyle?: Object,
   size?: string
-};
+}
 
 const Button = ({
   onClick,
@@ -20,7 +20,7 @@ const Button = ({
   typeName,
   title,
   titleStyle,
-  size
+  size,
 }: Props) => (
   <ButtonComponent
     title={title}
@@ -29,14 +29,14 @@ const Button = ({
     titleStyle={[styles.title, titleStyle]}
     onPress={onClick}
   />
-);
+)
 
 Button.defaultProps = {
   onClick: () => {},
   buttonStyle: {},
   titleStyle: {},
   typeName: 'outline',
-  size: 'medium'
-};
+  size: 'medium',
+}
 
-export default Button;
+export default Button

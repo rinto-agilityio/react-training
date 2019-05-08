@@ -1,6 +1,6 @@
 // libs
-import React from 'react';
-import { View, Text } from 'react-native';
+import React from 'react'
+import { View, Text } from 'react-native'
 import Wrapper from '../../../layout/Wrapper'
 import Icon from '../../../components/Icon'
 import Image from '../../../components/Image'
@@ -9,7 +9,7 @@ import Image from '../../../components/Image'
 import { COLORS, METRICS } from '../../../themes'
 
 // Styles
-import styles from './styles';
+import styles from './styles'
 
 type Props = {
   title?: string,
@@ -26,50 +26,53 @@ const Recipe = ({
   image,
   description,
   onClickIcon,
-  size = "",
+  size = '',
   color,
-  handleTouch
+  handleTouch,
 }: Props) => (
-    <View style={[
-      styles[`${size}Content`]
-    ]}>
-      <Text
-        style={[
-          styles.title,
-          styles[`${size}Title`]
+  <View style={[
+    styles[`${size}Content`],
+  ]}
+  >
+    <Text
+      style={[
+        styles.title,
+        styles[`${size}Title`],
+      ]}
+    >
+      {title}
+    </Text>
+    <Wrapper direction="row" childPosition="left">
+      <Image
+        url={{ uri: image }}
+        customImageStyle={[
+          styles.image,
+          styles[`${size}Image`],
+        ]}
+        handleTouch={handleTouch}
+      />
+      <Wrapper
+        direction="column"
+        childPosition="middle"
+        customStyles={[
+          styles.wrapper,
+          styles[`${size}Wrapper`],
         ]}
       >
-        {title}
-      </Text>
-      <Wrapper direction="row" childPosition="left">
-        <Image
-          url={{ uri: image }}
-          customImageStyle={[
-            styles.image,
-            styles[`${size}Image`]
-          ]}
-          handleTouch={handleTouch}
+        <Text style={[styles.text, styles[`${size}Text`]]}>{description}</Text>
+        <Icon
+          wrapperIconStyle={styles.icon}
+          name="heart"
+          size={
+            size === 'large' ? METRICS.fontSize.xLarge : METRICS.fontSize.medium
+          }
+          onClick={onClickIcon}
+          color={color}
         />
-        <Wrapper
-          direction="column"
-          childPosition="middle"
-          customStyles={[
-            styles.wrapper,
-            styles[`${size}Wrapper`]
-          ]}
-        >
-          <Text style={[styles.text, styles[`${size}Text`]]}>{description}</Text>
-          <Icon
-            wrapperIconStyle={styles.icon}
-            name="heart"
-            size={size === 'large' ? METRICS.fontSize.xLarge : METRICS.fontSize.medium}
-            onClick={onClickIcon}
-            color={color}
-          />
-        </Wrapper>
       </Wrapper>
-    </View>
-  )
+    </Wrapper>
+  </View>
+)
 
 Recipe.defaultProps = {
   title: '',
@@ -78,7 +81,7 @@ Recipe.defaultProps = {
   onClickIcon: () => {},
   size: 'medium',
   color: COLORS.grayDarker,
-  handleTouch: () => {}
+  handleTouch: () => {},
 }
 
 export default Recipe

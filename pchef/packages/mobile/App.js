@@ -14,13 +14,13 @@ const wsLink = new WebSocketLink({
   uri: constants.WS_URI,
   options: {
     reconnect: true,
-    timeout: 30000
-  }
+    timeout: 30000,
+  },
 })
 
 // create http link server
 const httpLink = createHttpLink({
-  uri: constants.SERVER_URI
+  uri: constants.SERVER_URI,
 })
 
 const link = split(
@@ -29,13 +29,13 @@ const link = split(
     return kind === 'OperationDefinition' && operation === 'subscription'
   },
   wsLink,
-  httpLink
+  httpLink,
 )
 
 // create client
 const client = new ApolloClient({
   link,
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
 })
 
 // app
