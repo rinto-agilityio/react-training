@@ -14,7 +14,7 @@ import { COLORS, METRICS } from '../../themes'
 import { CALENDAR_TITLE_FORMAT } from '../../constants'
 
 // Helpers
-import { getDateForCalendar } from '../../helpers/date-time'
+// import { getDateForCalendar } from '../../helpers/date-time'
 
 type Props = {
   selectedDay: string,
