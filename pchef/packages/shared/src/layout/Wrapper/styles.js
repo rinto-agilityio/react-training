@@ -23,6 +23,10 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     justifyContent: 'flex-start',
   },
+  middle: {
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+  },
   spaceAround: {
     justifyContent: 'space-around',
   },

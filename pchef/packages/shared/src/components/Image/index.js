@@ -8,10 +8,10 @@ import { styles } from './styles'
 type Props = {
   disabled?: boolean,
   handleTouch?: () => void,
-  url?: string,
-  customBtnStyle?: {},
-  customImageStyle?: {},
-  resizeMethod?: string
+  url?: Object,
+  customBtnStyle?: Object,
+  customImageStyle?: Object,
+  resizeMethod?: string,
 }
 
 const ImageComponent = ({

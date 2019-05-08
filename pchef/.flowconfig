@@ -1,6 +1,7 @@
 [ignore]
 ; We fork some components by platform
 .*/node_modules/.*
+.*/server/.*
 .*/.storybook/*
 .*/storybook/*
 .*\.config\.js
@@ -10,6 +11,8 @@
 .*\test\.js
 .*\.stories\.js
 
+; Ignore FlowType for server
+<PROJECT_ROOT>/server/
 
 ; Ignore "BUCK" generated dirs
 <PROJECT_ROOT>/\.buckd/

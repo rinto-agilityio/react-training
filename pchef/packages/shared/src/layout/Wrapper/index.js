@@ -9,17 +9,23 @@ type Props = {
   children: React.Node,
   direction?: string,
   childPosition?: string,
-  customStyle?: Object,
   flexGrow?: number,
-};
+  customStyles?: Object,
+}
 
-const Wrapper = ({ children, direction, childPosition, flexGrow, customStyle }: Props) => ( // eslint-disable-line
+const Wrapper = ({
+  children,
+  direction,
+  childPosition,
+  flexGrow,
+  customStyles,
+}: Props) => (
   <View
     style={[
       styles.container,
       styles[direction],
       styles[childPosition],
-      customStyle,
+      customStyles,
       { flexGrow },
     ]}
   >
@@ -30,8 +36,8 @@ const Wrapper = ({ children, direction, childPosition, flexGrow, customStyle }: 
 Wrapper.defaultProps = {
   direction: 'row',
   childPosition: 'spaceAround',
-  flexGrow: 3,
-  customStyle: {},
+  flexGrow: 0,
+  customStyles: {},
 }
 
 export default Wrapper

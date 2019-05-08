@@ -13,7 +13,7 @@ import Login from 'shared/src/screens/Login'
 const App = () => (
   <>
     <Counting />
-    <Icon name="hourglass" />
+    <Icon name="thermometer" />
     <Wrapper direction="row" >
       <Wrapper flexGrow={1}>
         <Text> item 1</Text>
@@ -26,7 +26,7 @@ const App = () => (
         <Text> item c</Text>
       </Wrapper>
     </Wrapper>
-    <AppComponent />
+    <AppComponent size="large"/>
     <Wrapper>
       <Button title="Click me" size="small" />
     </Wrapper>
