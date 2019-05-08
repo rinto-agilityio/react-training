@@ -10,9 +10,13 @@ import Wrapper from '../../layout/Wrapper';
 // Styles
 import { styles } from './styles';
 
-const LoginForm = () => {
+type Props = {
+  customStyle?: Object
+}
+
+const LoginForm = ({ customStyle }: Props) => {
   return (
-    <Wrapper direction='column'>
+    <Wrapper direction='column' customStyle={customStyle}>
       <View style={styles.textBoxWrapper}>
         <TextBox 
           placeholder="Enter your email..." 

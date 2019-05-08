@@ -6,7 +6,7 @@ import { View } from 'react-native';
 import styles from './styles';
 
 type Props = {
-  children?: React.Node,
+  children: React.Node,
   direction?: string,
   childPosition?: string,
   customStyle?: Object,

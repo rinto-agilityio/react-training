@@ -16,10 +16,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   left: {
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
+    justifyContent: 'flex-end'
   },
   right: {
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
+    justifyContent: 'flex-start'
   },
   spaceAround: {
     justifyContent: 'space-around'
