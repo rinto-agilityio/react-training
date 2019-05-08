@@ -9,6 +9,7 @@ export default {
   smallMargin: 5,
   mediumMargin: 10,
   largeMargin: 20,
+  extraLargeMargin: 30,
 
   // Input
   smallInput: 20,
@@ -47,4 +48,15 @@ export default {
     extraLarge: 28,
     extraExtraLarge: 40,
   },
+
+  // Flex
+  flexCenter: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  // Icon
+  smallIcon: 20,
+  mediumIcon: 30,
+  largeIcon: 40
 }
