@@ -55,7 +55,6 @@
     "no-return-assign": 0,
     "react/no-array-index-key": 0,
     "radix": 0,
-    "comma-dangle": 0,
     "import/prefer-default-export": 0,
     "flowtype/generic-spacing": [2, "never"],
     "flowtype/no-types-missing-file-annotation": 0,
