@@ -18,14 +18,18 @@ export default {
   // Image
   smallImage: 100,
   mediumImage: 150,
+  largeImage: 300,
 
   // Content
   smallContent: 400,
   mediumContent: 500,
+  largeContent: 700,
 
   // Wrapper
   smallWrapper: 150,
   mediumWrapper: 170,
+  largeWrapper: 300,
+  extraLargeWrapper: 380,
 
   // Position
   smallPosition: 10,
@@ -33,12 +37,6 @@ export default {
 
   // Line Height
   mediumLineHeight: 25,
-
-  // Large
-  largeImage: 300,
-  largeContent: 700,
-  largeWrapper: 300,
-  extraLargeWrapper: 380,
 
   // FontSize
   fontSize: {
