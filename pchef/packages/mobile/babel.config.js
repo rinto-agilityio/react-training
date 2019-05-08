@@ -4,4 +4,4 @@ module.exports = {
     '@babel/preset-flow',
     'module:react-native-dotenv',
   ],
-};
+}

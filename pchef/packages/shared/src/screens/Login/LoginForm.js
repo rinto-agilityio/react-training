@@ -21,6 +21,7 @@ const LoginForm = ({ customStyle }: Props) => (
         placeholder="Enter your email..."
         placeholderTextColor="darkgray"
         customStyle={{ width: '100%' }}
+        refInput={{ current: null }}
       />
     </View>
     <View style={styles.textBoxWrapper}>
@@ -28,6 +29,7 @@ const LoginForm = ({ customStyle }: Props) => (
         placeholder="Enter your password..."
         placeholderTextColor="darkgray"
         customStyle={{ width: '100%' }}
+        refInput={{ current: null }}
       />
     </View>
     <View style={styles.btnWrapper}>
@@ -37,7 +39,7 @@ const LoginForm = ({ customStyle }: Props) => (
 )
 
 LoginForm.defaultProps = {
-  customStyle: {}
+  customStyle: {},
 }
 
 export default LoginForm

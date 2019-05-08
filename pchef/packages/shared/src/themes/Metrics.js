@@ -8,9 +8,9 @@ export default {
   fontSize: {
     small: 14,
     medium: 18,
-    large: 20
+    large: 20,
   },
   smallInput: 20,
   mediumInput: 40,
-  largeInput: 60
-};
+  largeInput: 60,
+}

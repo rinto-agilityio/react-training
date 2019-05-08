@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import COLORS from '../../src/themes/colors';
+import { StyleSheet } from 'react-native'
+import COLORS from '../../src/themes/colors'
 
 export default StyleSheet.create({
   container: {
@@ -21,4 +21,4 @@ export default StyleSheet.create({
   codeGuiderText: {
     fontWeight: 'bold',
   },
-});
+})

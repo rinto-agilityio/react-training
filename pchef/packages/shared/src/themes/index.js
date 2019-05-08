@@ -1,4 +1,4 @@
-import COLORS from './Colors';
-import METRICS from './Metrics';
+import COLORS from './Colors'
+import METRICS from './Metrics'
 
-export { COLORS, METRICS };
+export { COLORS, METRICS }

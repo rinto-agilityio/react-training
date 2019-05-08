@@ -14,4 +14,7 @@ const Login = ({ customStyle }: Props) => (
   </View>
 );
 
+Login.defaultProps = {
+  customStyle: {},
+}
 export default Login;

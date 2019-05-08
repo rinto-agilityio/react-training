@@ -1,12 +1,12 @@
-import React from 'react';
-import Login from './index';
+import React from 'react'
+import Login from './index'
 
 it('Login snapshot', () => {
-  const input = shallow(<Login />);
+  const input = shallow(<Login />)
 
-  expect(input).toMatchSnapshot();
-});
+  expect(input).toMatchSnapshot()
+})
 
 it('test', () => {
-  expect(1).toBe(1);
-});
+  expect(1).toBe(1)
+})
