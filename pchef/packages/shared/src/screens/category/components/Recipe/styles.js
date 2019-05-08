@@ -54,6 +54,6 @@ const styles = StyleSheet.create({
     fontSize: METRICS.fontSize.medium,
     lineHeight: METRICS.mediumLineHeight,
   },
-});
+})
 
 export default styles
