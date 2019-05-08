@@ -16,6 +16,7 @@ export default {
   largeInput: 60,
 
   // Image
+  extraSmallImage: 80,
   smallImage: 100,
   mediumImage: 150,
   largeImage: 300,

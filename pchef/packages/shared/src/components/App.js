@@ -10,6 +10,7 @@ import React, { Component } from 'react'
 import { Platform, StyleSheet, Text, View } from 'react-native'
 import { Button } from 'react-native-elements'
 import Recipe from '../screens/category/components/Recipe'
+import Header from '../screens/newFeed/components/Header'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -49,6 +50,7 @@ export default class App extends Component<Props> {
     const { size } = this.props;
     return (
       <View style={styles.container}>
+        <Header size={size} />
         <Button title="Test RNE Button" onPress={() => {}} />
         <Recipe
           size={size}
