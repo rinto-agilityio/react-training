@@ -14,4 +14,4 @@ const StorybookUIRoot = getStorybookUI({ port: 7007, host: 'localhost' })
 
 // If you are using React Native vanilla and after installation you don't see your app name here, write it manually.
 // If you use Expo you can safely remove this line.
-AppRegistry.registerComponent('PChef', () => StorybookUIRoot)
+AppRegistry.registerComponent('PChef-storybook', () => StorybookUIRoot)
