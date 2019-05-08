@@ -13,9 +13,6 @@ import { COLORS, METRICS } from '../../themes'
 // Constants
 import { CALENDAR_TITLE_FORMAT } from '../../constants'
 
-// Helpers
-// import { getDateForCalendar } from '../../helpers/date-time'
-
 type Props = {
   selectedDay: string,
   dayRange: {
@@ -37,7 +34,7 @@ type Props = {
  */
 const CalendarComponent = ({
   selectedDay,
-  dayRange,
+  dayRange = {},
   customCalendarStyles,
   customThemes,
   customWrapperStyles,
