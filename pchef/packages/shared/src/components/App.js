@@ -6,9 +6,9 @@
  * @flow
  */
 
-import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
-import { Button } from 'react-native-elements';
+import React, { Component } from 'react'
+import { Platform, StyleSheet, Text, View } from 'react-native'
+import { Button } from 'react-native-elements'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
