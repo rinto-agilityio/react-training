@@ -25,7 +25,7 @@ const Wrapper = ({ children, direction, childPosition, flexGrow, customStyle }: 
   >
     {children}
   </View>
-);
+)
 
 Wrapper.defaultProps = {
   direction: 'row',

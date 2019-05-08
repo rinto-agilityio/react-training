@@ -15,4 +15,4 @@ export const styles = StyleSheet.create({
     fontSize: METRICS.fontSize.medium,
     color: COLORS.black,
   },
-});
+})
