@@ -1,8 +1,8 @@
 // Lib
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
 // Themes
-import { COLORS, METRICS } from '../../themes';
+import { COLORS, METRICS } from '../../themes'
 
 // Create style for button
 const styles = StyleSheet.create({
@@ -10,20 +10,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: COLORS.green,
-    padding: 10
+    padding: 10,
   },
   title: {
-    color: COLORS.white
+    color: COLORS.white,
   },
   small: {
-    padding: METRICS.smallPadding
+    padding: METRICS.smallPadding,
   },
   medium: {
-    padding: METRICS.mediumPadding
+    padding: METRICS.mediumPadding,
   },
   large: {
-    padding: METRICS.largePadding
-  }
-});
+    padding: METRICS.largePadding,
+  },
+})
 
-export default styles;
+export default styles

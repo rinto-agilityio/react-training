@@ -1,9 +1,9 @@
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-import ROUTES from '@constants/routes';
-import RecipeDetail from '@screen/RecipeDetail';
-import Login from '@screen/Login';
-import Home from '@screen/Home';
-import Category from '@screen/Category';
+import { createStackNavigator, createAppContainer } from 'react-navigation'
+import ROUTES from '@constants/routes'
+import RecipeDetail from '@screen/RecipeDetail'
+import Login from '@screen/Login'
+import Home from '@screen/Home'
+import Category from '@screen/Category'
 
 // app router
 const appRouter = createStackNavigator(
@@ -31,7 +31,7 @@ const appRouter = createStackNavigator(
     },
     headerMode: 'none',
     initialRouteName: ROUTES.LOGIN,
-  }
-);
+  },
+)
 
-export default createAppContainer(appRouter);
+export default createAppContainer(appRouter)

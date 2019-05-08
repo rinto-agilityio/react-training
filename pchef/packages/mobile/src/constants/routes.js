@@ -3,6 +3,6 @@ const ROUTES = {
   HOME: 'Home',
   CATEGORY: 'Category',
   DETAIL: 'RecipeDetail',
-};
+}
 
-export default ROUTES;
+export default ROUTES

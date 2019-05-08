@@ -5,3 +5,5 @@ yarn-error.log
 .eslintcache
 .idea
 .env
+.env.prod
+.env.staging
