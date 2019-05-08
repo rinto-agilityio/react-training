@@ -1,6 +1,5 @@
 
 const { UserInputError, PubSub } = require('apollo-server');
-var Regex = require('regex');
 const _ = require('lodash');
 const Types = require('./Types');
 const {
@@ -19,7 +18,7 @@ module.exports = {
     getAuthors: () => {
       return { success: true, message: "Get authors List Success", authors: authors };
     },
-    signIn: (_, args) => {
+    signIn: (parent, args) => {
       const findUser = _.find(authors, { email: args.email, password: args.password })
       let userRes = {}
       if (findUser) {
@@ -95,10 +94,9 @@ module.exports = {
     }
   },
   Mutation: {
-    signUp: (_, args) => {
+    signUp: (parent, args) => {
 
       const { name, email, password } = args
-      const passwordRegex = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
 
       const validationErrors = {};
       if (!name) {
@@ -112,13 +110,13 @@ module.exports = {
       if (!password) {
         validationErrors.password = ('Password is required')
       }
-
+      console.log('password', password)
       if (email && _.find(authors, {email: email})) {
         validationErrors.email = ('This email already exists')
       }
 
-      if (password && !passwordRegex.test(password)) {
-        validationErrors.password = ('Use 6 or more characters with a mix of letters, numbers & symbols')
+      if (password && password.length < 6) {
+        validationErrors.password = ('Use 6 or more characters')
       }
 
       if (Object.keys(validationErrors).length > 0) {
@@ -142,6 +140,7 @@ module.exports = {
       };
     },
     createPost: (_, args) => {
+      console.log('args', args)
       const author = authors.find(author => author.id == args.authorId)
 
       const newPost = {

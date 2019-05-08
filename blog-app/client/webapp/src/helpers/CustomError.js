@@ -1,4 +1,4 @@
-export const CustomError = (errorArr = []) => {
+export const CustomError = errorArr => {
   let errors = {}
   if (errorArr) {
     errorArr.forEach(item => {

@@ -59,13 +59,13 @@ module.exports  = gql`
 
   type Query {
     getAuthors: AuthorsResponse
-    signIn(email: String!, password: String!): SignInResponse
+    signIn(email: String, password: String): SignInResponse
     getPostsByAuthor(authorId: ID!, after: String, first: Int): PostResponse
     getPost(id: ID!): Post
   }
 
   type Mutation {
-    signUp(id: ID!, email: String!, password: String!, name: String): SignInResponse
+    signUp(id: ID!, email: String, password: String, name: String): SignInResponse
 
     createPost(
       id: ID!
