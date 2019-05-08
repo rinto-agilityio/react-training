@@ -11,10 +11,11 @@ import Wrapper from '../../layout/Wrapper'
 import { styles } from './styles'
 
 type Props = {
-  customStyles?: Object
+  customStyles?: Object,
+  handleLoginRequest?: () => void,
 }
 
-const LoginForm = ({ customStyles }: Props) => (
+const LoginForm = ({ customStyles, handleLoginRequest }: Props) => (
   <Wrapper direction="column" customStyles={customStyles}>
     <View style={styles.textBoxWrapper}>
       <TextBox
@@ -33,13 +34,17 @@ const LoginForm = ({ customStyles }: Props) => (
       />
     </View>
     <View style={styles.btnWrapper}>
-      <Button title="Login" />
+      <Button
+        title="Login"
+        onClick={handleLoginRequest}
+      />
     </View>
   </Wrapper>
 )
 
 LoginForm.defaultProps = {
   customStyles: {},
+  handleLoginRequest: () => {},
 }
 
 export default LoginForm

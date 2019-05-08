@@ -1,13 +1,16 @@
 // Libs
 import { StyleSheet } from 'react-native';
 
+// Themes
+import { METRICS } from '../../themes'
+
 export const styles = StyleSheet.create({
   textBoxWrapper: {
-    padding: 10,
+    padding: METRICS.mediumPadding,
     width: '100%',
   },
   btnWrapper: {
-    padding: 10,
+    padding: METRICS.mediumPadding,
     width: '100%',
   },
 })
