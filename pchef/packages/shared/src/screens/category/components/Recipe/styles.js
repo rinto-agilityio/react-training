@@ -35,9 +35,9 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   largeWrapper: {
-    width: METRICS.xLargeWrapper,
+    width: METRICS.extraLargeWrapper,
     height: METRICS.largeWrapper,
-    paddingLeft: METRICS.xLargePadding,
+    paddingLeft: METRICS.extraLargePadding,
   },
   largeImage: {
     width: METRICS.largeImage,
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     paddingBottom: METRICS.mediumPadding,
   },
   largeTitle: {
-    fontSize: METRICS.fontSize.xLarge,
+    fontSize: METRICS.fontSize.extraLarge,
   },
   largeText: {
     fontSize: METRICS.fontSize.medium,

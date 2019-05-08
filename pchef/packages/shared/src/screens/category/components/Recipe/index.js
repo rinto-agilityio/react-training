@@ -64,7 +64,7 @@ const Recipe = ({
           wrapperIconStyle={styles.icon}
           name="heart"
           size={
-            size === 'large' ? METRICS.fontSize.xLarge : METRICS.fontSize.medium
+            size === 'large' ? METRICS.fontSize.extraLarge : METRICS.fontSize.medium
           }
           onClick={onClickIcon}
           color={color}
