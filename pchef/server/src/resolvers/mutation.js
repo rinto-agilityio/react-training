@@ -85,8 +85,8 @@ const Mutation = {
         ...data,
         views: 0,
         votes: [],
-        modifyDate: Date.now(),
-        publishedDate: Date.now()
+        modifyDate: Date.now().toString(),
+        publishedDate: Date.now().toString(),
       })
     }
   }),
@@ -94,8 +94,8 @@ const Mutation = {
   publishRecipe: authenticated((_, { id }, {}) => {
     return updateDocument(`${COLLECTION_NAME.RECIPE}/${id}}`, {
       isDraft: false,
-      publishedDate: Date.now(),
-      modifyDate: Date.now()
+      publishedDate: Date.now().toString(),
+      modifyDate: Date.now().toString(),
     })
     .then(() => ({
       id: id
@@ -127,8 +127,8 @@ const Mutation = {
     return {
       id: addDocument(COLLECTION_NAME.RECIPE_STEP, {
         ...data,
-        publishedDate: Date.now(),
-        modifyDate: Date.now()
+        publishedDate: Date.now().toString(),
+        modifyDate: Date.now().toString(),
       })
     }
   }),
@@ -139,7 +139,7 @@ const Mutation = {
       id: addDocument(COLLECTION_NAME.COMMENT, {
         ...data,
         userId: currentUser.id,
-        publishedDate: Date.now()
+        publishedDate: Date.now().toString(),
       })
     }
   }),

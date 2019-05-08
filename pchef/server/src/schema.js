@@ -33,8 +33,8 @@ const typeDefs = gql`
     description: String
     views: Int
     votes: [String]
-    modifyDate: Int!
-    publishedDate: Int!
+    modifyDate: String!
+    publishedDate: String!
   }
 
   type RecipeStep {
@@ -44,8 +44,8 @@ const typeDefs = gql`
     step: Int!
     imgUrl: String
     description: String
-    publishedDate: Int!
-    modifyDate: Int!
+    publishedDate: String!
+    modifyDate: String!
   }
 
   type Comment {
@@ -53,14 +53,14 @@ const typeDefs = gql`
     recipeId: String!
     userId: String!
     content: String!
-    publishedDate: Int!
+    publishedDate: String!
   }
 
   type WishList {
     id: String!
     categoryId: String!
     cookingTypeId: String!
-    date: Int!
+    date: String!
     users: [String]
   }
 
@@ -144,7 +144,7 @@ const typeDefs = gql`
     createWishList(
       categoryId: String!
       cookingTypeId: String!
-      date: Int!
+      date: String!
     ): WishList
   }
 `
