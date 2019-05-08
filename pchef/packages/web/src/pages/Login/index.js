@@ -1,6 +1,6 @@
 import React from 'react'
 
-// components
+// Components
 import { Link } from 'react-router-dom'
 
 const Login = () => (
