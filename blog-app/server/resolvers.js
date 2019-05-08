@@ -171,16 +171,19 @@ module.exports = {
       return newEditPost
     },
 
-    deletePost: (_, { id}) => {
+    deletePost: (_, { id }) => {
+      const post = posts.find(post => post.id === id)
+      
       let newPosts = posts.filter(postItem => postItem.id !== id)
-
+      
       setData('./data/Posts.json', newPosts)
 
-      // pubsub.publish(Types.POST_EDIT, {postEdit: post});
+      pubsub.publish(Types.POST_DELETE, {postDelete: post});
 
       return {
         message: 'delete success',
-        success: true
+        success: true,
+        post: post
       }
     }
   },
@@ -191,6 +194,9 @@ module.exports = {
     },
     postEdit: {
       subscribe: () => pubsub.asyncIterator(Types.POST_EDIT)
+    },
+    postDelete: {
+      subscribe: () => pubsub.asyncIterator(Types.POST_DELETE)
     }
   }
 };

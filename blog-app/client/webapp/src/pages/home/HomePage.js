@@ -7,11 +7,12 @@ import Header from '../../components/header/Header'
 import PrimaryModal from '../../components/commons/PrimaryModal'
 import CreatePost from './CreatePost'
 import PostList from '../../components/Posts/PostList'
+import AppConfig from '../../configs/AppConfig'
 
 //style
 import './HomePageStyle.css'
 
-import { POST_ADDED, POST_EDIT } from '../../graphql/post/subcriptions'
+import { POST_ADDED, POST_EDIT, POST_DELETE } from '../../graphql/post/subcriptions'
 
 //queries
 import { LOGGED_USER } from '../../graphql/author/queries'
@@ -75,6 +76,25 @@ const HomePage = props => {
         }
       }
     })
+
+    subscribeToMore({
+      document: POST_DELETE,
+      updateQuery: (prev, { subscriptionData }) => {
+
+        if (!subscriptionData.data) return prev;
+        const postDeleted = subscriptionData.data.postDelete;
+
+        const postUpdate = {
+          ...prev,
+          getPostsByAuthor: {
+            ...prev.getPostsByAuthor,
+            posts: [...prev.getPostsByAuthor.posts.filter(post => post.id !== postDeleted.id)]
+          }
+        }
+
+        return postUpdate
+      }
+    })
   }
 
   return (
@@ -83,7 +103,7 @@ const HomePage = props => {
       fetchPolicy="cache-and-network"
       variables={{
         authorId: user.loggedUser.id,
-        first: 5
+        first: AppConfig.PER_PAGE
       }}
     >
       {({ loading, error, data, fetchMore, subscribeToMore, client }) => {
@@ -114,6 +134,7 @@ const HomePage = props => {
                 handleSubcriptionNewPost={() => handleSubcriptionNewPost(subscribeToMore)}
                 handleOpenModal={handleOpenModal}
                 user={user && user.loggedUser}
+                history={props.history}
               />
             </div>
 

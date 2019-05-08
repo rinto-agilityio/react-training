@@ -1,3 +1,3 @@
 export default {
-  PER_PAGE: 20,
+  PER_PAGE: 3,
 }

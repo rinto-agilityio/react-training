@@ -1,6 +1,8 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import { Mutation } from 'react-apollo'
+import { Mutation } from 'react-apollo';
+import { Button } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap'
 
 //style
 import './styles/PostStyle.css'
@@ -8,9 +10,7 @@ import './styles/PostStyle.css'
 //mutation
 import { DELETE_POST } from '../../graphql/post/mutations'
 
-import { GET_POST } from '../../graphql/post/queries'
-
-const PostItem = ({post, user, handleOpenModal}) => {
+const PostItem = ({post, history, user, handleOpenModal}) => {
   const handleEditPost = () => {
     handleOpenModal(post)
   }
@@ -23,36 +23,33 @@ const PostItem = ({post, user, handleOpenModal}) => {
     })
   }
   return (
-    <div className='wrap-post'>
-      <p className='post-title'>{post.title}</p>
-      <p>{post.content}</p>
-      <button onClick={handleEditPost}>Edit</button>
       <Mutation
         mutation={DELETE_POST}
-        update={(cache, { data: { deletePost } }) => {
-
-        // read cache
-        const data = cache.readQuery({ query: GET_POST, variables: {authorId: user.id, first: 5} });
-
-        const newData = {
-          ...data.getPostsByAuthor,
-          posts: [data.getPostsByAuthor.posts.filter(item => item.id !== post.id)]
-        }
-
-        // write back to cache
-        cache.writeQuery({
-          query: GET_POST,
-          data: newData
-        })
-        }}
+        onCompleted={() => history.push('/') }
       >
         {(deletePost, { data, loading, error }) => {
+
+          if (loading) return (
+              <div className='wrap-loading'>
+                <Spinner animation="border" variant="primary" />
+              </div>
+            );
           return (
-            <button onClick={() => handleDeletePost(deletePost)}>Delete</button>
+            <div className='wrap-post'>
+              <p>
+                <span className='label'>Title:</span>
+                <span className='post-title'>{post.title}</span>
+              </p>
+              <p>
+                <span className='label'>Content:</span>
+                <span className='post-title'>{post.content}</span>
+              </p>
+              <Button onClick={handleEditPost} variant='primary'>Edit</Button> 
+              <Button onClick={() => handleDeletePost(deletePost)} variant='danger' className='custom-button'>Delete</Button> 
+            </div>
           )
         }}
       </Mutation>
-    </div>
   )
 }
 

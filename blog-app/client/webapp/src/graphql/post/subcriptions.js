@@ -22,3 +22,13 @@ export const POST_EDIT = gql`
     }
   }
 `;
+
+export const POST_DELETE = gql`
+  subscription postDelete {
+    postDelete {
+      id
+      title
+      content
+    }
+  }
+`;

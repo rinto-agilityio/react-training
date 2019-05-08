@@ -1,5 +1,6 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap'
+import { Button } from 'react-bootstrap';
 
 import './styles/FetchMoreButton.css';
 
@@ -18,12 +19,12 @@ const FetchMoreButton = ({
       </div>
     ) : (
       hasNextPage && (
-        <button
-          className="fetch-more-button"
+        <Button
+          className="fetch-more-Button"
           onClick={() => fetchMore({ variables, updateQuery })}
         >
-          More {children}
-        </button>
+          More Post....
+        </Button>
       )
     )}
   </div>

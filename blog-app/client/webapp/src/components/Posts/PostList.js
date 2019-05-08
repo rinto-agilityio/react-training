@@ -25,7 +25,7 @@ const updateQuery = (previousResult, { fetchMoreResult }) => {
   };
 };
 
-const PostList = ({posts, user, fetchMore, pageInfo, handleSubcriptionNewPost, handleOpenModal }) => {
+const PostList = ({posts, user, history, fetchMore, pageInfo, handleSubcriptionNewPost, handleOpenModal }) => {
 
   useEffect(() => {
     handleSubcriptionNewPost()
@@ -42,6 +42,7 @@ const PostList = ({posts, user, fetchMore, pageInfo, handleSubcriptionNewPost, h
               post={post}
               handleOpenModal={handleOpenModal}
               user={user}
+              history={history}
             />
           )
         })

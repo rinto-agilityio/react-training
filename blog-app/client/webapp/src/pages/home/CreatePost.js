@@ -3,6 +3,8 @@ import { Button } from 'react-bootstrap';
 import { Mutation } from 'react-apollo';
 import { Form } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { Spinner } from 'react-bootstrap'
+import AppConfig from '../../configs/AppConfig'
 
 //components
 import Input from '../../components/commons/Input';
@@ -59,7 +61,12 @@ const CreatePost = ({user, pageInfo, handleCloseModal, history, isEdit, postEdit
 
         >
           {(editPost, { data, loading, error }) => {
-            if (loading) return "Loading.............................";
+            if (loading) return (
+              <div className='wrap-loading'>
+                <Spinner animation="border" variant="primary" />
+              </div>
+            );
+
             if (error) return `Error! ${error.message}`;
 
             return (
@@ -93,9 +100,8 @@ const CreatePost = ({user, pageInfo, handleCloseModal, history, isEdit, postEdit
             handleCloseModal()
           }}
           update={(cache, { data: { editPost } }) => {
-
             // read cache
-            const data = cache.readQuery({ query: GET_POST, variables: {authorId: user.id, first: 5} });
+            const data = cache.readQuery({ query: GET_POST, variables: {authorId: user.id, first: AppConfig.PER_PAGE}});
 
             const newData = {
               ...data.getPostsByAuthor,
@@ -110,7 +116,13 @@ const CreatePost = ({user, pageInfo, handleCloseModal, history, isEdit, postEdit
           }}
         >
           {(editPost, { data, loading, error }) => {
-            if (loading) return "Loading.............................";
+
+            if (loading) return (
+              <div className='wrap-loading'>
+                <Spinner animation="border" variant="primary" />
+              </div>
+            );
+
             if (error) return `Error! ${error.message}`;
 
             return (
