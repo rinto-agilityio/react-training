@@ -2,7 +2,7 @@
 import { StyleSheet, Dimensions } from 'react-native'
 
 // Thmemes
-import { METRICS } from '../../../themes'
+import { METRICS } from '../../../../themes'
 
 // Define screen width
 const screenWidth = Math.round(Dimensions.get('window').width)

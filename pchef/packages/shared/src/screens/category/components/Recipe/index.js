@@ -1,12 +1,12 @@
 // libs
 import React from 'react'
 import { View, Text } from 'react-native'
-import Wrapper from '../../../layout/Wrapper'
-import Icon from '../../../components/Icon'
-import Image from '../../../components/Image'
+import Wrapper from '../../../../layout/Wrapper'
+import Icon from '../../../../components/Icon'
+import Image from '../../../../components/Image'
 
 // Themes
-import { COLORS, METRICS } from '../../../themes'
+import { COLORS, METRICS } from '../../../../themes'
 
 // Styles
 import styles from './styles'
