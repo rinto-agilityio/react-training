@@ -3,14 +3,14 @@ import React from 'react'
 import { Image, TouchableOpacity } from 'react-native'
 
 // Styles
-import { styles } from './styles'
+import styles from './styles'
 
 type Props = {
   disabled?: boolean,
   handleTouch?: () => void,
-  url?: Object,
-  customBtnStyle?: Object,
-  customImageStyle?: Object,
+  url: string,
+  customBtnStyle?: {},
+  customImageStyle?: {} | Array<{}>,
   resizeMethod?: string,
 }
 
@@ -28,7 +28,7 @@ const ImageComponent = ({
     disabled={disabled}
   >
     <Image
-      source={url}
+      source={{ uri: url }}
       resizeMethod={resizeMethod}
       style={[styles.image, customImageStyle]}
     />
@@ -39,9 +39,8 @@ ImageComponent.defaultProps = {
   disabled: false,
   customImageStyle: {},
   customBtnStyle: {},
-  url: '',
   resizeMethod: 'auto',
-  handleTouch: () => {},
+  handleTouch: () => {}
 }
 
 export default ImageComponent
