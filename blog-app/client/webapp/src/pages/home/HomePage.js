@@ -113,6 +113,7 @@ const HomePage = props => {
                 fetchMore={fetchMore}
                 handleSubcriptionNewPost={() => handleSubcriptionNewPost(subscribeToMore)}
                 handleOpenModal={handleOpenModal}
+                user={user && user.loggedUser}
               />
             </div>
 

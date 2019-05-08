@@ -22,3 +22,17 @@ export const EDIT_POST = gql`
     }
   }
 `;
+
+export const DELETE_POST = gql`
+  mutation deletePost($id: ID) {
+    deletePost(id: $id) {
+      message
+      success
+      post {
+        id
+        title
+      }
+    }
+  }
+`;
+

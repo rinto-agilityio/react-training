@@ -169,6 +169,22 @@ module.exports = {
       pubsub.publish(Types.POST_EDIT, {postEdit: newEditPost});
 
       return newEditPost
+    },
+
+    deletePost: (_, { id}) => {
+      console.log('post', id)
+      const post = post.find(post => post.id === id)
+      let newPosts = posts.filter(postItem => postItem.id !== id)
+
+      setData('./data/Posts.json', newPosts)
+
+      // pubsub.publish(Types.POST_EDIT, {postEdit: post});
+
+      return {
+        message: 'delete success',
+        success: true,
+        post: post
+      }
     }
   },
 

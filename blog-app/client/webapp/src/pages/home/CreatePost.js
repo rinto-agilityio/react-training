@@ -52,7 +52,7 @@ const CreatePost = ({user, pageInfo, handleCloseModal, history, isEdit, postEdit
       {
         !isEdit ?
         <Mutation
-          mutation={ CREATE_POST }
+          mutation={CREATE_POST}
           onCompleted={ () => {
             handleCloseModal()
           }}

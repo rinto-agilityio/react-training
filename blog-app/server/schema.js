@@ -44,6 +44,11 @@ module.exports  = gql`
     authors: [Author!]
   }
 
+  type DeleteResponse implements QueryResponse {
+    success: Boolean!
+    message: String!
+  }
+
   type SignInResponse implements QueryResponse {
     success: Boolean!
     message: String!
@@ -81,6 +86,7 @@ module.exports  = gql`
     ): Post!
 
     editPost(post: PostInput): Post
+    deletePost(id: ID): DeleteResponse
   },
 
   type Subscription {
