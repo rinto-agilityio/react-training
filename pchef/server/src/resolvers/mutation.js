@@ -5,7 +5,8 @@ const COLLECTION_NAME = require('../constants/collection-name')
 const {
   getDocument,
   addDocument,
-  updateDocument
+  updateDocument,
+  getDocumentWithConditions,
 } = require('../helpers/firestore')
 const {
   createUserWithEmailAndPassword,
@@ -13,7 +14,10 @@ const {
   authenticated
 } = require('../helpers/auth')
 
-const { toggleItemInArray } = require('../helpers/handle-data')
+const {
+  findItemInArray,
+  toggleItemInArray,
+} = require('../helpers/handle-data')
 
 const Mutation = {
   // User
@@ -118,15 +122,72 @@ const Mutation = {
   }),
 
   // Comment
-  createRecipeComment: authenticated((_, { recipeId, content }, { currentUser }) => {
+  createRecipeComment: authenticated((_, data, { currentUser }) => {
     return {
       id: addDocument(COLLECTION_NAME.COMMENT, {
-        recipeId,
-        content,
+        ...data,
         userId: currentUser.id,
         publishedDate: Date.now()
       })
     }
+  }),
+
+  /**
+   * Check this useId exists in list or not
+   * If wishlist available and userId exists in list, do nothing
+   * If wishlist document is available, check userId to add if it not in list
+   */
+  createWishList: authenticated((
+    _,
+    { categoryId, cookingTypeId, date },
+    { currentUser }
+  ) => {
+    const queryConditions = [
+      {
+        fieldName: 'categoryId',
+        operator: '==',
+        value: categoryId
+      },
+      {
+        fieldName: 'cookingTypeId',
+        operator: '==',
+        value: cookingTypeId
+      },
+      {
+        fieldName: 'date',
+        operator: '==',
+        value: date
+      },
+    ]
+
+    return getDocumentWithConditions(COLLECTION_NAME.WISH_LIST, queryConditions)
+    .then(result => {
+      if (result && result.id) {
+        if (!findItemInArray(result.users, currentUser.id)) {
+          return updateDocument(
+            `${COLLECTION_NAME.WISH_LIST}/${result.id}`,
+            { users: toggleItemInArray(result.users, currentUser.id) }
+          )
+          .then(() => ({ id: result.id }))
+          .catch(error => error)
+        }
+
+        // If it exists, do nothing
+        return {
+          id: result.id
+        }
+      } else {
+        return {
+          id: addDocument(COLLECTION_NAME.WISH_LIST, {
+            categoryId,
+            cookingTypeId,
+            date,
+            users: [currentUser.id]
+          })
+        }
+      }
+    })
+    .catch(error => error)
   }),
 }
 
