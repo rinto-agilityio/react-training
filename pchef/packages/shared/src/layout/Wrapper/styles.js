@@ -1,5 +1,5 @@
 // Lib
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
 // Create style for layout
 const styles = StyleSheet.create({
@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    flexWrap: 'wrap',
+    flexWrap: 'wrap'
   },
   column: {
     flexDirection: 'column'
@@ -29,6 +29,6 @@ const styles = StyleSheet.create({
   spaceBetween: {
     justifyContent: 'space-between'
   }
-});
+})
 
-export default styles;
+export default styles

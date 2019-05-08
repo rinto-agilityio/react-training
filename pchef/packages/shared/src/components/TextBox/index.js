@@ -1,26 +1,26 @@
 // Libs
-import React from 'react';
-import { TextInput, View } from 'react-native';
+import React from 'react'
+import { TextInput, View } from 'react-native'
 
 // Styles
-import { styles } from './styles';
+import { styles } from './styles'
 
 // Themes
-import { COLORS } from '../../themes';
+import { COLORS } from '../../themes'
 
 type Props = {
-  multiline: boolean,
-  autoCapitalize: string,
-  autoCorrect: boolean,
-  customStyle: {},
-  editable: boolean,
-  placeholder: string,
-  placeholderTextColor: string,
-  numberOfLines: number,
+  multiline?: boolean,
+  autoCapitalize?: string,
+  autoCorrect?: boolean,
+  customStyle?: {},
+  editable?: boolean,
+  placeholder?: string,
+  placeholderTextColor?: string,
+  numberOfLines?: number,
   defaultValue: string,
   refInput: { current: HTMLInputElement | null },
   onSubmitEditing: () => void
-};
+}
 
 const TextBox = ({
   multiline,
@@ -50,7 +50,7 @@ const TextBox = ({
       onSubmitEditing={onSubmitEditing}
     />
   </View>
-);
+)
 
 TextBox.defaultProps = {
   multiline: false,
@@ -61,6 +61,6 @@ TextBox.defaultProps = {
   placeholder: '',
   customStyle: {},
   placeholderTextColor: COLORS.black
-};
+}
 
-export default TextBox;
+export default TextBox

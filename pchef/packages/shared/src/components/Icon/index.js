@@ -1,13 +1,13 @@
 // Libs
-import React from 'react';
-import { View, Text } from 'react-native';
-import { Icon as IconComponent } from 'react-native-elements';
+import React from 'react'
+import { View, Text } from 'react-native'
+import { Icon as IconComponent } from 'react-native-elements'
 
 // Styles
-import styles from './styles';
+import styles from './styles'
 
 // Themes
-import { COLORS, METRICS } from '../../themes';
+import { COLORS, METRICS } from '../../themes'
 
 type Props = {
   label?: string,
@@ -17,7 +17,7 @@ type Props = {
   type?: string,
   size?: number,
   name: string
-};
+}
 
 const Icon = ({
   label,
@@ -38,7 +38,7 @@ const Icon = ({
     />
     {label ? <Text style={[customStyle, styles.label]}>{label}</Text> : null}
   </View>
-);
+)
 
 Icon.defaultProps = {
   label: '',
@@ -47,6 +47,6 @@ Icon.defaultProps = {
   customStyle: {},
   size: METRICS.fontSize.medium,
   color: COLORS.black
-};
+}
 
-export default Icon;
+export default Icon

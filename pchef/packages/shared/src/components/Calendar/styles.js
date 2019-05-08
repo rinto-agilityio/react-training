@@ -1,8 +1,8 @@
 // Lib
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
 // Themes
-import { COLORS } from '../../themes';
+import { COLORS } from '../../themes'
 
 // Create style for calendar
 const styles = StyleSheet.create({
@@ -10,6 +10,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.grayDarker
   }
-});
+})
 
-export default styles;
+export default styles

@@ -1,8 +1,8 @@
 // Lib
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
 // Themes
-import { METRICS } from '../../themes';
+import { METRICS } from '../../themes'
 
 // Create style for Icon
 const styles = StyleSheet.create({
@@ -14,6 +14,6 @@ const styles = StyleSheet.create({
   label: {
     marginLeft: METRICS.mediumMargin
   }
-});
+})
 
-export default styles;
+export default styles

@@ -1,8 +1,8 @@
 // Lib
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
 // Themes
-import { COLORS, METRICS } from '../../themes';
+import { COLORS, METRICS } from '../../themes'
 
 // Create style for button
 const styles = StyleSheet.create({
@@ -24,6 +24,6 @@ const styles = StyleSheet.create({
   large: {
     padding: METRICS.largePadding
   }
-});
+})
 
-export default styles;
+export default styles

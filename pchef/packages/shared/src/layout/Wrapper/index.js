@@ -1,30 +1,34 @@
 // Libs
-import * as React from 'react';
-import { View } from 'react-native';
+import * as React from 'react'
+import { View } from 'react-native'
 
 // Styles
-import styles from './styles';
+import styles from './styles'
 
 type Props = {
-  children?: React.Node,
+  children: React.Node,
   direction?: string,
   childPosition?: string,
-  flexGrow?: number,
-};
+  flexGrow?: number
+}
 
-const Wrapper = ({ children, direction, childPosition, flexGrow }: Props) => {
-  return (
-    <View 
+const Wrapper = ({ children, direction, childPosition, flexGrow }: Props) => (
+  <View
     style={[
       styles.container,
       styles[direction],
       styles[childPosition],
-      {flexGrow: flexGrow} 
-    ]} 
-    >
-      {children}    
-    </View>
-  );
-};
+      { flexGrow }
+    ]}
+  >
+    {children}
+  </View>
+)
 
-export default Wrapper;
+Wrapper.defaultProps = {
+  direction: 'row',
+  childPosition: 'spaceAround',
+  flexGrow: 3
+}
+
+export default Wrapper

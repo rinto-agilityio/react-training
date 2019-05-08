@@ -12,4 +12,4 @@ export default {
   baseBlue: '#42a5f5',
   darkBlue: '#2d4150',
   grayDarker: '#808080'
-};
+}
