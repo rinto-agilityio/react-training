@@ -10,8 +10,8 @@ const screenWidth = Math.round(Dimensions.get('window').width)
 // Create style for Recipe
 const styles = StyleSheet.create({
   wrapper: {
-    height: 150,
-    width: screenWidth - 170,
+    height: METRICS.smallWrapper,
+    width: screenWidth - METRICS.mediumWrapper,
     marginLeft: METRICS.mediumMargin,
     marginRight: METRICS.mediumMargin,
   },
@@ -26,17 +26,17 @@ const styles = StyleSheet.create({
   },
   icon: {
     position: 'absolute',
-    bottom: 10,
-    right: 15,
+    bottom: METRICS.smallPosition,
+    right: METRICS.mediumPosition,
   },
   largeContent: {
-    width: 700,
-    height: 400,
+    width: METRICS.largeContent,
+    height: METRICS.smallContent,
     position: 'relative',
   },
   largeWrapper: {
-    width: 380,
-    height: 300,
+    width: METRICS.xLargeWrapper,
+    height: METRICS.largeWrapper,
     paddingLeft: METRICS.xLargePadding,
   },
   largeImage: {
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   },
   largeText: {
     fontSize: METRICS.fontSize.medium,
-    lineHeight: 25,
+    lineHeight: METRICS.mediumLineHeight,
   },
 });
 

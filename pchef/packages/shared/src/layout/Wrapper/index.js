@@ -11,7 +11,7 @@ type Props = {
   childPosition?: string,
   flexGrow?: number,
   customStyles?: Object
-};
+}
 
 const Wrapper = ({
   children,
@@ -40,4 +40,4 @@ Wrapper.defaultProps = {
   customStyles: {},
 };
 
-export default Wrapper;
+export default Wrapper
