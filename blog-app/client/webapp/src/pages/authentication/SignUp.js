@@ -9,6 +9,12 @@ import { CREATE_USER } from '../../graphql/author/mutations';
 //import css
 import './LoginStyle.css'
 
+//helpers
+import { CustomError } from '../../helpers/CustomError'
+
+//component
+import ErrorMessage from '../../components/commons/ErrorMessage'
+
 const SignUp = props  => {
 
   const email = useRef('')
@@ -33,6 +39,10 @@ const SignUp = props  => {
       errorPolicy="all"
     >
       {(signUp, { data, loading, error }) => {
+
+        const errorSignUp = CustomError(error && error.graphQLErrors)
+
+        console.log('errorSignUp', errorSignUp)
         return (
         <div className="login-wrap">
           <div className="titleWrap">
@@ -42,12 +52,24 @@ const SignUp = props  => {
             <Form onSubmit={e => handleSignUp(e, signUp)}>
               <Form.Group >
                 <Form.Control type='text' ref={name} placeholder='Enter name' />
+                {
+                  errorSignUp && errorSignUp.name &&
+                  <ErrorMessage message={errorSignUp.name}/>
+                }
               </Form.Group>
               <Form.Group >
                 <Form.Control type='email' ref={email} placeholder='Enter email' />
+                {
+                  errorSignUp && errorSignUp.email &&
+                  <ErrorMessage message={errorSignUp.email}/>
+                }
               </Form.Group>
               <Form.Group >
                 <Form.Control type='password' ref={password} placeholder='Password' />
+                {
+                  errorSignUp && errorSignUp.password &&
+                  <ErrorMessage message={errorSignUp.password}/>
+                }
               </Form.Group>
               <Button type='submit'>Sign Up</Button>
               <Link></Link>

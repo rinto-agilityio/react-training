@@ -31,6 +31,7 @@ const PostList = ({posts, fetchMore, pageInfo, handleSubcriptionNewPost }) => {
     console.log('runn....');
 
     handleSubcriptionNewPost()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

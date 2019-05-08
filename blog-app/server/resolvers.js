@@ -1,15 +1,16 @@
 
 const { UserInputError, PubSub } = require('apollo-server');
+var Regex = require('regex');
 const _ = require('lodash');
-const Types = require('./Types')
+const Types = require('./Types');
 const {
   getData,
   setData
-} = require('./helpers/index')
+} = require('./helpers/index');
 
 const pubsub = new PubSub();
-const authors = getData('./data/Authors.json')
-const posts = getData('./data/Posts.json')
+const authors = getData('./data/Authors.json');
+const posts = getData('./data/Posts.json');
 
 // Resolvers define the technique for fetching the types in the
 // schema.  We'll retrieve users from the "users" array above.
@@ -18,7 +19,7 @@ module.exports = {
     getAuthors: () => {
       return { success: true, message: "Get authors List Success", authors: authors };
     },
-    signIn: (parent, args, context, info) => {
+    signIn: (_, args) => {
       const findUser = _.find(authors, { email: args.email, password: args.password })
       let userRes = {}
       if (findUser) {
@@ -94,23 +95,30 @@ module.exports = {
     }
   },
   Mutation: {
-    signUp: (parent, args) => {
+    signUp: (_, args) => {
+
+      const { name, email, password } = args
+      const passwordRegex = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
 
       const validationErrors = {};
-      if (!args.name) {
+      if (name) {
         validationErrors.name = ('Name is required')
       }
 
-      if ( !args.email ) {
+      if (email) {
         validationErrors.email = ('Email is required')
       }
 
-      if ( !args.password ) {
+      if (password) {
         validationErrors.password = ('Password is required')
       }
 
-      if (_.find(authors, {email: args.email})) {
+      if (_.find(authors, {email: email})) {
         validationErrors.email = ('This email already exists')
+      }
+
+      if (!passwordRegex.test(password)) {
+        validationErrors.password = ('Use 6 or more characters with a mix of letters, numbers & symbols')
       }
 
       if (Object.keys(validationErrors).length > 0) {
