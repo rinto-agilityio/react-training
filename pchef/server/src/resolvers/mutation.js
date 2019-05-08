@@ -110,7 +110,9 @@ const Mutation = {
   createRecipeStep: authenticated((_, data, { currentUser }) => {
     return {
       id: addDocument(COLLECTION_NAME.RECIPE_STEP, {
-        ...data
+        ...data,
+        publishedDate: Date.now(),
+        modifyDate: Date.now()
       })
     }
   }),

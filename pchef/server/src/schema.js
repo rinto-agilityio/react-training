@@ -122,8 +122,6 @@ const typeDefs = gql`
       step: Int!
       imgUrl: String
       description: String
-      publishedDate: Int
-      modifyDate: Int
     ): RecipeStep!
 
     createRecipeComment(
