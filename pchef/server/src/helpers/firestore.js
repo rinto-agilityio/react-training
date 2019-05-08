@@ -20,6 +20,25 @@ const getCollection = path => (
 )
 
 /**
+ * Get single document with multiple conditions
+ * @param {String} path
+ * @param {Array} conditions
+ * @return {Object} document
+ */
+const getDocumentWithConditions = (path, conditions) => {
+  let dbRef = db.collection(path)
+
+  conditions.forEach(({ fieldName, operator, value }) => {
+    dbRef = dbRef.where(fieldName, operator, value)
+  });
+
+  return dbRef.get()
+    .then(mapCollectionToEntities)
+    .then(results => results.length ? results[0] : null)
+    .catch(error => error)
+}
+
+/**
  * Get documents of collection with multiple conditions
  * @param {String} path
  * @param {Array} conditions
@@ -61,6 +80,7 @@ module.exports= {
 
   getDocument,
   getCollection,
+  getDocumentWithConditions,
   getCollectionWithConditions,
 
   addDocument,
