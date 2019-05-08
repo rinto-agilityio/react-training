@@ -154,11 +154,30 @@ module.exports = {
       pubsub.publish(Types.POST_ADDED, {postAdded: newPost});
 
       return  newPost
+    },
+
+    editPost: (_, { post}) => {
+
+      const author = authors.find(author => author.id === post.authorId)
+
+      const newEditPost = {...post, author: author}
+
+      let newPosts = posts.map(postItem => postItem.id === post.id ? post : newEditPost)
+
+      setData('./data/Posts.json', newPosts)
+
+      pubsub.publish(Types.POST_EDIT, {postEdit: newEditPost});
+
+      return newEditPost
     }
   },
+
   Subscription: {
     postAdded: {
       subscribe: () => pubsub.asyncIterator(Types.POST_ADDED)
+    },
+    postEdit: {
+      subscribe: () => pubsub.asyncIterator(Types.POST_EDIT)
     }
   }
 };

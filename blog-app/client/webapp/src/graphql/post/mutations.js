@@ -12,3 +12,13 @@ export const CREATE_POST = gql`
     }
   }
 `;
+
+export const EDIT_POST = gql`
+  mutation editPost($post: PostInput) {
+    editPost(post: $post) {
+      id
+      title
+      content
+    }
+  }
+`;

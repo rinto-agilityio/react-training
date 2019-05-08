@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './styles/InputStyle.css'
 
 export const Input = props => {
-  const { label, className, type, name, onBlur, onChange, placeholder, onFocus, onRef } = props
+  const { label, className, type, name, onBlur, onChange, placeholder, onFocus, onRef, value } = props
   return (
     <div className='input-wrap'>
       <label>{label}</label>
@@ -18,6 +18,7 @@ export const Input = props => {
         placeholder={placeholder}
         onFocus={onFocus}
         ref={onRef}
+        defaultValue={value}
       />
     </div>
   );
@@ -30,7 +31,8 @@ Input.propTypes = {
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   placeholder: PropTypes.string,
-  onFocus: PropTypes.func
+  onFocus: PropTypes.func,
+  value: PropTypes.string
 };
 
 Input.defaultProps = {
@@ -40,7 +42,8 @@ Input.defaultProps = {
   onBlur: () => {},
   onChange: () => {},
   placeholder: '',
-  onFocus: () => {}
+  onFocus: () => {},
+  value: ''
 };
 
 export default memo(Input);
