@@ -20,7 +20,7 @@ type Props = {
   defaultValue?: string,
   refInput: { current: HTMLInputElement | null },
   onSubmitEditing?: () => void
-};
+}
 
 const TextBox = ({
   multiline,
