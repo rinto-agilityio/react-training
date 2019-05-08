@@ -91,6 +91,18 @@ const Mutation = {
     }
   }),
 
+  publishRecipe: authenticated((_, { id }, {}) => {
+    return updateDocument(`${COLLECTION_NAME.RECIPE}/${id}}`, {
+      isDraft: false,
+      publishedDate: Date.now(),
+      modifyDate: Date.now()
+    })
+    .then(() => ({
+      id: id
+    }))
+    .catch(error => error)
+  }),
+
   // List recipes user mark favorite
   userToggleRecipe: authenticated((_, { categoryId }, { currentUser }) => {
     const currentUserRef = `${COLLECTION_NAME.USER}/${currentUser.id}`

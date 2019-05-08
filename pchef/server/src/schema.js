@@ -105,6 +105,10 @@ const typeDefs = gql`
       isDraft: Boolean! = true
     ): Recipe!
 
+    publishRecipe(
+      id: String!
+    ): Recipe
+
     createUser(
       email: String!
       password: String!
