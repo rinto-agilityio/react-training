@@ -25,7 +25,7 @@ module.exports = {
       if (findUser) {
         userRes = Object.assign(userRes, {success: true, message: "SignIn Success", author: findUser})
       } else {
-        userRes = Object.assign(userRes, {success: true, message: "SignIn Failed", author: null})
+        throw new UserInputError('The email you entered does not match any accounts')
       }
       return userRes;
     },

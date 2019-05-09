@@ -10,10 +10,10 @@ import { CREATE_USER } from '../../graphql/author/mutations';
 import './LoginStyle.css';
 
 //helpers
-import { CustomError } from '../../helpers/CustomError'
+import { CustomError } from '../../helpers/CustomError';
 
 //component
-import ErrorMessage from '../../components/commons/ErrorMessage'
+import ErrorMessage from '../../components/commons/ErrorMessage';
 
 const SignUp = props  => {
 

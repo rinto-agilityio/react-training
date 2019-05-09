@@ -1,20 +1,22 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { ApolloConsumer } from 'react-apollo';
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 //component
-import SignUp from './SignUp'
+import SignUp from './SignUp';
+import ErrorMessage from '../../components/commons/ErrorMessage';
 
 //query
 import { SIGN_IN } from '../../graphql/author/queries';
 
 //import css
-import './LoginStyle.css'
+import './LoginStyle.css';
 
 const Login = props  => {
   const email = useRef('')
   const password = useRef('')
+  const [errorMes, setErrorMes] = useState('')
 
   const handleSignIn = async (event, client) => {
 
@@ -41,9 +43,12 @@ const Login = props  => {
 
       props.history.push('/');
 
+    },
+    (error => {
+      setErrorMes(error && error.graphQLErrors && error.graphQLErrors[0].message )
     })
+    )
   };
-
   return (
     <ApolloConsumer>
       {
@@ -61,8 +66,11 @@ const Login = props  => {
                 <Form.Group >
                   <Form.Control type='password' ref={password} placeholder='Password' />
                 </Form.Group>
+                {
+                  errorMes &&
+                  <ErrorMessage message={errorMes}/>
+                }
                 <Button type='submit'>Login</Button>
-                <Link></Link>
               </Form>
               <p>
                 Not Register?
