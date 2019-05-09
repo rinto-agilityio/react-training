@@ -17,9 +17,9 @@ type Props = {
   placeholder?: string,
   placeholderTextColor?: string,
   numberOfLines?: number,
-  defaultValue: string,
+  defaultValue?: string,
   refInput: { current: HTMLInputElement | null },
-  onSubmitEditing: () => void,
+  onSubmitEditing?: () => void,
 }
 
 const TextBox = ({
@@ -61,6 +61,8 @@ TextBox.defaultProps = {
   placeholder: '',
   customStyle: {},
   placeholderTextColor: COLORS.black,
+  onSubmitEditing: () => {},
+  defaultValue: '',
 }
 
 export default TextBox

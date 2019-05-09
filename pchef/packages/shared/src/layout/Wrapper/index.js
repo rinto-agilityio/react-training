@@ -22,10 +22,10 @@ const Wrapper = ({
 }: Props) => (
   <View
     style={[
-      customStyles,
       styles.container,
       styles[direction],
       styles[childPosition],
+      customStyles,
       { flexGrow },
     ]}
   >
