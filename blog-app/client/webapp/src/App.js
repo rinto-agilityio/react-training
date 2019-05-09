@@ -11,8 +11,7 @@ import './App.css'
 const App = () => (
   <div className="App">
     <ApolloProvider client={client}>
-      
-      <Suspense 
+      <Suspense
         fallback={() => {
           return (
             <div className='wrap-loading'>

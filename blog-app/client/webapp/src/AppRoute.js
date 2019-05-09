@@ -31,7 +31,6 @@ const AppRoute = () => {
     }
     </ApolloConsumer>
   )
-
 };
 
 export default AppRoute;

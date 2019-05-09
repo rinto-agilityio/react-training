@@ -8,6 +8,7 @@ const {
 } = require('./helpers/index');
 
 const pubsub = new PubSub();
+
 const authors = getData('./data/Authors.json');
 const posts = getData('./data/Posts.json');
 
@@ -173,9 +174,9 @@ module.exports = {
 
     deletePost: (_, { id }) => {
       const post = posts.find(post => post.id === id)
-      
+
       let newPosts = posts.filter(postItem => postItem.id !== id)
-      
+
       setData('./data/Posts.json', newPosts)
 
       pubsub.publish(Types.POST_DELETE, {postDelete: post});

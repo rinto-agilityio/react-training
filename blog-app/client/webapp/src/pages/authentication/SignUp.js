@@ -7,7 +7,7 @@ import { Mutation } from 'react-apollo';
 import { CREATE_USER } from '../../graphql/author/mutations';
 
 //import css
-import './LoginStyle.css'
+import './LoginStyle.css';
 
 //helpers
 import { CustomError } from '../../helpers/CustomError'

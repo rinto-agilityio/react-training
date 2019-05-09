@@ -31,11 +31,6 @@ const Login = props  => {
 
       const { author } = response.data.signIn
 
-      // const loginUser = {
-      //   __typename: 'Author',
-      //   ...author
-      // };
-
       client.writeData({
         data: {
           loggedUser: author,

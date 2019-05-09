@@ -1,23 +1,21 @@
 import React, { useRef } from 'react';
-import { Button } from 'react-bootstrap';
+import { Spinner, Button, Form } from 'react-bootstrap';
 import { Mutation } from 'react-apollo';
-import { Form } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import { Spinner } from 'react-bootstrap'
-import AppConfig from '../../configs/AppConfig'
+import AppConfig from '../../configs/AppConfig';
 
 //components
 import Input from '../../components/commons/Input';
-import TextArea from '../../components/commons/TextArea'
+import TextArea from '../../components/commons/TextArea';
 
 //style
-import './CreatePostStyle.css';
+import './styles/CreatePostStyle.css';
 
 //mutations
 import { CREATE_POST, EDIT_POST } from '../../graphql/post/mutations';
 
 //queries
-import { GET_POST } from '../../graphql/post/queries'
+import { GET_POST } from '../../graphql/post/queries';
 
 const CreatePost = ({user, pageInfo, handleCloseModal, history, isEdit, postEditing}) => {
   const title = useRef('')
@@ -155,10 +153,19 @@ const CreatePost = ({user, pageInfo, handleCloseModal, history, isEdit, postEdit
 }
 
 CreatePost.propTypes = {
-  pageInfo: PropTypes.object
+  pageInfo: PropTypes.object,
+  user: PropTypes.object,
+  handleCloseModal: PropTypes.func,
+  isEdit: PropTypes.bool,
+  postEditing: PropTypes.object
 };
 
 CreatePost.defaultProps = {
-  pageInfo: {}
+  pageInfo: {},
+  user: {},
+  handleCloseModal: () => {},
+  isEdit: false,
+  postEditing: {}
 };
+
 export default CreatePost;

@@ -1,22 +1,22 @@
 import React, { memo, useState } from 'react';
-import { Button, Spinner } from 'react-bootstrap'
-import { Query } from 'react-apollo'
+import { Button, Spinner } from 'react-bootstrap';
+import { Query } from 'react-apollo';
 
 //components
-import Header from '../../components/header/Header'
-import PrimaryModal from '../../components/commons/PrimaryModal'
-import CreatePost from './CreatePost'
-import PostList from '../../components/Posts/PostList'
-import AppConfig from '../../configs/AppConfig'
+import Header from '../../components/header/Header';
+import PrimaryModal from '../../components/commons/PrimaryModal';
+import CreatePost from './CreatePost';
+import PostList from '../../components/Posts/PostList';
+import AppConfig from '../../configs/AppConfig';
 
 //style
-import './HomePageStyle.css'
+import './styles/HomePageStyle.css';
 
-import { POST_ADDED, POST_EDIT, POST_DELETE } from '../../graphql/post/subcriptions'
+import { POST_ADDED, POST_EDIT, POST_DELETE } from '../../graphql/post/subcriptions';
 
 //queries
-import { LOGGED_USER } from '../../graphql/author/queries'
-import { GET_POST } from '../../graphql/post/queries'
+import { LOGGED_USER } from '../../graphql/author/queries';
+import { GET_POST } from '../../graphql/post/queries';
 
 const HomePage = props => {
 
@@ -107,56 +107,56 @@ const HomePage = props => {
       }}
     >
       {({ loading, error, data, fetchMore, subscribeToMore, client }) => {
-      if (loading) return <Spinner animation="border" variant="primary" />;
-      if (error) return `Error! ${error.message}`;
-      client.writeData({
-        data: {
-          post: data.getPostsByAuthor.posts
-        }
-      })
+        if (loading) return <Spinner animation="border" variant="primary" />;
+        if (error) return `Error! ${error.message}`;
 
-      return (
-        <div className='container'>
-          <Header />
-          <div>
-            <Button
-              variant="primary"
-              onClick={() => handleOpenModal()}
-            >
-              Create Post
-            </Button>
+        client.writeData({
+          data: {
+            post: data.getPostsByAuthor.posts
+          }
+        })
+
+        return (
+          <div className='container'>
+            <Header />
             <div>
-              <PostList
-                posts={data && data.getPostsByAuthor.posts}
-                pageInfo={ data && data.getPostsByAuthor.pageInfo }
-                // loading={loading}
-                fetchMore={fetchMore}
-                handleSubcriptionNewPost={() => handleSubcriptionNewPost(subscribeToMore)}
-                handleOpenModal={handleOpenModal}
-                user={user && user.loggedUser}
-                history={props.history}
-              />
+              <Button
+                variant="primary"
+                onClick={() => handleOpenModal()}
+              >
+                Create Post
+              </Button>
+              <div>
+                <PostList
+                  posts={data && data.getPostsByAuthor.posts}
+                  pageInfo={ data && data.getPostsByAuthor.pageInfo }
+                  // loading={loading}
+                  fetchMore={fetchMore}
+                  handleSubcriptionNewPost={() => handleSubcriptionNewPost(subscribeToMore)}
+                  handleOpenModal={handleOpenModal}
+                  user={user && user.loggedUser}
+                  history={props.history}
+                />
+              </div>
+
+              <PrimaryModal
+                show={isOpenModal}
+                title={`${isEdit ? `Edit Post` : `Create Post`}`}
+                onClose={handleCloseModal}
+              >
+                <CreatePost
+                  user={user && user.loggedUser}
+                  handleCloseModal={handleCloseModal}
+                  history={props.history}
+                  isEdit={isEdit}
+                  postEditing={postEditing}
+                />
+              </PrimaryModal>
             </div>
-
-            <PrimaryModal
-              show={isOpenModal}
-              title={`${isEdit ? `Edit Post` : `Create Post`}`}
-              onClose={handleCloseModal}
-            >
-              <CreatePost
-                user={user && user.loggedUser}
-                handleCloseModal={handleCloseModal}
-                history={props.history}
-                isEdit={isEdit}
-                postEditing={postEditing}
-              />
-            </PrimaryModal>
           </div>
-        </div>
-      );
-    }}
+        );
+      }}
     </Query>
-
   )
 }
 

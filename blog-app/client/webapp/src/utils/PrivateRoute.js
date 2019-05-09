@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
 import { Query } from 'react-apollo';
 import {
   Route,
   Redirect
-} from 'react-router-dom'
+} from 'react-router-dom';
 
 //query
-import { LOGGED_USER } from '../graphql/author/queries'
+import { LOGGED_USER } from '../graphql/author/queries';
 
 //prop type
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const PrivateRoute = ({ component: Component, loginPath, path, ...rest}) => {
   return (
