@@ -13,16 +13,17 @@ import { styles } from './styles'
 type Props = {
   customStyles?: Object,
   handleLoginRequest?: () => void,
+  refInput: { current: HTMLInputElement | null },
 }
 
-const LoginForm = ({ customStyles, handleLoginRequest }: Props) => (
+const LoginForm = ({ customStyles, handleLoginRequest, refInput }: Props) => (
   <Wrapper direction="column" customStyles={customStyles}>
     <View style={styles.textBoxWrapper}>
       <TextBox
         placeholder="Enter your email..."
         placeholderTextColor="darkgray"
         customStyle={{ width: '100%' }}
-        refInput={{ current: null }}
+        refInput={refInput}
       />
     </View>
     <View style={styles.textBoxWrapper}>
@@ -30,7 +31,7 @@ const LoginForm = ({ customStyles, handleLoginRequest }: Props) => (
         placeholder="Enter your password..."
         placeholderTextColor="darkgray"
         customStyle={{ width: '100%' }}
-        refInput={{ current: null }}
+        refInput={refInput}
       />
     </View>
     <View style={styles.btnWrapper}>

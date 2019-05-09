@@ -8,11 +8,12 @@ import LoginForm from './LoginForm';
 type Props = {
   customStyles?: Object,
   handleLoginRequest?: () => void,
+  refInput: { current: HTMLInputElement | null },
 }
 
-const Login = ({ customStyles, handleLoginRequest }: Props) => (
+const Login = ({ customStyles, handleLoginRequest, refInput }: Props) => (
   <View>
-    <LoginForm customStyles={customStyles} handleLoginRequest={handleLoginRequest} />
+    <LoginForm refInput={refInput} customStyles={customStyles} handleLoginRequest={handleLoginRequest} />
   </View>
 );
 
