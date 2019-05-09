@@ -14,7 +14,7 @@ import styles from './styles'
 type Props = {
   image: string,
   onClickIcon?: () => void,
-  size?: string,
+  size: string,
   handleTouch?: () => void,
 }
 
@@ -56,7 +56,6 @@ const Header = ({
 
 Header.defaultProps = {
   onClickIcon: () => {},
-  size: 'medium',
   handleTouch: () => {},
 }
 

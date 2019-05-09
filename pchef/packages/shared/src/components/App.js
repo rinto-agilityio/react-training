@@ -43,17 +43,13 @@ const styles = StyleSheet.create({
 })
 export default class App extends Component<Props> {
   static defaultProps = {
-    size: 'large',
+    size: 'medium',
   }
 
   render() {
     const { size } = this.props;
     return (
       <View style={styles.container}>
-        <Header
-          size={size}
-          image="http://www.kptncook.com/assets/downloads/AppIcon/KptnCook_AppIcon.png"
-        />
         <Button title="Test RNE Button" onPress={() => {}} />
         <Recipe
           size={size}
