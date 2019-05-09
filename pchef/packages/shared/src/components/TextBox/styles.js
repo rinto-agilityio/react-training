@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native'
 // Themes
 import { COLORS, METRICS } from '../../themes'
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     flex: 1,
@@ -18,3 +18,5 @@ export const styles = StyleSheet.create({
     color: COLORS.black,
   },
 })
+
+export default styles

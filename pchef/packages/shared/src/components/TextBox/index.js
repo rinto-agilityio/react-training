@@ -3,7 +3,7 @@ import React from 'react'
 import { TextInput, View } from 'react-native'
 
 // Styles
-import { styles } from './styles'
+import styles from './styles'
 
 // Themes
 import { COLORS } from '../../themes'

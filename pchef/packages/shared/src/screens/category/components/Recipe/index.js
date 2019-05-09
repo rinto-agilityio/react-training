@@ -13,7 +13,7 @@ import styles from './styles'
 
 type Props = {
   title?: string,
-  image?: string,
+  image: string,
   description?: string,
   onClickIcon?: () => void,
   size?: string,
@@ -44,7 +44,7 @@ const Recipe = ({
     </Text>
     <Wrapper direction="row" childPosition="left">
       <Image
-        url={{ uri: image }}
+        url={image}
         customImageStyle={[
           styles.image,
           styles[`${size}Image`],
@@ -76,7 +76,6 @@ const Recipe = ({
 
 Recipe.defaultProps = {
   title: '',
-  image: '',
   description: '',
   onClickIcon: () => {},
   size: 'medium',
