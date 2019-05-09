@@ -8,7 +8,7 @@ const PrimaryModal = (props) => {
   const { confirmPayment, modalClass, show, onClose, onClosed, dialogClassName, title, children } = props
   return (
     <Modal
-      bsSize={confirmPayment ? '' : 'large'}
+      bssize={confirmPayment ? '' : 'large'}
       className={`primaryModal ${modalClass}`}
       show={show}
       onHide={onClose}

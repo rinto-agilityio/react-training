@@ -58,6 +58,7 @@ const Header = () => {
               <Dropdown
                 items={[
                   <Link
+                    to={''}
                     onClick={(event)=>handleLogout(event, client)}
                   >
                     Log Out

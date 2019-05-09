@@ -143,6 +143,7 @@ const HomePage = props => {
                 show={isOpenModal}
                 title={`${isEdit ? `Edit Post` : `Create Post`}`}
                 onClose={handleCloseModal}
+                confirmPayment
               >
                 <CreatePost
                   user={user && user.loggedUser}
