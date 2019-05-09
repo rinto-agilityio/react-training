@@ -2,12 +2,12 @@ import gql from 'graphql-tag'
 
 export const GET_AUTHORS = gql`
   query getAuthors {
-		authors {
-			name
-			email
-			id
-			password
-		}
+    authors {
+      name
+      email
+      id
+      password
+    }
   }
 `;
 
