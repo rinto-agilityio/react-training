@@ -8,7 +8,6 @@ import { COLORS, METRICS } from '../../../../themes'
 const styles = StyleSheet.create({
   contentHeader: {
     backgroundColor: COLORS.black,
-    width: '100%',
     alignItems: 'flex-start',
   },
   wrapIcon: {
