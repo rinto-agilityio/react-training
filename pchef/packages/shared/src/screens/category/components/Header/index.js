@@ -39,7 +39,7 @@ const Header = ({
   const {
     title,
     imgUrl,
-    id
+    id,
   } = category
 
   // Data render list view category

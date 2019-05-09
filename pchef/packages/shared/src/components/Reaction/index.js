@@ -27,7 +27,7 @@ const Reaction = ({
   onClickFavorite,
   onClickVote,
   size = '',
-  votes = []
+  votes = [],
 }: Props) => {
 
   // Data render reaction icon
