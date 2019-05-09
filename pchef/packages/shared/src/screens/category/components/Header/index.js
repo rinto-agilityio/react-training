@@ -36,7 +36,7 @@ const Header = ({
   isGrid,
   customWrapperIcon,
   onSelectListView,
-  size = ''
+  size = '',
 }: Props) => {
   const {
     title,
@@ -49,15 +49,15 @@ const Header = ({
     {
       name: 'th-list',
       wrapperIconStyle: {
-        marginRight: METRICS.extraLargeMargin
+        marginRight: METRICS.extraLargeMargin,
       },
-      color: isGrid ? COLORS.lighterGray : COLORS.baseGray
+      color: isGrid ? COLORS.lighterGray : COLORS.baseGray,
     },
     {
       name: 'th',
       wrapperIconStyle: {},
-      color: isGrid ? COLORS.baseGray : COLORS.lighterGray
-    }
+      color: isGrid ? COLORS.baseGray : COLORS.lighterGray,
+    },
   ]
 
   return (
@@ -70,8 +70,9 @@ const Header = ({
         <Text style={[
           styles.title,
           styles[`${size}Title`],
-          customTitle
-        ]}>
+          customTitle,
+        ]}
+        >
           {title}
         </Text>
         <Button

@@ -16,7 +16,7 @@ const ImageBgComponent = ({
   url,
   customImageBg,
   children,
-  resizeMode
+  resizeMode,
 }: Props) => (
   <ImageBackground
     source={{ uri: url }}

@@ -7,30 +7,30 @@ import { COLORS, METRICS } from '../../../../themes'
 // Create style for header category
 const styles = StyleSheet.create({
   wrapperHeader: {
-    display: 'flex'
+    display: 'flex',
   },
   smallHeader: {
-    height: METRICS.smallHeader
+    height: METRICS.smallHeader,
   },
   mediumHeader: {
-    height: METRICS.mediumHeader
+    height: METRICS.mediumHeader,
   },
   largeHeader: {
-    height: METRICS.largeHeader
+    height: METRICS.largeHeader,
   },
   title: {
     color: COLORS.white,
     fontWeight: 'bold',
-    marginBottom: METRICS.smallMargin
+    marginBottom: METRICS.smallMargin,
   },
   smallTitle: {
-    fontSize: METRICS.fontSize.medium
+    fontSize: METRICS.fontSize.medium,
   },
   mediumTitle: {
-    fontSize: METRICS.fontSize.large
+    fontSize: METRICS.fontSize.large,
   },
   largeTitle: {
-    fontSize: METRICS.fontSize.extraLarge
+    fontSize: METRICS.fontSize.extraLarge,
   },
   button: {
     borderRadius: METRICS.largeBorderRadius,
@@ -40,12 +40,12 @@ const styles = StyleSheet.create({
     paddingTop: METRICS.smallPadding,
     paddingBottom: METRICS.smallPadding,
     paddingRight: METRICS.largePadding,
-    paddingLeft: METRICS.largePadding
+    paddingLeft: METRICS.largePadding,
   },
   titleBtn: {
     fontWeight: 'bold',
     color: COLORS.white,
-    fontSize: METRICS.fontSize.small
+    fontSize: METRICS.fontSize.small,
   },
   wrapperHeaderIcon: {
     backgroundColor: COLORS.lightBlue,
