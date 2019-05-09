@@ -13,5 +13,4 @@
   - `cd blog-app`
     - run server: `cd server and run yarn start:dev`
     - run app: `cd client/webapp and run yarn start`
-    - 
 * Verify by navigating to your server address in your browser: http://localhost:3000/  

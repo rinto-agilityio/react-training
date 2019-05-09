@@ -1,4 +1,3 @@
-
 const { UserInputError, PubSub } = require('apollo-server');
 const _ = require('lodash');
 const Types = require('./Types');
@@ -130,7 +129,6 @@ module.exports = {
       const author = {
         ...args
       };
-
 
       setData('./data/Authors.json', [...authors, author])
 

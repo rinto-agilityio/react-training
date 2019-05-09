@@ -50,5 +50,4 @@ cache.writeData({
   }
 });
 
-
 export default client
