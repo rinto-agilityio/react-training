@@ -58,5 +58,15 @@ export default {
   // Icon
   smallIcon: 20,
   mediumIcon: 30,
-  largeIcon: 40
+  largeIcon: 40,
+
+  // Header
+  smallHeader: 250,
+  mediumHeader: 300,
+  largeHeader: 500,
+
+  // Border Radius
+  smallBorderRadius: 5,
+  mediumBorderRadius: 10,
+  largeBorderRadius: 20,
 }

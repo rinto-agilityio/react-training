@@ -10,13 +10,13 @@ const styles = StyleSheet.create({
     display: 'flex'
   },
   smallHeader: {
-    height: 250
+    height: METRICS.smallHeader
   },
   mediumHeader: {
-    height: METRICS.largeWrapper
+    height: METRICS.mediumHeader
   },
   largeHeader: {
-    height: METRICS.mediumContent
+    height: METRICS.largeHeader
   },
   title: {
     color: COLORS.white,
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     fontSize: METRICS.fontSize.extraLarge
   },
   button: {
-    borderRadius: 20,
+    borderRadius: METRICS.largeBorderRadius,
     borderWidth: 2,
     borderColor: COLORS.white,
     backgroundColor: 'transparent',
@@ -52,8 +52,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     padding: 15,
-    ...METRICS.flexCenter
-  }
+    ...METRICS.flexCenter,
+  },
 })
 
 export default styles
