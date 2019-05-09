@@ -9,8 +9,17 @@
   - Handle Query, Mutation, Supcriptions
   - Apply new in react v16
 ## Installation
-  - Download Source form: `https://gitlab.asoft-python.com/g-rinto/react-training/tree/feature/practice-blog-app`
+
+### How to run App
+  - Download Source form: form repository git@gitlab.asoft-python.com:g-rinto/react-training.git
   - `cd blog-app`
-    - run server: `cd server and run yarn start:dev`
-    - run app: `cd client/webapp and run yarn start`
-* Verify by navigating to your server address in your browser: http://localhost:3000/  
+    - Server: 
+      - `cd server` 
+      - Run command: `yarn install or npm install`
+      - Run command: `yarn start or npm start`
+      - Verify by navigating to your server address in your browser: http://localhost:4000/  
+    - App: 
+        - `cd client/webapp`
+        -  Run command: `yarn install or npm install`
+        - Run command: `yarn start or npm start`
+        - Verify by navigating to your server address in your browser: http://localhost:3000/  
