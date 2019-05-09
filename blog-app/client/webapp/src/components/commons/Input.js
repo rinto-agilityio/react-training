@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 // import style
 import './styles/InputStyle.css'
 
-export const Input = props => {
-  const { label, className, type, name, onBlur, onChange, placeholder, onFocus, onRef, value } = props
+export const Input = ({label, className, type, name, onBlur, onChange, placeholder, onFocus, onRef, value}) => {
   return (
     <div className='input-wrap'>
       <label>{label}</label>

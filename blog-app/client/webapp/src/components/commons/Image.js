@@ -14,8 +14,6 @@ const Image = props => {
   )
 }
 
-export default memo(Image)
-
 Image.defaultProps = {
   avarta: ''
 };
@@ -23,3 +21,5 @@ Image.defaultProps = {
 Image.propTypes = {
   avarta: PropTypes.string
 };
+
+export default memo(Image)

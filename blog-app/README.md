@@ -19,7 +19,7 @@
       - Run command: `yarn start or npm start`
       - Verify by navigating to your server address in your browser: http://localhost:4000/  
     - App: 
-        - `cd client/webapp`
-        - Run command: `yarn install or npm install`
-        - Run command: `yarn start or npm start`
-        - Verify by navigating to your server address in your browser: http://localhost:3000/  
+      - `cd client/webapp`
+      - Run command: `yarn install or npm install`
+      - Run command: `yarn start or npm start`
+      - Verify by navigating to your server address in your browser: http://localhost:3000/  

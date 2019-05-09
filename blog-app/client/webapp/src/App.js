@@ -4,7 +4,7 @@ import { Spinner } from 'react-bootstrap'
 
 import AppRoute from './AppRoute'
 
-import client from './apollo/index'
+import client from './apollo'
 
 import './App.css'
 

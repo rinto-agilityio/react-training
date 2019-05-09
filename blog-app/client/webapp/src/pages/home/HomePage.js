@@ -45,7 +45,6 @@ const HomePage = props => {
   }
 
   const handleSubcriptionNewPost = subscribeToMore => {
-    // eslint-disable-next-line no-unused-expressions
     subscribeToMore({
       document: POST_ADDED,
       updateQuery: (prev, { subscriptionData }) => {
@@ -91,7 +90,6 @@ const HomePage = props => {
             posts: [...prev.getPostsByAuthor.posts.filter(post => post.id !== postDeleted.id)]
           }
         }
-
         return postUpdate
       }
     })
@@ -115,7 +113,6 @@ const HomePage = props => {
             post: data.getPostsByAuthor.posts
           }
         })
-
         return (
           <div className='container'>
             <Header />

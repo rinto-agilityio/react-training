@@ -28,8 +28,12 @@ const PostList = ({posts, user, history, fetchMore, pageInfo, handleSubcriptionN
 
   useEffect(() => {
     handleSubcriptionNewPost()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+
+    // Specify how to clean up after this effect:
+    return () => {
+      handleSubcriptionNewPost();
+    };
+  }, []);
 
   return (
     <>
