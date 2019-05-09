@@ -16,14 +16,12 @@ import Button from '../../../../components/Button'
 type Props = {
   category: {
     title: string,
-    img_url: string,
+    imgUrl: string,
     id: string
   },
   customTitle?: {},
-  customButton?: {},
-  customTitleBtn?: {},
   isGrid: boolean,
-  customWrapperIcon: {},
+  customWrapperIcon?: {},
   size?: string,
   onFollowing?: () => void,
   onSelectListView?: () => void,
@@ -40,7 +38,7 @@ const Header = ({
 }: Props) => {
   const {
     title,
-    img_url,
+    imgUrl,
     id
   } = category
 
@@ -63,7 +61,7 @@ const Header = ({
   return (
     <View style={[styles.wrapperHeader, styles[`${size}Header`]]}>
       <ImageBackground
-        url={img_url}
+        url={imgUrl}
         customImageBg={METRICS.flexCenter}
         resizeMode="cover"
       >
@@ -104,7 +102,6 @@ const Header = ({
 
 Header.defaultProps = {
   customWrapperIcon: {},
-  customImageBg: {},
   customTitle: {},
   size: 'small',
   onFollowing: () => {},
