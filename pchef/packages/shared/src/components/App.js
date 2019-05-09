@@ -10,7 +10,7 @@ import React, { Component } from 'react'
 import { Platform, StyleSheet, Text, View } from 'react-native'
 import { Button } from 'react-native-elements'
 import Recipe from '../screens/category/components/Recipe'
-import Header from '../screens/newFeed/components/Header'
+import Header from '../screens/new-feed/components/Header'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -43,14 +43,17 @@ const styles = StyleSheet.create({
 })
 export default class App extends Component<Props> {
   static defaultProps = {
-    size: 'medium',
+    size: 'large',
   }
 
   render() {
     const { size } = this.props;
     return (
       <View style={styles.container}>
-        <Header size={size} />
+        <Header
+          size={size}
+          image="http://www.kptncook.com/assets/downloads/AppIcon/KptnCook_AppIcon.png"
+        />
         <Button title="Test RNE Button" onPress={() => {}} />
         <Recipe
           size={size}

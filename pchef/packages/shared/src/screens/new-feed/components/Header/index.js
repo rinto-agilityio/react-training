@@ -12,7 +12,7 @@ import { COLORS, METRICS } from '../../../../themes'
 import styles from './styles'
 
 type Props = {
-  image?: string,
+  image: string,
   onClickIcon?: () => void,
   size?: string,
   handleTouch?: () => void,
@@ -36,10 +36,11 @@ const Header = ({
       onClick={onClickIcon}
       color={COLORS.white}
       wrapperIconStyle={styles.wrapIcon}
+      underlayColor="transparent"
     />
     <Wrapper direction="row">
       <Image
-        url={{ uri: image }}
+        url={image}
         customImageStyle={[
           styles.image,
           styles[`${size}Image`],
@@ -54,7 +55,6 @@ const Header = ({
 )
 
 Header.defaultProps = {
-  image: 'http://www.kptncook.com/assets/downloads/AppIcon/KptnCook_AppIcon.png',
   onClickIcon: () => {},
   size: 'medium',
   handleTouch: () => {},
