@@ -13,5 +13,5 @@ export default {
   green: '#3e94f6',
   baseBlue: '#42a5f5',
   lightBlue: 'rgba(228, 228, 228, 0.42)',
-  darkBlue: '#2d4150'
+  darkBlue: '#2d4150',
 }
