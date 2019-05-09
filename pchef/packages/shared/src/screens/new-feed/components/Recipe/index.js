@@ -14,7 +14,7 @@ type Props = {
     title: string,
     description: string,
     imgUrl: string,
-    votes: [],
+    votes: Array<number>,
   },
   size: string,
   onClick?: () => void,

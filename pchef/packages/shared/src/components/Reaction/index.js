@@ -16,7 +16,7 @@ type Props = {
   customTitle?: {},
   customWrapperIcon?: {},
   size: string,
-  votes: [],
+  votes: Array<number>,
   onClickFavorite?: () => void,
   onClickVote?: () => void,
 }
