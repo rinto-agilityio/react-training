@@ -41,7 +41,7 @@ const Recipe = ({
   } = recipe
   return (
     <View style={styles.container}>
-      <View
+      {/* <View
         style={[styles.recipe, customRecipe]}
         onClick={onClick}
       >
@@ -71,7 +71,7 @@ const Recipe = ({
             customImage
           ]}
         />
-      </View>
+      </View> */}
     </View>
   )
 }
