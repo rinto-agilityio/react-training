@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown Component renders correctly 1`] = `
+<div
+  className="dropdown-wrap"
+>
+  <div
+    className="arrow-down"
+    onClick={[Function]}
+  />
+</div>
+`;

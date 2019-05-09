@@ -55,10 +55,11 @@ const CreatePost = ({user, pageInfo, handleCloseModal, history, isEdit, postEdit
           mutation={CREATE_POST}
           onCompleted={ () => {
             handleCloseModal()
+            history.push('/')
           }}
 
         >
-          {(editPost, { data, loading, error }) => {
+          {(createPost, { data, loading, error }) => {
             if (loading) return (
               <div className='wrap-loading'>
                 <Spinner animation="border" variant="primary" />
@@ -69,7 +70,7 @@ const CreatePost = ({user, pageInfo, handleCloseModal, history, isEdit, postEdit
 
             return (
               <div className='create-post'>
-                <Form onSubmit={ e => handleSubmitForm(e, editPost)} className='form-new-post'>
+                <Form onSubmit={ e => handleSubmitForm(e, createPost)} className='form-new-post'>
                   <Input
                     placeholder='input title'
                     onRef={title}
