@@ -6,7 +6,6 @@ import AppConfig  from '../../configs/AppConfig'
 //components
 import PostItem from './PostItem'
 
-
 const updateQuery = (previousResult, { fetchMoreResult }) => {
 
   if (!fetchMoreResult) {
