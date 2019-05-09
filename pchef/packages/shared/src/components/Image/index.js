@@ -40,7 +40,7 @@ ImageComponent.defaultProps = {
   customImageStyle: {},
   customBtnStyle: {},
   resizeMethod: 'auto',
-  handleTouch: () => {}
+  handleTouch: () => {},
 }
 
 export default ImageComponent

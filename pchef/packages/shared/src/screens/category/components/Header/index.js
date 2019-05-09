@@ -26,7 +26,7 @@ type Props = {
   customWrapperIcon: {},
   size?: string,
   onFollowing?: () => void,
-  onSelectListView?: () => void
+  onSelectListView?: () => void,
 }
 
 const Header = ({
@@ -107,7 +107,7 @@ Header.defaultProps = {
   customTitle: {},
   size: 'small',
   onFollowing: () => {},
-  onSelectListView: () => {}
+  onSelectListView: () => {},
 }
 
 export default Header

@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     fontSize: METRICS.fontSize.medium,
     flex: 1,
-    color: COLORS.black
-  }
+    color: COLORS.black,
+  },
 })
 
 export default styles

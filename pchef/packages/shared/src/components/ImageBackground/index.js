@@ -9,7 +9,7 @@ type Props = {
   url: string,
   customImageBg?: {},
   children: React.Node,
-  resizeMode?: string
+  resizeMode?: string,
 }
 
 const ImageBgComponent = ({
@@ -29,7 +29,7 @@ const ImageBgComponent = ({
 
 ImageBgComponent.defaultProps = {
   customImageBg: {},
-  resizeMode: ''
+  resizeMode: '',
 }
 
 export default ImageBgComponent
