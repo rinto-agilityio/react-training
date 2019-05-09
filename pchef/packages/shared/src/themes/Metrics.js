@@ -69,4 +69,9 @@ export default {
   smallBorderRadius: 5,
   mediumBorderRadius: 10,
   largeBorderRadius: 20,
+
+  // Backgroud Image
+  smallBgImage: 150,
+  mediumBgImage: 230,
+  largeBgImage: 300,
 }
