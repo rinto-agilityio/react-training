@@ -10,13 +10,14 @@ import styles from './styles'
 import { COLORS, METRICS } from '../../themes'
 
 type Props = {
-  label?: string,
+  label?: string | number,
   onClick?: () => void,
   customStyle?: {},
   color?: string,
   type?: string,
   size?: number,
   name: string,
+  underlayColor?: string,
   wrapperIconStyle?: Object,
 };
 
@@ -29,6 +30,7 @@ const Icon = ({
   size,
   name,
   wrapperIconStyle,
+  underlayColor,
 }: Props) => (
   <View style={[
     styles.wrapIcon,
@@ -41,6 +43,7 @@ const Icon = ({
       color={color}
       size={size}
       onPress={onClick}
+      underlayColor={underlayColor}
     />
     {label ? <Text style={[styles.label, customStyle]}>{label}</Text> : null}
   </View>
@@ -54,6 +57,7 @@ Icon.defaultProps = {
   size: METRICS.fontSize.medium,
   color: COLORS.black,
   wrapperIconStyle: {},
+  underlayColor: '',
 };
 
 export default Icon

@@ -35,7 +35,10 @@
     "react/destructuring-assignment": [2, "always"],
     "react/jsx-curly-brace-presence": [
       2,
-      { "props": "never", "children": "never" }
+      {
+        "props": "never",
+        "children": "never"
+      }
     ],
     "import/no-self-import": 0,
     "import/no-extraneous-dependencies": 0,

@@ -9,6 +9,7 @@ export default {
   smallMargin: 5,
   mediumMargin: 10,
   largeMargin: 20,
+  extraLargeMargin: 30,
 
   // Input
   smallInput: 20,
@@ -48,4 +49,30 @@ export default {
     extraLarge: 28,
     extraExtraLarge: 40,
   },
+
+  // Flex
+  flexCenter: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  // Icon
+  smallIcon: 20,
+  mediumIcon: 30,
+  largeIcon: 40,
+
+  // Header
+  smallHeader: 250,
+  mediumHeader: 300,
+  largeHeader: 500,
+
+  // Border Radius
+  smallBorderRadius: 5,
+  mediumBorderRadius: 10,
+  largeBorderRadius: 20,
+
+  // Backgroud Image
+  smallBgImage: 150,
+  mediumBgImage: 230,
+  largeBgImage: 300,
 }

@@ -5,9 +5,11 @@ import { StyleSheet } from 'react-native'
 import { METRICS } from '../../themes'
 
 const styles = StyleSheet.create({
-  image: {
-    width: METRICS.mediumInput,
-    height: METRICS.mediumInput,
+  wrapperIcon: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: METRICS.largePadding,
   },
 })
 
