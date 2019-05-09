@@ -49,7 +49,7 @@ const Directions = ({
     {steps.map(({ step, description }) => (
       <Wrapper direction="row">
         <Button
-          title={step}
+          title={step.toString()}
           type="Solid Button"
           buttonStyle={[styles.button, styles[`${size}Button`]]}
           titleStyle={[styles.titlebtn, styles[`${size}TitleBtn`]]}
