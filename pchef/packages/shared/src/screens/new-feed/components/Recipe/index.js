@@ -21,7 +21,7 @@ type Props = {
   customRecipe?: {},
   customTitle?: {},
   customDescription?: {},
-  customImage?: {}
+  customImage: {},
 }
 
 const Recipe = ({
@@ -31,7 +31,7 @@ const Recipe = ({
   customRecipe,
   customTitle,
   customDescription,
-  customImage,
+  customImage = {},
 }: Props) => {
   const {
     title,
@@ -79,6 +79,7 @@ const Recipe = ({
       <Reaction
         votes={votes}
         size={size}
+        isFavorited={false}
       />
     </View>
   )
@@ -89,7 +90,6 @@ Recipe.defaultProps = {
   customRecipe: {},
   customTitle: {},
   customDescription: {},
-  customImage: {},
 }
 
 export default Recipe
