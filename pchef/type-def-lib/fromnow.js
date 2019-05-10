@@ -1,4 +1,4 @@
 // Apollo boost
-declare module 'moment' {
+declare module 'fromnow' {
   declare module.exports: any
 }
