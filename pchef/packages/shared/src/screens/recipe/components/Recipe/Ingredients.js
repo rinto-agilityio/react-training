@@ -7,6 +7,8 @@ import styles from './styles'
 
 // Helpers
 import { formatStringToArray } from '../../../../helpers/utils'
+
+// Components
 import Ingredient from './Ingredient'
 
 type Props = {

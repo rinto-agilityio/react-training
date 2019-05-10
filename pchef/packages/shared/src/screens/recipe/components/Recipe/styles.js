@@ -62,18 +62,8 @@ const styles = StyleSheet.create({
     paddingLeft: METRICS.largePadding,
     paddingRight: METRICS.smallPadding,
   },
-  titleBtn: {
-    fontWeight: 'bold',
-  },
-  smallTitleBtn: {
-    fontSize: METRICS.fontSize.medium,
-  },
-  mediumTitleBtn: {
-    fontSize: METRICS.fontSize.large,
-  },
-  largeTitleBtn: {
-    fontSize: METRICS.fontSize.extraLarge,
-  },
+
+  // Button
   button: {
     backgroundColor: COLORS.black,
     borderColor: COLORS.black,
@@ -96,6 +86,18 @@ const styles = StyleSheet.create({
     paddingBottom: METRICS.mediumPadding,
     paddingLeft: METRICS.largePadding,
     paddingRight: METRICS.largePadding,
+  },
+  titleBtn: {
+    fontWeight: 'bold',
+  },
+  smallTitleBtn: {
+    fontSize: METRICS.fontSize.medium,
+  },
+  mediumTitleBtn: {
+    fontSize: METRICS.fontSize.large,
+  },
+  largeTitleBtn: {
+    fontSize: METRICS.fontSize.extraLarge,
   },
 })
 
