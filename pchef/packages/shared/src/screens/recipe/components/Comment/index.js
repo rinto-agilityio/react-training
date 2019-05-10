@@ -8,7 +8,7 @@ import styles from './styles';
 type Props = {
   avatarUri?: string,
   name: string,
-  publishedAt: string,
+  publishedAt: number,
   text: string,
   customStyle?: {},
   type?: 'primary' | 'secondary'
