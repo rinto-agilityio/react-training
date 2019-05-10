@@ -6,8 +6,7 @@ import { Text, View } from 'react-native'
 import styles from './styles'
 
 // Components
-import Button from '../../../../components/Button'
-import Wrapper from '../../../../layout/Wrapper';
+import Direction from './Direction'
 
 type Props = {
   steps: Array<{
@@ -17,7 +16,6 @@ type Props = {
   size: string,
   customDirections?: {},
   customTitle?: {},
-  customDescription?: {},
   onSelectStep?: () => void,
 }
 
@@ -26,7 +24,6 @@ const Directions = ({
   size = 'medium',
   customDirections,
   customTitle,
-  customDescription,
   onSelectStep,
 }: Props) => (
   <View
@@ -46,28 +43,13 @@ const Directions = ({
       How to cook
     </Text>
 
-    {steps.map(({ step, description }) => (
-      <Wrapper direction="row" key={step} childPosition="middle">
-        <Button
-          title={step.toString()}
-          type="Solid Button"
-          buttonStyle={[styles.button, styles[`${size}Button`]]}
-          titleStyle={[styles.titleBtn, styles[`${size}TitleBtn`]]}
-          onClick={onSelectStep}
-        />
-        <Text style={styles.wrapperDescriptions}>
-          <Text
-            style={[
-              styles.descriptionDirections,
-              styles[`${size}Description`],
-              customDescription,
-            ]}
-            onPress={onSelectStep}
-          >
-            {description}
-          </Text>
-        </Text>
-      </Wrapper>
+    {steps.map(item => (
+      <Direction
+        item={item}
+        size={size}
+        onSelectStep={onSelectStep}
+        key={item.step}
+      />
     ))}
   </View>
 )
@@ -75,7 +57,6 @@ const Directions = ({
 Directions.defaultProps = {
   customDirections: {},
   customTitle: {},
-  customDescription: {},
   onSelectStep: () => {},
 }
 

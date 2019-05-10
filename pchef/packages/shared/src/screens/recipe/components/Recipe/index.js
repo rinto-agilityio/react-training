@@ -1,6 +1,6 @@
 // Libs
 import React from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 
 // Styles
 import styles from './styles'
@@ -21,9 +21,6 @@ type Props = {
   },
   size?: string,
   onSelectStep?: () => void,
-  customRecipe?: {},
-  customTitle?: {},
-  customDescription?: {},
 }
 
 const Recipe = ({
@@ -53,9 +50,6 @@ const Recipe = ({
 
 Recipe.defaultProps = {
   onSelectStep: () => {},
-  customRecipe: {},
-  customTitle: {},
-  customDescription: {},
   size: 'medium',
 }
 
