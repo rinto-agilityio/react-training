@@ -11,7 +11,7 @@ type Props = {
   publishedAt: number,
   text: string,
   customStyle?: {},
-  type?: 'primary' | 'secondary'
+  type?: string
 }
 
 // component Comment
