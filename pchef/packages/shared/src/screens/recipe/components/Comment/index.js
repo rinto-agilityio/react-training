@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { Avatar } from 'react-native-elements';
 import { getPublishedTime } from '../../../../helpers/date-time'
-import styles from './styles';
+import styles from './styles'
 
 // Comment props type
 type Props = {
