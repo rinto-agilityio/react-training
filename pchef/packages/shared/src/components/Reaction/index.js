@@ -13,7 +13,6 @@ import Icon from '../Icon'
 
 type Props = {
   isFavorited: boolean,
-  customTitle?: {},
   customWrapperIcon?: {},
   size: string,
   votes: Array<number>,
@@ -29,7 +28,6 @@ const Reaction = ({
   size = '',
   votes = [],
 }: Props) => {
-
   // Data render reaction icon
   const data = [
     {
@@ -66,8 +64,8 @@ const Reaction = ({
 
 Reaction.defaultProps = {
   customWrapperIcon: {},
-  onFollowing: () => {},
-  onSelectListView: () => {},
+  onClickFavorite: () => {},
+  onClickVote: () => {},
 }
 
 export default Reaction
