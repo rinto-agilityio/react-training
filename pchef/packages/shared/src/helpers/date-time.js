@@ -1,4 +1,4 @@
-import fromNow from 'fromnow';
+import fromNow from 'fromnow'
 
 /**
  * Get full date for calendar by format YYYY-MM-DD
