@@ -22,6 +22,7 @@
     "apollo-utilities": "^1.2.1",
     "components": "*",
     "graphql": "^14.2.1",
+    "moment": "^2.24.0",
     "path": "^0.12.7",
     "react": "16.8.3",
     "react-apollo": "^2.5.5",
