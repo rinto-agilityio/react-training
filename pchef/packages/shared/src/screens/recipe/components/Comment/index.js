@@ -24,7 +24,7 @@ const Comment = ({
   publishedAt,
 }: Props) => {
   // get comment published at time
-  const time = getPublishedTime(publishedAt);
+  const time = getPublishedTime(publishedAt)
 
   // define container styles
   const containerStyle = [styles.container, customStyle]
@@ -68,6 +68,6 @@ Comment.defaultProps = {
   avatarUri: '',
   customStyle: {},
   type: 'primary',
-};
+}
 
-export default Comment;
+export default Comment

@@ -36,4 +36,4 @@ export default StyleSheet.create({
     fontSize: METRICS.fontSize.medium,
     marginTop: METRICS.mediumMargin,
   },
-});
+})
