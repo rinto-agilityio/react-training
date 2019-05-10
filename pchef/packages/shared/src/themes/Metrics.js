@@ -38,6 +38,7 @@ export default {
   mediumPosition: 15,
 
   // Line Height
+  smallLineHeight: 21,
   mediumLineHeight: 25,
 
   // FontSize
