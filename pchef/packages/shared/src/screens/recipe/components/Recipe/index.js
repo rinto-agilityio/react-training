@@ -6,10 +6,8 @@ import { Text, View } from 'react-native'
 import styles from './styles'
 
 // Components
-import Image from '../../../../components/Image'
-import Reaction from '../../../../components/Reaction'
-import Ingredients from './Ingredients';
-import Directions from './Directions';
+import Ingredients from './Ingredients'
+import Directions from './Directions'
 
 type Props = {
   recipe: {
@@ -21,17 +19,16 @@ type Props = {
       description: string
     }>,
   },
-  size: string,
+  size?: string,
   onSelectStep?: () => void,
   customRecipe?: {},
   customTitle?: {},
   customDescription?: {},
-  customImage: {},
 }
 
 const Recipe = ({
   recipe,
-  size = 'large',
+  size = '',
   onSelectStep,
 }: Props) => {
   const {
@@ -59,6 +56,7 @@ Recipe.defaultProps = {
   customRecipe: {},
   customTitle: {},
   customDescription: {},
+  size: 'medium',
 }
 
 export default Recipe

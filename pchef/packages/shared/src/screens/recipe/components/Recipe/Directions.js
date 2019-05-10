@@ -38,7 +38,7 @@ const Directions = ({
   >
     <Text
       style={[
-        styles.titleDirections,
+        styles.title,
         styles[`${size}Title`],
         customTitle,
       ]}
@@ -47,23 +47,25 @@ const Directions = ({
     </Text>
 
     {steps.map(({ step, description }) => (
-      <Wrapper direction="row">
+      <Wrapper direction="row" key={step} childPosition="middle">
         <Button
           title={step.toString()}
           type="Solid Button"
           buttonStyle={[styles.button, styles[`${size}Button`]]}
-          titleStyle={[styles.titlebtn, styles[`${size}TitleBtn`]]}
+          titleStyle={[styles.titleBtn, styles[`${size}TitleBtn`]]}
           onClick={onSelectStep}
         />
-        <Text
-          style={[
-            styles.description,
-            styles[`${size}Description`],
-            customDescription,
-          ]}
-          onPress={onSelectStep}
-        >
-          {description}
+        <Text style={styles.wrapperDescriptions}>
+          <Text
+            style={[
+              styles.descriptionDirections,
+              styles[`${size}Description`],
+              customDescription,
+            ]}
+            onPress={onSelectStep}
+          >
+            {description}
+          </Text>
         </Text>
       </Wrapper>
     ))}

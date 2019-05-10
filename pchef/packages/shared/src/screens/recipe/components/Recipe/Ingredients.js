@@ -5,6 +5,9 @@ import { Text, View } from 'react-native'
 // Styles
 import styles from './styles'
 
+// Helpers
+import { formatStringToArray, trim } from '../../../../helpers/utils'
+
 type Props = {
   description: string,
   size: string,
@@ -19,34 +22,41 @@ const Ingredients = ({
   customIngredients,
   customTitle,
   customDescription,
-}: Props) => (
-  <View
-    style={[
-      styles.ingredients,
-      styles[`${size}Ingredients`],
-      customIngredients,
-    ]}
-  >
-    <Text
+}: Props) => {
+  const ingredients = formatStringToArray(description)
+
+  return (
+    <View
       style={[
-        styles.titleIngredients,
-        styles[`${size}Title`],
-        customTitle,
+        styles.ingredients,
+        styles[`${size}Ingredients`],
+        customIngredients,
       ]}
     >
-      What you will need
-    </Text>
-    <Text
-      style={[
-        styles.description,
-        styles[`${size}Description`],
-        customDescription,
-      ]}
-    >
-      {description}
-    </Text>
-  </View>
-)
+      <Text
+        style={[
+          styles.title,
+          styles[`${size}Title`],
+          customTitle,
+        ]}
+      >
+        What you will need
+      </Text>
+      {ingredients.map((item, index) => (
+        <Text
+          style={[
+            styles.descriptionIngredients,
+            styles[`${size}Description`],
+            customDescription,
+          ]}
+          key={`${item}_${index}`}
+        >
+          {trim(item)}
+        </Text>
+      ))}
+    </View>
+  )
+}
 
 Ingredients.defaultProps = {
   customIngredients: {},
