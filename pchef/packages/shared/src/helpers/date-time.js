@@ -1,4 +1,4 @@
-import moment from 'moment';
+import fromNow from 'fromnow';
 
 /**
  * Get full date for calendar by format YYYY-MM-DD
@@ -44,7 +44,13 @@ export const getDateOfWeek = () => {
 
 /**
  * Get time published at from now
- * @param {number} time is a timestamp
+ * @return {string} current time
+ */
+export const getISOString = () => new Date().toISOString();
+
+/**
+ * Get time published at from now
+ * @param {string} time is a string
  * @return {string} time published from now
  */
-export const getPublishedTime = (time: number) => moment(time).fromNow();
+export const getPublishedTime = (time: string) => fromNow(time, { and: true, suffix: true, max: 2 })
