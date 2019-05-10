@@ -13,6 +13,8 @@
     "apollo-link-state": "^0.4.2",
     "apollo-link-ws": "^1.0.17",
     "apollo-utilities": "^1.2.1",
+    "babel-jest": "^24.8.0",
+    "babel-runtime": "^6.26.0",
     "bootstrap": "^4.3.1",
     "graphql": "^14.2.1",
     "graphql-tag": "^2.10.1",
@@ -20,44 +22,39 @@
     "react-apollo": "^2.5.5",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.6",
+    "react-hooks-testing-library": "^0.5.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "^3.0.0",
     "react-testing-library": "^7.0.0",
     "request": "2.79.0",
     "subscriptions-transport-ws": "^0.9.16"
   },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/components/**/*.js",
-      "src/pages/**/*.js",
-      "!<rootDir>/src/components/**",
-      "!<rootDir>/src/index.js",
-      "!<rootDir>/src/stories/**",
-      "!<rootDir>/src/**/index.js",
-      "!<rootDir>/src/App.js",
-      "!<rootDir>/src/serviceWorker.js"
-    ]
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "test-coverage": "yarn test --coverage"
+    "test:watch": "jest --watch",
+    "test:coverage": "react-scripts test --env=jsdom --coverage",
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
-    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.0.6",
+    "@storybook/addon-links": "^5.0.6",
+    "@storybook/addons": "^5.0.6",
+    "@storybook/react": "^5.0.6",
+    "babel-loader": "^8.0.5",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
     "eslint": "^5.16.0",
-    "eslint-plugin-cypress": "^2.2.1",
-    "eslint-plugin-react": "^7.12.2",
-    "eslint-plugin-react-hooks": "^1.5.0",
-    "jest": "24.7.1",
-    "jest-enzyme": "^7.0.2",
-    "react-test-renderer": "^16.8.6"
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^1.6.0",
+    "prettier": "^1.16.4",
+    "react-test-renderer": "^16.8.6",
+    "react-testing-library": "^6.1.2"
   },
   "eslintConfig": {
     "extends": "react-app"
