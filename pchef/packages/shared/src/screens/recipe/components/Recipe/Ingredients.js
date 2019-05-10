@@ -8,6 +8,9 @@ import styles from './styles'
 // Helpers
 import { formatStringToArray } from '../../../../helpers/utils'
 
+// Constants
+import { SEPARATOR_SPLIT_STRING } from '../../../../constants'
+
 // Components
 import Ingredient from './Ingredient'
 
@@ -24,7 +27,7 @@ const Ingredients = ({
   customIngredients,
   customTitle,
 }: Props) => {
-  const ingredients = formatStringToArray(description)
+  const ingredients = formatStringToArray(description, SEPARATOR_SPLIT_STRING)
 
   return (
     <View
