@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 /**
  * Get full date for calendar by format YYYY-MM-DD
  * @param {number} date The number date to format
@@ -39,3 +41,10 @@ export const getDateOfWeek = () => {
     maxDate: getDateForCalendar(endOfNextWeek),
   }
 }
+
+/**
+ * Get time published at from now
+ * @param {number} time is a timestamp
+ * @return {string} time published from now
+ */
+export const getPublishedTime = (time: number) => moment(time).fromNow();
