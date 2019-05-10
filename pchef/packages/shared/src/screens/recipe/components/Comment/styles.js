@@ -4,25 +4,17 @@ import { METRICS } from '../../../../themes'
 export default StyleSheet.create({
   container: {
     flexDirection: 'row',
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingTop: 10,
-    paddingBottom: 10,
+    paddingLeft: METRICS.mediumPadding,
+    paddingRight: METRICS.mediumPadding,
+    paddingTop: METRICS.mediumPadding,
+    paddingBottom: METRICS.mediumPadding,
   },
   dash: {
-    marginLeft: 5,
-    marginRight: 5,
+    marginLeft: METRICS.smallMargin,
+    marginRight: METRICS.smallMargin,
   },
   userAvatar: {
-    marginRight: 10,
-  },
-  primaryAvatar: {
-    width: 40,
-    height: 40,
-  },
-  secondaryAvatar: {
-    width: 100,
-    height: 100,
+    marginRight: METRICS.mediumMargin,
   },
   commentWrapper: {
     flex: 1,
@@ -38,10 +30,10 @@ export default StyleSheet.create({
   },
   primaryContent: {
     fontSize: METRICS.fontSize.base,
-    marginTop: 5,
+    marginTop: METRICS.smallMargin,
   },
   secondaryContent: {
     fontSize: METRICS.fontSize.medium,
-    marginTop: 10,
+    marginTop: METRICS.mediumMargin,
   },
 });
