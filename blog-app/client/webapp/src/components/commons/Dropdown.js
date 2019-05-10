@@ -2,7 +2,7 @@ import React, { memo, useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 // import style
-import './styles/DropdownStyle.css'
+import './styles/DropdownStyle.css';
 
 export const Dropdown = props => {
   const { items, classWrapper, classItem } = props;
@@ -12,38 +12,40 @@ export const Dropdown = props => {
 
   useEffect(() => {
     // add when mounted
-    document.addEventListener("mousedown", handleClick);
+    document.addEventListener('mousedown', handleClick);
     // return function to be called when unmounted
     return () => {
-      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener('mousedown', handleClick);
     };
   }, []);
 
   const handleClick = e => {
     if (!node.current.contains(e.target)) {
-      setOpen(false)
+      setOpen(false);
     }
-  }
+  };
 
   const handleClickDropdown = () => {
-    setOpen(!open)
-  }
+    setOpen(!open);
+  };
 
   return (
-    <div ref={node} className='dropdown-wrap'>
-     <div onClick={handleClickDropdown} className='arrow-down'></div>
+    <div ref={node} className='dropdown-wrap' data-testid='dropdownWrapId'>
+     <div onClick={handleClickDropdown} className='arrow-down' data-testid='arrowId'></div>
       {
         open &&
         <ul
           className={`dropdown-menu-wrap ${classWrapper ? ` ${classWrapper}` : ''}`}
+          data-testid='listOption'
         >
           {items.length > 0 &&
             items.map(item => (
               <li
                 key={item}
-                className={`dropdown-item${
+                className={`dropdown-item ${
                   classItem ? ` ${classItem}` : ''
                 }`}
+                id='item'
               >
                 {item}
               </li>

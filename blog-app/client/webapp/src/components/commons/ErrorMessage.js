@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
 // import style
-import './styles/ErrorMessageStyle.css'
+import './styles/ErrorMessageStyle.css';
 
 export const ErrorMessage = ({ message }) => {
 

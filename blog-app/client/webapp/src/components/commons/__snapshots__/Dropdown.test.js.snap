@@ -3,9 +3,11 @@
 exports[`Dropdown Component renders correctly 1`] = `
 <div
   className="dropdown-wrap"
+  data-testid="dropdownWrapId"
 >
   <div
     className="arrow-down"
+    data-testid="arrowId"
     onClick={[Function]}
   />
 </div>

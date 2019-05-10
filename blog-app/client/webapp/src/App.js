@@ -1,29 +1,24 @@
-import React, { Suspense } from 'react'
-import { ApolloProvider } from 'react-apollo'
-import { Spinner } from 'react-bootstrap'
+import React, { Suspense } from 'react';
+import { ApolloProvider } from 'react-apollo';
 
-import AppRoute from './AppRoute'
+//compnents
+import AppRoute from './AppRoute';
+import Indicator from './components/commons/Indicator';
 
-import client from './apollo'
+import client from './apollo';
 
-import './App.css'
+import './App.css';
 
 const App = () => (
   <div className="App">
     <ApolloProvider client={client}>
       <Suspense
-        fallback={() => {
-          return (
-            <div className='wrap-loading'>
-              <Spinner animation="border" variant="primary" />
-            </div>
-          )
-        }}
+        fallback={<Indicator />}
       >
         <AppRoute />
       </Suspense>
     </ApolloProvider>
   </div>
-)
+);
 
-export default App
+export default App;
