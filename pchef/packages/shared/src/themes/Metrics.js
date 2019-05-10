@@ -2,6 +2,7 @@ export default {
   // Padding
   smallPadding: 5,
   mediumPadding: 10,
+  basePadding: 15,
   largePadding: 20,
   extraLargePadding: 30,
 
@@ -38,6 +39,7 @@ export default {
   mediumPosition: 15,
 
   // Line Height
+  smallLineHeight: 21,
   mediumLineHeight: 25,
 
   // FontSize
