@@ -77,8 +77,8 @@ const styles = StyleSheet.create({
     borderRadius: METRICS.mediumBorderRadius,
     paddingTop: METRICS.smallPadding,
     paddingBottom: METRICS.smallPadding,
-    paddingLeft: METRICS.basePadding,
-    paddingRight: METRICS.basePadding,
+    paddingLeft: METRICS.mediumPosition,
+    paddingRight: METRICS.mediumPosition,
   },
   largeButton: {
     borderRadius: METRICS.mediumBorderRadius,

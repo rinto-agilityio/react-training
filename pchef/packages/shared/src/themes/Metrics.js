@@ -2,7 +2,6 @@ export default {
   // Padding
   smallPadding: 5,
   mediumPadding: 10,
-  basePadding: 15,
   largePadding: 20,
   extraLargePadding: 30,
 
