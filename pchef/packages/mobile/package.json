@@ -21,6 +21,7 @@
     "apollo-link-ws": "^1.0.17",
     "apollo-utilities": "^1.2.1",
     "components": "*",
+    "fromnow": "^3.0.0",
     "graphql": "^14.2.1",
     "path": "^0.12.7",
     "react": "16.8.3",
