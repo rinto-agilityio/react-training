@@ -44,13 +44,7 @@ export const getDateOfWeek = () => {
 
 /**
  * Get time published at from now
- * @return {string} current time
- */
-export const getISOString = () => new Date().toISOString();
-
-/**
- * Get time published at from now
- * @param {string} time is a string
+ * @param {number} time is a timestamp
  * @return {string} time published from now
  */
-export const getPublishedTime = (time: string) => fromNow(time, { and: true, suffix: true, max: 2 })
+export const getPublishedTime = (time: number) => fromNow(time, { and: true, suffix: true, max: 2 })
