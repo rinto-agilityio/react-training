@@ -5,10 +5,7 @@
   "scripts": {
     "test": "jest",
     "start": "react-app-rewired start",
-    "start:mobile": "node node_modules/react-native/local-cli/cli.js start",
-    "test:web": "react-app-rewired test",
-    "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 9009"
   },
   "dependencies": {
     "react": "16.8.3",
