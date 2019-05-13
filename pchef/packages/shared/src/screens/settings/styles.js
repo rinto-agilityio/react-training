@@ -16,13 +16,12 @@ const styles = StyleSheet.create({
   },
   settingButton: {
     backgroundColor: COLORS.red,
-    border: 0,
     borderColor: 'transparent',
     marginTop: METRICS.extraLargeMargin,
   },
   settingUrl: {
     fontSize: METRICS.fontSize.medium,
-    borderBottomWidth: 1,
+    borderBottomWidth: METRICS.borderWidthBase,
     marginBottom: METRICS.largeMargin,
   },
 })

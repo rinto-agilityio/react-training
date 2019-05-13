@@ -8,6 +8,7 @@ import { METRICS } from '../../themes'
 const styles = StyleSheet.create({
   wrapIcon: {
     flexDirection: 'row',
+    alignItems: 'center',
   },
   label: {
     marginLeft: METRICS.mediumMargin,
