@@ -1,11 +1,12 @@
 import React from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { categories } from '../../../../mocks'
+import Wrapper from '../../../../layout/Wrapper'
 import styles from './styles'
 
 // Interested Category props type
 type Props = {
-  customStyle?: {} | Array<{}>,
+  customStyle?: {},
   type?: string,
   onChooseCategory: (id: string) => void,
   activeList: Array<string>,
@@ -13,12 +14,16 @@ type Props = {
 
 // component Comment Form
 const InterestedCategories = ({
-  customStyle,
+  customStyle = {},
   type = 'primary',
   activeList,
   onChooseCategory,
 }: Props) => (
-  <View style={[styles.container, styles[`${type}Container`], customStyle]}>
+  <Wrapper
+    direction="row"
+    childPosition="left"
+    customStyles={[styles.container, styles[`${type}Container`], customStyle]}
+  >
     {categories.map(category => {
       // check if categary has been chosen
       const chosen = activeList.includes(category.id)
@@ -57,7 +62,7 @@ const InterestedCategories = ({
         </View>
       )
     })}
-  </View>
+  </Wrapper>
 )
 
 // component default props value
