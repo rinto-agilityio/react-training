@@ -79,4 +79,6 @@ export default {
 
   // Border
   smallBorderWidth: 1,
+  mediumBorderWidth: 3,
+  largeBorderWidth: 5,
 }
