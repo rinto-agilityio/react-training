@@ -80,4 +80,8 @@ export default {
   // Category
   categoryContainer: 606,
   categoryItem: 200,
+  // Border
+  smallBorderWidth: 1,
+  mediumBorderWidth: 3,
+  largeBorderWidth: 5,
 }
