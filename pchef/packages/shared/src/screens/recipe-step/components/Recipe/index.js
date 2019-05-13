@@ -5,32 +5,40 @@ import { Text, View } from 'react-native'
 // Styles
 import styles from './styles'
 
+// Themes
+import { COLORS, METRICS } from '../../../../themes'
+
 // Components
 import ImageBackground from '../../../../components/ImageBackground'
 import Reaction from '../../../../components/Reaction'
-import Progress from './ProcessStep';
+import Progress from './ProcessStep'
+import Comment from '../../../recipe/components/Comment'
 
 type Props = {
   stepInfo: {
     description: string,
     imgUrl: string,
     step: number,
+    title: string,
   },
   recipe: {
     title: string,
-    votes: number,
+    votes: Array<number>,
     subTitle: string,
-    views: Array<number>,
+    views: number,
     userId: number,
-    steps: Array<number>
+    steps: Array<{
+      step: numner
+    }>
   },
   size: string,
   onClick?: () => void,
   customRecipe?: {},
   customTitle?: {},
   customDescription?: {},
-  customImage: {},
+  customImage?: {},
   customSubTitle?: {},
+  customTitleStep?: {}
 }
 
 const Recipe = ({
@@ -43,17 +51,20 @@ const Recipe = ({
   customDescription,
   customImage = {},
   customSubTitle,
+  customTitleStep,
 }: Props) => {
   const {
     imgUrl,
+    description,
     step,
-    description
   } = stepInfo
   const {
     title,
     subTitle,
     votes,
-    steps
+    steps,
+    userId,
+    views,
   } = recipe
 
   return (
@@ -76,8 +87,8 @@ const Recipe = ({
         </Text>
         <Text
           style={[
-            styles.subTitle,
-            styles[`${size}subTitle`],
+            styles.title,
+            styles[`${size}TitleStep`],
             customSubTitle,
           ]}
         >
@@ -92,26 +103,61 @@ const Recipe = ({
           ]}
           resizeMode="cover"
         >
-          <Text
-            style={[
-              styles.description,
-              styles[`${size}Description`],
-              customDescription,
-            ]}
-          >
-            {description}
+          <Text>
+            <Text
+              style={[
+                styles.titleStep,
+                styles[`${size}TitleStep`],
+                customTitleStep,
+              ]}
+            >
+              {stepInfo.title}
+            </Text>
           </Text>
           <Progress
             steps={steps}
             size={size}
+            step={5}
           />
         </ImageBackground>
       </View>
+      <Text
+        style={[
+          styles.description,
+          styles[`${size}Description`],
+          customDescription,
+        ]}
+      >
+        {description}
+      </Text>
       <Reaction
         votes={votes}
         size={size}
         isFavorited={false}
       />
+      <Comment
+        name={`by ${userId}`}
+        publishedAt={Date.now()}
+        isGetTime
+        customStyle={{
+          paddingLeft: METRICS.largePadding,
+        }}
+        customNameStyles={{
+          fontWeight: 'bold',
+        }}
+        customContentStyles={{
+          fontSize: 12,
+          color: COLORS.baseGray,
+        }}
+      />
+      <Text
+        style={[
+          styles.views,
+          styles[`${size}Views`],
+        ]}
+      >
+        {`viewed by ${views}`}
+      </Text>
     </View>
   )
 }
@@ -122,6 +168,8 @@ Recipe.defaultProps = {
   customTitle: {},
   customDescription: {},
   customSubTitle: {},
+  customTitleStep: {},
+  customImage: {},
 }
 
 export default Recipe
