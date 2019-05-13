@@ -11,18 +11,13 @@ export default StyleSheet.create({
   container: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    marginLeft: -1,
-    marginRight: -1,
-    marginTop: -1,
-    marginBottom: -1,
+    margin: -1,
   },
   secondaryContainer: {
     width: METRICS.categoryContainer,
   },
   item: {
-    marginTop: 1,
-    marginBottom: 1,
+    margin: 1,
   },
   primaryImage: {
     width: itemDimension,
