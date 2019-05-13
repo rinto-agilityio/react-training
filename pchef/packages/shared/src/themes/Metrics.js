@@ -76,4 +76,8 @@ export default {
   smallBgImage: 150,
   mediumBgImage: 230,
   largeBgImage: 300,
+
+  // Category
+  categoryContainer: 604,
+  categoryItem: 200,
 }
