@@ -27,7 +27,9 @@
     "react-scripts": "^3.0.0",
     "react-testing-library": "^7.0.0",
     "request": "2.79.0",
-    "subscriptions-transport-ws": "^0.9.16"
+    "subscriptions-transport-ws": "^0.9.16",
+    "waait": "^1.0.4",
+    "wait-for-expect": "^1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
