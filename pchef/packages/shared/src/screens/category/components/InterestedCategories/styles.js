@@ -9,8 +9,6 @@ const itemDimension = (width - 4) / 3
 
 export default StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
     margin: -1,
   },
   secondaryContainer: {
