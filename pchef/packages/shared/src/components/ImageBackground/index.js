@@ -7,7 +7,7 @@ import styles from './styles'
 
 type Props = {
   url: string,
-  customImageBg?: {},
+  customImageBg?: {} | Array<{}>,
   children: React.Node,
   resizeMode?: string,
 }

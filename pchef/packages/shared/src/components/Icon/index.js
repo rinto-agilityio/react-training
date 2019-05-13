@@ -17,8 +17,10 @@ type Props = {
   type?: string,
   size?: number,
   name: string,
+  disabled?: boolean,
   underlayColor?: string,
   wrapperIconStyle?: Object,
+  disabledStyle?: {},
 };
 
 const Icon = ({
@@ -31,6 +33,8 @@ const Icon = ({
   name,
   wrapperIconStyle,
   underlayColor,
+  disabled,
+  disabledStyle,
 }: Props) => (
   <View style={[
     styles.wrapIcon,
@@ -44,6 +48,8 @@ const Icon = ({
       size={size}
       onPress={onClick}
       underlayColor={underlayColor}
+      disabled={disabled}
+      disabledStyle={disabledStyle}
     />
     {label ? <Text style={[styles.label, customStyle]}>{label}</Text> : null}
   </View>
@@ -58,6 +64,8 @@ Icon.defaultProps = {
   color: COLORS.black,
   wrapperIconStyle: {},
   underlayColor: '',
+  disabled: false,
+  disabledStyle: {},
 };
 
 export default Icon
