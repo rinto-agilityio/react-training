@@ -11,7 +11,6 @@ export default StyleSheet.create({
   },
   input: {
     borderBottomWidth: 0,
-    fontWeight: '400',
     borderRadius: METRICS.mediumBorderRadius,
     height: METRICS.mediumInput,
     color: COLORS.black,
@@ -27,5 +26,20 @@ export default StyleSheet.create({
     marginLeft: METRICS.mediumMargin,
     paddingLeft: METRICS.smallPadding,
     paddingRight: METRICS.smallPadding,
+  },
+  badgeContainer: {
+    position: 'absolute',
+    bottom: 0,
+    right: 5,
+  },
+  primaryBadge: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+  },
+  secondaryBadge: {
+    width: 16,
+    height: 16,
+    borderRadius: 8,
   },
 })
