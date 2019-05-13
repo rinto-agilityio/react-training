@@ -1,4 +1,4 @@
-import gql from 'graphql-tag'
+import gql from 'graphql-tag';
 
 export const GET_POST = gql`
   query getPostsByAuthor($authorId: ID!, $after: String, $first: Int ) {
