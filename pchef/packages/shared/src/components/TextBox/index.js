@@ -12,7 +12,7 @@ type Props = {
   multiline?: boolean,
   autoCapitalize?: string,
   autoCorrect?: boolean,
-  customStyle?: {},
+  customStyle?: {} | Array<{}>,
   editable?: boolean,
   placeholder?: string,
   placeholderTextColor?: string,

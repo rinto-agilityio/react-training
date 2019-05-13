@@ -7,6 +7,7 @@ import { COLORS, METRICS } from '../../themes'
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
+    flex: 1,
   },
   default: {
     height: METRICS.mediumInput,
@@ -14,6 +15,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     fontSize: METRICS.fontSize.medium,
     color: COLORS.black,
+    flex: 1,
   },
 })
 
