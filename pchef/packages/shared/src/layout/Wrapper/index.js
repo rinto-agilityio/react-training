@@ -10,7 +10,7 @@ type Props = {
   direction?: string,
   childPosition?: string,
   flexGrow?: number,
-  customStyles?: Object,
+  customStyles?: {} | Array<{}>,
 }
 
 const Wrapper = ({
