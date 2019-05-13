@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   },
   settingUrl: {
     fontSize: METRICS.fontSize.medium,
-    borderBottomWidth: METRICS.borderWidthBase,
+    borderBottomWidth: METRICS.smallBorderWidth,
     marginBottom: METRICS.largeMargin,
   },
 })

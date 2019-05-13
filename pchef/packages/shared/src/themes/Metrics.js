@@ -78,5 +78,5 @@ export default {
   largeBgImage: 300,
 
   // Border
-  borderWidthBase: 1,
+  smallBorderWidth: 1,
 }
