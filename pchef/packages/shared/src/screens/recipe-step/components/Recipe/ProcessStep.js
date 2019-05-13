@@ -1,14 +1,11 @@
 // Libs
-import React, { useState } from 'react'
+import React from 'react'
 
 // Styles
 import styles from './styles'
 
 // Themes
 import { COLORS, METRICS } from '../../../../themes'
-
-// Constants
-import { LIMIT_STEPS_IN_PROGRESS } from '../../../../constants'
 
 // Components
 import Button from '../../../../components/Button'
@@ -38,11 +35,6 @@ const Progress = ({
   const disabledNextIcon = steps.length === step
   // Disabled prev icon if current satep is first step
   const disablePrevIcon = step === 1
-  // const stepsCloned = [...steps]
-  const progressSteps = [...steps]
-
-  // Show progress steps with 5 steps (from first step)
-  // const [progressSteps, setProgressSteps] = useState(stepsCloned.slice(0, LIMIT_STEPS_IN_PROGRESS))
 
   return (
     <Wrapper direction="row">
@@ -58,19 +50,13 @@ const Progress = ({
         }}
       />
       <Wrapper direction="row">
-        {progressSteps.map(item => {
+        {steps.map(item => {
           const status = step === item.step ? 'active' : 'inactive'
 
           return (
             <Button
               key={item.step}
-              onClick={() => {
-                onClickStep
-                // Show 5 next steps if current step % LIMIT_STEPS_IN_PROGRESS = 0
-                // if (step % LIMIT_STEPS_IN_PROGRESS === 0) {
-                //   setProgressSteps(stepsCloned.slice(step, step + LIMIT_STEPS_IN_PROGRESS))
-                // }
-              }}
+              onClick={onClickStep}
               buttonStyle={[
                 styles.progressStep,
                 styles[`${status}Step`],
