@@ -28,7 +28,7 @@ type Props = {
     views: number,
     userId: number,
     steps: Array<{
-      step: numner
+      step: number
     }>
   },
   size: string,
