@@ -15,10 +15,10 @@ import './HeaderStyle.css';
 
 const Header = () => {
   const handleLogout = (event, client) => {
-    event.stopPropagation()
+    event.stopPropagation();
     client.resetStore();
     localStorage.removeItem('userLoged');
-  }
+  };
 
   return (
     <Query
@@ -26,14 +26,14 @@ const Header = () => {
       fetchPolicy={'cache-only'}
     >
       {({ data, client }) => {
-        const { loggedUser } = data
+        const { loggedUser } = data;
         return (
           <header className="header">
             <div className='logo-wrap'>
               <h1 className="brand">
                 <Link to='/' className="brand-link">
                   <div className="brand-name">
-                    <p>Blog App</p>
+                    <p className='title-blog'>Blog App</p>
                   </div>
                 </Link>
               </h1>
@@ -55,22 +55,25 @@ const Header = () => {
                 )
               }
               <Image avarta={loggedUser && loggedUser.avatar}/>
-              <Dropdown
-                items={[
-                  <Link
-                    to={''}
-                    onClick={(event)=>handleLogout(event, client)}
-                  >
-                    Log Out
-                  </Link>
-                ]}
-              />
+              <div className='user-menu'>
+                <Dropdown
+                  items={[
+                    <Link
+                      key='first'
+                      to={''}
+                      onClick={(event)=>handleLogout(event, client)}
+                    >
+                      Log Out
+                    </Link>
+                  ]}
+                />
+              </div>
             </div>
           </header>
-        )
+        );
       }}
     </Query>
-  )
-}
+  );
+};
 
 export default memo(Header);

@@ -55,4 +55,12 @@ describe('Dropdown Component', () => {
     fireEvent.click(container);
     expect(container.querySelector('ul')).toBeNull();
   });
+
+  it('Test function handleClick trigger:', () => {
+
+    const handleClick = jest.fn();
+    const { container } = render(<Dropdown items={items} />);
+    fireEvent.click(container.querySelector('.dropdown-wrap'));
+    expect(container.querySelector('ul')).toBeNull();
+  });
 });

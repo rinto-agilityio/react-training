@@ -13,8 +13,4 @@ describe('ErrorMessage Component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders props', () => {
-    expect(tree.prop('avarta')).toEqual('avarta');
-  });
-
 });
