@@ -40,15 +40,6 @@ const styles = StyleSheet.create({
     paddingLeft: METRICS.largePadding,
     paddingRight: METRICS.largePadding,
   },
-  smallTitleStep: {
-    fontSize: METRICS.fontSize.small,
-  },
-  mediumTitleStep: {
-    fontSize: METRICS.fontSize.medium,
-  },
-  largeTitleStep: {
-    fontSize: METRICS.fontSize.large,
-  },
 
   // Description
   description: {
@@ -85,7 +76,7 @@ const styles = StyleSheet.create({
 
   // Step
   progressStep: {
-    marginRight: 3,
+    marginRight: tinyPadding,
   },
   activeStep: {
     backgroundColor: COLORS.baseBlue,

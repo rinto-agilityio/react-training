@@ -107,7 +107,7 @@ const Recipe = ({
             <Text
               style={[
                 styles.titleStep,
-                styles[`${size}TitleStep`],
+                styles[`${size}Description`],
                 customTitleStep,
               ]}
             >
@@ -117,7 +117,7 @@ const Recipe = ({
           <Progress
             steps={steps}
             size={size}
-            step={5}
+            step={step}
           />
         </ImageBackground>
       </View>
