@@ -15,4 +15,5 @@ export default {
   lightBlue: 'rgba(228, 228, 228, 0.42)',
   darkBlue: '#2d4150',
   gray: '#a1a0b0',
+  halfWhite: 'rgba(255, 255, 255, 0.5)',
 }
