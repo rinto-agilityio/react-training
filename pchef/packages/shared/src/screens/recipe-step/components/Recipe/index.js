@@ -9,9 +9,9 @@ import styles from './styles'
 import { COLORS, METRICS } from '../../../../themes'
 
 // Components
+import Progress from './ProcessStep'
 import ImageBackground from '../../../../components/ImageBackground'
 import Reaction from '../../../../components/Reaction'
-import Progress from './ProcessStep'
 import Comment from '../../../recipe/components/Comment'
 
 type Props = {

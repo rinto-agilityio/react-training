@@ -31,10 +31,9 @@ const Progress = ({
   customStepBtn,
   onClickSelectStep,
 }: Props) => {
-  // Disabled next icon if current step is last step
-  const disabledNextIcon = steps.length === step
-  // Disabled prev icon if current satep is first step
+  // Disabled prev/next icon if current step is first/last step
   const disablePrevIcon = step === 1
+  const disabledNextIcon = steps.length === step
 
   return (
     <Wrapper direction="row">
