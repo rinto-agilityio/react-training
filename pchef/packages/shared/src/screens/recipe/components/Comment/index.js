@@ -9,9 +9,12 @@ type Props = {
   avatarUri?: string,
   name: string,
   publishedAt: number,
-  text: string,
+  text?: string,
   customStyle?: {},
   type?: string,
+  isGetTime?: boolean,
+  customNameStyles?: {},
+  customContentStyles?: {},
 }
 
 // component Comment
@@ -22,6 +25,9 @@ const Comment = ({
   customStyle,
   type = 'primary',
   publishedAt,
+  isGetTime,
+  customNameStyles,
+  customContentStyles,
 }: Props) => {
   // get comment published at time
   const time = getPublishedTime(publishedAt)
@@ -45,18 +51,22 @@ const Comment = ({
       </View>
       <View style={styles.commentWrapper}>
         <View style={styles.userInfo}>
-          <Text style={styles[`${type}Infor`]}>
+          <Text style={[styles[`${type}Infor`], customNameStyles]}>
             {name}
           </Text>
-          <Text style={[styles.dash, styles[`${type}Infor`]]}>
-            -
-          </Text>
-          <Text style={styles[`${type}Infor`]}>
-            {time}
-          </Text>
+          {!isGetTime && (
+            <>
+              <Text style={[styles.dash, styles[`${type}Infor`]]}>
+                -
+              </Text>
+              <Text style={styles[`${type}Infor`]}>
+                {time}
+              </Text>
+            </>
+          )}
         </View>
-        <Text style={styles[`${type}Content`]}>
-          {text}
+        <Text style={[styles[`${type}Content`], customContentStyles]}>
+          {isGetTime ? `on ${time}` : text}
         </Text>
       </View>
     </View>
@@ -68,6 +78,10 @@ Comment.defaultProps = {
   avatarUri: '',
   customStyle: {},
   type: 'primary',
+  isGetTime: false,
+  customNameStyles: {},
+  customContentStyles: {},
+  text: '',
 }
 
 export default Comment

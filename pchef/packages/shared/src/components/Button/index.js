@@ -12,6 +12,7 @@ type Props = {
   title: string,
   titleStyle?: Object,
   size?: string,
+  disabled?: boolean,
 }
 
 const Button = ({
@@ -21,6 +22,7 @@ const Button = ({
   title,
   titleStyle,
   size,
+  disabled,
 }: Props) => (
   <ButtonComponent
     title={title}
@@ -28,6 +30,7 @@ const Button = ({
     buttonStyle={[styles.button, styles[size], buttonStyle]}
     titleStyle={[styles.title, titleStyle]}
     onPress={onClick}
+    disabled={disabled}
   />
 )
 
@@ -37,6 +40,7 @@ Button.defaultProps = {
   titleStyle: {},
   typeName: 'outline',
   size: 'medium',
+  disabled: false,
 }
 
 export default Button
