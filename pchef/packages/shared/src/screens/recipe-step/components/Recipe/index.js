@@ -88,7 +88,7 @@ const Recipe = ({
         <Text
           style={[
             styles.title,
-            styles[`${size}TitleStep`],
+            styles[`${size}Description`],
             customSubTitle,
           ]}
         >
