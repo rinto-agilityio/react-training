@@ -7,7 +7,7 @@ import AppConfig from '../../configs/AppConfig';
 //components
 import Input from '../../components/commons/Input';
 import TextArea from '../../components/commons/TextArea';
-
+import Indicator from '../../components/commons/Indicator';
 //style
 import './styles/CreatePostStyle.css';
 
@@ -18,8 +18,8 @@ import { CREATE_POST, EDIT_POST } from '../../graphql/post/mutations';
 import { GET_POST } from '../../graphql/post/queries';
 
 const CreatePost = ({user, pageInfo, handleCloseModal, history, isEdit, postEditing}) => {
-  const title = useRef('')
-  const content = useRef('')
+  const title = useRef('');
+  const content = useRef('');
 
   const handleSubmitForm = (event, muation) => {
 
@@ -34,7 +34,7 @@ const CreatePost = ({user, pageInfo, handleCloseModal, history, isEdit, postEdit
             authorId: user.id
           }
         }
-      })
+      });
     } else {
       muation({
         variables: {
@@ -43,9 +43,9 @@ const CreatePost = ({user, pageInfo, handleCloseModal, history, isEdit, postEdit
           content: content.current ? content.current.value : '',
           authorId: user.id,
         }
-      })
+      });
     }
-  }
+  };
 
   return (
     <>
@@ -54,15 +54,15 @@ const CreatePost = ({user, pageInfo, handleCloseModal, history, isEdit, postEdit
         <Mutation
           mutation={CREATE_POST}
           onCompleted={ () => {
-            handleCloseModal()
-            history.push('/')
+            handleCloseModal();
+            history.push('/');
           }}
 
         >
           {(createPost, { data, loading, error }) => {
             if (loading) return (
               <div className='wrap-loading'>
-                <Spinner animation="border" variant="primary" />
+                <Indicator />
               </div>
             );
 
@@ -89,14 +89,14 @@ const CreatePost = ({user, pageInfo, handleCloseModal, history, isEdit, postEdit
 
                 </Form>
             </div>
-            )
+            );
           }}
         </Mutation>
         :
         <Mutation
           mutation={ EDIT_POST }
           onCompleted={ () => {
-            handleCloseModal()
+            handleCloseModal();
           }}
           update={(cache, { data: { editPost } }) => {
             // read cache
@@ -105,13 +105,13 @@ const CreatePost = ({user, pageInfo, handleCloseModal, history, isEdit, postEdit
             const newData = {
               ...data.getPostsByAuthor,
               posts: [data.getPostsByAuthor.posts.map(item => item.id === editPost.id ? editPost : item )]
-            }
+            };
 
             // write back to cache
             cache.writeQuery({
               query: GET_POST,
               data: newData
-            })
+            });
           }}
         >
           {(editPost, { data, loading, error }) => {
@@ -145,13 +145,13 @@ const CreatePost = ({user, pageInfo, handleCloseModal, history, isEdit, postEdit
 
                 </Form>
             </div>
-            )
-          }}
+            );
+          }};
         </Mutation>
       }
     </>
-  )
-}
+  );
+};
 
 CreatePost.propTypes = {
   pageInfo: PropTypes.object,
