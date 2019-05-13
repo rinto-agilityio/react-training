@@ -78,6 +78,6 @@ export default {
   largeBgImage: 300,
 
   // Category
-  categoryContainer: 604,
+  categoryContainer: 606,
   categoryItem: 200,
 }
