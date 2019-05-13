@@ -1,6 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
-import { Avatar } from 'react-native-elements'
+import { Avatar, Badge } from 'react-native-elements'
 import { COLORS } from '../../../../themes'
 import TextBox from '../../../../components/TextBox'
 import styles from './styles'
@@ -22,14 +22,11 @@ const CommentForm = ({
   onSubmit,
   commentRef,
 }: Props) => {
-  // define container styles
-  const containerStyle = [styles.container, customStyle]
-
   // define avatar size follow type
   const avatarSize = type === 'primary' ? 'small' : 'medium'
 
   return (
-    <View style={containerStyle}>
+    <View style={[styles.container, customStyle]}>
       <View style={styles.userAvatar}>
         <Avatar
           rounded
@@ -37,6 +34,11 @@ const CommentForm = ({
           source={{
             uri: avatarUri,
           }}
+        />
+        <Badge
+          status="success"
+          containerStyle={styles.badgeContainer}
+          badgeStyle={styles[`${type}Badge`]}
         />
       </View>
       <View style={styles.inputWrapper}>
