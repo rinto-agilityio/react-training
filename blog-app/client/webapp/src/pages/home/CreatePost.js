@@ -12,161 +12,79 @@ import Indicator from '../../components/commons/Indicator';
 import './styles/CreatePostStyle.css';
 
 //mutations
-import { CREATE_POST, EDIT_POST } from '../../graphql/post/mutations';
+import { CREATE_POST } from '../../graphql/post/mutations';
 
-//queries
-import { GET_POST } from '../../graphql/post/queries';
+const CreatePost = ({user, handleCloseModal, history}) => {
 
-const CreatePost = ({user, pageInfo, handleCloseModal, history, isEdit, postEditing}) => {
   const title = useRef('');
   const content = useRef('');
 
-  const handleSubmitForm = (event, muation) => {
+  const handleSubmitForm = (event, createPost) => {
 
     event.preventDefault();
-    if (isEdit) {
-      muation({
-        variables: {
-          post: {
-            id: postEditing.id,
-            title: title.current ? title.current.value : '',
-            content: content.current ? content.current.value : '',
-            authorId: user.id
-          }
-        }
-      });
-    } else {
-      muation({
-        variables: {
-          id: `${ Date.now()}`,
-          title: title.current ? title.current.value : '',
-          content: content.current ? content.current.value : '',
-          authorId: user.id,
-        }
-      });
-    }
+
+    createPost({
+      variables: {
+        id: `${ Date.now()}`,
+        title: title.current ? title.current.value : '',
+        content: content.current ? content.current.value : '',
+        authorId: user.id,
+      }
+    });
   };
 
   return (
-    <>
-      {
-        !isEdit ?
-        <Mutation
-          mutation={CREATE_POST}
-          onCompleted={ () => {
-            handleCloseModal();
-            history.push('/');
-          }}
+    <Mutation
+      mutation={CREATE_POST}
+      onCompleted={ () => {
+        handleCloseModal();
+        history.push('/');
+      }}
+    >
+      {(createPost, { data, loading, error }) => {
+        if (loading) return (
+          <div className='wrap-loading'>
+            <Indicator />
+          </div>
+        );
 
-        >
-          {(createPost, { data, loading, error }) => {
-            if (loading) return (
-              <div className='wrap-loading'>
-                <Indicator />
+        if (error) return `Error! ${error.message}`;
+
+        return (
+          <div className='create-post'>
+            <Form onSubmit={ e => handleSubmitForm(e, createPost)} className='form-new-post'>
+              <Input
+                placeholder='input title'
+                onRef={title}
+                value={''}
+              />
+
+              <TextArea
+                placeholder='input content'
+                onRef={content}
+                value={''}
+              />
+
+              <div className='button-save-post'>
+                <Button variant="primary" type="submit">Save</Button>
               </div>
-            );
 
-            if (error) return `Error! ${error.message}`;
-
-            return (
-              <div className='create-post'>
-                <Form onSubmit={ e => handleSubmitForm(e, createPost)} className='form-new-post'>
-                  <Input
-                    placeholder='input title'
-                    onRef={title}
-                    value={postEditing ? postEditing.title : ''}
-                  />
-
-                  <TextArea
-                    placeholder='input content'
-                    onRef={content}
-                    value={postEditing ? postEditing.content : ''}
-                  />
-
-                  <div className='button-save-post'>
-                    <Button variant="primary" type="submit">Save</Button>
-                  </div>
-
-                </Form>
-            </div>
-            );
-          }}
-        </Mutation>
-        :
-        <Mutation
-          mutation={ EDIT_POST }
-          onCompleted={ () => {
-            handleCloseModal();
-          }}
-          update={(cache, { data: { editPost } }) => {
-            // read cache
-            const data = cache.readQuery({ query: GET_POST, variables: {authorId: user.id, first: AppConfig.PER_PAGE}});
-
-            const newData = {
-              ...data.getPostsByAuthor,
-              posts: [data.getPostsByAuthor.posts.map(item => item.id === editPost.id ? editPost : item )]
-            };
-
-            // write back to cache
-            cache.writeQuery({
-              query: GET_POST,
-              data: newData
-            });
-          }}
-        >
-          {(editPost, { data, loading, error }) => {
-
-            if (loading) return (
-              <div className='wrap-loading'>
-                <Spinner animation="border" variant="primary" />
-              </div>
-            );
-
-            if (error) return `Error! ${error.message}`;
-
-            return (
-              <div className='create-post'>
-                <Form onSubmit={ e => handleSubmitForm(e, editPost)} className='form-new-post'>
-                  <Input
-                    placeholder='input title'
-                    onRef={title}
-                    value={postEditing ? postEditing.title : ''}
-                  />
-
-                  <TextArea
-                    placeholder='input content'
-                    onRef={content}
-                    value={postEditing ? postEditing.content : ''}
-                  />
-
-                  <div className='button-save-post'>
-                    <Button variant="primary" type="submit">Save</Button>
-                  </div>
-
-                </Form>
-            </div>
-            );
-          }};
-        </Mutation>
-      }
-    </>
+            </Form>
+          </div>
+        );
+      }}
+    </Mutation>
   );
 };
 
 CreatePost.propTypes = {
-  pageInfo: PropTypes.object,
   user: PropTypes.object,
   handleCloseModal: PropTypes.func,
-  isEdit: PropTypes.bool,
-  postEditing: PropTypes.object
 };
 
 CreatePost.defaultProps = {
-  pageInfo: {},
   user: {},
   handleCloseModal: () => {},
-  isEdit: false,
-  postEditing: {}
 };
 
 export default CreatePost;

@@ -1,26 +1,27 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { Mutation } from 'react-apollo';
-import { Spinner, Button } from 'react-bootstrap'
+import { Spinner, Button } from 'react-bootstrap';
 
 //style
-import './styles/PostStyle.css'
+import './styles/PostStyle.css';
 
 //mutation
-import { DELETE_POST } from '../../graphql/post/mutations'
+import { DELETE_POST } from '../../graphql/post/mutations';
 
 const PostItem = ({post, history, user, handleOpenModal}) => {
   const handleEditPost = () => {
-    handleOpenModal(post)
-  }
+    handleOpenModal(post);
+  };
 
   const handleDeletePost = deletePost => {
     deletePost({
       variables: {
         id: post.id
       }
-    })
-  }
+    });
+  };
+
   return (
     <Mutation
       mutation={DELETE_POST}
@@ -49,11 +50,11 @@ const PostItem = ({post, history, user, handleOpenModal}) => {
             <Button onClick={handleEditPost} variant='primary'>Edit</Button>
             <Button onClick={() => handleDeletePost(deletePost)} variant='danger' className='custom-button'>Delete</Button>
           </div>
-        )
+        );
       }}
     </Mutation>
-  )
-}
+  );
+};
 
 PostItem.propTypes = {
   post: PropTypes.object,

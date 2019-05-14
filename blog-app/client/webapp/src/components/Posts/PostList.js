@@ -38,7 +38,7 @@ const PostList = ({posts, user, history, fetchMore, pageInfo, handleSubcriptionN
   return (
     <>
       {
-        posts && posts.map((post, index) => {
+        posts.map((post, index) => {
           return (
             <PostItem
               key={index}

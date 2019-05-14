@@ -1,11 +1,10 @@
-import React, { memo } from 'react'
-import PropTypes from 'prop-types'
+import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 import {
   Modal
-} from 'react-bootstrap'
+} from 'react-bootstrap';
 
-const PrimaryModal = (props) => {
-  const { confirmPayment, modalClass, show, onClose, onClosed, dialogClassName, title, children } = props
+const PrimaryModal = ({ confirmPayment, modalClass, show, onClose, onClosed, dialogClassName, title, children }) => {
   return (
     <Modal
       bssize={confirmPayment ? '' : 'large'}
@@ -23,8 +22,8 @@ const PrimaryModal = (props) => {
         {children}
       </div>
     </Modal>
-  )
-}
+  );
+};
 
 // Define propTypes
 PrimaryModal.propTypes = {
@@ -33,7 +32,7 @@ PrimaryModal.propTypes = {
   onClose: PropTypes.func,
   title: PropTypes.string,
   dialogClassName: PropTypes.string,
-}
+};
 
 // Set default props
 PrimaryModal.defaultProps = {
@@ -42,6 +41,6 @@ PrimaryModal.defaultProps = {
   onClose: function(){},
   title: '',
   dialogClassName: '',
-}
+};
 
-export default memo(PrimaryModal)
+export default memo(PrimaryModal);

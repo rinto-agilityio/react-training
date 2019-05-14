@@ -14,9 +14,9 @@ import { SIGN_IN } from '../../graphql/author/queries';
 import './LoginStyle.css';
 
 const Login = props  => {
-  const email = useRef('')
-  const password = useRef('')
-  const [errorMes, setErrorMes] = useState('')
+  const email = useRef('');
+  const password = useRef('');
+  const [errorMes, setErrorMes] = useState('');
 
   const handleSignIn = async (event, client) => {
 
@@ -31,7 +31,7 @@ const Login = props  => {
       options: { fetchPolicy: 'cache-and-network' }
     }).then(response => {
 
-      const { author } = response.data.signIn
+      const { author } = response.data.signIn;
 
       client.writeData({
         data: {
@@ -47,7 +47,7 @@ const Login = props  => {
     (error => {
       setErrorMes(error && error.graphQLErrors && error.graphQLErrors[0].message )
     })
-    )
+    );
   };
   return (
     <ApolloConsumer>
@@ -81,7 +81,7 @@ const Login = props  => {
         )
       }
     </ApolloConsumer>
-  )
-}
+  );
+};
 
 export default Login;

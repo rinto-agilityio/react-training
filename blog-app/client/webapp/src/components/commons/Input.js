@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
 // import style
-import './styles/InputStyle.css'
+import './styles/InputStyle.css';
 
 export const Input = ({label, className, type, name, onBlur, onChange, placeholder, onFocus, onRef, value}) => {
   return (
