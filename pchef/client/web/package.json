@@ -25,9 +25,6 @@
     "build-storybook": "build-storybook",
     "flow": "flow"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
     "production": [
       ">0.2%",

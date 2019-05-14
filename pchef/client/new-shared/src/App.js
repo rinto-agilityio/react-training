@@ -32,7 +32,11 @@ export default class App extends Component<Props> {
             {`
             @font-face {
               font-family: 'MaterialIcons';
-              src: url(${require('react-native-vector-icons/MaterialIcons')}.ttf) format('truetype');
+
+              src: url(${
+                // $FlowFixMe
+                require('react-native-vector-icons/Fonts/MaterialIcons.ttf')
+              }) format('truetype');
             }
             `}
           </style>
@@ -42,10 +46,7 @@ export default class App extends Component<Props> {
           <Text style={styles.welcome}>Welcome to React Native!</Text>
           <Text style={styles.instructions}>To get started, edit App.js</Text>
           <Text style={styles.instructions}>{instructions}</Text>
-          <PaperButton
-            mode="contained"
-            onPress={() => {}}
-          >
+          <PaperButton mode="contained" onPress={() => {}}>
             PaperButton
           </PaperButton>
         </View>
