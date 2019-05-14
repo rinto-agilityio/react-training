@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="css-view-1dbjc4n r-flex-13awgt0 r-flexDirection-18u37iz"
+>
+  <textarea
+    autoCapitalize="none"
+    autoComplete="on"
+    autoCorrect="off"
+    className="css-textinput-1cwyjr8 r-borderBottomWidth-qklmqi r-borderColor-34efmp r-color-cqee49 r-flex-13awgt0 r-fontSize-1i10wst r-height-eu3ka r-placeholderTextColor-whyam9"
+    data-focusable={true}
+    defaultValue=""
+    dir="auto"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyPress={[Function]}
+    onSelect={[Function]}
+    placeholder="Multiline"
+    readOnly={false}
+    rows={1}
+    spellCheck={false}
+  />
+</div>
+`;
