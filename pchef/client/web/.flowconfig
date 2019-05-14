@@ -8,9 +8,6 @@
 .*\test\.js
 .*\.stories\.js
 
-; Ignore FlowType for server
-<PROJECT_ROOT>/server/
-
 ; Ignore "BUCK" generated dirs
 <PROJECT_ROOT>/\.buckd/
 

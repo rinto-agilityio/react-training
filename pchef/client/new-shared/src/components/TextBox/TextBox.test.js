@@ -1,3 +1,6 @@
+// Libs
+import renderer from 'react-test-renderer'
+
 // Components
 import TextBox from '.'
 

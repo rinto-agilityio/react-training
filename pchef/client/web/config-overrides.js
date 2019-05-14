@@ -1,10 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const {
-  override,
-  addBabelPlugins,
-  babelInclude
-} = require('customize-cra')
+const { override, addBabelPlugins, babelInclude } = require('customize-cra')
 
 const appDirectory = fs.realpathSync(process.cwd())
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath)
@@ -28,8 +24,8 @@ module.exports = override(
     resolveApp('./node_modules/react-native-calendars'),
   ]),
   addBabelPlugins(
-    "@babel/plugin-proposal-class-properties",
+    '@babel/plugin-proposal-class-properties',
     '@babel/plugin-proposal-object-rest-spread',
-    "babel-plugin-react-native-web",
+    'babel-plugin-react-native-web'
   )
 )
