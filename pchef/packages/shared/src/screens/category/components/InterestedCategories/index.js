@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { categories } from '../../../../mocks'
 import Wrapper from '../../../../layout/Wrapper'
@@ -18,52 +18,65 @@ const InterestedCategories = ({
   type = 'primary',
   activeList,
   onChooseCategory,
-}: Props) => (
-  <Wrapper
-    direction="row"
-    childPosition="left"
-    customStyles={[styles.container, styles[`${type}Container`], customStyle]}
-  >
-    {categories.map(category => {
-      // check if categary has been chosen
-      const chosen = activeList.includes(category.id)
+}: Props) => {
+  // declare state item size
+  const [itemSize, setItemSize] = useState({ width: 0, height: 0 })
 
-      return (
-        <View
-          key={category.id}
-          style={[
-            styles.item,
-            styles[`${type}Item`],
-            chosen ? styles.activeItem : null,
-          ]}
-        >
-          <TouchableOpacity onPress={() => onChooseCategory(category.id)}>
-            <Image
-              style={[styles.image, styles[`${type}Image`]]}
-              source={{ uri: category.image }}
-            />
-            <Text
-              style={[
-                styles.name,
-                styles[`${type}Name`],
-                styles[`${chosen ? 'active' : 'inactive'}Name`],
-              ]}
-            >
-              {category.name}
-            </Text>
-            <View
-              style={[
-                styles.layer,
-                styles[`${type}Layer`],
-                styles[`${chosen ? 'active' : 'inactive'}Layer`],
-              ]}
-            />
-          </TouchableOpacity>
-        </View>
-      )
-    })}
-  </Wrapper>
-)
+  // get wrapper size
+  const handlingGetLayout = (event = { nativeEvent: { layout: {} } }) => {
+    const { width } = event.nativeEvent.layout
+
+    // get item Size, three items in a row, margin between items is 2px
+    const itemWidth = (width - 6) / 3
+
+    // set item size
+    setItemSize({
+      width: itemWidth,
+      height: itemWidth,
+    })
+  }
+
+  return (
+    <Wrapper
+      direction="row"
+      childPosition="right"
+      customStyles={[styles.container, customStyle]}
+      onLayout={handlingGetLayout}
+    >
+      {categories.map(category => {
+        // check if categary has been chosen
+        const chosen = activeList.includes(category.id)
+
+        return (
+          <View key={category.id} style={[styles.item, itemSize]}>
+            <TouchableOpacity onPress={() => onChooseCategory(category.id)}>
+              <Image
+                style={[styles.image, itemSize]}
+                source={{ uri: category.image }}
+              />
+              <Text
+                style={[
+                  styles.name,
+                  styles[`${type}Name`],
+                  styles[`${chosen ? 'active' : 'inactive'}Name`],
+                ]}
+              >
+                {category.name}
+              </Text>
+              <View
+                style={[
+                  styles.layer,
+                  itemSize,
+                  styles[`${chosen ? 'active' : 'inactive'}Layer`],
+                ]}
+              />
+            </TouchableOpacity>
+          </View>
+        )
+      })}
+    </Wrapper>
+  )
+}
 
 // component default props value
 InterestedCategories.defaultProps = {
