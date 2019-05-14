@@ -10,6 +10,7 @@
 .*/coverage/.*
 .*\test\.js
 .*\.stories\.js
+.*\.story\.js
 
 ; Ignore FlowType for server
 <PROJECT_ROOT>/server/
