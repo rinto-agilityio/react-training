@@ -1,13 +1,6 @@
 {
   "name": "pchef",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/*",
-      "!packages/new-shared"
-    ],
-    "nohoist": []
-  },
   "scripts": {
     "eslint": "./node_modules/.bin/eslint --ext .jsx,.js packages/**/src",
     "flow": "flow"
