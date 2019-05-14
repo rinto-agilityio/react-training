@@ -7,23 +7,22 @@
  */
 
 import React, { Component } from 'react'
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native'
+import { Platform, StyleSheet, Text, View } from 'react-native'
 
-import { Provider as PaperProvider, Button as PaperButton } from 'react-native-paper'
+import {
+  Provider as PaperProvider,
+  Button as PaperButton,
+} from 'react-native-paper'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
     'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
-});
+})
 
-type Props = {};
+type Props = {}
+
 export default class App extends Component<Props> {
   render() {
     return (
@@ -33,7 +32,7 @@ export default class App extends Component<Props> {
             {`
             @font-face {
               font-family: 'MaterialIcons';
-              src: url(${require('react-native-vector-icons/Fonts/MaterialIcons.ttf')}) format('truetype');
+              src: url(${require('react-native-vector-icons/MaterialIcons')}.ttf) format('truetype');
             }
             `}
           </style>
@@ -45,13 +44,13 @@ export default class App extends Component<Props> {
           <Text style={styles.instructions}>{instructions}</Text>
           <PaperButton
             mode="contained"
-            onPress={() => console.log('PaperButton')}
+            onPress={() => {}}
           >
             PaperButton
           </PaperButton>
         </View>
       </PaperProvider>
-    );
+    )
   }
 }
 
@@ -72,4 +71,4 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
-});
+})

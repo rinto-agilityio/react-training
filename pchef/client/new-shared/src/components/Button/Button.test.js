@@ -4,7 +4,6 @@ import renderer from 'react-test-renderer'
 
 // Components
 import Button from '.'
-import { Text } from 'react-native-paper'
 
 const props = {
   onPress: jest.fn(),
