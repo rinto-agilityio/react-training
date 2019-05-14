@@ -77,9 +77,6 @@ export default {
   mediumBgImage: 230,
   largeBgImage: 300,
 
-  // Category
-  categoryContainer: 606,
-  categoryItem: 200,
   // Border
   smallBorderWidth: 1,
   mediumBorderWidth: 3,
