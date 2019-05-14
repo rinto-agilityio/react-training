@@ -4,10 +4,11 @@
  *
  * @format
  */
-const path = require('path')
 
 module.exports = {
-  projectRoot: path.resolve(__dirname, '../../'),
+  resolver: {
+    blacklistRE: /node_modules\/.*\/node_modules\/react-native\/.*/,
+  },
   transformer: {
     getTransformOptions: async () => ({
       transform: {
