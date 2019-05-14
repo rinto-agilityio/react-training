@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["./components/*"],
+      "@constants/*": ["./constants/*"],
+      "@helpers/*": ["./helpers/*"],
+      "@screen/*": ["./screens/*"],
+      "@themes/*": ["./themes/*"],
+      "@graphql/*": ["./graphql/*"],
+      "@assets/*": ["./assets/*"],
+      "@mocks/*": ["./mocks/*"],
+      "@configs/*": ["./configs/*"],
+      "@router/*": ["./router/*"]
+    }
+  }
+}

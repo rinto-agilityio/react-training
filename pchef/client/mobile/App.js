@@ -1,49 +1,48 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React from 'react'
+import { ApolloClient } from 'apollo-boost'
+import { ApolloProvider } from 'react-apollo'
+import { InMemoryCache } from 'apollo-cache-inmemory'
+import AppRouter from '@router/index'
+import { WebSocketLink } from 'apollo-link-ws'
+import { createHttpLink } from 'apollo-link-http'
+import { split } from 'apollo-link'
+import { getMainDefinition } from 'apollo-utilities'
+import * as constants from '@constants/api'
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+// create web sockket link
+const wsLink = new WebSocketLink({
+  uri: constants.WS_URI,
+  options: {
+    reconnect: true,
+    timeout: 30000,
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+})
+
+// create http link server
+const httpLink = createHttpLink({
+  uri: constants.SERVER_URI,
+})
+
+const link = split(
+  ({ query }) => {
+    const { kind, operation } = getMainDefinition(query)
+    return kind === 'OperationDefinition' && operation === 'subscription'
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+  wsLink,
+  httpLink,
+)
+
+// create client
+const client = new ApolloClient({
+  link,
+  cache: new InMemoryCache(),
+})
+
+// app
+const App = () => (
+  <ApolloProvider client={client}>
+    <AppRouter />
+  </ApolloProvider>
+)
+
+export default App
