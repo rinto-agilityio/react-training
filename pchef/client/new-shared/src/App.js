@@ -27,20 +27,6 @@ export default class App extends Component<Props> {
   render() {
     return (
       <PaperProvider>
-        {Platform.OS === 'web' ? (
-          <style type="text/css">
-            {`
-            @font-face {
-              font-family: 'MaterialIcons';
-
-              src: url(${
-                // $FlowFixMe
-                require('react-native-vector-icons/Fonts/MaterialIcons.ttf')
-              }) format('truetype');
-            }
-            `}
-          </style>
-        ) : null}
         <View style={styles.container}>
           <Text style={styles.welcome}>PaperProvider</Text>
           <Text style={styles.welcome}>Welcome to React Native!</Text>
