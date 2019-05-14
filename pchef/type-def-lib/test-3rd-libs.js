@@ -9,3 +9,7 @@ declare module 'enzyme-adapter-react-16' {
 declare module 'enzyme' {
   declare module.exports: any;
 }
+
+declare module 'jsdom' {
+  declare module.exports: any;
+}
