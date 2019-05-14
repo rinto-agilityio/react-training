@@ -16,4 +16,5 @@ export default {
   darkBlue: '#2d4150',
   blackLighter: 'rgba(0, 0, 0, 0.71)',
   gray: '#a1a0b0',
+  halfWhite: 'rgba(255, 255, 255, 0.5)',
 }
