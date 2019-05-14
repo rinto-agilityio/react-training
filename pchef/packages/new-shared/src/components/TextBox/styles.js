@@ -2,7 +2,7 @@
 import { StyleSheet } from 'react-native'
 
 // Themes
-import { COLORS, METRICS } from '../../themes'
+import { COLORS, METRICS, FONTS } from '../../themes'
 
 const styles = StyleSheet.create({
   container: {
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     height: METRICS.mediumInput,
     borderColor: COLORS.grayDarker,
     borderBottomWidth: 1,
-    fontSize: METRICS.fontSize.medium,
+    fontSize: FONTS.fontSize.medium,
     color: COLORS.black,
     flex: 1,
   },
