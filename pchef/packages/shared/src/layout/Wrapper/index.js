@@ -11,6 +11,7 @@ type Props = {
   childPosition?: string,
   flexGrow?: number,
   customStyles?: {} | Array<{}>,
+  onLayout?: () => void,
 }
 
 const Wrapper = ({
@@ -19,8 +20,10 @@ const Wrapper = ({
   childPosition,
   flexGrow,
   customStyles,
+  onLayout,
 }: Props) => (
   <View
+    onLayout={onLayout}
     style={[
       styles.container,
       styles[direction],
@@ -38,6 +41,7 @@ Wrapper.defaultProps = {
   childPosition: 'spaceAround',
   flexGrow: 0,
   customStyles: {},
+  onLayout: () => {},
 }
 
 export default Wrapper
