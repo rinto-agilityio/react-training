@@ -15,7 +15,7 @@ const PrivateRoute = ({ component: Component, loginPath, path, ...rest}) => {
   return (
     <Query query= { LOGGED_USER } >
       {({ data, error }) => {
-        const isAuthenticated = (error || !data.loggedUser) ? false : true
+        const isAuthenticated = (error || !data.loggedUser) ? false : true;
         return (
           <Route {...rest} render={props => {
             return (
@@ -26,22 +26,22 @@ const PrivateRoute = ({ component: Component, loginPath, path, ...rest}) => {
                   pathname: loginPath
                 }} />
               )
-            )
+            );
           }} />
-        )
+        );
       }}
     </Query>
-  )
-}
+  );
+};
 
 PrivateRoute.propTypes = {
   loginPath: PropTypes.string,
   component: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
-}
+};
 
 PrivateRoute.defaultProps = {
   loginPath: '',
   component: null
-}
+};
 
-export default PrivateRoute
+export default PrivateRoute;

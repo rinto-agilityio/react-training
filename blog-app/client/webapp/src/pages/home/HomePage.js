@@ -6,6 +6,7 @@ import { Query } from 'react-apollo';
 import Header from '../../components/header/Header';
 import PrimaryModal from '../../components/commons/PrimaryModal';
 import CreatePost from './CreatePost';
+import EditPost from './EditPost';
 import PostList from '../../components/Posts/PostList';
 import AppConfig from '../../configs/AppConfig';
 
@@ -96,70 +97,76 @@ const HomePage = props => {
   };
 
   return (
-    <div>
-      <Button
-        variant="primary"
-        onClick={() => handleOpenModal()}
-      >
-        Create Post
-      </Button>
-      <Query
-        query={GET_POST}
-        fetchPolicy="cache-and-network"
-        variables={{
-          authorId: user.loggedUser.id,
-          first: AppConfig.PER_PAGE
-        }}
-      >
-        {({ loading, error, data, fetchMore, subscribeToMore, client }) => {
-          if (loading) return <Spinner animation="border" variant="primary" />;
-          if (error) return `Error! ${error.message}`;
-          const posts = data && data.getPostsByAuthor && data.getPostsByAuthor.posts;
-          if (posts) {
-            client.writeData({
-              data: {
-                posts: posts
-              }
-            });
-          }
+    <Query
+      query={GET_POST}
+      fetchPolicy="cache-and-network"
+      variables={{
+        authorId: user.loggedUser.id,
+        first: AppConfig.PER_PAGE
+      }}
+    >
+      {({ loading, error, data, fetchMore, subscribeToMore, client }) => {
+        if (loading) return <Spinner animation="border" variant="primary" />;
+        if (error) return `Error! ${error.message}`;
+        const posts = data && data.getPostsByAuthor && data.getPostsByAuthor.posts;
+        if (posts) {
+          client.writeData({
+            data: {
+              posts: posts
+            }
+          });
+        }
 
-          return (
-            <div className='container'>
-              <Header />
+        return (
+          <div className='container'>
+            <Header />
+            <div>
+              <Button
+                variant="primary"
+                onClick={() => handleOpenModal()}
+              >
+                Create Post
+              </Button>
               <div>
-
-                <div>
-                  <PostList
-                    posts={posts}
-                    pageInfo={ data && data.getPostsByAuthor && data.getPostsByAuthor.pageInfo }
-                    // loading={loading}
-                    fetchMore={fetchMore}
-                    handleSubcriptionNewPost={() => handleSubcriptionNewPost(subscribeToMore)}
-                    handleOpenModal={handleOpenModal}
-                    user={user && user.loggedUser}
-                    history={props.history}
-                  />
-                </div>
+                <PostList
+                  posts={posts}
+                  pageInfo={ data && data.getPostsByAuthor && data.getPostsByAuthor.pageInfo }
+                  // loading={loading}
+                  fetchMore={fetchMore}
+                  handleSubcriptionNewPost={() => handleSubcriptionNewPost(subscribeToMore)}
+                  handleOpenModal={handleOpenModal}
+                  user={user && user.loggedUser}
+                  history={props.history}
+                />
               </div>
+              <PrimaryModal
+                show={isOpenModal}
+                title={`${isEdit ? 'Edit Post' : 'Create Post'}`}
+                onClose={handleCloseModal}
+                confirmPayment
+              >
+              {
+                isEdit ?
+                <EditPost
+                  user={user && user.loggedUser}
+                  handleCloseModal={handleCloseModal}
+                  history={props.history}
+                  isEdit={isEdit}
+                  postEditing={postEditing}
+                />
+                :
+                <CreatePost
+                  user={user && user.loggedUser}
+                  handleCloseModal={handleCloseModal}
+                  history={props.history}
+                />
+              }
+              </PrimaryModal>
             </div>
-          );
-        }}
-      </Query>
-      <PrimaryModal
-        show={isOpenModal}
-        title={`${isEdit ? 'Edit Post' : 'Create Post'}`}
-        onClose={handleCloseModal}
-        confirmPayment
-      >
-        <CreatePost
-          user={user && user.loggedUser}
-          handleCloseModal={handleCloseModal}
-          history={props.history}
-          isEdit={isEdit}
-          postEditing={postEditing}
-        />
-      </PrimaryModal>
-    </div>
+          </div>
+        );
+      }}
+    </Query>
   );
 };
 

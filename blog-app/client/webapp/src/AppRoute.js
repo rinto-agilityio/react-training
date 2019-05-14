@@ -25,11 +25,11 @@ const AppRoute = () => {
               <PrivateRoute loginPath={loginPath} path='/' component={HomePage} accessClient={client}/>
             </Switch>
           </BrowserRouter>
-        )
+        );
       }
     }
     </ApolloConsumer>
-  )
+  );
 };
 
 export default AppRoute;
