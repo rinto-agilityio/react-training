@@ -6,6 +6,11 @@ body,
   height: 100%;
 }
 
+@font-face {
+  src: url('fonts/MaterialIcons.ttf');
+  font-family: 'Material Icons';
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -1,6 +1,7 @@
-import React from 'react';
+import React from 'react'
 
-import { configure } from '@storybook/react';
+import { configure } from '@storybook/react'
+import '../public/index.css'
 
 const req = require.context('../src', true, /\.story\.js$/)
 
@@ -8,4 +9,4 @@ function loadStories() {
   req.keys().forEach(req)
 }
 
-configure(loadStories, module);
+configure(loadStories, module)
