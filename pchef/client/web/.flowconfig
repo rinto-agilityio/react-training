@@ -1,0 +1,52 @@
+[ignore]
+; We fork some components by platform
+.*/node_modules/.*
+.*/.storybook/*
+.*\.config\.js
+.*/config/.*
+.*/coverage/.*
+.*\test\.js
+.*\.stories\.js
+
+; Ignore FlowType for server
+<PROJECT_ROOT>/server/
+
+; Ignore "BUCK" generated dirs
+<PROJECT_ROOT>/\.buckd/
+
+; Ignore unexpected extra "@providesModule"
+.*/node_modules/.*/node_modules/fbjs/.*
+
+; Ignore polyfills
+.*/Libraries/polyfills/.*
+
+[include]
+./src
+
+[libs]
+./type-def-lib
+flow-typed
+
+[lints]
+
+[options]
+emoji=true
+all=true
+module.name_mapper='^[./a-zA-Z0-9$_-]+\.\(bmp\|gif\|jpg\|jpeg\|png\|psd\|svg\|webp\|m4v\|mov\|mp4\|mpeg\|mpg\|webm\|aac\|aiff\|caf\|m4a\|mp3\|wav\|html\|pdf\)$' -> 'RelativeImageStub'
+module.name_mapper='^react-native$' -> 'react-native-web'
+
+module.file_ext=.js
+module.file_ext=.jsx
+module.file_ext=.json
+module.file_ext=.css
+module.file_ext=.scss
+
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
+suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
+module.ignore_non_literal_requires=true
+
+suppress_type=$FlowFixMe
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
+
+[version]
+0.98.1
