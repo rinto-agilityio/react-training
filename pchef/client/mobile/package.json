@@ -10,6 +10,7 @@
     "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
     "test": "jest",
     "coverage": "jest --coverage --u --detectOpenHandles",
+    "eslint": "./node_modules/.bin/eslint --ext .jsx,.js src",
     "flow": "flow",
     "prestorybook": "rnstl"
   },
@@ -26,12 +27,12 @@
     "path": "^0.12.7",
     "react": "16.8.3",
     "react-apollo": "^2.5.5",
+    "react-native": "0.59.8",
     "react-native-calendars": "^1.84.0",
     "react-native-fs": "^2.13.3",
     "react-native-gesture-handler": "^1.2.1",
     "react-navigation": "^3.9.1",
     "shared": "*",
-    "react-native": "0.59.8",
     "subscriptions-transport-ws": "^0.9.16"
   },
   "devDependencies": {
@@ -49,10 +50,11 @@
     "babel-preset-flow": "^6.23.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
-    "eslint": "^5.16.0",
+    "eslint": "5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-jest-enzyme": "^7.0.2",
     "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-flowtype": "^3.8.2",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jest": "^22.5.1",
     "eslint-plugin-jsx-a11y": "^6.2.1",
@@ -67,6 +69,22 @@
     "react-native-dotenv": "^0.2.0",
     "react-native-storybook-loader": "^1.8.0",
     "react-test-renderer": "16.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && flow check"
+    }
+  },
+  "lint-staged": {
+    "{src}/**/*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{png,jpeg,jpg,gif,svg}": [
+      "imagemin-lint-staged",
+      "git add"
+    ]
   },
   "config": {
     "react-native-storybook-loader": {
