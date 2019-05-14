@@ -1,11 +1,13 @@
 // Libs
-import React, { useRef } from 'react'
+import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 // Components
 import TextBox from '.'
 
-const refInput = useRef(null)
+const refInput = {
+  current: null,
+}
 
 storiesOf('TextBox', module)
   .add('default', () => (
