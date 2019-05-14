@@ -1,4 +1,5 @@
 import COLORS from './Colors'
 import METRICS from './Metrics'
+import FONTS from './Fonts'
 
-export { COLORS, METRICS }
+export { COLORS, METRICS, FONTS }
