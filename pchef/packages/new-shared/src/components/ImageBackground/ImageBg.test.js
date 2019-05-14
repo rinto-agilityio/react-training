@@ -1,12 +1,16 @@
+// Libs
+import { Text } from 'react-native'
+
 // Components
-import Image from '.'
+import ImageBackground from '.'
 
 it('renders correctly', () => {
   const image = renderer.create(
-    <Image
+    <ImageBackground
       url="https://vcdn-ngoisao.vnecdn.net/2018/01/19/1-8515-1516314392.jpg"
-      disabled
-    />,
+    >
+      <Text>Children</Text>
+    </ImageBackground>,
   ).toJSON()
 
   expect(image).toMatchSnapshot()

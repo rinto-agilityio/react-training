@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
 // Components
-import Image from '../components/Image'
+import Image from '.'
 
 storiesOf('Image', module)
   .add('default', () => (
