@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Component Test Login snapshot 1`] = `
+<div
+  className="login-wrap"
+>
+  <div
+    className="titleWrap"
+  >
+    <p>
+      Welcome To Blog
+    </p>
+  </div>
+  <div
+    className="authentication-form"
+  >
+    <form
+      className=""
+      onSubmit={[Function]}
+    >
+      <div
+        className="form-group"
+      >
+        <input
+          className="form-control"
+          placeholder="Enter email"
+          type="email"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <input
+          className="form-control"
+          placeholder="Password"
+          type="password"
+        />
+      </div>
+      
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        type="submit"
+      >
+        Login
+      </button>
+    </form>
+    <p>
+      Not Register?
+      <a
+        component={[Function]}
+        href="/signUp"
+        onClick={[Function]}
+      >
+        Create Account
+      </a>
+    </p>
+  </div>
+</div>
+`;
