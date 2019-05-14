@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "storybook": "storybook start -p 7007",
-    "link": "node node_modules/react-native/local-cli/cli.js link react-native-gesture-handler --verbose",
+    "link": "node node_modules/react-native/local-cli/cli.js link react-native-gesture-handler",
     "android": "node node_modules/react-native/local-cli/cli.js run-android",
     "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
     "test": "jest",
@@ -58,7 +58,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
-    "flow-bin": "^0.98.0",
+    "flow-bin": "0.98.0",
     "husky": "^2.2.0",
     "jest": "^24.7.1",
     "lint-staged": "^8.1.5",
