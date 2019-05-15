@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 // Component
 // $FlowFixMe
-import BtnPaper from 'pchef-newshared/src/components/Button'
+import BtnPaper from 'pchef-shared/src/components/Button'
 
 const Home = () => (
   <>
