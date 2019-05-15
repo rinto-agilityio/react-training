@@ -4,11 +4,21 @@
 //
 // https://github.com/elderfo/react-native-storybook-loader.git
 
-function loadStories() {}
+/* eslint-disable */
 
-const stories = []
+function loadStories() {
+  require('../src/components/button.story');
+
+}
+
+const stories = [
+  '../src/components/button.story',
+
+];
 
 module.exports = {
   loadStories,
   stories,
-}
+};
+
+/* eslint-enable */
