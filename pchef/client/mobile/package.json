@@ -20,10 +20,10 @@
     "apollo-link-http": "^1.5.14",
     "apollo-link-ws": "^1.0.17",
     "apollo-utilities": "^1.2.1",
-    "components": "*",
     "fromnow": "^3.0.0",
     "graphql": "^14.2.1",
     "path": "^0.12.7",
+    "pchef-shared": "file:../new-shared",
     "react": "16.8.3",
     "react-apollo": "^2.5.5",
     "react-native": "0.59.8",
@@ -31,7 +31,6 @@
     "react-native-fs": "^2.13.3",
     "react-native-gesture-handler": "^1.2.1",
     "react-navigation": "^3.9.1",
-    "shared": "*",
     "subscriptions-transport-ws": "^0.9.16"
   },
   "devDependencies": {
