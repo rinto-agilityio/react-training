@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'MaterialIcons';
+  src: url(/fonts/MaterialIcons.ttf) format('truetype');
+}
+
 html,
 body,
 #root,
@@ -9,4 +14,5 @@ body,
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: MaterialIcons;
 }
