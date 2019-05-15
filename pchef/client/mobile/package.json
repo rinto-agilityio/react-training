@@ -4,14 +4,14 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "storybook": "storybook start -p 7007 | react-native start --projectRoot storybook",
+    "storybook": "storybook start",
     "android": "node node_modules/react-native/local-cli/cli.js run-android",
     "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
     "test": "jest",
     "coverage": "jest --coverage --u --detectOpenHandles",
     "eslint": "./node_modules/.bin/eslint --ext .jsx,.js src",
     "flow": "flow",
-    "prestorybook": "rnstl"
+    "prestorybook": "./node_modules/.bin/rnstl --searchDir ./src --pattern '**/*.story.js' --outputFile ./storybook/storyLoader.js"
   },
   "dependencies": {
     "apollo-boost": "^0.3.1",
