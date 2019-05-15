@@ -29,7 +29,7 @@ const ImageBgComponent = ({
 
 ImageBgComponent.defaultProps = {
   customImageBg: {},
-  resizeMode: 'cover',
+  resizeMode: '',
 }
 
 export default ImageBgComponent

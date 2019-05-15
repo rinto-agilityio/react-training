@@ -41,6 +41,16 @@ export default {
   smallLineHeight: 21,
   mediumLineHeight: 25,
 
+  // FontSize
+  fontSize: {
+    small: 14,
+    base: 16,
+    medium: 18,
+    large: 20,
+    extraLarge: 28,
+    extraExtraLarge: 40,
+  },
+
   // Flex
   flexCenter: {
     justifyContent: 'center',
@@ -66,4 +76,9 @@ export default {
   smallBgImage: 150,
   mediumBgImage: 230,
   largeBgImage: 300,
+
+  // Border
+  smallBorderWidth: 1,
+  mediumBorderWidth: 3,
+  largeBorderWidth: 5,
 }

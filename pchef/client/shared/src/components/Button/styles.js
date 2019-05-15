@@ -2,27 +2,33 @@
 import { StyleSheet } from 'react-native'
 
 // Themes
-import { COLORS, METRICS } from '../../themes'
+import { COLORS, METRICS, FONTS } from '../../themes'
 
 // Create style for button
 const styles = StyleSheet.create({
   button: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: COLORS.green,
-    padding: 10,
+    ...METRICS.flexCenter,
+    padding: METRICS.smallPadding,
   },
   title: {
     color: COLORS.white,
+    textTransform: 'uppercase',
+    fontWeight: FONTS.fontWeight.large,
   },
-  small: {
-    padding: METRICS.smallPadding,
+  default: {
+    backgroundColor: COLORS.baseBlue,
   },
-  medium: {
-    padding: METRICS.mediumPadding,
+  success: {
+    backgroundColor: COLORS.green,
   },
-  large: {
-    padding: METRICS.largePadding,
+  danger: {
+    backgroundColor: COLORS.red,
+  },
+  warning: {
+    backgroundColor: COLORS.yellow,
+  },
+  info: {
+    backgroundColor: COLORS.darkWhite,
   },
 })
 
