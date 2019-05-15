@@ -114,3 +114,8 @@ declare module '@storybook/addon-links' {
 declare module '@storybook/react/demo' {
   declare module.exports: any
 }
+
+// shared components
+declare module 'pchef-shared/src/components/Button' {
+  declare module.exports: any
+}
