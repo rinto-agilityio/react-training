@@ -1,44 +1,35 @@
-// Apollo boost
+// Apollo client libs
 declare module 'apollo-boost' {
   declare module.exports: any
 }
 
-// Apollo cache memory
 declare module 'apollo-cache-inmemory' {
   declare module.exports: any
 }
 
-// Apollo link http
 declare module 'apollo-link-http' {
   declare module.exports: any
 }
 
-// Apollo link ws
 declare module 'apollo-link-ws' {
   declare module.exports: any
 }
 
-// Apollo link
 declare module 'apollo-link' {
   declare module.exports: any
 }
 
-// Apollo utilities
 declare module 'apollo-utilities' {
   declare module.exports: any
 }
 
+// CRA
 declare module 'customize-cra' {
   declare module.exports: any
 }
 
-// Apollo boost
+// fromnow
 declare module 'fromnow' {
-  declare module.exports: any
-}
-
-// React apollo
-declare module 'react-apollo' {
   declare module.exports: any
 }
 
@@ -47,17 +38,19 @@ declare module 'react-router-dom' {
   declare module.exports: any
 }
 
-// react-native
+// react-native libs
 declare module 'react-native' {
   declare module.exports: any
 }
 
-// react native calendars
+declare module 'react-native-paper' {
+  declare module.exports: any
+}
+
 declare module 'react-native-calendars' {
   declare module.exports: any
 }
 
-// react native vector icons - font awesome
 declare module 'react-native-vector-icons/FontAwesome' {
   declare module.exports: any
 }
@@ -66,47 +59,41 @@ declare module 'react-native-vector-icons/Fonts/FontAwesome.ttf' {
   declare module.exports: any
 }
 
+declare module 'react-native-vector-icons/Fonts/MaterialIcons.ttf' {
+  declare module.exports: any
+}
+
+declare module 'react-native-dotenv' {
+  declare module.exports: any
+}
+
 // TODO: Remove this RNE
 declare module 'react-native-elements' {
   declare module.exports: any
 }
 
-// react-native paper
-declare module 'react-native-paper' {
-  declare module.exports: any
-}
-
-// font material
-declare module 'react-native-vector-icons/Fonts/MaterialIcons.ttf' {
-  declare module.exports: any
-}
-
-// react-native-dotenv
-declare module 'react-native-dotenv' {
-  declare module.exports: any
-}
-
-// react navigation
+// react libs
 declare module 'react-navigation' {
   declare module.exports: any
 }
 
-// react test renderer
+declare module 'react-apollo' {
+  declare module.exports: any
+}
+
+// unit testing libs
 declare module 'react-test-renderer' {
   declare module.exports: any
 }
 
-// enzyme adaper
 declare module 'enzyme-adapter-react-16' {
   declare module.exports: any
 }
 
-// enzyme
 declare module 'enzyme' {
   declare module.exports: any
 }
 
-// jsdom
 declare module 'jsdom' {
   declare module.exports: any
 }
