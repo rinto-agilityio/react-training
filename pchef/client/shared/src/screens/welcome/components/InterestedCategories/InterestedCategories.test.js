@@ -9,8 +9,12 @@ it('InterestedCategories snapshots', () => {
     activeList: [categories[0].id, categories[1].id],
   }
 
-  const primaryComponent = shallow(<InterestedCategories {...props} type="primary" customStyle={{ flex: 1 }} />)
-  const secondaryComponent = shallow(<InterestedCategories {...props} type="secondary" />)
+  const primaryComponent = shallow(
+    <InterestedCategories {...props} type="primary" customStyle={{ flex: 1 }} />,
+  )
+  const secondaryComponent = shallow(
+    <InterestedCategories {...props} type="secondary" />,
+  )
 
   expect(primaryComponent).toMatchSnapshot()
   expect(secondaryComponent).toMatchSnapshot()
