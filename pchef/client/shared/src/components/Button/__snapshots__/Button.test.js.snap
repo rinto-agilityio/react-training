@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components Button should render Button component 1`] = `
+<div
+  className="css-view-1dbjc4n"
+  style={
+    Object {
+      "WebkitAlignItems": "center",
+      "WebkitBoxAlign": "center",
+      "WebkitBoxPack": "center",
+      "WebkitJustifyContent": "center",
+      "alignItems": "center",
+      "backgroundColor": "rgba(0,153,0,1.00)",
+      "borderBottomColor": "rgba(0,0,0,0.00)",
+      "borderBottomLeftRadius": "4px",
+      "borderBottomRightRadius": "4px",
+      "borderBottomStyle": "solid",
+      "borderBottomWidth": "0px",
+      "borderLeftColor": "rgba(0,0,0,0.00)",
+      "borderLeftStyle": "solid",
+      "borderLeftWidth": "0px",
+      "borderRightColor": "rgba(0,0,0,0.00)",
+      "borderRightStyle": "solid",
+      "borderRightWidth": "0px",
+      "borderTopColor": "rgba(0,0,0,0.00)",
+      "borderTopLeftRadius": "4px",
+      "borderTopRightRadius": "4px",
+      "borderTopStyle": "solid",
+      "borderTopWidth": "0px",
+      "boxShadow": "0px 0.75px 1.5px rgba(0,0,0,0.24)",
+      "justifyContent": "center",
+      "minWidth": "64px",
+      "msFlexAlign": "center",
+      "msFlexPack": "center",
+      "paddingBottom": "5px",
+      "paddingLeft": "5px",
+      "paddingRight": "5px",
+      "paddingTop": "5px",
+    }
+  }
+>
+  <div
+    className="css-cursor-18t94o4 css-view-1dbjc4n r-backgroundColor-1niwhzg r-cursor-1loqt21 r-touchAction-1otgn73 r-userSelect-lrvibr"
+    data-focusable={true}
+    disabled={false}
+    onKeyDown={[Function]}
+    onKeyPress={[Function]}
+    onKeyUp={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    role="button"
+    style={
+      Object {
+        "borderBottomLeftRadius": "4px",
+        "borderBottomRightRadius": "4px",
+        "borderTopLeftRadius": "4px",
+        "borderTopRightRadius": "4px",
+        "overflowX": "hidden",
+        "overflowY": "hidden",
+      }
+    }
+    tabIndex="0"
+  >
+    <div
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-justifyContent-1777fci"
+    >
+      <div
+        className="css-text-76zvg2 css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
+        dir="auto"
+        style={
+          Object {
+            "color": "rgba(0,0,0,1.00)",
+            "direction": "ltr",
+            "fontFamily": "Roboto-Medium, Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          }
+        }
+      >
+        <span
+          className="css-text-76zvg2 css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+          dir="auto"
+          style={
+            Object {
+              "direction": "ltr",
+              "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "textAlign": "left",
+            }
+          }
+        >
+          button
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
