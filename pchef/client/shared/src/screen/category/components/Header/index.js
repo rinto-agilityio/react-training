@@ -15,7 +15,7 @@ import Button from '../../../../components/Button'
 
 type Props = {
   category: {
-    title: string,
+    name: string,
     imgUrl: string,
   },
   customTitle?: {},
@@ -35,7 +35,7 @@ const Header = ({
   onSelectListView,
   size = '',
 }: Props) => {
-  const { title, imgUrl } = category
+  const { name, imgUrl } = category
 
   // Data render list view category
   const data = [
@@ -61,7 +61,7 @@ const Header = ({
         resizeMode="cover"
       >
         <Text style={[styles.title, styles[`${size}Title`], customTitle]}>
-          {title}
+          {name}
         </Text>
         <Button
           title="Following"
