@@ -61,6 +61,7 @@ const EditPost = ({user, handleCloseModal, postEditing}) => {
         });
         return null;
       }}
+      onError={() => {}}
     >
       {(editPost, { data, loading, error }) => {
         if (loading) return (
