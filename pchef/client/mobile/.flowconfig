@@ -12,7 +12,7 @@
 .*/Libraries/polyfills/.*
 
 [libs]
-./type-def-lib
+./mobile-type-def
 
 [lints]
 
