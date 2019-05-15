@@ -10,7 +10,7 @@ const Home = () => (
     <h3>Home page</h3>
     <Link to="profile">Link to Profile</Link>
     <Link to="category">Link to Category</Link>
-    <BtnPaper />
+    <BtnPaper title="BtnPaper" onPress={() => console.log('Click')} />
   </>
 )
 
