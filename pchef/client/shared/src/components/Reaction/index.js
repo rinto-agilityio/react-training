@@ -31,13 +31,13 @@ const Reaction = ({
   // Data render reaction icon
   const data = [
     {
-      name: isFavorited ? 'favorite' : 'favorite_border',
+      name: isFavorited ? 'favorite' : 'favorite-border',
       color: COLORS.grayDarker,
       label: 'Save',
       onClick: onClickFavorite,
     },
     {
-      name: 'thumb_up_alt',
+      name: 'thumb-up',
       color: COLORS.grayDarker,
       label: votes.length,
       onClick: onClickVote,
