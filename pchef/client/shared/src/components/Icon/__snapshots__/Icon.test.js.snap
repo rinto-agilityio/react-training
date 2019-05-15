@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz"
+>
+  <div
+    aria-disabled={true}
+    className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-opacity-qzm50q r-overflow-bztko3 r-userSelect-lrvibr r-width-1acpoxo"
+    disabled={true}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    role="button"
+  >
+    <span
+      className="css-hitSlop-mjp8i1"
+      style={
+        Object {
+          "bottom": "-6px",
+          "left": "-6px",
+          "right": "-6px",
+          "top": "-6px",
+        }
+      }
+    />
+    <div
+      className="css-view-1dbjc4n"
+    >
+      <div
+        className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+        dir="auto"
+        focusable={false}
+        role="img"
+        style={
+          Object {
+            "color": "rgba(0,0,0,1.00)",
+            "fontSize": "18px",
+          }
+        }
+      >
+        □
+      </div>
+    </div>
+  </div>
+</div>
+`;
