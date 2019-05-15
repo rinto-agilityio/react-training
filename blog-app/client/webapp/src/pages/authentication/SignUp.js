@@ -14,12 +14,13 @@ import { CustomError } from '../../helpers/CustomError';
 
 //component
 import ErrorMessage from '../../components/commons/ErrorMessage';
+import Indicator from '../../components/commons/Indicator';
 
 const SignUp = props  => {
 
-  const email = useRef('')
-  const password = useRef('')
-  const name = useRef('')
+  const email = useRef('');
+  const password = useRef('');
+  const name = useRef('');
 
   const handleSignUp = (event, signUp) => {
 
@@ -29,7 +30,7 @@ const SignUp = props  => {
       email: email.current ? email.current.value : '',
       password: password.current ? password.current.value : '',
       name: name.current ? name.current.value : ''
-    }})
+    }});
   };
 
   return (
@@ -37,10 +38,11 @@ const SignUp = props  => {
       mutation={CREATE_USER}
       onCompleted={ () => props.history.push('/login') }
       // errorPolicy="all"
+      onError={()=>{}}
     >
       {(signUp, { data, loading, error }) => {
-
-        const errorSignUp = CustomError(error && error.graphQLErrors)
+        if (loading) return (<Indicator />);
+        const errorSignUp = CustomError(error && error.graphQLErrors);
 
       return (
         <div className="login-wrap">
@@ -75,10 +77,10 @@ const SignUp = props  => {
             </Form>
           </div>
         </div>
-      )
+      );
       }}
     </Mutation>
-  )
-}
+  );
+};
 
 export default SignUp;

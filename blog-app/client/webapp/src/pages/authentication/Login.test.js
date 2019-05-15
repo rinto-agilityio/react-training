@@ -52,7 +52,7 @@ describe('Login Component', () => {
     expect(renderComponent).toMatchSnapshot();
   });
 
-  it('Test Login button should be clicked', async () => {
+  it.skip('Test Login button should be clicked', async () => {
     const localStorageMock = {
       getItem: jest.fn(),
       setItem: jest.fn(),
@@ -70,6 +70,7 @@ describe('Login Component', () => {
       preventDefault: jest.fn()
     });
     await wait(10);
+
     expect(localStorageMock.setItem).toHaveBeenCalled();
   });
 

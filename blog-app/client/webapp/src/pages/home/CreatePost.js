@@ -1,8 +1,7 @@
 import React, { useRef } from 'react';
-import { Spinner, Button, Form } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { Mutation } from 'react-apollo';
 import PropTypes from 'prop-types';
-import AppConfig from '../../configs/AppConfig';
 
 //components
 import Input from '../../components/commons/Input';
@@ -40,13 +39,11 @@ const CreatePost = ({user, handleCloseModal, history}) => {
         handleCloseModal();
         history.push('/');
       }}
+      onError={() => {}}
     >
       {(createPost, { data, loading, error }) => {
-        if (loading) return (
-          <div className='wrap-loading'>
-            <Indicator />
-          </div>
-        );
+
+        if (loading) return (<Indicator />);
 
         if (error) return `Error! ${error.message}`;
 
@@ -66,7 +63,7 @@ const CreatePost = ({user, handleCloseModal, history}) => {
               />
 
               <div className='button-save-post'>
-                <Button variant="primary" type="submit">Save</Button>
+                <Button variant="primary" type="submit" >Save</Button>
               </div>
 
             </Form>

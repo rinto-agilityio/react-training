@@ -4,7 +4,7 @@ import React from 'react';
 
 // provider mock
 import { MockedProvider } from 'react-apollo/test-utils';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import waitForExpect from 'wait-for-expect';
 
 //components

@@ -1,34 +1,9 @@
 import { MockedProvider } from 'react-apollo/test-utils';
-import { CREATE_POST, EDIT_POST } from '../../graphql/post/mutations';
-
+import { CREATE_POST } from '../../graphql/post/mutations';
 import { Form } from 'react-bootstrap';
-
 import CreatePost from './CreatePost';
-
-const mocksClient = [
-  {
-    request: {
-      query: EDIT_POST,
-      variables: {
-        post:{
-          id: '1557799396370',
-          title: 'title123',
-          content: 'content123',
-          authorId: '1557377599679'
-        }
-      }
-    },
-    result: {
-      data: {
-        editPost: {
-          id: '1557799396370',
-          title: 'title123',
-          content: 'content123'
-        }
-      }
-    },
-  },
-];
+import Indicator from '../../components/commons/Indicator';
+import waitForExpect from 'wait-for-expect';
 
 const mocks = [
   {
@@ -56,17 +31,16 @@ const mocks = [
   }
 ];
 
+const props = {
+  history: {
+    push: jest.fn()
+  },
+  handleCloseModal: jest.fn()
+};
+
 describe('Test CreatePost', () => {
 
-  it('Test CreatePost mutation:', async () => {
-    const props = {
-      history: {
-        push: jest.fn()
-      },
-      isEdit: false,
-      handleCloseModal: jest.fn()
-    };
-
+  it('Testing CreatePost Loading state:', () => {
     const renderComponent = mount(
       <MockedProvider mocks={mocks} addTypename={false}>
         <CreatePost {...props}/>
@@ -74,40 +48,66 @@ describe('Test CreatePost', () => {
     );
 
     renderComponent.find(Form).simulate('submit', {
-        preventDefault: jest.fn()
-      }
-    );
+      preventDefault: jest.fn()
+    });
 
-    // await wait(0);
-    renderComponent.update();
-    const mutation = renderComponent.find('Mutation');
-    mutation.props().onCompleted();
-    expect(props.handleCloseModal).toBeCalled();
+    expect(renderComponent.find(Indicator).length).toEqual(1);
   });
 
-  it.skip('Test EditPost mutation:', async () => {
-    const props = {
-      history: {
-        push: jest.fn()
-      },
-      isEdit: true,
-      handleCloseModal: jest.fn()
-    };
+  it.skip('Testing CreatePost final state:', async () => {
     const renderComponent = mount(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <CreatePost {...props}/>
+        <CreatePost {...props} />
       </MockedProvider>
     );
 
     renderComponent.find(Form).simulate('submit', {
-        preventDefault: jest.fn()
-      }
+      preventDefault: jest.fn()
+    });
+
+    await waitForExpect(() => {
+      renderComponent.update();
+
+      expect(renderComponent.find(Form).exists()).toBeTruthy();
+    });
+  });
+
+  it('Testing CreatePost Erorr state:', async () => {
+    const mocksClient = [
+    {
+      request: {
+        query: CREATE_POST,
+        variables: {
+          id: '1557799396370',
+          title: 'title123',
+          content: 'content123',
+          authorId: '1557377599679'
+        }
+      },
+      error: new Error(),
+    }];
+
+    const props = {
+      history: {
+        push: jest.fn()
+      },
+      handleCloseModal: jest.fn(),
+
+    };
+
+    const renderComponent = mount(
+      <MockedProvider mocks={mocksClient} addTypename={false}>
+        <CreatePost {...props} />
+      </MockedProvider>
     );
 
-    // await wait(0);
-    renderComponent.update();
-    const mutation = renderComponent.find('Mutation');
-    mutation.props().onCompleted();
-    expect(props.handleCloseModal).toBeCalled();
+    renderComponent.find(Form).simulate('submit', {
+      preventDefault: jest.fn()
+    });
+
+    await waitForExpect(() => {
+      expect(renderComponent.text()).toContain('Error!');
+    });
   });
+
 });
