@@ -4,7 +4,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { withClientState } from 'apollo-link-state';
 import { GET_POST } from '../../graphql/post/queries';
 import waitForExpect from 'wait-for-expect';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 //components
 import HomePage from './HomePage';
@@ -60,36 +60,6 @@ describe('Test HomePage', () => {
               message: 'get posts success',
               success: true,
               posts: [
-                {
-                  'id': '1557394571405',
-                  'title': '33',
-                  'content': '3',
-                  'authorId': '1557377599679',
-                  'author': {
-                    'id': '1557377599679',
-                    'email': 'rin.to@gmail.com',
-                    'password': '123456',
-                    'name': 'rinto'
-                  }
-                },
-                {
-                  'id': '1557394571405',
-                  'title': '33',
-                  'content': '3',
-                  'authorId': '1557377599679',
-                  'author': {
-                    'id': '1557377599679',
-                    'email': 'rin.to@gmail.com',
-                    'password': '123456',
-                    'name': 'rinto'
-                  }
-                },
-                {
-                  'id': '1557394571405',
-                  'title': '33',
-                  'content': '3',
-                  'authorId': '1557377599679'
-                },
                 {
                   'id': '1557394571405',
                   'title': '33',
@@ -159,36 +129,6 @@ describe('Test HomePage', () => {
                     'password': '123456',
                     'name': 'rinto'
                   }
-                },
-                {
-                  'id': '1557394571405',
-                  'title': '33',
-                  'content': '3',
-                  'authorId': '1557377599679',
-                  'author': {
-                    'id': '1557377599679',
-                    'email': 'rin.to@gmail.com',
-                    'password': '123456',
-                    'name': 'rinto'
-                  }
-                },
-                {
-                  'id': '1557394571405',
-                  'title': '33',
-                  'content': '3',
-                  'authorId': '1557377599679'
-                },
-                {
-                  'id': '1557394571405',
-                  'title': '33',
-                  'content': '3',
-                  'authorId': '1557377599679',
-                  'author': {
-                    'id': '1557377599679',
-                    'email': 'rin.to@gmail.com',
-                    'password': '123456',
-                    'name': 'rinto'
-                  }
                 }
               ]
             }
@@ -220,6 +160,8 @@ describe('Test HomePage', () => {
 
     await waitForExpect(() => {
       renderComponent.update();
+
+      expect(renderComponent.find('.container').exists()).toEqual(true);
     });
   });
 });
