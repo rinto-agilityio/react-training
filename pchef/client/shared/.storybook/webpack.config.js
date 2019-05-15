@@ -1,4 +1,5 @@
-const path = require("path");
+const path = require('path')
+
 module.exports = ({ config }) => {
   config.module.rules.push(
     {
@@ -21,6 +22,14 @@ module.exports = ({ config }) => {
       }
     }
   );
-  config.resolve.extensions.push(".ts", ".tsx");
-  return config;
-};
+
+  storybookBaseConfig.module.rules.push({
+    test: /\.ttf$/,
+    loader: 'url-loader',
+    include: path.resolve(__dirname, '../', 'node_modules/react-native-vector-icons'),
+  });
+
+  config.resolve.extensions.push('.ts', '.tsx')
+
+  return config
+}
