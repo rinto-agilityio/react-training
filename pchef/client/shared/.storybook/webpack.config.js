@@ -23,7 +23,7 @@ module.exports = ({ config }) => {
     }
   );
 
-  storybookBaseConfig.module.rules.push({
+  config.module.rules.push({
     test: /\.ttf$/,
     loader: 'url-loader',
     include: path.resolve(__dirname, '../', 'node_modules/react-native-vector-icons'),
