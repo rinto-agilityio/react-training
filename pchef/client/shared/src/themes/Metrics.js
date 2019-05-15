@@ -66,4 +66,8 @@ export default {
   smallBgImage: 150,
   mediumBgImage: 230,
   largeBgImage: 300,
+
+  // Layer
+  activeItem: 0.2,
+  inactiveItem: 0.7,
 }

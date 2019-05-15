@@ -1,5 +1,6 @@
 export default {
   white: '#fff',
+  halfWhite: 'rgba(255, 255, 255, 0.5)',
   black: '#000',
   red: '#d32b53',
   blue: '#465bae',
