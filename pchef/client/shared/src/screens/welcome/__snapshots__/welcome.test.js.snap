@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Welcome snapshots 1`] = `ShallowWrapper {}`;
+
+exports[`Welcome snapshots 2`] = `ShallowWrapper {}`;
