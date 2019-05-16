@@ -15,14 +15,3 @@ it('renders correctly', () => {
 
   expect(recipeDetail).toMatchSnapshot()
 })
-
-it('renders correctly', () => {
-  const recopeDetail = mount(
-    <Recipe
-      recipe={recipe}
-      size="medium"
-      onSelectStep={jest.fn()}
-    />,
-  )
-  console.log(recopeDetail.defaultProps)
-})
