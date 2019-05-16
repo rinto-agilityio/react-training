@@ -1,4 +1,4 @@
-// libs
+// Libs
 import React from 'react'
 import { View, Text } from 'react-native'
 import Wrapper from '../../../../layout/Wrapper'
