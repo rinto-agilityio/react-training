@@ -71,4 +71,9 @@ export default {
   smallBadge: 5,
   mediumBadge: 10,
   largeBadge: 16,
+
+  // Avatar
+  smallAvatar: 40,
+  mediumAvatar: 60,
+  largeAvatar: 70,
 }
