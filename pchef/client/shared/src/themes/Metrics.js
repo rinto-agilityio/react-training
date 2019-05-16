@@ -76,4 +76,8 @@ export default {
   smallAvatar: 40,
   mediumAvatar: 60,
   largeAvatar: 70,
+
+  // Layer
+  activeItem: 0.2,
+  inactiveItem: 0.7,
 }
