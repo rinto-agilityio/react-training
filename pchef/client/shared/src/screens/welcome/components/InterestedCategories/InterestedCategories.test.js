@@ -7,6 +7,7 @@ it('InterestedCategories snapshots', () => {
   const props = {
     onChooseCategory: () => {},
     activeList: [categories[0].id, categories[1].id],
+    categories,
   }
 
   const primaryComponent = shallow(
@@ -26,6 +27,7 @@ it('InterestedCategories actions', () => {
     customStyle: {},
     onChooseCategory: jest.fn(),
     activeList: [categories[0].id, categories[1].id],
+    categories,
   }
 
   const component = shallow(<InterestedCategories {...props} />)
