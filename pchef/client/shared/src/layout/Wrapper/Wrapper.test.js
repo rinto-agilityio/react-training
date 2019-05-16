@@ -1,24 +1,38 @@
+// Libs
+import React from 'react'
+import renderer from 'react-test-renderer'
+
 // Components
-import { Text } from 'react-native'
 import Wrapper from '.'
 
-it('Wrapper snapshot', () => {
-  // define props
-  const props = {
-    direction: 'row',
-    childPosition: 'start',
-    flexGrow: 0,
-    customStyles: {
-      width: 200,
-    },
-    onLayout: () => {},
-  }
+const props = {
+  onLayout: jest.fn(),
+}
 
-  const wrapper = shallow(
-    <Wrapper {...props}>
-      <Text>Test</Text>
-    </Wrapper>,
-  )
+const renderComponent = renderer.create(
+  <Wrapper {...props}>
+    <p>test</p>
+  </Wrapper>
+)
 
-  expect(wrapper).toMatchSnapshot()
+describe('Components', () => {
+  describe('Wrapper', () => {
+    let component
+
+    beforeEach(() => {
+      component = shallow(
+        <Wrapper {...props}>
+          <p>test</p>
+        </Wrapper>
+      )
+    })
+    it('should render Button component', () => {
+      expect(renderComponent).toMatchSnapshot()
+    })
+
+    it('should have call onLayout', () => {
+      component.props().onLayout()
+      expect(props.onLayout).toHaveBeenCalled()
+    })
+  })
 })
