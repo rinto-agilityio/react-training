@@ -29,7 +29,7 @@ const Comment = ({
   name,
   text,
   customStyle,
-  type = 'primary',
+  type,
   publishedAt,
   isGetTime,
   customNameStyles,
