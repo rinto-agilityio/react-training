@@ -2,7 +2,7 @@
 import { StyleSheet } from 'react-native'
 
 // Themes
-import { COLORS, METRICS } from '../../../../themes'
+import { COLORS, METRICS, FONTS } from '../../../../themes'
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -21,13 +21,13 @@ const styles = StyleSheet.create({
     paddingRight: METRICS.largePadding,
   },
   smallTitle: {
-    fontSize: METRICS.fontSize.medium,
+    fontSize: FONTS.fontSize.medium,
   },
   mediumTitle: {
-    fontSize: METRICS.fontSize.large,
+    fontSize: FONTS.fontSize.large,
   },
   largeTitle: {
-    fontSize: METRICS.fontSize.extraLarge,
+    fontSize: FONTS.fontSize.extraLarge,
   },
 
   // Description
@@ -38,13 +38,13 @@ const styles = StyleSheet.create({
     paddingRight: METRICS.largePadding,
   },
   smallDescription: {
-    fontSize: METRICS.fontSize.small,
+    fontSize: FONTS.fontSize.small,
   },
   mediumDescription: {
-    fontSize: METRICS.fontSize.medium,
+    fontSize: FONTS.fontSize.medium,
   },
   largeDescription: {
-    fontSize: METRICS.fontSize.large,
+    fontSize: FONTS.fontSize.large,
   },
 
   // Image

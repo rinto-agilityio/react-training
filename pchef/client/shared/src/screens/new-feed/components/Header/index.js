@@ -1,4 +1,4 @@
-// libs
+// Libs
 import React from 'react'
 import { View, Text } from 'react-native'
 import Wrapper from '../../../../layout/Wrapper'
@@ -6,7 +6,7 @@ import Icon from '../../../../components/Icon'
 import Image from '../../../../components/Image'
 
 // Themes
-import { COLORS, METRICS } from '../../../../themes'
+import { COLORS, FONTS } from '../../../../themes'
 
 // Styles
 import styles from './styles'
@@ -31,12 +31,11 @@ const Header = ({
     ]}
   >
     <Icon
-      name="th"
-      size={size === 'large' ? METRICS.fontSize.extraExtraLarge : METRICS.fontSize.extraLarge}
+      name="apps"
+      size={size === 'large' ? FONTS.fontSize.extraExtraLarge : FONTS.fontSize.extraLarge}
       onClick={onClickIcon}
       color={COLORS.white}
       wrapperIconStyle={styles.wrapIcon}
-      underlayColor="transparent"
     />
     <Wrapper direction="row">
       <Image

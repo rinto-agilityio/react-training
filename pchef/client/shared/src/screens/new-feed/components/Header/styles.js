@@ -2,7 +2,7 @@
 import { StyleSheet } from 'react-native'
 
 // Themes
-import { COLORS, METRICS } from '../../../../themes'
+import { COLORS, METRICS, FONTS } from '../../../../themes'
 
 // Create style for Header
 const styles = StyleSheet.create({
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     marginLeft: METRICS.largeMargin,
   },
   text: {
-    fontSize: METRICS.fontSize.extraLarge,
+    fontSize: FONTS.fontSize.extraLarge,
     color: COLORS.white,
     fontWeight: 'bold',
   },
