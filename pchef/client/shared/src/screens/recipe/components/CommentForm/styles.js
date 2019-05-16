@@ -1,4 +1,7 @@
+// Libs
 import { StyleSheet } from 'react-native'
+
+// Themes
 import { METRICS, COLORS, FONTS } from '../../../../themes'
 
 export default StyleSheet.create({
@@ -30,16 +33,13 @@ export default StyleSheet.create({
   badgeContainer: {
     position: 'absolute',
     bottom: 0,
-    right: 5,
+    borderRadius: '50%',
+    backgroundColor: COLORS.green,
   },
   primaryBadge: {
-    width: METRICS.mediumBadge,
-    height: METRICS.mediumBadge,
-    borderRadius: METRICS.smallBorderRadius,
+    right: METRICS.mediumBadge,
   },
   secondaryBadge: {
-    width: METRICS.largeBadge,
-    height: METRICS.largeBadge,
-    borderRadius: METRICS.mediumBorderRadius,
+    right: METRICS.smallBadge,
   },
 })

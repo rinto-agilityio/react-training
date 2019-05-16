@@ -1,11 +1,17 @@
+// Libs
 import React from 'react'
 import { View } from 'react-native'
-import { Avatar, Badge } from 'react-native-elements'
-import { COLORS } from '../../../../themes'
+import { Avatar, Badge } from 'react-native-paper'
+
+// Styles
 import TextBox from '../../../../components/TextBox'
+
+// Themes
+import { COLORS, METRICS } from '../../../../themes'
+
+// Components
 import styles from './styles'
 
-// Comment form props type
 type Props = {
   avatarUri?: string,
   customStyle?: {} | Array<{}>,
@@ -14,7 +20,6 @@ type Props = {
   commentRef: { current: HTMLInputElement | null },
 }
 
-// component Comment Form
 const CommentForm = ({
   avatarUri,
   customStyle,
@@ -22,23 +27,22 @@ const CommentForm = ({
   onSubmit,
   commentRef,
 }: Props) => {
-  // define avatar size follow type
-  const avatarSize = type === 'primary' ? 'small' : 'medium'
+  // define avatar/badge size follow type
+  const avatarSize = type === 'primary' ? METRICS.mediumAvatar : METRICS.largeAvatar
+  const badgeSize = type === 'primary' ? METRICS.mediumBadge : METRICS.largeBadge
 
   return (
     <View style={[styles.container, customStyle]}>
       <View style={styles.userAvatar}>
-        <Avatar
-          rounded
+        <Avatar.Image
           size={avatarSize}
           source={{
             uri: avatarUri,
           }}
         />
         <Badge
-          status="success"
-          containerStyle={styles.badgeContainer}
-          badgeStyle={styles[`${type}Badge`]}
+          style={[styles.badgeContainer, styles[`${type}Badge`]]}
+          size={badgeSize}
         />
       </View>
       <View style={styles.inputWrapper}>
@@ -47,7 +51,7 @@ const CommentForm = ({
           refInput={commentRef}
           onSubmitEditing={onSubmit}
           customStyle={[styles.input, styles[`${type}Input`]]}
-          placeholderTextColor={COLORS.gray}
+          placeholderTextColor={COLORS.grayNavy}
         />
       </View>
     </View>
