@@ -19,7 +19,8 @@ module.exports = ({ config }) => {
           ]
         ],
         cacheDirectory: true
-      }
+      },
+      exclude: path.resolve(__dirname, '../', 'node_modules/fromnow')
     }
   );
 
