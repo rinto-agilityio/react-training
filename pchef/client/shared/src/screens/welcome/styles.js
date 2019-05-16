@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   },
   next: {
     fontWeight: FONTS.fontWeight.large,
-    color: COLORS.gray,
+    color: 'gray',
   },
   primaryNext: {
     fontSize: FONTS.fontSize.medium,
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     fontSize: FONTS.fontSize.base,
   },
   introduction: {
-    color: '#5AADF3',
+    color: COLORS.flowerBlue,
     textAlign: 'center',
     fontWeight: FONTS.fontWeight.large,
     marginTop: METRICS.mediumMargin + METRICS.smallMargin,
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     marginBottom: METRICS.extraLargeMargin,
   },
   categoryWrapper: {
-    maxWidth: 800,
+    maxWidth: METRICS.largeContent,
     marginLeft: 'auto',
     marginRight: 'auto',
   },
