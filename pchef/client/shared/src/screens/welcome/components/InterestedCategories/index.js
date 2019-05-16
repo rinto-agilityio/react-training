@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
-import { categories } from '../../../../mocks'
 import Wrapper from '../../../../layout/Wrapper'
 import styles from './styles'
 
@@ -10,6 +9,7 @@ type Props = {
   type?: string,
   onChooseCategory: (id: string) => void,
   activeList: Array<string>,
+  categories: Array<{ id: string, name: string, image: string }>,
 }
 
 // component Comment Form
@@ -18,6 +18,7 @@ const InterestedCategories = ({
   type = 'primary',
   activeList,
   onChooseCategory,
+  categories,
 }: Props) => {
   // declare state item size
   const [itemSize, setItemSize] = useState({ width: 0, height: 0 })
