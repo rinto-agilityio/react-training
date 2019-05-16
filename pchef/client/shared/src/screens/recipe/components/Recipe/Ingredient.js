@@ -5,9 +5,6 @@ import { Text } from 'react-native'
 // Styles
 import styles from './styles'
 
-// Helpers
-import { trim } from '../../../../helpers/utils'
-
 type Props = {
   item: string,
   size: string,
@@ -26,7 +23,7 @@ const Ingredient = ({
       customDescription,
     ]}
   >
-    {trim(item)}
+    {item ? item.trim() : ''}
   </Text>
 )
 
