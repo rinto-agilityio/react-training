@@ -54,24 +54,26 @@ const Header = ({
   ]
 
   return (
-    <View style={[styles.wrapperHeader, styles[`${size}Header`]]}>
-      <ImageBackground
-        url={imgUrl}
-        customImageBg={METRICS.flexCenter}
-        resizeMode="cover"
-      >
-        <Text style={[styles.title, styles[`${size}Title`], customTitle]}>
-          {name}
-        </Text>
-        <Button
-          title="Following"
-          typeName="outline"
-          onClick={onFollowing}
-          buttonStyle={styles.button}
-          titleStyle={styles.titleBtn}
-          size={size}
-        />
-      </ImageBackground>
+    <>
+      <View style={[styles.wrapperHeader, styles[`${size}Header`]]}>
+        <ImageBackground
+          url={imgUrl}
+          customImageBg={METRICS.flexCenter}
+          resizeMode="cover"
+        >
+          <Text style={[styles.title, styles[`${size}Title`], customTitle]}>
+            {name}
+          </Text>
+          <Button
+            title="Following"
+            typeName="outline"
+            onPress={onFollowing}
+            buttonStyle={styles.button}
+            titleStyle={styles.titleBtn}
+            size={size}
+          />
+        </ImageBackground>
+      </View>
       <View style={[styles.wrapperHeaderIcon, customWrapperIcon]}>
         {data.map(item => (
           <Icon
@@ -84,7 +86,7 @@ const Header = ({
           />
         ))}
       </View>
-    </View>
+    </>
   )
 }
 
