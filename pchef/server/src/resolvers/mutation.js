@@ -19,7 +19,23 @@ const {
   toggleItemInArray,
 } = require('../helpers/handle-data')
 
+// Mocking data
+const { categories, cookingTypes } = require('../mocks')
+
 const Mutation = {
+  /**
+   * Init data for app
+   * This should be call one
+   */
+  initData: () => {
+    console.log('init data for api')
+    Promise.all(categories).then(category => {
+      console.log(`add category doc: ${category.title}`)
+    })
+
+    return 'Done'
+  },
+
   // User
   createUser: (_, { email, password, name }) => (
     createUserWithEmailAndPassword(email, password, name)
