@@ -1,10 +1,17 @@
+// Libs
 import React from 'react'
 import { View, Text } from 'react-native'
-import { Avatar } from 'react-native-elements'
+import { Avatar } from 'react-native-paper'
+
+// Helpers
 import { getPublishedTime } from '../../../../helpers/date-time'
+
+// Styles
 import styles from './styles'
 
-// Comment props type
+// Themes
+import { METRICS } from '../../../../themes'
+
 type Props = {
   avatarUri?: string,
   name: string,
@@ -17,7 +24,6 @@ type Props = {
   customContentStyles?: {},
 }
 
-// component Comment
 const Comment = ({
   avatarUri,
   name,
@@ -36,13 +42,12 @@ const Comment = ({
   const containerStyle = [styles.container, customStyle]
 
   // define avatar size follow type
-  const avatarSize = type === 'primary' ? 'small' : 'medium'
+  const avatarSize = true ? METRICS.mediumAvatar : METRICS.largeAvatar
 
   return (
     <View style={containerStyle}>
       <View style={styles.userAvatar}>
-        <Avatar
-          rounded
+        <Avatar.Image
           size={avatarSize}
           source={{
             uri: avatarUri,
