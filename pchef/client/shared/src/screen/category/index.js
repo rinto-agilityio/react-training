@@ -17,7 +17,7 @@ type Props = {
   recipes: Array<{
     id: number,
     title: string,
-    image: string,
+    imgUrl: string,
     description: string,
   }>,
 }
@@ -26,10 +26,10 @@ const CategoryScreen = ({ category, recipes }: Props) => {
 
   return (
     <>
-      <Header category={category} isGrid sizeType={size} />
+      <Header category={category} isGrid size={size} />
       <View style={styles.container}>
         {recipes.map(recipe => (
-          <Recipe key={recipe.id} recipe={recipe} sizeType={size} />
+          <Recipe key={recipe.id} recipe={recipe} size={size} />
         ))}
       </View>
     </>

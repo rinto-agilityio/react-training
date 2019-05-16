@@ -16,7 +16,7 @@ import Button from '../../../../components/Button'
 type Props = {
   category: {
     name: string,
-    image: string,
+    imgUrl: string,
   },
   customTitle?: {},
   isGrid: boolean,
@@ -35,7 +35,7 @@ const Header = ({
   onSelectListView,
   size = '',
 }: Props) => {
-  const { name, image } = category
+  const { name, imgUrl } = category
 
   // Data render list view category
   const data = [
@@ -57,7 +57,7 @@ const Header = ({
     <>
       <View style={[styles.wrapperHeader, styles[`${size}Header`]]}>
         <ImageBackground
-          url={image}
+          url={imgUrl}
           customImageBg={METRICS.flexCenter}
           resizeMode="cover"
         >
