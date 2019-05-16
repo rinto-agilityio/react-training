@@ -8,14 +8,16 @@ import Comment from '.'
 storiesOf('Comment', module)
   .add('primary', () => (
     <Comment
-      avatarUri="https://vcdn-ngoisao.vnecdn.net/2018/01/19/1-8515-1516314392.jpg"
       name="Andy"
+      publishedAt={Date.now()}
+      text="Yummy"
     />
   ))
   .add('secondary', () => (
     <Comment
-      avatarUri="https://vcdn-ngoisao.vnecdn.net/2018/01/19/1-8515-1516314392.jpg"
-      name="Andy"
       type="secondary"
+      name="Andy"
+      publishedAt={Date.now()}
+      text="Yummy"
     />
   ))
