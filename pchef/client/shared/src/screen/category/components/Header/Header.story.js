@@ -9,5 +9,5 @@ import Header from '.'
 import { category } from '../../../../mocks'
 
 storiesOf('Header', module).add('default', () => (
-  <Header category={category} isGrid size="large" />
+  <Header category={category} isGrid sizeType="large" />
 ))
