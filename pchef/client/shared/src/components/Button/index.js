@@ -8,14 +8,14 @@ import { COLORS } from '../../themes/index'
 
 type Props = {
   onPress?: () => void,
-  buttonStyle?: {},
+  buttonStyle?: {} | Array<{}>,
   title: string,
-  titleStyle?: {},
+  titleStyle?: {} | Array<{}>,
   disabled?: boolean,
   mode?: string,
   contentStyle?: {},
   color?: string,
-  loading?: Boolean,
+  loading?: boolean,
   type?: string,
 }
 

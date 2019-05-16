@@ -66,4 +66,9 @@ export default {
   smallBgImage: 150,
   mediumBgImage: 230,
   largeBgImage: 300,
+
+  // Badge
+  smallBadge: 5,
+  mediumBadge: 10,
+  largeBadge: 16,
 }

@@ -37,10 +37,9 @@ const Direction = ({
   >
     <Button
       title={item.step.toString()}
-      type="Solid Button"
       buttonStyle={[styles.button, styles[`${size}Button`]]}
       titleStyle={[styles.titleBtn, styles[`${size}TitleBtn`]]}
-      onClick={onSelectStep}
+      onPress={onSelectStep}
     />
     <Text style={styles.wrapperDescriptions}>
       <Text
