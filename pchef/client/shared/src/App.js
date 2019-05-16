@@ -7,36 +7,33 @@
  */
 
 import React, { Component } from 'react'
-import { Platform, StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
+import { ApolloProvider } from 'react-apollo'
 
 import {
   Provider as PaperProvider,
   Button as PaperButton,
 } from 'react-native-paper'
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-})
+// Apollo Client
+// $FlowFixMe
+import client from './config/apollo-client'
 
 type Props = {}
 
 export default class App extends Component<Props> {
   render() {
     return (
-      <PaperProvider>
-        <View style={styles.container}>
-          <Text style={styles.welcome}>PaperProvider</Text>
-          <Text style={styles.welcome}>Welcome to React Native!</Text>
-          <Text style={styles.instructions}>To get started, edit App.js</Text>
-          <Text style={styles.instructions}>{instructions}</Text>
-          <PaperButton mode="contained" onPress={() => {}}>
-            PaperButton
-          </PaperButton>
-        </View>
-      </PaperProvider>
+      <ApolloProvider client={client}>
+        <PaperProvider>
+          <View style={styles.container}>
+            <Text style={styles.welcome}>Shared-components for both Web and Mobile</Text>
+            <PaperButton mode="contained" onPress={() => {}}>
+              PaperButton
+            </PaperButton>
+          </View>
+        </PaperProvider>
+      </ApolloProvider>
     )
   }
 }
