@@ -29,7 +29,7 @@ export default {
 
   // Wrapper
   smallWrapper: 150,
-  mediumWrapper: 170,
+  mediumWrapper: 200,
   largeWrapper: 300,
   extraLargeWrapper: 380,
 
@@ -80,4 +80,9 @@ export default {
   // Layer
   activeItem: 0.2,
   inactiveItem: 0.7,
+
+  // Border
+  smallBorderWidth: 1,
+  mediumBorderWidth: 3,
+  largeBorderWidth: 5,
 }
