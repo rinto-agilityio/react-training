@@ -12,7 +12,7 @@ const typeDefs = gql`
 
   type Category {
     id: String!
-    title: String!
+    name: String!
     imgUrl: String
     recipes: [Recipe]
   }
@@ -90,7 +90,7 @@ const typeDefs = gql`
     initData: String!
 
     createCategory(
-      title: String!
+      name: String!
       imgUrl: String!
     ): Category!
 
