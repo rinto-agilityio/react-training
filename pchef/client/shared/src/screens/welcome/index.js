@@ -9,7 +9,7 @@ type Props = {
   customStyle?: {},
   type?: string,
   onChooseCategories: (categories: Array<string>) => void,
-  categories: Array<{ id: string, name: string, image: string }>,
+  categories: Array<{ id: string, name: string, imgUrl: string }>,
 }
 
 // component Comment Form
