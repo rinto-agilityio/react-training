@@ -5,7 +5,7 @@ import React from 'react'
 import styles from './styles'
 
 // Themes
-import { COLORS, METRICS } from '../../../../themes'
+import { COLORS, FONTS } from '../../../../themes'
 
 // Components
 import Button from '../../../../components/Button'
@@ -18,18 +18,36 @@ type Props = {
   }>,
   size: string,
   step: number,
-  onClickStep?: () => void,
-  onClickSelectStep?: () => void,
+  onPressStep?: () => void,
+  onPressSelectStep?: () => void,
   customStepBtn?: {},
 }
+
+const chevronIcon = (
+  name: string,
+  size: string,
+  disabled: boolean,
+  onPress: () => void
+) => (
+  <Icon
+    name={name}
+    size={FONTS.fontSize[`${size}`]}
+    color={disabled ? COLORS.baseGray : COLORS.baseBlue}
+    onPress={onPress}
+    disabled={disabled}
+    customIconStyles={{
+      margin: 0,
+    }}
+  />
+)
 
 const Progress = ({
   steps = [],
   size = 'large',
   step,
-  onClickStep,
+  onPressStep,
   customStepBtn,
-  onClickSelectStep,
+  onPressSelectStep,
 }: Props) => {
   // Disabled prev/next icon if current step is first/last step
   const disablePrevIcon = step === 1
@@ -37,17 +55,7 @@ const Progress = ({
 
   return (
     <Wrapper direction="row">
-      <Icon
-        name="chevron-left"
-        size={METRICS.fontSize[`${size}`]}
-        color={disablePrevIcon ? COLORS.baseGray : COLORS.baseBlue}
-        onClick={onClickSelectStep}
-        underlayColor="transparent"
-        disabled={disablePrevIcon}
-        disabledStyle={{
-          backgroundColor: 'transparent',
-        }}
-      />
+      {chevronIcon('chevron-left', size, disablePrevIcon, onPressSelectStep)}
       <Wrapper direction="row">
         {steps.map(item => {
           const status = step === item.step ? 'active' : 'inactive'
@@ -55,38 +63,27 @@ const Progress = ({
           return (
             <Button
               key={item.step}
-              onClick={onClickStep}
+              onPress={onPressStep}
               buttonStyle={[
                 styles.progressStep,
                 styles[`${status}Step`],
-                styles[`${size}Step`],
                 customStepBtn,
               ]}
-              typeName="solid"
+              contentStyle={styles[`${size}Step`]}
               title=""
             />
           )
         })}
       </Wrapper>
-      <Icon
-        name="chevron-right"
-        size={METRICS.fontSize[`${size}`]}
-        color={disabledNextIcon ? COLORS.baseGray : COLORS.baseBlue}
-        onClick={onClickSelectStep}
-        underlayColor="transparent"
-        disabled={disabledNextIcon}
-        disabledStyle={{
-          backgroundColor: 'transparent',
-        }}
-      />
+      {chevronIcon('chevron-right', size, disabledNextIcon, onPressSelectStep)}
     </Wrapper>
   )
 }
 
 Progress.defaultProps = {
-  onClickStep: () => {},
+  onPressStep: () => {},
   customStepBtn: {},
-  onClickSelectStep: () => {},
+  onPressSelectStep: () => {},
 }
 
 export default Progress
