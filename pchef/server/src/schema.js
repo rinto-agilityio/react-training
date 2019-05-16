@@ -87,6 +87,8 @@ const typeDefs = gql`
   }
 
   type Mutation {
+    initData: String!
+
     createCategory(
       title: String!
       imgUrl: String!

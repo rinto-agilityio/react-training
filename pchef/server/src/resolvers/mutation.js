@@ -29,9 +29,18 @@ const Mutation = {
    */
   initData: () => {
     console.log('init data for api')
-    Promise.all(categories).then(category => {
-      console.log(`add category doc: ${category.title}`)
-    })
+
+    // Adding data for Category
+    categories.forEach(category => {
+      return addDocument(COLLECTION_NAME.CATEGORY, category)
+        .then(() => console.log(`Added category: ${category.name}`))
+    });
+
+    // Adding data for Category
+    cookingTypes.forEach(name => {
+      return addDocument(COLLECTION_NAME.COOKING_TYPE, { name })
+        .then(() => console.log(`Added cookingType: ${name}`))
+    });
 
     return 'Done'
   },
