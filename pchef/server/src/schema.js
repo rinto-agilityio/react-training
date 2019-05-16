@@ -77,6 +77,8 @@ const typeDefs = gql`
     getCategory(id: String!): Category!
     getAllCategories: [Category]
 
+    getAllCookingTypes: [CookingType]
+
     getRecipe(id: String!): Recipe!
     getAllRecipes: [Recipe]
 
