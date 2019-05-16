@@ -1,8 +1,10 @@
 export const recipe = {
-  description: '2lb pork neck bones, 2lb beef bones, 1lb oxtail',
   title: 'Bun Bo Hue Recipe',
+  subTitle: 'Traditional food',
+  description: '2lb pork neck bones, 2lb beef bones, 1lb oxtail',
   imgUrl: 'https://vcdn-ngoisao.vnecdn.net/2018/01/19/1-8515-1516314392.jpg',
   votes: [1],
+  views: 1,
   steps: [
     {
       step: 1,
