@@ -18,4 +18,5 @@ export default {
   blackLighter: 'rgba(0, 0, 0, 0.71)',
   grayNavy: '#a1a0b0',
   yellow: '#fc0',
+  flowerBlue: '#5aadf3',
 }
