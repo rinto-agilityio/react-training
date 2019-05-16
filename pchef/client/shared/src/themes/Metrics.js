@@ -67,6 +67,16 @@ export default {
   mediumBgImage: 230,
   largeBgImage: 300,
 
+  // Badge
+  smallBadge: 5,
+  mediumBadge: 10,
+  largeBadge: 16,
+
+  // Avatar
+  smallAvatar: 40,
+  mediumAvatar: 60,
+  largeAvatar: 70,
+
   // Layer
   activeItem: 0.2,
   inactiveItem: 0.7,

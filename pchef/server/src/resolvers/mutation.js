@@ -19,7 +19,32 @@ const {
   toggleItemInArray,
 } = require('../helpers/handle-data')
 
+// Mocking data
+const { categories, cookingTypes } = require('../mocks')
+
 const Mutation = {
+  /**
+   * Init data for app
+   * This should be call one
+   */
+  initData: () => {
+    console.log('init data for api')
+
+    // Adding data for Category
+    categories.forEach(category => {
+      return addDocument(COLLECTION_NAME.CATEGORY, category)
+        .then(() => console.log(`Added category: ${category.name}`))
+    });
+
+    // Adding data for Category
+    cookingTypes.forEach(name => {
+      return addDocument(COLLECTION_NAME.COOKING_TYPE, { name })
+        .then(() => console.log(`Added cookingType: ${name}`))
+    });
+
+    return 'Done'
+  },
+
   // User
   createUser: (_, { email, password, name }) => (
     createUserWithEmailAndPassword(email, password, name)

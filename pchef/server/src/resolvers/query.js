@@ -11,9 +11,6 @@ const {
   getCollectionWithConditions,
 } = require('../helpers/firestore')
 
-/* eslint-disable no-unused-vars */
-// Disable no-unused-vars for authenticated need context to get UserInfo
-
 const Query = {
   // Category
   getCategory: authenticated((_, { id }, context) => {
@@ -39,7 +36,7 @@ const Query = {
   }),
 
   getAllCategories: authenticated((_, args, context) => (
-    getCollection('categories')
+    getCollection(COLLECTION_NAME.CATEGORY)
       .then(categories => (
         map(categories, category => {
           const queryConditions = [
@@ -60,6 +57,11 @@ const Query = {
             }))
         })
       ))
+  )),
+
+  // CokingType
+  getAllCookingTypes: authenticated((_, args, context) => (
+    getCollection(COLLECTION_NAME.COOKING_TYPE)
   )),
 
   // Recipe
@@ -111,6 +113,5 @@ const Query = {
       .catch(error => error)
   }),
 }
-/* eslint-enable */
 
 module.exports = Query
