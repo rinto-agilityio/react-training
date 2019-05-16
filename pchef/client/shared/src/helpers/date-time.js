@@ -1,4 +1,4 @@
-// import fromNow from 'fromnow'
+import fromNow from 'fromnow'
 
 /**
  * Get full date for calendar by format YYYY-MM-DD
@@ -47,4 +47,4 @@ export const getDateOfWeek = () => {
  * @param {number} time is a timestamp
  * @return {string} time published from now
  */
-// export const getPublishedTime = (time: number) => fromNow(time, { and: true, suffix: true, max: 2 })
+export const getPublishedTime = (time: number) => fromNow(time, { and: true, suffix: true, max: 2 })
