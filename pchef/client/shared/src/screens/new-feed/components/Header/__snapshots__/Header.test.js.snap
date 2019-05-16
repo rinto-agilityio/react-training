@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="css-view-1dbjc4n r-alignItems-1habvwh r-backgroundColor-kemksi"
+>
+  <div
+    className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-marginLeft-1joea0r r-marginTop-156q2ks"
+  >
+    <div
+      className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+      data-focusable={true}
+      disabled={false}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      role="button"
+      tabIndex="0"
+    >
+      <span
+        className="css-hitSlop-mjp8i1"
+        style={
+          Object {
+            "bottom": "-6px",
+            "left": "-6px",
+            "right": "-6px",
+            "top": "-6px",
+          }
+        }
+      />
+      <div
+        className="css-view-1dbjc4n"
+      >
+        <div
+          className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+          dir="auto"
+          focusable={false}
+          role="img"
+          style={
+            Object {
+              "color": "rgba(255,255,255,1.00)",
+              "fontSize": "28px",
+            }
+          }
+        >
+          □
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-view-1dbjc4n r-alignItems-1awozwy r-display-6koalj r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-a2tzq0"
+    style={
+      Object {
+        "WebkitBoxFlex": 0,
+        "WebkitFlexGrow": 0,
+        "flexGrow": 0,
+        "msFlexPositive": 0,
+      }
+    }
+  >
+    <div
+      className="css-view-1dbjc4n r-cursor-1loqt21 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr"
+      data-focusable={true}
+      disabled={false}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      tabIndex="0"
+    >
+      <div
+        className="css-view-1dbjc4n r-flexBasis-1mlwlqe r-overflow-1udh08x r-zIndex-417010"
+        style={
+          Object {
+            "height": "80px",
+            "width": "80px",
+          }
+        }
+      >
+        <div
+          className="css-view-1dbjc4n r-backgroundColor-1niwhzg r-backgroundPosition-vvn4in r-backgroundRepeat-u6sd8q r-backgroundSize-4gszlv r-bottom-1p0dtai r-height-1pi2tsx r-left-1d2f490 r-position-u8s1d r-right-zchlnj r-top-ipm5af r-width-13qz1uu r-zIndex-1wyyakw"
+          style={
+            Object {
+              "backgroundImage": "url(\\"http://www.kptncook.com/assets/downloads/AppIcon/KptnCook_AppIcon.png\\")",
+            }
+          }
+        />
+        <img
+          alt=""
+          className="css-accessibilityImage-9pa8cd"
+          draggable={false}
+          src="http://www.kptncook.com/assets/downloads/AppIcon/KptnCook_AppIcon.png"
+        />
+      </div>
+    </div>
+    <div
+      className="css-text-76zvg2 r-color-jwli3a r-fontSize-zz5t5d r-fontWeight-vw2c0b"
+      dir="auto"
+    >
+      Cooking
+    </div>
+  </div>
+</div>
+`;
