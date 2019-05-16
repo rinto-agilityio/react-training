@@ -12,7 +12,7 @@ const typeDefs = gql`
 
   type Category {
     id: String!
-    title: String!
+    name: String!
     imgUrl: String
     recipes: [Recipe]
   }
@@ -77,6 +77,8 @@ const typeDefs = gql`
     getCategory(id: String!): Category!
     getAllCategories: [Category]
 
+    getAllCookingTypes: [CookingType]
+
     getRecipe(id: String!): Recipe!
     getAllRecipes: [Recipe]
 
@@ -87,8 +89,10 @@ const typeDefs = gql`
   }
 
   type Mutation {
+    initData: String!
+
     createCategory(
-      title: String!
+      name: String!
       imgUrl: String!
     ): Category!
 
