@@ -1,4 +1,7 @@
 {
+  "globals": {
+    "renderer": true
+  },
   "extends": [
     "prettier",
     "prettier/flowtype",
