@@ -1,19 +1,29 @@
-// Libs
-import renderer from 'react-test-renderer'
-
 // Helpers
 import { recipe } from '../../../../mocks/recipe'
 
 // Components
 import Recipe from '.'
 
-it('renders correctly', () => {
-  const component = renderer.create(
-    <Recipe
-      size="medium"
-      recipe={recipe}
-    />,
-  ).toJSON()
+describe('Recipe new feed', () => {
+  const props = {
+    recipe,
+    onSelectStep: jest.fn(),
+  }
+  const component = shallow(<Recipe {...props} />)
 
-  expect(component).toMatchSnapshot()
-});
+  it('renders correctly recipe commponent', () => {
+    expect(component).toMatchSnapshot()
+  })
+
+  it('Render recipe component with size medium', () => {
+    component.setProps({
+      size: 'medium',
+    })
+    expect(component).toMatchSnapshot()
+  })
+
+  it('Function props should be defined', () => {
+    Recipe.defaultProps.onPress()
+    expect(Recipe.defaultProps.onPress).toBeDefined()
+  })
+})
