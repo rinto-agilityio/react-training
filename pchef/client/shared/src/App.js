@@ -19,6 +19,9 @@ import {
 // $FlowFixMe
 import client from './config/apollo-client'
 
+// Containers
+import LoginContainer from './containers/Login'
+
 type Props = {}
 
 export default class App extends Component<Props> {
@@ -31,6 +34,18 @@ export default class App extends Component<Props> {
             <PaperButton mode="contained" onPress={() => {}}>
               PaperButton
             </PaperButton>
+            <LoginContainer>
+              {
+                ({ signInUser }) => (
+                  <PaperButton
+                    mode="contained"
+                    onPress={() => signInUser('user1@gmail.com', 'user1@pwd')}
+                  >
+                    SubmitLogin
+                  </PaperButton>
+                )
+              }
+            </LoginContainer>
           </View>
         </PaperProvider>
       </ApolloProvider>
