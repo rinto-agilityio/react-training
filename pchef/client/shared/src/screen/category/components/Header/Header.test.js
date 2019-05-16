@@ -6,10 +6,10 @@ import renderer from 'react-test-renderer'
 import Header from '.'
 
 // Mock
-import { category } from '../../../../mocks'
+import { categories } from '../../../../mocks'
 
 const props = {
-  category,
+  category: categories[0],
 }
 
 describe('Components', () => {
@@ -30,7 +30,7 @@ describe('Components', () => {
         component
           .find('Icon')
           .at(0)
-          .props().color,
+          .props().color
       ).toEqual('#c5c5c5')
     })
   })

@@ -3,13 +3,13 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 
 // Mocks
-import { category, recipes } from '../../mocks'
+import { categories, recipes } from '../../mocks'
 
 // Components
 import Category from '.'
 
 const props = {
-  category,
+  category: categories[0],
   recipes,
 }
 describe('Screen', () => {

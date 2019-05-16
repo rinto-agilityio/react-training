@@ -6,8 +6,8 @@ import { storiesOf } from '@storybook/react'
 import Header from '.'
 
 // Mock
-import { category } from '../../../../mocks'
+import { categories } from '../../../../mocks'
 
 storiesOf('Header', module).add('default', () => (
-  <Header category={category} isGrid sizeType="large" />
+  <Header category={categories[0]} isGrid sizeType="large" />
 ))

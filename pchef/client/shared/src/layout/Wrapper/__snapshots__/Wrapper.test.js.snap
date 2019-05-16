@@ -1,8 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-<<<<<<< 198a4605d26ca4eb1cc8ae7c846e1de1007065bd
-exports[`Wrapper snapshot 1`] = `ShallowWrapper {}`;
-=======
 exports[`Components Wrapper should render Button component 1`] = `
 <div
   className="css-view-1dbjc4n r-alignItems-1awozwy r-display-6koalj r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-a2tzq0"
@@ -20,4 +17,3 @@ exports[`Components Wrapper should render Button component 1`] = `
   </p>
 </div>
 `;
->>>>>>> Create Wrapper layout
