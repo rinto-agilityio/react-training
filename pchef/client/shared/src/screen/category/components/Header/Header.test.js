@@ -34,4 +34,14 @@ describe('Components', () => {
       ).toEqual('#c5c5c5')
     })
   })
+
+  it('should have default onFollowing props', () => {
+    Header.defaultProps.onFollowing()
+    expect(Header.defaultProps.onFollowing).toBeDefined()
+  })
+
+  it('should have default onSelectListView props', () => {
+    Header.defaultProps.onSelectListView()
+    expect(Header.defaultProps.onSelectListView).toBeDefined()
+  })
 })

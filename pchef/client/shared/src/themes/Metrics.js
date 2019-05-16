@@ -29,7 +29,7 @@ export default {
 
   // Wrapper
   smallWrapper: 150,
-  mediumWrapper: 170,
+  mediumWrapper: 200,
   largeWrapper: 300,
   extraLargeWrapper: 380,
 

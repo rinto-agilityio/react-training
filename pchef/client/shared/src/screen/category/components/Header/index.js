@@ -47,7 +47,7 @@ const Header = ({
       color: isGrid ? COLORS.lighterGray : COLORS.baseGray,
     },
     {
-      name: 'view-module',
+      name: 'apps',
       wrapperIconStyle: {},
       color: isGrid ? COLORS.baseGray : COLORS.lighterGray,
     },
@@ -66,7 +66,7 @@ const Header = ({
           </Text>
           <Button
             title="Following"
-            typeName="outline"
+            type="outline"
             onPress={onFollowing}
             buttonStyle={styles.button}
             titleStyle={styles.titleBtn}
@@ -82,7 +82,7 @@ const Header = ({
             size={METRICS[`${size}Icon`]}
             color={item.color}
             wrapperIconStyle={item.wrapperIconStyle}
-            onClick={onSelectListView}
+            onPress={onSelectListView}
           />
         ))}
       </View>

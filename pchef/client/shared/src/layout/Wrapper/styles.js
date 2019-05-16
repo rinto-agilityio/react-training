@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
   left: {
     alignItems: 'flex-start',
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-start',
   },
   right: {
     alignItems: 'flex-end',

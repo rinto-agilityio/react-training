@@ -15,7 +15,7 @@ type Props = {
   mode?: string,
   contentStyle?: {},
   color?: string,
-  loading?: Boolean,
+  loading?: boolean,
   type?: string,
 }
 
