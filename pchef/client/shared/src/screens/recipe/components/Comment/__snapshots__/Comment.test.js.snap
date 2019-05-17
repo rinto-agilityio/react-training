@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Comment renders correctly 1`] = `ReactWrapper {}`;
+exports[`Comment Renders correctly 1`] = `ReactWrapper {}`;
 
-exports[`Comment renders correctly component with isGetTime = true 1`] = `ReactWrapper {}`;
+exports[`Comment Renders correctly component with isGetTime = true 1`] = `ReactWrapper {}`;
 
-exports[`Comment renders correctly component with type secondary 1`] = `ReactWrapper {}`;
+exports[`Comment Renders correctly component with type secondary 1`] = `ReactWrapper {}`;

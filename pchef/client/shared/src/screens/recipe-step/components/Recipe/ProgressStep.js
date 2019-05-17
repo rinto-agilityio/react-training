@@ -27,7 +27,7 @@ const chevronIcon = (
   name: string,
   size: string,
   disabled: boolean,
-  onPress: () => void
+  onPress: () => void,
 ) => (
   <Icon
     name={name}
