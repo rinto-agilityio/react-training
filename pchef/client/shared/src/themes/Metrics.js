@@ -29,7 +29,7 @@ export default {
 
   // Wrapper
   smallWrapper: 150,
-  mediumWrapper: 170,
+  mediumWrapper: 200,
   largeWrapper: 300,
   extraLargeWrapper: 380,
 
@@ -67,7 +67,22 @@ export default {
   mediumBgImage: 230,
   largeBgImage: 300,
 
+  // Badge
+  smallBadge: 5,
+  mediumBadge: 10,
+  largeBadge: 16,
+
+  // Avatar
+  smallAvatar: 40,
+  mediumAvatar: 60,
+  largeAvatar: 70,
+
   // Layer
   activeItem: 0.2,
   inactiveItem: 0.7,
+
+  // Border
+  smallBorderWidth: 1,
+  mediumBorderWidth: 3,
+  largeBorderWidth: 5,
 }

@@ -1,12 +1,14 @@
 // Lib
 import { StyleSheet } from 'react-native'
 
+// Themes
+import { METRICS } from '../../themes'
+
 // Create style for layout
 const styles = StyleSheet.create({
   container: {
+    ...METRICS.flexCenter,
     display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     flexWrap: 'wrap',
   },
   column: {
@@ -17,7 +19,7 @@ const styles = StyleSheet.create({
   },
   left: {
     alignItems: 'flex-start',
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-start',
   },
   right: {
     alignItems: 'flex-end',

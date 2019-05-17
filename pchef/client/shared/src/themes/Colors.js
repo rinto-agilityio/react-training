@@ -16,6 +16,7 @@ export default {
   lightBlue: 'rgba(228, 228, 228, 0.42)',
   darkBlue: '#2d4150',
   blackLighter: 'rgba(0, 0, 0, 0.71)',
-  gray: '#a1a0b0',
+  grayNavy: '#a1a0b0',
   yellow: '#fc0',
+  flowerBlue: '#5aadf3',
 }

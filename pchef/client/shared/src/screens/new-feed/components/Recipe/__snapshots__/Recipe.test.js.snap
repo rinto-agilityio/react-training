@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recipe new feed Render recipe component with size medium 1`] = `ShallowWrapper {}`;
+
+exports[`Recipe new feed renders correctly recipe commponent 1`] = `ShallowWrapper {}`;
