@@ -1,10 +1,9 @@
 import ApolloClient from 'apollo-boost'
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000',
+  uri: process.env.REACT_APP_GRAPHQLURL,
   request: async operation => {
     const token = await localStorage.getItem('token');
-    console.log('token: ', token)
 
     operation.setContext({
       headers: {
