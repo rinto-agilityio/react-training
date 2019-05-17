@@ -6,6 +6,7 @@ export default {
     medium: 18,
     large: 20,
     extraLarge: 28,
+    moreExtraLarge: 30,
     extraExtraLarge: 40,
   },
 
