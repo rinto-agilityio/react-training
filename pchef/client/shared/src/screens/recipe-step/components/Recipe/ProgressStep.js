@@ -24,10 +24,10 @@ type Props = {
 }
 
 const chevronIcon = (
-  name: string,
-  size: string,
-  disabled: boolean,
-  onPress: () => void
+  name,
+  size,
+  disabled,
+  onPress,
 ) => (
   <Icon
     name={name}
@@ -46,7 +46,7 @@ const Progress = ({
   size = 'large',
   step,
   onPressStep,
-  customStepBtn,
+  customStepBtn = {},
   onPressSelectStep,
 }: Props) => {
   // Disabled prev/next icon if current step is first/last step
