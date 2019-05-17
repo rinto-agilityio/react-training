@@ -15,7 +15,7 @@ import styles from './styles'
 type Props = {
   avatarUri?: string,
   customStyle?: {} | Array<{}>,
-  type?: string,
+  type: string,
   onSubmit: () => void,
   commentRef: { current: HTMLInputElement | null },
 }
@@ -23,7 +23,7 @@ type Props = {
 const CommentForm = ({
   avatarUri,
   customStyle,
-  type,
+  type = 'primary',
   onSubmit,
   commentRef,
 }: Props) => {
@@ -61,7 +61,6 @@ const CommentForm = ({
 CommentForm.defaultProps = {
   avatarUri: '',
   customStyle: {},
-  type: 'primary',
 }
 
 export default CommentForm

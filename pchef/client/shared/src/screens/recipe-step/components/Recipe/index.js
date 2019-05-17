@@ -49,7 +49,7 @@ const Recipe = ({
   customRecipe,
   customTitle,
   customDescription,
-  customImage,
+  customImage = {},
   customSubTitle,
   customTitleStep,
 }: Props) => {
@@ -150,6 +150,7 @@ const Recipe = ({
           fontSize: 12,
           color: COLORS.baseGray,
         }}
+        type={size === 'large' ? 'secondary' : 'primary'}
       />
       <Text
         style={[
