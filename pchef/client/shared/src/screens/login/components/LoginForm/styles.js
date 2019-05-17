@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   errorFormGroup: {
-    borderColor: 'red',
+    borderColor: COLORS.baseRed,
   },
   input: {
     borderRadius: METRICS.baseBorderRadius,
