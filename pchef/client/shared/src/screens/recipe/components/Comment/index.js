@@ -18,7 +18,7 @@ type Props = {
   publishedAt: number,
   text?: string,
   customStyle?: {},
-  type: string,
+  type?: string,
   isGetTime?: boolean,
   customNameStyles?: {},
   customContentStyles?: {},
@@ -81,6 +81,7 @@ const Comment = ({
 Comment.defaultProps = {
   avatarUri: '',
   customStyle: {},
+  type: 'primary',
   isGetTime: false,
   customNameStyles: {},
   customContentStyles: {},
