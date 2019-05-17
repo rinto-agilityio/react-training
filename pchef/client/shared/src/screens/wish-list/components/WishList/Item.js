@@ -34,9 +34,25 @@ const Item = ({
       <Text style={[styles.date, styles[`${size}Date`]]}>{date}</Text>
       <Text style={[styles.content, styles[`${size}Content`]]}>
         Get the recipe for
-        <Text style={[styles.content, styles[`${size}Content`], styles.specialContent]}>{` ${categoryId} `}</Text>
+        <Text
+          style={[
+            styles.content,
+            styles[`${size}Content`],
+            styles.specialContent]
+          }
+        >
+          {` ${categoryId} `}
+        </Text>
         with
-        <Text style={[styles.content, styles[`${size}Content`], styles.specialContent]}>{` ${cookingTypeId} `}</Text>
+        <Text
+          style={[
+            styles.content,
+            styles[`${size}Content`],
+            styles.specialContent]
+          }
+        >
+          {` ${cookingTypeId} `}
+        </Text>
       </Text>
     </View>
   )
