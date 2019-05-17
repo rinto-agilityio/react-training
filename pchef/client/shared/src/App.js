@@ -22,43 +22,60 @@ import client from './config/apollo-client'
 // Containers
 import LoginContainer from './containers/Login'
 
-type Props = {}
+type LoginProps = {
+  submitLogin: (email: string, password: string) => any
+}
 
-export default class App extends Component<Props> {
+const LoginComponent = ({ submitLogin }: LoginProps) => {
   /**
    * This is sample function, should be implment for each platform
    * Set token in localStorage for web platform / mobile
    * ApolloClient header will get this token and update to request headers
-   * @param {Object} data: Server response
    */
-  _setTokenToCache = ({ data }) => {
-    const { signInUser: { token } } = data
+  const _signInUser = async () => {
+    try {
+      // TODO: This is sample user, this data should get from input
+      await submitLogin('user1@gmail.com', 'user1@pwd')
+        .then(({ data }) => {
+          const { signInUser: { token } } = data
 
-    localStorage.setItem('token', token)
+          if (token) {
+            localStorage.setItem('token', token)
+          }
+        })
+    } catch (err) {
+      console.log('signInUser err: ', err)
+    }
   }
 
+  return (
+    <View>
+      <Text>Login Component</Text>
+      <PaperButton
+        mode="contained"
+        onPress={_signInUser}
+      >
+        SubmitLogin
+      </PaperButton>
+    </View>
+  )
+}
+
+type AppProps = {}
+
+export default class App extends Component<AppProps> {
   render() {
     return (
       <ApolloProvider client={client}>
         <PaperProvider>
           <View style={styles.container}>
             <Text style={styles.welcome}>Shared-components for both Web and Mobile</Text>
-            <PaperButton mode="contained" onPress={() => {}}>
-              PaperButton
-            </PaperButton>
             <LoginContainer>
               {
                 ({ signInUser }) => (
-                  <PaperButton
-                    mode="contained"
-                    // TODO: This is sample user, this data should get from input
-                    onPress={() => (
-                      signInUser('user1@gmail.com', 'user1@pwd')
-                        .then(this._setTokenToCache)
-                    )}
-                  >
-                    SubmitLogin
-                  </PaperButton>
+                  <LoginComponent
+                    submitLogin={signInUser}
+                  />
                 )
               }
             </LoginContainer>
