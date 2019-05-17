@@ -14,7 +14,7 @@ import Icon from '../../../../components/Icon'
 
 type Props = {
   steps: Array<{
-    step: number
+    step: number,
   }>,
   size: string,
   step: number,
@@ -23,12 +23,7 @@ type Props = {
   customStepBtn?: {},
 }
 
-const chevronIcon = (
-  name,
-  size,
-  disabled,
-  onPress,
-) => (
+const chevronIcon = (name, size, disabled, onPress) => (
   <Icon
     name={name}
     size={FONTS.fontSize[`${size}`]}

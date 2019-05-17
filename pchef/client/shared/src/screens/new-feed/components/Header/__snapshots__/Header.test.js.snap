@@ -4,4 +4,4 @@ exports[`Header new feed Render recipe component with size large 1`] = `ShallowW
 
 exports[`Header new feed Render recipe component with size medium 1`] = `ShallowWrapper {}`;
 
-exports[`Header new feed renders correctly header commponent 1`] = `ShallowWrapper {}`;
+exports[`Header new feed Renders correctly header commponent 1`] = `ShallowWrapper {}`;

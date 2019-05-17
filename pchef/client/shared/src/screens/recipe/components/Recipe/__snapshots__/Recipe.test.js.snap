@@ -18,12 +18,12 @@ exports[`Recipe by step Render ingredients component with size medium 1`] = `Rea
 
 exports[`Recipe by step Render recipe component with size medium 1`] = `ReactWrapper {}`;
 
-exports[`Recipe by step renders correctly direction commponent 1`] = `ShallowWrapper {}`;
+exports[`Recipe by step Renders correctly direction commponent 1`] = `ShallowWrapper {}`;
 
-exports[`Recipe by step renders correctly directions commponent 1`] = `ReactWrapper {}`;
+exports[`Recipe by step Renders correctly directions commponent 1`] = `ReactWrapper {}`;
 
-exports[`Recipe by step renders correctly ingredient component 1`] = `ShallowWrapper {}`;
+exports[`Recipe by step Renders correctly ingredient component 1`] = `ShallowWrapper {}`;
 
-exports[`Recipe by step renders correctly ingredients commponent 1`] = `ReactWrapper {}`;
+exports[`Recipe by step Renders correctly ingredients commponent 1`] = `ReactWrapper {}`;
 
-exports[`Recipe by step renders correctly recipe commponent 1`] = `ReactWrapper {}`;
+exports[`Recipe by step Renders correctly recipe commponent 1`] = `ReactWrapper {}`;

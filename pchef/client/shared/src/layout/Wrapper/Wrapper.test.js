@@ -12,7 +12,7 @@ const props = {
 const renderComponent = renderer.create(
   <Wrapper {...props}>
     <p>test</p>
-  </Wrapper>
+  </Wrapper>,
 )
 
 describe('Components', () => {
@@ -23,7 +23,7 @@ describe('Components', () => {
       component = shallow(
         <Wrapper {...props}>
           <p>test</p>
-        </Wrapper>
+        </Wrapper>,
       )
     })
     it('should render Button component', () => {

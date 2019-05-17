@@ -32,7 +32,7 @@ describe('Components', () => {
           {...props}
           handlePressImage={handlePressImage}
           handlePressIcon={handlePressIcon}
-        />
+        />,
       )
     })
 
