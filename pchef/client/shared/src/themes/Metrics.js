@@ -59,6 +59,7 @@ export default {
 
   // Border Radius
   smallBorderRadius: 5,
+  baseBorderRadius: 8,
   mediumBorderRadius: 10,
   largeBorderRadius: 20,
 
