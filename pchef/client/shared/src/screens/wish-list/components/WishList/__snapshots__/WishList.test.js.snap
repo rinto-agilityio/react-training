@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Wish list Render wish component with size medium 1`] = `ShallowWrapper {}`;
+
+exports[`Wish list Render wish list component with size medium 1`] = `ReactWrapper {}`;
+
+exports[`Wish list Renders correctly wish commponent 1`] = `ShallowWrapper {}`;
+
+exports[`Wish list Renders correctly wish list commponent 1`] = `ReactWrapper {}`;
