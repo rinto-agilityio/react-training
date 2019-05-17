@@ -26,6 +26,9 @@ type LoginProps = {
   submitLogin: (email: string, password: string) => any
 }
 
+/**
+ * This is sample for component manually calling GraphQL event
+ */
 const LoginComponent = ({ submitLogin }: LoginProps) => {
   /**
    * This is sample function, should be implment for each platform
