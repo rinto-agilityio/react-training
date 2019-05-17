@@ -150,7 +150,6 @@ const Recipe = ({
           fontSize: 12,
           color: COLORS.baseGray,
         }}
-        type={size === 'large' ? 'secondary' : 'primary'}
       />
       <Text
         style={[
