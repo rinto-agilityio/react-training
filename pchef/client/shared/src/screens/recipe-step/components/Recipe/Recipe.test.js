@@ -19,11 +19,11 @@ describe('Recipe by step', () => {
   const recipeComponent = mount(<Recipe {...recipeProps} />)
   const progressStepComponent = mount(<ProgressStep {...stepProps} />)
 
-  it('renders correctly recipe commponent', () => {
+  it('Renders correctly recipe commponent', () => {
     expect(recipeComponent).toMatchSnapshot()
   })
 
-  it('renders correctly progress steps commponent', () => {
+  it('Renders correctly progress steps commponent', () => {
     expect(progressStepComponent).toMatchSnapshot()
   })
 

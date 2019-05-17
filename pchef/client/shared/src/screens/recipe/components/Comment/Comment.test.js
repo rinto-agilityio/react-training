@@ -8,11 +8,11 @@ describe('Comment', () => {
   }
 
   const component = mount(<Comment {...props} />)
-  it('renders correctly', () => {
+  it('Renders correctly', () => {
     expect(component).toMatchSnapshot()
   })
 
-  it('renders correctly component with isGetTime = true', () => {
+  it('Renders correctly component with isGetTime = true', () => {
     component.setProps({
       isGetTime: true,
       type: 'primary',
@@ -21,7 +21,7 @@ describe('Comment', () => {
     expect(component).toMatchSnapshot()
   })
 
-  it('renders correctly component with type secondary', () => {
+  it('Renders correctly component with type secondary', () => {
     component.setProps({
       type: 'secondary',
     })

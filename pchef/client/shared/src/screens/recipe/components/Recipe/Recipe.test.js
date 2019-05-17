@@ -20,7 +20,7 @@ describe('Recipe by step', () => {
   const ingredientsComponent = mount(<Ingredients />)
   const ingredientComponent = shallow(<Ingredient />)
 
-  it('renders correctly recipe commponent', () => {
+  it('Renders correctly recipe commponent', () => {
     expect(recipeComponent).toMatchSnapshot()
   })
 
@@ -36,7 +36,7 @@ describe('Recipe by step', () => {
     expect(Recipe.defaultProps.onSelectStep).toBeDefined()
   })
 
-  it('renders correctly directions commponent', () => {
+  it('Renders correctly directions commponent', () => {
     expect(directionsComponent).toMatchSnapshot()
   })
 
@@ -59,7 +59,7 @@ describe('Recipe by step', () => {
     expect(Directions.defaultProps.onSelectStep).toBeDefined()
   })
 
-  it('renders correctly direction commponent', () => {
+  it('Renders correctly direction commponent', () => {
     expect(directionComponent).toMatchSnapshot()
   })
 
@@ -82,7 +82,7 @@ describe('Recipe by step', () => {
     expect(Direction.defaultProps.onSelectStep).toBeDefined()
   })
 
-  it('renders correctly ingredients commponent', () => {
+  it('Renders correctly ingredients commponent', () => {
     expect(ingredientsComponent).toMatchSnapshot()
   })
 
@@ -100,7 +100,7 @@ describe('Recipe by step', () => {
     expect(ingredientsComponent).toMatchSnapshot()
   })
 
-  it('renders correctly ingredient component', () => {
+  it('Renders correctly ingredient component', () => {
     expect(ingredientComponent).toMatchSnapshot()
   })
 

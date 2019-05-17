@@ -11,7 +11,7 @@ describe('Recipe new feed', () => {
   }
   const component = shallow(<Recipe {...props} />)
 
-  it('renders correctly recipe commponent', () => {
+  it('Renders correctly recipe commponent', () => {
     expect(component).toMatchSnapshot()
   })
 

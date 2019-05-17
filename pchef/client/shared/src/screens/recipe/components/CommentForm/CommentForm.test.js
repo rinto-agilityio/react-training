@@ -7,11 +7,11 @@ describe('Comment', () => {
   }
 
   const component = mount(<CommentForm {...props} />)
-  it('renders correctly', () => {
+  it('Renders correctly', () => {
     expect(component).toMatchSnapshot()
   })
 
-  it('renders correctly component with type secondary', () => {
+  it('Renders correctly component with type secondary', () => {
     component.setProps({
       type: 'secondary',
     })

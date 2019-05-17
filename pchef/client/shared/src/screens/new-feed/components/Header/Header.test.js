@@ -9,7 +9,7 @@ describe('Header new feed', () => {
   }
   const component = shallow(<Header {...props} />)
 
-  it('renders correctly header commponent', () => {
+  it('Renders correctly header commponent', () => {
     expect(component).toMatchSnapshot()
   })
 
