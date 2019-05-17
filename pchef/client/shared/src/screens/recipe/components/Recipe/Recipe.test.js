@@ -6,9 +6,10 @@ import Ingredients from './Ingredients'
 import Ingredient from './Ingredient'
 
 // Mocks
-import { recipe } from '../../../../mocks/recipe'
+import { recipes } from '../../../../mocks'
 
 describe('Recipe by step', () => {
+  const recipe = recipes[0]
   const recipeProps = {
     recipe,
     onSelectStep: jest.fn(),

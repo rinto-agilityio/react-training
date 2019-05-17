@@ -1,12 +1,12 @@
 // Helpers
-import { recipe } from '../../../../mocks/recipe'
+import { recipes } from '../../../../mocks'
 
 // Components
 import Recipe from '.'
 
 describe('Recipe new feed', () => {
   const props = {
-    recipe,
+    recipe: recipes[0],
     onSelectStep: jest.fn(),
   }
   const component = shallow(<Recipe {...props} />)
