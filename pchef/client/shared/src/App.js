@@ -25,6 +25,18 @@ import LoginContainer from './containers/Login'
 type Props = {}
 
 export default class App extends Component<Props> {
+  /**
+   * This is sample function, should be implment for each platform
+   * Set token in localStorage for web platform / mobile
+   * ApolloClient header will get this token and update to request headers
+   * @param {Object} data: Server response
+   */
+  _setTokenToCache = ({ data }) => {
+    const { signInUser: { token } } = data
+
+    localStorage.setItem('token', token)
+  }
+
   render() {
     return (
       <ApolloProvider client={client}>
@@ -39,7 +51,11 @@ export default class App extends Component<Props> {
                 ({ signInUser }) => (
                   <PaperButton
                     mode="contained"
-                    onPress={() => signInUser('user1@gmail.com', 'user1@pwd')}
+                    // TODO: This is sample user, this data should get from input
+                    onPress={() => (
+                      signInUser('user1@gmail.com', 'user1@pwd')
+                        .then(this._setTokenToCache)
+                    )}
                   >
                     SubmitLogin
                   </PaperButton>
