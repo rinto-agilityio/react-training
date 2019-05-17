@@ -14,7 +14,7 @@ import Icon from '../../../../components/Icon'
 
 type Props = {
   steps: Array<{
-    step: number
+    step: number,
   }>,
   size: string,
   step: number,
@@ -23,12 +23,7 @@ type Props = {
   customStepBtn?: {},
 }
 
-const chevronIcon = (
-  name: string,
-  size: string,
-  disabled: boolean,
-  onPress: () => void,
-) => (
+const chevronIcon = (name, size, disabled, onPress) => (
   <Icon
     name={name}
     size={FONTS.fontSize[`${size}`]}
@@ -46,7 +41,7 @@ const Progress = ({
   size = 'large',
   step,
   onPressStep,
-  customStepBtn,
+  customStepBtn = {},
   onPressSelectStep,
 }: Props) => {
   // Disabled prev/next icon if current step is first/last step
