@@ -39,7 +39,6 @@ const Login = ({
       {/* Show app name on mobile app */}
       {type === 'primary' && <Text style={styles.text}>PChef</Text>}
 
-      {/* Login form */}
       <LoginForm
         customStyles={customStyles}
         onSubmit={onSubmit}
