@@ -19,4 +19,8 @@ export default {
   grayNavy: '#a1a0b0',
   yellow: '#fc0',
   flowerBlue: '#5aadf3',
+  mantisGreen: '#70c050',
+  persianPlum: '#721C24',
+  cherub: '#f8d7da',
+  ghost: '#ced4da',
 }
