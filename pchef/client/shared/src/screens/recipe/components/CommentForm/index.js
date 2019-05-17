@@ -17,7 +17,7 @@ type Props = {
   customStyle?: {} | Array<{}>,
   type?: string,
   onSubmit: () => void,
-  commentRef: { current: HTMLInputElement | null },
+  commentRef: { current: { _node: HTMLInputElement } | null },
 }
 
 const CommentForm = ({
@@ -28,8 +28,10 @@ const CommentForm = ({
   commentRef,
 }: Props) => {
   // define avatar/badge size follow type
-  const avatarSize = type === 'primary' ? METRICS.mediumAvatar : METRICS.largeAvatar
-  const badgeSize = type === 'primary' ? METRICS.mediumBadge : METRICS.largeBadge
+  const avatarSize =
+    type === 'primary' ? METRICS.mediumAvatar : METRICS.largeAvatar
+  const badgeSize =
+    type === 'primary' ? METRICS.mediumBadge : METRICS.largeBadge
 
   return (
     <View style={[styles.container, customStyle]}>

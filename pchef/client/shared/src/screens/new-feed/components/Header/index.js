@@ -33,7 +33,7 @@ const Header = ({
     <Icon
       name="apps"
       size={size === 'large' ? FONTS.fontSize.extraExtraLarge : FONTS.fontSize.extraLarge}
-      onClick={onPressIcon}
+      onPress={onPressIcon}
       color={COLORS.white}
       wrapperIconStyle={styles.wrapIcon}
     />

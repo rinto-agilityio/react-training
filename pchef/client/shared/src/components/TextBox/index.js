@@ -18,8 +18,9 @@ type Props = {
   placeholderTextColor?: string,
   numberOfLines?: number,
   defaultValue?: string,
-  refInput: { current: HTMLInputElement | null },
+  refInput: { current: { _node: HTMLInputElement } | null },
   onSubmitEditing?: () => void,
+  secureTextEntry?: boolean,
 }
 
 const TextBox = ({
@@ -34,6 +35,7 @@ const TextBox = ({
   defaultValue,
   refInput,
   onSubmitEditing,
+  secureTextEntry,
 }: Props) => (
   <View style={styles.container}>
     <TextInput
@@ -48,6 +50,7 @@ const TextBox = ({
       ref={refInput}
       placeholderTextColor={placeholderTextColor}
       onSubmitEditing={onSubmitEditing}
+      secureTextEntry={secureTextEntry}
     />
   </View>
 )
@@ -63,6 +66,7 @@ TextBox.defaultProps = {
   placeholderTextColor: COLORS.black,
   onSubmitEditing: () => {},
   defaultValue: '',
+  secureTextEntry: false,
 }
 
 export default TextBox

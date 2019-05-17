@@ -16,15 +16,15 @@ type Props = {
   customWrapperIcon?: {},
   size: string,
   votes: Array<number>,
-  onClickFavorite?: () => void,
-  onClickVote?: () => void,
+  onPressFavorite?: () => void,
+  onPressVote?: () => void,
 }
 
 const Reaction = ({
   isFavorited,
   customWrapperIcon,
-  onClickFavorite,
-  onClickVote,
+  onPressFavorite,
+  onPressVote,
   size = '',
   votes = [],
 }: Props) => {
@@ -34,13 +34,13 @@ const Reaction = ({
       name: isFavorited ? 'favorite' : 'favorite-border',
       color: COLORS.grayDarker,
       label: 'Save',
-      onClick: onClickFavorite,
+      onPress: onPressFavorite,
     },
     {
       name: 'thumb-up',
       color: COLORS.grayDarker,
       label: votes.length,
-      onClick: onClickVote,
+      onPress: onPressVote,
     },
   ]
 
@@ -52,7 +52,7 @@ const Reaction = ({
           name={item.name}
           size={METRICS[`${size}Icon`]}
           color={item.color}
-          onClick={item.onClick}
+          onPress={item.onPress}
           underlayColor="transparent"
           label={item.label}
         />
@@ -64,8 +64,8 @@ const Reaction = ({
 
 Reaction.defaultProps = {
   customWrapperIcon: {},
-  onClickFavorite: () => {},
-  onClickVote: () => {},
+  onPressFavorite: () => {},
+  onPressVote: () => {},
   isFavorited: false,
 }
 

@@ -102,13 +102,13 @@ const styles = StyleSheet.create({
     paddingLeft: METRICS.largePadding,
     paddingRight: METRICS.largePadding,
   },
-  smallDescription: {
+  smallViews: {
     fontSize: METRICS.smallPosition,
   },
-  mediumDescription: {
+  mediumViews: {
     fontSize: 12,
   },
-  largeDescription: {
+  largeViews: {
     fontSize: FONTS.fontSize.small,
   },
 })
