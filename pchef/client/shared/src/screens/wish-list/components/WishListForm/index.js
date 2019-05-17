@@ -53,7 +53,7 @@ const WishListForm = ({
             <Calendar
               selectedDay={selectedDay}
               dayRange={dayRange}
-              onSelectDay={day => setSelectedDay(day.dateString)}
+              onSelectDay={({ dateString }) => setSelectedDay(dateString)}
               size={size}
             />
           </Dialog.Content>
