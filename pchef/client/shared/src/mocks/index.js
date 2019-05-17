@@ -1,3 +1,6 @@
+import { user } from './user'
+
+export { user }
 // mock categories
 export const categories = [
   {

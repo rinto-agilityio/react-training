@@ -57,7 +57,7 @@ Icon.defaultProps = {
   color: COLORS.black,
   wrapperIconStyle: {},
   disabled: false,
-  customIconStyles: {}
+  customIconStyles: {},
 };
 
 export default Icon
