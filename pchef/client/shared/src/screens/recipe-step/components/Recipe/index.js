@@ -49,7 +49,7 @@ const Recipe = ({
   customRecipe,
   customTitle,
   customDescription,
-  customImage,
+  customImage = {},
   customSubTitle,
   customTitleStep,
 }: Props) => {

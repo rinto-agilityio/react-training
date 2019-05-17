@@ -27,7 +27,7 @@ const chevronIcon = (
   name,
   size,
   disabled,
-  onPress: () => void
+  onPress,
 ) => (
   <Icon
     name={name}
@@ -46,7 +46,7 @@ const Progress = ({
   size = 'large',
   step,
   onPressStep,
-  customStepBtn,
+  customStepBtn = {},
   onPressSelectStep,
 }: Props) => {
   // Disabled prev/next icon if current step is first/last step
