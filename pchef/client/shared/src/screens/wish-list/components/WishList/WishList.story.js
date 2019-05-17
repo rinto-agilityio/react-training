@@ -1,13 +1,12 @@
 // Libs
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
 
 // Components
 import WistList from '.'
 
 // Mocks
-import { wishList } from '../../../../mocks/wish-list'
+import { wishList } from '../../../../mocks'
 
 storiesOf('Wish list', module)
   .add('small', () => (

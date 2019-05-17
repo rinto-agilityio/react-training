@@ -38,7 +38,7 @@ exports[`Wish list Render wish component with size medium 1`] = `
     className="css-text-76zvg2 r-color-cqee49 r-fontSize-adyw6z r-fontWeight-vw2c0b r-marginBottom-117bsoe"
     dir="auto"
   >
-    1558076376419
+    1558079826824
   </div>
   <div
     className="css-text-76zvg2 r-fontSize-1i10wst"
@@ -82,7 +82,7 @@ exports[`Wish list Renders correctly wish commponent 1`] = `
     className="css-text-76zvg2 r-color-cqee49 r-fontSize-adyw6z r-fontWeight-vw2c0b r-marginBottom-117bsoe"
     dir="auto"
   >
-    1558076376419
+    1558079826824
   </div>
   <div
     className="css-text-76zvg2 r-fontSize-1i10wst"
@@ -117,7 +117,36 @@ exports[`Wish list Renders correctly wish list commponent 1`] = `
       className="css-text-76zvg2 r-color-cqee49 r-fontSize-adyw6z r-fontWeight-vw2c0b r-marginBottom-117bsoe"
       dir="auto"
     >
-      1558076376419
+      1558079826824
+    </div>
+    <div
+      className="css-text-76zvg2 r-fontSize-1i10wst"
+      dir="auto"
+    >
+      Get the recipe for
+      <span
+        className="css-text-76zvg2 css-textHasAncestor-16my406 r-fontSize-1i10wst r-fontWeight-vw2c0b"
+        dir="auto"
+      >
+         1 
+      </span>
+      with
+      <span
+        className="css-text-76zvg2 css-textHasAncestor-16my406 r-fontSize-1i10wst r-fontWeight-vw2c0b"
+        dir="auto"
+      >
+         1 
+      </span>
+    </div>
+  </div>
+  <div
+    className="css-view-1dbjc4n r-borderBottomColor-1nd8m0h r-borderBottomWidth-qklmqi r-display-6koalj r-padding-1pcd2l5"
+  >
+    <div
+      className="css-text-76zvg2 r-color-cqee49 r-fontSize-adyw6z r-fontWeight-vw2c0b r-marginBottom-117bsoe"
+      dir="auto"
+    >
+      1558079826824
     </div>
     <div
       className="css-text-76zvg2 r-fontSize-1i10wst"

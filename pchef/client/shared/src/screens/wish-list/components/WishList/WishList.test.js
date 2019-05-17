@@ -3,7 +3,7 @@ import WistList from '.'
 import Item from './Item'
 
 // Mocks
-import { wishList } from '../../../../mocks/wish-list'
+import { wishList } from '../../../../mocks'
 
 describe('Wish list', () => {
   let wishListProps = {
