@@ -18,6 +18,8 @@ const server = new ApolloServer({
 
     try {
       authToken = req.headers[HEADER_TOKEN_NAME]
+      console.log('Server side authToken')
+      console.log(authToken)
 
       if (authToken) {
         currentUser = await getUserInfoByToken(authToken)
