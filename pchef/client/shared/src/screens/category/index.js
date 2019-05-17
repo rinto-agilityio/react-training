@@ -15,7 +15,7 @@ type Props = {
     imgUrl: string,
   },
   recipes: Array<{
-    id: number,
+    id: string,
     title: string,
     imgUrl: string,
     description: string,

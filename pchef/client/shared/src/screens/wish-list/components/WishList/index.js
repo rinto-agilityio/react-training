@@ -10,10 +10,10 @@ import Item from './Item'
 
 type Props = {
   wishList: Array<{
-    id: number,
-    categoryId: number,
-    cookingTypeId: number,
-    date: number,
+    id: string,
+    categoryId: string,
+    cookingTypeId: string,
+    date: string,
   }>,
   size: string,
 }

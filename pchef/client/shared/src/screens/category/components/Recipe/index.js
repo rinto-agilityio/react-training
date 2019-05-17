@@ -13,7 +13,7 @@ import styles from './styles'
 
 type Props = {
   recipe: {
-    id: number,
+    id: string,
     title: string,
     imgUrl: string,
     description: string,

@@ -1,6 +1,6 @@
 export const recipes = [
   {
-    id: 0,
+    id: '0',
     title: 'Bun Bo Hue Recipe',
     subTitle: 'Traditional food',
     description: '2lb pork neck bones, 2lb beef bones, 1lb oxtail',
@@ -53,7 +53,7 @@ export const recipes = [
     ],
   },
   {
-    id: 1,
+    id: '1',
     title: 'Crispy Fried Chicken',
     imgUrl:
       'https://www.tasteofhome.com/wp-content/uploads/2018/01/Crispy-Fried-Chicken_EXPS_FRBZ19_6445_C01_31_3b.jpg',
@@ -61,7 +61,7 @@ export const recipes = [
     description: 'Description for Crispy Fried Chicken',
   },
   {
-    id: 2,
+    id: '2',
     title: 'Crispy Fried Chicken',
     imgUrl:
       'https://www.tasteofhome.com/wp-content/uploads/2018/01/Crispy-Fried-Chicken_EXPS_FRBZ19_6445_C01_31_3b.jpg',
@@ -69,7 +69,7 @@ export const recipes = [
     description: 'Description for Crispy Fried Chicken',
   },
   {
-    id: 3,
+    id: '3',
     title: 'Crispy Fried Chicken',
     imgUrl:
       'https://www.tasteofhome.com/wp-content/uploads/2018/01/Crispy-Fried-Chicken_EXPS_FRBZ19_6445_C01_31_3b.jpg',

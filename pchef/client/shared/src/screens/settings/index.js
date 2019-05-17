@@ -9,7 +9,7 @@ import styles from './styles'
 
 type Props = {
   user: {
-    id: Number,
+    id: string,
     name: string,
     email: string,
   },

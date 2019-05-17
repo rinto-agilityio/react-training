@@ -8,10 +8,10 @@ import styles from './styles'
 type Props = {
   size: string,
   item: {
-    id: number,
-    categoryId: number,
-    cookingTypeId: number,
-    date: number,
+    id: string,
+    categoryId: string,
+    cookingTypeId: string,
+    date: string,
   },
 }
 
