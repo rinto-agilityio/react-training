@@ -23,7 +23,7 @@ type Props = {
 const CommentForm = ({
   avatarUri,
   customStyle,
-  type = 'primary',
+  type,
   onSubmit,
   commentRef,
 }: Props) => {

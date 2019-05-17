@@ -17,7 +17,7 @@ type Props = {
     votes: Array<number>,
   },
   size: string,
-  onClick?: () => void,
+  onPress?: () => void,
   customRecipe?: {},
   customTitle?: {},
   customDescription?: {},
@@ -27,7 +27,7 @@ type Props = {
 const Recipe = ({
   recipe,
   size = 'large',
-  onClick,
+  onPress,
   customRecipe,
   customTitle,
   customDescription,
@@ -47,7 +47,6 @@ const Recipe = ({
           styles.recipe,
           customRecipe,
         ]}
-        onClick={onClick}
       >
         <Text
           style={[
@@ -55,6 +54,7 @@ const Recipe = ({
             styles[`${size}Title`],
             customTitle,
           ]}
+          onPress={onPress}
         >
           {title}
         </Text>
@@ -64,6 +64,7 @@ const Recipe = ({
             styles[`${size}Description`],
             customDescription,
           ]}
+          onPress={onPress}
         >
           {description}
         </Text>
@@ -86,7 +87,7 @@ const Recipe = ({
 }
 
 Recipe.defaultProps = {
-  onClick: () => {},
+  onPress: () => {},
   customRecipe: {},
   customTitle: {},
   customDescription: {},

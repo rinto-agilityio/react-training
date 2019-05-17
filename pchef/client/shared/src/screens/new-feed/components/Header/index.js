@@ -13,15 +13,15 @@ import styles from './styles'
 
 type Props = {
   image: string,
-  onClickIcon?: () => void,
-  size?: string,
+  onPressIcon?: () => void,
+  size: string,
   handleTouch?: () => void,
 }
 
 const Header = ({
   image,
-  onClickIcon,
-  size = '',
+  onPressIcon,
+  size = 'medium',
   handleTouch,
 }: Props) => (
   <View
@@ -33,7 +33,7 @@ const Header = ({
     <Icon
       name="apps"
       size={size === 'large' ? FONTS.fontSize.extraExtraLarge : FONTS.fontSize.extraLarge}
-      onClick={onClickIcon}
+      onClick={onPressIcon}
       color={COLORS.white}
       wrapperIconStyle={styles.wrapIcon}
     />
@@ -54,8 +54,7 @@ const Header = ({
 )
 
 Header.defaultProps = {
-  size: 'medium',
-  onClickIcon: () => {},
+  onPressIcon: () => {},
   handleTouch: () => {},
 }
 

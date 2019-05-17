@@ -1,4 +1,9 @@
 {
+  "globals": {
+    "renderer": true,
+    "mount": true,
+    "shallow": true
+  },
   "extends": [
     "prettier",
     "prettier/flowtype",
