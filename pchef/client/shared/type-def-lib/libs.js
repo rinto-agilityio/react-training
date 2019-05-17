@@ -10,3 +10,8 @@ declare module 'react-apollo' {
 declare module 'graphql-tag' {
   declare module.exports: any
 }
+
+// dotenv
+declare module 'dotenv' {
+  declare module.exports: any
+}
