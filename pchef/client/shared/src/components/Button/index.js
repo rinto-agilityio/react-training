@@ -13,7 +13,7 @@ type Props = {
   titleStyle?: {} | Array<{}>,
   disabled?: boolean,
   mode?: string,
-  contentStyle?: {},
+  contentStyle?: {} | Array<{}>,
   color?: string,
   loading?: boolean,
   type?: string,
