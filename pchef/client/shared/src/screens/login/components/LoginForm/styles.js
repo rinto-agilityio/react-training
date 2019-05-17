@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     borderRadius: METRICS.baseBorderRadius,
     marginBottom: METRICS.smallMargin + METRICS.mediumMargin,
     borderColor: COLORS.ghost,
-    borderWidth: 1,
+    borderWidth: METRICS.smallBorderWidth,
   },
   errorFormGroup: {
     borderColor: COLORS.baseRed,
@@ -48,12 +48,12 @@ const styles = StyleSheet.create({
     padding: 0,
   },
   button: {
-    height: 50,
+    height: METRICS.mediumHeight,
     borderRadius: METRICS.baseBorderRadius,
     backgroundColor: COLORS.mantisGreen,
   },
   primaryButton: {
-    width: 260,
+    width: METRICS.largeButton,
   },
   secondaryButton: {
     width: METRICS.largeWrapper,
