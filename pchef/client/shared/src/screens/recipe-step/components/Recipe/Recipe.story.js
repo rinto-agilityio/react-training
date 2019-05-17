@@ -7,8 +7,9 @@ import { action } from '@storybook/addon-actions'
 import Recipe from '.'
 
 // Mocks
-import { recipe } from '../../../../mocks/recipe'
+import { recipes } from '../../../../mocks'
 
+const recipe = recipes[0]
 storiesOf('Recipe by step', module)
   .add('small', () => (
     <Recipe

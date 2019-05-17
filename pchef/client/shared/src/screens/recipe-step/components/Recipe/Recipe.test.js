@@ -3,8 +3,9 @@ import Recipe from '.'
 import ProgressStep from './ProgressStep'
 
 // Mocks
-import { recipe } from '../../../../mocks/recipe'
+import { recipes } from '../../../../mocks'
 
+const recipe = recipes[0]
 describe('Recipe by step', () => {
   const recipeProps = {
     stepInfo: recipe.steps[0],
