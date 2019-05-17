@@ -1,5 +1,3 @@
-// import * as React from 'react'
-// import { View, Text, Button } from 'react-native'
 import { compose, graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
@@ -24,6 +22,7 @@ const signInUser = graphql(USER_SIGNIN, {
     update: (proxy, { data }) => {
       try {
         const { signInUser: { token } } = data
+
         if (token) {
           localStorage.setItem('token', token)
         }
@@ -39,32 +38,8 @@ type Props = {
   children: any,
 }
 
-const RPLoginContainer = ({ children, signInUser }: Props) => children({ signInUser })
-
-// class LoginContainer extends React.Component<Props> {
-//   _submitLogin = () => {
-//     console.log('_submitLogin')
-//     const { signInUser } = this.props
-
-//     signInUser('user1@gmail.com', 'user1@pwd')
-//   }
-
-//   render() {
-//     const { children } = this.props
-//     // const temp = 20
-
-//     return (
-//       <View>
-//         {children}
-//         <Button
-//           onPress={this._submitLogin}
-//           title="Submit Login"
-//         />
-//       </View>
-//     )
-//   }
-// }
+const LoginContainer = ({ children, signInUser }: Props) => children({ signInUser })
 
 export default compose(
   signInUser,
-)(RPLoginContainer)
+)(LoginContainer)
