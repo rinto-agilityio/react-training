@@ -1,37 +1,7 @@
-import { compose, graphql } from 'react-apollo'
-import gql from 'graphql-tag'
+import { compose } from 'react-apollo'
 
-const USER_SIGNIN = gql`
-  mutation signInUser($email: String!, $password: String!) {
-    signInUser(email: $email, password: $password) {
-      token
-    }
-  }
-`
-
-const signInUser = graphql(USER_SIGNIN, {
-  props: ({ mutate }) => ({
-    signInUser: (email, password) => mutate({
-      variables: {
-        email,
-        password,
-      },
-    }),
-  }),
-  options: {
-    update: (proxy, { data }) => {
-      try {
-        const { signInUser: { token } } = data
-
-        if (token) {
-          localStorage.setItem('token', token)
-        }
-      } catch (err) {
-        console.error(err)
-      }
-    },
-  },
-})
+// GraphQL
+import { signInUser } from '../graphql/user'
 
 type Props = {
   signInUser: (email: string, password: string) => void,
