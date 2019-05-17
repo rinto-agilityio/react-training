@@ -1,6 +1,8 @@
 {
   "globals": {
-    "renderer": true
+    "renderer": true,
+    "mount": true,
+    "shallow": true
   },
   "extends": [
     "prettier",
