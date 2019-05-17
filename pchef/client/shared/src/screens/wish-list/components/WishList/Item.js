@@ -7,20 +7,20 @@ import styles from './styles'
 
 type Props = {
   size: string,
-  key: number,
   item: {
+    id: number,
     categoryId: number,
     cookingTypeId: number,
     date: number,
-  }
+  },
 }
 
 const Item = ({
   size = 'medium',
   item = {},
-  key,
 }: Props) => {
   const {
+    id,
     date,
     categoryId,
     cookingTypeId,
@@ -29,7 +29,7 @@ const Item = ({
   return (
     <View
       style={[styles.wrapperItem, styles[`${size}WrapperItem`]]}
-      key={key}
+      key={id}
     >
       <Text style={[styles.date, styles[`${size}Date`]]}>{date}</Text>
       <Text style={[styles.content, styles[`${size}Content`]]}>

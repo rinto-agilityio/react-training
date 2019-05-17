@@ -7,45 +7,24 @@ import { action } from '@storybook/addon-actions'
 import WistList from '.'
 
 // Mocks
-import { recipe } from '../../../../mocks/recipe'
+import { wishList } from '../../../../mocks/wish-list'
 
 storiesOf('Wish list', module)
   .add('small', () => (
     <WistList
       size="small"
-      wishList={[{
-        id: 1,
-        date: Date.now(),
-        categoryId: 1,
-        cookingTypeId: 1,
-      },
-      {
-        id: 2,
-        date: Date.now(),
-        categoryId: 1,
-        cookingTypeId: 1,
-      }]}
+      wishList={wishList}
     />
   ))
   .add('medium', () => (
     <WistList
-      wishList={[{
-        id: 1,
-        date: Date.now(),
-        categoryId: 1,
-        cookingTypeId: 1,
-      }]}
+      wishList={wishList}
       size="medium"
     />
   ))
   .add('large', () => (
     <WistList
       size="large"
-      wishList={[{
-        id: 1,
-        date: Date.now(),
-        categoryId: 1,
-        cookingTypeId: 1,
-      }]}
+      wishList={wishList}
     />
   ))

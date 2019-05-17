@@ -9,7 +9,12 @@ import styles from './styles'
 import Item from './Item'
 
 type Props = {
-  wishList: Array<{}>,
+  wishList: Array<{
+    id: number,
+    categoryId: number,
+    cookingTypeId: number,
+    date: number,
+  }>,
   size: string,
 }
 
@@ -17,10 +22,9 @@ const WishList = ({
   wishList = [],
   size = 'medium',
 }: Props) => (
-  <View>
+  <View style={styles.container}>
     {wishList.map(item => (
       <Item
-        key={item.id}
         item={item}
         size={size}
       />
