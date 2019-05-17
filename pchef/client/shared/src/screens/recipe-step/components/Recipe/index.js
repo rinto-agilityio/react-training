@@ -9,7 +9,7 @@ import styles from './styles'
 import { COLORS, METRICS } from '../../../../themes'
 
 // Components
-import Progress from './ProcessStep'
+import Progress from './ProgressStep'
 import ImageBackground from '../../../../components/ImageBackground'
 import Reaction from '../../../../components/Reaction'
 import Comment from '../../../recipe/components/Comment'
@@ -32,7 +32,7 @@ type Props = {
     }>
   },
   size: string,
-  onClick?: () => void,
+  onPress?: () => void,
   customRecipe?: {},
   customTitle?: {},
   customDescription?: {},
@@ -45,7 +45,7 @@ const Recipe = ({
   stepInfo,
   size = 'large',
   recipe,
-  onClick,
+  onPress,
   customRecipe,
   customTitle,
   customDescription,
@@ -74,7 +74,6 @@ const Recipe = ({
           styles.recipe,
           customRecipe,
         ]}
-        onClick={onClick}
       >
         <Text
           style={[
@@ -82,6 +81,7 @@ const Recipe = ({
             styles[`${size}Title`],
             customTitle,
           ]}
+          onPress={onPress}
         >
           {title}
         </Text>
@@ -91,6 +91,7 @@ const Recipe = ({
             styles[`${size}Description`],
             customSubTitle,
           ]}
+          onPress={onPress}
         >
           {subTitle}
         </Text>
@@ -163,7 +164,7 @@ const Recipe = ({
 }
 
 Recipe.defaultProps = {
-  onClick: () => {},
+  onPress: () => {},
   customRecipe: {},
   customTitle: {},
   customDescription: {},

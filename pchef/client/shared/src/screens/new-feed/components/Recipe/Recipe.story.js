@@ -3,7 +3,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 // Helpers
-import { recipe } from '../../../../mocks/recipe'
+import { recipes } from '../../../../mocks'
 
 // Components
 import Recipe from '.'
@@ -12,12 +12,12 @@ storiesOf('New feed recipe', module)
   .add('medium', () => (
     <Recipe
       size="medium"
-      recipe={recipe}
+      recipe={recipes[0]}
     />
   ))
   .add('large', () => (
     <Recipe
       size="large"
-      recipe={recipe}
+      recipe={recipes[0]}
     />
   ))

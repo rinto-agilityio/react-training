@@ -7,26 +7,26 @@ import { action } from '@storybook/addon-actions'
 import Recipe from '.'
 
 // Mocks
-import { recipe } from '../../../../mocks/recipe'
+import { recipes } from '../../../../mocks'
 
 storiesOf('Recipe', module)
   .add('small', () => (
     <Recipe
-      recipe={recipe}
+      recipe={recipes[0]}
       size="small"
       onSelectStep={action('clicked')}
     />
   ))
   .add('medium', () => (
     <Recipe
-      recipe={recipe}
+      recipe={recipes[0]}
       size="medium"
       onSelectStep={action('clicked')}
     />
   ))
   .add('large', () => (
     <Recipe
-      recipe={recipe}
+      recipe={recipes[0]}
       size="large"
       onSelectStep={action('clicked')}
     />

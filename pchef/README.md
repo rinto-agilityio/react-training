@@ -31,4 +31,10 @@ Make sure you're staying in root and use `yarn` (not `npm`) to run scripts, reas
 - `yarn start`
 
 4. Run mobile: `yarn workspace mobile start`
-   Open project in `Xcode` or `Android Studio` to run mobile app on simulator.
+  Open project in `Xcode` or `Android Studio` to run mobile app on simulator.
+
+5. Run server:
+
+- `cd server`
+- `yarn server`
+  Server open at: http://localhost:4000

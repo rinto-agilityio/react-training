@@ -2,17 +2,13 @@
 import { StyleSheet } from 'react-native'
 
 // Themes
-import { COLORS, METRICS } from '../../../../themes'
+import { COLORS, METRICS, FONTS } from '../../../../themes'
 
 const tinyPadding = 3
 
 const styles = StyleSheet.create({
   wrapper: {
     display: 'flex',
-  },
-
-  largeWrapper: {
-    width: METRICS.largeWrapper,
   },
 
   // Title
@@ -23,13 +19,13 @@ const styles = StyleSheet.create({
     paddingRight: METRICS.largePadding,
   },
   smallTitle: {
-    fontSize: METRICS.fontSize.medium,
+    fontSize: FONTS.fontSize.medium,
   },
   mediumTitle: {
-    fontSize: METRICS.fontSize.large,
+    fontSize: FONTS.fontSize.large,
   },
   largeTitle: {
-    fontSize: METRICS.fontSize.extraLarge,
+    fontSize: FONTS.fontSize.extraLarge,
   },
 
   // Title step
@@ -49,13 +45,13 @@ const styles = StyleSheet.create({
     paddingRight: METRICS.largePadding,
   },
   smallDescription: {
-    fontSize: METRICS.fontSize.small,
+    fontSize: FONTS.fontSize.small,
   },
   mediumDescription: {
-    fontSize: METRICS.fontSize.medium,
+    fontSize: FONTS.fontSize.medium,
   },
   largeDescription: {
-    fontSize: METRICS.fontSize.large,
+    fontSize: FONTS.fontSize.large,
   },
 
   // Image
@@ -77,6 +73,8 @@ const styles = StyleSheet.create({
   // Step
   progressStep: {
     marginRight: tinyPadding,
+    padding: 0,
+    minWidth: 0,
   },
   activeStep: {
     backgroundColor: COLORS.baseBlue,
@@ -85,22 +83,16 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.baseGray,
   },
   smallStep: {
-    paddingTop: tinyPadding,
-    paddingBottom: tinyPadding,
-    paddingLeft: METRICS.mediumPadding,
-    paddingRight: METRICS.mediumPadding,
+    width: 25,
+    height: METRICS.smallPadding,
   },
   mediumStep: {
-    paddingTop: tinyPadding,
-    paddingBottom: tinyPadding,
-    paddingLeft: METRICS.mediumPosition,
-    paddingRight: METRICS.mediumPosition,
+    width: METRICS.extraLargePadding,
+    height: METRICS.smallPadding,
   },
   largeStep: {
-    paddingTop: METRICS.smallPadding,
-    paddingBottom: METRICS.smallPadding,
-    paddingLeft: METRICS.largePadding,
-    paddingRight: METRICS.largePadding,
+    width: 35,
+    height: METRICS.smallPadding,
   },
 
   // views
@@ -110,14 +102,14 @@ const styles = StyleSheet.create({
     paddingLeft: METRICS.largePadding,
     paddingRight: METRICS.largePadding,
   },
-  smallDescription: {
+  smallViews: {
     fontSize: METRICS.smallPosition,
   },
-  mediumDescription: {
+  mediumViews: {
     fontSize: 12,
   },
-  largeDescription: {
-    fontSize: METRICS.fontSize.small,
+  largeViews: {
+    fontSize: FONTS.fontSize.small,
   },
 })
 

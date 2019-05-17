@@ -18,6 +18,7 @@ type Props = {
   name: string,
   disabled?: boolean,
   wrapperIconStyle?: Object,
+  customIconStyles?: {}
 };
 
 const Icon = ({
@@ -29,6 +30,7 @@ const Icon = ({
   name,
   wrapperIconStyle,
   disabled,
+  customIconStyles,
 }: Props) => (
   <View style={[
     styles.wrapIcon,
@@ -41,6 +43,7 @@ const Icon = ({
       size={size}
       onPress={onPress}
       disabled={disabled}
+      style={[styles.iconStyles, customIconStyles]}
     />
     {label ? <Text style={[styles.label, customStyle]}>{label}</Text> : null}
   </View>
@@ -54,6 +57,7 @@ Icon.defaultProps = {
   color: COLORS.black,
   wrapperIconStyle: {},
   disabled: false,
+  customIconStyles: {},
 };
 
 export default Icon

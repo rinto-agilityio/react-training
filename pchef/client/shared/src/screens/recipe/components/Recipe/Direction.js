@@ -36,7 +36,7 @@ const Direction = ({
     }}
   >
     <Button
-      title={item.step.toString()}
+      title={item.step ? item.step.toString() : ''}
       buttonStyle={[styles.button, styles[`${size}Button`]]}
       titleStyle={[styles.titleBtn, styles[`${size}TitleBtn`]]}
       onPress={onSelectStep}

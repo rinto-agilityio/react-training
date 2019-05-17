@@ -7,36 +7,84 @@
  */
 
 import React, { Component } from 'react'
-import { Platform, StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
+import { ApolloProvider } from 'react-apollo'
 
 import {
   Provider as PaperProvider,
   Button as PaperButton,
 } from 'react-native-paper'
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-})
+// Apollo Client
+// $FlowFixMe
+import client from './config/apollo-client'
 
-type Props = {}
+// Containers
+import LoginContainer from './containers/Login'
 
-export default class App extends Component<Props> {
+type LoginProps = {
+  submitLogin: (email: string, password: string) => any
+}
+
+/**
+ * This is sample for component manually calling GraphQL event
+ */
+const LoginComponent = ({ submitLogin }: LoginProps) => {
+  /**
+   * This is sample function, should be implment for each platform
+   * Set token in localStorage for web platform / mobile
+   * ApolloClient header will get this token and update to request headers
+   */
+  const _signInUser = async () => {
+    try {
+      // TODO: This is sample user, this data should get from input
+      await submitLogin('user1@gmail.com', 'user1@pwd')
+        .then(({ data }) => {
+          const { signInUser: { token } } = data
+
+          if (token) {
+            localStorage.setItem('token', token)
+          }
+        })
+    } catch (err) {
+      console.log('signInUser err: ', err)
+    }
+  }
+
+  return (
+    <View>
+      <Text>Login Component</Text>
+      <PaperButton
+        mode="contained"
+        onPress={_signInUser}
+      >
+        SubmitLogin
+      </PaperButton>
+    </View>
+  )
+}
+
+type AppProps = {}
+
+export default class App extends Component<AppProps> {
   render() {
     return (
-      <PaperProvider>
-        <View style={styles.container}>
-          <Text style={styles.welcome}>PaperProvider</Text>
-          <Text style={styles.welcome}>Welcome to React Native!</Text>
-          <Text style={styles.instructions}>To get started, edit App.js</Text>
-          <Text style={styles.instructions}>{instructions}</Text>
-          <PaperButton mode="contained" onPress={() => {}}>
-            PaperButton
-          </PaperButton>
-        </View>
-      </PaperProvider>
+      <ApolloProvider client={client}>
+        <PaperProvider>
+          <View style={styles.container}>
+            <Text style={styles.welcome}>Shared-components for both Web and Mobile</Text>
+            <LoginContainer>
+              {
+                ({ signInUser }) => (
+                  <LoginComponent
+                    submitLogin={signInUser}
+                  />
+                )
+              }
+            </LoginContainer>
+          </View>
+        </PaperProvider>
+      </ApolloProvider>
     )
   }
 }

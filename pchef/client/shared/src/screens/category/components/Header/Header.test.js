@@ -30,7 +30,7 @@ describe('Components', () => {
         component
           .find('Icon')
           .at(0)
-          .props().color
+          .props().color,
       ).toEqual('#c5c5c5')
     })
   })

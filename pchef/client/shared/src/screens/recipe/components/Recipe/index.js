@@ -17,13 +17,13 @@ type Props = {
       description: string
     }>,
   },
-  size?: string,
+  size: string,
   onSelectStep?: () => void,
 }
 
 const Recipe = ({
   recipe,
-  size = '',
+  size = 'medium',
   onSelectStep,
 }: Props) => {
   const {
@@ -48,7 +48,6 @@ const Recipe = ({
 
 Recipe.defaultProps = {
   onSelectStep: () => {},
-  size: 'medium',
 }
 
 export default Recipe
