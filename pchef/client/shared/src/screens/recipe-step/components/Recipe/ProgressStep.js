@@ -24,10 +24,10 @@ type Props = {
 }
 
 const chevronIcon = (
-  name: string,
-  size: string,
-  disabled: boolean,
-  onPress?: () => void
+  name,
+  size,
+  disabled,
+  onPress: () => void
 ) => (
   <Icon
     name={name}

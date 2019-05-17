@@ -6,6 +6,6 @@ exports[`Recipe by step Render progress step component with steps array 1`] = `R
 
 exports[`Recipe by step Render recipe component with size medium 1`] = `ReactWrapper {}`;
 
-exports[`Recipe by step renders correctly progress steps commponent 1`] = `ReactWrapper {}`;
+exports[`Recipe by step Renders correctly progress steps commponent 1`] = `ReactWrapper {}`;
 
-exports[`Recipe by step renders correctly recipe commponent 1`] = `ReactWrapper {}`;
+exports[`Recipe by step Renders correctly recipe commponent 1`] = `ReactWrapper {}`;
