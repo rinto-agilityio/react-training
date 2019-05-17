@@ -15,11 +15,11 @@ type Props = {
   recipe: {
     id: number,
     title: string,
-    image: string,
+    imgUrl: string,
     description: string,
   },
   handlePressIcon?: () => void,
-  sizeType?: string,
+  size?: string,
   color?: string,
   handlePressImage?: () => void,
 }
@@ -27,34 +27,34 @@ type Props = {
 const Recipe = ({
   recipe,
   handlePressIcon,
-  sizeType = '',
+  size = '',
   color,
   handlePressImage,
 }: Props) => {
-  const { title, image, description } = recipe
+  const { title, imgUrl, description } = recipe
 
   return (
-    <View style={[styles.recipe, styles[`${sizeType}Content`]]}>
-      <Text style={[styles.title, styles[`${sizeType}Title`]]}>{title}</Text>
+    <View style={[styles.recipe, styles[`${size}Content`]]}>
+      <Text style={[styles.title, styles[`${size}Title`]]}>{title}</Text>
       <Wrapper direction="row" childPosition="left">
         <Image
-          url={image}
-          customImageStyle={[styles.image, styles[`${sizeType}Image`]]}
+          url={imgUrl}
+          customImageStyle={[styles.image, styles[`${size}Image`]]}
           handleTouch={handlePressImage}
         />
         <Wrapper
           direction="column"
           childPosition="middle"
-          customStyles={[styles.wrapper, styles[`${sizeType}Wrapper`]]}
+          customStyles={[styles.wrapper, styles[`${size}Wrapper`]]}
         >
-          <Text style={[styles.text, styles[`${sizeType}Text`]]}>
+          <Text style={[styles.text, styles[`${size}Text`]]}>
             {description}
           </Text>
           <Icon
             wrapperIconStyle={styles.icon}
             name="favorite-border"
             size={
-              sizeType === 'large'
+              size === 'large'
                 ? FONTS.fontSize.extraLarge
                 : FONTS.fontSize.medium
             }
@@ -69,7 +69,7 @@ const Recipe = ({
 
 Recipe.defaultProps = {
   handlePressIcon: () => {},
-  sizeType: 'medium',
+  size: 'medium',
   color: COLORS.grayDarker,
   handlePressImage: () => {},
 }

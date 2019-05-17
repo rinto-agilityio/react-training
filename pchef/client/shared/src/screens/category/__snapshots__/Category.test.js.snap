@@ -3,7 +3,7 @@
 exports[`Screen Category should render Category screen 1`] = `
 Array [
   <div
-    className="css-view-1dbjc4n r-display-6koalj r-height-1kl1mp1"
+    className="css-view-1dbjc4n r-display-6koalj r-height-dcqb1h"
   >
     <div
       className="css-view-1dbjc4n r-height-1pi2tsx r-width-13qz1uu"
@@ -39,7 +39,7 @@ Array [
         />
       </div>
       <div
-        className="css-text-76zvg2 r-color-jwli3a r-fontSize-1i10wst r-fontWeight-1kfrs79 r-marginBottom-d0pm55"
+        className="css-text-76zvg2 r-color-jwli3a r-fontSize-zz5t5d r-fontWeight-1kfrs79 r-marginBottom-d0pm55"
         dir="auto"
       >
         Chicken
@@ -187,7 +187,7 @@ Array [
             style={
               Object {
                 "color": "rgba(31,51,64,1.00)",
-                "fontSize": "20px",
+                "fontSize": "40px",
               }
             }
           >
@@ -237,7 +237,7 @@ Array [
             style={
               Object {
                 "color": "rgba(197,197,197,1.00)",
-                "fontSize": "20px",
+                "fontSize": "40px",
               }
             }
           >

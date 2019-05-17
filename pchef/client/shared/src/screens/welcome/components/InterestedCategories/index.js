@@ -9,7 +9,7 @@ type Props = {
   type?: string,
   onChooseCategory: (id: string) => void,
   activeList: Array<string>,
-  categories: Array<{ id: string, name: string, image: string }>,
+  categories: Array<{ id: string, name: string, imgUrl: string }>,
 }
 
 // component Comment Form
@@ -53,7 +53,7 @@ const InterestedCategories = ({
             <TouchableOpacity onPress={() => onChooseCategory(category.id)}>
               <Image
                 style={[styles.image, itemSize]}
-                source={{ uri: category.image }}
+                source={{ uri: category.imgUrl }}
               />
               <Text
                 style={[
