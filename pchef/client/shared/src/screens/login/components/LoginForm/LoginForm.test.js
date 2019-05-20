@@ -2,18 +2,18 @@
 import LoginForm from '.'
 
 it('LoginForm snapshots', () => {
-  // define props
+  // mock props
   const props = {
-    onSubmit: () => {},
-    setError: () => {},
+    onSubmit: jest.fn(),
+    setError: jest.fn(),
     error: false,
     isSubmit: false,
   }
 
-  const primaryComponent = shallow(
+  const primaryComponent = renderer.create(
     <LoginForm {...props} type="primary" customStyle={{ flex: 1 }} />,
   )
-  const secondaryComponent = shallow(
+  const secondaryComponent = renderer.create(
     <LoginForm {...props} error isSubmit type="secondary" />,
   )
 
@@ -22,7 +22,7 @@ it('LoginForm snapshots', () => {
 })
 
 it('LoginForm actions', () => {
-  // define props
+  // mock props
   const props = {
     onSubmit: jest.fn(),
     setError: jest.fn(),
