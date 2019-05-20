@@ -31,6 +31,18 @@ const WishListForm = ({
   const [selectedDay, setSelectedDay] = useState(today)
 
   const dayRange = getDateOfWeek()
+
+  // Data render wish list form input
+  const data = [
+    {
+      placeholder: 'Category',
+      refInput: categoryRef,
+    },
+    {
+      placeholder: 'Cooking type',
+      refInput: cookingTypeRef,
+    },
+  ]
   return (
     <View style={styles.container}>
       <Button
@@ -59,18 +71,15 @@ const WishListForm = ({
           </Dialog.Actions>
         </Dialog>
       </Portal>
-      <TextBox
-        placeholder="Category"
-        refInput={categoryRef}
-        customStyle={[styles.input, styles[`${size}Input`]]}
-        placeholderTextColor={COLORS.grayNavy}
-      />
-      <TextBox
-        placeholder="Cooking type"
-        refInput={cookingTypeRef}
-        customStyle={[styles.input, styles[`${size}Input`]]}
-        placeholderTextColor={COLORS.grayNavy}
-      />
+      {data.map(({ placeholder, refInput }) => (
+        <TextBox
+          key={placeholder}
+          placeholder={placeholder}
+          refInput={refInput}
+          customStyle={[styles.input, styles[`${size}Input`]]}
+          placeholderTextColor={COLORS.grayNavy}
+        />
+      ))}
     </View>
   )
 }
