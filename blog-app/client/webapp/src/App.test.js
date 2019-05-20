@@ -1,9 +1,22 @@
+// Libs
 import React from 'react';
-import ReactDOM from 'react-dom';
+import renderer from 'react-test-renderer';
+import { BrowserRouter } from 'react-router-dom';
+import { MockedProvider } from 'react-apollo/test-utils';
+
+// Components
 import App from './App';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  const component = renderer.create(
+    <BrowserRouter>
+      <MockedProvider>
+        <App />
+      </MockedProvider>
+    </BrowserRouter>
+  );
+  let tree = component.toJSON();
+
+  expect(tree).toMatchSnapshot();
 });
+
