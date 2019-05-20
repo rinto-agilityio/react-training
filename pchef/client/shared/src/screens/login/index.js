@@ -8,27 +8,49 @@ import styles from './styles'
 
 type Props = {
   customStyles?: Object,
-  onSubmit: (email: string, password: string) => void,
+  signInUser: (
+    email: string,
+    password: string
+  ) => Promise<{ data: { signInUser: { token: string } } }>,
   type?: string,
-  userError?: boolean,
 }
 
 // Login screen
-const Login = ({
-  customStyles = {},
-  onSubmit,
-  type = 'primary',
-  userError,
-}: Props) => {
+const Login = (props: Props) => {
   const [error, setError] = useState(false)
+  const [isSubmit, setSubmit] = useState(false)
 
-  // check if login has any error
-  const hasError = error || userError
+  // handling sign in with email and password
+  const handlingSignIn = async (email: string, password: string) => {
+    // set form submit to true
+    setSubmit(true)
+
+    try {
+      // get token by user email and password
+      await signInUser(email, password).then(({ data }) => {
+        const {
+          signInUser: { token },
+        } = data
+
+        if (token) {
+          setError(false)
+          localStorage.setItem('token', token)
+        }
+        setSubmit(false)
+      })
+    } catch (err) {
+      setError(true)
+      setSubmit(false)
+    }
+  }
+
+  // get Login props
+  const { customStyles = {}, signInUser, type = 'primary' } = props
 
   return (
     <View style={[styles.container, styles[`${type}Container`]]}>
       {/* Display error */}
-      {hasError ? (
+      {error ? (
         <View style={[styles.errorWrapper, styles[`${type}ErrorWrapper`]]}>
           <Text style={[styles.error, styles[`${type}Error`]]}>
             Login failed! Email or password incorrect.
@@ -41,9 +63,10 @@ const Login = ({
 
       <LoginForm
         customStyles={customStyles}
-        onSubmit={onSubmit}
+        onSubmit={handlingSignIn}
         setError={setError}
-        hasError={hasError}
+        error={error}
+        isSubmit={isSubmit}
         type={type}
       />
     </View>
@@ -53,7 +76,6 @@ const Login = ({
 Login.defaultProps = {
   customStyles: {},
   type: 'primary',
-  userError: false,
 }
 
 export default Login
