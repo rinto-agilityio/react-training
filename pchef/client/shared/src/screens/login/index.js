@@ -12,11 +12,17 @@ type Props = {
     email: string,
     password: string
   ) => Promise<{ data: { signInUser: { token: string } } }>,
+  handlingLoginSuccess: (token: string) => void,
   type?: string,
 }
 
 // Login screen
-const Login = (props: Props) => {
+const Login = ({
+  customStyles = {},
+  signInUser,
+  type = 'primary',
+  handlingLoginSuccess,
+}: Props) => {
   const [error, setError] = useState(false)
   const [isSubmit, setSubmit] = useState(false)
 
@@ -34,7 +40,7 @@ const Login = (props: Props) => {
 
         if (token) {
           setError(false)
-          localStorage.setItem('token', token)
+          handlingLoginSuccess(token)
         }
         setSubmit(false)
       })
@@ -43,9 +49,6 @@ const Login = (props: Props) => {
       setSubmit(false)
     }
   }
-
-  // get Login props
-  const { customStyles = {}, signInUser, type = 'primary' } = props
 
   return (
     <View style={[styles.container, styles[`${type}Container`]]}>
