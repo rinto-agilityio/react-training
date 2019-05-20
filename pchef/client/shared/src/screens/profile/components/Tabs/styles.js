@@ -14,8 +14,9 @@ const styles = StyleSheet.create({
   },
   wrapContent: {
     padding: METRICS.largePadding,
-    backgroundColor: '#f2f2f2',
-    flexDirection: METRICS.screenWidth > METRICS.mediumScreen ? 'row' : 'column',
+    backgroundColor: COLORS.lightSliver,
+    flexDirection:
+      METRICS.screenWidth > METRICS.mediumScreen ? 'row' : 'column',
     flexWrap: METRICS.screenWidth > METRICS.mediumScreen ? 'wrap' : 'nowrap',
     justifyContent: 'space-between',
   },
