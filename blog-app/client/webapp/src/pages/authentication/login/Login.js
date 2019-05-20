@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useCallback } from 'react';
 import { ApolloConsumer } from 'react-apollo';
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -18,7 +18,7 @@ const Login = props  => {
   const password = useRef('');
   const [errorMes, setErrorMes] = useState('');
 
-  const handleSignIn = async (event, client) => {
+  const memoizedHandleSignIn = useCallback(async (event, client) => {
 
     event.preventDefault();
 
@@ -48,7 +48,8 @@ const Login = props  => {
       setErrorMes(error && error.graphQLErrors && error.graphQLErrors[0].message )
     })
     );
-  };
+  }, [props.history]);
+
   return (
     <ApolloConsumer>
       {
@@ -59,7 +60,7 @@ const Login = props  => {
               <p>Welcome To Blog</p>
             </div>
             <div className='authentication-form'>
-              <Form onSubmit={(event) => handleSignIn(event, client)}>
+              <Form onSubmit={(event) => memoizedHandleSignIn(event, client)}>
                 <Form.Group >
                   <Form.Control type='email' ref={email} placeholder='Enter email' />
                 </Form.Group>

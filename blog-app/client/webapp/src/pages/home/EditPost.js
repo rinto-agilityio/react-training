@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useCallback } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Mutation } from 'react-apollo';
 import PropTypes from 'prop-types';
@@ -23,21 +23,24 @@ const EditPost = ({user, handleCloseModal, postEditing}) => {
   const title = useRef('');
   const content = useRef('');
 
-  const handleSubmitForm = (event, editPost) => {
+  const memoizedHandleSubmitForm = useCallback(
+    (event, editPost) => {
 
-    event.preventDefault();
+      event.preventDefault();
 
-    editPost({
-      variables: {
-        post: {
-          id: postEditing.id,
-          title: title.current ? title.current.value : '',
-          content: content.current ? content.current.value : '',
-          authorId: user.id
+      editPost({
+        variables: {
+          post: {
+            id: postEditing.id,
+            title: title.current ? title.current.value : '',
+            content: content.current ? content.current.value : '',
+            authorId: user.id
+          }
         }
-      }
-    });
-  };
+      });
+    },
+    [postEditing.id, user.id],
+  );
 
   return (
     <Mutation
@@ -70,7 +73,7 @@ const EditPost = ({user, handleCloseModal, postEditing}) => {
 
         return (
           <div className='create-post'>
-            <Form onSubmit={ e => handleSubmitForm(e, editPost)} className='form-new-post'>
+            <Form onSubmit={ e => memoizedHandleSubmitForm(e, editPost)} className='form-new-post'>
               <Input
                 placeholder='input title'
                 onRef={title}

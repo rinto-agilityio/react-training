@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useCallback } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Mutation } from 'react-apollo';
@@ -22,7 +22,7 @@ const SignUp = props  => {
   const password = useRef('');
   const name = useRef('');
 
-  const handleSignUp = (event, signUp) => {
+  const memoizedHandleSignUp = useCallback((event, signUp) => {
 
     event.preventDefault();
     signUp({variables: {
@@ -31,7 +31,7 @@ const SignUp = props  => {
       password: password.current ? password.current.value : '',
       name: name.current ? name.current.value : ''
     }});
-  };
+  }, []);
 
   return (
     <Mutation
@@ -50,7 +50,7 @@ const SignUp = props  => {
             <p>Register Account</p>
           </div>
           <div className='authentication-form'>
-            <Form onSubmit={e => handleSignUp(e, signUp)}>
+            <Form onSubmit={(event) => memoizedHandleSignUp(event, signUp)}>
               <Form.Group >
                 <Form.Control type='text' ref={name} placeholder='Enter name' />
                 {
