@@ -6,10 +6,10 @@
   - Graphql
 ## Tools and libs 
   - React latest version( hooks ) - [https://reactjs.org/docs/getting-started.html] - A JavaScript library for building user interface.
-  
+
   - GraphQL: A query language for APIs and a runtime for fulfilling those queries with your existing data.
 
-  -Apollo: An implementation of GraphQL that helps you manage data from the cloud to your UI. It's incrementally adoptable and can be layered over your existing services, including REST APIs and databases.
+  - Apollo: An implementation of GraphQL that helps you manage data from the cloud to your UI. It's incrementally adoptable and can be layered over your existing services, including REST APIs and databases.
 
   - Storybook: Interactive development & testing environment for React, React-Native, Vue UI components.
 
