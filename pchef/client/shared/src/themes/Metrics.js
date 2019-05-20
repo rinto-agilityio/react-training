@@ -59,6 +59,7 @@ export default {
 
   // Border Radius
   smallBorderRadius: 5,
+  baseBorderRadius: 8,
   mediumBorderRadius: 10,
   largeBorderRadius: 20,
 
@@ -85,4 +86,10 @@ export default {
   smallBorderWidth: 1,
   mediumBorderWidth: 3,
   largeBorderWidth: 5,
+
+  // height
+  mediumHeight: 50,
+
+  // button
+  largeButton: 260,
 }

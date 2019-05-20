@@ -2,14 +2,6 @@ import { compose } from 'react-apollo'
 
 // GraphQL
 import { signInUser } from '../graphql/user'
+import Login from '../screens/login'
 
-type Props = {
-  signInUser: (email: string, password: string) => void,
-  children: any,
-}
-
-const LoginContainer = ({ children, signInUser }: Props) => children({ signInUser })
-
-export default compose(
-  signInUser,
-)(LoginContainer)
+export default compose(signInUser)(Login)
