@@ -16,9 +16,9 @@
   "dependencies": {
     "apollo-boost": "^0.3.1",
     "dotenv": "^8.0.0",
+    "fromnow": "3.0.0",
     "graphql": "^14.3.0",
     "graphql-tag": "^2.10.1",
-    "fromnow": "3.0.0",
     "react": "16.8.3",
     "react-apollo": "^2.5.5",
     "react-art": "16.8.3",
@@ -28,7 +28,8 @@
     "react-native-paper": "^2.15.2",
     "react-native-vector-icons": "^6.4.2",
     "react-native-web": "^0.11.2",
-    "react-scripts": "^3.0.1"
+    "react-scripts": "^3.0.1",
+    "waait": "^1.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
