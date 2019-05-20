@@ -11,6 +11,7 @@ import styles from './styles'
 
 type Props = {
   categories?: Array<{
+    id: string,
     name: string,
     imgUrl: string,
   }>,
@@ -19,13 +20,14 @@ type Props = {
     title: string,
     imgUrl: string,
     description: string,
+    votes: Array<number>,
   }>,
 }
 const Tabs = ({ categories, recipes }: Props) => {
   // state
   const [tabActive, setTabActive] = useState(0)
-  const totalOfRecipes = recipes.length
-  const totalOfCatefories = categories.length
+  const totalOfRecipes = recipes ? recipes.length : 0
+  const totalOfCatefories = categories ? categories.length : 0
 
   const tabs = [
     { name: 'recipes', number: totalOfRecipes },
@@ -50,22 +52,24 @@ const Tabs = ({ categories, recipes }: Props) => {
       </View>
       <View style={styles.wrapContent}>
         {tabActive === 0 &&
-          (!recipes.length
+          (!totalOfRecipes
             ? NO_RECIPES_MESSAGE
-            : recipes.map(recipe => (
-              <View style={styles.tabContentItem}>
-                <Recipe size="medium" key={recipe.id} recipe={recipe} />
-              </View>
-            )))}
+            : recipes &&
+              recipes.map(recipe => (
+                <View style={styles.tabContentItem}>
+                  <Recipe size="medium" key={recipe.id} recipe={recipe} />
+                </View>
+              )))}
 
         {tabActive === 1 &&
-          (!categories.length
+          (!totalOfCatefories
             ? NO_CATEGORIES_MESSAGE
-            : categories.map(category => (
-              <View style={styles.tabContentItem}>
-                <Category key={category.id} category={category} />
-              </View>
-            )))}
+            : categories &&
+              categories.map(category => (
+                <View style={styles.tabContentItem}>
+                  <Category key={category.id} category={category} />
+                </View>
+              )))}
       </View>
     </View>
   )
