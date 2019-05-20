@@ -22,4 +22,13 @@
       - `cd client/webapp`
       - Run command: `yarn install or npm install`
       - Run command: `yarn start or npm start`
-      - Verify by navigating to your server address in your browser: http://localhost:3000/  
+      - Verify by navigating to your server address in your browser: http://localhost:3000/
+
+### How to run UnitTest App
+  - `cd blog-app`
+  - `cd client/webapp`
+  - Run command: `yarn test or npm test`
+### How to run storybook
+  - `cd blog-app`
+  - `cd client/webapp`
+  - Run command: `yarn storybook or npm run storybook`
