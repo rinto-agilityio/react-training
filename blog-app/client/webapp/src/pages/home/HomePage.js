@@ -18,6 +18,7 @@ import { POST_ADDED, POST_EDIT, POST_DELETE } from '../../graphql/post/subcripti
 //queries
 import { LOGGED_USER } from '../../graphql/author/queries';
 import { GET_POST } from '../../graphql/post/queries';
+import { Indicator } from '../../components/commons/Indicator';
 
 const HomePage = props => {
 
@@ -106,7 +107,7 @@ const HomePage = props => {
       }}
     >
       {({ loading, error, data, fetchMore, subscribeToMore, client }) => {
-        if (loading) return <Spinner animation="border" variant="primary" />;
+        if (loading) return <Indicator />;
         if (error) return `Error! ${error.message}`;
         const posts = data && data.getPostsByAuthor && data.getPostsByAuthor.posts;
         if (posts) {

@@ -1,13 +1,14 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { Mutation } from 'react-apollo';
-import { Spinner, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 //style
 import './styles/PostStyle.css';
 
 //mutation
 import { DELETE_POST } from '../../graphql/post/mutations';
+import { Indicator } from '../commons/Indicator';
 
 const PostItem = ({post, history, user, handleOpenModal}) => {
   const handleEditPost = () => {
@@ -31,11 +32,7 @@ const PostItem = ({post, history, user, handleOpenModal}) => {
       {(deletePost, { data, loading, error }) => {
 
         if (loading) {
-          return (
-            <div className='wrap-loading'>
-              <Spinner animation="border" variant="primary" />
-            </div>
-          );
+          return <Indicator />;
         }
 
         return (

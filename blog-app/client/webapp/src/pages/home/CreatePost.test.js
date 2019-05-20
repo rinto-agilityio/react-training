@@ -23,7 +23,8 @@ const mocks = [
           title: 'title123',
           content: 'content123',
           author: {
-            name: 'rinto'
+            name: 'rinto',
+            __typename: 'Author'
           }
         }
       }
@@ -42,7 +43,7 @@ describe('Test CreatePost', () => {
 
   it('Testing CreatePost Loading state:', () => {
     const renderComponent = mount(
-      <MockedProvider mocks={mocks} addTypename={false}>
+      <MockedProvider mocks={mocks} addTypename={false} >
         <CreatePost {...props}/>
       </MockedProvider>
     );
@@ -54,9 +55,9 @@ describe('Test CreatePost', () => {
     expect(renderComponent.find(Indicator).length).toEqual(1);
   });
 
-  it.skip('Testing CreatePost final state:', async () => {
+  it('Testing CreatePost final state:', async () => {
     const renderComponent = mount(
-      <MockedProvider mocks={mocks} addTypename={false}>
+      <MockedProvider mocks={mocks} addTypename={false} >
         <CreatePost {...props} />
       </MockedProvider>
     );
@@ -67,7 +68,6 @@ describe('Test CreatePost', () => {
 
     await waitForExpect(() => {
       renderComponent.update();
-
       expect(renderComponent.find(Form).exists()).toBeTruthy();
     });
   });
@@ -96,7 +96,7 @@ describe('Test CreatePost', () => {
     };
 
     const renderComponent = mount(
-      <MockedProvider mocks={mocksClient} addTypename={false}>
+      <MockedProvider mocks={mocksClient} >
         <CreatePost {...props} />
       </MockedProvider>
     );

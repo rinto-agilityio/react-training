@@ -64,11 +64,7 @@ const EditPost = ({user, handleCloseModal, postEditing}) => {
       onError={() => {}}
     >
       {(editPost, { data, loading, error }) => {
-        if (loading) return (
-          <div className='wrap-loading'>
-            <Indicator />
-          </div>
-        );
+        if (loading) return <Indicator />;
 
         if (error) return `Error! ${error.message}`;
 
