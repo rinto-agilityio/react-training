@@ -1,3 +1,5 @@
+import { Dimensions } from 'react-native'
+
 export default {
   // Padding
   smallPadding: 5,
@@ -92,4 +94,12 @@ export default {
 
   // button
   largeButton: 260,
+
+  // Window
+  screenWidth: Dimensions.get('window').width,
+  screenHeight: Dimensions.get('window').height,
+  smallScreen: 320,
+  mediumScreen: 640,
+  largeScreen: 840,
+  extraLargeScreen: 1024,
 }
