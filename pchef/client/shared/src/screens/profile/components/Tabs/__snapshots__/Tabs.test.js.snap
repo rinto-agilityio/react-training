@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Components Tabs should render Header component with grid 1`] = `
+exports[`Components Tabs should render Tabs component 1`] = `
 <div
   className="css-view-1dbjc4n"
 >
