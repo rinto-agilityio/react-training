@@ -7,9 +7,7 @@ import '../styles/ErrorMessageStyle.css';
 export const ErrorMessage = ({ message }) => {
 
   return (
-    <>
-      <p className='error-message'>{message}</p>
-    </>
+    <p className='error-message'>{message}</p>
   );
 };
 

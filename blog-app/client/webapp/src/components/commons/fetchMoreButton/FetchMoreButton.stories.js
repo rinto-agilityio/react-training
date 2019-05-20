@@ -6,7 +6,15 @@ import { action } from '@storybook/addon-actions';
 import FetchMoreButton from './FetchMoreButton';
 
 storiesOf('FetchMoreButton Component', module)
-  .addDecorator(story => <div style={{ marginTop: '30px', textAlign: 'center', width: '50%' }}>{story()}</div>)
+  .addDecorator(story =>
+    <div style={{
+      marginTop: '30px',
+      textAlign: 'center',
+      width: '50%' }}
+    >
+      {story()}
+    </div>
+  )
   .add('FetchMoreButton', () => (
     <FetchMoreButton
       fetchMore={action('clicked')}

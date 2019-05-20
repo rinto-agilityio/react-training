@@ -10,15 +10,16 @@ import resolvers from './resolvers';
 
 const cache = new InMemoryCache();
 
+let apiUrl = process.env.REACT_APP_LOCAL_GRAPHQL_SERVER_URL
 // Create http link
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4000',
+  uri: apiUrl,
   fetch: fetch
 });
 
 // Create WebSocket link
 const wsLink = new WebSocketLink({
-  uri: 'ws://localhost:4000/graphql',
+  uri: `ws:// ${apiUrl}`,
   options: {
     reconnect: true
   }
