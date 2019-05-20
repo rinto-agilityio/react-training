@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components TabHeaderItem should render TabHeaderItem component 1`] = `
+<div
+  className="css-view-1dbjc4n r-borderBottomWidth-qklmqi r-borderColor-1xc7w19 r-borderStyle-1phboty r-cursor-1loqt21 r-paddingBottom-1inuy60 r-paddingLeft-1hfyk0a r-touchAction-1otgn73 r-width-1iadsmv"
+  data-focusable={true}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  tabIndex="0"
+>
+  <div
+    className="css-text-76zvg2 r-fontWeight-majxgm"
+    dir="auto"
+  >
+    10
+  </div>
+  <div
+    className="css-text-76zvg2 r-fontWeight-majxgm"
+    dir="auto"
+  >
+    recipes
+  </div>
+</div>
+`;

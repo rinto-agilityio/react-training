@@ -22,7 +22,7 @@ type Props = {
   customWrapperStyles?: {},
   customCalendarStyles?: {},
   customThemes?: {},
-  onSelectDay?: () => void,
+  onSelectDay?: ({ dateString: string }) => void,
 }
 
 /**

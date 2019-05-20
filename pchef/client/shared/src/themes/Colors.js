@@ -24,4 +24,5 @@ export default {
   persianPlum: '#721C24',
   cherub: '#f8d7da',
   ghost: '#ced4da',
+  lightSliver: '#f2f2f2',
 }
