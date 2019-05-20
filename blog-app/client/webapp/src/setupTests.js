@@ -8,6 +8,7 @@ import renderer from 'react-test-renderer';
 Enzyme.configure({
   adapter: new Adapter()
 });
+
 //define global variable to use for all file test in app
 global.shallow = shallow;
 global.React = React;

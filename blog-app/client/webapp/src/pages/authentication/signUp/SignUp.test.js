@@ -1,8 +1,8 @@
 import { MockedProvider } from 'react-apollo/test-utils';
-import { CREATE_USER } from '../../graphql/author/mutations';
+import { CREATE_USER } from '../../../graphql/author/mutations';
 import { Form } from 'react-bootstrap';
 import SignUp from './SignUp';
-import Indicator from '../../components/commons/Indicator';
+import Indicator from '../../../components/commons/indicator/Indicator';
 import waitForExpect from 'wait-for-expect';
 import { BrowserRouter} from 'react-router-dom';
 

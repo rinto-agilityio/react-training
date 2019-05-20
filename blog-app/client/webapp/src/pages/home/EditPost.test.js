@@ -2,7 +2,7 @@ import { MockedProvider } from 'react-apollo/test-utils';
 import { EDIT_POST } from '../../graphql/post/mutations';
 import { Form } from 'react-bootstrap';
 import EditPost from './EditPost';
-import Indicator from '../../components/commons/Indicator';
+import Indicator from '../../components/commons/indicator/Indicator';
 import waitForExpect from 'wait-for-expect';
 
 const mocks = [
