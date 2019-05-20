@@ -13,10 +13,11 @@ import styles from './styles'
 
 type Props = {
   customStyles?: Object,
-  onSubmit: (email: string, password: string) => void,
+  onSubmit: (email: string, password: string) => Promise<void>,
   type?: string,
   setError: (error: boolean) => void,
-  hasError?: boolean,
+  error?: boolean,
+  isSubmit?: boolean,
 }
 
 const LoginForm = ({
@@ -24,7 +25,8 @@ const LoginForm = ({
   onSubmit,
   type = 'primary',
   setError,
-  hasError,
+  error,
+  isSubmit,
 }: Props) => {
   // define user email ref and password ref
   const emailRef = useRef(null)
@@ -54,7 +56,7 @@ const LoginForm = ({
   const formGroupStyle = [
     styles.formGroup,
     styles[`${type}FormGroup`],
-    hasError ? styles.errorFormGroup : null,
+    error ? styles.errorFormGroup : null,
   ]
 
   return (
@@ -89,6 +91,7 @@ const LoginForm = ({
           contentStyle={[styles.button, styles[`${type}Button`]]}
           buttonStyle={styles.buttonWrapper}
           onPress={handlingSubmit}
+          disabled={isSubmit}
         />
       </View>
     </Wrapper>
@@ -98,7 +101,8 @@ const LoginForm = ({
 LoginForm.defaultProps = {
   customStyles: {},
   type: 'primary',
-  hasError: false,
+  error: false,
+  isSubmit: false,
 }
 
 export default LoginForm
