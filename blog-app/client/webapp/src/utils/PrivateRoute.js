@@ -4,6 +4,7 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
+import { ApolloConsumer } from 'react-apollo';
 
 //query
 import { LOGGED_USER } from '../graphql/author/queries';
@@ -13,24 +14,32 @@ import PropTypes from 'prop-types';
 
 const PrivateRoute = ({ component: Component, loginPath, path, ...rest}) => {
   return (
-    <Query query= { LOGGED_USER } >
-      {({ data, error }) => {
-        const isAuthenticated = (error || !data.loggedUser) ? false : true;
-        return (
-          <Route {...rest} render={props => {
-            return (
-              isAuthenticated || (!isAuthenticated && loginPath === path) ? (
-                <Component path={path} {...props} {...rest} />
-              ) : (
-                <Redirect to={{
-                  pathname: loginPath
-                }} />
-              )
-            );
-          }} />
-        );
-      }}
-    </Query>
+    <ApolloConsumer >
+      {
+        client => {
+          return (
+            <Query query= { LOGGED_USER } >
+              {({ data, error }) => {
+                const isAuthenticated = (error || !data.loggedUser) ? false : true;
+                return (
+                  <Route {...rest} render={props => {
+                    return (
+                      isAuthenticated || (!isAuthenticated && loginPath === path) ? (
+                        <Component path={path} {...props} {...rest} accessClient={client}/>
+                      ) : (
+                        <Redirect to={{
+                          pathname: loginPath
+                        }} />
+                      )
+                    );
+                  }} />
+                );
+              }}
+            </Query>
+          );
+        }
+      }
+    </ApolloConsumer>
   );
 };
 
