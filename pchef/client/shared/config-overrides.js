@@ -2,7 +2,7 @@
 module.exports = function override(config) {
   config.module.rules.push({
     test: /\.js$/,
-    exclude: /node_modules[/\\](?!react-native-paper|react-native-vector-icons|react-native-safe-area-view)/,
+    exclude: /node_modules[/\\](?!react-native-paper|react-native-vector-icons|react-native-safe-area-view|react-native-calendars)/,
     use: {
       loader: 'babel-loader',
       options: {

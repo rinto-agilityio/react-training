@@ -25,6 +25,7 @@ const WishList = ({
   <View style={styles.container}>
     {wishList.map(item => (
       <Item
+        key={item.id}
         item={item}
         size={size}
       />
