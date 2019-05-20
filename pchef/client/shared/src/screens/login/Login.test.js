@@ -3,23 +3,23 @@ import wait from 'waait'
 import Login from '.'
 
 it('Login snapshots', () => {
-  // define props
+  // mock props
   const props = {
-    handlingLoginSuccess: () => {},
-    signInUser: () => {},
+    handlingLoginSuccess: jest.fn(),
+    signInUser: jest.fn(),
   }
 
-  const primaryComponent = shallow(
+  const primaryComponent = renderer.create(
     <Login {...props} type="primary" customStyle={{ flex: 1 }} />,
   )
-  const secondaryComponent = shallow(<Login {...props} type="secondary" />)
+  const secondaryComponent = renderer.create(<Login {...props} type="secondary" />)
 
   expect(primaryComponent).toMatchSnapshot()
   expect(secondaryComponent).toMatchSnapshot()
 })
 
 it('Login actions', async () => {
-  // define props
+  // mock props
   const props = {
     signInUser: () => new Promise((rs, err) => {
       err()
@@ -36,6 +36,7 @@ it('Login actions', async () => {
     .props()
     .onSubmit()
 
+  // wait for component update
   await wait(0)
 
   expect(component.find('Text').length).toBe(2)
@@ -53,6 +54,7 @@ it('Login actions', async () => {
     .props()
     .onSubmit()
 
+  // wait for component update
   await wait(0)
 
   expect(props.handlingLoginSuccess).toHaveBeenCalled()
