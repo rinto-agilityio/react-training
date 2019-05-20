@@ -3,7 +3,7 @@ import { ApolloProvider } from 'react-apollo';
 
 //compnents
 import AppRoute from './AppRoute';
-import Indicator from './components/commons/Indicator';
+import Indicator from './components/commons/indicator/Indicator';
 
 import client from './apollo';
 

@@ -1,13 +1,13 @@
 import React, { memo, useState } from 'react';
-import { Button, Spinner } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { Query } from 'react-apollo';
 
 //components
 import Header from '../../components/header/Header';
-import PrimaryModal from '../../components/commons/PrimaryModal';
+import PrimaryModal from '../../components/commons/primaryModal/PrimaryModal';
 import CreatePost from './CreatePost';
 import EditPost from './EditPost';
-import PostList from '../../components/Posts/PostList';
+import PostList from '../../components/posts/postList/PostList';
 import AppConfig from '../../configs/AppConfig';
 
 //style
@@ -18,7 +18,7 @@ import { POST_ADDED, POST_EDIT, POST_DELETE } from '../../graphql/post/subcripti
 //queries
 import { LOGGED_USER } from '../../graphql/author/queries';
 import { GET_POST } from '../../graphql/post/queries';
-import { Indicator } from '../../components/commons/Indicator';
+import { Indicator } from '../../components/commons/indicator/Indicator';
 
 const HomePage = props => {
 

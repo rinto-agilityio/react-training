@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
 import { Spinner } from 'react-bootstrap';
 
-export const Indicator = props => {
+export const Indicator = ({className}) => {
 
   return (
-    <div className='wrap-loading'>
+    <div className={`wrap-loading ${className}`}>
       <Spinner animation="border" variant="primary" />
     </div>
   );

@@ -1,10 +1,10 @@
 import React, { memo, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import FetchMoreButton from '../../components/commons/FetchMoreButton';
-import AppConfig  from '../../configs/AppConfig';
+import FetchMoreButton from '../../commons/fetchMoreButton/FetchMoreButton';
+import AppConfig  from '../../../configs/AppConfig';
 
 //components
-import PostItem from './PostItem';
+import PostItem from '../postItem/PostItem';
 
 const updateQuery = (previousResult, { fetchMoreResult }) => {
 

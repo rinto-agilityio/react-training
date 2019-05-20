@@ -2,7 +2,7 @@ import React from 'react';
 import { Spinner } from 'react-bootstrap'
 import { Button } from 'react-bootstrap';
 
-import './styles/FetchMoreButton.css';
+import '../styles/FetchMoreButton.css';
 
 const FetchMoreButton = ({
   loading,

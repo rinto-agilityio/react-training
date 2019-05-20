@@ -7,8 +7,8 @@ import { Query } from 'react-apollo';
 import { LOGGED_USER } from '../../graphql/author/queries';
 
 //components
-import Image from '../commons/Image';
-import Dropdown from '../commons/Dropdown';
+import Image from '../commons/image/Image';
+import Dropdown from '../commons/dropdown/Dropdown';
 
 //styles
 import './HeaderStyle.css';

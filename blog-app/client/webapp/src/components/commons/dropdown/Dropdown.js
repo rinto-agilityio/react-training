@@ -2,7 +2,7 @@ import React, { memo, useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 // import style
-import './styles/DropdownStyle.css';
+import '../styles/DropdownStyle.css';
 
 export const Dropdown = props => {
   const { items, classWrapper, classItem } = props;

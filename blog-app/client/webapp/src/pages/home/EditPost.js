@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import AppConfig from '../../configs/AppConfig';
 
 //components
-import Input from '../../components/commons/Input';
-import TextArea from '../../components/commons/TextArea';
-import Indicator from '../../components/commons/Indicator';
+import Input from '../../components/commons/input/Input';
+import TextArea from '../../components/commons/textArea/TextArea';
+import Indicator from '../../components/commons/indicator/Indicator';
 
 //style
 import './styles/CreatePostStyle.css';

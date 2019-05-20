@@ -7,8 +7,8 @@ import PrivateRoute from './utils/PrivateRoute';
 
 //import components
 const HomePage = React.lazy(() => import('./pages/home/HomePage'));
-const Login = React.lazy(() => import ('./pages/authentication/Login'))
-const SignUp = React.lazy(() => import ('./pages/authentication/SignUp'))
+const Login = React.lazy(() => import ('./pages/authentication/login/Login'))
+const SignUp = React.lazy(() => import ('./pages/authentication/signUp/SignUp'))
 
 const loginPath = '/login/';
 

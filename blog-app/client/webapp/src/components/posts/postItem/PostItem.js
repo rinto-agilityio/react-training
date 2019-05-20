@@ -4,11 +4,11 @@ import { Mutation } from 'react-apollo';
 import { Button } from 'react-bootstrap';
 
 //style
-import './styles/PostStyle.css';
+import '../styles/PostStyle.css';
 
 //mutation
-import { DELETE_POST } from '../../graphql/post/mutations';
-import { Indicator } from '../commons/Indicator';
+import { DELETE_POST } from '../../../graphql/post/mutations';
+import { Indicator } from '../../commons/indicator/Indicator';
 
 const PostItem = ({post, history, user, handleOpenModal}) => {
   const handleEditPost = () => {

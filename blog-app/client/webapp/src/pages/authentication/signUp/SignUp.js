@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 import { Mutation } from 'react-apollo';
 
 //mutation
-import { CREATE_USER } from '../../graphql/author/mutations';
+import { CREATE_USER } from '../../../graphql/author/mutations';
 
 //import css
-import './LoginStyle.css';
+import '../login/LoginStyle.css';
 
 //helpers
-import { CustomError } from '../../helpers/CustomError';
+import { CustomError } from '../../../helpers/CustomError';
 
 //component
-import ErrorMessage from '../../components/commons/ErrorMessage';
-import Indicator from '../../components/commons/Indicator';
+import ErrorMessage from '../../../components/commons/errorMessage/ErrorMessage';
+import Indicator from '../../../components/commons/indicator/Indicator';
 
 const SignUp = props  => {
 

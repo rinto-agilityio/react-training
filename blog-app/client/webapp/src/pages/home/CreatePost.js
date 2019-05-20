@@ -4,9 +4,9 @@ import { Mutation } from 'react-apollo';
 import PropTypes from 'prop-types';
 
 //components
-import Input from '../../components/commons/Input';
-import TextArea from '../../components/commons/TextArea';
-import Indicator from '../../components/commons/Indicator';
+import Input from '../../components/commons/input/Input';
+import TextArea from '../../components/commons/textArea/TextArea';
+import Indicator from '../../components/commons/indicator/Indicator';
 //style
 import './styles/CreatePostStyle.css';
 
@@ -43,7 +43,8 @@ const CreatePost = ({user, handleCloseModal, history}) => {
     >
       {(createPost, { data, loading, error }) => {
 
-        if (loading) return (<Indicator />);
+        if (loading) return <Indicator />;
+
 
         if (error) return `Error! ${error.message}`;
 

@@ -3,7 +3,7 @@ import { MockedProvider } from 'react-apollo/test-utils';
 import wait from 'waait';
 import { BrowserRouter} from 'react-router-dom';
 import { Form } from 'react-bootstrap';
-import { SIGN_IN } from '../../graphql/author/queries';
+import { SIGN_IN } from '../../../graphql/author/queries';
 
 describe('Login Component', () => {
   const props = {

@@ -4,11 +4,11 @@ import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 //component
-import SignUp from './SignUp';
-import ErrorMessage from '../../components/commons/ErrorMessage';
+import SignUp from '../signUp/SignUp';
+import ErrorMessage from '../../../components/commons/errorMessage/ErrorMessage';
 
 //query
-import { SIGN_IN } from '../../graphql/author/queries';
+import { SIGN_IN } from '../../../graphql/author/queries';
 
 //import css
 import './LoginStyle.css';

@@ -2,7 +2,7 @@ import PostItem from './PostItem';
 import wait from 'waait';
 
 import { MockedProvider } from 'react-apollo/test-utils';
-import { DELETE_POST } from '../../graphql/post/mutations';
+import { DELETE_POST } from '../../../graphql/post/mutations';
 
 describe('Test PostList', () => {
   const props = {
