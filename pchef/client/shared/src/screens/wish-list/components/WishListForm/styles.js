@@ -2,23 +2,30 @@
 import { StyleSheet } from 'react-native'
 
 // Themes
-import { METRICS } from '../../../../themes'
+import { METRICS, FONTS } from '../../../../themes'
 
 const styles = StyleSheet.create({
-  // Portal
-  portal: {
+  // Container
+  container: {
     ...METRICS.flexCenter,
   },
 
   // Dialog
-  dialog: {
-    ...METRICS.flexCenter,
+  // Width full container for small/medium dialog
+  largeDialog: {
     width: METRICS.mediumContent,
+    alignSelf: 'center',
   },
 
-  // Content
-  largeContent: {
-    width: METRICS.mediumContent,
+  // Input
+  smallInput: {
+    fontSize: FONTS.fontSize.small,
+  },
+  mediumInput: {
+    fontSize: FONTS.fontSize.base,
+  },
+  largeInput: {
+    fontSize: FONTS.fontSize.medium,
   },
 })
 

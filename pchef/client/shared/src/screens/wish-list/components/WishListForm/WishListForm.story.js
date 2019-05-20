@@ -3,15 +3,15 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 // Components
-import WistListForm from '.'
+import WishListForm from '.'
 
 storiesOf('Wish list form', module)
   .add('small', () => (
-    <WistListForm size="small" />
+    <WishListForm size="small" />
   ))
   .add('medium', () => (
-    <WistListForm size="medium" />
+    <WishListForm size="medium" />
   ))
   .add('large', () => (
-    <WistListForm size="large" />
+    <WishListForm size="large" />
   ))

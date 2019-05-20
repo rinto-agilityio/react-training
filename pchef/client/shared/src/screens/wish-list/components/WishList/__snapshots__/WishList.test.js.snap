@@ -38,7 +38,7 @@ exports[`Wish list Render wish component with size medium 1`] = `
     className="css-text-76zvg2 r-color-cqee49 r-fontSize-adyw6z r-fontWeight-vw2c0b r-marginBottom-117bsoe"
     dir="auto"
   >
-    1558079826824
+    2019-05-15
   </div>
   <div
     className="css-text-76zvg2 r-fontSize-1i10wst"
@@ -82,7 +82,7 @@ exports[`Wish list Renders correctly wish commponent 1`] = `
     className="css-text-76zvg2 r-color-cqee49 r-fontSize-adyw6z r-fontWeight-vw2c0b r-marginBottom-117bsoe"
     dir="auto"
   >
-    1558079826824
+    2019-05-15
   </div>
   <div
     className="css-text-76zvg2 r-fontSize-1i10wst"
@@ -117,7 +117,7 @@ exports[`Wish list Renders correctly wish list commponent 1`] = `
       className="css-text-76zvg2 r-color-cqee49 r-fontSize-adyw6z r-fontWeight-vw2c0b r-marginBottom-117bsoe"
       dir="auto"
     >
-      1558079826824
+      2019-05-15
     </div>
     <div
       className="css-text-76zvg2 r-fontSize-1i10wst"
@@ -146,7 +146,7 @@ exports[`Wish list Renders correctly wish list commponent 1`] = `
       className="css-text-76zvg2 r-color-cqee49 r-fontSize-adyw6z r-fontWeight-vw2c0b r-marginBottom-117bsoe"
       dir="auto"
     >
-      1558079826824
+      2019-05-16
     </div>
     <div
       className="css-text-76zvg2 r-fontSize-1i10wst"
@@ -157,14 +157,14 @@ exports[`Wish list Renders correctly wish list commponent 1`] = `
         className="css-text-76zvg2 css-textHasAncestor-16my406 r-fontSize-1i10wst r-fontWeight-vw2c0b"
         dir="auto"
       >
-         1 
+         2 
       </span>
       with
       <span
         className="css-text-76zvg2 css-textHasAncestor-16my406 r-fontSize-1i10wst r-fontWeight-vw2c0b"
         dir="auto"
       >
-         1 
+         2 
       </span>
     </div>
   </div>

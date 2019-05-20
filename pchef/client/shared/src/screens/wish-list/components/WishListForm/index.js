@@ -1,5 +1,5 @@
 // Libs
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { View } from 'react-native'
 import { Portal, Dialog } from 'react-native-paper'
 
@@ -18,18 +18,14 @@ import Button from '../../../../components/Button'
 import Calendar from '../../../../components/Calendar'
 
 type Props = {
-  size?: string,
-  categoryRef: { current: HTMLInputElement | null },
-  cookingTypeRef: { current: HTMLInputElement | null },
-  onSubmit?: () => void,
+  size: string,
 }
 
 const WishListForm = ({
   size = 'medium',
-  categoryRef,
-  cookingTypeRef,
-  onSubmit,
 }: Props) => {
+  const categoryRef = useRef(null)
+  const cookingTypeRef = useRef(null)
   const [visible, setVisible] = useState(false)
   const today = getDateForCalendar(Date.now())
   const [selectedDay, setSelectedDay] = useState(today)
@@ -41,13 +37,11 @@ const WishListForm = ({
         onPress={() => setVisible(true)}
         title="Select date"
       />
-      <Portal style={{alignItems: 'center',}}>
+      <Portal>
         <Dialog
           visible={visible}
           onDismiss={() => setVisible(false)}
-          style={{
-            width: 500
-          }}
+          style={[styles.dialog, styles[`${size}Dialog`]]}
         >
           <Dialog.Content style={[styles.content, styles[`${size}Content`]]}>
             <Calendar
@@ -68,24 +62,17 @@ const WishListForm = ({
       <TextBox
         placeholder="Category"
         refInput={categoryRef}
-        onSubmitEditing={onSubmit}
         customStyle={[styles.input, styles[`${size}Input`]]}
         placeholderTextColor={COLORS.grayNavy}
       />
       <TextBox
         placeholder="Cooking type"
         refInput={cookingTypeRef}
-        onSubmitEditing={onSubmit}
         customStyle={[styles.input, styles[`${size}Input`]]}
         placeholderTextColor={COLORS.grayNavy}
       />
     </View>
   )
-}
-
-WishListForm.defaultProps = {
-  onSubmit: () => {},
-  size: 'medium',
 }
 
 export default WishListForm
