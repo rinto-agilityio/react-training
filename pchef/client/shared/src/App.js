@@ -10,10 +10,7 @@ import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { ApolloProvider } from 'react-apollo'
 
-import {
-  Provider as PaperProvider,
-  Button as PaperButton,
-} from 'react-native-paper'
+import { Provider as PaperProvider } from 'react-native-paper'
 
 // Apollo Client
 // $FlowFixMe
@@ -22,66 +19,27 @@ import client from './config/apollo-client'
 // Containers
 import LoginContainer from './containers/Login'
 
-type LoginProps = {
-  submitLogin: (email: string, password: string) => any
-}
-
-/**
- * This is sample for component manually calling GraphQL event
- */
-const LoginComponent = ({ submitLogin }: LoginProps) => {
-  /**
-   * This is sample function, should be implment for each platform
-   * Set token in localStorage for web platform / mobile
-   * ApolloClient header will get this token and update to request headers
-   */
-  const _signInUser = async () => {
-    try {
-      // TODO: This is sample user, this data should get from input
-      await submitLogin('user1@gmail.com', 'user1@pwd')
-        .then(({ data }) => {
-          const { signInUser: { token } } = data
-
-          if (token) {
-            localStorage.setItem('token', token)
-          }
-        })
-    } catch (err) {
-      console.log('signInUser err: ', err)
-    }
-  }
-
-  return (
-    <View>
-      <Text>Login Component</Text>
-      <PaperButton
-        mode="contained"
-        onPress={_signInUser}
-      >
-        SubmitLogin
-      </PaperButton>
-    </View>
-  )
-}
-
 type AppProps = {}
 
 export default class App extends Component<AppProps> {
+  // save token and navigation to home screen
+  handlingLoginSuccess = (token: string) => {
+    localStorage.setItem('token', token)
+    // history.push('/home')
+  }
+
   render() {
     return (
       <ApolloProvider client={client}>
         <PaperProvider>
           <View style={styles.container}>
-            <Text style={styles.welcome}>Shared-components for both Web and Mobile</Text>
-            <LoginContainer>
-              {
-                ({ signInUser }) => (
-                  <LoginComponent
-                    submitLogin={signInUser}
-                  />
-                )
-              }
-            </LoginContainer>
+            <Text style={styles.welcome}>
+              Shared-components for both Web and Mobile
+            </Text>
+            <LoginContainer
+              type="secondary"
+              handlingLoginSuccess={this.handlingLoginSuccess}
+            />
           </View>
         </PaperProvider>
       </ApolloProvider>
