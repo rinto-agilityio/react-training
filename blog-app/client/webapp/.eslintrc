@@ -8,7 +8,10 @@
   "plugins": [
     "react",
     "react-hooks",
-    "import"
+    "import",
+    "jest",
+    "flowtype",
+    "prettier"
   ],
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -17,7 +20,6 @@
       "jsx": true
     }
   },
-
   "parser": "babel-eslint",
   "extends": [
     "eslint:recommended",
@@ -45,7 +47,57 @@
     "indent": "off",
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
-    "semi": ["error", "always"],
-    "jsx-quotes": 0
+    "jsx-quotes": 0,
+    "max-len": [
+      2,
+      {
+        "code": 120
+      }
+    ],
+    "semi": 0,
+    "operator-linebreak": 0,
+    "no-useless-concat": 0,
+    "object-curly-newline": 0,
+    "arrow-parens": ["error", "as-needed"],
+    "react/prefer-stateless-function": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "no-sequences": 0,
+    "react/destructuring-assignment": [2, "always"],
+    "react/jsx-curly-brace-presence": [
+      2,
+      {
+        "props": "never",
+        "children": "never"
+      }
+    ],
+    "import/no-self-import": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-unresolved": 0,
+    "no-unneeded-ternary": 0,
+    "no-underscore-dangle": 0,
+    "react/forbid-prop-types": 0,
+    "no-use-before-define": 0,
+    "no-unused-expressions": 0,
+    "no-plusplus": 0,
+    "no-shadow": 0,
+    "jsx-a11y/accessible-emoji": 0,
+    "react/no-unescaped-entities": 0,
+    "react/sort-comp": 0,
+    "import/no-duplicates": 0,
+    "global-require": 0,
+    "no-dupe-keys": 0,
+    "consistent-return": 0,
+    "no-return-assign": 0,
+    "react/no-array-index-key": 0,
+    "radix": 0,
+    "import/prefer-default-export": 0,
+    "flowtype/generic-spacing": [2, "never"],
+    "flowtype/no-types-missing-file-annotation": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ]
   }
 }
