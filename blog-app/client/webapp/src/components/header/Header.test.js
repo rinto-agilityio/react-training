@@ -70,7 +70,6 @@ describe('Header Component', () => {
 
     await waitForExpect(() => {
       expect(numberToChange).toEqual(100);
-      // expect(component.find('p').filter('.account-name').children()).toEqual('rinto');
     });
 
   });

@@ -35,7 +35,7 @@ describe('Test PostList', () => {
     ];
 
     const component = mount(
-      <MockedProvider mocks={mocksClient}>
+      <MockedProvider mocks={mocksClient} addTypename={false}>
         <PostItem {...props}/>
       </MockedProvider>
     );
@@ -46,7 +46,7 @@ describe('Test PostList', () => {
 
     button.simulate('click');
 
-    // await wait(10);
+    await wait(10);
 
     mutationProps.onCompleted();
   });

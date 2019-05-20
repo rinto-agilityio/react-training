@@ -26,6 +26,7 @@ const PostItem = ({post, history, user, handleOpenModal}) => {
     <Mutation
       mutation={DELETE_POST}
       onCompleted={() => history.push('/') }
+      onError={() => {}}
     >
       {(deletePost, { data, loading, error }) => {
 
