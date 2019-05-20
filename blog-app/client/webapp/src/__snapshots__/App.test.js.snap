@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="wrap-loading"
+  >
+    <div
+      className="spinner-border text-primary"
+    />
+  </div>
+</div>
+`;
