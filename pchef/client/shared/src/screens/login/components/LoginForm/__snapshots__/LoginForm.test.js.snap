@@ -1,0 +1,308 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm snapshots 1`] = `
+<div
+  className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-justifyContent-a2tzq0 r-marginLeft-1jj8364 r-marginRight-lchren r-marginTop-2o02ov r-paddingBottom-b6sd5j r-paddingLeft-1vwolk8 r-paddingRight-rnv2vh r-paddingTop-1ur9v65 r-width-1ipicw7"
+  style={
+    Object {
+      "WebkitBoxFlex": 0,
+      "WebkitFlexGrow": 0,
+      "flexGrow": 0,
+      "msFlexPositive": 0,
+    }
+  }
+>
+  <div
+    className="css-view-1dbjc4n r-borderColor-1qh06s0 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-marginBottom-ku1wi2"
+  >
+    <div
+      className="css-view-1dbjc4n r-flex-13awgt0 r-flexDirection-18u37iz"
+    >
+      <input
+        autoCapitalize="none"
+        autoComplete="on"
+        autoCorrect="off"
+        className="css-textinput-1cwyjr8 r-borderBottomWidth-ndvcnb r-borderColor-34efmp r-borderRadius-1xfd6ze r-color-cqee49 r-flex-13awgt0 r-fontSize-ubezar r-height-eu3ka r-paddingLeft-1yt7n81 r-paddingRight-ry3cjt r-placeholderTextColor-d9raxc"
+        data-focusable={true}
+        defaultValue=""
+        dir="auto"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onSelect={[Function]}
+        placeholder="username@asnet.com.vn"
+        readOnly={false}
+        spellCheck={false}
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    className="css-view-1dbjc4n r-borderColor-1qh06s0 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-marginBottom-ku1wi2"
+  >
+    <div
+      className="css-view-1dbjc4n r-flex-13awgt0 r-flexDirection-18u37iz"
+    >
+      <input
+        autoCapitalize="none"
+        autoComplete="on"
+        autoCorrect="off"
+        className="css-textinput-1cwyjr8 r-borderBottomWidth-ndvcnb r-borderColor-34efmp r-borderRadius-1xfd6ze r-color-cqee49 r-flex-13awgt0 r-fontSize-ubezar r-height-eu3ka r-paddingLeft-1yt7n81 r-paddingRight-ry3cjt r-placeholderTextColor-d9raxc"
+        data-focusable={true}
+        defaultValue=""
+        dir="auto"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onSelect={[Function]}
+        placeholder="Password at least 8 characters"
+        readOnly={false}
+        spellCheck={false}
+        type="password"
+      />
+    </div>
+  </div>
+  <div
+    className="css-view-1dbjc4n r-borderColor-1qh06s0 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-marginBottom-ku1wi2"
+  >
+    <div
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-borderRadius-1xfd6ze r-justifyContent-1777fci"
+      style={
+        Object {
+          "backgroundColor": "rgba(66,165,245,1.00)",
+          "borderBottomColor": "rgba(0,0,0,0.00)",
+          "borderBottomStyle": "solid",
+          "borderBottomWidth": "0px",
+          "borderLeftColor": "rgba(0,0,0,0.00)",
+          "borderLeftStyle": "solid",
+          "borderLeftWidth": "0px",
+          "borderRightColor": "rgba(0,0,0,0.00)",
+          "borderRightStyle": "solid",
+          "borderRightWidth": "0px",
+          "borderTopColor": "rgba(0,0,0,0.00)",
+          "borderTopStyle": "solid",
+          "borderTopWidth": "0px",
+          "boxShadow": "0px 0.75px 1.5px rgba(0,0,0,0.24)",
+          "minWidth": "64px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+        }
+      }
+    >
+      <div
+        className="css-cursor-18t94o4 css-view-1dbjc4n r-backgroundColor-1niwhzg r-cursor-1loqt21 r-touchAction-1otgn73 r-userSelect-lrvibr"
+        data-focusable={true}
+        disabled={false}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        role="button"
+        style={
+          Object {
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "overflowX": "hidden",
+            "overflowY": "hidden",
+          }
+        }
+        tabIndex="0"
+      >
+        <div
+          className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1umu7ot r-borderRadius-1xfd6ze r-flexDirection-18u37iz r-height-1iud8zs r-justifyContent-1777fci r-width-8upyzv"
+        >
+          <div
+            className="css-text-76zvg2 css-textOneLine-bfa6kz r-color-cqee49 r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
+            dir="auto"
+            style={
+              Object {
+                "direction": "ltr",
+                "fontFamily": "Roboto-Medium, Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              }
+            }
+          >
+            <span
+              className="css-text-76zvg2 css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+              dir="auto"
+              style={
+                Object {
+                  "direction": "ltr",
+                  "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "textAlign": "left",
+                }
+              }
+            >
+              Login
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LoginForm snapshots 2`] = `
+<div
+  className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-justifyContent-a2tzq0 r-marginLeft-1jj8364 r-marginRight-lchren r-paddingBottom-2o15sn r-paddingLeft-1fd96xs r-paddingRight-yongw r-paddingTop-u04ygo r-width-1rttkqs"
+  style={
+    Object {
+      "WebkitBoxFlex": 0,
+      "WebkitFlexGrow": 0,
+      "flexGrow": 0,
+      "msFlexPositive": 0,
+    }
+  }
+>
+  <div
+    className="css-view-1dbjc4n r-borderColor-4a18lf r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-marginBottom-ku1wi2"
+  >
+    <div
+      className="css-view-1dbjc4n r-flex-13awgt0 r-flexDirection-18u37iz"
+    >
+      <input
+        autoCapitalize="none"
+        autoComplete="on"
+        autoCorrect="off"
+        className="css-textinput-1cwyjr8 r-borderBottomWidth-ndvcnb r-borderColor-34efmp r-borderRadius-1xfd6ze r-color-cqee49 r-flex-13awgt0 r-fontSize-1i10wst r-height-eu3ka r-paddingLeft-1yt7n81 r-paddingRight-ry3cjt r-placeholderTextColor-d9raxc"
+        data-focusable={true}
+        defaultValue=""
+        dir="auto"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onSelect={[Function]}
+        placeholder="username@asnet.com.vn"
+        readOnly={false}
+        spellCheck={false}
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    className="css-view-1dbjc4n r-borderColor-4a18lf r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-marginBottom-ku1wi2"
+  >
+    <div
+      className="css-view-1dbjc4n r-flex-13awgt0 r-flexDirection-18u37iz"
+    >
+      <input
+        autoCapitalize="none"
+        autoComplete="on"
+        autoCorrect="off"
+        className="css-textinput-1cwyjr8 r-borderBottomWidth-ndvcnb r-borderColor-34efmp r-borderRadius-1xfd6ze r-color-cqee49 r-flex-13awgt0 r-fontSize-1i10wst r-height-eu3ka r-paddingLeft-1yt7n81 r-paddingRight-ry3cjt r-placeholderTextColor-d9raxc"
+        data-focusable={true}
+        defaultValue=""
+        dir="auto"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onSelect={[Function]}
+        placeholder="Password at least 8 characters"
+        readOnly={false}
+        spellCheck={false}
+        type="password"
+      />
+    </div>
+  </div>
+  <div
+    className="css-view-1dbjc4n r-borderColor-1qh06s0 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-marginBottom-ku1wi2"
+  >
+    <div
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-borderRadius-1xfd6ze r-justifyContent-1777fci"
+      style={
+        Object {
+          "backgroundColor": "rgba(66,165,245,1.00)",
+          "borderBottomColor": "rgba(0,0,0,0.00)",
+          "borderBottomStyle": "solid",
+          "borderBottomWidth": "0px",
+          "borderLeftColor": "rgba(0,0,0,0.00)",
+          "borderLeftStyle": "solid",
+          "borderLeftWidth": "0px",
+          "borderRightColor": "rgba(0,0,0,0.00)",
+          "borderRightStyle": "solid",
+          "borderRightWidth": "0px",
+          "borderTopColor": "rgba(0,0,0,0.00)",
+          "borderTopStyle": "solid",
+          "borderTopWidth": "0px",
+          "minWidth": "64px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+        }
+      }
+    >
+      <div
+        aria-disabled={true}
+        className="css-view-1dbjc4n r-backgroundColor-1niwhzg r-userSelect-lrvibr"
+        disabled={true}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        role="button"
+        style={
+          Object {
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "overflowX": "hidden",
+            "overflowY": "hidden",
+          }
+        }
+      >
+        <div
+          className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1umu7ot r-borderRadius-1xfd6ze r-flexDirection-18u37iz r-height-1iud8zs r-justifyContent-1777fci r-width-1ipicw7"
+        >
+          <div
+            className="css-text-76zvg2 css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
+            dir="auto"
+            style={
+              Object {
+                "color": "rgba(0,0,0,0.32)",
+                "direction": "ltr",
+                "fontFamily": "Roboto-Medium, Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              }
+            }
+          >
+            <span
+              className="css-text-76zvg2 css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+              dir="auto"
+              style={
+                Object {
+                  "direction": "ltr",
+                  "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "textAlign": "left",
+                }
+              }
+            >
+              Login
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
