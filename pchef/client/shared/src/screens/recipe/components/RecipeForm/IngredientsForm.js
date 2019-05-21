@@ -14,6 +14,7 @@ import Modal from '../../../../components/Modal'
 
 type Props = {
   size: string,
+  visible?: boolean,
   handleSubmitIngredients?: () => void,
   onDismiss?: () => void,
 }
@@ -22,6 +23,7 @@ const IngredientsForm = ({
   size = 'medium',
   handleSubmitIngredients,
   onDismiss,
+  visible,
 }: Props) => {
   const ingredientRef = useRef(null)
 
@@ -32,12 +34,15 @@ const IngredientsForm = ({
         dismissBtn
         onDismiss={onDismiss}
         onSubmit={handleSubmitIngredients}
+        visible={visible}
+        size={size}
       >
         <TextBox
           placeholder="Write your ingredients"
           refInput={ingredientRef}
           customStyle={[styles.input, styles[`${size}Input`]]}
           placeholderTextColor={COLORS.grayNavy}
+          multiline
         />
       </Modal>
     </View>
@@ -45,6 +50,7 @@ const IngredientsForm = ({
 }
 
 IngredientsForm.defaultProps = {
+  visible: false,
   handleSubmitIngredients: () => {},
   onDismiss: () => {},
 }

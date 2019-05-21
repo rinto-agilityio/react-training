@@ -13,6 +13,7 @@ import IngredientsForm from './IngredientsForm'
 import DirectionForm from './DirectionForm'
 import TextBox from '../../../../components/TextBox'
 import Icon from '../../../../components/Icon'
+import Wrapper from '../../../../layout/Wrapper';
 
 type Props = {
   size: string,
@@ -44,10 +45,12 @@ const RecipeForm = ({
   const dataIcon = [
     {
       name: 'shopping-cart',
+      label: 'Add ingredients',
       onPress: setVisibleIngredients,
     },
     {
       name: 'create',
+      label: 'Write a step',
       onPress: setVisibleDirections,
     },
   ]
@@ -62,10 +65,11 @@ const RecipeForm = ({
       />
       <Icon
         name="add-a-photo"
-        size={METRICS.smallImage}
+        size={METRICS[`${size}Icon`] * 2}
         onPress={handleAddRecipeImage}
         label="Set cover photo"
-        wrapperIconStyle={styles.wrapperIcon}
+        wrapperIconStyle={styles.wrapperMainPhoto}
+        customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`]]}
       />
       {dataInput.map(({ placeholder, refInput }) => (
         <TextBox
@@ -76,25 +80,36 @@ const RecipeForm = ({
           placeholderTextColor={COLORS.grayNavy}
         />
       ))}
-
-      {dataIcon.map(({ name, onPress }) => (
-        <Icon
-          name={name}
-          size={METRICS.mediumIcon}
-          onPress={onPress}
-          wrapperIconStyle={styles.wrapperIcon}
-        />
-      ))}
+      <Wrapper
+        direction="row"
+        childPosition="spaceAround"
+        customStyles={styles.wrapperIcon}
+      >
+        {dataIcon.map(({ name, onPress, label }) => (
+          <Icon
+            key={`${name}_icon`}
+            name={name}
+            size={METRICS[`${size}Icon`]}
+            onPress={() => onPress(true)}
+            label={label}
+            wrapperIconStyle={[styles.icon, styles[`${size}Icon`]]}
+            customStyle={[styles.label, styles[`${size}Input`]]}
+          />
+        ))}
+      </Wrapper>
       {visibleIngredients && (
         <IngredientsForm
           size={size}
           onDismiss={() => setVisibleIngredients(false)}
+          visible={visibleIngredients}
         />
       )}
       {visibleDirections && (
         <DirectionForm
           size={size}
           onDismiss={() => setVisibleDirections(false)}
+          visible={visibleDirections}
+          step="1"
         />
       )}
     </View>
