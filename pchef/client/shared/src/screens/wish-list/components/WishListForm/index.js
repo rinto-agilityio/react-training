@@ -1,7 +1,6 @@
 // Libs
 import React, { useState, useRef } from 'react'
 import { View } from 'react-native'
-import { Portal, Dialog } from 'react-native-paper'
 
 // Styles
 import styles from './styles'
@@ -16,6 +15,7 @@ import { getDateForCalendar, getDateOfWeek } from '../../../../helpers/date-time
 import TextBox from '../../../../components/TextBox'
 import Button from '../../../../components/Button'
 import Calendar from '../../../../components/Calendar'
+import Modal from '../../../../components/Modal'
 
 type Props = {
   size: string,
@@ -49,28 +49,21 @@ const WishListForm = ({
         onPress={() => setVisible(true)}
         title="Select date"
       />
-      <Portal>
-        <Dialog
-          visible={visible}
+      {visible && (
+        <Modal
           onDismiss={() => setVisible(false)}
-          style={[styles.dialog, styles[`${size}Dialog`]]}
+          visible={visible}
+          onSubmit={() => setVisible(false)}
+          size={size}
         >
-          <Dialog.Content style={[styles.content, styles[`${size}Content`]]}>
-            <Calendar
-              selectedDay={selectedDay}
-              dayRange={dayRange}
-              onSelectDay={({ dateString }) => setSelectedDay(dateString)}
-              size={size}
-            />
-          </Dialog.Content>
-          <Dialog.Actions>
-            <Button
-              onPress={() => setVisible(false)}
-              title="Done"
-            />
-          </Dialog.Actions>
-        </Dialog>
-      </Portal>
+          <Calendar
+            selectedDay={selectedDay}
+            dayRange={dayRange}
+            onSelectDay={({ dateString }) => setSelectedDay(dateString)}
+            size={size}
+          />
+        </Modal>
+      )}
       {data.map(({ placeholder, refInput }) => (
         <TextBox
           key={placeholder}

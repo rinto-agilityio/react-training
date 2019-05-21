@@ -12,13 +12,13 @@ import { COLORS, FONTS } from '../../themes'
 type Props = {
   label?: string | number,
   onPress?: () => void,
-  customStyle?: {},
+  customStyle?: {} | Array<{}>,
   color?: string,
   size?: number,
   name: string,
   disabled?: boolean,
   wrapperIconStyle?: Object,
-  customIconStyles?: {}
+  customIconStyles?: {},
 };
 
 const Icon = ({
