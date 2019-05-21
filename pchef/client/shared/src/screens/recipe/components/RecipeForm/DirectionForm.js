@@ -1,6 +1,5 @@
 // Libs
-import React, { useRef, useState } from 'react'
-import { View } from 'react-native'
+import React, { useRef } from 'react'
 
 // Styles
 import styles from './styles'
