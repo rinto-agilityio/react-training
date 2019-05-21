@@ -23,11 +23,11 @@ type Props = {
     votes: Array<number>,
   }>,
 }
-const Tabs = ({ categories, recipes }: Props) => {
+const Tabs = ({ categories = [], recipes = [] }: Props) => {
   // state
   const [tabActive, setTabActive] = useState(0)
-  const totalOfRecipes = recipes ? recipes.length : 0
-  const totalOfCatefories = categories ? categories.length : 0
+  const totalOfRecipes = recipes.length
+  const totalOfCatefories = categories.length
 
   const tabs = [
     { name: 'recipes', number: totalOfRecipes },
