@@ -2,7 +2,7 @@
 import { StyleSheet } from 'react-native'
 
 // Themes
-import { METRICS, COLORS } from '../../themes'
+import { METRICS } from '../../themes'
 
 const styles = StyleSheet.create({
   // Wrapper
@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
     bottom: 0,
     right: 0,
     zIndex: 1000,
-    backgroundColor: COLORS.blackLighter,
   },
 
   // Dialog
@@ -22,6 +21,11 @@ const styles = StyleSheet.create({
   largeDialog: {
     width: METRICS.mediumContent,
     alignSelf: 'center',
+  },
+
+  // Button
+  btnModal: {
+    marginRight: METRICS.mediumMargin,
   },
 })
 

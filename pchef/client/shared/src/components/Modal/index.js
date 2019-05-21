@@ -34,7 +34,14 @@ const Modal = ({
       onDismiss={onDismiss}
       style={[styles.dialog, styles[`${size}Dialog`]]}
     >
-      {title && <Dialog.Title style={[styles.titleModal, styles[`${size}TitleModal`]]}>{title}</Dialog.Title>}
+      {title ? (
+        <Dialog.Title
+          style={[styles.titleModal, styles[`${size}TitleModal`]]}
+          accessibilityRole="heading"
+        >
+          {title}
+        </Dialog.Title>
+      ) : null }
       <Dialog.Content style={[styles.content, styles[`${size}Content`]]}>
         {children}
       </Dialog.Content>
