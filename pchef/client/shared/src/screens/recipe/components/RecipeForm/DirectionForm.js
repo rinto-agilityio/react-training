@@ -50,6 +50,7 @@ const DirectionsForm = ({
       refInput: stepDescriptionRef,
     },
   ]
+
   return (
     <Modal
       title="Directions"
