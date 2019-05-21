@@ -102,4 +102,7 @@ export default {
   mediumScreen: 640,
   largeScreen: 840,
   extraLargeScreen: 1024,
+
+  // z-index
+  modalZindex: 1000,
 }
