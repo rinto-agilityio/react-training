@@ -14,6 +14,7 @@ type Props = {
     name: string,
     avatar: string,
     followCategory: Array<{
+      id: string,
       name: string,
       imgUrl: string,
     }>,
@@ -22,6 +23,7 @@ type Props = {
       title: string,
       imgUrl: string,
       description: string,
+      votes: Array<number>,
     }>,
   },
 }

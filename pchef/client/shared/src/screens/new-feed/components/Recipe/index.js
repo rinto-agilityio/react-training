@@ -21,7 +21,7 @@ type Props = {
   customRecipe?: {},
   customTitle?: {},
   customDescription?: {},
-  customImage: {},
+  customImage?: {},
 }
 
 const Recipe = ({
@@ -33,27 +33,13 @@ const Recipe = ({
   customDescription,
   customImage = {},
 }: Props) => {
-  const {
-    title,
-    description,
-    imgUrl,
-    votes,
-  } = recipe
+  const { title, description, imgUrl, votes } = recipe
 
   return (
     <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
-      <View
-        style={[
-          styles.recipe,
-          customRecipe,
-        ]}
-      >
+      <View style={[styles.recipe, customRecipe]}>
         <Text
-          style={[
-            styles.title,
-            styles[`${size}Title`],
-            customTitle,
-          ]}
+          style={[styles.title, styles[`${size}Title`], customTitle]}
           onPress={onPress}
         >
           {title}
@@ -70,18 +56,10 @@ const Recipe = ({
         </Text>
         <Image
           url={imgUrl}
-          customImageStyle={[
-            styles.image,
-            styles[`${size}Image`],
-            customImage,
-          ]}
+          customImageStyle={[styles.image, styles[`${size}Image`], customImage]}
         />
       </View>
-      <Reaction
-        votes={votes}
-        size={size}
-        isFavorited={false}
-      />
+      <Reaction votes={votes} size={size} isFavorited={false} />
     </View>
   )
 }
@@ -91,6 +69,7 @@ Recipe.defaultProps = {
   customRecipe: {},
   customTitle: {},
   customDescription: {},
+  customImage: {},
 }
 
 export default Recipe

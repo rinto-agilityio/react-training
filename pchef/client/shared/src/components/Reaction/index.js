@@ -56,8 +56,7 @@ const Reaction = ({
           underlayColor="transparent"
           label={item.label}
         />
-      ))
-      }
+      ))}
     </View>
   )
 }

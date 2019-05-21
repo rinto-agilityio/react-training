@@ -14,7 +14,7 @@ type Props = {
     name: string,
     avatar: string,
   },
-  handleToSetting: () => void,
+  handleToSetting?: () => void,
 }
 
 const Header = ({ user, handleToSetting }: Props) => {
@@ -36,6 +36,10 @@ const Header = ({ user, handleToSetting }: Props) => {
       </View>
     </View>
   )
+}
+
+Header.defaultProps = {
+  handleToSetting: () => {},
 }
 
 export default Header
