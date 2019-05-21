@@ -29,17 +29,20 @@ const styles = StyleSheet.create({
     borderRadius: METRICS.mediumBorderRadius,
     ...METRICS.flexCenter,
   },
+  createIcon: {
+    marginLeft: METRICS.mediumMargin,
+  },
   smallIcon: {
-    width: METRICS.mediumImage - 30,
-    height: METRICS.mediumImage - 30,
+    width: METRICS.smallDirectionsIcon,
+    height: METRICS.smallDirectionsIcon,
   },
   mediumIcon: {
-    width: METRICS.mediumImage,
-    height: METRICS.mediumImage,
+    width: METRICS.mediumDirectionsIcon,
+    height: METRICS.mediumDirectionsIcon,
   },
   largeIcon: {
-    width: METRICS.mediumImage + 20,
-    height: METRICS.mediumImage + 20,
+    width: METRICS.largeDirectionsIcon,
+    height: METRICS.largeDirectionsIcon,
   },
 
   // Label

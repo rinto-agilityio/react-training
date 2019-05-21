@@ -13,7 +13,7 @@ import IngredientsForm from './IngredientsForm'
 import DirectionForm from './DirectionForm'
 import TextBox from '../../../../components/TextBox'
 import Icon from '../../../../components/Icon'
-import Wrapper from '../../../../layout/Wrapper';
+import Wrapper from '../../../../layout/Wrapper'
 
 type Props = {
   size: string,
@@ -92,7 +92,7 @@ const RecipeForm = ({
             size={METRICS[`${size}Icon`]}
             onPress={() => onPress(true)}
             label={label}
-            wrapperIconStyle={[styles.icon, styles[`${size}Icon`]]}
+            wrapperIconStyle={[styles.icon, styles[`${name}Icon`], styles[`${size}Icon`]]}
             customStyle={[styles.label, styles[`${size}Input`]]}
           />
         ))}
