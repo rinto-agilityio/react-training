@@ -102,4 +102,12 @@ export default {
   mediumScreen: 640,
   largeScreen: 840,
   extraLargeScreen: 1024,
+
+  // z-index
+  modalZindex: 1000,
+
+  // Directions icon
+  smallDirectionsIcon: 120,
+  mediumDirectionsIcon: 150,
+  largeDirectionsIcon: 170,
 }

@@ -24,10 +24,10 @@ describe('Wish list', () => {
     // Press select date button to show modal
     const selectDateBtn = button.first()
     selectDateBtn.props().onPress()
-    expect(component.find('withTheme(Dialog)').props().visible).toEqual(true)
+    expect(component.find('Modal').props().visible).toEqual(true)
 
-    button.at(1).props().onPress()
-    expect(component.find('withTheme(Dialog)').props().visible).toEqual(false)
+    component.find('Modal').props().onSubmit()
+    expect(component.find('Modal').exists()).toEqual(false)
   })
 
   it('Should hide modal calendar when press dialog', () => {
@@ -36,8 +36,9 @@ describe('Wish list', () => {
     // Press select date button to show modal
     const selectDateBtn = button.first()
     selectDateBtn.props().onPress()
-    component.find('withTheme(Dialog)').props().onDismiss()
-    expect(component.find('withTheme(Dialog)').props().visible).toEqual(false)
+    const modal = component.find('Modal')
+    modal.props().onDismiss()
+    expect(component.find('Modal').exists()).toEqual(false)
   })
 
   it('Should update selected date when press on calendar', () => {

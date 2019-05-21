@@ -21,6 +21,7 @@ type Props = {
   refInput: { current: { _node: HTMLInputElement } | null },
   onSubmitEditing?: () => void,
   secureTextEntry?: boolean,
+  customContainer?: {} | Array<{}>,
 }
 
 const TextBox = ({
@@ -36,8 +37,9 @@ const TextBox = ({
   refInput,
   onSubmitEditing,
   secureTextEntry,
+  customContainer
 }: Props) => (
-  <View style={styles.container}>
+  <View style={[styles.container, customContainer]}>
     <TextInput
       multiline={multiline}
       autoCapitalize={autoCapitalize}
@@ -67,6 +69,7 @@ TextBox.defaultProps = {
   onSubmitEditing: () => {},
   defaultValue: '',
   secureTextEntry: false,
+  customContainer: {},
 }
 
 export default TextBox
