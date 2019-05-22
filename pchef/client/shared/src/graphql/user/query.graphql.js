@@ -1,19 +1,22 @@
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
+// Token
+const token = localStorage.getItem('token')
+
 const GET_USER = gql`
-  {
-    userInfo {
-      user: {
+  query GetUser($token: String!) {
+    getUser(token: $token) {
+      user {
         name
         email
         avatar
       }
-      followCategory: {
+      followCategory {
         name
         imgUrl
       }
-      favoriteRecipe: {
+      favoriteRecipe {
         title
         imgUrl
         votes
@@ -23,9 +26,20 @@ const GET_USER = gql`
 `
 
 const getUser = graphql(GET_USER, {
-  options: token => ({
-    variables: { token },
+  options: () => ({
+    variables: {
+      token,
+    },
   }),
+  props: ({ data }) => {
+    const { loading, error, getUser } = data
+
+    return {
+      loading,
+      error,
+      data: getUser,
+    }
+  },
 })
 
 export { getUser }
