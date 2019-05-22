@@ -1,11 +1,17 @@
 // Mock
-import { user } from '../../mocks'
+import { user, recipes, categories } from '../../mocks'
 
 // Components
 import Profile from '.'
 
 const props = {
-  user,
+  data: {
+    user,
+    followCategory: categories,
+    favoriteRecipe: recipes,
+  },
+  loading: false,
+  error: undefined,
 }
 
 describe('Screen', () => {
