@@ -9,7 +9,6 @@ const GET_USER = gql`
     getUser(token: $token) {
       user {
         name
-        email
         avatar
       }
       followCategory {
@@ -20,6 +19,7 @@ const GET_USER = gql`
         title
         imgUrl
         votes
+        description
       }
     }
   }

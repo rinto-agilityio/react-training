@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 // Components
 import { View, Text } from 'react-native'
@@ -13,21 +13,18 @@ type Props = {
   error: string,
   data: {
     user: {
-      id: string,
       name: string,
       avatar: string,
     },
     followCategory: Array<{
-      id: string,
       name: string,
       imgUrl: string,
     }>,
     favoriteRecipe: Array<{
-      id: string,
       title: string,
       imgUrl: string,
-      description: string,
       votes: Array<number>,
+      description: string,
     }>,
   },
 }

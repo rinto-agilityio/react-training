@@ -11,12 +11,10 @@ import styles from './styles'
 
 type Props = {
   categories?: Array<{
-    id: string,
     name: string,
     imgUrl: string,
   }>,
   recipes?: Array<{
-    id: string,
     title: string,
     imgUrl: string,
     description: string,
@@ -56,8 +54,8 @@ const Tabs = ({ categories = [], recipes = [] }: Props) => {
             <Text>{NO_RECIPES_MESSAGE}</Text>
           ) : (
             recipes &&
-            recipes.map(recipe => (
-              <View key={recipe.id} style={styles.tabContentItem}>
+            recipes.map((recipe, index) => (
+              <View key={index} style={styles.tabContentItem}>
                 <Recipe size="medium" recipe={recipe} />
               </View>
             ))
@@ -68,8 +66,8 @@ const Tabs = ({ categories = [], recipes = [] }: Props) => {
             <Text>{NO_CATEGORIES_MESSAGE}</Text>
           ) : (
             categories &&
-            categories.map(category => (
-              <View key={category.id} style={styles.tabContentItem}>
+            categories.map((category, index) => (
+              <View key={index} style={styles.tabContentItem}>
                 <Category category={category} />
               </View>
             ))
