@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 // Components
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 import TabHeaderItem from '../TabHeaderItem'
 import Recipe from '../../../new-feed/components/Recipe'
 import Category from '../Category'
@@ -52,24 +52,28 @@ const Tabs = ({ categories = [], recipes = [] }: Props) => {
       </View>
       <View style={styles.wrapContent}>
         {tabActive === 0 &&
-          (!totalOfRecipes
-            ? NO_RECIPES_MESSAGE
-            : recipes &&
-              recipes.map(recipe => (
-                <View style={styles.tabContentItem}>
-                  <Recipe size="medium" key={recipe.id} recipe={recipe} />
-                </View>
-              )))}
+          (!totalOfRecipes ? (
+            <Text>{NO_RECIPES_MESSAGE}</Text>
+          ) : (
+            recipes &&
+            recipes.map(recipe => (
+              <View key={recipe.id} style={styles.tabContentItem}>
+                <Recipe size="medium" recipe={recipe} />
+              </View>
+            ))
+          ))}
 
         {tabActive === 1 &&
-          (!totalOfCatefories
-            ? NO_CATEGORIES_MESSAGE
-            : categories &&
-              categories.map(category => (
-                <View style={styles.tabContentItem}>
-                  <Category key={category.id} category={category} />
-                </View>
-              )))}
+          (!totalOfCatefories ? (
+            <Text>{NO_CATEGORIES_MESSAGE}</Text>
+          ) : (
+            categories &&
+            categories.map(category => (
+              <View key={category.id} style={styles.tabContentItem}>
+                <Category category={category} />
+              </View>
+            ))
+          ))}
       </View>
     </View>
   )
