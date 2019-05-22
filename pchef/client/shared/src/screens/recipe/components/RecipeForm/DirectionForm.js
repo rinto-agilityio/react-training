@@ -55,7 +55,11 @@ const DirectionsForm = ({
       title="Directions"
       dismissBtn
       onDismiss={onDismiss}
-      onSubmit={handleSubmitDirections}
+      onSubmit={() => handleSubmitDirections({
+        title: stepTitleRef.current ? stepTitleRef.current._node.value.trim() : '',
+        subTitle: stepSubTitleRef.current ? stepSubTitleRef.current._node.value.trim() : '',
+        description: stepDescriptionRef.current ? stepDescriptionRef.current._node.value.trim() : '',
+      })}
       visible={visible}
       size={size}
     >
@@ -67,7 +71,7 @@ const DirectionsForm = ({
         }}
       >
         <Button
-          title={step || '1'}
+          title={step}
           buttonStyle={[styles.button, styles[`${size}Button`]]}
           titleStyle={[styles.titleBtn, styles[`${size}TitleBtn`]]}
         />

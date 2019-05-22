@@ -106,27 +106,144 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
     />
   </div>
   <div
-    className="css-view-1dbjc4n r-flex-13awgt0 r-flexDirection-18u37iz"
+    className="css-view-1dbjc4n r-alignItems-1habvwh r-backgroundColor-1pzepah r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-justifyContent-1wtj0ep r-marginTop-156q2ks r-padding-1pcd2l5 r-paddingBottom-1mdbw0j"
+    style={
+      Object {
+        "WebkitBoxFlex": 0,
+        "WebkitFlexGrow": 0,
+        "flexGrow": 0,
+        "msFlexPositive": 0,
+      }
+    }
   >
-    <input
-      autoCapitalize="none"
-      autoComplete="on"
-      autoCorrect="off"
-      className="css-textinput-1cwyjr8 r-borderBottomWidth-qklmqi r-borderColor-34efmp r-color-cqee49 r-flex-13awgt0 r-fontSize-ubezar r-height-eu3ka r-placeholderTextColor-1fufmm0"
-      data-focusable={true}
-      defaultValue=""
-      dir="auto"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      onSelect={[Function]}
-      placeholder="Why do you like this recipe?"
-      readOnly={false}
-      spellCheck={false}
-      type="text"
-    />
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe"
+      >
+        <div
+          className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <span
+            className="css-hitSlop-mjp8i1"
+            style={
+              Object {
+                "bottom": "-6px",
+                "left": "-6px",
+                "right": "-6px",
+                "top": "-6px",
+              }
+            }
+          />
+          <div
+            className="css-view-1dbjc4n"
+          >
+            <div
+              className="css-text-76zvg2 r-backgroundColor-1niwhzg r-color-cqee49 r-pointerEvents-633pao"
+              dir="auto"
+              focusable={false}
+              role="img"
+              style={
+                Object {
+                  "fontSize": "30px",
+                }
+              }
+            >
+              □
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-text-76zvg2 r-fontSize-ubezar r-marginLeft-1n0xq6e"
+          dir="auto"
+        >
+          Add categories
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe"
+      >
+        <div
+          className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <span
+            className="css-hitSlop-mjp8i1"
+            style={
+              Object {
+                "bottom": "-6px",
+                "left": "-6px",
+                "right": "-6px",
+                "top": "-6px",
+              }
+            }
+          />
+          <div
+            className="css-view-1dbjc4n"
+          >
+            <div
+              className="css-text-76zvg2 r-backgroundColor-1niwhzg r-color-cqee49 r-pointerEvents-633pao"
+              dir="auto"
+              focusable={false}
+              role="img"
+              style={
+                Object {
+                  "fontSize": "30px",
+                }
+              }
+            >
+              □
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-text-76zvg2 r-fontSize-ubezar r-marginLeft-1n0xq6e"
+          dir="auto"
+        >
+          Add cooking types
+        </div>
+      </div>
+    </div>
   </div>
   <div
     className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1pzepah r-display-6koalj r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-a2tzq0 r-marginTop-156q2ks r-padding-1pcd2l5"
@@ -195,7 +312,7 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-width-1iadsmv"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-marginLeft-1n0xq6e r-width-1iadsmv"
     >
       <div
         className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -359,27 +476,144 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
     />
   </div>
   <div
-    className="css-view-1dbjc4n r-flex-13awgt0 r-flexDirection-18u37iz"
+    className="css-view-1dbjc4n r-alignItems-1habvwh r-backgroundColor-1pzepah r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-justifyContent-1wtj0ep r-marginTop-156q2ks r-padding-1pcd2l5 r-paddingBottom-1mdbw0j"
+    style={
+      Object {
+        "WebkitBoxFlex": 0,
+        "WebkitFlexGrow": 0,
+        "flexGrow": 0,
+        "msFlexPositive": 0,
+      }
+    }
   >
-    <input
-      autoCapitalize="none"
-      autoComplete="on"
-      autoCorrect="off"
-      className="css-textinput-1cwyjr8 r-borderBottomWidth-qklmqi r-borderColor-34efmp r-color-cqee49 r-flex-13awgt0 r-fontSize-ubezar r-height-eu3ka r-placeholderTextColor-1fufmm0"
-      data-focusable={true}
-      defaultValue=""
-      dir="auto"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      onSelect={[Function]}
-      placeholder="Why do you like this recipe?"
-      readOnly={false}
-      spellCheck={false}
-      type="text"
-    />
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe"
+      >
+        <div
+          className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <span
+            className="css-hitSlop-mjp8i1"
+            style={
+              Object {
+                "bottom": "-6px",
+                "left": "-6px",
+                "right": "-6px",
+                "top": "-6px",
+              }
+            }
+          />
+          <div
+            className="css-view-1dbjc4n"
+          >
+            <div
+              className="css-text-76zvg2 r-backgroundColor-1niwhzg r-color-cqee49 r-pointerEvents-633pao"
+              dir="auto"
+              focusable={false}
+              role="img"
+              style={
+                Object {
+                  "fontSize": "30px",
+                }
+              }
+            >
+              □
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-text-76zvg2 r-fontSize-ubezar r-marginLeft-1n0xq6e"
+          dir="auto"
+        >
+          Add categories
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe"
+      >
+        <div
+          className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <span
+            className="css-hitSlop-mjp8i1"
+            style={
+              Object {
+                "bottom": "-6px",
+                "left": "-6px",
+                "right": "-6px",
+                "top": "-6px",
+              }
+            }
+          />
+          <div
+            className="css-view-1dbjc4n"
+          >
+            <div
+              className="css-text-76zvg2 r-backgroundColor-1niwhzg r-color-cqee49 r-pointerEvents-633pao"
+              dir="auto"
+              focusable={false}
+              role="img"
+              style={
+                Object {
+                  "fontSize": "30px",
+                }
+              }
+            >
+              □
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-text-76zvg2 r-fontSize-ubezar r-marginLeft-1n0xq6e"
+          dir="auto"
+        >
+          Add cooking types
+        </div>
+      </div>
+    </div>
   </div>
   <div
     className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1pzepah r-display-6koalj r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-a2tzq0 r-marginTop-156q2ks r-padding-1pcd2l5"
@@ -448,7 +682,7 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-width-1iadsmv"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-marginLeft-1n0xq6e r-width-1iadsmv"
     >
       <div
         className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -513,12 +747,6 @@ exports[`recipe form Renders correctly directions form commponent 1`] = `
 `;
 
 exports[`recipe form Renders correctly directions form commponent with size medium 1`] = `
-<div
-  className="css-view-1dbjc4n r-bottom-1p0dtai r-display-1adg3ll r-left-1d2f490 r-position-1xcajam r-right-zchlnj r-top-ipm5af r-zIndex-1sg8ghl"
-/>
-`;
-
-exports[`recipe form Renders correctly directions form commponent with step 1 default 1`] = `
 <div
   className="css-view-1dbjc4n r-bottom-1p0dtai r-display-1adg3ll r-left-1d2f490 r-position-1xcajam r-right-zchlnj r-top-ipm5af r-zIndex-1sg8ghl"
 />
@@ -650,27 +878,144 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
     />
   </div>
   <div
-    className="css-view-1dbjc4n r-flex-13awgt0 r-flexDirection-18u37iz"
+    className="css-view-1dbjc4n r-alignItems-1habvwh r-backgroundColor-1pzepah r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-justifyContent-1wtj0ep r-marginTop-156q2ks r-padding-1pcd2l5 r-paddingBottom-1mdbw0j"
+    style={
+      Object {
+        "WebkitBoxFlex": 0,
+        "WebkitFlexGrow": 0,
+        "flexGrow": 0,
+        "msFlexPositive": 0,
+      }
+    }
   >
-    <input
-      autoCapitalize="none"
-      autoComplete="on"
-      autoCorrect="off"
-      className="css-textinput-1cwyjr8 r-borderBottomWidth-qklmqi r-borderColor-34efmp r-color-cqee49 r-flex-13awgt0 r-fontSize-ubezar r-height-eu3ka r-placeholderTextColor-1fufmm0"
-      data-focusable={true}
-      defaultValue=""
-      dir="auto"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      onSelect={[Function]}
-      placeholder="Why do you like this recipe?"
-      readOnly={false}
-      spellCheck={false}
-      type="text"
-    />
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe"
+      >
+        <div
+          className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <span
+            className="css-hitSlop-mjp8i1"
+            style={
+              Object {
+                "bottom": "-6px",
+                "left": "-6px",
+                "right": "-6px",
+                "top": "-6px",
+              }
+            }
+          />
+          <div
+            className="css-view-1dbjc4n"
+          >
+            <div
+              className="css-text-76zvg2 r-backgroundColor-1niwhzg r-color-cqee49 r-pointerEvents-633pao"
+              dir="auto"
+              focusable={false}
+              role="img"
+              style={
+                Object {
+                  "fontSize": "30px",
+                }
+              }
+            >
+              □
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-text-76zvg2 r-fontSize-ubezar r-marginLeft-1n0xq6e"
+          dir="auto"
+        >
+          Add categories
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe"
+      >
+        <div
+          className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <span
+            className="css-hitSlop-mjp8i1"
+            style={
+              Object {
+                "bottom": "-6px",
+                "left": "-6px",
+                "right": "-6px",
+                "top": "-6px",
+              }
+            }
+          />
+          <div
+            className="css-view-1dbjc4n"
+          >
+            <div
+              className="css-text-76zvg2 r-backgroundColor-1niwhzg r-color-cqee49 r-pointerEvents-633pao"
+              dir="auto"
+              focusable={false}
+              role="img"
+              style={
+                Object {
+                  "fontSize": "30px",
+                }
+              }
+            >
+              □
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-text-76zvg2 r-fontSize-ubezar r-marginLeft-1n0xq6e"
+          dir="auto"
+        >
+          Add cooking types
+        </div>
+      </div>
+    </div>
   </div>
   <div
     className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1pzepah r-display-6koalj r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-a2tzq0 r-marginTop-156q2ks r-padding-1pcd2l5"
@@ -739,7 +1084,7 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-width-1iadsmv"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-marginLeft-1n0xq6e r-width-1iadsmv"
     >
       <div
         className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"

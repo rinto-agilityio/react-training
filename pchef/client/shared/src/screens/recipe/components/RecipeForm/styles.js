@@ -19,6 +19,9 @@ const styles = StyleSheet.create({
     padding: METRICS.largePadding,
     marginTop: METRICS.mediumMargin,
   },
+  wrapperClassifyIcon: {
+    paddingBottom: 0,
+  },
   wrapperIconDirections: {
     width: '100%',
   },
@@ -28,6 +31,11 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
     borderRadius: METRICS.mediumBorderRadius,
     ...METRICS.flexCenter,
+  },
+  classifyIcon: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    marginBottom: METRICS.largeMargin,
   },
   createIcon: {
     marginLeft: METRICS.mediumMargin,

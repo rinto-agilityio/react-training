@@ -33,7 +33,7 @@ const IngredientsForm = ({
         title="Ingredients"
         dismissBtn
         onDismiss={onDismiss}
-        onSubmit={handleSubmitIngredients}
+        onSubmit={() => handleSubmitIngredients(ingredientRef.current ? ingredientRef.current._node.value.trim() : '')}
         visible={visible}
         size={size}
       >
