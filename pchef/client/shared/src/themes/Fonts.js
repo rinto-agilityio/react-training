@@ -16,4 +16,9 @@ export default {
     medium: '500',
     large: '600',
   },
+
+  fontStyle: {
+    italic: 'italic',
+    normal: 'normal',
+  },
 }

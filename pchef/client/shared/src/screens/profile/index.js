@@ -1,9 +1,10 @@
 import React from 'react'
 
 // Components
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import Header from './components/Header'
 import Loading from '../../components/Loading'
+import Error from '../../components/Error'
 
 // Styles
 import styles from './styles'
@@ -30,12 +31,15 @@ type Props = {
   },
 }
 const Profile = ({ data, loading, error }: Props) => {
+  const errorMessage =
+    'Can not load information of user. Please check for connection!!!'
+
   if (loading) {
     return <Loading />
   }
 
   if (error) {
-    return <Text>Failed!!!</Text>
+    return <Error content={errorMessage} />
   }
 
   const { user, favoriteRecipe, followCategory } = data
