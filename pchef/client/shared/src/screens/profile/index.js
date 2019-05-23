@@ -3,6 +3,7 @@ import React from 'react'
 // Components
 import { View, Text } from 'react-native'
 import Header from './components/Header'
+import Loading from '../../components/Loading'
 
 // Styles
 import styles from './styles'
@@ -30,7 +31,7 @@ type Props = {
 }
 const Profile = ({ data, loading, error }: Props) => {
   if (loading) {
-    return <Text>Loading!!!</Text>
+    return <Loading />
   }
 
   if (error) {

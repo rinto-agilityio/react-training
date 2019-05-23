@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components Loading should render Loading component 1`] = `
+<div
+  aria-valuemax="1"
+  aria-valuemin="0"
+  className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
+  role="progressbar"
+>
+  <div
+    className="css-view-1dbjc4n r-animationDuration-17bb2tj r-animationIterationCount-1muvv40 r-animationKeyframes-127358a r-animationTimingFunction-1ldzwu0"
+    style={
+      Object {
+        "height": "40px",
+        "width": "40px",
+      }
+    }
+  >
+    <svg
+      height="100%"
+      viewBox="0 0 32 32"
+      width="100%"
+    >
+      <circle
+        cx="16"
+        cy="16"
+        fill="none"
+        r="14"
+        strokeWidth="4"
+        style={
+          Object {
+            "opacity": 0.2,
+            "stroke": "#d32b53",
+          }
+        }
+      />
+      <circle
+        cx="16"
+        cy="16"
+        fill="none"
+        r="14"
+        strokeWidth="4"
+        style={
+          Object {
+            "stroke": "#d32b53",
+            "strokeDasharray": 80,
+            "strokeDashoffset": 60,
+          }
+        }
+      />
+    </svg>
+  </div>
+</div>
+`;
