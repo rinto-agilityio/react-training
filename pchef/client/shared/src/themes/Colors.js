@@ -25,4 +25,5 @@ export default {
   cherub: '#f8d7da',
   ghost: '#ced4da',
   lightSliver: '#f2f2f2',
+  lightBlack: 'rgba(0, 0, 0, 0.5)',
 }
