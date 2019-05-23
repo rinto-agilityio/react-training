@@ -1,15 +1,15 @@
 const { map } = require('lodash')
-const { users } = require('../mocks')
 
 // Constants
 const COLLECTION_NAME = require('../constants/collection-name')
 
 // Helpers
-const { authenticated, getUserInfoByToken } = require('../helpers/auth')
+const { authenticated } = require('../helpers/auth')
 const {
   getDocument,
   getCollection,
   getCollectionWithConditions,
+  getDocumentWithListId
 } = require('../helpers/firestore')
 
 const Query = {
@@ -23,56 +23,62 @@ const Query = {
       },
     ]
 
-    return getDocument(`${COLLECTION_NAME.CATEGORY}/${id}`).then(category =>
-      getCollectionWithConditions(COLLECTION_NAME.RECIPE, queryConditions).then(
-        recipes => ({
-          ...category,
-          recipes,
-        }),
-      ),
-    )
-  }),
-
-  getAllCategories: authenticated((_, args, context) =>
-    getCollection(COLLECTION_NAME.CATEGORY).then(categories =>
-      map(categories, category => {
-        const queryConditions = [
-          {
-            fieldName: 'categoryId',
-            operator: '==',
-            value: category.id,
-          },
-        ]
-
-        return getCollectionWithConditions(
+    return getDocument(`${COLLECTION_NAME.CATEGORY}/${id}`)
+      .then(category => (
+        getCollectionWithConditions(
           COLLECTION_NAME.RECIPE,
           queryConditions,
-        ).then(recipes => ({
-          ...category,
-          recipes,
-        }))
-      }),
-    ),
-  ),
+        )
+          .then(recipes => ({
+            ...category,
+            recipes,
+          }))
+      ))
+  }),
+
+  getAllCategories: authenticated((_, args, context) => (
+    getCollection(COLLECTION_NAME.CATEGORY)
+      .then(categories => (
+        map(categories, category => {
+          const queryConditions = [
+            {
+              fieldName: 'categoryId',
+              operator: '==',
+              value: category.id,
+            },
+          ]
+
+          return getCollectionWithConditions(
+            COLLECTION_NAME.RECIPE,
+            queryConditions,
+          )
+            .then(recipes => ({
+              ...category,
+              recipes,
+            }))
+        })
+      ))
+  )),
 
   // CokingType
-  getAllCookingTypes: authenticated((_, args, context) =>
-    getCollection(COLLECTION_NAME.COOKING_TYPE),
-  ),
+  getAllCookingTypes: authenticated((_, args, context) => (
+    getCollection(COLLECTION_NAME.COOKING_TYPE)
+  )),
 
   // Recipe
-  getRecipe: authenticated((_, { id }, context) =>
-    getDocument(`${COLLECTION_NAME.RECIPE}/${id}`),
-  ),
+  getRecipe: authenticated((_, { id }, context) => (
+    getDocument(`${COLLECTION_NAME.RECIPE}/${id}`)
 
-  getAllRecipes: authenticated((_, args, context) =>
-    getCollection(COLLECTION_NAME.RECIPE),
-  ),
+  )),
+
+  getAllRecipes: authenticated((_, args, context) => (
+    getCollection(COLLECTION_NAME.RECIPE)
+  )),
 
   // RecipeStep
-  getRecipeStep: authenticated((_, { id }, context) =>
-    getDocument(`${COLLECTION_NAME.RECIPE_STEP}/${id}`),
-  ),
+  getRecipeStep: authenticated((_, { id }, context) => (
+    getDocument(`${COLLECTION_NAME.RECIPE_STEP}/${id}`)
+  )),
 
   getAllRecipeSteps: authenticated((_, { id }, context) => {
     const queryConditions = [
@@ -100,48 +106,41 @@ const Query = {
       },
     ]
 
-    return getCollectionWithConditions(COLLECTION_NAME.COMMENT, queryConditions)
+    return getCollectionWithConditions(
+      COLLECTION_NAME.COMMENT,
+      queryConditions,
+    )
       .then(comments => comments)
       .catch(error => error)
   }),
 
   // User
-  getUser: async (_, { token }, context) => {
-    // Get id by token
-    const { id } = await getUserInfoByToken(token)
+  getUser: authenticated(async (_, args, context) => {
+    const userId = await context.currentUser.id
 
-    // Get user info by id
-    const userInfo = await getDocument(`${COLLECTION_NAME.USER}/${id}`)
+    // Get full information of current user
+    const userInfo = await getDocument(`${COLLECTION_NAME.USER}/${userId}`)
 
     const { followCategory, favoriteRecipe } = userInfo
 
-    // Get list categories via list categories id in user
-    let categories = []
-    const categoriesLength = followCategory.length
+    // Get categories by list category ids
+    const categories = await getDocumentWithListId(
+      COLLECTION_NAME.CATEGORY,
+      followCategory,
+    ).then(categories => categories)
 
-    for (i = 0; i < categoriesLength; i++) {
-      const data = await getDocument(
-        `${COLLECTION_NAME.CATEGORY}/${followCategory[i]}`,
-      )
-      categories.push(data)
-    }
-
-    // Get list recipes via list recipes id in user
-    let recipes = []
-    const recipesLength = favoriteRecipe.length
-    for (i = 0; i < recipesLength; i++) {
-      const data = await getDocument(
-        `${COLLECTION_NAME.RECIPE}/${favoriteRecipe[i]}`,
-      )
-      recipes.push(data)
-    }
+    // Get recipes by list recipes ids
+    const recipes = await getDocumentWithListId(
+      COLLECTION_NAME.RECIPE,
+      favoriteRecipe,
+    ).then(recipes => recipes)
 
     return {
       user: userInfo,
       followCategory: categories,
       favoriteRecipe: recipes,
     }
-  },
+  }),
 }
 
 module.exports = Query
