@@ -21,7 +21,7 @@ type Props = {
     description: string,
   }>,
 }
-const CategoryScreen = ({ category, recipes }: Props) => {
+const CategoryScreen = ({ category = {}, recipes = [] }: Props) => {
   const size = Platform.OS === 'web' ? 'large' : 'small'
 
   return (
