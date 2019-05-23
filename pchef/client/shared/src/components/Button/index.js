@@ -7,7 +7,7 @@ import styles from './styles'
 import { COLORS } from '../../themes/index'
 
 type Props = {
-  onPress?: () => void,
+  onPress?: () => void | Promise<void>,
   buttonStyle?: {} | Array<{}>,
   title: string,
   titleStyle?: {} | Array<{}>,

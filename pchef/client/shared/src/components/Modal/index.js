@@ -15,6 +15,7 @@ type Props = {
   dismissBtn?: boolean,
   children: React.Node,
   visible?: boolean,
+  customDialog?: {} | Array<{}>,
   onDismiss?: () => void,
   onSubmit?: () => void,
 }
@@ -27,12 +28,13 @@ const Modal = ({
   onSubmit,
   visible,
   onDismiss,
+  customDialog,
 }: Props) => (
   <View style={styles.wrapper}>
     <Dialog
       visible={visible}
       onDismiss={onDismiss}
-      style={[styles.dialog, styles[`${size}Dialog`]]}
+      style={[styles.dialog, styles[`${size}Dialog`], customDialog]}
     >
       {title ? (
         <Dialog.Title
@@ -67,6 +69,7 @@ Modal.defaultProps = {
   dismissBtn: false,
   title: '',
   visible: false,
+  customDialog: {},
   onSubmit: () => {},
   onDismiss: () => {},
 }

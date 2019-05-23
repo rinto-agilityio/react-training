@@ -17,7 +17,7 @@ type Props = {
   status?: boolean,
   value: string,
   disabled?: boolean,
-  customWrapperStyle?: {} | Arary<{}>,
+  customWrapperStyle?: {} | Array<{}>,
 };
 
 const RadioButton = ({
