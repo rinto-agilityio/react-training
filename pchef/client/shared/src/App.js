@@ -18,6 +18,7 @@ import client from './config/apollo-client'
 
 // Containers
 import LoginContainer from './containers/Login'
+import CategoryContainer from './containers/Category'
 
 type AppProps = {}
 
@@ -40,6 +41,8 @@ export default class App extends Component<AppProps> {
               type="secondary"
               handlingLoginSuccess={this.handlingLoginSuccess}
             />
+
+            {<CategoryContainer id="2uAi2sb1IkPxpKPzvDNn" />}
           </View>
         </PaperProvider>
       </ApolloProvider>
@@ -49,9 +52,9 @@ export default class App extends Component<AppProps> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    // flex: 1,
+    // justifyContent: 'center',
+    // alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
