@@ -84,7 +84,6 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.black,
     borderColor: COLORS.black,
     minWidth: METRICS.largeIcon,
-    marginRight: METRICS.largeMargin * 2,
   },
   smallButton: {
     borderRadius: METRICS.smallBorderRadius,
@@ -98,17 +97,14 @@ const styles = StyleSheet.create({
     borderRadius: METRICS.mediumBorderRadius,
     padding: METRICS.mediumPadding,
   },
-  titleBtn: {
-    fontWeight: 'bold',
-  },
   smallTitleBtn: {
-    fontSize: FONTS.fontSize.medium,
+    fontSize: FONTS.fontSize.small,
   },
   mediumTitleBtn: {
-    fontSize: FONTS.fontSize.large,
+    fontSize: FONTS.fontSize.medium,
   },
   largeTitleBtn: {
-    fontSize: FONTS.fontSize.extraLarge,
+    fontSize: FONTS.fontSize.large,
   },
 
   // Directions

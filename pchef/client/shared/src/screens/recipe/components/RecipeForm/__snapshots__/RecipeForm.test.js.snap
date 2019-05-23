@@ -315,20 +315,17 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
       className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-marginLeft-1n0xq6e r-width-1iadsmv"
     >
       <div
-        className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
-        data-focusable={true}
-        disabled={false}
+        aria-disabled={true}
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-opacity-qzm50q r-overflow-bztko3 r-userSelect-lrvibr r-width-1acpoxo"
+        disabled={true}
         onKeyDown={[Function]}
-        onKeyPress={[Function]}
         onKeyUp={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
-        onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         role="button"
-        tabIndex="0"
       >
         <span
           className="css-hitSlop-mjp8i1"
@@ -685,20 +682,17 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
       className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-marginLeft-1n0xq6e r-width-1iadsmv"
     >
       <div
-        className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
-        data-focusable={true}
-        disabled={false}
+        aria-disabled={true}
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-opacity-qzm50q r-overflow-bztko3 r-userSelect-lrvibr r-width-1acpoxo"
+        disabled={true}
         onKeyDown={[Function]}
-        onKeyPress={[Function]}
         onKeyUp={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
-        onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         role="button"
-        tabIndex="0"
       >
         <span
           className="css-hitSlop-mjp8i1"
@@ -1087,20 +1081,17 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
       className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-marginLeft-1n0xq6e r-width-1iadsmv"
     >
       <div
-        className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
-        data-focusable={true}
-        disabled={false}
+        aria-disabled={true}
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-opacity-qzm50q r-overflow-bztko3 r-userSelect-lrvibr r-width-1acpoxo"
+        disabled={true}
         onKeyDown={[Function]}
-        onKeyPress={[Function]}
         onKeyUp={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
-        onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         role="button"
-        tabIndex="0"
       >
         <span
           className="css-hitSlop-mjp8i1"

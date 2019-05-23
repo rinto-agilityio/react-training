@@ -15,7 +15,7 @@ import Modal from '../../../../components/Modal'
 type Props = {
   size: string,
   visible?: boolean,
-  handleSubmitIngredients?: () => void,
+  handleSubmitIngredients?: (string) => void,
   onDismiss?: () => void,
 }
 

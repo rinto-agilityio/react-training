@@ -10,23 +10,32 @@ import { COLORS, METRICS } from '../../../../themes'
 
 // Components
 import IngredientsForm from './IngredientsForm'
-import DirectionForm from './DirectionForm'
 import Ingredients from '../Recipe/Ingredients'
-import Directions from '../Recipe/Directions'
 import TextBox from '../../../../components/TextBox'
 import Icon from '../../../../components/Icon'
 import Wrapper from '../../../../layout/Wrapper'
 import Categories from '../../../../containers/Categories'
 import CookingTypes from '../../../../containers/CookingTypes'
+import DirectionForm from '../../../../containers/DirectionForm'
 
 type Props = {
   size: string,
   handleAddRecipeImage?: () => void,
+  createRecipe: (
+    categoryId: string,
+    cookingTypeId: string,
+    title: string,
+    subTitle: string,
+    imgUrl: string,
+    description: string,
+    isDraft: boolean,
+  ) => Promise<{ data: { createRecipe: { id: string } } }>,
 }
 
 const RecipeForm = ({
   size = 'medium',
   handleAddRecipeImage,
+  createRecipe,
 }: Props) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
@@ -37,8 +46,7 @@ const RecipeForm = ({
   const [category, setCategory] = useState({})
   const [cookingType, setCookingType] = useState({})
   const [ingredients, setIngredients] = useState('')
-  const [directions, setDirections] = useState([])
-  const nextStep = directions.length + 1
+  const [recipe, setRecipe] = useState({})
 
   const dataIcon = [
     {
@@ -65,6 +73,25 @@ const RecipeForm = ({
       value: cookingType.name || '',
     },
   ]
+
+  const handleCreateRecipe = async () => {
+    try {
+      // get token by user email and password
+      await createRecipe(
+        category.id,
+        cookingType.id,
+        titleRef.current ? titleRef.current._node.value.trim() : '',
+        subTitleRef.current ? subTitleRef.current._node.value.trim() : '',
+        '',
+        ingredients,
+        true,
+      ).then(({ data = {} }) => {
+        setRecipe(data.createRecipe)
+      })
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
   return (
     <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
@@ -125,6 +152,7 @@ const RecipeForm = ({
             label={label}
             wrapperIconStyle={[styles.icon, styles[`${name}Icon`], styles[`${size}Icon`]]}
             customStyle={[styles.label, styles[`${size}Input`]]}
+            disabled={name === 'create' && !recipe.id}
           />
         ))}
       </Wrapper>
@@ -135,12 +163,6 @@ const RecipeForm = ({
           customIngredients={{
             marginTop: METRICS.largeMargin,
           }}
-        />
-      ) : null}
-      {directions.length ? (
-        <Directions
-          steps={directions}
-          size={size}
         />
       ) : null}
       {visibleIngredients && (
@@ -159,16 +181,7 @@ const RecipeForm = ({
           size={size}
           onDismiss={() => setVisibleDirections(false)}
           visible={visibleDirections}
-          step={nextStep.toString()}
-          handleSubmitDirections={value => {
-            directions.push({
-              ...value,
-              step: nextStep,
-            })
-            setDirections(directions)
-            setVisibleDirections(false)
-          }}
-          steps={directions}
+          recipeId={recipe.id}
         />
       )}
       {visibleCategories && (

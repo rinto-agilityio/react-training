@@ -4,6 +4,11 @@ import DirectionsForm from './DirectionForm'
 import IngredientsForm from './IngredientsForm'
 
 describe('recipe form', () => {
+  const recipeProps = {
+    recipre: {
+      id: '1',
+    },
+  }
   it('Renders correctly recipe form commponent', () => {
     const recipe = renderer.create(<RecipeForm />).toJSON()
     expect(recipe).toMatchSnapshot()
@@ -41,7 +46,8 @@ describe('recipe form', () => {
   })
 
   it('Should show directions form', () => {
-    const recipe = shallow(<RecipeForm />)
+    const recipe = shallow(<RecipeForm {...recipeProps} />)
+    console.log(recipe.debug())
     const icon = recipe.find('Icon')
     expect(recipe.find('DirectionsForm').exists()).toEqual(false)
     icon.at(4).props().onPress()
@@ -64,7 +70,7 @@ describe('recipe form', () => {
   })
 
   it('Should hide directions form', () => {
-    const recipe = shallow(<RecipeForm />)
+    const recipe = shallow(<RecipeForm {...recipeProps} />)
     const icon = recipe.find('Icon')
     icon.at(4).props().onPress()
     recipe.find('DirectionsForm').props().onDismiss()
