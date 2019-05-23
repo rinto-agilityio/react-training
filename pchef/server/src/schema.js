@@ -93,15 +93,20 @@ const typeDefs = gql`
 
     getRecipeComments(id: String!): [Comment]
 
-    getUser(token: String!): UserFullInfos!
+    getUser: UserFullInfos!
   }
 
   type Mutation {
     initData: String!
 
-    createCategory(name: String!, imgUrl: String!): Category!
+    createCategory(
+      name: String!
+      imgUrl: String!
+    ): Category!
 
-    createCookingType(name: String!): CookingType
+    createCookingType(
+      name: String!
+    ): CookingType
 
     createRecipe(
       categoryId: String!
@@ -113,15 +118,28 @@ const typeDefs = gql`
       isDraft: Boolean! = true
     ): Recipe!
 
-    publishRecipe(id: String!): Recipe
+    publishRecipe(
+      id: String!
+    ): Recipe
 
-    createUser(email: String!, password: String!, name: String!): PayloadAuth!
+    createUser(
+      email: String!
+      password: String!
+      name: String!
+    ): PayloadAuth!
 
-    signInUser(email: String!, password: String!): PayloadAuth!
+    signInUser(
+      email: String!
+      password: String!
+    ): PayloadAuth!
 
-    userToggleCategory(categoryId: String!): PayloadResults!
+    userToggleCategory(
+      categoryId: String!
+    ): PayloadResults!
 
-    userToggleRecipe(recipeId: String!): PayloadResults!
+    userToggleRecipe(
+      recipeId: String!
+    ): PayloadResults!
 
     createRecipeStep(
       recipeId: String!
@@ -131,7 +149,10 @@ const typeDefs = gql`
       description: String
     ): RecipeStep!
 
-    createRecipeComment(recipeId: String!, content: String!): Comment
+    createRecipeComment(
+      recipeId: String!
+      content: String!
+    ): Comment
 
     createWishList(
       categoryId: String!
