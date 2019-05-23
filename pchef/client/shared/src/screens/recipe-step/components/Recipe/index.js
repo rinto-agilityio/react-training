@@ -14,6 +14,8 @@ import ImageBackground from '../../../../components/ImageBackground'
 import Reaction from '../../../../components/Reaction'
 import Comment from '../../../recipe/components/Comment'
 
+import { recipes } from '../../../../mocks'
+
 type Props = {
   stepInfo: {
     description: string,
@@ -42,7 +44,6 @@ type Props = {
 }
 
 const Recipe = ({
-  stepInfo,
   size = 'large',
   recipe,
   onPress,
@@ -52,12 +53,11 @@ const Recipe = ({
   customImage = {},
   customSubTitle,
   customTitleStep,
+  stepInfo,
+  loading,
+  error
 }: Props) => {
-  const {
-    imgUrl,
-    description,
-    step,
-  } = stepInfo
+
   const {
     title,
     subTitle,
@@ -65,7 +65,22 @@ const Recipe = ({
     steps,
     userId,
     views,
-  } = recipe
+  } = recipes[0]
+
+  if (loading) {
+    return <Text>Loading.......</Text>
+  }
+
+  if (error) {
+    return <Text>error</Text>
+  }
+  const {
+    imgUrl,
+    description,
+    step,
+  } = stepInfo
+
+  // console.log('data', stepInfo);
 
   return (
     <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
