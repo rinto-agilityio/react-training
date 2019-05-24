@@ -1101,7 +1101,7 @@ exports[`renders correctly 1`] = `
           }
         >
           <div
-            className="css-view-1dbjc4n r-alignItems-1awozwy r-borderRadius-1867qdf r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
+            className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
             data-testid="native.calendar.SELECT_DATE_SLOT-2019-05-21"
             onKeyDown={[Function]}
@@ -1218,7 +1218,7 @@ exports[`renders correctly 1`] = `
           }
         >
           <div
-            className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
+            className="css-view-1dbjc4n r-alignItems-1awozwy r-borderRadius-1867qdf r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
             data-testid="native.calendar.SELECT_DATE_SLOT-2019-05-24"
             onKeyDown={[Function]}

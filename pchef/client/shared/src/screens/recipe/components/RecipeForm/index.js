@@ -1,6 +1,6 @@
 // Libs
 import React, { useRef, useState } from 'react'
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 
 // Styles
 import styles from './styles'
@@ -10,37 +10,43 @@ import { COLORS, METRICS } from '../../../../themes'
 
 // Components
 import IngredientsForm from './IngredientsForm'
-import DirectionForm from './DirectionForm'
+import Ingredients from '../Recipe/Ingredients'
 import TextBox from '../../../../components/TextBox'
 import Icon from '../../../../components/Icon'
 import Wrapper from '../../../../layout/Wrapper'
+import Categories from '../../../../containers/Categories'
+import CookingTypes from '../../../../containers/CookingTypes'
+import DirectionForm from '../../../../containers/DirectionForm'
 
 type Props = {
   size: string,
   handleAddRecipeImage?: () => void,
+  createRecipe: (
+    categoryId: string,
+    cookingTypeId: string,
+    title: string,
+    subTitle: string,
+    imgUrl: string,
+    description: string,
+    isDraft: boolean,
+  ) => Promise<{ data: { createRecipe: { id: string } } }>,
 }
 
 const RecipeForm = ({
   size = 'medium',
   handleAddRecipeImage,
+  createRecipe,
 }: Props) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
-  const descriptionRef = useRef(null)
   const [visibleIngredients, setVisibleIngredients] = useState(false)
   const [visibleDirections, setVisibleDirections] = useState(false)
-
-  // Data to render input
-  const dataInput = [
-    {
-      placeholder: 'Subtitle',
-      refInput: subTitleRef,
-    },
-    {
-      placeholder: 'Why do you like this recipe?',
-      refInput: descriptionRef,
-    },
-  ]
+  const [visibleCategories, setVisibleCategories] = useState(false)
+  const [visibleCookingTypes, setVisibleCookingTypes] = useState(false)
+  const [category, setCategory] = useState({})
+  const [cookingType, setCookingType] = useState({})
+  const [ingredients, setIngredients] = useState('')
+  const [recipe, setRecipe] = useState({})
 
   const dataIcon = [
     {
@@ -54,6 +60,38 @@ const RecipeForm = ({
       onPress: setVisibleDirections,
     },
   ]
+
+  const dataIconClassify = [
+    {
+      label: 'Add categories',
+      onPress: setVisibleCategories,
+      value: category.name || '',
+    },
+    {
+      label: 'Add cooking types',
+      onPress: setVisibleCookingTypes,
+      value: cookingType.name || '',
+    },
+  ]
+
+  const handleCreateRecipe = async () => {
+    try {
+      // get token by user email and password
+      await createRecipe(
+        category.id,
+        cookingType.id,
+        titleRef.current ? titleRef.current._node.value.trim() : '',
+        subTitleRef.current ? subTitleRef.current._node.value.trim() : '',
+        '',
+        ingredients,
+        true,
+      ).then(({ data = {} }) => {
+        setRecipe(data.createRecipe)
+      })
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
   return (
     <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
@@ -71,15 +109,35 @@ const RecipeForm = ({
         wrapperIconStyle={styles.wrapperMainPhoto}
         customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`]]}
       />
-      {dataInput.map(({ placeholder, refInput }) => (
-        <TextBox
-          key={placeholder}
-          placeholder={placeholder}
-          refInput={refInput}
-          customStyle={[styles.input, styles[`${size}Input`]]}
-          placeholderTextColor={COLORS.grayNavy}
-        />
-      ))}
+      <TextBox
+        placeholder="Subtitle"
+        refInput={subTitleRef}
+        customStyle={[styles.input, styles[`${size}Input`]]}
+        placeholderTextColor={COLORS.grayNavy}
+      />
+      <Wrapper
+        direction="column"
+        childPosition="middle"
+        customStyles={[styles.wrapperIcon, styles.wrapperClassifyIcon]}
+      >
+        {dataIconClassify.map(({ onPress, label, value }, index) => (
+          <View key={`add-circle_${index}`} style={{ width: '100%' }}>
+            <Icon
+              name="add-circle"
+              size={METRICS[`${size}Icon`]}
+              onPress={() => onPress(true)}
+              label={label}
+              wrapperIconStyle={[styles.icon, styles.classifyIcon]}
+              customStyle={styles[`${size}Input`]}
+            />
+            {value ? (
+              <Text style={[{ marginBottom: METRICS.largeMargin }, styles[`${size}Input`]]}>
+                {value}
+              </Text>
+            ) : null}
+          </View>
+        ))}
+      </Wrapper>
       <Wrapper
         direction="row"
         childPosition="spaceAround"
@@ -94,14 +152,28 @@ const RecipeForm = ({
             label={label}
             wrapperIconStyle={[styles.icon, styles[`${name}Icon`], styles[`${size}Icon`]]}
             customStyle={[styles.label, styles[`${size}Input`]]}
+            disabled={name === 'create' && !recipe.id}
           />
         ))}
       </Wrapper>
+      {ingredients ? (
+        <Ingredients
+          description={ingredients}
+          size={size}
+          customIngredients={{
+            marginTop: METRICS.largeMargin,
+          }}
+        />
+      ) : null}
       {visibleIngredients && (
         <IngredientsForm
           size={size}
           onDismiss={() => setVisibleIngredients(false)}
           visible={visibleIngredients}
+          handleSubmitIngredients={value => {
+            setIngredients(value)
+            setVisibleIngredients(false)
+          }}
         />
       )}
       {visibleDirections && (
@@ -109,7 +181,31 @@ const RecipeForm = ({
           size={size}
           onDismiss={() => setVisibleDirections(false)}
           visible={visibleDirections}
-          step="1"
+          recipeId={recipe.id}
+        />
+      )}
+      {visibleCategories && (
+        <Categories
+          size={size}
+          title="Categories"
+          onDismiss={() => setVisibleCategories(false)}
+          visible={visibleCategories}
+          handleSubmit={value => {
+            setCategory(value)
+            setVisibleCategories(false)
+          }}
+        />
+      )}
+      {visibleCookingTypes && (
+        <CookingTypes
+          size={size}
+          title="Cooking types"
+          onDismiss={() => setVisibleCookingTypes(false)}
+          visible={visibleCookingTypes}
+          handleSubmit={value => {
+            setCookingType(value)
+            setVisibleCookingTypes(false)
+          }}
         />
       )}
     </View>

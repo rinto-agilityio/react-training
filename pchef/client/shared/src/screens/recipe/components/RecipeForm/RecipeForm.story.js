@@ -11,17 +11,20 @@ storiesOf('Recipe form', module)
     <RecipeForm
       size="small"
       handleAddRecipeImage={action('clicked')}
+      createRecipe={action('clicked')}
     />
   ))
   .add('medium', () => (
     <RecipeForm
       size="medium"
       handleAddRecipeImage={action('clicked')}
+      createRecipe={action('clicked')}
     />
   ))
   .add('large', () => (
     <RecipeForm
       size="large"
       handleAddRecipeImage={action('clicked')}
+      createRecipe={action('clicked')}
     />
   ))

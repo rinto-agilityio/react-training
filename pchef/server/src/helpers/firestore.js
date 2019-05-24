@@ -56,6 +56,15 @@ const getCollectionWithConditions = (path, conditions) => {
     .catch(error => error)
 }
 
+/**
+ * Get documents of collection with multiple ids
+ * @param {String} path
+ * @param {Array} listId
+ */
+const getDocumentWithListId = (path, ids) => {
+  return Promise.all(ids.map(id => getDocument(`${path}/${id}`)))
+}
+
 // Add data
 const addDocument = (path, data) => (
   db.collection(path).add(data)
@@ -82,6 +91,7 @@ module.exports = {
   getCollection,
   getDocumentWithConditions,
   getCollectionWithConditions,
+  getDocumentWithListId,
 
   addDocument,
   addDocumentWithId,

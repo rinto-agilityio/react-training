@@ -2,7 +2,7 @@
 import { StyleSheet } from 'react-native'
 
 // Themes
-import { METRICS } from '../../themes'
+import { METRICS, FONTS } from '../../themes'
 
 const styles = StyleSheet.create({
   // Wrapper
@@ -26,6 +26,17 @@ const styles = StyleSheet.create({
   // Button
   btnModal: {
     marginRight: METRICS.mediumMargin,
+  },
+
+  // Title
+  smallTitleModal: {
+    fontSize: FONTS.fontSize.small,
+  },
+  mediumTitleModal: {
+    fontSize: FONTS.fontSize.base,
+  },
+  largeTitleModal: {
+    fontSize: FONTS.fontSize.medium,
   },
 })
 

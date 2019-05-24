@@ -19,6 +19,9 @@ const styles = StyleSheet.create({
     padding: METRICS.largePadding,
     marginTop: METRICS.mediumMargin,
   },
+  wrapperClassifyIcon: {
+    paddingBottom: 0,
+  },
   wrapperIconDirections: {
     width: '100%',
   },
@@ -28,6 +31,11 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
     borderRadius: METRICS.mediumBorderRadius,
     ...METRICS.flexCenter,
+  },
+  classifyIcon: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    marginBottom: METRICS.largeMargin,
   },
   createIcon: {
     marginLeft: METRICS.mediumMargin,
@@ -76,7 +84,6 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.black,
     borderColor: COLORS.black,
     minWidth: METRICS.largeIcon,
-    marginRight: METRICS.largeMargin * 2,
   },
   smallButton: {
     borderRadius: METRICS.smallBorderRadius,
@@ -90,17 +97,14 @@ const styles = StyleSheet.create({
     borderRadius: METRICS.mediumBorderRadius,
     padding: METRICS.mediumPadding,
   },
-  titleBtn: {
-    fontWeight: 'bold',
-  },
   smallTitleBtn: {
-    fontSize: FONTS.fontSize.medium,
+    fontSize: FONTS.fontSize.small,
   },
   mediumTitleBtn: {
-    fontSize: FONTS.fontSize.large,
+    fontSize: FONTS.fontSize.medium,
   },
   largeTitleBtn: {
-    fontSize: FONTS.fontSize.extraLarge,
+    fontSize: FONTS.fontSize.large,
   },
 
   // Directions

@@ -15,7 +15,7 @@ import Modal from '../../../../components/Modal'
 type Props = {
   size: string,
   visible?: boolean,
-  handleSubmitIngredients?: () => void,
+  handleSubmitIngredients: (value: string) => void,
   onDismiss?: () => void,
 }
 
@@ -33,7 +33,7 @@ const IngredientsForm = ({
         title="Ingredients"
         dismissBtn
         onDismiss={onDismiss}
-        onSubmit={handleSubmitIngredients}
+        onSubmit={() => handleSubmitIngredients(ingredientRef.current ? ingredientRef.current._node.value.trim() : '')}
         visible={visible}
         size={size}
       >
@@ -51,7 +51,6 @@ const IngredientsForm = ({
 
 IngredientsForm.defaultProps = {
   visible: false,
-  handleSubmitIngredients: () => {},
   onDismiss: () => {},
 }
 

@@ -73,6 +73,12 @@ const typeDefs = gql`
     results: [String]
   }
 
+  type UserFullInfos {
+    user: User!
+    followCategory: [Category]
+    favoriteRecipe: [Recipe]
+  }
+
   type Query {
     getCategory(id: String!): Category!
     getAllCategories: [Category]
@@ -86,6 +92,8 @@ const typeDefs = gql`
     getAllRecipeSteps(id: String!): [RecipeStep]
 
     getRecipeComments(id: String!): [Comment]
+
+    getUser: UserFullInfos!
   }
 
   type Mutation {
