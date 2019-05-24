@@ -1,27 +1,30 @@
-// Libs
 import React from 'react'
-import { View, ActivityIndicator } from 'react-native'
+
+// Components
+import { ActivityIndicator, View } from 'react-native'
 
 // Themes
-import { COLORS } from '../../themes'
+import { COLORS, METRICS } from '../../themes'
 
 // Styles
 import styles from './styles'
 
 type Props = {
-  size?: string,
+  size?: string | number,
+  color?: string,
+  customStyle?: {},
 }
 
-const Loading = ({
-  size = 'small',
-}: Props) => (
+const Loading = ({ size, color, customStyle }: Props) => (
   <View style={styles.wrapper}>
-    <ActivityIndicator size={size === 'medium' ? 'small' : size} color={COLORS.baseGray} />
+    <ActivityIndicator size={size === 'medium' ? 'small' : size} color={color} style={customStyle} />
   </View>
 )
 
 Loading.defaultProps = {
-  size: 'small',
+  size: METRICS.largeIcon,
+  color: COLORS.baseGray,
+  customStyle: {},
 }
 
 export default Loading

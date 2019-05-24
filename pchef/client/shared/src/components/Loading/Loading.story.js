@@ -3,12 +3,12 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 // Components
-import Indicator from '.'
+import Loading from '.'
 
-storiesOf('Indicator', module)
+storiesOf('Loading', module)
   .add('small', () => (
-    <Indicator size="small" />
+    <Loading size="small" />
   ))
   .add('large', () => (
-    <Indicator size="large" />
+    <Loading size="large" />
   ))
