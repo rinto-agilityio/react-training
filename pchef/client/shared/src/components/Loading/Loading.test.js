@@ -1,11 +1,10 @@
 // Components
-import Loading from '.'
+import Indicator from '.'
 
-describe('Components', () => {
-  describe('Loading', () => {
-    it('should render Loading component', () => {
-      const renderComponent = renderer.create(<Loading />)
-      expect(renderComponent).toMatchSnapshot()
-    })
-  })
+it('renders correctly', () => {
+  const indicator = renderer.create(
+    <Indicator />,
+  ).toJSON()
+
+  expect(indicator).toMatchSnapshot()
 })
