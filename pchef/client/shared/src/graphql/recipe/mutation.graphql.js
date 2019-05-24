@@ -87,13 +87,6 @@ const createRecipeStep = graphql(CREATE_RECIPE_STEP, {
         imgUrl,
         description,
       },
-      optimisticResponse: {
-        createRecipeStep: {
-          step,
-          title,
-          __typename: 'RecipeStep',
-        },
-      },
     }),
   }),
 })
