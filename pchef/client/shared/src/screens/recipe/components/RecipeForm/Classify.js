@@ -14,8 +14,6 @@ type Props = {
   size: string,
   title: string,
   visible?: boolean,
-  onDismiss?: () => void,
-  handleSubmit?: ({}) => void,
   data: Array<{
     id: string,
     name: string,
@@ -23,6 +21,8 @@ type Props = {
   }>,
   loading: boolean,
   error: {},
+  onDismiss?: () => void,
+  handleSubmit: (value: {}) => void,
 }
 
 const Classify = ({
@@ -80,7 +80,6 @@ const Classify = ({
 Classify.defaultProps = {
   visible: false,
   onDismiss: () => {},
-  handleSubmit: () => {},
 }
 
 export default Classify
