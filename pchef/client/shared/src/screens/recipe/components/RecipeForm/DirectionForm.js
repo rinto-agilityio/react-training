@@ -1,5 +1,5 @@
 // Libs
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 
 // Styles
 import styles from './styles'
@@ -8,6 +8,7 @@ import styles from './styles'
 import { COLORS, METRICS } from '../../../../themes'
 
 // Components
+import Directions from '../Recipe/Directions'
 import Modal from '../../../../components/Modal'
 import Wrapper from '../../../../layout/Wrapper'
 import Button from '../../../../components/Button'
@@ -16,24 +17,39 @@ import Icon from '../../../../components/Icon'
 
 type Props = {
   size: string,
-  step: string,
+  recipeId: string,
   visible?: boolean,
-  handleSubmitDirections?: () => void,
   handleAddStepImage?: () => void,
   onDismiss?: () => void,
+  createRecipeStep: (
+    recipeId: string,
+    title: string,
+    step: number,
+    imgUrl: string,
+    description: string,
+  ) => Promise<{
+    data: {
+      createRecipeStep: {
+        id: string,
+        step: number,
+        title: string,
+      }
+    }}>,
 }
 
 const DirectionsForm = ({
   size = 'medium',
-  step,
-  handleSubmitDirections,
   handleAddStepImage,
   onDismiss,
   visible,
+  recipeId,
+  createRecipeStep,
 }: Props) => {
   const stepTitleRef = useRef(null)
-  const stepSubTitleRef = useRef(null)
   const stepDescriptionRef = useRef(null)
+  const [directions, setDirections] = useState([])
+  const [isShowForm, setNextStep] = useState(!directions.length)
+  const nextStep = directions.length + 1
 
   const data = [
     {
@@ -41,59 +57,108 @@ const DirectionsForm = ({
       refInput: stepTitleRef,
     },
     {
-      placeholder: 'Step sub title',
-      refInput: stepSubTitleRef,
-    },
-    {
       placeholder: 'Step description',
       refInput: stepDescriptionRef,
     },
   ]
 
+  const handleSubmit = async () => {
+    try {
+      await createRecipeStep(
+        recipeId,
+        stepTitleRef.current ? stepTitleRef.current._node.value.trim() : '',
+        nextStep,
+        '',
+        stepDescriptionRef.current ? stepDescriptionRef.current._node.value.trim() : '',
+      ).then(({ data = {} }) => {
+        directions.push(data.createRecipeStep)
+        setDirections(directions)
+        setNextStep(false)
+      })
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   return (
     <Modal
       title="Directions"
-      dismissBtn
+      onSubmit={onDismiss}
       onDismiss={onDismiss}
-      onSubmit={handleSubmitDirections}
       visible={visible}
       size={size}
+      customDialog={{
+        width: size === 'large' ? METRICS.largeScreen : 'auto',
+      }}
     >
+      {/* Show steps after create success */}
+      {directions.length ? (
+        <Directions
+          steps={directions}
+          size={size}
+        />
+      ) : null}
+
+      {/* Show create step form  */}
+      {isShowForm ? (
+        <Wrapper
+          direction="row"
+          childPosition="middle"
+          customStyles={{
+            marginBottom: METRICS.largeMargin,
+          }}
+        >
+          <Button
+            title={nextStep.toString()}
+            buttonStyle={[styles.button, styles[`${size}Button`]]}
+            titleStyle={[styles.titleBtn, styles[`${size}TitleBtn`]]}
+          />
+          <Wrapper
+            direction="column"
+            customStyles={styles.wrapperDirections}
+          >
+            {data.map(({ placeholder, refInput }) => (
+              <TextBox
+                key={placeholder}
+                placeholder={placeholder}
+                refInput={refInput}
+                customStyle={[styles.input, styles[`${size}Input`]]}
+                placeholderTextColor={COLORS.grayNavy}
+                multiline={placeholder === 'Step description'}
+                customContainer={styles.inputDirections}
+              />
+            ))}
+            <Icon
+              name="add-a-photo"
+              size={METRICS[`${size}Icon`]}
+              onPress={handleAddStepImage}
+              label="Set cover photo"
+              wrapperIconStyle={[styles.wrapperIcon, styles.wrapperIconDirections]}
+            />
+          </Wrapper>
+        </Wrapper>
+      ) : null }
       <Wrapper
         direction="row"
-        childPosition="left"
+        childPosition="middle"
         customStyles={{
           marginBottom: METRICS.largeMargin,
         }}
       >
-        <Button
-          title={step || '1'}
-          buttonStyle={[styles.button, styles[`${size}Button`]]}
-          titleStyle={[styles.titleBtn, styles[`${size}TitleBtn`]]}
+        <Icon
+          name="add"
+          size={METRICS[`${size}Icon`]}
+          onPress={() => setNextStep(true)}
+          label="Add more step"
+          customStyle={[styles.label, styles[`${size}Input`]]}
+          disabled={isShowForm}
         />
-        <Wrapper
-          direction="column"
-          customStyles={styles.wrapperDirections}
-        >
-          {data.map(({ placeholder, refInput }) => (
-            <TextBox
-              key={placeholder}
-              placeholder={placeholder}
-              refInput={refInput}
-              customStyle={[styles.input, styles[`${size}Input`]]}
-              placeholderTextColor={COLORS.grayNavy}
-              multiline={placeholder === 'Step description'}
-              customContainer={styles.inputDirections}
-            />
-          ))}
-          <Icon
-            name="add-a-photo"
-            size={METRICS[`${size}Icon`]}
-            onPress={handleAddStepImage}
-            label="Set cover photo"
-            wrapperIconStyle={[styles.wrapperIcon, styles.wrapperIconDirections]}
-          />
-        </Wrapper>
+        <Button
+          title="Save"
+          buttonStyle={styles[`${size}Button`]}
+          titleStyle={styles[`${size}TitleBtn`]}
+          onPress={handleSubmit}
+        />
       </Wrapper>
     </Modal>
   )
@@ -102,7 +167,6 @@ const DirectionsForm = ({
 DirectionsForm.defaultProps = {
   visible: false,
   onDismiss: () => {},
-  handleSubmitDirections: () => {},
   handleAddStepImage: () => {},
 }
 

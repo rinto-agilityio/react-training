@@ -2,29 +2,16 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-// Components
-import { View } from 'react-native'
-import Loading from '.'
-
 // Themes
 import { COLORS } from '../../themes'
 
+// Components
+import Loading from '.'
+
 storiesOf('Loading', module)
-  .add('default', () => (
-    <View
-      style={{
-        marginTop: 50,
-      }}
-    >
-      <Loading />
-    </View>
+  .add('small', () => (
+    <Loading size="small" />
   ))
-  .add('custom', () => (
-    <View
-      style={{
-        marginTop: 50,
-      }}
-    >
-      <Loading color={COLORS.blue} size="small" />
-    </View>
+  .add('large', () => (
+    <Loading size="large" color={COLORS.blue} />
   ))
