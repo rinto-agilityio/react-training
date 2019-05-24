@@ -1,7 +1,6 @@
 // Libs
 import React from 'react'
-import { View } from 'react-native'
-import { ActivityIndicator } from 'react-native-paper'
+import { View, ActivityIndicator } from 'react-native'
 
 // Themes
 import { COLORS } from '../../themes'
