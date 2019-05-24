@@ -61,10 +61,10 @@ exports[`Components Tabs should render Tabs component 1`] = `
     </div>
   </div>
   <div
-    className="css-view-1dbjc4n r-backgroundColor-n2h5ot r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-1wtj0ep r-padding-1pcd2l5"
+    className="css-view-1dbjc4n r-backgroundColor-n2h5ot r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-1h0z5md r-padding-1pcd2l5"
   >
     <div
-      className="css-view-1dbjc4n r-width-1oji4za"
+      className="css-view-1dbjc4n r-paddingLeft-1hfyk0a r-paddingRight-1qfoi16 r-width-5w8d63"
     >
       <div
         className="css-view-1dbjc4n r-display-6koalj"
@@ -251,7 +251,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-width-1oji4za"
+      className="css-view-1dbjc4n r-paddingLeft-1hfyk0a r-paddingRight-1qfoi16 r-width-5w8d63"
     >
       <div
         className="css-view-1dbjc4n r-display-6koalj"
@@ -432,7 +432,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-width-1oji4za"
+      className="css-view-1dbjc4n r-paddingLeft-1hfyk0a r-paddingRight-1qfoi16 r-width-5w8d63"
     >
       <div
         className="css-view-1dbjc4n r-display-6koalj"
@@ -613,7 +613,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-width-1oji4za"
+      className="css-view-1dbjc4n r-paddingLeft-1hfyk0a r-paddingRight-1qfoi16 r-width-5w8d63"
     >
       <div
         className="css-view-1dbjc4n r-display-6koalj"
