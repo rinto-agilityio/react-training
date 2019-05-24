@@ -9,6 +9,7 @@ const {
   getDocument,
   getCollection,
   getCollectionWithConditions,
+  getDocumentWithListId
 } = require('../helpers/firestore')
 
 const Query = {
@@ -111,6 +112,34 @@ const Query = {
     )
       .then(comments => comments)
       .catch(error => error)
+  }),
+
+  // User
+  getUser: authenticated(async (_, args, context) => {
+    const userId = await context.currentUser.id
+
+    // Get full information of current user
+    const userInfo = await getDocument(`${COLLECTION_NAME.USER}/${userId}`)
+
+    const { followCategory, favoriteRecipe } = userInfo
+
+    // Get categories by list category ids
+    const categories = await getDocumentWithListId(
+      COLLECTION_NAME.CATEGORY,
+      followCategory,
+    ).then(categories => categories)
+
+    // Get recipes by list recipes ids
+    const recipes = await getDocumentWithListId(
+      COLLECTION_NAME.RECIPE,
+      favoriteRecipe,
+    ).then(recipes => recipes)
+
+    return {
+      user: userInfo,
+      followCategory: categories,
+      favoriteRecipe: recipes,
+    }
   }),
 }
 

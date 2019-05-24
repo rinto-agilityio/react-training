@@ -18,10 +18,12 @@ const styles = StyleSheet.create({
     flexDirection:
       METRICS.screenWidth > METRICS.mediumScreen ? 'row' : 'column',
     flexWrap: METRICS.screenWidth > METRICS.mediumScreen ? 'wrap' : 'nowrap',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
   },
   tabContentItem: {
-    width: METRICS.screenWidth > METRICS.mediumScreen ? '30%' : '100%',
+    width: METRICS.screenWidth > METRICS.mediumScreen ? '33.3%' : '100%',
+    paddingLeft: METRICS.mediumPadding,
+    paddingRight: METRICS.mediumPadding,
   },
 })
 
