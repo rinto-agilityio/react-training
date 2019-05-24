@@ -8,7 +8,7 @@ import { METRICS } from '../../../../themes'
 import Modal from '../../../../components/Modal'
 import Wrapper from '../../../../layout/Wrapper'
 import RadioButton from '../../../../components/RadioButon'
-import Indicator from '../../../../components/Indicator'
+import Loading from '../../../../components/Loading'
 
 type Props = {
   size: string,
@@ -38,7 +38,7 @@ const Classify = ({
   const [value, setValue] = useState({})
 
   if (loading) {
-    return <Indicator size={size} />
+    return <Loading size={size} />
   }
 
   return (

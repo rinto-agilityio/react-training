@@ -1,3 +1,6 @@
+// Libs
+import wait from 'waait'
+
 // Components
 import RecipeForm from '.'
 import DirectionsForm from './DirectionForm'
@@ -90,6 +93,15 @@ describe('recipe form', () => {
     expect(ingredients).toMatchSnapshot()
   })
 
+  it('Function handleSubmitIngredients to be called if user press done button', () => {
+    const props = {
+      handleSubmitIngredients: jest.fn(),
+    }
+    const ingredients = shallow(<IngredientsForm {...props} />)
+    ingredients.find('Modal').props().onSubmit()
+    expect(props.handleSubmitIngredients).toHaveBeenCalled()
+  })
+
   it('Render ingredients form component with defaultProps function', () => {
     IngredientsForm.defaultProps.onDismiss()
     expect(IngredientsForm.defaultProps.onDismiss).toBeDefined()
@@ -116,7 +128,7 @@ describe('recipe form', () => {
     expect(directions.find('TextBox').exists()).toEqual(true)
   })
 
-  it('Should update directions when create recipr step success', () => {
+  it('Should update directions when create recipe step success', () => {
     const props = {
       createRecipeStep: jest.fn(() => ({
         data: {
@@ -132,6 +144,43 @@ describe('recipe form', () => {
     // const spy = jest.spyOn(directions.instance(), 'handleSubmit')
     directions.find('Button').at(1).props().onPress()
     // expect(spy).toHaveBeenCalled()
+  })
+
+  it('Should update directions when create recipe step success', async () => {
+    // mock props
+    const props = {
+      createRecipeStep: () => new Promise((response, error) => {
+        error()
+      }),
+    }
+
+    const directions = shallow(<DirectionsForm {...props} />)
+
+    directions.find('Button').at(1).props().onPress()
+
+    // wait for component update
+    await wait(0)
+
+    expect(directions.find('Directions').length).toBe(0)
+
+    directions.setProps({
+      createRecipeStep: () => new Promise(resolve => {
+        resolve({ data: {
+          createRecipeStep: {
+            title: 'test',
+            id: '1',
+            step: 1,
+          },
+        } })
+      }),
+    })
+
+    directions.find('Button').at(1).props().onPress()
+
+    // wait for component update
+    await wait(0)
+
+    expect(directions.find('Directions').length).toBe(1)
   })
 
   it('Render directions form component with defaultProps function', () => {
