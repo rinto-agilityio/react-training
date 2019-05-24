@@ -14,7 +14,11 @@ import ImageBackground from '../../../../components/ImageBackground'
 import Reaction from '../../../../components/Reaction'
 import Comment from '../../../recipe/components/Comment'
 
+// mock data
 import { recipes } from '../../../../mocks'
+
+// utils
+import { findStep } from '../../../../helpers/utils'
 
 type Props = {
   recipeSteps: [
@@ -73,7 +77,6 @@ const Recipe = ({
     title,
     subTitle,
     votes,
-    // steps,
     userId,
     views,
   } = recipes[0]
@@ -91,13 +94,12 @@ const Recipe = ({
    */
   const onPressSelectStep = name => {
     let nextStepInfo
-
     switch (name) {
       case 'next':
-        nextStepInfo = orderRecipeSteps.find(recipeStep => recipeStep.step === stepInfo.step + 1)
+        nextStepInfo = findStep(orderRecipeSteps, stepInfo.step + 1)
         break;
       case 'prev':
-        nextStepInfo = orderRecipeSteps.find(recipeStep => recipeStep.step === stepInfo.step - 1)
+        nextStepInfo = findStep(orderRecipeSteps, stepInfo.step - 1)
         break;
       default:
         break;
@@ -110,11 +112,9 @@ const Recipe = ({
    * @param {step}
    */
   const onPressStep = step => {
-    const stepInfoSelect = orderRecipeSteps.find(recipeStep => recipeStep.step === step)
+    const stepInfoSelect = findStep(orderRecipeSteps, step)
     setStepInfo(stepInfoSelect)
   }
-
-  console.log('stepInfo', stepInfo);
 
   return (
     <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
