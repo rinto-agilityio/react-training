@@ -1,7 +1,7 @@
 // Libs
 import React, { useEffect, useState } from 'react'
 import { Text, View } from 'react-native'
-import _ from 'lodash'
+
 // Styles
 import styles from './styles'
 
@@ -13,12 +13,14 @@ import Progress from './ProgressStep'
 import ImageBackground from '../../../../components/ImageBackground'
 import Reaction from '../../../../components/Reaction'
 import Comment from '../../../recipe/components/Comment'
+import Loading from '../../../../components/Loading'
+import Error from '../../../../components/Error'
 
 // mock data
 import { recipes } from '../../../../mocks'
 
 // utils
-import { findStep } from '../../../../helpers/utils'
+import { findStep, compare, customError } from '../../../../helpers/utils'
 
 type Props = {
   recipeSteps: Array<{
@@ -58,17 +60,17 @@ const Recipe = ({
   customImage = {},
   customSubTitle,
   customTitleStep,
-  recipeSteps = {
+  recipeSteps = [{
     description: '',
     imgUrl: '',
     step: 1,
     title: '',
-  },
+  }],
   loading,
   error,
 }: Props) => {
   // order recipeSteps by step asc
-  const orderRecipeSteps = _.orderBy(recipeSteps, ['step'], ['asc'])
+  const orderRecipeSteps = recipeSteps.sort(compare)
   const defaultStepInfo = orderRecipeSteps[0]
   const [stepInfo, setStepInfo] = useState()
 
@@ -85,11 +87,11 @@ const Recipe = ({
   } = recipes[0]
 
   if (loading) {
-    return <Text>Loading.......</Text>
+    return <Loading />
   }
 
   if (error) {
-    return <Text>error</Text>
+    return <Error message={customError(error.graphQLErrors)} />
   }
   /**
    * Handle when user click prev or next icon

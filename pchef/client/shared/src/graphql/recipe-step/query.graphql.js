@@ -15,13 +15,14 @@ const GET_RECIPE_STEPS = gql`
 `
 
 const getAllRecipeSteps = graphql(GET_RECIPE_STEPS, {
-  options: props => ({
-    variables: { id: props.id },
+  options: ({ id }) => ({
+    variables: { id },
     fetchPolicy: 'cache-and-network',
   }),
 
   props: ({ data }) => {
     const { loading, error, getAllRecipeSteps } = data
+
     return {
       recipeSteps: getAllRecipeSteps,
       loading,
