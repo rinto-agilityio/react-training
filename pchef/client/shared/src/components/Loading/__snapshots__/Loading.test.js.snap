@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`Components Loading should render Loading component 1`] = `
 <div
   className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-drfeu3 r-bottom-1p0dtai r-justifyContent-1777fci r-left-1d2f490 r-position-1xcajam r-right-zchlnj r-top-ipm5af r-zIndex-1sg8ghl"
 >
