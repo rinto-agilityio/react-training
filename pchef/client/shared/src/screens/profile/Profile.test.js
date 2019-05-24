@@ -11,7 +11,6 @@ const props = {
     favoriteRecipe: recipes,
   },
   loading: false,
-  error: undefined,
 }
 
 describe('Screen', () => {

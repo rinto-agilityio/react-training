@@ -7,12 +7,12 @@ import { Text } from 'react-native'
 import styles from './styles'
 
 type Props = {
-  content: string,
+  errorMessage: string,
   customStyle?: {},
 }
 
-const Error = ({ content, customStyle }: Props) => (
-  <Text style={[styles.error, customStyle]}>{content}</Text>
+const Error = ({ errorMessage, customStyle }: Props) => (
+  <Text style={[styles.error, customStyle]}>{errorMessage}</Text>
 )
 
 Error.defaultProps = {
