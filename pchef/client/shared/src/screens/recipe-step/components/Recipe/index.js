@@ -21,14 +21,12 @@ import { recipes } from '../../../../mocks'
 import { findStep } from '../../../../helpers/utils'
 
 type Props = {
-  recipeSteps: [
-    {
-      description: string,
-      imgUrl: string,
-      step: number,
-      title: string,
-    },
-  ],
+  recipeSteps: Array<{
+    description: string,
+    imgUrl: string,
+    step: number,
+    title: string,
+  }>,
   recipe: {
     title: string,
     votes: Array<number>,
@@ -60,7 +58,12 @@ const Recipe = ({
   customImage = {},
   customSubTitle,
   customTitleStep,
-  recipeSteps,
+  recipeSteps = {
+    description: '',
+    imgUrl: '',
+    step: 1,
+    title: '',
+  },
   loading,
   error,
 }: Props) => {
@@ -161,13 +164,13 @@ const Recipe = ({
                 customTitleStep,
               ]}
             >
-              {stepInfo && stepInfo.title}
+              {stepInfo.title}
             </Text>
           </Text>
           <Progress
             steps={orderRecipeSteps}
             size={size}
-            step={stepInfo && stepInfo.step}
+            step={stepInfo.step}
             onPressSelectStep={onPressSelectStep}
             onPressStep={onPressStep}
           />
@@ -180,7 +183,7 @@ const Recipe = ({
           customDescription,
         ]}
       >
-        {stepInfo && stepInfo.description}
+        {stepInfo.description}
       </Text>
       <Reaction
         votes={votes}
