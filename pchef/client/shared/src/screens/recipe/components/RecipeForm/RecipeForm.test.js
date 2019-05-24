@@ -128,24 +128,6 @@ describe('recipe form', () => {
     expect(directions.find('TextBox').exists()).toEqual(true)
   })
 
-  it('Should update directions when create recipe step success', () => {
-    const props = {
-      createRecipeStep: jest.fn(() => ({
-        data: {
-          createRecipeStep: {
-            id: '1',
-            step: 1,
-            title: 'title',
-          },
-        },
-      })),
-    }
-    const directions = shallow(<DirectionsForm {...props} />)
-    // const spy = jest.spyOn(directions.instance(), 'handleSubmit')
-    directions.find('Button').at(1).props().onPress()
-    // expect(spy).toHaveBeenCalled()
-  })
-
   it('Should update directions when create recipe step success', async () => {
     // mock props
     const props = {
