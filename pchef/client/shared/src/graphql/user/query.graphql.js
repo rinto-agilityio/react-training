@@ -23,15 +23,11 @@ const GET_USER = gql`
 `
 
 const getUser = graphql(GET_USER, {
-  props: ({ data }) => {
-    const { loading, error, getUser } = data
-
-    return {
-      loading,
-      error,
-      data: getUser,
-    }
-  },
+  props: ({ data: { loading, error, getUser } }) => ({
+    loading,
+    error,
+    data: getUser,
+  }),
 })
 
 export { getUser }
