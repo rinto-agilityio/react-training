@@ -12,6 +12,6 @@ storiesOf('Error', module).add('default', () => (
       marginTop: 50,
     }}
   >
-    <Error errorMessage="Failed!!!" customStyle={{ textAlign: 'center' }} />
+    <Error message="Failed!!!" customStyle={{ textAlign: 'center' }} />
   </View>
 ))

@@ -39,7 +39,7 @@ const Profile = ({ data, loading, error }: Props) => {
   }
 
   if (error) {
-    return <Error errorMessage={errorMessage} />
+    return <Error message={errorMessage} />
   }
 
   const { user, favoriteRecipe, followCategory } = data

@@ -2,7 +2,7 @@
 import Error from '.'
 
 const props = {
-  errorMessage: 'Failed!!!',
+  message: 'Failed!!!',
 }
 
 describe('Components', () => {
@@ -12,9 +12,9 @@ describe('Components', () => {
       expect(renderComponent).toMatchSnapshot()
     })
 
-    it('should render errorMessage correct', () => {
+    it('should render message correct', () => {
       const component = shallow(<Error {...props} />)
-      expect(component.find('Text').contains(props.errorMessage)).toBe(true)
+      expect(component.find('Text').contains(props.message)).toBe(true)
     })
   })
 })
