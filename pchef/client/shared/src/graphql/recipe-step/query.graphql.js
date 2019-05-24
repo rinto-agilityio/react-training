@@ -1,26 +1,29 @@
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
-const GET_RECIPE_STEP = gql`
-  query getRecipeStep($id: String!) {
-    getRecipeStep (id: $id) {
+const GET_RECIPE_STEPS = gql`
+  query getAllRecipeSteps($id: String!) {
+    getAllRecipeSteps (id: $id) {
       step
       imgUrl
       description
+      title
+      modifyDate
+      publishedDate
     }
   }
 `
 
-const getRecipeStep = graphql(GET_RECIPE_STEP, {
+const getAllRecipeSteps = graphql(GET_RECIPE_STEPS, {
   options: props => ({
     variables: { id: props.id },
     fetchPolicy: 'cache-and-network',
   }),
 
   props: ({ data }) => {
-    const { loading, error, getRecipeStep } = data
+    const { loading, error, getAllRecipeSteps } = data
     return {
-      stepInfo: getRecipeStep,
+      recipeSteps: getAllRecipeSteps,
       loading,
       error,
       refetch: () => data.refetch(),
@@ -29,5 +32,5 @@ const getRecipeStep = graphql(GET_RECIPE_STEP, {
 })
 
 export {
-  getRecipeStep,
+  getAllRecipeSteps,
 }
