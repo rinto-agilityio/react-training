@@ -1,7 +1,7 @@
 // Libs
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Text, View } from 'react-native'
-
+import _ from 'lodash'
 // Styles
 import styles from './styles'
 
@@ -17,12 +17,14 @@ import Comment from '../../../recipe/components/Comment'
 import { recipes } from '../../../../mocks'
 
 type Props = {
-  stepInfo: {
-    description: string,
-    imgUrl: string,
-    step: number,
-    title: string,
-  },
+  recipeSteps: [
+    {
+      description: string,
+      imgUrl: string,
+      step: number,
+      title: string,
+    },
+  ],
   recipe: {
     title: string,
     votes: Array<number>,
@@ -31,7 +33,7 @@ type Props = {
     userId: number,
     steps: Array<{
       step: number
-    }>
+    }>,
   },
   size: string,
   onPress?: () => void,
@@ -40,12 +42,13 @@ type Props = {
   customDescription?: {},
   customImage?: {},
   customSubTitle?: {},
-  customTitleStep?: {}
+  customTitleStep?: {},
+  loading: boolean,
+  error: string
 }
 
 const Recipe = ({
   size = 'large',
-  recipe,
   onPress,
   customRecipe,
   customTitle,
@@ -53,16 +56,24 @@ const Recipe = ({
   customImage = {},
   customSubTitle,
   customTitleStep,
-  stepInfo,
+  recipeSteps,
   loading,
-  error
+  error,
 }: Props) => {
+  // order recipeSteps by step asc
+  const orderRecipeSteps = _.orderBy(recipeSteps, ['step'], ['asc'])
+  const defaultStepInfo = orderRecipeSteps[0]
+  const [stepInfo, setStepInfo] = useState()
+
+  useEffect(() => (
+    setStepInfo(defaultStepInfo)
+  ), [loading, defaultStepInfo])
 
   const {
     title,
     subTitle,
     votes,
-    steps,
+    // steps,
     userId,
     views,
   } = recipes[0]
@@ -74,13 +85,36 @@ const Recipe = ({
   if (error) {
     return <Text>error</Text>
   }
-  const {
-    imgUrl,
-    description,
-    step,
-  } = stepInfo
+  /**
+   * Handle when user click prev or next icon
+   * param {name}
+   */
+  const onPressSelectStep = name => {
+    let nextStepInfo
 
-  // console.log('data', stepInfo);
+    switch (name) {
+      case 'next':
+        nextStepInfo = orderRecipeSteps.find(recipeStep => recipeStep.step === stepInfo.step + 1)
+        break;
+      case 'prev':
+        nextStepInfo = orderRecipeSteps.find(recipeStep => recipeStep.step === stepInfo.step - 1)
+        break;
+      default:
+        break;
+    }
+    setStepInfo(nextStepInfo)
+  }
+
+  /**
+   * Handle When user click any step
+   * @param {step}
+   */
+  const onPressStep = step => {
+    const stepInfoSelect = orderRecipeSteps.find(recipeStep => recipeStep.step === step)
+    setStepInfo(stepInfoSelect)
+  }
+
+  console.log('stepInfo', stepInfo);
 
   return (
     <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
@@ -111,7 +145,7 @@ const Recipe = ({
           {subTitle}
         </Text>
         <ImageBackground
-          url={imgUrl}
+          url={stepInfo && stepInfo.imgUrl}
           customImageBg={[
             styles.image,
             styles[`${size}Image`],
@@ -127,13 +161,15 @@ const Recipe = ({
                 customTitleStep,
               ]}
             >
-              {stepInfo.title}
+              {stepInfo && stepInfo.title}
             </Text>
           </Text>
           <Progress
-            steps={steps}
+            steps={orderRecipeSteps}
             size={size}
-            step={step}
+            step={stepInfo && stepInfo.step}
+            onPressSelectStep={onPressSelectStep}
+            onPressStep={onPressStep}
           />
         </ImageBackground>
       </View>
@@ -144,7 +180,7 @@ const Recipe = ({
           customDescription,
         ]}
       >
-        {description}
+        {stepInfo && stepInfo.description}
       </Text>
       <Reaction
         votes={votes}
