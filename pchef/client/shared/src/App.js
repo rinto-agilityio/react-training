@@ -42,7 +42,7 @@ export default class App extends Component<AppProps> {
               handlingLoginSuccess={this.handlingLoginSuccess}
             />
 
-            {<CategoryContainer id="2uAi2sb1IkPxpKPzvDNn" />}
+            {<CategoryContainer id="3xjHYbeO7D4b4UhjKeWU" />}
           </View>
         </PaperProvider>
       </ApolloProvider>
