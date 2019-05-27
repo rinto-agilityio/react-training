@@ -1,9 +1,6 @@
 import { Dimensions } from 'react-native'
 
 export default {
-  // container
-  largeContainer: 1200,
-
   // Padding
   smallPadding: 5,
   mediumPadding: 10,

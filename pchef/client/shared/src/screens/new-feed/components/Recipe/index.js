@@ -35,7 +35,7 @@ const Recipe = ({ recipe, size = 'large' }: Props) => {
         </Text>
         <Text
           style={[styles.description, styles[`${size}Description`]]}
-          numberOfLines={2}
+          numberOfLines={1}
           ellipsizeMode="tail"
         >
           {description}

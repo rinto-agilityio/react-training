@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   },
   secondaryContainer: {
     paddingTop: METRICS.extraLargePadding + METRICS.largePadding,
-    maxWidth: METRICS.largeContainer,
+    maxWidth: METRICS.extraLargeScreen,
     width: '100%',
     margin: 'auto',
     flexDirection: 'row',
