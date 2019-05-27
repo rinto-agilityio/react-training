@@ -114,12 +114,12 @@ const Mutation = {
   )),
 
   // List recipes user mark favorite
-  userToggleRecipe: authenticated((_, { categoryId }, { currentUser }) => {
+  userToggleRecipe: authenticated((_, { recipeId }, { currentUser }) => {
     const currentUserRef = `${COLLECTION_NAME.USER}/${currentUser.id}`
 
     return getDocument(currentUserRef)
       .then(user => {
-        const newRecipes = toggleItemInArray(user.favoriteRecipe, categoryId)
+        const newRecipes = toggleItemInArray(user.favoriteRecipe, recipeId)
 
         return updateDocument(currentUserRef, {
           favoriteRecipe: newRecipes,
