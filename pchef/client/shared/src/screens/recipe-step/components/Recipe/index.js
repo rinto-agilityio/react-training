@@ -53,7 +53,11 @@ type Props = {
     favoriteRecipe: {
       id: string
     }
-  }
+  },
+  userToggleRecipe: (
+    recipeId
+  ) => Promise<{ data: {userToggleRecipe: {results: Array<string>}}}>,
+  id: string
 }
 
 const Recipe = ({
@@ -75,6 +79,7 @@ const Recipe = ({
   loading,
   error,
   id,
+  userToggleRecipe,
 }: Props) => {
   // order recipeSteps by step asc
   const orderRecipeSteps = recipeSteps.sort(compareStep)
@@ -135,6 +140,16 @@ const Recipe = ({
   const checkFavorited = () => (
     getUser.favoriteRecipe.findIndex(item => item.id === id) === -1 ? false : true
   )
+
+  const handleSaveRecipe = async () => {
+    try {
+      await userToggleRecipe(id).then(({ data }) => {
+        console.log('data', data)
+      })
+    } catch (error) {
+      console.log('error', error)
+    }
+  }
 
   return (
     <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
@@ -206,6 +221,7 @@ const Recipe = ({
         votes={votes}
         size={size}
         isFavorited={checkFavorited()}
+        onPressFavorite={handleSaveRecipe}
       />
       <Comment
         name={`by ${userId}`}
