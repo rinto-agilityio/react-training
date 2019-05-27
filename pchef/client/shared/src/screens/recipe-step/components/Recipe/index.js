@@ -48,7 +48,12 @@ type Props = {
   customSubTitle?: {},
   customTitleStep?: {},
   loading: boolean,
-  error: string
+  error: string,
+  getUser: {
+    favoriteRecipe: {
+      id: string
+    }
+  }
 }
 
 const Recipe = ({
@@ -60,6 +65,7 @@ const Recipe = ({
   customImage = {},
   customSubTitle,
   customTitleStep,
+  getUser,
   recipeSteps = [{
     description: '',
     imgUrl: '',
@@ -68,6 +74,7 @@ const Recipe = ({
   }],
   loading,
   error,
+  id,
 }: Props) => {
   // order recipeSteps by step asc
   const orderRecipeSteps = recipeSteps.sort(compareStep)
@@ -121,6 +128,13 @@ const Recipe = ({
     const stepInfoSelect = findStep(orderRecipeSteps, step)
     setStepInfo(stepInfoSelect)
   }
+
+  /**
+   * Checking current recipe saved
+   */
+  const checkFavorited = () => (
+    getUser.favoriteRecipe.findIndex(item => item.id === id) === -1 ? false : true
+  )
 
   return (
     <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
@@ -191,7 +205,7 @@ const Recipe = ({
       <Reaction
         votes={votes}
         size={size}
-        isFavorited={false}
+        isFavorited={checkFavorited()}
       />
       <Comment
         name={`by ${userId}`}
