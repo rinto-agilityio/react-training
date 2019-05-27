@@ -87,6 +87,7 @@ const typeDefs = gql`
 
     getRecipe(id: String!): Recipe!
     getAllRecipes: [Recipe]
+    getRecipes(userId: String): [Recipe]
 
     getRecipeStep(id: String!): RecipeStep!
     getAllRecipeSteps(id: String!): [RecipeStep]
