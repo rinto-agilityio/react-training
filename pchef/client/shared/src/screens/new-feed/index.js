@@ -6,6 +6,7 @@ import { ScrollView } from 'react-native'
 import styles from './styles'
 import Header from './components/Header'
 import RecipeList from './components/RecipeList'
+import Error from '../../components/Error'
 
 type Props = {
   customStyles?: {},
@@ -33,10 +34,11 @@ const NewFeed = ({
   onPressCategoryIcon,
   onPressLogo,
 }: Props) => {
+  const errorMessage = 'Connect failed!!!'
+
   if (error) {
-    // TODO: handling error
+    return <Error message={errorMessage} />
   }
-console.log(recipes)
 
   return (
     <ScrollView

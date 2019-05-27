@@ -1,10 +1,12 @@
 // Libs
 import React from 'react'
-import { View } from 'react-native'
-import { ActivityIndicator, Colors } from 'react-native-paper'
-import Recipe from '../Recipe'
 
 // Components
+import { View } from 'react-native'
+import Recipe from '../Recipe'
+import Loading from '../../../../components/Loading'
+
+// Styles
 import styles from './styles'
 
 type Props = {
@@ -26,12 +28,7 @@ const RecipeList = ({ loading, recipes, type = '' }: Props) => {
   return (
     <View style={[styles.container, styles[`${type}Container`]]}>
       {loading ? (
-        <ActivityIndicator
-          animating
-          color={Colors.red800}
-          size={size}
-          style={styles.indicator}
-        />
+        <Loading />
       ) : (
         recipes &&
         recipes.map(recipe => (

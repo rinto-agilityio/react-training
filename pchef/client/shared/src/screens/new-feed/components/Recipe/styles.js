@@ -10,16 +10,16 @@ const styles = StyleSheet.create({
   },
 
   largeWrapper: {
-    width: '33.33%',
-    paddingLeft: 10,
-    paddingRight: 10,
-    minWidth: 320,
+    width: METRICS.smallPercentItem,
+    paddingLeft: METRICS.mediumPadding,
+    paddingRight: METRICS.mediumPadding,
+    minWidth: METRICS.smallScreen,
   },
 
   // Title
   title: {
     color: COLORS.black,
-    fontWeight: 'bold',
+    fontWeight: FONTS.fontWeight.large,
     paddingLeft: METRICS.largePadding,
     paddingRight: METRICS.largePadding,
   },

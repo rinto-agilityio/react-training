@@ -106,6 +106,8 @@ export default {
   mediumScreen: 640,
   largeScreen: 840,
   extraLargeScreen: 1024,
+  smallPercentItem: '33.33%',
+  mediumPercentItem: '50%',
 
   // z-index
   modalZindex: 1000,
