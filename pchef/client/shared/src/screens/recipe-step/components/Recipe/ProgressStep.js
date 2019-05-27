@@ -50,7 +50,7 @@ const Progress = ({
 
   return (
     <Wrapper direction="row">
-      {chevronIcon('chevron-left', size, disablePrevIcon, onPressSelectStep)}
+      {chevronIcon('chevron-left', size, disablePrevIcon, () => onPressSelectStep('prev'))}
       <Wrapper direction="row">
         {steps.map(item => {
           const status = step === item.step ? 'active' : 'inactive'
@@ -58,7 +58,7 @@ const Progress = ({
           return (
             <Button
               key={item.step}
-              onPress={onPressStep}
+              onPress={() => onPressStep(item.step)}
               buttonStyle={[
                 styles.progressStep,
                 styles[`${status}Step`],
@@ -70,7 +70,7 @@ const Progress = ({
           )
         })}
       </Wrapper>
-      {chevronIcon('chevron-right', size, disabledNextIcon, onPressSelectStep)}
+      {chevronIcon('chevron-right', size, disabledNextIcon, () => onPressSelectStep('next'))}
     </Wrapper>
   )
 }
