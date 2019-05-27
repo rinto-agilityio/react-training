@@ -18,7 +18,7 @@ export const formatStringToArray = (string: string, separator: string) => (
 export const findStep = (arr: array, index: number) => arr.find(item => item.step === index)
 
 /**
- * Compare two object
+ * Compare values send from sort method
  * @param {object} a
  * @param {object} b
  */
