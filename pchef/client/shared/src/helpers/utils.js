@@ -9,7 +9,7 @@ export const formatStringToArray = (string: string, separator: string) => (
   string.split(separator) // Split string to array by separator
 )
 
-// init value for stepInfo
+// init default value for stepInfo
 const defaultValue = {
   description: '',
   imgUrl: '',
@@ -55,7 +55,6 @@ export const compareStep = (a: {step: number}, b: {step: number}) => {
  */
 export const customError = (errorArr: Array<{message: string}>) => {
   let errorMes = ''
-  console.log('errorArr', errorArr);
 
   if (errorArr) {
     errorArr.forEach(item => {
