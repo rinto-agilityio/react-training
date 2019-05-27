@@ -4,7 +4,8 @@ import { View, Text } from 'react-native'
 import Wrapper from '../../../../layout/Wrapper'
 import Icon from '../../../../components/Icon'
 import Image from '../../../../components/Image'
-
+import { formatStringToArray } from '../../../../helpers/utils'
+import { SEPARATOR_SPLIT_STRING } from '../../../../constants/index'
 // Themes
 import { COLORS, FONTS } from '../../../../themes'
 
@@ -32,6 +33,8 @@ const Recipe = ({
   handlePressImage,
 }: Props) => {
   const { title, imgUrl, description } = recipe
+  const formatDescription =
+    formatStringToArray(description, SEPARATOR_SPLIT_STRING) || []
 
   return (
     <View style={[styles.recipe, styles[`${size}Content`]]}>
@@ -47,9 +50,13 @@ const Recipe = ({
           childPosition="middle"
           customStyles={[styles.wrapper, styles[`${size}Wrapper`]]}
         >
-          <Text style={[styles.text, styles[`${size}Text`]]}>
-            {description}
-          </Text>
+          {/* ingredient description */}
+          <View style={styles.text}>
+            {formatDescription.map(item => (
+              <Text style={styles[`${size}Text`]}>{item}</Text>
+            ))}
+          </View>
+
           <Icon
             wrapperIconStyle={styles.icon}
             name="favorite-border"

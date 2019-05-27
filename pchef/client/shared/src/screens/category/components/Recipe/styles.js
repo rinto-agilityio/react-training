@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   largeWrapper: {
     width: screenWidth - METRICS.extraLargeWrapper,
     height: METRICS.largeWrapper,
-    paddingLeft: METRICS.extraLargePadding,
+    paddingLeft: METRICS.mediumPadding,
   },
   largeImage: {
     width: METRICS.largeImage,
