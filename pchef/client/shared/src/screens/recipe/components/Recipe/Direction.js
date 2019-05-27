@@ -15,7 +15,7 @@ import Wrapper from '../../../../layout/Wrapper'
 type Props = {
   item: {
     step: number,
-    description: string
+    title: string
   },
   size: string,
   customDescription?: {},
@@ -50,7 +50,7 @@ const Direction = ({
         ]}
         onPress={onSelectStep}
       >
-        {item.description}
+        {item.title}
       </Text>
     </Text>
   </Wrapper>

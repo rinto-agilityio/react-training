@@ -14,7 +14,7 @@ type Props = {
     description: string,
     steps: Array<{
       step: number,
-      description: string
+      title: string
     }>,
   },
   size: string,

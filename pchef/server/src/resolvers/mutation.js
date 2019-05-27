@@ -140,6 +140,8 @@ const Mutation = {
       publishedDate: Date.now().toString(),
       modifyDate: Date.now().toString(),
     }),
+    step: data.step,
+    title: data.title
   })),
 
   // Comment

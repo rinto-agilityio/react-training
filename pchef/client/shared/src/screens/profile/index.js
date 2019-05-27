@@ -3,35 +3,53 @@ import React from 'react'
 // Components
 import { View } from 'react-native'
 import Header from './components/Header'
+import Loading from '../../components/Loading'
+import Error from '../../components/Error'
 
 // Styles
 import styles from './styles'
 import Tabs from './components/Tabs'
 
 type Props = {
-  user: {
-    id: string,
-    name: string,
-    avatar: string,
+  loading: boolean,
+  error: string,
+  data: {
+    user: {
+      name: string,
+      avatar: string,
+    },
     followCategory: Array<{
-      id: string,
       name: string,
       imgUrl: string,
     }>,
     favoriteRecipe: Array<{
-      id: string,
       title: string,
       imgUrl: string,
-      description: string,
       votes: Array<number>,
+      description: string,
     }>,
   },
 }
-const Profile = ({ user }: Props) => (
-  <View style={styles.profile}>
-    <Header user={user} />
-    <Tabs categories={user.followCategory} recipes={user.favoriteRecipe} />
-  </View>
-)
+const Profile = ({ data, loading, error }: Props) => {
+  const errorMessage =
+    'Can not load information of user. Please check for connection!!!'
+
+  if (loading) {
+    return <Loading />
+  }
+
+  if (error) {
+    return <Error message={errorMessage} />
+  }
+
+  const { user, favoriteRecipe, followCategory } = data
+
+  return (
+    <View style={styles.profile}>
+      <Header user={user} />
+      <Tabs categories={followCategory} recipes={favoriteRecipe} />
+    </View>
+  )
+}
 
 export default Profile
