@@ -20,6 +20,7 @@ import Wrapper from '../../../../layout/Wrapper'
 import Categories from '../../../../containers/Categories'
 import CookingTypes from '../../../../containers/CookingTypes'
 import DirectionForm from '../../../../containers/DirectionForm'
+import Error from '../../../../components/Error'
 
 type Props = {
   size: string,
@@ -50,6 +51,7 @@ const RecipeForm = ({
   const [cookingType, setCookingType] = useState({})
   const [ingredients, setIngredients] = useState('')
   const [recipe, setRecipe] = useState({})
+  const [error, setError] = useState('')
 
   const dataIcon = [
     {
@@ -101,9 +103,13 @@ const RecipeForm = ({
           setRecipe(data.createRecipe)
         })
       } catch (err) {
-        console.log(err)
+        setError(err)
       }
     }
+  }
+
+  if (error) {
+    return <Error message={error} />
   }
 
   return (

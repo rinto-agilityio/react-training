@@ -17,6 +17,7 @@ import Wrapper from '../../../../layout/Wrapper'
 import Button from '../../../../components/Button'
 import TextBox from '../../../../components/TextBox'
 import Icon from '../../../../components/Icon'
+import Error from '../../../../components/Error'
 
 type Props = {
   size: string,
@@ -52,6 +53,7 @@ const DirectionsForm = ({
   const stepDescriptionRef = useRef(null)
   const [directions, setDirections] = useState([])
   const [isShowForm, setNextStep] = useState(!directions.length)
+  const [error, setError] = useState('')
   const nextStep = directions.length + 1
 
   const data = [
@@ -87,9 +89,13 @@ const DirectionsForm = ({
           setNextStep(false)
         })
       } catch (err) {
-        console.log(err)
+        setError(err)
       }
     }
+  }
+
+  if (error) {
+    return <Error message={error} />
   }
 
   return (
