@@ -23,6 +23,7 @@ type Props = {
       imgUrl: string,
     }>,
     favoriteRecipe: Array<{
+      id: string,
       title: string,
       imgUrl: string,
       votes: Array<number>,

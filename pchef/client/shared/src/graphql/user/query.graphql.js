@@ -13,6 +13,7 @@ const GET_USER = gql`
         imgUrl
       }
       favoriteRecipe {
+        id
         title
         imgUrl
         votes
