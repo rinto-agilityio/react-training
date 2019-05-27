@@ -10,7 +10,10 @@ const styles = StyleSheet.create({
   },
 
   largeWrapper: {
-    width: METRICS.largeWrapper,
+    width: '33.33%',
+    paddingLeft: 10,
+    paddingRight: 10,
+    minWidth: 320,
   },
 
   // Title
@@ -33,7 +36,7 @@ const styles = StyleSheet.create({
   // Description
   description: {
     color: COLORS.baseGray,
-    fontWeight: 'bold',
+    fontWeight: FONTS.fontWeight.large,
     paddingLeft: METRICS.largePadding,
     paddingRight: METRICS.largePadding,
   },

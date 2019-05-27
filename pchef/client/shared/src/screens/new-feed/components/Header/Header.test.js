@@ -1,36 +1,16 @@
 // Components
 import Header from '.'
 
-describe('Header new feed', () => {
-  const props = {
-    image: 'http://www.kptncook.com/assets/downloads/AppIcon/KptnCook_AppIcon.png',
-    onPressIcon: jest.fn(),
-    handleTouch: jest.fn(),
-  }
-  const component = shallow(<Header {...props} />)
+describe('Components', () => {
+  describe('Header', () => {
+    it('Login snapshots', () => {
+      const primaryComponent = renderer.create(
+        <Header type="primary" customStyle={{ flex: 1 }} />
+      )
+      const secondaryComponent = renderer.create(<Header type="secondary" />)
 
-  it('Renders correctly header commponent', () => {
-    expect(component).toMatchSnapshot()
-  })
-
-  it('Render recipe component with size medium', () => {
-    component.setProps({
-      size: 'medium',
+      expect(primaryComponent).toMatchSnapshot()
+      expect(secondaryComponent).toMatchSnapshot()
     })
-    expect(component).toMatchSnapshot()
-  })
-
-  it('Render recipe component with size large', () => {
-    component.setProps({
-      size: 'large',
-    })
-    expect(component).toMatchSnapshot()
-  })
-
-  it('Function props should be defined', () => {
-    Header.defaultProps.onPressIcon()
-    Header.defaultProps.handleTouch()
-    expect(Header.defaultProps.onPressIcon).toBeDefined()
-    expect(Header.defaultProps.handleTouch).toBeDefined()
   })
 })
