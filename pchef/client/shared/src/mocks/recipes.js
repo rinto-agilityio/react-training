@@ -7,6 +7,7 @@ export const recipes = [
     imgUrl: 'https://vcdn-ngoisao.vnecdn.net/2018/01/19/1-8515-1516314392.jpg',
     votes: [1],
     views: 1,
+    userId: 'xsgfpdeFAnX0bZTRNZzl1A6HDj33',
     steps: [
       {
         step: 1,
@@ -55,6 +56,7 @@ export const recipes = [
   {
     id: '1',
     title: 'Crispy Fried Chicken',
+    userId: 'xsgfpdeFAnX0bZTRNZzl1A6HDj33',
     imgUrl:
       'https://www.tasteofhome.com/wp-content/uploads/2018/01/Crispy-Fried-Chicken_EXPS_FRBZ19_6445_C01_31_3b.jpg',
 
@@ -63,6 +65,7 @@ export const recipes = [
   {
     id: '2',
     title: 'Crispy Fried Chicken',
+    userId: 'xsgfpdeFAnX0bZTRNZzl1A6HDj33',
     imgUrl:
       'https://www.tasteofhome.com/wp-content/uploads/2018/01/Crispy-Fried-Chicken_EXPS_FRBZ19_6445_C01_31_3b.jpg',
 
