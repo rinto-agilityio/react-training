@@ -38,7 +38,8 @@ export const compareStep = (a, b) => {
  * @param {array} errorArr
  */
 export const customError = errorArr => {
-  let errorMes = '';
+  let errorMes = ''
+
   if (errorArr) {
     errorArr.forEach(item => {
       errorMes = item.message
