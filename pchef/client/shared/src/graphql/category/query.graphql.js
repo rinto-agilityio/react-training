@@ -5,6 +5,7 @@ const GET_CATEGORY = gql`
   query getCategory($id: String!) {
     getCategory(id: $id) {
       id
+      name
       imgUrl
       recipes {
         id
