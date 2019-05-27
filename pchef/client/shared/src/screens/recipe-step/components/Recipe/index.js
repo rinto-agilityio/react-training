@@ -70,7 +70,6 @@ const Recipe = ({
   }],
   loading,
   error,
-  getUser,
 }: Props) => {
   // order recipeSteps by step asc
   const orderRecipeSteps = recipeSteps.sort(compareStep)
@@ -124,8 +123,6 @@ const Recipe = ({
     const stepInfoSelect = findStep(orderRecipeSteps, step)
     setStepInfo(stepInfoSelect)
   }
-
-  console.log('getUser', getUser);
 
   return (
     <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>

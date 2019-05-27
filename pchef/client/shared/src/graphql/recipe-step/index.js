@@ -1,6 +1,5 @@
-import { getAllRecipeSteps, getUser } from './query.graphql'
+import { getAllRecipeSteps } from './query.graphql'
 
 export {
   getAllRecipeSteps,
-  getUser,
 }
