@@ -7,6 +7,9 @@ import styles from './styles'
 // Themes
 import { COLORS, METRICS } from '../../../../themes'
 
+// Helpers
+import { validator } from '../../../../helpers/validators'
+
 // Components
 import Directions from '../Recipe/Directions'
 import Modal from '../../../../components/Modal'
@@ -63,20 +66,29 @@ const DirectionsForm = ({
   ]
 
   const handleSubmit = async () => {
-    try {
-      await createRecipeStep(
-        recipeId,
-        stepTitleRef.current ? stepTitleRef.current._node.value.trim() : '',
-        nextStep,
-        '',
-        stepDescriptionRef.current ? stepDescriptionRef.current._node.value.trim() : '',
-      ).then(({ data = {} }) => {
-        directions.push(data.createRecipeStep)
-        setDirections(directions)
-        setNextStep(false)
-      })
-    } catch (err) {
-      console.log(err)
+    const title = stepTitleRef.current ? stepTitleRef.current._node.value.trim() : ''
+    const errors = validator({
+      title,
+      step: nextStep,
+      recipeId,
+    })
+
+    if (!Object.keys(errors).length) {
+      try {
+        await createRecipeStep(
+          recipeId,
+          title,
+          nextStep,
+          '',
+          stepDescriptionRef.current ? stepDescriptionRef.current._node.value.trim() : '',
+        ).then(({ data = {} }) => {
+          directions.push(data.createRecipeStep)
+          setDirections(directions)
+          setNextStep(false)
+        })
+      } catch (err) {
+        console.log(err)
+      }
     }
   }
 
