@@ -33,8 +33,8 @@ type Props = {
     title: string,
     votes: Array<number>,
     subTitle: string,
-    views: number,
     userId: number,
+    views: number,
     steps: Array<{
       step: number
     }>,
@@ -48,7 +48,9 @@ type Props = {
   customSubTitle?: {},
   customTitleStep?: {},
   loading: boolean,
-  error: string
+  error: {
+    graphQLErrors: Array<{message: string}>
+  }
 }
 
 const Recipe = ({
@@ -72,7 +74,7 @@ const Recipe = ({
   // order recipeSteps by step asc
   const orderRecipeSteps = recipeSteps.sort(compareStep)
   const defaultStepInfo = orderRecipeSteps[0]
-  const [stepInfo, setStepInfo] = useState()
+  const [stepInfo, setStepInfo] = useState({})
 
   useEffect(() => (
     setStepInfo(defaultStepInfo)
@@ -97,8 +99,8 @@ const Recipe = ({
    * Handle when user click prev or next icon
    * param {name}
    */
-  const onPressSelectStep = name => {
-    let nextStepInfo
+  const onPressSelectStep = (name: string) => {
+    let nextStepInfo = {}
 
     switch (name) {
       case 'next':
