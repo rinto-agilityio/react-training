@@ -22,7 +22,7 @@ export const findStep = (arr: array, index: number) => arr.find(item => item.ste
  * @param {object} a
  * @param {object} b
  */
-export const compare = (a, b) => {
+export const compareStep = (a, b) => {
   if (a.step < b.step) {
     return -1;
   }
@@ -33,6 +33,10 @@ export const compare = (a, b) => {
   return 0;
 }
 
+/**
+ * custom graphql error
+ * @param {array} errorArr
+ */
 export const customError = errorArr => {
   let errorMes = '';
   if (errorArr) {

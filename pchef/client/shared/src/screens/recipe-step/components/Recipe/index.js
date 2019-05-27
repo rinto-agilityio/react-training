@@ -20,7 +20,7 @@ import Error from '../../../../components/Error'
 import { recipes } from '../../../../mocks'
 
 // utils
-import { findStep, compare, customError } from '../../../../helpers/utils'
+import { findStep, compareStep, customError } from '../../../../helpers/utils'
 
 type Props = {
   recipeSteps: Array<{
@@ -70,7 +70,7 @@ const Recipe = ({
   error,
 }: Props) => {
   // order recipeSteps by step asc
-  const orderRecipeSteps = recipeSteps.sort(compare)
+  const orderRecipeSteps = recipeSteps.sort(compareStep)
   const defaultStepInfo = orderRecipeSteps[0]
   const [stepInfo, setStepInfo] = useState()
 
