@@ -4,6 +4,7 @@ const { map } = require('lodash')
 const COLLECTION_NAME = require('../constants/collection-name')
 
 // Helpers
+const { recipes } = require('../mocks')
 const { authenticated } = require('../helpers/auth')
 const {
   getDocument,
@@ -70,6 +71,10 @@ const Query = {
     getDocument(`${COLLECTION_NAME.RECIPE}/${id}`)
 
   )),
+
+  getRecipes: authenticated((_, args, context) => {
+    return recipes
+  }),
 
   getAllRecipes: authenticated((_, args, context) => (
     getCollection(COLLECTION_NAME.RECIPE)

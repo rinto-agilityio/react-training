@@ -1,6 +1,9 @@
 import { Dimensions } from 'react-native'
 
 export default {
+  // container
+  largeContainer: 1200,
+
   // Padding
   smallPadding: 5,
   mediumPadding: 10,
@@ -19,6 +22,7 @@ export default {
   largeInput: 60,
 
   // Image
+  extraExtraSmallImage: 60,
   extraSmallImage: 80,
   smallImage: 100,
   mediumImage: 150,
@@ -102,6 +106,8 @@ export default {
   mediumScreen: 640,
   largeScreen: 840,
   extraLargeScreen: 1024,
+  smallPercentItem: '33.33%',
+  mediumPercentItem: '50%',
 
   // z-index
   modalZindex: 1000,
