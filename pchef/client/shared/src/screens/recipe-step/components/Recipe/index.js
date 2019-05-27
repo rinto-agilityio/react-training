@@ -99,6 +99,7 @@ const Recipe = ({
    */
   const onPressSelectStep = name => {
     let nextStepInfo
+
     switch (name) {
       case 'next':
         nextStepInfo = findStep(orderRecipeSteps, stepInfo.step + 1)

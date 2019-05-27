@@ -3,7 +3,7 @@ import gql from 'graphql-tag'
 
 const GET_RECIPE_STEPS = gql`
   query getAllRecipeSteps($id: String!) {
-    getAllRecipeSteps (id: $id) {
+    getAllRecipeSteps(id: $id) {
       step
       imgUrl
       description
