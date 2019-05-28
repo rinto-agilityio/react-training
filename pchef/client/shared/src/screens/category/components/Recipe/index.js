@@ -1,12 +1,16 @@
 // libs
 import React from 'react'
-import { Platform, View, Text } from 'react-native'
+import { View, Text } from 'react-native'
 
+// Commons
 import Wrapper from '../../../../layout/Wrapper'
 import Icon from '../../../../components/Icon'
 import Image from '../../../../components/Image'
+
+// Constants and Helpers
 import { formatStringToArray } from '../../../../helpers/utils'
 import { SEPARATOR_SPLIT_STRING } from '../../../../constants/index'
+
 // Themes
 import { COLORS, FONTS } from '../../../../themes'
 
