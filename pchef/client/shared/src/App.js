@@ -18,7 +18,6 @@ import client from './config/apollo-client'
 
 // Containers
 import LoginContainer from './containers/Login'
-import CategoryContainer from './containers/Category'
 
 type AppProps = {}
 
@@ -41,8 +40,6 @@ export default class App extends Component<AppProps> {
               type="secondary"
               handlingLoginSuccess={this.handlingLoginSuccess}
             />
-
-            <CategoryContainer id="3xjHYbeO7D4b4UhjKeWU" />
           </View>
         </PaperProvider>
       </ApolloProvider>
