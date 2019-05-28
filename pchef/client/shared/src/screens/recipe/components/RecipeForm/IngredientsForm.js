@@ -1,12 +1,12 @@
 // Libs
 import React, { useRef } from 'react'
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 
 // Styles
 import styles from './styles'
 
 // Themes
-import { COLORS } from '../../../../themes'
+import { COLORS, METRICS } from '../../../../themes'
 
 // Components
 import TextBox from '../../../../components/TextBox'
@@ -42,8 +42,10 @@ const IngredientsForm = ({
           refInput={ingredientRef}
           customStyle={[styles.input, styles[`${size}Input`]]}
           placeholderTextColor={COLORS.grayNavy}
-          multiline
         />
+        <Text style={{ marginTop: METRICS.mediumMargin, color: COLORS.red }}>
+           Note: If you typing multiple ingredients, each ingredient separated by commas (,)
+        </Text>
       </Modal>
     </View>
   )

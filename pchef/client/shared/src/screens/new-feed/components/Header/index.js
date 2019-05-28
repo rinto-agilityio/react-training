@@ -1,9 +1,7 @@
 // Libs
 import React from 'react'
-import { View, Text } from 'react-native'
-import Wrapper from '../../../../layout/Wrapper'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import Icon from '../../../../components/Icon'
-import Image from '../../../../components/Image'
 
 // Themes
 import { COLORS, FONTS } from '../../../../themes'
@@ -12,50 +10,40 @@ import { COLORS, FONTS } from '../../../../themes'
 import styles from './styles'
 
 type Props = {
-  image: string,
-  onPressIcon?: () => void,
-  size: string,
-  handleTouch?: () => void,
+  type?: string,
+  onPressLogo?: () => void,
+  onPressCategoryIcon?: () => void,
 }
 
 const Header = ({
-  image,
-  onPressIcon,
-  size = 'medium',
-  handleTouch,
+  type = 'primary',
+  onPressLogo,
+  onPressCategoryIcon,
 }: Props) => (
-  <View
-    style={[
-      styles.contentHeader,
-      styles[`${size}Content`],
-    ]}
-  >
+  <View style={[styles.container, styles[`${type}Container`]]}>
     <Icon
       name="apps"
-      size={size === 'large' ? FONTS.fontSize.extraExtraLarge : FONTS.fontSize.extraLarge}
-      onPress={onPressIcon}
+      size={FONTS.fontSize.extraExtraLarge}
+      onPress={onPressCategoryIcon}
       color={COLORS.white}
       wrapperIconStyle={styles.wrapIcon}
     />
-    <Wrapper direction="row">
-      <Image
-        url={image}
-        customImageStyle={[
-          styles.image,
-          styles[`${size}Image`],
-        ]}
-        handleTouch={handleTouch}
-      />
-      <Text style={styles.text}>
-        Cooking
-      </Text>
-    </Wrapper>
+    <TouchableOpacity onPress={onPressLogo} style={styles.logo}>
+      <View style={[styles.imageWrapper, styles[`${type}ImageWrapper`]]}>
+        <Image
+          source={require('../../../../assets/images/logo.png')}
+          style={[styles.image, styles[`${type}Image`]]}
+        />
+      </View>
+      <Text style={styles.text}>Cooking</Text>
+    </TouchableOpacity>
   </View>
 )
 
 Header.defaultProps = {
-  onPressIcon: () => {},
-  handleTouch: () => {},
+  type: 'primary',
+  onPressLogo: () => {},
+  onPressCategoryIcon: () => {},
 }
 
 export default Header

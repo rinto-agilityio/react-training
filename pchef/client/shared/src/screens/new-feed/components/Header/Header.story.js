@@ -1,22 +1,23 @@
 // Libs
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { View } from 'react-native'
+import { action } from '@storybook/addon-actions'
 
 // Component
 import Header from '.'
 
-const image = 'http://www.kptncook.com/assets/downloads/AppIcon/KptnCook_AppIcon.png'
+const props = {
+  onPressCategoryIcon: action('clicked category icon'),
+  onPressLogo: action('clicked logo'),
+}
 
 storiesOf('New feed header', module)
-  .add('medium', () => (
-    <Header
-      size="medium"
-      image={image}
-    />
+  .add('primary', () => (
+    <View style={{ width: 500, margin: 'auto' }}>
+      <Header {...props} type="primary" />
+    </View>
   ))
-  .add('large', () => (
-    <Header
-      size="large"
-      image={image}
-    />
+  .add('secondary', () => (
+    <Header {...props} onPressCategoryIcon size="secondary" />
   ))

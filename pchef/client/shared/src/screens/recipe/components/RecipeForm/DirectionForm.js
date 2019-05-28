@@ -7,6 +7,9 @@ import styles from './styles'
 // Themes
 import { COLORS, METRICS } from '../../../../themes'
 
+// Helpers
+import { validator } from '../../../../helpers/validators'
+
 // Components
 import Directions from '../Recipe/Directions'
 import Modal from '../../../../components/Modal'
@@ -14,6 +17,7 @@ import Wrapper from '../../../../layout/Wrapper'
 import Button from '../../../../components/Button'
 import TextBox from '../../../../components/TextBox'
 import Icon from '../../../../components/Icon'
+import Error from '../../../../components/Error'
 
 type Props = {
   size: string,
@@ -49,6 +53,7 @@ const DirectionsForm = ({
   const stepDescriptionRef = useRef(null)
   const [directions, setDirections] = useState([])
   const [isShowForm, setNextStep] = useState(!directions.length)
+  const [error, setError] = useState('')
   const nextStep = directions.length + 1
 
   const data = [
@@ -63,21 +68,34 @@ const DirectionsForm = ({
   ]
 
   const handleSubmit = async () => {
-    try {
-      await createRecipeStep(
-        recipeId,
-        stepTitleRef.current ? stepTitleRef.current._node.value.trim() : '',
-        nextStep,
-        '',
-        stepDescriptionRef.current ? stepDescriptionRef.current._node.value.trim() : '',
-      ).then(({ data = {} }) => {
-        directions.push(data.createRecipeStep)
-        setDirections(directions)
-        setNextStep(false)
-      })
-    } catch (err) {
-      console.log(err)
+    const title = stepTitleRef.current ? stepTitleRef.current._node.value.trim() : ''
+    const errors = validator({
+      title,
+      step: nextStep,
+      recipeId,
+    })
+
+    if (!Object.keys(errors).length) {
+      try {
+        await createRecipeStep(
+          recipeId,
+          title,
+          nextStep,
+          '',
+          stepDescriptionRef.current ? stepDescriptionRef.current._node.value.trim() : '',
+        ).then(({ data = {} }) => {
+          directions.push(data.createRecipeStep)
+          setDirections(directions)
+          setNextStep(false)
+        })
+      } catch (err) {
+        setError(err)
+      }
     }
+  }
+
+  if (error) {
+    return <Error message={error} />
   }
 
   return (

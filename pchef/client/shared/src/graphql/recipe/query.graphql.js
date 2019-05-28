@@ -19,6 +19,38 @@ const GET_ALL_COOKING_TYPES = gql`
   }
 `
 
+const GET_RECIPES = gql`
+  query {
+    getRecipes {
+      id
+      title
+      imgUrl
+      description
+      views
+      votes
+    }
+  }
+`
+
+const GET_RECIPE_DETAIL = gql`
+  query getRecipe($id: String!) {
+    getRecipe(id: $id) {
+      id
+      categoryId
+      cookingTypeId
+      title
+      isDraft
+      subTitle
+      imgUrl
+      description
+      views
+      votes
+      modifyDate
+      publishedDate
+    }
+  }
+`
+
 const getAllCookingTypes = graphql(GET_ALL_COOKING_TYPES, {
   props: ({ data = {} }) => {
     const { loading, error, getAllCookingTypes } = data
@@ -43,7 +75,28 @@ const getAllCategories = graphql(GET_ALL_CATEGORIES, {
   },
 })
 
-export {
-  getAllCookingTypes,
-  getAllCategories,
-}
+const getRecipes = graphql(GET_RECIPES, {
+  props: ({ data: { loading, error, getRecipes } }) => ({
+    loading,
+    error,
+    recipes: getRecipes,
+  }),
+})
+
+const recipeDetail = graphql(GET_RECIPE_DETAIL, {
+  options: props => ({
+    variables: { id: props.id },
+  }),
+
+  props: ({ data }) => {
+    const { loading, error, getRecipe } = data
+
+    return {
+      loading,
+      error,
+      recipe: getRecipe,
+    }
+  },
+})
+
+export { getAllCookingTypes, getAllCategories, getRecipes, recipeDetail }

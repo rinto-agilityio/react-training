@@ -14,12 +14,15 @@ import Icon from '../../../../components/Icon'
 
 type Props = {
   steps: Array<{
+    description: string,
+    imgUrl: string,
     step: number,
+    title: string,
   }>,
   size: string,
   step: number,
-  onPressStep?: () => void,
-  onPressSelectStep?: () => void,
+  onPressStep?: (step: number) => void,
+  onPressSelectStep?: (name: string) => void,
   customStepBtn?: {},
 }
 
@@ -40,9 +43,9 @@ const Progress = ({
   steps = [],
   size = 'large',
   step,
-  onPressStep,
+  onPressStep = () => {},
   customStepBtn = {},
-  onPressSelectStep,
+  onPressSelectStep = () => {},
 }: Props) => {
   // Disabled prev/next icon if current step is first/last step
   const disablePrevIcon = step === 1
