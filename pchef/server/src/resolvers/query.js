@@ -72,8 +72,23 @@ const Query = {
 
   )),
 
-  getRecipes: authenticated((_, args, context) => {
-    return recipes
+  getRecipes: authenticated((_, args, { currentUser }) => {
+    const userId = currentUser.id
+
+    const queryConditions = [
+      {
+        fieldName: 'userId',
+        operator: '==',
+        value: userId,
+      },
+    ]
+
+    return getCollectionWithConditions(
+      COLLECTION_NAME.RECIPE,
+      queryConditions,
+    )
+      .then(recipes => recipes)
+      .catch(error => error)
   }),
 
   getAllRecipes: authenticated((_, args, context) => (
