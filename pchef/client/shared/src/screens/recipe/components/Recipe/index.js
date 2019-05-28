@@ -11,6 +11,9 @@ import Directions from './Directions'
 import Loading from '../../../../components/Loading'
 import Error from '../../../../components/Error'
 
+// Helper
+import { customError } from '../../../../helpers/utils'
+
 type Props = {
   recipe: {
     description: string,
@@ -33,16 +36,14 @@ const Recipe = ({
   error,
   recipeSteps,
 }: Props) => {
-  const errorMessage =
-    'Can not load information of Recipe detail. Please check for connection!!!'
 
   if (loading) {
     return <Loading />
   }
-
   if (error) {
-    return <Error message={errorMessage} />
+    return <Error message={customError(error.graphQLErrors)} />
   }
+
   const {
     description,
   } = recipe
