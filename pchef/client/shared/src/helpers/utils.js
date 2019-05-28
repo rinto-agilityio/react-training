@@ -65,12 +65,27 @@ export const customError = (errorArr: Array<{ message: string }>) => {
 }
 
 /**
- * truncate text
+ * Checking current recipe saved
  */
-export const truncateText = (string, number) => {
-  if (string.length <= number) return string
-  const subString = string.substr(0, number) // parrams: (start, length)
-  return subString.lastIndexOf(' ') === -1
-    ? `${subString} ...`
-    : `${subString.substr(0, subString.lastIndexOf(' '))} ...`
+export const checkFavorited = (arr: Array<{ id: string }>, currentId: string) =>
+  arr.findIndex(item => item.id === currentId) === -1 ? false : true
+
+/**
+ * Format favorite recipe get from getUser query
+ * @param {Array} arr
+ */
+export const formatFavoriteRecipe = (arr: Array<{ id: string }>) => {
+  const newArr: Array<string> = arr.map((item: { id: string }) => item.id)
+  return newArr
+}
+
+/**
+ * Format favorite recipe returned from userToggleSave mutation
+ * @param {Array} arr
+ */
+export const formatUserToggleSaveRes = (arr: Array<string>) => {
+  const newArr: Array<{ id: string }> = arr.map(item =>
+    Object.assign({ id: item, __typename: 'Recipe' })
+  )
+  return newArr
 }
