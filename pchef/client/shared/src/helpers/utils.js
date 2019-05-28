@@ -5,9 +5,8 @@
  * @return {array} array of string
  */
 
-export const formatStringToArray = (string: string, separator: string) => (
+export const formatStringToArray = (string: string, separator: string) =>
   string.split(separator) // Split string to array by separator
-)
 
 // init default value for stepInfo
 const defaultValue = {
@@ -30,7 +29,7 @@ export const findStep = (
     step: number,
     title: string,
   }>,
-  index: number,
+  index: number
 ) => arr.find(item => item.step === index) || defaultValue
 
 /**
@@ -38,29 +37,40 @@ export const findStep = (
  * @param {object} a
  * @param {object} b
  */
-export const compareStep = (a: {step: number}, b: {step: number}) => {
+export const compareStep = (a: { step: number }, b: { step: number }) => {
   if (a.step < b.step) {
-    return -1;
+    return -1
   }
   if (a.step > b.step) {
-    return 1;
+    return 1
   }
 
-  return 0;
+  return 0
 }
 
 /**
  * custom graphql error
  * @param {array} errorArr
  */
-export const customError = (errorArr: Array<{message: string}>) => {
+export const customError = (errorArr: Array<{ message: string }>) => {
   let errorMes = ''
 
   if (errorArr) {
     errorArr.forEach(item => {
       errorMes = item.message
-    });
+    })
   }
 
-  return errorMes;
-};
+  return errorMes
+}
+
+/**
+ * truncate text
+ */
+export const truncateText = (string, number) => {
+  if (string.length <= number) return string
+  const subString = string.substr(0, number) // parrams: (start, length)
+  return subString.lastIndexOf(' ') === -1
+    ? `${subString} ...`
+    : `${subString.substr(0, subString.lastIndexOf(' '))} ...`
+}
