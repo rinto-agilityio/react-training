@@ -34,7 +34,6 @@ const userToggleRecipe = graphql(TOOGLE_RECIPE, {
         const {
           userToggleRecipe: { results },
         } = data
-        // format data results return from userToggleRecipe mutation
         const dataQuery = proxy.readQuery({ query: GET_USER })
         const dataUpdated = {
           ...dataQuery,
