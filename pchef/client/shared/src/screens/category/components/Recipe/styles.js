@@ -10,6 +10,7 @@ const screenWidth = Math.round(Dimensions.get('window').width)
 // Create style for Recipe
 const styles = StyleSheet.create({
   recipe: {
+    width: screenWidth,
     borderBottomWidth: METRICS.smallBorderWidth,
     marginLeft: METRICS.mediumMargin,
     marginRight: METRICS.mediumMargin,
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
   },
   wrapper: {
     height: METRICS.smallWrapper,
-    // width: screenWidth - METRICS.mediumWrapper,
+    width: screenWidth - METRICS.mediumWrapper,
     marginLeft: METRICS.mediumMargin,
     marginRight: METRICS.mediumMargin,
     marginBottom: METRICS.mediumMargin,
@@ -37,11 +38,12 @@ const styles = StyleSheet.create({
     right: METRICS.mediumPosition,
   },
   largeContent: {
+    width: METRICS.extraLargeScreen,
     height: METRICS.smallContent,
     position: 'relative',
   },
   largeWrapper: {
-    width: screenWidth - METRICS.extraLargeWrapper,
+    width: METRICS.extraLargeScreen - METRICS.extraLargeWrapper,
     height: METRICS.largeWrapper,
     paddingLeft: METRICS.mediumPadding,
   },
