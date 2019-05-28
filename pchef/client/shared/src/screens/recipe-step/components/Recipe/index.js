@@ -20,7 +20,7 @@ import Error from '../../../../components/Error'
 import { recipes } from '../../../../mocks'
 
 // utils
-import { findStep, compareStep, customError } from '../../../../helpers/utils'
+import { findStep, compareStep, customError, checkFavorited } from '../../../../helpers/utils'
 
 type Props = {
   recipeSteps: Array<{
@@ -134,21 +134,15 @@ const Recipe = ({
     setStepInfo(stepInfoSelect)
   }
 
-  /**
-   * Checking current recipe saved
-   */
-  const checkFavorited = () => (
-    getUser.favoriteRecipe.findIndex(item => item.id === id) === -1 ? false : true
-  )
-
   const handleSaveRecipe = async () => {
-    try {
-      await userToggleRecipe(id).then(({ data }) => {
-        console.log('data', data)
-      })
-    } catch (error) {
-      console.log('error', error)
-    }
+    await userToggleRecipe(id, getUser.favoriteRecipe).then(({ data }) => {
+      const {
+        userToggleRecipe: { results },
+      } = data
+      if (results) {
+        checkFavorited(results, id)
+      }
+    })
   }
 
   return (
@@ -220,7 +214,7 @@ const Recipe = ({
       <Reaction
         votes={votes}
         size={size}
-        isFavorited={checkFavorited()}
+        isFavorited={checkFavorited(getUser.favoriteRecipe, id)}
         onPressFavorite={handleSaveRecipe}
       />
       <Comment

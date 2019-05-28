@@ -48,3 +48,17 @@ export const customError = errorArr => {
 
   return errorMes;
 };
+
+/**
+ * Checking current recipe saved
+ */
+export const checkFavorited = (arr: Array<string>, currentId: string) => (
+  arr.findIndex(item => item.id === currentId) === -1 ? false : true
+)
+
+/**
+ * format favoriteRecipe
+ */
+export const formatFavoriteRecipe = (arr: Array<{id: string}>) => (
+  arr.map(item => item.id)
+)

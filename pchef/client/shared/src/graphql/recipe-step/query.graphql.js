@@ -61,4 +61,5 @@ const getUser = graphql(GET_USER, {
 export {
   getAllRecipeSteps,
   getUser,
+  GET_USER,
 }
