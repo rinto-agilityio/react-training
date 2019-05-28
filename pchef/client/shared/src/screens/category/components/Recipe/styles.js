@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
   wrapper: {
     height: METRICS.smallWrapper,
-    width: screenWidth - METRICS.mediumImage - 20, // 20 is 20px of wrapper margin
+    width: screenWidth - METRICS.mediumImage - METRICS.largeMargin,
     marginLeft: METRICS.mediumMargin,
     marginRight: METRICS.mediumMargin,
     marginBottom: METRICS.mediumMargin,
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   largeWrapper: {
-    width: METRICS.extraLargeScreen - METRICS.largeImage - 20, // 20 is 20px of wrapper margin
+    width: METRICS.extraLargeScreen - METRICS.largeImage - METRICS.largeMargin,
     height: METRICS.largeWrapper,
     paddingLeft: METRICS.mediumPadding,
   },
