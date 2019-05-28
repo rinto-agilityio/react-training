@@ -5,7 +5,7 @@ import { Platform, View, Text } from 'react-native'
 import Wrapper from '../../../../layout/Wrapper'
 import Icon from '../../../../components/Icon'
 import Image from '../../../../components/Image'
-import { formatStringToArray, truncateText } from '../../../../helpers/utils'
+import { formatStringToArray } from '../../../../helpers/utils'
 import { SEPARATOR_SPLIT_STRING } from '../../../../constants/index'
 // Themes
 import { COLORS, FONTS } from '../../../../themes'
