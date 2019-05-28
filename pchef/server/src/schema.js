@@ -144,6 +144,10 @@ const typeDefs = gql`
       recipeId: String!
     ): PayloadResults!
 
+    userToggleVote(
+      recipeId: String!
+    ): PayloadResults!
+
     createRecipeStep(
       recipeId: String!
       title: String!

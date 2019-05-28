@@ -66,9 +66,9 @@ export const customError = (errorArr: Array<{message: string}>) => {
 };
 
 /**
- * Checking current recipe saved
+ * Checking contain item in array
  */
-export const checkFavorited = (arr: Array<{id: string}>, currentId: string) => (
+export const checkContain = (arr: Array<{id: string}>, currentId: string) => (
   arr.findIndex(item => item.id === currentId) === -1 ? false : true
 )
 
