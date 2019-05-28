@@ -1,9 +1,9 @@
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import { GET_USER } from './query.graphql'
-import { checkFavorited, formatFavoriteRecipe, formatUserToggleSaveRes } from '../../helpers/utils'
+import { checkContain, formatFavoriteRecipe, formatUserToggleSaveRes } from '../../helpers/utils'
 
-const TOOGLE_RECIPE = gql`
+const TOGGLE_RECIPE = gql`
   mutation userToggleRecipe($recipeId: String!) {
     userToggleRecipe(recipeId: $recipeId) {
       results
@@ -11,7 +11,15 @@ const TOOGLE_RECIPE = gql`
   }
 `
 
-const userToggleRecipe = graphql(TOOGLE_RECIPE, {
+const TOGGLE_VOTE = gql`
+  mutation userToggleVote($recipeId: String!) {
+    userToggleVote(recipeId: $recipeId) {
+      results
+    }
+  }
+`
+
+const userToggleRecipe = graphql(TOGGLE_RECIPE, {
   props: ({ mutate }) => ({
     userToggleRecipe: (recipeId, favoriteRecipe) => mutate({
       variables: {
@@ -20,7 +28,7 @@ const userToggleRecipe = graphql(TOOGLE_RECIPE, {
       optimisticResponse: {
         userToggleRecipe: {
           __typename: 'PayloadResults',
-          results: checkFavorited(favoriteRecipe, recipeId) ?
+          results: checkContain(favoriteRecipe, recipeId) ?
             formatFavoriteRecipe(favoriteRecipe.filter(item => item.id !== recipeId))
             :
             formatFavoriteRecipe(favoriteRecipe).concat(recipeId),
@@ -50,6 +58,27 @@ const userToggleRecipe = graphql(TOOGLE_RECIPE, {
   },
 })
 
+const userToggleVote = graphql(TOGGLE_RECIPE, {
+  props: ({ mutate }) => ({
+    userToggleVote: recipeId => mutate({
+      variables: {
+        recipeId,
+      },
+    }),
+  }),
+  options: {
+    update: (proxy, { data }) => {
+      try {
+        console.log('proxy', proxy);
+        console.log('data', data);
+      } catch (err) {
+        console.error(err)
+      }
+    },
+  },
+})
+
 export {
   userToggleRecipe,
+  userToggleVote,
 }
