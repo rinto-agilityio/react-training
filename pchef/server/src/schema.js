@@ -95,6 +95,8 @@ const typeDefs = gql`
     getRecipeComments(id: String!): [Comment]
 
     getUser: UserFullInfos!
+
+    getAllWishList: [WishList]
   }
 
   type Mutation {

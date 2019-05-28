@@ -14,7 +14,12 @@ type Props = {
   size: string,
   title: string,
   visible?: boolean,
-  data: Array<{
+  categories: Array<{
+    id: string,
+    name: string,
+    imgUrl: string,
+  }>,
+  cookingTypes: Array<{
     id: string,
     name: string,
     imgUrl: string,
@@ -27,7 +32,8 @@ type Props = {
 
 const Classify = ({
   size = 'medium',
-  data = [],
+  categories = [],
+  cookingTypes = [],
   onDismiss,
   visible,
   title,
@@ -35,6 +41,7 @@ const Classify = ({
   loading,
   error,
 }: Props) => {
+  const data = title === 'Categories' ? categories : cookingTypes
   const defaultValue = data[0] || {}
   const [value, setValue] = useState(defaultValue)
   useEffect(() => (

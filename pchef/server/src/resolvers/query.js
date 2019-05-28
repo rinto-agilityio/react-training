@@ -161,6 +161,11 @@ const Query = {
       favoriteRecipe: recipes,
     }
   }),
+
+  // WishList
+  getAllWishList: authenticated((_, args, context) => (
+    getCollection(COLLECTION_NAME.WISH_LIST)
+  )),
 }
 
 module.exports = Query
