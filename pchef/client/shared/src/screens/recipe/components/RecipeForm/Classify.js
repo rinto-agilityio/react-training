@@ -1,5 +1,5 @@
 // Libs
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 // Themes
 import { METRICS } from '../../../../themes'
@@ -35,7 +35,11 @@ const Classify = ({
   loading,
   error,
 }: Props) => {
-  const [value, setValue] = useState({})
+  const defaultValue = data[0] || {}
+  const [value, setValue] = useState(defaultValue)
+  useEffect(() => (
+    setValue(defaultValue)
+  ), [loading, defaultValue])
 
   if (loading) {
     return <Loading size={size} />
@@ -57,21 +61,18 @@ const Classify = ({
           marginBottom: METRICS.largeMargin,
         }}
       >
-        {data.map(({ id, name }) => {
-          const itemId = value.id || data[0].id
-          return (
-            <RadioButton
-              key={id}
-              value={id}
-              onPress={() => setValue({ id, name })}
-              label={name}
-              status={itemId === id}
-              customWrapperStyle={{
-                width: '33.33%',
-              }}
-            />
-          )
-        })}
+        {data.map(({ id, name }) => (
+          <RadioButton
+            key={id}
+            value={id}
+            onPress={() => setValue({ id, name })}
+            label={name}
+            status={value.id === id}
+            customWrapperStyle={{
+              width: '33.33%',
+            }}
+          />
+        ))}
       </Wrapper>
     </Modal>
   )
