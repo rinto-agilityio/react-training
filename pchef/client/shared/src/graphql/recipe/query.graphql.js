@@ -39,7 +39,7 @@ const getAllCookingTypes = graphql(GET_ALL_COOKING_TYPES, {
     return {
       loading,
       error,
-      data: getAllCookingTypes,
+      cookingTypes: getAllCookingTypes,
     }
   },
 })
@@ -51,7 +51,7 @@ const getAllCategories = graphql(GET_ALL_CATEGORIES, {
     return {
       loading,
       error,
-      data: getAllCategories,
+      categories: getAllCategories,
     }
   },
 })
