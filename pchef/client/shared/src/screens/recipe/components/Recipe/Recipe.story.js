@@ -13,6 +13,7 @@ storiesOf('Recipe', module)
   .add('small', () => (
     <Recipe
       recipe={recipes[0]}
+      recipeSteps={recipes[0].steps}
       size="small"
       onSelectStep={action('clicked')}
     />
@@ -20,6 +21,7 @@ storiesOf('Recipe', module)
   .add('medium', () => (
     <Recipe
       recipe={recipes[0]}
+      recipeSteps={recipes[0].steps}
       size="medium"
       onSelectStep={action('clicked')}
     />
@@ -27,6 +29,7 @@ storiesOf('Recipe', module)
   .add('large', () => (
     <Recipe
       recipe={recipes[0]}
+      recipeSteps={recipes[0].steps}
       size="large"
       onSelectStep={action('clicked')}
     />
