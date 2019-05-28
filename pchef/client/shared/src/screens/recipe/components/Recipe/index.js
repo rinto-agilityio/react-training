@@ -8,27 +8,43 @@ import styles from './styles'
 // Components
 import Ingredients from './Ingredients'
 import Directions from './Directions'
+import Loading from '../../../../components/Loading'
+import Error from '../../../../components/Error'
 
 type Props = {
   recipe: {
     description: string,
-    steps: Array<{
-      step: number,
-      title: string
-    }>,
   },
   size: string,
   onSelectStep?: () => void,
+  loading: boolean,
+  error: Object,
+  recipeSteps: Array<{
+    step: number,
+    title: string
+  }>,
 }
 
 const Recipe = ({
   recipe,
   size = 'medium',
   onSelectStep,
+  loading,
+  error,
+  recipeSteps,
 }: Props) => {
+  const errorMessage =
+    'Can not load information of Recipe detail. Please check for connection!!!'
+
+  if (loading) {
+    return <Loading />
+  }
+
+  if (error) {
+    return <Error message={errorMessage} />
+  }
   const {
     description,
-    steps,
   } = recipe
 
   return (
@@ -38,7 +54,7 @@ const Recipe = ({
         size={size}
       />
       <Directions
-        steps={steps}
+        steps={recipeSteps}
         size={size}
         onSelectStep={onSelectStep}
       />
@@ -47,7 +63,7 @@ const Recipe = ({
 }
 
 Recipe.defaultProps = {
-  onSelectStep: () => {},
+  onSelectStep: () => { },
 }
 
 export default Recipe
