@@ -1,10 +1,11 @@
 // libs
 import React from 'react'
-import { View, Text } from 'react-native'
+import { Platform, View, Text } from 'react-native'
+
 import Wrapper from '../../../../layout/Wrapper'
 import Icon from '../../../../components/Icon'
 import Image from '../../../../components/Image'
-import { formatStringToArray } from '../../../../helpers/utils'
+import { formatStringToArray, truncateText } from '../../../../helpers/utils'
 import { SEPARATOR_SPLIT_STRING } from '../../../../constants/index'
 // Themes
 import { COLORS, FONTS } from '../../../../themes'
@@ -52,9 +53,14 @@ const Recipe = ({
         >
           {/* ingredient description */}
           <View style={styles.text}>
-            {formatDescription.map(item => (
-              <Text style={styles[`${size}Text`]}>{item}</Text>
-            ))}
+            {formatDescription.map(item => {
+              const textLength = Platform.OS === 'web' ? 90 : 20
+              const truncateDescription = truncateText(item, textLength)
+
+              return (
+                <Text style={styles[`${size}Text`]}>{truncateDescription}</Text>
+              )
+            })}
           </View>
 
           <Icon
