@@ -26,6 +26,8 @@ const styles = StyleSheet.create({
   text: {
     overflow: 'hidden',
     height: 130,
+  },
+  smallText: {
     fontSize: FONTS.fontSize.base,
   },
   image: {
