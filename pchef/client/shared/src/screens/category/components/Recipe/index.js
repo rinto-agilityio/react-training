@@ -52,17 +52,17 @@ const Recipe = ({
           customStyles={[styles.wrapper, styles[`${size}Wrapper`]]}
         >
           {/* ingredient description */}
-          <View style={styles.text}>
-            {formatDescription.map((item, index) => {
-              const textLength = Platform.OS === 'web' ? 90 : 20
-              const truncateDescription = truncateText(item, textLength)
-
-              return (
-                <Text key={index} style={styles[`${size}Text`]}>
-                  {truncateDescription}
-                </Text>
-              )
-            })}
+          <View style={styles.wrapperText}>
+            {formatDescription.map((item, index) => (
+              <Text
+                numberOfLines={1}
+                ellipsizeMode="tail"
+                key={index}
+                style={styles[`${size}Text`]}
+              >
+                {item}
+              </Text>
+            ))}
           </View>
 
           <Icon
