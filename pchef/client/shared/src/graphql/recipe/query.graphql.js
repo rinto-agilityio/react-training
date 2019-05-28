@@ -86,11 +86,11 @@ const getRecipes = graphql(GET_RECIPES, {
 const recipeDetail = graphql(GET_RECIPE_DETAIL, {
   options: props => ({
     variables: { id: props.id },
-    fetchPolicy: 'cache-and-network',
   }),
 
   props: ({ data }) => {
     const { loading, error, getRecipe } = data
+
     return {
       loading,
       error,
