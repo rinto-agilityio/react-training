@@ -15,3 +15,7 @@ declare module 'graphql-tag' {
 declare module 'dotenv' {
   declare module.exports: any
 }
+
+declare module 'RelativeImageStub' {
+  declare module.exports: any
+}

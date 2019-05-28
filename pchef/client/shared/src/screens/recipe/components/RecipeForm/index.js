@@ -8,6 +8,9 @@ import styles from './styles'
 // Themes
 import { COLORS, METRICS } from '../../../../themes'
 
+// Helpers
+import { validator } from '../../../../helpers/validators'
+
 // Components
 import IngredientsForm from './IngredientsForm'
 import Ingredients from '../Recipe/Ingredients'
@@ -17,6 +20,7 @@ import Wrapper from '../../../../layout/Wrapper'
 import Categories from '../../../../containers/Categories'
 import CookingTypes from '../../../../containers/CookingTypes'
 import DirectionForm from '../../../../containers/DirectionForm'
+import Error from '../../../../components/Error'
 
 type Props = {
   size: string,
@@ -47,6 +51,7 @@ const RecipeForm = ({
   const [cookingType, setCookingType] = useState({})
   const [ingredients, setIngredients] = useState('')
   const [recipe, setRecipe] = useState({})
+  const [error, setError] = useState('')
 
   const dataIcon = [
     {
@@ -75,22 +80,36 @@ const RecipeForm = ({
   ]
 
   const handleCreateRecipe = async () => {
-    try {
-      // get token by user email and password
-      await createRecipe(
-        category.id,
-        cookingType.id,
-        titleRef.current ? titleRef.current._node.value.trim() : '',
-        subTitleRef.current ? subTitleRef.current._node.value.trim() : '',
-        '',
-        ingredients,
-        true,
-      ).then(({ data = {} }) => {
-        setRecipe(data.createRecipe)
-      })
-    } catch (err) {
-      console.log(err)
+    const title = titleRef.current ? titleRef.current._node.value.trim() : ''
+    const categoryId = category.id
+    const cookingTypeId = cookingType.id
+    const errors = validator({
+      title,
+      categoryId,
+      cookingTypeId,
+    })
+
+    if (!Object.keys(errors).length) {
+      try {
+        await createRecipe(
+          categoryId,
+          cookingTypeId,
+          title,
+          subTitleRef.current ? subTitleRef.current._node.value.trim() : '',
+          '',
+          ingredients,
+          true,
+        ).then(({ data = {} }) => {
+          setRecipe(data.createRecipe)
+        })
+      } catch (err) {
+        setError(err)
+      }
     }
+  }
+
+  if (error) {
+    return <Error message={error} />
   }
 
   return (

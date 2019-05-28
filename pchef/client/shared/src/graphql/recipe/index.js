@@ -1,4 +1,14 @@
-import { getAllCookingTypes, getAllCategories } from './query.graphql'
+import {
+  getAllCookingTypes,
+  getAllCategories,
+  getRecipes,
+} from './query.graphql'
 import { createRecipe, createRecipeStep } from './mutation.graphql'
 
-export { getAllCookingTypes, getAllCategories, createRecipe, createRecipeStep }
+export {
+  getAllCookingTypes,
+  getAllCategories,
+  createRecipe,
+  createRecipeStep,
+  getRecipes,
+}

@@ -1,6 +1,6 @@
 // Libs
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Text, View, TouchableOpacity } from 'react-native'
 
 // Styles
 import styles from './styles'
@@ -11,65 +11,47 @@ import Reaction from '../../../../components/Reaction'
 
 type Props = {
   recipe: {
+    id: string,
     title: string,
     description: string,
     imgUrl: string,
     votes: Array<number>,
   },
-  size: string,
-  onPress?: () => void,
-  customRecipe?: {},
-  customTitle?: {},
-  customDescription?: {},
-  customImage?: {},
+  size?: string,
 }
 
-const Recipe = ({
-  recipe,
-  size = 'large',
-  onPress,
-  customRecipe,
-  customTitle,
-  customDescription,
-  customImage = {},
-}: Props) => {
+const Recipe = ({ recipe, size = 'large' }: Props) => {
   const { title, description, imgUrl, votes } = recipe
 
   return (
-    <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
-      <View style={[styles.recipe, customRecipe]}>
+    <TouchableOpacity style={[styles.wrapper, styles[`${size}Wrapper`]]}>
+      <View style={styles.recipe}>
         <Text
-          style={[styles.title, styles[`${size}Title`], customTitle]}
-          onPress={onPress}
+          style={[styles.title, styles[`${size}Title`]]}
+          numberOfLines={1}
+          ellipsizeMode="tail"
         >
           {title}
         </Text>
         <Text
-          style={[
-            styles.description,
-            styles[`${size}Description`],
-            customDescription,
-          ]}
-          onPress={onPress}
+          style={[styles.description, styles[`${size}Description`]]}
+          numberOfLines={1}
+          ellipsizeMode="tail"
         >
           {description}
         </Text>
         <Image
           url={imgUrl}
-          customImageStyle={[styles.image, styles[`${size}Image`], customImage]}
+          customImageStyle={[styles.image, styles[`${size}Image`]]}
         />
       </View>
       <Reaction votes={votes} size={size} isFavorited={false} />
-    </View>
+    </TouchableOpacity>
   )
 }
 
 Recipe.defaultProps = {
-  onPress: () => {},
-  customRecipe: {},
-  customTitle: {},
-  customDescription: {},
-  customImage: {},
+  size: 'large',
 }
 
 export default Recipe

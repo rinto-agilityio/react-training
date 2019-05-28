@@ -10,13 +10,16 @@ const styles = StyleSheet.create({
   },
 
   largeWrapper: {
-    width: METRICS.largeWrapper,
+    width: METRICS.smallPercentItem,
+    paddingLeft: METRICS.mediumPadding,
+    paddingRight: METRICS.mediumPadding,
+    minWidth: METRICS.smallScreen,
   },
 
   // Title
   title: {
     color: COLORS.black,
-    fontWeight: 'bold',
+    fontWeight: FONTS.fontWeight.large,
     paddingLeft: METRICS.largePadding,
     paddingRight: METRICS.largePadding,
   },
@@ -33,7 +36,7 @@ const styles = StyleSheet.create({
   // Description
   description: {
     color: COLORS.baseGray,
-    fontWeight: 'bold',
+    fontWeight: FONTS.fontWeight.large,
     paddingLeft: METRICS.largePadding,
     paddingRight: METRICS.largePadding,
   },
