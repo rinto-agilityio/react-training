@@ -33,7 +33,9 @@ const CategoryScreen = ({
 }: Props) => {
   const size = Platform.OS === 'web' ? 'large' : 'small'
   if (loading) return <Loading size="small" />
-  if (error) return <Error size="small" />
+
+  // will update message later
+  if (error) return <Error message="Failed!!!" size={size} />
   return (
     <>
       <Header category={category} isGrid size={size} />
