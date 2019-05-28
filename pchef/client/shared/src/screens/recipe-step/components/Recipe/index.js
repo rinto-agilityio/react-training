@@ -20,7 +20,7 @@ import Error from '../../../../components/Error'
 import { recipes } from '../../../../mocks'
 
 // utils
-import { findStep, compareStep, customError, checkFavorited } from '../../../../helpers/utils'
+import { findStep, compareStep, customError, checkFavorited, formatUserToggleSaveRes } from '../../../../helpers/utils'
 
 type Props = {
   recipeSteps: Array<{
@@ -50,12 +50,11 @@ type Props = {
   loading: boolean,
   error: string,
   getUser: {
-    favoriteRecipe: {
-      id: string
-    }
+    favoriteRecipe: Array<{id: string}>
   },
   userToggleRecipe: (
-    recipeId
+    recipeId: string,
+    favoriteRecipe: Array<{id: string}>
   ) => Promise<{ data: {userToggleRecipe: {results: Array<string>}}}>,
   id: string,
   error: {
@@ -142,8 +141,9 @@ const Recipe = ({
       const {
         userToggleRecipe: { results },
       } = data
+
       if (results) {
-        checkFavorited(results, id)
+        checkFavorited(formatUserToggleSaveRes(results), id)
       }
     })
   }

@@ -1,7 +1,7 @@
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import { GET_USER } from './query.graphql'
-import { checkFavorited, formatFavoriteRecipe } from '../../helpers/utils'
+import { checkFavorited, formatFavoriteRecipe, formatUserToggleSaveRes } from '../../helpers/utils'
 
 const TOOGLE_RECIPE = gql`
   mutation userToggleRecipe($recipeId: String!) {
@@ -35,12 +35,11 @@ const userToggleRecipe = graphql(TOOGLE_RECIPE, {
           userToggleRecipe: { results },
         } = data
         // format data results return from userToggleRecipe mutation
-        const newResults = results.map(item => Object.assign({ id: item, __typename: 'Recipe' }))
         const dataQuery = proxy.readQuery({ query: GET_USER })
         const dataUpdated = {
           ...dataQuery,
           getUser: {
-            favoriteRecipe: newResults,
+            favoriteRecipe: formatUserToggleSaveRes(results),
             __typename: 'UserFullInfos',
           },
         }

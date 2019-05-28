@@ -16,7 +16,7 @@ type Props = {
   customWrapperIcon?: {},
   size: string,
   votes: Array<number>,
-  onPressFavorite?: () => void,
+  onPressFavorite?: () => void | Promise<void>,
   onPressVote?: () => void,
 }
 

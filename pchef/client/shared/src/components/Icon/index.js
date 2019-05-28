@@ -11,7 +11,7 @@ import { COLORS, FONTS } from '../../themes'
 
 type Props = {
   label?: string | number,
-  onPress?: () => void,
+  onPress?: () => void | Promise<void>,
   customStyle?: {} | Array<{}>,
   color?: string,
   size?: number,
