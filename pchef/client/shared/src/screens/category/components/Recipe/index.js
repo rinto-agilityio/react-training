@@ -53,12 +53,14 @@ const Recipe = ({
         >
           {/* ingredient description */}
           <View style={styles.text}>
-            {formatDescription.map(item => {
+            {formatDescription.map((item, index) => {
               const textLength = Platform.OS === 'web' ? 90 : 20
               const truncateDescription = truncateText(item, textLength)
 
               return (
-                <Text style={styles[`${size}Text`]}>{truncateDescription}</Text>
+                <Text key={index} style={styles[`${size}Text`]}>
+                  {truncateDescription}
+                </Text>
               )
             })}
           </View>
