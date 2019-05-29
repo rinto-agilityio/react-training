@@ -47,3 +47,12 @@ export const getDateOfWeek = () => {
  * @return {string} time published from now
  */
 export const getPublishedTime = (time: number) => fromNow(time, { and: true, suffix: true, max: 2 })
+
+/**
+ * Get miliseconds from time
+ * @param {string} time is a timestamp
+ * @return {string} milisecond from time
+ */
+export const getMilisecondsFromTime = ( time: string ) => {
+  return new Date(time).getTime()
+}
