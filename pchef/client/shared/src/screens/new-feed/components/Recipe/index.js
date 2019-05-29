@@ -15,7 +15,7 @@ type Props = {
     title: string,
     description: string,
     imgUrl: string,
-    votes: Array<number>,
+    votes: Array<string>,
   },
   size?: string,
 }

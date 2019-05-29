@@ -20,11 +20,13 @@ const Header = ({ user, handleToSetting }: Props) => {
   const { name, avatar } = user
 
   return (
-    <View style={styles.wrapHeader}>
-      <View style={styles.contentHeader}>
-        <Image url={avatar} customImageStyle={styles.image} />
+    <>
+      <View style={styles.wrapHeader}>
+        <View style={[styles.contentHeader, styles.container]}>
+          <Image url={avatar} customImageStyle={styles.image} />
+        </View>
       </View>
-      <View style={styles.user}>
+      <View style={[styles.user, styles.container]}>
         <Text style={styles.userName}>{name}</Text>
         <Button
           buttonStyle={styles.userButton}
@@ -33,7 +35,7 @@ const Header = ({ user, handleToSetting }: Props) => {
           onPress={handleToSetting}
         />
       </View>
-    </View>
+    </>
   )
 }
 

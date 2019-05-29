@@ -36,7 +36,6 @@ const Recipe = ({
   error,
   recipeSteps,
 }: Props) => {
-
   if (loading) {
     return <Loading />
   }

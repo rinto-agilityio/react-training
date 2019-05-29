@@ -6,11 +6,23 @@ import { COLORS, METRICS, FONTS } from '../../../../themes'
 
 // Create style for Header
 const styles = StyleSheet.create({
-  contentHeader: {
+  wrapHeader: {
     backgroundColor: COLORS.black,
+    opacity: 0.8,
+  },
+  container: {
+    maxWidth:
+      METRICS.screenWidth > METRICS.mediumScreen
+        ? METRICS.extraLargeScreen
+        : METRICS.screenWidth,
+    width: '100%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+  contentHeader: {
     alignItems: 'flex-start',
     justifyContent: 'flex-end',
-    opacity: 0.8,
+
     height: METRICS.smallBgImage,
     paddingHorizontal: METRICS.largePadding,
   },

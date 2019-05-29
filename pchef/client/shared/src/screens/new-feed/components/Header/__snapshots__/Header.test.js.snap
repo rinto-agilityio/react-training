@@ -5,14 +5,67 @@ exports[`Components Header Login snapshots 1`] = `
   className="css-view-1dbjc4n r-alignItems-1habvwh r-backgroundColor-kemksi r-paddingBottom-k8qxaj r-paddingLeft-1yt7n81 r-paddingTop-1knelpx"
 >
   <div
-    className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz"
+    className="css-view-1dbjc4n r-marginLeft-1jj8364 r-marginRight-lchren r-maxWidth-c3zab1 r-width-13qz1uu"
   >
     <div
-      className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz"
+    >
+      <div
+        className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+        data-focusable={true}
+        disabled={false}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <span
+          className="css-hitSlop-mjp8i1"
+          style={
+            Object {
+              "bottom": "-6px",
+              "left": "-6px",
+              "right": "-6px",
+              "top": "-6px",
+            }
+          }
+        />
+        <div
+          className="css-view-1dbjc4n"
+        >
+          <div
+            className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+            dir="auto"
+            focusable={false}
+            role="img"
+            style={
+              Object {
+                "WebkitTransform": "scaleX(1)",
+                "color": "rgba(255,255,255,1.00)",
+                "fontFamily": "MaterialIcons",
+                "fontSize": "40px",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+                "transform": "scaleX(1)",
+              }
+            }
+          >
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-flexDirection-18u37iz r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr"
       data-focusable={true}
-      disabled={false}
       onKeyDown={[Function]}
-      onKeyPress={[Function]}
       onKeyUp={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -20,91 +73,42 @@ exports[`Components Header Login snapshots 1`] = `
       onResponderTerminate={[Function]}
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
-      role="button"
       tabIndex="0"
     >
-      <span
-        className="css-hitSlop-mjp8i1"
-        style={
-          Object {
-            "bottom": "-6px",
-            "left": "-6px",
-            "right": "-6px",
-            "top": "-6px",
-          }
-        }
-      />
       <div
-        className="css-view-1dbjc4n"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1llaxt6 r-height-uvuy5l r-justifyContent-1777fci r-marginLeft-1n0xq6e r-marginRight-7o8qx1 r-width-cfp7ip"
       >
         <div
-          className="css-text-901oao r-backgroundColor-1niwhzg r-pointerEvents-633pao"
-          dir="auto"
-          focusable={false}
-          role="img"
+          className="css-view-1dbjc4n r-flexBasis-1mlwlqe r-overflow-1udh08x r-zIndex-417010"
           style={
             Object {
-              "WebkitTransform": "scaleX(1)",
-              "color": "rgba(255,255,255,1.00)",
-              "fontFamily": "MaterialIcons",
-              "fontSize": "40px",
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-              "transform": "scaleX(1)",
+              "height": "40px",
+              "width": "40px",
             }
           }
         >
-          
+          <div
+            className="css-view-1dbjc4n r-backgroundColor-1niwhzg r-backgroundPosition-vvn4in r-backgroundRepeat-u6sd8q r-backgroundSize-4gszlv r-bottom-1p0dtai r-height-1pi2tsx r-left-1d2f490 r-position-u8s1d r-right-zchlnj r-top-ipm5af r-width-13qz1uu r-zIndex-1wyyakw"
+            style={
+              Object {
+                "backgroundImage": "url(\\"logo.png\\")",
+              }
+            }
+          />
+          <img
+            alt=""
+            className="css-accessibilityImage-9pa8cd"
+            draggable={false}
+            src="logo.png"
+          />
         </div>
       </div>
-    </div>
-  </div>
-  <div
-    className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-flexDirection-18u37iz r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr"
-    data-focusable={true}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    tabIndex="0"
-  >
-    <div
-      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1llaxt6 r-height-uvuy5l r-justifyContent-1777fci r-marginLeft-1n0xq6e r-marginRight-7o8qx1 r-width-cfp7ip"
-    >
       <div
-        className="css-view-1dbjc4n r-flexBasis-1mlwlqe r-overflow-1udh08x r-zIndex-417010"
-        style={
-          Object {
-            "height": "40px",
-            "width": "40px",
-          }
-        }
+        className="css-text-76zvg2 r-color-jwli3a r-fontSize-zz5t5d r-fontWeight-1kfrs79"
+        dir="auto"
       >
-        <div
-          className="css-view-1dbjc4n r-backgroundColor-1niwhzg r-backgroundPosition-vvn4in r-backgroundRepeat-u6sd8q r-backgroundSize-4gszlv r-bottom-1p0dtai r-height-1pi2tsx r-left-1d2f490 r-position-u8s1d r-right-zchlnj r-top-ipm5af r-width-13qz1uu r-zIndex-1wyyakw"
-          style={
-            Object {
-              "backgroundImage": "url(\\"logo.png\\")",
-            }
-          }
-        />
-        <img
-          alt=""
-          className="css-accessibilityImage-9pa8cd"
-          draggable={false}
-          src="logo.png"
-        />
+        Cooking
       </div>
-    </div>
-    <div
-      className="css-text-901oao r-color-jwli3a r-fontSize-zz5t5d r-fontWeight-1kfrs79"
-      dir="auto"
-    >
-      Cooking
     </div>
   </div>
 </div>
@@ -115,14 +119,66 @@ exports[`Components Header Login snapshots 2`] = `
   className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-kemksi r-flexDirection-1euycsn r-justifyContent-1wtj0ep r-paddingLeft-1fd96xs r-paddingRight-yongw"
 >
   <div
-    className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz"
+    className="css-view-1dbjc4n r-marginLeft-1jj8364 r-marginRight-lchren r-maxWidth-c3zab1 r-width-13qz1uu"
   >
     <div
-      className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz"
+    >
+      <div
+        className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+        data-focusable={true}
+        disabled={false}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <span
+          className="css-hitSlop-mjp8i1"
+          style={
+            Object {
+              "bottom": "-6px",
+              "left": "-6px",
+              "right": "-6px",
+              "top": "-6px",
+            }
+          }
+        />
+        <div
+          className="css-view-1dbjc4n"
+        >
+          <div
+            className="css-text-76zvg2 r-backgroundColor-1niwhzg r-color-jwli3a r-pointerEvents-633pao"
+            dir="auto"
+            focusable={false}
+            role="img"
+            style={
+              Object {
+                "WebkitTransform": "scaleX(1)",
+                "fontFamily": "MaterialIcons",
+                "fontSize": "40px",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+                "transform": "scaleX(1)",
+              }
+            }
+          >
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-flexDirection-18u37iz r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr"
       data-focusable={true}
-      disabled={false}
       onKeyDown={[Function]}
-      onKeyPress={[Function]}
       onKeyUp={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -130,90 +186,42 @@ exports[`Components Header Login snapshots 2`] = `
       onResponderTerminate={[Function]}
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
-      role="button"
       tabIndex="0"
     >
-      <span
-        className="css-hitSlop-mjp8i1"
-        style={
-          Object {
-            "bottom": "-6px",
-            "left": "-6px",
-            "right": "-6px",
-            "top": "-6px",
-          }
-        }
-      />
       <div
-        className="css-view-1dbjc4n"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1llaxt6 r-height-uvuy5l r-justifyContent-1777fci r-marginBottom-117bsoe r-marginRight-7o8qx1 r-marginTop-1x0uki6 r-width-cfp7ip"
       >
         <div
-          className="css-text-901oao r-backgroundColor-1niwhzg r-color-jwli3a r-pointerEvents-633pao"
-          dir="auto"
-          focusable={false}
-          role="img"
+          className="css-view-1dbjc4n r-flexBasis-1mlwlqe r-overflow-1udh08x r-zIndex-417010"
           style={
             Object {
-              "WebkitTransform": "scaleX(1)",
-              "fontFamily": "MaterialIcons",
-              "fontSize": "40px",
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-              "transform": "scaleX(1)",
+              "height": "50px",
+              "width": "50px",
             }
           }
         >
-          
+          <div
+            className="css-view-1dbjc4n r-backgroundColor-1niwhzg r-backgroundPosition-vvn4in r-backgroundRepeat-u6sd8q r-backgroundSize-4gszlv r-bottom-1p0dtai r-height-1pi2tsx r-left-1d2f490 r-position-u8s1d r-right-zchlnj r-top-ipm5af r-width-13qz1uu r-zIndex-1wyyakw"
+            style={
+              Object {
+                "backgroundImage": "url(\\"logo.png\\")",
+              }
+            }
+          />
+          <img
+            alt=""
+            className="css-accessibilityImage-9pa8cd"
+            draggable={false}
+            src="logo.png"
+          />
         </div>
       </div>
-    </div>
-  </div>
-  <div
-    className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-flexDirection-18u37iz r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr"
-    data-focusable={true}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    tabIndex="0"
-  >
-    <div
-      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1llaxt6 r-height-uvuy5l r-justifyContent-1777fci r-marginBottom-117bsoe r-marginRight-7o8qx1 r-marginTop-1x0uki6 r-width-cfp7ip"
-    >
       <div
-        className="css-view-1dbjc4n r-flexBasis-1mlwlqe r-overflow-1udh08x r-zIndex-417010"
-        style={
-          Object {
-            "height": "50px",
-            "width": "50px",
-          }
-        }
+        className="css-text-76zvg2 r-color-jwli3a r-fontSize-zz5t5d r-fontWeight-1kfrs79"
+        dir="auto"
       >
-        <div
-          className="css-view-1dbjc4n r-backgroundColor-1niwhzg r-backgroundPosition-vvn4in r-backgroundRepeat-u6sd8q r-backgroundSize-4gszlv r-bottom-1p0dtai r-height-1pi2tsx r-left-1d2f490 r-position-u8s1d r-right-zchlnj r-top-ipm5af r-width-13qz1uu r-zIndex-1wyyakw"
-          style={
-            Object {
-              "backgroundImage": "url(\\"logo.png\\")",
-            }
-          }
-        />
-        <img
-          alt=""
-          className="css-accessibilityImage-9pa8cd"
-          draggable={false}
-          src="logo.png"
-        />
+        Cooking
       </div>
-    </div>
-    <div
-      className="css-text-901oao r-color-jwli3a r-fontSize-zz5t5d r-fontWeight-1kfrs79"
-      dir="auto"
-    >
-      Cooking
     </div>
   </div>
 </div>
