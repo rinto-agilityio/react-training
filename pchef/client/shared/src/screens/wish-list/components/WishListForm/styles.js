@@ -11,11 +11,8 @@ const styles = StyleSheet.create({
   },
   wrapperIcon: {
     backgroundColor: COLORS.baseGray,
-    padding: 20,
+    padding: METRICS.largePadding,
     marginTop: METRICS.mediumMargin,
-  },
-  wrapperClassifyIcon: {
-    paddingBottom: 0,
   },
   icon: {
     display: 'flex',
