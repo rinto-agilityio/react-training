@@ -1,3 +1,3 @@
 import { getAllWishList } from './query.graphql'
-
-export { getAllWishList }
+import { createWishList } from './mutation.graphql'
+export { getAllWishList, createWishList }
