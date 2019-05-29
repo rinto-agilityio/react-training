@@ -32,10 +32,7 @@ export const getCategory = graphql(GET_CATEGORY, {
   props: ({ data }) => {
     const { loading, error, getCategory = {} } = data
     const { recipes, imgUrl, name } = getCategory
-    const category = {
-      imgUrl,
-      name,
-    }
+    const category = { imgUrl, name }
 
     return { loading, error, category, recipes }
   },
