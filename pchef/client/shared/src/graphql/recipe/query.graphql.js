@@ -90,6 +90,7 @@ const recipeDetail = graphql(GET_RECIPE_DETAIL, {
 
   props: ({ data }) => {
     const { loading, error, getRecipe } = data
+
     return {
       loading,
       error,
