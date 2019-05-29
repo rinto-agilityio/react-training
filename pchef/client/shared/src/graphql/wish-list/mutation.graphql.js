@@ -17,22 +17,22 @@ const CREATE_WISHLIST = gql`
   }
 `
 
-const createWishList = graphql( CREATE_WISHLIST, {
-  props: ( { mutate } ) => ( {
+const createWishList = graphql(CREATE_WISHLIST, {
+  props: ({ mutate }) => ({
     createWishList: (
       categoryId,
       cookingTypeId,
-      date
-    ) => mutate( {
+      date,
+    ) => mutate({
       variables: {
         categoryId,
         cookingTypeId,
-        date
-      }
-    } )
-  } )
-} )
+        date,
+      },
+    }),
+  }),
+})
 
 export {
-  createWishList
+  createWishList,
 }
