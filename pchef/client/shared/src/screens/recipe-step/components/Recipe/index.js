@@ -20,7 +20,7 @@ import Error from '../../../../components/Error'
 import { recipes } from '../../../../mocks'
 
 // utils
-import { findStep, compareStep, customError } from '../../../../helpers/utils'
+import { findStep, compareStep, customError, checkFavorited, formatUserToggleSaveRes } from '../../../../helpers/utils'
 
 type Props = {
   recipeSteps: Array<{
@@ -48,6 +48,15 @@ type Props = {
   customSubTitle?: {},
   customTitleStep?: {},
   loading: boolean,
+  error: string,
+  getUser: {
+    favoriteRecipe: Array<{id: string}>
+  },
+  userToggleRecipe: (
+    recipeId: string,
+    favoriteRecipe: Array<{id: string}>
+  ) => Promise<{ data: {userToggleRecipe: {results: Array<string>}}}>,
+  id: string,
   error: {
     graphQLErrors: Array<{message: string}>
   }
@@ -62,6 +71,7 @@ const Recipe = ({
   customImage = {},
   customSubTitle,
   customTitleStep,
+  getUser,
   recipeSteps = [{
     description: '',
     imgUrl: '',
@@ -70,6 +80,8 @@ const Recipe = ({
   }],
   loading,
   error,
+  id,
+  userToggleRecipe,
 }: Props) => {
   // order recipeSteps by step asc
   const orderRecipeSteps = recipeSteps.sort(compareStep)
@@ -122,6 +134,18 @@ const Recipe = ({
   const onPressStep = step => {
     const stepInfoSelect = findStep(orderRecipeSteps, step)
     setStepInfo(stepInfoSelect)
+  }
+
+  const handleSaveRecipe = async () => {
+    await userToggleRecipe(id, getUser.favoriteRecipe).then(({ data }) => {
+      const {
+        userToggleRecipe: { results },
+      } = data
+
+      if (results) {
+        checkFavorited(formatUserToggleSaveRes(results), id)
+      }
+    })
   }
 
   return (
@@ -193,7 +217,8 @@ const Recipe = ({
       <Reaction
         votes={votes}
         size={size}
-        isFavorited={false}
+        isFavorited={checkFavorited(getUser.favoriteRecipe, id)}
+        onPressFavorite={handleSaveRecipe}
       />
       <Comment
         name={`by ${userId}`}
