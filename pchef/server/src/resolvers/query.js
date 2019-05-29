@@ -147,7 +147,26 @@ const Query = {
     const categories = await getDocumentWithListId(
       COLLECTION_NAME.CATEGORY,
       followCategory,
-    ).then(categories => categories)
+    ).then(categories => (
+      map(categories, category => {
+        const queryConditions = [
+          {
+            fieldName: 'categoryId',
+            operator: '==',
+            value: category.id,
+          },
+        ]
+
+        return getCollectionWithConditions(
+          COLLECTION_NAME.RECIPE,
+          queryConditions,
+        )
+          .then(recipes => ({
+            ...category,
+            recipes,
+          }))
+      })
+    ))
 
     // Get recipes by list recipes ids
     const recipes = await getDocumentWithListId(
@@ -155,10 +174,24 @@ const Query = {
       favoriteRecipe,
     ).then(recipes => recipes)
 
+    const queryConditions = [
+      {
+        fieldName: 'userId',
+        operator: '==',
+        value: userId,
+      },
+    ]
+    const ownRecipes = await getCollectionWithConditions(
+      COLLECTION_NAME.RECIPE,
+      queryConditions,
+    )
+      .then(recipes => recipes)
+
     return {
       user: userInfo,
       followCategory: categories,
       favoriteRecipe: recipes,
+      ownRecipes
     }
   }),
 

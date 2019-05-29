@@ -77,6 +77,7 @@ const typeDefs = gql`
     user: User!
     followCategory: [Category]
     favoriteRecipe: [Recipe]
+    ownRecipes: [Recipe]
   }
 
   type Query {
