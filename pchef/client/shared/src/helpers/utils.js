@@ -5,9 +5,8 @@
  * @return {array} array of string
  */
 
-export const formatStringToArray = (string: string, separator: string) => (
+export const formatStringToArray = (string: string, separator: string) =>
   string.split(separator) // Split string to array by separator
-)
 
 // init default value for stepInfo
 const defaultValue = {
@@ -30,7 +29,7 @@ export const findStep = (
     step: number,
     title: string,
   }>,
-  index: number,
+  index: number
 ) => arr.find(item => item.step === index) || defaultValue
 
 /**
@@ -40,13 +39,13 @@ export const findStep = (
  */
 export const compareStep = (a: {step: number}, b: {step: number}) => {
   if (a.step < b.step) {
-    return -1;
+    return -1
   }
   if (a.step > b.step) {
-    return 1;
+    return 1
   }
 
-  return 0;
+  return 0
 }
 
 /**
@@ -59,25 +58,24 @@ export const customError = (errorArr: Array<{message: string}>) => {
   if (errorArr) {
     errorArr.forEach(item => {
       errorMes = item.message
-    });
+    })
   }
 
-  return errorMes;
-};
+  return errorMes
+}
 
 /**
  * Checking current recipe saved
  */
-export const checkFavorited = (arr: Array<{id: string}>, currentId: string) => (
+export const checkFavorited = (arr: Array<{id: string}>, currentId: string) =>
   arr.findIndex(item => item.id === currentId) === -1 ? false : true
-)
 
 /**
  * Format favorite recipe get from getUser query
  * @param {Array} arr
  */
 export const formatFavoriteRecipe = (arr: Array<{id: string}>) => {
-  const newArr: Array<string> = arr.map((item: {id: string}) => item.id)
+  const newArr: Array<string> = arr.map((item: {id:string}) => item.id)
   return newArr
 }
 
@@ -86,6 +84,8 @@ export const formatFavoriteRecipe = (arr: Array<{id: string}>) => {
  * @param {Array} arr
  */
 export const formatUserToggleSaveRes = (arr: Array<string>) => {
-  const newArr: Array<{id: string}> = arr.map(item => Object.assign({ id: item, __typename: 'Recipe' }))
+  const newArr: Array<{id: string}> = arr.map(item => (
+    Object.assign({id: item, __typename: 'Recipe'})
+  ))
   return newArr
 }
