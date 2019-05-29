@@ -17,7 +17,8 @@ import { Provider as PaperProvider } from 'react-native-paper'
 import client from './config/apollo-client'
 
 // Containers
-import LoginContainer from './containers/Login'
+// import LoginContainer from './containers/Login'
+import CategoryContainer from './containers/Category'
 
 type AppProps = {}
 
@@ -36,10 +37,11 @@ export default class App extends Component<AppProps> {
             <Text style={styles.welcome}>
               Shared-components for both Web and Mobile
             </Text>
-            <LoginContainer
+            {/* <LoginContainer
               type="secondary"
               handlingLoginSuccess={this.handlingLoginSuccess}
-            />
+            /> */}
+            <CategoryContainer id="3xjHYbeO7D4b4UhjKeWU" />
           </View>
         </PaperProvider>
       </ApolloProvider>
