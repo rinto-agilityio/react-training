@@ -6,12 +6,12 @@ const CREATE_WISHLIST = gql`
     $categoryId: String!,
     $cookingTypeId: String!,
     $date: String!
-  ){
+  ) {
     createWishList(
       categoryId: $categoryId,
       cookingTypeId: $cookingTypeId,
       date: $date
-    ){
+    ) {
       id
     }
   }
