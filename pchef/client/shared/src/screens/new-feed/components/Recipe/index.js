@@ -10,7 +10,10 @@ import Image from '../../../../components/Image'
 import Reaction from '../../../../components/Reaction'
 
 // Helpers
-import { checkFavorited } from '../../../../helpers/utils'
+import {
+  checkFavorited,
+  formatUserToggleSaveRes,
+} from '../../../../helpers/utils'
 
 type Props = {
   recipe: {
@@ -24,12 +27,33 @@ type Props = {
   favoriteRecipe: Array<{
     id: string,
   }>,
+  userToggleRecipe: (
+    recipeId: string,
+    favoriteRecipe: Array<{ id: string }>
+  ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
 }
 
-const Recipe = ({ recipe, size = 'large', favoriteRecipe }: Props) => {
+const Recipe = ({
+  recipe,
+  size = 'large',
+  favoriteRecipe,
+  userToggleRecipe,
+}: Props) => {
   const { id, title, description, imgUrl, votes } = recipe
 
   const isFavorited = checkFavorited(favoriteRecipe, id)
+
+  const handleSaveRecipe = async () => {
+    await userToggleRecipe(id, favoriteRecipe).then(({ data }) => {
+      const {
+        userToggleRecipe: { results },
+      } = data
+
+      if (results) {
+        checkFavorited(formatUserToggleSaveRes(results), id)
+      }
+    })
+  }
 
   return (
     <TouchableOpacity style={[styles.wrapper, styles[`${size}Wrapper`]]}>
@@ -53,7 +77,12 @@ const Recipe = ({ recipe, size = 'large', favoriteRecipe }: Props) => {
           customImageStyle={[styles.image, styles[`${size}Image`]]}
         />
       </View>
-      <Reaction votes={votes} size={size} isFavorited={isFavorited} />
+      <Reaction
+        votes={votes}
+        size={size}
+        isFavorited={isFavorited}
+        onPressFavorite={handleSaveRecipe}
+      />
     </TouchableOpacity>
   )
 }

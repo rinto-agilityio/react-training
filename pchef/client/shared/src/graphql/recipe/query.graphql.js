@@ -109,4 +109,10 @@ const recipeDetail = graphql(GET_RECIPE_DETAIL, {
   },
 })
 
-export { getAllCookingTypes, getAllCategories, getRecipes, recipeDetail }
+export {
+  getAllCookingTypes,
+  getAllCategories,
+  getRecipes,
+  recipeDetail,
+  GET_RECIPES,
+}

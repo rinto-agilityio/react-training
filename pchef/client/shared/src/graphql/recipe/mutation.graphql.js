@@ -1,6 +1,15 @@
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
+import { GET_RECIPES } from './query.graphql'
+
+// Helpers
+import {
+  checkFavorited,
+  formatFavoriteRecipe,
+  formatUserToggleSaveRes,
+} from '../../helpers/utils'
+
 const CREATE_RECIPE = gql`
   mutation createRecipe(
     $categoryId: String!,
@@ -43,6 +52,13 @@ const CREATE_RECIPE_STEP = gql`
       id
       step
       title
+    }
+  }
+`
+const TOGGLE_RECIPE = gql`
+  mutation userToggleRecipe($recipeId: String!) {
+    userToggleRecipe(recipeId: $recipeId) {
+      results
     }
   }
 `
@@ -91,7 +107,48 @@ const createRecipeStep = graphql(CREATE_RECIPE_STEP, {
   }),
 })
 
+const userToggleRecipe = graphql(TOGGLE_RECIPE, {
+  props: ({ mutate }) => ({
+    userToggleRecipe: (recipeId, favoriteRecipe) => mutate({
+      variables: {
+        recipeId,
+      },
+      optimisticResponse: {
+        userToggleRecipe: {
+          __typename: 'PayloadResults',
+          results: checkFavorited(favoriteRecipe, recipeId) ?
+            formatFavoriteRecipe(favoriteRecipe.filter(item => item.id !== recipeId))
+            :
+            formatFavoriteRecipe(favoriteRecipe).concat(recipeId),
+        },
+      },
+    }),
+  }),
+  options: {
+    update: (proxy, { data }) => {
+      try {
+        const {
+          userToggleRecipe: { results },
+        } = data
+        const dataQuery = proxy.readQuery({ query: GET_RECIPES })
+        const dataUpdated = {
+          ...dataQuery,
+          getUser: {
+            ...dataQuery.getUser,
+            favoriteRecipe: formatUserToggleSaveRes(results),
+            __typename: 'UserFullInfos',
+          },
+        }
+        proxy.writeQuery({ query: GET_RECIPES, data: dataUpdated })
+      } catch (err) {
+        return { error: 'Failed!' }
+      }
+    },
+  },
+})
+
 export {
   createRecipe,
   createRecipeStep,
+  userToggleRecipe,
 }

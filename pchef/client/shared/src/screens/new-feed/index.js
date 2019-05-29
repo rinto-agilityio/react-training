@@ -27,7 +27,10 @@ type Props = {
       }>,
     }>,
   },
-
+  userToggleRecipe: (
+    recipeId: string,
+    favoriteRecipe: Array<{ id: string }>
+  ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
   type?: string,
   onPressCategoryIcon: () => void,
   onPressLogo: () => void,
@@ -42,6 +45,7 @@ const NewFeed = ({
   data,
   onPressCategoryIcon,
   onPressLogo,
+  userToggleRecipe,
 }: Props) => {
   const errorMessage = 'Connect failed!!!'
 
@@ -76,6 +80,7 @@ const NewFeed = ({
           recipes={recipesList}
           type={type}
           favoriteRecipe={favoriteRecipe}
+          userToggleRecipe={userToggleRecipe}
         />
       )}
     </ScrollView>
