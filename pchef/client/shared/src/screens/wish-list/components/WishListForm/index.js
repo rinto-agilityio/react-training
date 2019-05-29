@@ -30,17 +30,17 @@ type Props = {
   ) => Promise<{ data: { createWishList: { id: string } } }>,
 }
 
-const WishListForm = ( {
+const WishListForm = ({
   size = 'medium',
   createWishList,
-}: Props ) => {
-  const [visible, setVisible] = useState( false )
-  const [visibleCategories, setVisibleCategories] = useState( false )
-  const [visibleCookingTypes, setVisibleCookingTypes] = useState( false )
-  const [category, setCategory] = useState( {} )
-  const [cookingType, setCookingType] = useState( {} )
-  const today = getDateForCalendar( Date.now() )
-  const [selectedDay, setSelectedDay] = useState( today )
+}: Props) => {
+  const [visible, setVisible] = useState(false)
+  const [visibleCategories, setVisibleCategories] = useState(false)
+  const [visibleCookingTypes, setVisibleCookingTypes] = useState(false)
+  const [category, setCategory] = useState({})
+  const [cookingType, setCookingType] = useState({})
+  const today = getDateForCalendar(Date.now())
+  const [selectedDay, setSelectedDay] = useState(today)
   const [error, setError] = useState('')
 
   const dayRange = getDateOfWeek()
@@ -57,67 +57,65 @@ const WishListForm = ( {
       value: cookingType.name || '',
     },
   ]
-  
+
   const handleCreateWishList = async () => {
     const categoryId = category.id
     const cookingTypeId = cookingType.id
     const date = selectedDay;
-    
-    const errors = validator( {
+
+    const errors = validator({
       categoryId,
       cookingTypeId,
-    } )
-    
+    })
+
     if (!Object.keys(errors).length) {
       try {
         await createWishList(
           categoryId,
           cookingTypeId,
           new Date(date).getTime().toString(),
-        ).then( ( { data = {} } ) => {
-           return data.createWishList
-        })
+        ).then(({ data = {} }) => data.createWishList)
       } catch (err) {
         setError(err)
       }
     }
   }
-  
+
   if (error) {
     return <Error message={error} />
   }
 
   return (
-    <View style={ styles.container }>
+    <View style={styles.container}>
       <Icon
         name="date-range"
         size={METRICS[`${size}Icon`]}
-        onPress={() => setVisible( true )}
-        label='Select date'
+        onPress={() => setVisible(true)}
+        label="Select date"
         wrapperIconStyle={[styles.icon, styles.wrapperMainPhoto]}
         customStyle={styles[`${size}Input`]}
       />
       { visible && (
         <Modal
-          onDismiss={ () => setVisible( false ) }
-          visible={ visible }
-          onSubmit={ () => setVisible( false ) }
-          size={ size }
+          onDismiss={() => setVisible(false)}
+          visible={visible}
+          onSubmit={() => setVisible(false)}
+          size={size}
         >
           <Calendar
-            selectedDay={ selectedDay }
-            dayRange={ dayRange }
-            onSelectDay={ ( { dateString } ) => setSelectedDay( dateString ) }
-            size={ size }
+            selectedDay={selectedDay}
+            dayRange={dayRange}
+            onSelectDay={({ dateString }) => setSelectedDay(dateString)}
+            size={size}
           />
         </Modal>
       ) }
       <Wrapper
         direction="column"
         childPosition="middle"
-        customStyles={[styles.wrapperIcon, styles.wrapperClassifyIcon]}
+        customStyles={[styles.wrapperIcon]}
       >
-        {dataIconClassify.map(({ onPress, label, value }, index) => (
+        { dataIconClassify.map(({ onPress, label, value }, index) => (
           <View key={`add-circle_${index}`} style={{ width: '100%' }}>
             <Icon
               name="add-circle"
@@ -127,39 +125,39 @@ const WishListForm = ( {
               wrapperIconStyle={[styles.icon, styles.classifyIcon]}
               customStyle={styles[`${size}Input`]}
             />
-            {value ? (
+            { value ? (
               <Text style={[{ marginBottom: METRICS.largeMargin }, styles[`${size}Input`]]}>
-                {value}
+                { value }
               </Text>
-            ) : null}
+            ) : null }
           </View>
-        ))}
+        )) }
       </Wrapper>
       {
         visibleCategories && (
           <Categories
-            size={ size }
+            size={size}
             title="Categories"
-            onDismiss={ () => setVisibleCategories( false ) }
-            visible={ visibleCategories }
-            handleSubmit={ value => {
-              setCategory( value )
-              setVisibleCategories( false )
-            } }
+            onDismiss={() => setVisibleCategories(false)}
+            visible={visibleCategories}
+            handleSubmit={value => {
+              setCategory(value)
+              setVisibleCategories(false)
+            }}
           />
         )
       }
       {
         visibleCookingTypes && (
           <CookingTypes
-            size={ size }
+            size={size}
             title="Cooking types"
-            onDismiss={ () => setVisibleCookingTypes( false ) }
-            visible={ visibleCookingTypes }
-            handleSubmit={ value => {
-              setCookingType( value )
-              setVisibleCookingTypes( false )
-            } }
+            onDismiss={() => setVisibleCookingTypes(false)}
+            visible={visibleCookingTypes}
+            handleSubmit={value => {
+              setCookingType(value)
+              setVisibleCookingTypes(false)
+            }}
           />
         )
       }
