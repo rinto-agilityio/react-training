@@ -1,44 +1,43 @@
 import React, { useState } from 'react'
 
 // Components
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import TabHeaderItem from '../TabHeaderItem'
-import Recipe from '../../../new-feed/components/Recipe'
-import Category from '../Category'
+import TabContent from '../TabContent'
 
 // Styles
 import styles from './styles'
 
 type Props = {
-  categories?: Array<{
-    name: string,
-    imgUrl: string,
-  }>,
-  recipes?: Array<{
+  ownRecipes?: Array<{
     id: string,
     title: string,
     imgUrl: string,
     description: string,
-    votes: Array<number>,
+    votes: Array<string>,
+  }>,
+  favoriteRecipe?: Array<{
+    id: string,
+    title: string,
+    imgUrl: string,
+    description: string,
+    votes: Array<string>,
   }>,
 }
-const Tabs = ({ categories = [], recipes = [] }: Props) => {
+const Tabs = ({ ownRecipes = [], favoriteRecipe = [] }: Props) => {
   // state
   const [tabActive, setTabActive] = useState(0)
-  const totalOfRecipes = recipes.length
-  const totalOfCatefories = categories.length
+  const totalOfFavoriteRecipes = favoriteRecipe.length
+  const totalOfOwnRecipes = ownRecipes.length
 
   const tabs = [
-    { name: 'recipes', number: totalOfRecipes },
-    { name: 'favorites', number: totalOfCatefories },
+    { name: 'recipes', number: totalOfOwnRecipes },
+    { name: 'favorites', number: totalOfFavoriteRecipes },
   ]
 
-  const NO_RECIPES_MESSAGE = 'No recipes to show'
-  const NO_CATEGORIES_MESSAGE = 'No categories to show'
-
   return (
-    <View>
-      <View style={styles.wrapTabs}>
+    <View style={styles.container}>
+      <View style={[styles.container, styles.wrapTabs]}>
         {tabs.map((tab, index) => (
           <TabHeaderItem
             key={index}
@@ -50,37 +49,19 @@ const Tabs = ({ categories = [], recipes = [] }: Props) => {
         ))}
       </View>
       <View style={styles.wrapContent}>
-        {tabActive === 0 &&
-          (!totalOfRecipes ? (
-            <Text>{NO_RECIPES_MESSAGE}</Text>
-          ) : (
-            recipes &&
-            recipes.map((recipe, index) => (
-              <View key={index} style={styles.tabContentItem}>
-                <Recipe size="medium" recipe={recipe} />
-              </View>
-            ))
-          ))}
-
-        {tabActive === 1 &&
-          (!totalOfCatefories ? (
-            <Text>{NO_CATEGORIES_MESSAGE}</Text>
-          ) : (
-            categories &&
-            categories.map((category, index) => (
-              <View key={index} style={styles.tabContentItem}>
-                <Category category={category} />
-              </View>
-            ))
-          ))}
+        {tabActive === 0 ? (
+          <TabContent recipes={ownRecipes} />
+        ) : (
+          <TabContent recipes={favoriteRecipe} />
+        )}
       </View>
     </View>
   )
 }
 
 Tabs.defaultProps = {
-  recipes: [],
-  categories: [],
+  favoriteRecipe: [],
+  ownRecipes: [],
 }
 
 export default Tabs
