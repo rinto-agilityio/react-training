@@ -76,7 +76,6 @@ const WishListForm = ( {
           cookingTypeId,
           new Date(date).getTime().toString(),
         ).then( ( { data = {} } ) => {
-          console.log('id', data.createWishList.id);
            return data.createWishList
         })
       } catch (err) {
