@@ -73,7 +73,7 @@ const WishListForm = ({
         await createWishList(
           categoryId,
           cookingTypeId,
-          new Date(date).getTime().toString(),
+          getMilisecondsFromTime(date).toString(),
         ).then(({ data = {} }) => data.createWishList)
       } catch (err) {
         setError(err)
