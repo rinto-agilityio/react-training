@@ -26,7 +26,7 @@ const GET_CATEGORY = gql`
 `
 
 export const getCategory = graphql(GET_CATEGORY, {
-  options: id => ({
+  options: ({ id }) => ({
     variables: { id },
   }),
   props: ({ data }) => {
