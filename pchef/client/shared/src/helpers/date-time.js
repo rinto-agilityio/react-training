@@ -53,6 +53,4 @@ export const getPublishedTime = (time: number) => fromNow(time, { and: true, suf
  * @param {string} time is a timestamp
  * @return {string} milisecond from time
  */
-export const getMilisecondsFromTime = ( time: string ) => {
-  return new Date(time).getTime()
-}
+export const getMilisecondsFromTime = (time: string) => new Date(time).getTime()
