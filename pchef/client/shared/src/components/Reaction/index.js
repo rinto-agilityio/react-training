@@ -13,11 +13,12 @@ import Icon from '../Icon'
 
 type Props = {
   isFavorited?: boolean,
+  isVote?: boolean,
   customWrapperIcon?: {},
   size: string,
-  votes: Array<number>,
+  votes: Array<string>,
   onPressFavorite?: () => void | Promise<void>,
-  onPressVote?: () => void,
+  onPressVote?: () => void | Promise<void>,
 }
 
 const Reaction = ({
@@ -25,20 +26,21 @@ const Reaction = ({
   customWrapperIcon,
   onPressFavorite,
   onPressVote,
+  isVote,
   size = '',
   votes = [],
 }: Props) => {
   // Data render reaction icon
   const data = [
     {
-      name: isFavorited ? 'favorite' : 'favorite-border',
-      color: COLORS.grayDarker,
+      name: 'favorite',
+      color: isFavorited ? COLORS.blue : COLORS.grayDarker,
       label: 'Save',
       onPress: onPressFavorite,
     },
     {
       name: 'thumb-up',
-      color: COLORS.grayDarker,
+      color: isVote ? COLORS.blue : COLORS.grayDarker,
       label: votes.length,
       onPress: onPressVote,
     },
@@ -66,6 +68,7 @@ Reaction.defaultProps = {
   onPressFavorite: () => {},
   onPressVote: () => {},
   isFavorited: false,
+  isVote: false,
 }
 
 export default Reaction
