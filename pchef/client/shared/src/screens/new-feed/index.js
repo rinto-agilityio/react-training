@@ -11,21 +11,20 @@ import Loading from '../../components/Loading'
 
 type Props = {
   customStyles?: {},
+  error: string,
+  loading: boolean,
   data: {
-    error: string,
-    loading: boolean,
-    getUser: {
-      followCategory: Array<{
-        recipes: Array<{
-          id: string,
-          title: string,
-          description: string,
-          imgUrl: string,
-          votes: Array<string>,
-        }>,
+    followCategory: Array<{
+      recipes: Array<{
+        id: string,
+        title: string,
+        description: string,
+        imgUrl: string,
+        votes: Array<string>,
       }>,
-    },
+    }>,
   },
+
   type?: string,
   onPressCategoryIcon: () => void,
   onPressLogo: () => void,
@@ -35,13 +34,13 @@ type Props = {
 const NewFeed = ({
   customStyles = {},
   type = 'primary',
+  loading,
+  error,
   data,
   onPressCategoryIcon,
   onPressLogo,
 }: Props) => {
   const errorMessage = 'Connect failed!!!'
-
-  const { error, loading, getUser } = data
 
   if (error) {
     return <Error message={errorMessage} />
@@ -51,7 +50,7 @@ const NewFeed = ({
 
   let recipesList = []
 
-  getUser.followCategory.forEach(category => {
+  data.followCategory.forEach(category => {
     recipesList = recipesList.concat(category.recipes)
   })
 

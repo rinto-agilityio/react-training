@@ -83,7 +83,11 @@ const getRecipes = graphql(GET_RECIPES, {
     fetchPolicy: 'cache-and-network',
   }),
 
-  props: ({ data }) => ({ data }),
+  props: ({ data: { loading, error, getUser } }) => ({
+    loading,
+    error,
+    data: getUser,
+  }),
 })
 
 const recipeDetail = graphql(GET_RECIPE_DETAIL, {
