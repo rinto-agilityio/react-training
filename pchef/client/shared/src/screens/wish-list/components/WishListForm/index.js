@@ -27,7 +27,7 @@ type Props = {
     categoryId: string,
     cookingTypeId: string,
     date: string,
-  ) => Promise<{ data: { createWishList: { id: string } } }>,
+  ) => Promise<{ data: { createWishList: { id: string } }}>,
 }
 
 const WishListForm = ({
