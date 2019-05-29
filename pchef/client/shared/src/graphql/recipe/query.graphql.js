@@ -90,13 +90,17 @@ const recipeDetail = graphql(GET_RECIPE_DETAIL, {
 
   props: ({ data }) => {
     const { loading, error, getRecipe } = data
-
     return {
       loading,
       error,
-      recipe: getRecipe,
+      getRecipe,
     }
   },
 })
 
-export { getAllCookingTypes, getAllCategories, getRecipes, recipeDetail }
+export {
+  getAllCookingTypes,
+  getAllCategories,
+  getRecipes, recipeDetail,
+  GET_RECIPE_DETAIL,
+}

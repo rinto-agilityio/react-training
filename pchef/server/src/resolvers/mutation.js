@@ -133,9 +133,11 @@ const Mutation = {
   }),
 
   userToggleVote: authenticated((_, { recipeId }, { currentUser }) => {
+
     return getDocument(`${COLLECTION_NAME.RECIPE}/${recipeId}`)
       .then(recipe => {
         const newVotes = toggleItemInArray(recipe.votes, currentUser.id)
+
         return updateDocument(`${COLLECTION_NAME.RECIPE}/${recipeId}`, {
           votes: newVotes,
         })
@@ -144,7 +146,7 @@ const Mutation = {
           }))
           .catch(error => error)
       })
-      .catch(erro => error)
+      .catch(error => error)
   }),
 
   // RecipeStep

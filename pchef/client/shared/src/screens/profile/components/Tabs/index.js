@@ -19,7 +19,7 @@ type Props = {
     title: string,
     imgUrl: string,
     description: string,
-    votes: Array<number>,
+    votes: Array<string>,
   }>,
 }
 const Tabs = ({ categories = [], recipes = [] }: Props) => {

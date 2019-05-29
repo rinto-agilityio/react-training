@@ -20,7 +20,7 @@ import Error from '../../../../components/Error'
 import { recipes } from '../../../../mocks'
 
 // utils
-import { findStep, compareStep, customError, checkContain, formatUserToggleSaveRes } from '../../../../helpers/utils'
+import { findStep, compareStep, customError, checkContainField, formatAddFiledObject } from '../../../../helpers/utils'
 
 type Props = {
   recipeSteps: Array<{
@@ -50,6 +50,9 @@ type Props = {
   loading: boolean,
   error: string,
   getUser: {
+    user: {
+      id: string
+    },
     favoriteRecipe: Array<{id: string}>
   },
   userToggleRecipe: (
@@ -58,6 +61,8 @@ type Props = {
   ) => Promise<{ data: {userToggleRecipe: {results: Array<string>}}}>,
   userToggleVote: (
     recipeId: string,
+    votes: Array<string>,
+    userId: string
   ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
   id: string,
   votes: Array<string>,
@@ -87,7 +92,7 @@ const Recipe = ({
   id,
   userToggleRecipe,
   userToggleVote,
-  votes
+  votes,
 }: Props) => {
   // order recipeSteps by step asc
   const orderRecipeSteps = recipeSteps.sort(compareStep)
@@ -108,10 +113,15 @@ const Recipe = ({
   if (loading) {
     return <Loading />
   }
-
   if (error) {
     return <Error message={customError(error.graphQLErrors)} />
   }
+
+  const {
+    favoriteRecipe,
+    user,
+  } = getUser
+
   /**
    * Handle when user click prev or next icon
    * param {name}
@@ -142,21 +152,27 @@ const Recipe = ({
   }
 
   const handleSaveRecipe = async () => {
-    await userToggleRecipe(id, getUser.favoriteRecipe).then(({ data }) => {
+    await userToggleRecipe(id, favoriteRecipe).then(({ data }) => {
       const {
         userToggleRecipe: { results },
       } = data
 
       if (results) {
-        checkContain(formatUserToggleSaveRes(results), id)
+        checkContainField(formatAddFiledObject(results), id)
       }
     })
   }
 
   const handleToggleVote = async () => {
-    await userToggleVote(id)
+    await userToggleVote(id, votes, user.id)
       .then(({ data }) => {
-        console.log('data', data);
+        const {
+          userToggleVote: { results },
+        } = data
+
+        if (results) {
+          checkContainField(formatAddFiledObject(votes), id)
+        }
       })
   }
 
@@ -229,9 +245,10 @@ const Recipe = ({
       <Reaction
         votes={votes}
         size={size}
-        isFavorited={checkContain(getUser.favoriteRecipe, id)}
+        isFavorited={checkContainField(getUser.favoriteRecipe, id)}
         onPressFavorite={handleSaveRecipe}
         onPressVote={handleToggleVote}
+        isVote={checkContainField(formatAddFiledObject(votes), user.id)}
       />
       <Comment
         name={`by ${userId}`}

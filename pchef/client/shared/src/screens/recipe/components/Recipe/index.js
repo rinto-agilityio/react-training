@@ -11,12 +11,17 @@ import Directions from './Directions'
 import Loading from '../../../../components/Loading'
 import Error from '../../../../components/Error'
 
+// Containers
+import RecipeStepContainer from '../../../../containers/RecipeStep'
+
 // Helper
 import { customError } from '../../../../helpers/utils'
 
 type Props = {
-  recipe: {
+  getRecipe: {
+    id: string,
     description: string,
+    votes: Array<string>,
   },
   size: string,
   onSelectStep?: () => void,
@@ -29,14 +34,13 @@ type Props = {
 }
 
 const Recipe = ({
-  recipe,
+  getRecipe,
   size = 'medium',
   onSelectStep,
   loading,
   error,
   recipeSteps,
 }: Props) => {
-
   if (loading) {
     return <Loading />
   }
@@ -46,7 +50,9 @@ const Recipe = ({
 
   const {
     description,
-  } = recipe
+    votes,
+    id,
+  } = getRecipe
 
   return (
     <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
@@ -59,6 +65,14 @@ const Recipe = ({
         size={size}
         onSelectStep={onSelectStep}
       />
+      {
+        true && (
+        <RecipeStepContainer
+          id={id}
+          votes={votes}
+        />
+        )
+      }
     </View>
   )
 }
