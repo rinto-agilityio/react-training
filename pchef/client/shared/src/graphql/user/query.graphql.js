@@ -8,9 +8,12 @@ const GET_USER = gql`
         name
         avatar
       }
-      followCategory {
-        name
+      ownRecipes {
+        id
+        title
         imgUrl
+        votes
+        description
       }
       favoriteRecipe {
         id

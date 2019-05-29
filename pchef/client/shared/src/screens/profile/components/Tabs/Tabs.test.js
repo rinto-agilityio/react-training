@@ -1,13 +1,12 @@
 // Components
-import { Text } from 'react-native'
 import Tabs from '.'
 
 // Mocks
-import { categories, recipes } from '../../../../mocks'
+import { recipes } from '../../../../mocks'
 
 const props = {
-  categories,
-  recipes,
+  ownRecipes: recipes,
+  favoriteRecipe: recipes,
 }
 
 describe('Components', () => {
@@ -23,39 +22,21 @@ describe('Components', () => {
       expect(renderComponent).toMatchSnapshot()
     })
 
-    it('should render list recipes', () => {
-      expect(component.find('Recipe').length).toBe(props.recipes.length)
+    it('should render list own recipes', () => {
+      expect(component.find('TabContent').props().recipes.length).toBe(
+        props.ownRecipes.length,
+      )
     })
 
-    it('should render list categories', () => {
+    it('should render list favorite recipes', () => {
       component
         .find('TabHeaderItem')
         .at(1)
         .props()
         .handlePressTab()
-      expect(component.find('Category').length).toBe(props.categories.length)
-    })
-
-    it('should render message when have no categories', () => {
-      const text = 'No categories to show'
-      component.setProps({ categories: [] })
-
-      // click to categories tab
-      component
-        .find('TabHeaderItem')
-        .at(1)
-        .props()
-        .handlePressTab()
-      component.update()
-
-      expect(component.contains(<Text>{text}</Text>)).toBe(true)
-    })
-
-    it('should render message when have no recipes', () => {
-      const text = 'No recipes to show'
-      component.setProps({ recipes: [] })
-      component.update()
-      expect(component.contains(<Text>{text}</Text>)).toBe(true)
+      expect(component.find('TabContent').props().recipes.length).toBe(
+        props.favoriteRecipe.length,
+      )
     })
   })
 })

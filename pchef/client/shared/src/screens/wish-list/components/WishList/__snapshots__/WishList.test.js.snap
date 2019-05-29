@@ -1,13 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Wish list Render wish component with defaultProps 1`] = `
+exports[`Wish list Render wish component with category, cookingType 1`] = `
 <div
   className="css-view-1dbjc4n r-borderBottomColor-1nd8m0h r-borderBottomWidth-qklmqi r-display-6koalj r-padding-1pcd2l5"
 >
   <div
     className="css-text-76zvg2 r-color-cqee49 r-fontSize-adyw6z r-fontWeight-vw2c0b r-marginBottom-117bsoe"
     dir="auto"
-  />
+  >
+    2019-05-28
+  </div>
   <div
     className="css-text-76zvg2 r-fontSize-1i10wst"
     dir="auto"
@@ -17,55 +19,87 @@ exports[`Wish list Render wish component with defaultProps 1`] = `
       className="css-text-76zvg2 css-textHasAncestor-16my406 r-fontSize-1i10wst r-fontWeight-vw2c0b"
       dir="auto"
     >
-       undefined 
+       Heathy 
     </span>
     with
     <span
       className="css-text-76zvg2 css-textHasAncestor-16my406 r-fontSize-1i10wst r-fontWeight-vw2c0b"
       dir="auto"
     >
-       undefined 
+       Roasting 
     </span>
   </div>
 </div>
 `;
 
-exports[`Wish list Render wish component with size medium 1`] = `
-<div
-  className="css-view-1dbjc4n r-borderBottomColor-1nd8m0h r-borderBottomWidth-qklmqi r-display-6koalj r-padding-1pcd2l5"
->
-  <div
-    className="css-text-76zvg2 r-color-cqee49 r-fontSize-adyw6z r-fontWeight-vw2c0b r-marginBottom-117bsoe"
-    dir="auto"
-  >
-    2019-05-15
-  </div>
-  <div
-    className="css-text-76zvg2 r-fontSize-1i10wst"
-    dir="auto"
-  >
-    Get the recipe for
-    <span
-      className="css-text-76zvg2 css-textHasAncestor-16my406 r-fontSize-1i10wst r-fontWeight-vw2c0b"
-      dir="auto"
-    >
-       1 
-    </span>
-    with
-    <span
-      className="css-text-76zvg2 css-textHasAncestor-16my406 r-fontSize-1i10wst r-fontWeight-vw2c0b"
-      dir="auto"
-    >
-       1 
-    </span>
-  </div>
-</div>
-`;
+exports[`Wish list Render wish component with defaultProps 1`] = `null`;
+
+exports[`Wish list Render wish component with size medium 1`] = `null`;
 
 exports[`Wish list Render wish list component with defaultProps 1`] = `
 <div
   className="css-view-1dbjc4n"
 />
+`;
+
+exports[`Wish list Render wish list component with error 1`] = `
+<div
+  className="css-text-76zvg2 r-color-1vs7qoz r-fontSize-1i10wst r-fontStyle-36ujnk"
+  dir="auto"
+>
+  Error!
+</div>
+`;
+
+exports[`Wish list Render wish list component with loading true 1`] = `
+<div
+  className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-drfeu3 r-bottom-1p0dtai r-justifyContent-1777fci r-left-1d2f490 r-position-1xcajam r-right-zchlnj r-top-ipm5af r-zIndex-1sg8ghl"
+>
+  <div
+    aria-valuemax="1"
+    aria-valuemin="0"
+    className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
+    role="progressbar"
+  >
+    <div
+      className="css-view-1dbjc4n r-animationDuration-17bb2tj r-animationIterationCount-1muvv40 r-animationKeyframes-127358a r-animationTimingFunction-1ldzwu0 r-height-z80fyv r-width-19wmn03"
+    >
+      <svg
+        height="100%"
+        viewBox="0 0 32 32"
+        width="100%"
+      >
+        <circle
+          cx="16"
+          cy="16"
+          fill="none"
+          r="14"
+          strokeWidth="4"
+          style={
+            Object {
+              "opacity": 0.2,
+              "stroke": "#c5c5c5",
+            }
+          }
+        />
+        <circle
+          cx="16"
+          cy="16"
+          fill="none"
+          r="14"
+          strokeWidth="4"
+          style={
+            Object {
+              "stroke": "#c5c5c5",
+              "strokeDasharray": 80,
+              "strokeDashoffset": 60,
+            }
+          }
+        />
+      </svg>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Wish list Render wish list component with size medium 1`] = `
@@ -74,99 +108,10 @@ exports[`Wish list Render wish list component with size medium 1`] = `
 />
 `;
 
-exports[`Wish list Renders correctly wish commponent 1`] = `
-<div
-  className="css-view-1dbjc4n r-borderBottomColor-1nd8m0h r-borderBottomWidth-qklmqi r-display-6koalj r-padding-1pcd2l5"
->
-  <div
-    className="css-text-76zvg2 r-color-cqee49 r-fontSize-adyw6z r-fontWeight-vw2c0b r-marginBottom-117bsoe"
-    dir="auto"
-  >
-    2019-05-15
-  </div>
-  <div
-    className="css-text-76zvg2 r-fontSize-1i10wst"
-    dir="auto"
-  >
-    Get the recipe for
-    <span
-      className="css-text-76zvg2 css-textHasAncestor-16my406 r-fontSize-1i10wst r-fontWeight-vw2c0b"
-      dir="auto"
-    >
-       1 
-    </span>
-    with
-    <span
-      className="css-text-76zvg2 css-textHasAncestor-16my406 r-fontSize-1i10wst r-fontWeight-vw2c0b"
-      dir="auto"
-    >
-       1 
-    </span>
-  </div>
-</div>
-`;
+exports[`Wish list Renders correctly wish commponent 1`] = `null`;
 
 exports[`Wish list Renders correctly wish list commponent 1`] = `
 <div
   className="css-view-1dbjc4n"
->
-  <div
-    className="css-view-1dbjc4n r-borderBottomColor-1nd8m0h r-borderBottomWidth-qklmqi r-display-6koalj r-padding-1pcd2l5"
-  >
-    <div
-      className="css-text-76zvg2 r-color-cqee49 r-fontSize-adyw6z r-fontWeight-vw2c0b r-marginBottom-117bsoe"
-      dir="auto"
-    >
-      2019-05-15
-    </div>
-    <div
-      className="css-text-76zvg2 r-fontSize-1i10wst"
-      dir="auto"
-    >
-      Get the recipe for
-      <span
-        className="css-text-76zvg2 css-textHasAncestor-16my406 r-fontSize-1i10wst r-fontWeight-vw2c0b"
-        dir="auto"
-      >
-         1 
-      </span>
-      with
-      <span
-        className="css-text-76zvg2 css-textHasAncestor-16my406 r-fontSize-1i10wst r-fontWeight-vw2c0b"
-        dir="auto"
-      >
-         1 
-      </span>
-    </div>
-  </div>
-  <div
-    className="css-view-1dbjc4n r-borderBottomColor-1nd8m0h r-borderBottomWidth-qklmqi r-display-6koalj r-padding-1pcd2l5"
-  >
-    <div
-      className="css-text-76zvg2 r-color-cqee49 r-fontSize-adyw6z r-fontWeight-vw2c0b r-marginBottom-117bsoe"
-      dir="auto"
-    >
-      2019-05-16
-    </div>
-    <div
-      className="css-text-76zvg2 r-fontSize-1i10wst"
-      dir="auto"
-    >
-      Get the recipe for
-      <span
-        className="css-text-76zvg2 css-textHasAncestor-16my406 r-fontSize-1i10wst r-fontWeight-vw2c0b"
-        dir="auto"
-      >
-         2 
-      </span>
-      with
-      <span
-        className="css-text-76zvg2 css-textHasAncestor-16my406 r-fontSize-1i10wst r-fontWeight-vw2c0b"
-        dir="auto"
-      >
-         2 
-      </span>
-    </div>
-  </div>
-</div>
+/>
 `;

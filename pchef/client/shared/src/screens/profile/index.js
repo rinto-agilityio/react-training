@@ -18,9 +18,12 @@ type Props = {
       name: string,
       avatar: string,
     },
-    followCategory: Array<{
-      name: string,
+    ownRecipes: Array<{
+      id: string,
+      title: string,
       imgUrl: string,
+      votes: Array<string>,
+      description: string,
     }>,
     favoriteRecipe: Array<{
       id: string,
@@ -43,12 +46,12 @@ const Profile = ({ data, loading, error }: Props) => {
     return <Error message={errorMessage} />
   }
 
-  const { user, favoriteRecipe, followCategory } = data
+  const { user, favoriteRecipe, ownRecipes } = data
 
   return (
     <View style={styles.profile}>
       <Header user={user} />
-      <Tabs categories={followCategory} recipes={favoriteRecipe} />
+      <Tabs ownRecipes={ownRecipes} favoriteRecipe={favoriteRecipe} />
     </View>
   )
 }

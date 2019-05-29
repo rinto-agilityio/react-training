@@ -8,7 +8,11 @@ import { METRICS } from '../../themes'
 const styles = StyleSheet.create({
   container: {
     marginTop: METRICS.largeMargin,
+    marginRight: 'auto',
+    marginBottom: METRICS.largeMargin,
+    marginLeft: 'auto',
     position: 'relative',
+    width: METRICS.extraLargeScreen,
   },
 })
 
