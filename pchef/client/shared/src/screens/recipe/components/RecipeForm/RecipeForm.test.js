@@ -8,7 +8,11 @@ import IngredientsForm from './IngredientsForm'
 import Classify from './Classify'
 
 // Mocks
-import { categories } from '../../../../mocks/categories'
+import { categories, cookingTypes } from '../../../../mocks'
+
+import { validator } from '../../../../helpers/validators'
+
+jest.mock('../../../../helpers/validators')
 
 describe('recipe form', () => {
   const recipeProps = {
@@ -113,12 +117,12 @@ describe('recipe form', () => {
   })
 
   it('Renders correctly directions form commponent with size medium', () => {
-    const directions = renderer.create(<DirectionsForm props={{ size: 'medium' }} />).toJSON()
+    const directions = renderer.create(<DirectionsForm size="medium" />).toJSON()
     expect(directions).toMatchSnapshot()
   })
 
   it('Renders correctly directions form commponent with size large', () => {
-    const directions = renderer.create(<DirectionsForm props={{ size: 'large' }} />).toJSON()
+    const directions = renderer.create(<DirectionsForm size="large" />).toJSON()
     expect(directions).toMatchSnapshot()
   })
 
@@ -128,6 +132,22 @@ describe('recipe form', () => {
     expect(directions.find('TextBox').exists()).toEqual(true)
   })
 
+  it('createRecipeStep not called if errors exist', () => {
+    // mock props
+    const props = {
+      createRecipeStep: jest.fn(),
+    }
+    validator.mockReturnValue({
+      title: 'Required',
+    })
+
+    const directions = shallow(<DirectionsForm {...props} />)
+
+    directions.find('Button').at(1).props().onPress()
+
+    expect(props.createRecipeStep).not.toHaveBeenCalled()
+  })
+
   it('Should update directions when create recipe step success', async () => {
     // mock props
     const props = {
@@ -135,6 +155,7 @@ describe('recipe form', () => {
         error()
       }),
     }
+    validator.mockReturnValue({})
 
     const directions = shallow(<DirectionsForm {...props} />)
 
@@ -163,6 +184,23 @@ describe('recipe form', () => {
     await wait(0)
 
     expect(directions.find('Directions').length).toBe(1)
+  })
+
+  it('Should update directions when create recipe step fail', async () => {
+    // mock props
+    const props = {
+      createRecipeStep: jest.fn(() => 'Error'),
+    }
+    validator.mockReturnValue({})
+
+    const directions = shallow(<DirectionsForm {...props} />)
+
+    directions.find('Button').at(1).props().onPress()
+
+    // wait for component update
+    await wait(0)
+
+    expect(directions.find('Error').length).toBe(1)
   })
 
   it('Render directions form component with defaultProps function', () => {
@@ -244,11 +282,11 @@ describe('recipe form', () => {
     expect(classify).toMatchSnapshot()
   })
 
-  it('Render Classify component with data', () => {
+  it('Render Classify component with cookingTypes data', () => {
     classifyProps = {
       ...classifyProps,
       loading: false,
-      data: categories,
+      cookingTypes,
     }
     const classify = renderer.create(<Classify {...classifyProps} />).toJSON()
     expect(classify).toMatchSnapshot()
@@ -259,12 +297,13 @@ describe('recipe form', () => {
     expect(Classify.defaultProps.onDismiss).toBeDefined()
   })
 
-  it('Render Classify component with data', () => {
+  it('Render Classify component with categories data', () => {
     classifyProps = {
       ...classifyProps,
       loading: false,
-      data: categories,
+      categories,
       handleSubmit: jest.fn(),
+      title: 'Categories',
     }
     const classify = shallow(<Classify {...classifyProps} />)
     classify.find('Modal').props().onSubmit()
