@@ -21,13 +21,13 @@ exports[`Components Tabs should render Tabs component 1`] = `
       tabIndex="0"
     >
       <div
-        className="css-text-901oao r-fontWeight-majxgm"
+        className="css-text-76zvg2 r-fontWeight-majxgm"
         dir="auto"
       >
         4
       </div>
       <div
-        className="css-text-901oao r-fontWeight-majxgm"
+        className="css-text-76zvg2 r-fontWeight-majxgm"
         dir="auto"
       >
         recipes
@@ -47,13 +47,13 @@ exports[`Components Tabs should render Tabs component 1`] = `
       tabIndex="0"
     >
       <div
-        className="css-text-901oao r-fontWeight-majxgm"
+        className="css-text-76zvg2 r-fontWeight-majxgm"
         dir="auto"
       >
         4
       </div>
       <div
-        className="css-text-901oao r-fontWeight-majxgm"
+        className="css-text-76zvg2 r-fontWeight-majxgm"
         dir="auto"
       >
         favorites
@@ -83,13 +83,13 @@ exports[`Components Tabs should render Tabs component 1`] = `
           className="css-view-1dbjc4n"
         >
           <div
-            className="css-text-901oao css-textOneLine-bfa6kz r-color-cqee49 r-fontSize-adyw6z r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
+            className="css-text-76zvg2 css-textOneLine-bfa6kz r-color-cqee49 r-fontSize-adyw6z r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
             dir="auto"
           >
             Bun Bo Hue Recipe
           </div>
           <div
-            className="css-text-901oao css-textOneLine-bfa6kz r-color-1h2fve2 r-fontSize-1i10wst r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
+            className="css-text-76zvg2 css-textOneLine-bfa6kz r-color-1h2fve2 r-fontSize-1i10wst r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
             dir="auto"
           >
             2lb pork neck bones, 2lb beef bones, 1lb oxtail
@@ -171,7 +171,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
                 className="css-view-1dbjc4n"
               >
                 <div
-                  className="css-text-901oao r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+                  className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
                   dir="auto"
                   focusable={false}
                   role="img"
@@ -192,7 +192,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
               </div>
             </div>
             <div
-              className="css-text-901oao r-marginLeft-1n0xq6e"
+              className="css-text-76zvg2 r-marginLeft-1n0xq6e"
               dir="auto"
             >
               Save
@@ -232,7 +232,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
                 className="css-view-1dbjc4n"
               >
                 <div
-                  className="css-text-901oao r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+                  className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
                   dir="auto"
                   focusable={false}
                   role="img"
@@ -253,7 +253,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
               </div>
             </div>
             <div
-              className="css-text-901oao r-marginLeft-1n0xq6e"
+              className="css-text-76zvg2 r-marginLeft-1n0xq6e"
               dir="auto"
             >
               1
@@ -282,13 +282,13 @@ exports[`Components Tabs should render Tabs component 1`] = `
           className="css-view-1dbjc4n"
         >
           <div
-            className="css-text-901oao css-textOneLine-bfa6kz r-color-cqee49 r-fontSize-adyw6z r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
+            className="css-text-76zvg2 css-textOneLine-bfa6kz r-color-cqee49 r-fontSize-adyw6z r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
             dir="auto"
           >
             Crispy Fried Chicken
           </div>
           <div
-            className="css-text-901oao css-textOneLine-bfa6kz r-color-1h2fve2 r-fontSize-1i10wst r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
+            className="css-text-76zvg2 css-textOneLine-bfa6kz r-color-1h2fve2 r-fontSize-1i10wst r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
             dir="auto"
           >
             Description for Crispy Fried Chicken
@@ -370,7 +370,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
                 className="css-view-1dbjc4n"
               >
                 <div
-                  className="css-text-901oao r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+                  className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
                   dir="auto"
                   focusable={false}
                   role="img"
@@ -391,7 +391,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
               </div>
             </div>
             <div
-              className="css-text-901oao r-marginLeft-1n0xq6e"
+              className="css-text-76zvg2 r-marginLeft-1n0xq6e"
               dir="auto"
             >
               Save
@@ -431,7 +431,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
                 className="css-view-1dbjc4n"
               >
                 <div
-                  className="css-text-901oao r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+                  className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
                   dir="auto"
                   focusable={false}
                   role="img"
@@ -475,13 +475,13 @@ exports[`Components Tabs should render Tabs component 1`] = `
           className="css-view-1dbjc4n"
         >
           <div
-            className="css-text-901oao css-textOneLine-bfa6kz r-color-cqee49 r-fontSize-adyw6z r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
+            className="css-text-76zvg2 css-textOneLine-bfa6kz r-color-cqee49 r-fontSize-adyw6z r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
             dir="auto"
           >
             Crispy Fried Chicken
           </div>
           <div
-            className="css-text-901oao css-textOneLine-bfa6kz r-color-1h2fve2 r-fontSize-1i10wst r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
+            className="css-text-76zvg2 css-textOneLine-bfa6kz r-color-1h2fve2 r-fontSize-1i10wst r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
             dir="auto"
           >
             Description for Crispy Fried Chicken
@@ -563,7 +563,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
                 className="css-view-1dbjc4n"
               >
                 <div
-                  className="css-text-901oao r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+                  className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
                   dir="auto"
                   focusable={false}
                   role="img"
@@ -584,7 +584,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
               </div>
             </div>
             <div
-              className="css-text-901oao r-marginLeft-1n0xq6e"
+              className="css-text-76zvg2 r-marginLeft-1n0xq6e"
               dir="auto"
             >
               Save
@@ -624,7 +624,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
                 className="css-view-1dbjc4n"
               >
                 <div
-                  className="css-text-901oao r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+                  className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
                   dir="auto"
                   focusable={false}
                   role="img"
@@ -668,13 +668,13 @@ exports[`Components Tabs should render Tabs component 1`] = `
           className="css-view-1dbjc4n"
         >
           <div
-            className="css-text-901oao css-textOneLine-bfa6kz r-color-cqee49 r-fontSize-adyw6z r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
+            className="css-text-76zvg2 css-textOneLine-bfa6kz r-color-cqee49 r-fontSize-adyw6z r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
             dir="auto"
           >
             Crispy Fried Chicken
           </div>
           <div
-            className="css-text-901oao css-textOneLine-bfa6kz r-color-1h2fve2 r-fontSize-1i10wst r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
+            className="css-text-76zvg2 css-textOneLine-bfa6kz r-color-1h2fve2 r-fontSize-1i10wst r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
             dir="auto"
           >
             Description for Crispy Fried Chicken
@@ -756,7 +756,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
                 className="css-view-1dbjc4n"
               >
                 <div
-                  className="css-text-901oao r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+                  className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
                   dir="auto"
                   focusable={false}
                   role="img"
@@ -777,7 +777,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
               </div>
             </div>
             <div
-              className="css-text-901oao r-marginLeft-1n0xq6e"
+              className="css-text-76zvg2 r-marginLeft-1n0xq6e"
               dir="auto"
             >
               Save
@@ -817,7 +817,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
                 className="css-view-1dbjc4n"
               >
                 <div
-                  className="css-text-901oao r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+                  className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
                   dir="auto"
                   focusable={false}
                   role="img"

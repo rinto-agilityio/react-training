@@ -68,7 +68,7 @@ exports[`Screen Profile should render Category component with grid 1`] = `
     className="css-view-1dbjc4n r-backgroundColor-14lw9ot r-flexDirection-18u37iz r-justifyContent-1wtj0ep r-marginLeft-1jj8364 r-marginRight-lchren r-maxWidth-c3zab1 r-padding-1pcd2l5 r-width-13qz1uu r-zIndex-1wyyakw"
   >
     <div
-      className="css-text-901oao r-fontSize-adyw6z r-fontWeight-1kfrs79"
+      className="css-text-76zvg2 r-fontSize-adyw6z r-fontWeight-1kfrs79"
       dir="auto"
     >
       Alex
@@ -138,7 +138,7 @@ exports[`Screen Profile should render Category component with grid 1`] = `
           className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-justifyContent-1777fci"
         >
           <div
-            className="css-text-901oao css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
+            className="css-text-76zvg2 css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
             dir="auto"
             style={
               Object {
@@ -149,7 +149,7 @@ exports[`Screen Profile should render Category component with grid 1`] = `
             }
           >
             <span
-              className="css-text-901oao css-textHasAncestor-16my406 r-color-cqee49 r-fontWeight-1kfrs79 r-textTransform-3twk1y"
+              className="css-text-76zvg2 css-textHasAncestor-16my406 r-color-cqee49 r-fontWeight-1kfrs79 r-textTransform-3twk1y"
               dir="auto"
               style={
                 Object {
@@ -186,13 +186,13 @@ exports[`Screen Profile should render Category component with grid 1`] = `
         tabIndex="0"
       >
         <div
-          className="css-text-901oao r-fontWeight-majxgm"
+          className="css-text-76zvg2 r-fontWeight-majxgm"
           dir="auto"
         >
           0
         </div>
         <div
-          className="css-text-901oao r-fontWeight-majxgm"
+          className="css-text-76zvg2 r-fontWeight-majxgm"
           dir="auto"
         >
           recipes
@@ -212,13 +212,13 @@ exports[`Screen Profile should render Category component with grid 1`] = `
         tabIndex="0"
       >
         <div
-          className="css-text-901oao r-fontWeight-majxgm"
+          className="css-text-76zvg2 r-fontWeight-majxgm"
           dir="auto"
         >
           4
         </div>
         <div
-          className="css-text-901oao r-fontWeight-majxgm"
+          className="css-text-76zvg2 r-fontWeight-majxgm"
           dir="auto"
         >
           favorites
@@ -229,7 +229,7 @@ exports[`Screen Profile should render Category component with grid 1`] = `
       className="css-view-1dbjc4n r-backgroundColor-n2h5ot r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-marginLeft-1jj8364 r-marginRight-lchren r-maxWidth-c3zab1 r-minHeight-fo66li r-padding-1pcd2l5 r-width-13qz1uu"
     >
       <div
-        className="css-text-901oao"
+        className="css-text-76zvg2"
         dir="auto"
       >
         No recipes to show
