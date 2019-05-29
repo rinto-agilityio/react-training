@@ -6,6 +6,8 @@ import { createWishList } from '../graphql/wish-list'
 import WishListForm from '../screens/wish-list/components/WishListForm'
 
 export default
-compose(getAllCookingTypes,
+compose(
+  getAllCookingTypes,
   getAllCategories,
-  createWishList)(WishListForm)
+  createWishList,
+)(WishListForm)
