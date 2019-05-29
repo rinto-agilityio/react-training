@@ -9,6 +9,9 @@ import styles from './styles'
 import Image from '../../../../components/Image'
 import Reaction from '../../../../components/Reaction'
 
+// Helpers
+import { checkFavorited } from '../../../../helpers/utils'
+
 type Props = {
   recipe: {
     id: string,
@@ -18,10 +21,15 @@ type Props = {
     votes: Array<string>,
   },
   size?: string,
+  favoriteRecipe: Array<{
+    id: string,
+  }>,
 }
 
-const Recipe = ({ recipe, size = 'large' }: Props) => {
-  const { title, description, imgUrl, votes } = recipe
+const Recipe = ({ recipe, size = 'large', favoriteRecipe }: Props) => {
+  const { id, title, description, imgUrl, votes } = recipe
+
+  const isFavorited = checkFavorited(favoriteRecipe, id)
 
   return (
     <TouchableOpacity style={[styles.wrapper, styles[`${size}Wrapper`]]}>
@@ -45,7 +53,7 @@ const Recipe = ({ recipe, size = 'large' }: Props) => {
           customImageStyle={[styles.image, styles[`${size}Image`]]}
         />
       </View>
-      <Reaction votes={votes} size={size} isFavorited={false} />
+      <Reaction votes={votes} size={size} isFavorited={isFavorited} />
     </TouchableOpacity>
   )
 }

@@ -14,6 +14,9 @@ type Props = {
   error: string,
   loading: boolean,
   data: {
+    favoriteRecipe: Array<{
+      id: string,
+    }>,
     followCategory: Array<{
       recipes: Array<{
         id: string,
@@ -48,9 +51,12 @@ const NewFeed = ({
 
   if (loading) return <Loading />
 
+  const { followCategory, favoriteRecipe } = data
+
+  // Get all recipes on follow categories
   let recipesList = []
 
-  data.followCategory.forEach(category => {
+  followCategory.forEach(category => {
     recipesList = recipesList.concat(category.recipes)
   })
 
@@ -65,7 +71,13 @@ const NewFeed = ({
         type={type}
       />
 
-      {recipesList && <RecipeList recipes={recipesList} type={type} />}
+      {recipesList && (
+        <RecipeList
+          recipes={recipesList}
+          type={type}
+          favoriteRecipe={favoriteRecipe}
+        />
+      )}
     </ScrollView>
   )
 }

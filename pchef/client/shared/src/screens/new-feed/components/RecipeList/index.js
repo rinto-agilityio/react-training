@@ -18,10 +18,13 @@ type Props = {
     imgUrl: string,
     votes: Array<string>,
   }>,
+  favoriteRecipe: Array<{
+    id: string,
+  }>,
   type?: string,
 }
 
-const RecipeList = ({ loading, recipes, type = '' }: Props) => {
+const RecipeList = ({ loading, recipes, type = '', favoriteRecipe }: Props) => {
   // define recipe size follow type
   const size = type === 'primary' ? 'medium' : 'large'
 
@@ -32,7 +35,12 @@ const RecipeList = ({ loading, recipes, type = '' }: Props) => {
       ) : (
         recipes &&
         recipes.map(recipe => (
-          <Recipe key={recipe.id} recipe={recipe} size={size} />
+          <Recipe
+            key={recipe.id}
+            recipe={recipe}
+            size={size}
+            favoriteRecipe={favoriteRecipe}
+          />
         ))
       )}
     </View>

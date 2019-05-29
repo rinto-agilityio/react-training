@@ -32,7 +32,7 @@ const Reaction = ({
   const data = [
     {
       name: isFavorited ? 'favorite' : 'favorite-border',
-      color: COLORS.grayDarker,
+      color: isFavorited ? COLORS.red : COLORS.grayDarker,
       label: 'Save',
       onPress: onPressFavorite,
     },

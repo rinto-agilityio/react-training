@@ -19,13 +19,18 @@ type Props = {
 
 const TabContent = ({ recipes }: Props) => {
   const NO_RECIPES_MESSAGE = 'No recipes to show'
+  const favoriteRecipeIds = recipes.map(recipe => ({ id: recipe.id }))
 
   return (
     <>
       {recipes.length ? (
         recipes.map((recipe, index) => (
           <View key={index} style={styles.tabContentItem}>
-            <Recipe size="medium" recipe={recipe} />
+            <Recipe
+              size="medium"
+              recipe={recipe}
+              favoriteRecipe={favoriteRecipeIds}
+            />
           </View>
         ))
       ) : (
