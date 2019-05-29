@@ -21,13 +21,16 @@ const GET_ALL_COOKING_TYPES = gql`
 
 const GET_RECIPES = gql`
   query {
-    getRecipes {
-      id
-      title
-      imgUrl
-      description
-      views
-      votes
+    getUser {
+      followCategory {
+        recipes {
+          id
+          title
+          imgUrl
+          votes
+          description
+        }
+      }
     }
   }
 `
@@ -76,11 +79,11 @@ const getAllCategories = graphql(GET_ALL_CATEGORIES, {
 })
 
 const getRecipes = graphql(GET_RECIPES, {
-  props: ({ data: { loading, error, getRecipes } }) => ({
-    loading,
-    error,
-    recipes: getRecipes,
+  options: () => ({
+    fetchPolicy: 'cache-and-network',
   }),
+
+  props: ({ data }) => ({ data }),
 })
 
 const recipeDetail = graphql(GET_RECIPE_DETAIL, {

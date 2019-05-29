@@ -7,7 +7,6 @@ import Recipe from '.'
 describe('Recipe new feed', () => {
   const props = {
     recipe: recipes[0],
-    onSelectStep: jest.fn(),
   }
   const component = shallow(<Recipe {...props} />)
 
@@ -20,10 +19,5 @@ describe('Recipe new feed', () => {
       size: 'medium',
     })
     expect(component).toMatchSnapshot()
-  })
-
-  it('Function props should be defined', () => {
-    Recipe.defaultProps.onPress()
-    expect(Recipe.defaultProps.onPress).toBeDefined()
   })
 })
