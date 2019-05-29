@@ -63,9 +63,6 @@ const WishListForm = ( {
     const categoryId = category.id
     const cookingTypeId = cookingType.id
     const date = selectedDay;
-    console.log('categoryId', categoryId);
-    console.log('cookingTypeId', cookingTypeId);
-    console.log( 'date', getMilisecondsFromTime(date) );
     
     const errors = validator( {
       categoryId,
