@@ -45,7 +45,6 @@ const WishListForm = ( {
 
   const dayRange = getDateOfWeek()
 
-  
   const dataIconClassify = [
     {
       label: 'Add categories',
