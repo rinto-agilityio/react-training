@@ -37,7 +37,7 @@ export const findStep = (
  * @param {object} a
  * @param {object} b
  */
-export const compareStep = (a: { step: number }, b: { step: number }) => {
+export const compareStep = (a: {step: number}, b: {step: number}) => {
   if (a.step < b.step) {
     return -1
   }
@@ -52,7 +52,7 @@ export const compareStep = (a: { step: number }, b: { step: number }) => {
  * custom graphql error
  * @param {array} errorArr
  */
-export const customError = (errorArr: Array<{ message: string }>) => {
+export const customError = (errorArr: Array<{message: string}>) => {
   let errorMes = ''
 
   if (errorArr) {
@@ -67,15 +67,15 @@ export const customError = (errorArr: Array<{ message: string }>) => {
 /**
  * Checking current recipe saved
  */
-export const checkFavorited = (arr: Array<{ id: string }>, currentId: string) =>
+export const checkFavorited = (arr: Array<{id: string}>, currentId: string) =>
   arr.findIndex(item => item.id === currentId) === -1 ? false : true
 
 /**
  * Format favorite recipe get from getUser query
  * @param {Array} arr
  */
-export const formatFavoriteRecipe = (arr: Array<{ id: string }>) => {
-  const newArr: Array<string> = arr.map((item: { id: string }) => item.id)
+export const formatFavoriteRecipe = (arr: Array<{id: string}>) => {
+  const newArr: Array<string> = arr.map((item: {id:string}) => item.id)
   return newArr
 }
 
@@ -84,8 +84,8 @@ export const formatFavoriteRecipe = (arr: Array<{ id: string }>) => {
  * @param {Array} arr
  */
 export const formatUserToggleSaveRes = (arr: Array<string>) => {
-  const newArr: Array<{ id: string }> = arr.map(item =>
-    Object.assign({ id: item, __typename: 'Recipe' })
-  )
+  const newArr: Array<{id: string}> = arr.map(item => (
+    Object.assign({id: item, __typename: 'Recipe'})
+  ))
   return newArr
 }
