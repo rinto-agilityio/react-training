@@ -20,7 +20,7 @@ import Error from '../../../../components/Error'
 import { recipes } from '../../../../mocks'
 
 // utils
-import { findStep, compareStep, customError, checkContainField, formatAddFiledObject } from '../../../../helpers/utils'
+import { findStep, compareStep, customError, checkContainField, formatFiledOnObject } from '../../../../helpers/utils'
 
 type Props = {
   recipeSteps: Array<{
@@ -158,7 +158,7 @@ const Recipe = ({
       } = data
 
       if (results) {
-        checkContainField(formatAddFiledObject(results), id)
+        checkContainField(formatFiledOnObject(results), id)
       }
     })
   }
@@ -171,7 +171,7 @@ const Recipe = ({
         } = data
 
         if (results) {
-          checkContainField(formatAddFiledObject(votes), id)
+          checkContainField(formatFiledOnObject(votes), id)
         }
       })
   }
@@ -248,7 +248,7 @@ const Recipe = ({
         isFavorited={checkContainField(getUser.favoriteRecipe, id)}
         onPressFavorite={handleSaveRecipe}
         onPressVote={handleToggleVote}
-        isVote={checkContainField(formatAddFiledObject(votes), user.id)}
+        isVote={checkContainField(formatFiledOnObject(votes), user.id)}
       />
       <Comment
         name={`by ${userId}`}

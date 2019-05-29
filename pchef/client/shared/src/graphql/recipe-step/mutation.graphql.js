@@ -1,7 +1,7 @@
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import { GET_USER } from './query.graphql'
-import { checkContainField, formatFavoriteRecipe, formatAddFiledObject } from '../../helpers/utils'
+import { checkContainField, formatFavoriteRecipe, formatFiledOnObject } from '../../helpers/utils'
 import { GET_RECIPE_DETAIL } from '../recipe/query.graphql'
 
 const TOGGLE_RECIPE = gql`
@@ -48,7 +48,7 @@ const userToggleRecipe = graphql(TOGGLE_RECIPE, {
           ...dataQuery,
           getUser: {
             ...dataQuery.getUser,
-            favoriteRecipe: formatAddFiledObject(results),
+            favoriteRecipe: formatFiledOnObject(results),
           },
         }
         proxy.writeQuery({ query: GET_USER, data: dataUpdated })
