@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`recipe form Render Classify component with data 1`] = `
+exports[`recipe form Render Classify component with cookingTypes data 1`] = `
 <div
   className="css-view-1dbjc4n r-bottom-1p0dtai r-display-1adg3ll r-left-1d2f490 r-position-1xcajam r-right-zchlnj r-top-ipm5af r-zIndex-1sg8ghl"
 />

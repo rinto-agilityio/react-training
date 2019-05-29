@@ -3,7 +3,7 @@ import WistList from '.'
 import Item from './Item'
 
 // Mocks
-import { wishList } from '../../../../mocks'
+import { wishList, categories, cookingTypes } from '../../../../mocks'
 
 describe('Wish list', () => {
   let wishListProps = {
@@ -33,10 +33,42 @@ describe('Wish list', () => {
     expect(wishList).toMatchSnapshot()
   })
 
+  it('Render wish list component with loading true', () => {
+    wishListProps = {
+      ...wishProps,
+      loading: true,
+    }
+    const wishList = renderer.create(<WistList {...wishListProps} />).toJSON()
+    expect(wishList).toMatchSnapshot()
+  })
+
+  it('Render wish list component with error', () => {
+    wishListProps = {
+      ...wishProps,
+      error: {
+        graphQLErrors: [{
+          message: 'Error!',
+        }],
+      },
+    }
+    const wishList = renderer.create(<WistList {...wishListProps} />).toJSON()
+    expect(wishList).toMatchSnapshot()
+  })
+
   it('Render wish component with size medium', () => {
     wishProps = {
       ...wishProps,
       size: 'medium',
+    }
+    const wish = renderer.create(<Item {...wishProps} />).toJSON()
+    expect(wish).toMatchSnapshot()
+  })
+
+  it('Render wish component with category, cookingType', () => {
+    wishProps = {
+      ...wishProps,
+      categories,
+      cookingTypes,
     }
     const wish = renderer.create(<Item {...wishProps} />).toJSON()
     expect(wish).toMatchSnapshot()
