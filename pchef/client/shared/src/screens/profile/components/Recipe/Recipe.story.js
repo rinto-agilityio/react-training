@@ -8,7 +8,7 @@ import { recipes } from '../../../../mocks'
 // Components
 import Recipe from '.'
 
-storiesOf('New feed recipe', module)
+storiesOf('Profile recipe', module)
   .add('medium', () => (
     <Recipe size="medium" recipe={recipes[0]} favoriteRecipe={['idtest']} />
   ))

@@ -20,7 +20,7 @@ import Error from '../../../../components/Error'
 import { recipes } from '../../../../mocks'
 
 // utils
-import { findStep, compareStep, customError, checkContainField, formatFiledOnObject } from '../../../../helpers/utils'
+import { findStep, customError, checkContainField, formatFiledOnObject } from '../../../../helpers/utils'
 
 type Props = {
   recipeSteps: Array<{
@@ -51,7 +51,9 @@ type Props = {
   error: string,
   getUser: {
     user: {
-      id: string
+      id: string,
+      name: string,
+      avatar: string,
     },
     favoriteRecipe: Array<{id: string}>
   },
@@ -66,6 +68,7 @@ type Props = {
   ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
   id: string,
   votes: Array<string>,
+  views: number,
   error: {
     graphQLErrors: Array<{message: string}>
   }
@@ -93,10 +96,9 @@ const Recipe = ({
   userToggleRecipe,
   userToggleVote,
   votes,
+  views,
 }: Props) => {
-  // order recipeSteps by step asc
-  const orderRecipeSteps = recipeSteps.sort(compareStep)
-  const defaultStepInfo = orderRecipeSteps[0]
+  const defaultStepInfo = recipeSteps[0]
   const [stepInfo, setStepInfo] = useState({})
 
   useEffect(() => (
@@ -106,8 +108,6 @@ const Recipe = ({
   const {
     title,
     subTitle,
-    userId,
-    views,
   } = recipes[0]
 
   if (loading) {
@@ -131,10 +131,10 @@ const Recipe = ({
 
     switch (name) {
       case 'next':
-        nextStepInfo = findStep(orderRecipeSteps, stepInfo.step + 1)
+        nextStepInfo = findStep(recipeSteps, stepInfo.step + 1)
         break;
       case 'prev':
-        nextStepInfo = findStep(orderRecipeSteps, stepInfo.step - 1)
+        nextStepInfo = findStep(recipeSteps, stepInfo.step - 1)
         break;
       default:
         break;
@@ -147,7 +147,7 @@ const Recipe = ({
    * @param {step}
    */
   const onPressStep = step => {
-    const stepInfoSelect = findStep(orderRecipeSteps, step)
+    const stepInfoSelect = findStep(recipeSteps, step)
     setStepInfo(stepInfoSelect)
   }
 
@@ -225,7 +225,7 @@ const Recipe = ({
             </Text>
           </Text>
           <Progress
-            steps={orderRecipeSteps}
+            steps={recipeSteps}
             size={size}
             step={stepInfo.step}
             onPressSelectStep={onPressSelectStep}
@@ -251,7 +251,8 @@ const Recipe = ({
         isVote={checkContainField(formatFiledOnObject(votes), user.id)}
       />
       <Comment
-        name={`by ${userId}`}
+        name={`by ${user.name}`}
+        avatarUri={user.avatar}
         publishedAt={Date.now()}
         isGetTime
         customStyle={{
