@@ -44,7 +44,7 @@ describe('Wish list', () => {
   it('Should update selected date when press on calendar', () => {
     const icon = component.find('Icon')
 
-    // Press select date button to show modal
+    // Press select date icon to show modal
     const selectDateIcon = icon.first()
     selectDateIcon.props().onPress()
 
@@ -77,7 +77,7 @@ describe('Wish list', () => {
     icon.at(2).props().onPress()
     expect(component.find('Apollo(Classify)').exists()).toEqual(true)
 
-    // Submit Categories form
+    // Submit Cooking types form
     const cookingTypesProps = component.find('Apollo(Classify)').props()
     cookingTypesProps.handleSubmit({
       id: '1',
