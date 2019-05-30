@@ -17,6 +17,9 @@ const GET_RECIPE_STEPS = gql`
 const GET_USER = gql`
   {
     getUser {
+      user{
+        id
+      }
       favoriteRecipe {
         id
       }
