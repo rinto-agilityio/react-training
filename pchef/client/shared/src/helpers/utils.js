@@ -84,8 +84,10 @@ export const formatFavoriteRecipe = (arr: Array<{id: string}>) => {
  * Format favorite recipe returned from userToggleSave mutation
  * @param {Array} arr
  */
-export const formatFiledOnObject = (arr: Array<string>) => {
-  const newArr: Array<{id: string}> = arr.map(item => Object.assign({ id: item, __typename: 'Recipe' }))
+export const formatFiledOnObject = (arr: Array<string>, typename?: string) => {
+  const newArr: Array<{id: string}> = arr.map(item => (
+    Object.assign({id: item, __typename: typename || 'Recipe'})
+  ))
   return newArr
 }
 

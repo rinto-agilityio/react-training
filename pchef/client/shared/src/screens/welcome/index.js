@@ -1,39 +1,70 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import { Divider } from 'react-native-paper'
 import InterestedCategories from './components/InterestedCategories'
 import styles from './styles'
+import Loading from '../../components/Loading'
+import Error from '../../components/Error'
+import { customError } from '../../helpers/utils'
 
 // Interested Category props type
 type Props = {
   customStyle?: {},
   type?: string,
-  onChooseCategories: (categories: Array<string>) => void,
-  categories: Array<{ id: string, name: string, imgUrl: string }>,
+  handleSkipCategories?: () => void,
+  data: {
+    followCategory: Array<{
+      id: string,
+      name: string,
+      imgUrl: string,
+    }>,
+  },
+  loading: boolean,
+  error: {
+    graphQLErrors: Array<{message: string}>,
+  },
+  categories: Array<{
+    id: string,
+    name: string,
+    imgUrl: string,
+  }>,
+  userToggleCategory: (recipeId: string) => Promise<{ data: {userToggleCategory: {results: Array<string>}}}>,
 }
 
 // component Comment Form
 const Welcome = ({
-  customStyle = {},
+  customStyle,
   type = 'primary',
-  onChooseCategories,
-  categories,
+  handleSkipCategories,
+  data = {},
+  loading,
+  error,
+  categories = [],
+  userToggleCategory,
 }: Props) => {
   const [chosenCategories, setChosenCategories] = useState([])
+  const [errors, setErrors] = useState()
+
+  useEffect(() => {
+    const followCategory = data.followCategory || []
+    const followCategoryIds = followCategory.map(item => item.id)
+    setChosenCategories(followCategoryIds)
+    !loading && setErrors(error)
+  }, [loading, data.followCategory, error])
+
+  if (loading) return <Loading size={type === 'primary' ? 'small' : 'large'} />
+  if (errors) return <Error message={customError(errors.graphQLErrors)} />
 
   // handling toggle choose or not choose a category
-  const handlingChooseCategory = (categoryId: string) => {
-    if (chosenCategories.includes(categoryId)) {
-      const data = chosenCategories.filter(item => item !== categoryId)
-      setChosenCategories(data)
-    } else {
-      setChosenCategories([...chosenCategories, categoryId])
+  const handlingChooseCategory = async (categoryId: string) => {
+    try {
+      await userToggleCategory(categoryId).then(({ data }) => {
+        const categories = data.userToggleCategory
+        setChosenCategories(categories.results)
+      })
+    } catch (error) {
+      setErrors(error)
     }
-  }
-
-  // Submit chosen interested categories
-  const handlingSubmit = () => {
-    onChooseCategories(chosenCategories)
   }
 
   // check user do not choose category
@@ -44,7 +75,7 @@ const Welcome = ({
       <TouchableOpacity
         style={[styles.button, styles[`${type}Button`]]}
         disabled={missingCategory}
-        onPress={handlingSubmit}
+        onPress={handleSkipCategories}
       >
         <Text
           style={[
@@ -53,7 +84,7 @@ const Welcome = ({
             missingCategory ? styles.disabledNext : null,
           ]}
         >
-          Next
+          Skip
         </Text>
       </TouchableOpacity>
       <Text style={[styles.description, styles[`${type}Description`]]}>
@@ -70,7 +101,6 @@ const Welcome = ({
         <InterestedCategories
           categories={categories}
           onChooseCategory={handlingChooseCategory}
-          customStyle={{}}
           type={type}
           activeList={chosenCategories}
         />
@@ -83,6 +113,7 @@ const Welcome = ({
 Welcome.defaultProps = {
   customStyle: {},
   type: 'primary',
+  handleSkipCategories: () => {},
 }
 
 export default Welcome

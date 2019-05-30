@@ -1,6 +1,8 @@
+// Libs
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
+// GraphQL
 import { GET_USER } from './query.graphql'
 
 // Helpers
@@ -8,12 +10,21 @@ import {
   checkContainField,
   formatFavoriteRecipe,
   mergeArrayObject,
+  formatFiledOnObject,
 } from '../../helpers/utils'
 
 const USER_SIGNIN = gql`
   mutation signInUser($email: String!, $password: String!) {
     signInUser(email: $email, password: $password) {
       token
+    }
+  }
+`
+
+const USER_TOGGLE_CATEGORY = gql`
+  mutation userToggleCategory($categoryId: String!) {
+    userToggleCategory(categoryId: $categoryId) {
+      results
     }
   }
 `
@@ -46,6 +57,35 @@ const signInUser = graphql(USER_SIGNIN, {
         console.log('data: ', data)
       } catch (err) {
         console.error(err)
+      }
+    },
+  },
+})
+
+const userToggleCategory = graphql(USER_TOGGLE_CATEGORY, {
+  props: ({ mutate }) => ({
+    userToggleCategory: categoryId => mutate({
+      variables: { categoryId },
+    }),
+  }),
+  options: {
+    update: (proxy, { data }) => {
+      try {
+        const {
+          userToggleCategory: { results },
+        } = data
+        const dataQuery = proxy.readQuery({ query: GET_USER })
+        const dataUpdated = {
+          ...dataQuery,
+          getUser: {
+            ...dataQuery.getUser,
+            followCategory: formatFiledOnObject(results, 'Category'),
+            __typename: 'UserFullInfos',
+          },
+        }
+        proxy.writeQuery({ query: GET_USER, data: dataUpdated })
+      } catch (err) {
+        return { error: 'Failed!' }
       }
     },
   },
@@ -100,7 +140,9 @@ const userToggleRecipe = graphql(TOGGLE_RECIPE, {
   },
 })
 
+
 export {
   signInUser,
+  userToggleCategory,
   userToggleRecipe,
 }
