@@ -22,28 +22,14 @@ describe('Recipe by step', () => {
     onPressStep: jest.fn(),
     onPressSelectStep: jest.fn(),
   }
-  const recipeComponent = mount(<Recipe {...recipeProps} />)
-  const progressStepComponent = mount(<ProgressStep {...stepProps} />)
+  const recipeComponent = renderer.create(<Recipe {...recipeProps} />).toJSON()
+  const progressStepComponent = shallow(<ProgressStep {...stepProps} />)
 
   it('Renders correctly recipe commponent', () => {
     expect(recipeComponent).toMatchSnapshot()
   })
 
   it('Renders correctly progress steps commponent', () => {
-    expect(progressStepComponent).toMatchSnapshot()
-  })
-
-  it('Render recipe component with size medium', () => {
-    recipeComponent.setProps({
-      size: 'medium',
-    })
-    expect(recipeComponent).toMatchSnapshot()
-  })
-
-  it('Render progress step component with size medium', () => {
-    progressStepComponent.setProps({
-      size: 'medium',
-    })
     expect(progressStepComponent).toMatchSnapshot()
   })
 
