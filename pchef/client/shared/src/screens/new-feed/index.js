@@ -14,6 +14,9 @@ type Props = {
   error: string,
   loading: boolean,
   data: {
+    favoriteRecipe: Array<{
+      id: string,
+    }>,
     followCategory: Array<{
       recipes: Array<{
         id: string,
@@ -24,7 +27,10 @@ type Props = {
       }>,
     }>,
   },
-
+  userToggleRecipe: (
+    recipeId: string,
+    favoriteRecipe: Array<{ id: string }>
+  ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
   type?: string,
   onPressCategoryIcon: () => void,
   onPressLogo: () => void,
@@ -39,6 +45,7 @@ const NewFeed = ({
   data,
   onPressCategoryIcon,
   onPressLogo,
+  userToggleRecipe,
 }: Props) => {
   const errorMessage = 'Connect failed!!!'
 
@@ -48,9 +55,12 @@ const NewFeed = ({
 
   if (loading) return <Loading />
 
+  const { followCategory, favoriteRecipe } = data
+
+  // Get all recipes on follow categories
   let recipesList = []
 
-  data.followCategory.forEach(category => {
+  followCategory.forEach(category => {
     recipesList = recipesList.concat(category.recipes)
   })
 
@@ -65,7 +75,14 @@ const NewFeed = ({
         type={type}
       />
 
-      {recipesList && <RecipeList recipes={recipesList} type={type} />}
+      {recipesList && (
+        <RecipeList
+          recipes={recipesList}
+          type={type}
+          favoriteRecipe={favoriteRecipe}
+          userToggleRecipe={userToggleRecipe}
+        />
+      )}
     </ScrollView>
   )
 }

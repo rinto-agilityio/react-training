@@ -15,13 +15,14 @@ import Error from '../../../../components/Error'
 import RecipeStepContainer from '../../../../containers/RecipeStep'
 
 // Helper
-import { customError } from '../../../../helpers/utils'
+import { customError, compareStep } from '../../../../helpers/utils'
 
 type Props = {
   getRecipe: {
     id: string,
     description: string,
     votes: Array<string>,
+    views: number,
   },
   size: string,
   onSelectStep?: () => void,
@@ -39,7 +40,12 @@ const Recipe = ({
   onSelectStep,
   loading,
   error,
-  recipeSteps,
+  recipeSteps = [{
+    description: '',
+    imgUrl: '',
+    step: 1,
+    title: '',
+  }],
 }: Props) => {
   if (loading) {
     return <Loading />
@@ -52,8 +58,11 @@ const Recipe = ({
     description,
     votes,
     id,
+    views,
   } = getRecipe
 
+  // order recipeSteps by step asc
+  const orderRecipeSteps = recipeSteps.sort(compareStep)
   return (
     <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
       <Ingredients
@@ -70,6 +79,8 @@ const Recipe = ({
         <RecipeStepContainer
           id={id}
           votes={votes}
+          views={views}
+          recipeSteps={orderRecipeSteps}
         />
         )
       }

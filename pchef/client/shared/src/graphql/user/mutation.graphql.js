@@ -3,10 +3,15 @@ import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
 // GraphQL
-import { GET_USER } from '../recipe-step/query.graphql'
+import { GET_USER } from './query.graphql'
 
 // Helpers
-import { formatFiledOnObject } from '../../helpers/utils'
+import {
+  checkContainField,
+  formatFavoriteRecipe,
+  mergeArrayObject,
+  formatFiledOnObject,
+} from '../../helpers/utils'
 
 const USER_SIGNIN = gql`
   mutation signInUser($email: String!, $password: String!) {
@@ -19,6 +24,14 @@ const USER_SIGNIN = gql`
 const USER_TOGGLE_CATEGORY = gql`
   mutation userToggleCategory($categoryId: String!) {
     userToggleCategory(categoryId: $categoryId) {
+      results
+    }
+  }
+`
+
+const TOGGLE_RECIPE = gql`
+  mutation userToggleRecipe($recipeId: String!) {
+    userToggleRecipe(recipeId: $recipeId) {
       results
     }
   }
@@ -55,10 +68,6 @@ const userToggleCategory = graphql(USER_TOGGLE_CATEGORY, {
       variables: { categoryId },
     }),
   }),
-  /**
-   * This is sample config updater
-   * Use this option to read/write cache
-   */
   options: {
     update: (proxy, { data }) => {
       try {
@@ -76,13 +85,64 @@ const userToggleCategory = graphql(USER_TOGGLE_CATEGORY, {
         }
         proxy.writeQuery({ query: GET_USER, data: dataUpdated })
       } catch (err) {
-        console.error(err)
+        return { error: 'Failed!' }
       }
     },
   },
 })
 
+const userToggleRecipe = graphql(TOGGLE_RECIPE, {
+  props: ({ mutate }) => ({
+    userToggleRecipe: (recipeId, favoriteRecipe) => mutate({
+      variables: {
+        recipeId,
+      },
+      optimisticResponse: {
+        userToggleRecipe: {
+          __typename: 'PayloadResults',
+          results: checkContainField(favoriteRecipe, recipeId) ?
+            formatFavoriteRecipe(favoriteRecipe.filter(item => item.id !== recipeId))
+            :
+            formatFavoriteRecipe(favoriteRecipe).concat(recipeId),
+        },
+      },
+    }),
+  }),
+  options: {
+    update: (proxy, { data }) => {
+      try {
+        const {
+          userToggleRecipe: { results },
+        } = data
+
+        const dataQuery = proxy.readQuery({ query: GET_USER })
+        const { getUser: { ownRecipes, favoriteRecipe } } = dataQuery
+
+        const allRecipes = mergeArrayObject(ownRecipes, favoriteRecipe)
+
+        // Get full infomation of result
+        const fullResults = allRecipes.filter(recipe => results.includes(recipe.id))
+
+        // Update cache
+        const dataUpdated = {
+          ...dataQuery,
+          getUser: {
+            ...dataQuery.getUser,
+            favoriteRecipe: fullResults,
+          },
+        }
+
+        proxy.writeQuery({ query: GET_USER, data: dataUpdated })
+      } catch (err) {
+        return { error: 'Failed!' }
+      }
+    },
+  },
+})
+
+
 export {
   signInUser,
   userToggleCategory,
+  userToggleRecipe,
 }

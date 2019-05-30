@@ -1,4 +1,4 @@
-import { signInUser, userToggleCategory } from './mutation.graphql'
+import { signInUser, userToggleRecipe, userToggleCategory } from './mutation.graphql'
 import { getUser } from './query.graphql'
 
-export { signInUser, getUser, userToggleCategory }
+export { signInUser, getUser, userToggleRecipe, userToggleCategory }

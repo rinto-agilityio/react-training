@@ -4,7 +4,11 @@ import {
   getRecipes,
   recipeDetail,
 } from './query.graphql'
-import { createRecipe, createRecipeStep } from './mutation.graphql'
+import {
+  createRecipe,
+  createRecipeStep,
+  userToggleRecipe,
+} from './mutation.graphql'
 
 export {
   getAllCookingTypes,
@@ -13,4 +17,5 @@ export {
   createRecipeStep,
   getRecipes,
   recipeDetail,
+  userToggleRecipe,
 }
