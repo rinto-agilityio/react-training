@@ -26,8 +26,6 @@ const GET_USER = gql`
       }
       followCategory {
         id
-        name
-        imgUrl
       }
     }
   }
