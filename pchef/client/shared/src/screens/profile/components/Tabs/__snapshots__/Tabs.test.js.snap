@@ -177,7 +177,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
                   role="img"
                   style={
                     Object {
-                      "color": "rgba(211,43,83,1.00)",
+                      "color": "rgba(70,91,174,1.00)",
                       "fontSize": "30px",
                     }
                   }
@@ -366,7 +366,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
                   role="img"
                   style={
                     Object {
-                      "color": "rgba(211,43,83,1.00)",
+                      "color": "rgba(70,91,174,1.00)",
                       "fontSize": "30px",
                     }
                   }
@@ -549,7 +549,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
                   role="img"
                   style={
                     Object {
-                      "color": "rgba(211,43,83,1.00)",
+                      "color": "rgba(70,91,174,1.00)",
                       "fontSize": "30px",
                     }
                   }
@@ -732,7 +732,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
                   role="img"
                   style={
                     Object {
-                      "color": "rgba(211,43,83,1.00)",
+                      "color": "rgba(70,91,174,1.00)",
                       "fontSize": "30px",
                     }
                   }

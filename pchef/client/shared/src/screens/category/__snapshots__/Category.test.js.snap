@@ -248,10 +248,10 @@ Array [
     </div>
   </div>,
   <div
-    className="css-view-1dbjc4n r-marginTop-1x0uki6 r-position-bnwqim"
+    className="css-view-1dbjc4n r-marginBottom-117bsoe r-marginLeft-1jj8364 r-marginRight-lchren r-marginTop-1x0uki6 r-position-bnwqim r-width-16k0tzm"
   >
     <div
-      className="css-view-1dbjc4n r-borderBottomWidth-qklmqi r-height-cqilzk r-marginBottom-117bsoe r-marginLeft-1n0xq6e r-marginRight-zso239 r-position-bnwqim"
+      className="css-view-1dbjc4n r-borderBottomWidth-qklmqi r-borderColor-35fm6a r-height-cqilzk r-marginBottom-117bsoe r-marginLeft-1n0xq6e r-marginRight-zso239 r-position-bnwqim r-width-16k0tzm"
     >
       <div
         className="css-text-76zvg2 r-fontSize-zz5t5d r-paddingBottom-1mi0q7o"
@@ -309,7 +309,7 @@ Array [
           </div>
         </div>
         <div
-          className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-erd55g r-justifyContent-1wtj0ep r-marginBottom-15d164r r-marginLeft-1n0xq6e r-marginRight-zso239 r-paddingLeft-1vwolk8 r-width-11gcy1e"
+          className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-erd55g r-justifyContent-1wtj0ep r-marginBottom-15d164r r-marginLeft-1n0xq6e r-marginRight-zso239 r-paddingLeft-1hfyk0a r-width-1x8s7z8"
           style={
             Object {
               "WebkitBoxFlex": 0,
@@ -320,10 +320,26 @@ Array [
           }
         >
           <div
-            className="css-text-76zvg2 r-fontSize-1i10wst r-height-9njtsq r-lineHeight-waer2z r-overflow-1udh08x"
-            dir="auto"
+            className="css-view-1dbjc4n r-height-9njtsq r-overflow-1udh08x r-width-13qz1uu"
           >
-            2lb pork neck bones, 2lb beef bones, 1lb oxtail
+            <div
+              className="css-text-76zvg2 css-textOneLine-bfa6kz r-fontSize-1i10wst r-lineHeight-waer2z"
+              dir="auto"
+            >
+              2lb pork neck bones
+            </div>
+            <div
+              className="css-text-76zvg2 css-textOneLine-bfa6kz r-fontSize-1i10wst r-lineHeight-waer2z"
+              dir="auto"
+            >
+               2lb beef bones
+            </div>
+            <div
+              className="css-text-76zvg2 css-textOneLine-bfa6kz r-fontSize-1i10wst r-lineHeight-waer2z"
+              dir="auto"
+            >
+               1lb oxtail
+            </div>
           </div>
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-bottom-1ebgqk7 r-flexDirection-18u37iz r-position-u8s1d r-right-r19jdo"
@@ -378,7 +394,7 @@ Array [
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-borderBottomWidth-qklmqi r-height-cqilzk r-marginBottom-117bsoe r-marginLeft-1n0xq6e r-marginRight-zso239 r-position-bnwqim"
+      className="css-view-1dbjc4n r-borderBottomWidth-qklmqi r-borderColor-35fm6a r-height-cqilzk r-marginBottom-117bsoe r-marginLeft-1n0xq6e r-marginRight-zso239 r-position-bnwqim r-width-16k0tzm"
     >
       <div
         className="css-text-76zvg2 r-fontSize-zz5t5d r-paddingBottom-1mi0q7o"
@@ -436,7 +452,7 @@ Array [
           </div>
         </div>
         <div
-          className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-erd55g r-justifyContent-1wtj0ep r-marginBottom-15d164r r-marginLeft-1n0xq6e r-marginRight-zso239 r-paddingLeft-1vwolk8 r-width-11gcy1e"
+          className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-erd55g r-justifyContent-1wtj0ep r-marginBottom-15d164r r-marginLeft-1n0xq6e r-marginRight-zso239 r-paddingLeft-1hfyk0a r-width-1x8s7z8"
           style={
             Object {
               "WebkitBoxFlex": 0,
@@ -447,10 +463,14 @@ Array [
           }
         >
           <div
-            className="css-text-76zvg2 r-fontSize-1i10wst r-height-9njtsq r-lineHeight-waer2z r-overflow-1udh08x"
-            dir="auto"
+            className="css-view-1dbjc4n r-height-9njtsq r-overflow-1udh08x r-width-13qz1uu"
           >
-            Description for Crispy Fried Chicken
+            <div
+              className="css-text-76zvg2 css-textOneLine-bfa6kz r-fontSize-1i10wst r-lineHeight-waer2z"
+              dir="auto"
+            >
+              Description for Crispy Fried Chicken
+            </div>
           </div>
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-bottom-1ebgqk7 r-flexDirection-18u37iz r-position-u8s1d r-right-r19jdo"
@@ -505,7 +525,7 @@ Array [
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-borderBottomWidth-qklmqi r-height-cqilzk r-marginBottom-117bsoe r-marginLeft-1n0xq6e r-marginRight-zso239 r-position-bnwqim"
+      className="css-view-1dbjc4n r-borderBottomWidth-qklmqi r-borderColor-35fm6a r-height-cqilzk r-marginBottom-117bsoe r-marginLeft-1n0xq6e r-marginRight-zso239 r-position-bnwqim r-width-16k0tzm"
     >
       <div
         className="css-text-76zvg2 r-fontSize-zz5t5d r-paddingBottom-1mi0q7o"
@@ -563,7 +583,7 @@ Array [
           </div>
         </div>
         <div
-          className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-erd55g r-justifyContent-1wtj0ep r-marginBottom-15d164r r-marginLeft-1n0xq6e r-marginRight-zso239 r-paddingLeft-1vwolk8 r-width-11gcy1e"
+          className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-erd55g r-justifyContent-1wtj0ep r-marginBottom-15d164r r-marginLeft-1n0xq6e r-marginRight-zso239 r-paddingLeft-1hfyk0a r-width-1x8s7z8"
           style={
             Object {
               "WebkitBoxFlex": 0,
@@ -574,10 +594,14 @@ Array [
           }
         >
           <div
-            className="css-text-76zvg2 r-fontSize-1i10wst r-height-9njtsq r-lineHeight-waer2z r-overflow-1udh08x"
-            dir="auto"
+            className="css-view-1dbjc4n r-height-9njtsq r-overflow-1udh08x r-width-13qz1uu"
           >
-            Description for Crispy Fried Chicken
+            <div
+              className="css-text-76zvg2 css-textOneLine-bfa6kz r-fontSize-1i10wst r-lineHeight-waer2z"
+              dir="auto"
+            >
+              Description for Crispy Fried Chicken
+            </div>
           </div>
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-bottom-1ebgqk7 r-flexDirection-18u37iz r-position-u8s1d r-right-r19jdo"
@@ -632,7 +656,7 @@ Array [
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-borderBottomWidth-qklmqi r-height-cqilzk r-marginBottom-117bsoe r-marginLeft-1n0xq6e r-marginRight-zso239 r-position-bnwqim"
+      className="css-view-1dbjc4n r-borderBottomWidth-qklmqi r-borderColor-35fm6a r-height-cqilzk r-marginBottom-117bsoe r-marginLeft-1n0xq6e r-marginRight-zso239 r-position-bnwqim r-width-16k0tzm"
     >
       <div
         className="css-text-76zvg2 r-fontSize-zz5t5d r-paddingBottom-1mi0q7o"
@@ -690,7 +714,7 @@ Array [
           </div>
         </div>
         <div
-          className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-erd55g r-justifyContent-1wtj0ep r-marginBottom-15d164r r-marginLeft-1n0xq6e r-marginRight-zso239 r-paddingLeft-1vwolk8 r-width-11gcy1e"
+          className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-erd55g r-justifyContent-1wtj0ep r-marginBottom-15d164r r-marginLeft-1n0xq6e r-marginRight-zso239 r-paddingLeft-1hfyk0a r-width-1x8s7z8"
           style={
             Object {
               "WebkitBoxFlex": 0,
@@ -701,10 +725,14 @@ Array [
           }
         >
           <div
-            className="css-text-76zvg2 r-fontSize-1i10wst r-height-9njtsq r-lineHeight-waer2z r-overflow-1udh08x"
-            dir="auto"
+            className="css-view-1dbjc4n r-height-9njtsq r-overflow-1udh08x r-width-13qz1uu"
           >
-            Description for Crispy Fried Chicken
+            <div
+              className="css-text-76zvg2 css-textOneLine-bfa6kz r-fontSize-1i10wst r-lineHeight-waer2z"
+              dir="auto"
+            >
+              Description for Crispy Fried Chicken
+            </div>
           </div>
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-bottom-1ebgqk7 r-flexDirection-18u37iz r-position-u8s1d r-right-r19jdo"
