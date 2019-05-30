@@ -3,22 +3,18 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import Wrapper from '../../../../layout/Wrapper'
 import styles from './styles'
 
-// Interested Category props type
 type Props = {
-  customStyle?: {},
   type?: string,
-  onChooseCategory: (id: string) => void,
+  onChooseCategory: (id: string) => Promise<void>,
   activeList: Array<string>,
   categories: Array<{ id: string, name: string, imgUrl: string }>,
 }
 
-// component Comment Form
 const InterestedCategories = ({
-  customStyle = {},
   type = 'primary',
   activeList,
   onChooseCategory,
-  categories,
+  categories = [],
 }: Props) => {
   // declare state item size
   const [itemSize, setItemSize] = useState({ width: 0, height: 0 })
@@ -41,11 +37,11 @@ const InterestedCategories = ({
     <Wrapper
       direction="row"
       childPosition="right"
-      customStyles={[styles.container, customStyle]}
+      customStyles={styles.container}
       onLayout={handlingGetLayout}
     >
       {categories.map(category => {
-        // check if categary has been chosen
+        // check if category has been chosen
         const chosen = activeList.includes(category.id)
 
         return (
@@ -79,9 +75,7 @@ const InterestedCategories = ({
   )
 }
 
-// component default props value
 InterestedCategories.defaultProps = {
-  customStyle: {},
   type: 'primary',
 }
 
