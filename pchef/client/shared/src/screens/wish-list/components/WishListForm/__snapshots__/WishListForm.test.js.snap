@@ -5,37 +5,10 @@ exports[`Wish list Render wish list form component with size medium 1`] = `
   className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
 >
   <div
-    className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
-    style={
-      Object {
-        "backgroundColor": "rgba(66,165,245,1.00)",
-        "borderBottomColor": "rgba(0,0,0,0.00)",
-        "borderBottomLeftRadius": "4px",
-        "borderBottomRightRadius": "4px",
-        "borderBottomStyle": "solid",
-        "borderBottomWidth": "0px",
-        "borderLeftColor": "rgba(0,0,0,0.00)",
-        "borderLeftStyle": "solid",
-        "borderLeftWidth": "0px",
-        "borderRightColor": "rgba(0,0,0,0.00)",
-        "borderRightStyle": "solid",
-        "borderRightWidth": "0px",
-        "borderTopColor": "rgba(0,0,0,0.00)",
-        "borderTopLeftRadius": "4px",
-        "borderTopRightRadius": "4px",
-        "borderTopStyle": "solid",
-        "borderTopWidth": "0px",
-        "boxShadow": "0px 0.75px 1.5px rgba(0,0,0,0.24)",
-        "minWidth": "64px",
-        "paddingBottom": "5px",
-        "paddingLeft": "5px",
-        "paddingRight": "5px",
-        "paddingTop": "5px",
-      }
-    }
+    className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1eiu1f9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-justifyContent-1777fci r-marginBottom-15d164r r-marginTop-156q2ks r-paddingBottom-1mi0q7o r-paddingRight-1qfoi16"
   >
     <div
-      className="css-cursor-18t94o4 css-view-1dbjc4n r-backgroundColor-1niwhzg r-cursor-1loqt21 r-touchAction-1otgn73 r-userSelect-lrvibr"
+      className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
       data-focusable={true}
       disabled={false}
       onKeyDown={[Function]}
@@ -48,93 +21,186 @@ exports[`Wish list Render wish list form component with size medium 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       role="button"
-      style={
-        Object {
-          "borderBottomLeftRadius": "4px",
-          "borderBottomRightRadius": "4px",
-          "borderTopLeftRadius": "4px",
-          "borderTopRightRadius": "4px",
-          "overflowX": "hidden",
-          "overflowY": "hidden",
-        }
-      }
       tabIndex="0"
     >
+      <span
+        className="css-hitSlop-mjp8i1"
+        style={
+          Object {
+            "bottom": "-6px",
+            "left": "-6px",
+            "right": "-6px",
+            "top": "-6px",
+          }
+        }
+      />
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-justifyContent-1777fci"
+        className="css-view-1dbjc4n"
       >
         <div
-          className="css-text-76zvg2 css-textOneLine-bfa6kz r-color-cqee49 r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
+          className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
           dir="auto"
+          focusable={false}
+          role="img"
           style={
             Object {
-              "direction": "ltr",
-              "fontFamily": "Roboto-Medium, Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "color": "rgba(0,0,0,1.00)",
+              "fontSize": "30px",
             }
           }
         >
-          <span
-            className="css-text-76zvg2 css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
-            dir="auto"
-            style={
-              Object {
-                "direction": "ltr",
-                "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "textAlign": "left",
-              }
-            }
-          >
-            Select date
-          </span>
+          □
         </div>
       </div>
     </div>
+    <div
+      className="css-text-76zvg2 r-fontSize-ubezar r-marginLeft-1n0xq6e"
+      dir="auto"
+    >
+      Select date
+    </div>
   </div>
   <div
-    className="css-view-1dbjc4n r-flex-13awgt0 r-flexDirection-18u37iz"
+    className="css-view-1dbjc4n r-alignItems-1habvwh r-backgroundColor-1pzepah r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-justifyContent-1wtj0ep r-marginTop-156q2ks r-padding-1pcd2l5"
+    style={
+      Object {
+        "WebkitBoxFlex": 0,
+        "WebkitFlexGrow": 0,
+        "flexGrow": 0,
+        "msFlexPositive": 0,
+      }
+    }
   >
-    <input
-      autoCapitalize="none"
-      autoComplete="on"
-      autoCorrect="off"
-      className="css-textinput-1cwyjr8 r-borderBottomWidth-qklmqi r-borderColor-34efmp r-color-cqee49 r-flex-13awgt0 r-fontSize-ubezar r-height-eu3ka r-placeholderTextColor-1fufmm0"
-      data-focusable={true}
-      defaultValue=""
-      dir="auto"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      onSelect={[Function]}
-      placeholder="Category"
-      readOnly={false}
-      spellCheck={false}
-      type="text"
-    />
-  </div>
-  <div
-    className="css-view-1dbjc4n r-flex-13awgt0 r-flexDirection-18u37iz"
-  >
-    <input
-      autoCapitalize="none"
-      autoComplete="on"
-      autoCorrect="off"
-      className="css-textinput-1cwyjr8 r-borderBottomWidth-qklmqi r-borderColor-34efmp r-color-cqee49 r-flex-13awgt0 r-fontSize-ubezar r-height-eu3ka r-placeholderTextColor-1fufmm0"
-      data-focusable={true}
-      defaultValue=""
-      dir="auto"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      onSelect={[Function]}
-      placeholder="Cooking type"
-      readOnly={false}
-      spellCheck={false}
-      type="text"
-    />
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1eiu1f9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe r-paddingRight-1qfoi16"
+      >
+        <div
+          className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <span
+            className="css-hitSlop-mjp8i1"
+            style={
+              Object {
+                "bottom": "-6px",
+                "left": "-6px",
+                "right": "-6px",
+                "top": "-6px",
+              }
+            }
+          />
+          <div
+            className="css-view-1dbjc4n"
+          >
+            <div
+              className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+              dir="auto"
+              focusable={false}
+              role="img"
+              style={
+                Object {
+                  "color": "rgba(0,0,0,1.00)",
+                  "fontSize": "30px",
+                }
+              }
+            >
+              □
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-text-76zvg2 r-fontSize-ubezar r-marginLeft-1n0xq6e"
+          dir="auto"
+        >
+          Add categories
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1eiu1f9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe r-paddingRight-1qfoi16"
+      >
+        <div
+          className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <span
+            className="css-hitSlop-mjp8i1"
+            style={
+              Object {
+                "bottom": "-6px",
+                "left": "-6px",
+                "right": "-6px",
+                "top": "-6px",
+              }
+            }
+          />
+          <div
+            className="css-view-1dbjc4n"
+          >
+            <div
+              className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+              dir="auto"
+              focusable={false}
+              role="img"
+              style={
+                Object {
+                  "color": "rgba(0,0,0,1.00)",
+                  "fontSize": "30px",
+                }
+              }
+            >
+              □
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-text-76zvg2 r-fontSize-ubezar r-marginLeft-1n0xq6e"
+          dir="auto"
+        >
+          Add cooking types
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -144,37 +210,10 @@ exports[`Wish list Renders correctly wish list form commponent 1`] = `
   className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
 >
   <div
-    className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
-    style={
-      Object {
-        "backgroundColor": "rgba(66,165,245,1.00)",
-        "borderBottomColor": "rgba(0,0,0,0.00)",
-        "borderBottomLeftRadius": "4px",
-        "borderBottomRightRadius": "4px",
-        "borderBottomStyle": "solid",
-        "borderBottomWidth": "0px",
-        "borderLeftColor": "rgba(0,0,0,0.00)",
-        "borderLeftStyle": "solid",
-        "borderLeftWidth": "0px",
-        "borderRightColor": "rgba(0,0,0,0.00)",
-        "borderRightStyle": "solid",
-        "borderRightWidth": "0px",
-        "borderTopColor": "rgba(0,0,0,0.00)",
-        "borderTopLeftRadius": "4px",
-        "borderTopRightRadius": "4px",
-        "borderTopStyle": "solid",
-        "borderTopWidth": "0px",
-        "boxShadow": "0px 0.75px 1.5px rgba(0,0,0,0.24)",
-        "minWidth": "64px",
-        "paddingBottom": "5px",
-        "paddingLeft": "5px",
-        "paddingRight": "5px",
-        "paddingTop": "5px",
-      }
-    }
+    className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1eiu1f9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-justifyContent-1777fci r-marginBottom-15d164r r-marginTop-156q2ks r-paddingBottom-1mi0q7o r-paddingRight-1qfoi16"
   >
     <div
-      className="css-cursor-18t94o4 css-view-1dbjc4n r-backgroundColor-1niwhzg r-cursor-1loqt21 r-touchAction-1otgn73 r-userSelect-lrvibr"
+      className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
       data-focusable={true}
       disabled={false}
       onKeyDown={[Function]}
@@ -187,94 +226,186 @@ exports[`Wish list Renders correctly wish list form commponent 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       role="button"
-      style={
-        Object {
-          "borderBottomLeftRadius": "4px",
-          "borderBottomRightRadius": "4px",
-          "borderTopLeftRadius": "4px",
-          "borderTopRightRadius": "4px",
-          "overflowX": "hidden",
-          "overflowY": "hidden",
-        }
-      }
       tabIndex="0"
     >
+      <span
+        className="css-hitSlop-mjp8i1"
+        style={
+          Object {
+            "bottom": "-6px",
+            "left": "-6px",
+            "right": "-6px",
+            "top": "-6px",
+          }
+        }
+      />
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-justifyContent-1777fci"
+        className="css-view-1dbjc4n"
       >
         <div
-          className="css-text-76zvg2 css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
+          className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
           dir="auto"
+          focusable={false}
+          role="img"
           style={
             Object {
               "color": "rgba(0,0,0,1.00)",
-              "direction": "ltr",
-              "fontFamily": "Roboto-Medium, Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "30px",
             }
           }
         >
-          <span
-            className="css-text-76zvg2 css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
-            dir="auto"
-            style={
-              Object {
-                "direction": "ltr",
-                "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "textAlign": "left",
-              }
-            }
-          >
-            Select date
-          </span>
+          □
         </div>
       </div>
     </div>
+    <div
+      className="css-text-76zvg2 r-fontSize-ubezar r-marginLeft-1n0xq6e"
+      dir="auto"
+    >
+      Select date
+    </div>
   </div>
   <div
-    className="css-view-1dbjc4n r-flex-13awgt0 r-flexDirection-18u37iz"
+    className="css-view-1dbjc4n r-alignItems-1habvwh r-backgroundColor-1pzepah r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-justifyContent-1wtj0ep r-marginTop-156q2ks r-padding-1pcd2l5"
+    style={
+      Object {
+        "WebkitBoxFlex": 0,
+        "WebkitFlexGrow": 0,
+        "flexGrow": 0,
+        "msFlexPositive": 0,
+      }
+    }
   >
-    <input
-      autoCapitalize="none"
-      autoComplete="on"
-      autoCorrect="off"
-      className="css-textinput-1cwyjr8 r-borderBottomWidth-qklmqi r-borderColor-34efmp r-color-cqee49 r-flex-13awgt0 r-fontSize-ubezar r-height-eu3ka r-placeholderTextColor-1fufmm0"
-      data-focusable={true}
-      defaultValue=""
-      dir="auto"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      onSelect={[Function]}
-      placeholder="Category"
-      readOnly={false}
-      spellCheck={false}
-      type="text"
-    />
-  </div>
-  <div
-    className="css-view-1dbjc4n r-flex-13awgt0 r-flexDirection-18u37iz"
-  >
-    <input
-      autoCapitalize="none"
-      autoComplete="on"
-      autoCorrect="off"
-      className="css-textinput-1cwyjr8 r-borderBottomWidth-qklmqi r-borderColor-34efmp r-color-cqee49 r-flex-13awgt0 r-fontSize-ubezar r-height-eu3ka r-placeholderTextColor-1fufmm0"
-      data-focusable={true}
-      defaultValue=""
-      dir="auto"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      onSelect={[Function]}
-      placeholder="Cooking type"
-      readOnly={false}
-      spellCheck={false}
-      type="text"
-    />
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1eiu1f9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe r-paddingRight-1qfoi16"
+      >
+        <div
+          className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <span
+            className="css-hitSlop-mjp8i1"
+            style={
+              Object {
+                "bottom": "-6px",
+                "left": "-6px",
+                "right": "-6px",
+                "top": "-6px",
+              }
+            }
+          />
+          <div
+            className="css-view-1dbjc4n"
+          >
+            <div
+              className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+              dir="auto"
+              focusable={false}
+              role="img"
+              style={
+                Object {
+                  "color": "rgba(0,0,0,1.00)",
+                  "fontSize": "30px",
+                }
+              }
+            >
+              □
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-text-76zvg2 r-fontSize-ubezar r-marginLeft-1n0xq6e"
+          dir="auto"
+        >
+          Add categories
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1eiu1f9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe r-paddingRight-1qfoi16"
+      >
+        <div
+          className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <span
+            className="css-hitSlop-mjp8i1"
+            style={
+              Object {
+                "bottom": "-6px",
+                "left": "-6px",
+                "right": "-6px",
+                "top": "-6px",
+              }
+            }
+          />
+          <div
+            className="css-view-1dbjc4n"
+          >
+            <div
+              className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+              dir="auto"
+              focusable={false}
+              role="img"
+              style={
+                Object {
+                  "color": "rgba(0,0,0,1.00)",
+                  "fontSize": "30px",
+                }
+              }
+            >
+              □
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-text-76zvg2 r-fontSize-ubezar r-marginLeft-1n0xq6e"
+          dir="auto"
+        >
+          Add cooking types
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
