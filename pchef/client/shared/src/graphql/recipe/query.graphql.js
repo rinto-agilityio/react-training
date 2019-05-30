@@ -104,7 +104,7 @@ const recipeDetail = graphql(GET_RECIPE_DETAIL, {
     return {
       loading,
       error,
-      recipe: getRecipe,
+      getRecipe,
     }
   },
 })
@@ -115,4 +115,5 @@ export {
   getRecipes,
   recipeDetail,
   GET_RECIPES,
+  GET_RECIPE_DETAIL,
 }

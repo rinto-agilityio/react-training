@@ -11,8 +11,8 @@ import Reaction from '../../../../components/Reaction'
 
 // Helpers
 import {
-  checkFavorited,
-  formatUserToggleSaveRes,
+  checkContainField,
+  formatFiledOnObject,
 } from '../../../../helpers/utils'
 
 type Props = {
@@ -41,17 +41,17 @@ const Recipe = ({
 }: Props) => {
   const { id, title, description, imgUrl, votes } = recipe
 
-  const isFavorited = checkFavorited(favoriteRecipe, id)
+  const isFavorited = checkContainField(favoriteRecipe, id)
 
   const handleSaveRecipe = async () => {
     await userToggleRecipe(id, favoriteRecipe).then(({ data }) => {
-      console.log('data', data)
+
       const {
         userToggleRecipe: { results },
       } = data
 
       if (results) {
-        checkFavorited(formatUserToggleSaveRes(results), id)
+        checkContainField(formatFiledOnObject(results), id)
       }
     })
   }

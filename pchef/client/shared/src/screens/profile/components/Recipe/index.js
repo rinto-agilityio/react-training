@@ -10,7 +10,7 @@ import Image from '../../../../components/Image'
 import Reaction from '../../../../components/Reaction'
 
 // Helpers
-import { checkFavorited } from '../../../../helpers/utils'
+import { checkContainField } from '../../../../helpers/utils'
 
 type Props = {
   recipe: {
@@ -45,7 +45,7 @@ const Recipe = ({
     userToggleRecipe(id, favoriteRecipe)
   }
 
-  const isFavorited = checkFavorited(favoriteRecipe, id)
+  const isFavorited = checkContainField(favoriteRecipe, id)
 
   return (
     <TouchableOpacity style={[styles.wrapper, styles[`${size}Wrapper`]]}>

@@ -5,9 +5,9 @@ import { GET_RECIPES } from './query.graphql'
 
 // Helpers
 import {
-  checkFavorited,
+  checkContainField,
   formatFavoriteRecipe,
-  formatUserToggleSaveRes,
+  formatFiledOnObject,
 } from '../../helpers/utils'
 
 const CREATE_RECIPE = gql`
@@ -116,7 +116,7 @@ const userToggleRecipe = graphql(TOGGLE_RECIPE, {
       optimisticResponse: {
         userToggleRecipe: {
           __typename: 'PayloadResults',
-          results: checkFavorited(favoriteRecipe, recipeId) ?
+          results: checkContainField(favoriteRecipe, recipeId) ?
             formatFavoriteRecipe(favoriteRecipe.filter(item => item.id !== recipeId))
             :
             formatFavoriteRecipe(favoriteRecipe).concat(recipeId),
@@ -136,7 +136,7 @@ const userToggleRecipe = graphql(TOGGLE_RECIPE, {
           ...dataQuery,
           getUser: {
             ...dataQuery.getUser,
-            favoriteRecipe: formatUserToggleSaveRes(results),
+            favoriteRecipe: formatFiledOnObject(results),
             __typename: 'UserFullInfos',
           },
         }

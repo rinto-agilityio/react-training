@@ -5,7 +5,7 @@ import { GET_USER } from './query.graphql'
 
 // Helpers
 import {
-  checkFavorited,
+  checkContainField,
   formatFavoriteRecipe,
   mergeArrayObject,
 } from '../../helpers/utils'
@@ -60,7 +60,7 @@ const userToggleRecipe = graphql(TOGGLE_RECIPE, {
       optimisticResponse: {
         userToggleRecipe: {
           __typename: 'PayloadResults',
-          results: checkFavorited(favoriteRecipe, recipeId) ?
+          results: checkContainField(favoriteRecipe, recipeId) ?
             formatFavoriteRecipe(favoriteRecipe.filter(item => item.id !== recipeId))
             :
             formatFavoriteRecipe(favoriteRecipe).concat(recipeId),

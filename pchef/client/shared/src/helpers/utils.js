@@ -65,10 +65,11 @@ export const customError = (errorArr: Array<{message: string}>) => {
 }
 
 /**
- * Checking current recipe saved
+ * Checking contain item in array
  */
-export const checkFavorited = (arr: Array<{id: string}>, currentId: string) =>
+export const checkContainField = (arr: Array<{id: string}>, currentId: string) => (
   arr.findIndex(item => item.id === currentId || item === currentId) !== -1
+)
 
 /**
  * Format favorite recipe get from getUser query
@@ -83,10 +84,8 @@ export const formatFavoriteRecipe = (arr: Array<{id: string}>) => {
  * Format favorite recipe returned from userToggleSave mutation
  * @param {Array} arr
  */
-export const formatUserToggleSaveRes = (arr: Array<string>) => {
-  const newArr: Array<{id: string}> = arr.map(item => (
-    Object.assign({id: item, __typename: 'Recipe'})
-  ))
+export const formatFiledOnObject = (arr: Array<string>) => {
+  const newArr: Array<{id: string}> = arr.map(item => Object.assign({ id: item, __typename: 'Recipe' }))
   return newArr
 }
 

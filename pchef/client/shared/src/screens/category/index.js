@@ -24,7 +24,7 @@ type Props = {
   }>,
   loading: boolean,
   error: {
-    message: string,
+    message: string
   },
 }
 const CategoryScreen = ({
