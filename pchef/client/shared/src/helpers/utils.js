@@ -68,7 +68,7 @@ export const customError = (errorArr: Array<{message: string}>) => {
  * Checking contain item in array
  */
 export const checkContainField = (arr: Array<{id: string}>, currentId: string) => (
-  arr.findIndex(item => item.id === currentId || item === currentId) === -1 ? false : true
+  arr.findIndex(item => item.id === currentId || item === currentId) !== -1
 )
 
 /**
