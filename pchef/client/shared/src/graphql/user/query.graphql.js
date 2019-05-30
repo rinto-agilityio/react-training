@@ -22,6 +22,11 @@ const GET_USER = gql`
         votes
         description
       }
+      followCategory {
+        id
+        name
+        imgUrl
+      }
     }
   }
 `
