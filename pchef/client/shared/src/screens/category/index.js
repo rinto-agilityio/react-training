@@ -23,7 +23,9 @@ type Props = {
     description: string,
   }>,
   loading: boolean,
-  error: object,
+  error: {
+    message: string,
+  },
 }
 const CategoryScreen = ({
   category = {},
