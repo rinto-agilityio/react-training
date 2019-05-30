@@ -1,6 +1,6 @@
 // Libs
-import React from 'react'
-import { Platform, View } from 'react-native'
+import React, { useState } from 'react'
+import { Platform, View, FlatList, Button } from 'react-native'
 
 // Components
 import Header from './components/Header'
@@ -34,6 +34,9 @@ const CategoryScreen = ({
   error,
 }: Props) => {
   const size = Platform.OS === 'web' ? 'large' : 'small'
+  const [column, setColumn] = useState(3)
+  // const [key, setKey] = useState(1)
+  const [isListView, setIsListView] = useState(true)
 
   if (loading) return <Loading size="small" />
   if (error) return <Error message={error.message} size={size} />
@@ -42,9 +45,30 @@ const CategoryScreen = ({
     <>
       <Header category={category} isGrid size={size} />
       <View style={styles.container}>
-        {recipes.map(recipe => (
-          <Recipe key={recipe.id} recipe={recipe} size={size} />
-        ))}
+        <Button
+          onPress={() => {
+            setColumn(1)
+            // setKey(key + 1)
+            setIsListView(true)
+          }}
+          title="List View"
+        />
+        <Button
+          onPress={() => {
+            setColumn(3)
+            // setKey(key + 1)
+            setIsListView(false)
+          }}
+          title="Grid View"
+        />
+        <FlatList
+          // key={key}
+          showsVerticalScrollIndicator={false}
+          numColumns={column}
+          data={recipes}
+          renderItem={({ item }) => <Recipe isListView={isListView} recipe={item} size={size} />}
+          keyExtractor={index => index}
+        />
       </View>
     </>
   )
