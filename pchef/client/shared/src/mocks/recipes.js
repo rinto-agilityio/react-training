@@ -5,7 +5,7 @@ export const recipes = [
     subTitle: 'Traditional food',
     description: '2lb pork neck bones, 2lb beef bones, 1lb oxtail',
     imgUrl: 'https://vcdn-ngoisao.vnecdn.net/2018/01/19/1-8515-1516314392.jpg',
-    votes: ['1'],
+    votes: ['1', '2'],
     views: 1,
     userId: 'xsgfpdeFAnX0bZTRNZzl1A6HDj33',
     steps: [

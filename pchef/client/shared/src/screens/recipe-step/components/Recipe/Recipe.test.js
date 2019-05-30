@@ -3,13 +3,18 @@ import Recipe from '.'
 import ProgressStep from './ProgressStep'
 
 // Mocks
-import { recipes } from '../../../../mocks'
+import { recipes, user } from '../../../../mocks'
 
 const recipe = recipes[0]
 describe('Recipe by step', () => {
   const recipeProps = {
     stepInfo: recipe.steps[0],
+    votes: recipe.votes,
     recipe,
+    getUser: {
+      favoriteRecipe: user.favoriteRecipe,
+      user,
+    },
     onSelectStep: jest.fn(),
   }
   const stepProps = {
