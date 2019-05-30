@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InterestedCategories InterestedCategories render with defaultProps 1`] = `
+exports[`InterestedCategories InterestedCategories snapshots with type categories undefined 1`] = `
 <div
   className="css-view-1dbjc4n r-alignItems-obd0qt r-display-6koalj r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-1h0z5md r-margin-1cis278 r-minHeight-1xfddsp"
   style={
@@ -14,7 +14,7 @@ exports[`InterestedCategories InterestedCategories render with defaultProps 1`] 
 />
 `;
 
-exports[`InterestedCategories InterestedCategories snapshots 1`] = `
+exports[`InterestedCategories InterestedCategories snapshots with type primary 1`] = `
 <div
   className="css-view-1dbjc4n r-alignItems-obd0qt r-display-6koalj r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-1h0z5md r-margin-1cis278 r-minHeight-1xfddsp"
   style={
@@ -785,7 +785,7 @@ exports[`InterestedCategories InterestedCategories snapshots 1`] = `
 </div>
 `;
 
-exports[`InterestedCategories InterestedCategories snapshots 2`] = `
+exports[`InterestedCategories InterestedCategories snapshots with type secondary 1`] = `
 <div
   className="css-view-1dbjc4n r-alignItems-obd0qt r-display-6koalj r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-1h0z5md r-margin-1cis278 r-minHeight-1xfddsp"
   style={

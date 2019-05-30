@@ -3,37 +3,43 @@ import InterestedCategories from '.'
 import { categories } from '../../../../mocks'
 
 describe('InterestedCategories', () => {
-  it('InterestedCategories render with defaultProps', () => {
-    const component = renderer.create(<InterestedCategories />).toJSON()
-    expect(component).toMatchSnapshot()
-  })
+  let props = {
+    onChooseCategory: () => {},
+    activeList: [categories[0].id, categories[1].id],
+    categories,
+  }
 
-  it('InterestedCategories snapshots', () => {
-    // define props
-    const props = {
-      onChooseCategory: () => {},
-      activeList: [categories[0].id, categories[1].id],
-      categories,
+  it('InterestedCategories snapshots with type primary', () => {
+    props = {
+      ...props,
+      type: 'primary',
     }
 
     const primaryComponent = renderer.create(
-      <InterestedCategories {...props} type="primary" customStyle={{ flex: 1 }} />,
-    ).toJSON()
-    const secondaryComponent = renderer.create(
-      <InterestedCategories {...props} type="secondary" />,
+      <InterestedCategories {...props} />,
     ).toJSON()
 
     expect(primaryComponent).toMatchSnapshot()
+  })
+
+  it('InterestedCategories snapshots with type secondary', () => {
+    props = {
+      ...props,
+      type: 'secondary',
+    }
+
+    const secondaryComponent = renderer.create(
+      <InterestedCategories {...props} />,
+    ).toJSON()
+
     expect(secondaryComponent).toMatchSnapshot()
   })
 
   it('InterestedCategories actions', () => {
     // define props
-    const props = {
-      customStyle: {},
+    props = {
+      ...props,
       onChooseCategory: jest.fn(),
-      activeList: [categories[0].id, categories[1].id],
-      categories,
     }
 
     const component = shallow(<InterestedCategories {...props} />)
@@ -47,5 +53,18 @@ describe('InterestedCategories', () => {
       .onPress()
 
     expect(props.onChooseCategory).toHaveBeenCalled()
+  })
+
+  it('InterestedCategories snapshots with type categories undefined', () => {
+    props = {
+      ...props,
+      categories: undefined,
+    }
+
+    const primaryComponent = renderer.create(
+      <InterestedCategories {...props} />,
+    ).toJSON()
+
+    expect(primaryComponent).toMatchSnapshot()
   })
 })
