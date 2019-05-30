@@ -71,7 +71,7 @@ describe('Wish list', () => {
     expect(component.find('Apollo(Classify)').exists()).toEqual(false)
   })
 
-  it('Should show coooking types form', () => {
+  it('Should show cooking types form', () => {
     const icon = component.find('Icon')
     expect(component.find('Apollo(Classify)').exists()).toEqual(false)
     icon.at(2).props().onPress()
