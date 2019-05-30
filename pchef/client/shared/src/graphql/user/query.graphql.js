@@ -7,6 +7,7 @@ const GET_USER = gql`
       user {
         name
         avatar
+        favoriteRecipe
       }
       ownRecipes {
         id
@@ -34,4 +35,4 @@ const getUser = graphql(GET_USER, {
   }),
 })
 
-export { getUser }
+export { getUser, GET_USER }

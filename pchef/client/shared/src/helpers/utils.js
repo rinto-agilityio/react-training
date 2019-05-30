@@ -88,3 +88,30 @@ export const formatFiledOnObject = (arr: Array<string>) => {
   const newArr: Array<{id: string}> = arr.map(item => Object.assign({ id: item, __typename: 'Recipe' }))
   return newArr
 }
+
+/**
+ * Merge arrays object
+ * @param {Array} array1
+ * @param {Array} array2
+ */
+
+type Item = {
+  id: string,
+  title: string,
+  imgUrl: string,
+  description: string,
+  votes: Array<string>,
+}
+
+export const mergeArrayObject = (array1: Array<Item>, array2: Array<Item>) => {
+  const allRecipes = array1.concat(array2)
+
+  const newArray = allRecipes.reduce((array, current) => {
+    if (!array.some(item => item.id === current.id)) {
+      array.push(current)
+    }
+    return array
+  }, [])
+
+  return newArray
+}

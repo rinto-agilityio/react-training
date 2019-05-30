@@ -44,7 +44,7 @@ exports[`renders correctly 1`] = `
           role="img"
           style={
             Object {
-              "color": "rgba(128,128,128,1.00)",
+              "color": "rgba(70,91,174,1.00)",
               "fontSize": "30px",
             }
           }

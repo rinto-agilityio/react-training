@@ -33,8 +33,12 @@ type Props = {
       description: string,
     }>,
   },
+  userToggleRecipe: (
+    recipeId: string,
+    favoriteRecipe: Array<{ id: string }>
+  ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
 }
-const Profile = ({ data, loading, error }: Props) => {
+const Profile = ({ data, loading, error, userToggleRecipe }: Props) => {
   const errorMessage =
     'Can not load information of user. Please check for connection!!!'
 
@@ -51,7 +55,11 @@ const Profile = ({ data, loading, error }: Props) => {
   return (
     <View style={styles.profile}>
       <Header user={user} />
-      <Tabs ownRecipes={ownRecipes} favoriteRecipe={favoriteRecipe} />
+      <Tabs
+        ownRecipes={ownRecipes}
+        favoriteRecipe={favoriteRecipe}
+        userToggleRecipe={userToggleRecipe}
+      />
     </View>
   )
 }

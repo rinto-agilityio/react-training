@@ -2,7 +2,7 @@
 
 exports[`Components Recipe should render Header component with grid 1`] = `
 <div
-  className="css-view-1dbjc4n r-borderBottomWidth-qklmqi r-marginBottom-117bsoe r-marginLeft-1n0xq6e r-marginRight-zso239"
+  className="css-view-1dbjc4n r-borderBottomWidth-qklmqi r-borderColor-35fm6a r-marginBottom-117bsoe r-marginLeft-1n0xq6e r-marginRight-zso239 r-width-16k0tzm"
 >
   <div
     className="css-text-76zvg2 r-fontSize-adyw6z r-paddingBottom-1mi0q7o"
@@ -60,7 +60,7 @@ exports[`Components Recipe should render Header component with grid 1`] = `
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-7r4507 r-justifyContent-1wtj0ep r-marginBottom-15d164r r-marginLeft-1n0xq6e r-marginRight-zso239"
+      className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-7r4507 r-justifyContent-1wtj0ep r-marginBottom-15d164r r-marginLeft-1n0xq6e r-marginRight-zso239 r-width-10gux0o"
       style={
         Object {
           "WebkitBoxFlex": 0,
@@ -71,10 +71,26 @@ exports[`Components Recipe should render Header component with grid 1`] = `
       }
     >
       <div
-        className="css-text-76zvg2 r-fontSize-ubezar r-height-9njtsq r-overflow-1udh08x"
-        dir="auto"
+        className="css-view-1dbjc4n r-height-9njtsq r-overflow-1udh08x r-width-13qz1uu"
       >
-        2lb pork neck bones, 2lb beef bones, 1lb oxtail
+        <div
+          className="css-text-76zvg2 css-textOneLine-bfa6kz"
+          dir="auto"
+        >
+          2lb pork neck bones
+        </div>
+        <div
+          className="css-text-76zvg2 css-textOneLine-bfa6kz"
+          dir="auto"
+        >
+           2lb beef bones
+        </div>
+        <div
+          className="css-text-76zvg2 css-textOneLine-bfa6kz"
+          dir="auto"
+        >
+           1lb oxtail
+        </div>
       </div>
       <div
         className="css-view-1dbjc4n r-alignItems-1awozwy r-bottom-1ebgqk7 r-flexDirection-18u37iz r-position-u8s1d r-right-r19jdo"
