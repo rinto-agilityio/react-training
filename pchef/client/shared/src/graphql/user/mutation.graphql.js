@@ -6,7 +6,7 @@ import gql from 'graphql-tag'
 import { GET_USER } from '../recipe-step/query.graphql'
 
 // Helpers
-import { formatUserToggleSaveRes } from '../../helpers/utils'
+import { formatFiledOnObject } from '../../helpers/utils'
 
 const USER_SIGNIN = gql`
   mutation signInUser($email: String!, $password: String!) {
@@ -70,7 +70,7 @@ const userToggleCategory = graphql(USER_TOGGLE_CATEGORY, {
           ...dataQuery,
           getUser: {
             ...dataQuery.getUser,
-            followCategory: formatUserToggleSaveRes(results, 'Category'),
+            followCategory: formatFiledOnObject(results, 'Category'),
             __typename: 'UserFullInfos',
           },
         }

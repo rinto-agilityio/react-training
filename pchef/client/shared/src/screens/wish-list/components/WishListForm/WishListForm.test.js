@@ -19,11 +19,11 @@ describe('Wish list', () => {
   })
 
   it('Should show/hide modal calendar when press select date/done button', () => {
-    const button = component.find('Button')
+    const icon = component.find('Icon')
 
-    // Press select date button to show modal
-    const selectDateBtn = button.first()
-    selectDateBtn.props().onPress()
+    // Press select date icon to show modal
+    const selectDateIcon = icon.first()
+    selectDateIcon.props().onPress()
     expect(component.find('Modal').props().visible).toEqual(true)
 
     component.find('Modal').props().onSubmit()
@@ -31,22 +31,22 @@ describe('Wish list', () => {
   })
 
   it('Should hide modal calendar when press dialog', () => {
-    const button = component.find('Button')
+    const icon = component.find('Icon')
 
-    // Press select date button to show modal
-    const selectDateBtn = button.first()
-    selectDateBtn.props().onPress()
+    // Press select date icon to show modal
+    const selectDateIcon = icon.first()
+    selectDateIcon.props().onPress()
     const modal = component.find('Modal')
     modal.props().onDismiss()
     expect(component.find('Modal').exists()).toEqual(false)
   })
 
   it('Should update selected date when press on calendar', () => {
-    const button = component.find('Button')
+    const icon = component.find('Icon')
 
-    // Press select date button to show modal
-    const selectDateBtn = button.first()
-    selectDateBtn.props().onPress()
+    // Press select date icon to show modal
+    const selectDateIcon = icon.first()
+    selectDateIcon.props().onPress()
 
     const calendarProps = component.find('CalendarComponent').props()
     calendarProps.onSelectDay({
@@ -54,5 +54,49 @@ describe('Wish list', () => {
     })
 
     expect(component.find('CalendarComponent')).toMatchSnapshot()
+  })
+
+  it('Should show categories form', () => {
+    const icon = component.find('Icon')
+    expect(component.find('Apollo(Classify)').exists()).toEqual(false)
+    icon.at(1).props().onPress()
+    expect(component.find('Apollo(Classify)').exists()).toEqual(true)
+
+    // Submit Categories form
+    const cookingTypesProps = component.find('Apollo(Classify)').props()
+    cookingTypesProps.handleSubmit({
+      id: '1',
+      name: 'test',
+    })
+    expect(component.find('Apollo(Classify)').exists()).toEqual(false)
+  })
+
+  it('Should show cooking types form', () => {
+    const icon = component.find('Icon')
+    expect(component.find('Apollo(Classify)').exists()).toEqual(false)
+    icon.at(2).props().onPress()
+    expect(component.find('Apollo(Classify)').exists()).toEqual(true)
+
+    // Submit Cooking types form
+    const cookingTypesProps = component.find('Apollo(Classify)').props()
+    cookingTypesProps.handleSubmit({
+      id: '1',
+      name: 'test',
+    })
+    expect(component.find('Apollo(Classify)').exists()).toEqual(false)
+  })
+
+  it('Should hide categories form', () => {
+    const icon = component.find('Icon')
+    icon.at(1).props().onPress()
+    component.find('Apollo(Classify)').props().onDismiss()
+    expect(component.find('Apollo(Classify)').exists()).toEqual(false)
+  })
+
+  it('Should hide cooking types form', () => {
+    const icon = component.find('Icon')
+    icon.at(2).props().onPress()
+    component.find('Apollo(Classify)').props().onDismiss()
+    expect(component.find('Apollo(Classify)').exists()).toEqual(false)
   })
 })

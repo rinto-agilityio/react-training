@@ -132,6 +132,23 @@ const Mutation = {
       .catch(error => error)
   }),
 
+  userToggleVote: authenticated((_, { recipeId }, { currentUser }) => {
+
+    return getDocument(`${COLLECTION_NAME.RECIPE}/${recipeId}`)
+      .then(recipe => {
+        const newVotes = toggleItemInArray(recipe.votes, currentUser.id)
+
+        return updateDocument(`${COLLECTION_NAME.RECIPE}/${recipeId}`, {
+          votes: newVotes,
+        })
+          .then(() => ({
+            results: newVotes
+          }))
+          .catch(error => error)
+      })
+      .catch(error => error)
+  }),
+
   // RecipeStep
   createRecipeStep: authenticated((_, data, { currentUser }) => ({
     id: addDocument(COLLECTION_NAME.RECIPE_STEP, {
