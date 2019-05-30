@@ -68,7 +68,7 @@ export const customError = (errorArr: Array<{message: string}>) => {
  * Checking current recipe saved
  */
 export const checkFavorited = (arr: Array<{id: string}>, currentId: string) =>
-  arr.findIndex(item => item.id === currentId) === -1 ? false : true
+  arr.findIndex(item => item.id === currentId || item === currentId) !== -1
 
 /**
  * Format favorite recipe get from getUser query
@@ -88,4 +88,31 @@ export const formatUserToggleSaveRes = (arr: Array<string>) => {
     Object.assign({id: item, __typename: 'Recipe'})
   ))
   return newArr
+}
+
+/**
+ * Merge arrays object
+ * @param {Array} array1
+ * @param {Array} array2
+ */
+
+type Item = {
+  id: string,
+  title: string,
+  imgUrl: string,
+  description: string,
+  votes: Array<string>,
+}
+
+export const mergeArrayObject = (array1: Array<Item>, array2: Array<Item>) => {
+  const allRecipes = array1.concat(array2)
+
+  const newArray = allRecipes.reduce((array, current) => {
+    if (!array.some(item => item.id === current.id)) {
+      array.push(current)
+    }
+    return array
+  }, [])
+
+  return newArray
 }

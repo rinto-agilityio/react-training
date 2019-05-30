@@ -47,17 +47,12 @@ exports[`Components Header Login snapshots 1`] = `
             role="img"
             style={
               Object {
-                "WebkitTransform": "scaleX(1)",
                 "color": "rgba(255,255,255,1.00)",
-                "fontFamily": "MaterialIcons",
                 "fontSize": "40px",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "transform": "scaleX(1)",
               }
             }
           >
-            
+            □
           </div>
         </div>
       </div>
@@ -161,16 +156,11 @@ exports[`Components Header Login snapshots 2`] = `
             role="img"
             style={
               Object {
-                "WebkitTransform": "scaleX(1)",
-                "fontFamily": "MaterialIcons",
                 "fontSize": "40px",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-                "transform": "scaleX(1)",
               }
             }
           >
-            
+            □
           </div>
         </div>
       </div>

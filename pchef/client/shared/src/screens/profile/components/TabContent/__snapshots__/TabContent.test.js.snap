@@ -116,17 +116,12 @@ Array [
                 role="img"
                 style={
                   Object {
-                    "WebkitTransform": "scaleX(1)",
-                    "color": "rgba(128,128,128,1.00)",
-                    "fontFamily": "MaterialIcons",
+                    "color": "rgba(211,43,83,1.00)",
                     "fontSize": "30px",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                    "transform": "scaleX(1)",
                   }
                 }
               >
-                
+                □
               </div>
             </div>
           </div>
@@ -177,17 +172,12 @@ Array [
                 role="img"
                 style={
                   Object {
-                    "WebkitTransform": "scaleX(1)",
                     "color": "rgba(128,128,128,1.00)",
-                    "fontFamily": "MaterialIcons",
                     "fontSize": "30px",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                    "transform": "scaleX(1)",
                   }
                 }
               >
-                
+                □
               </div>
             </div>
           </div>
@@ -315,17 +305,12 @@ Array [
                 role="img"
                 style={
                   Object {
-                    "WebkitTransform": "scaleX(1)",
-                    "color": "rgba(128,128,128,1.00)",
-                    "fontFamily": "MaterialIcons",
+                    "color": "rgba(211,43,83,1.00)",
                     "fontSize": "30px",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                    "transform": "scaleX(1)",
                   }
                 }
               >
-                
+                □
               </div>
             </div>
           </div>
@@ -376,17 +361,12 @@ Array [
                 role="img"
                 style={
                   Object {
-                    "WebkitTransform": "scaleX(1)",
                     "color": "rgba(128,128,128,1.00)",
-                    "fontFamily": "MaterialIcons",
                     "fontSize": "30px",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                    "transform": "scaleX(1)",
                   }
                 }
               >
-                
+                □
               </div>
             </div>
           </div>
@@ -508,17 +488,12 @@ Array [
                 role="img"
                 style={
                   Object {
-                    "WebkitTransform": "scaleX(1)",
-                    "color": "rgba(128,128,128,1.00)",
-                    "fontFamily": "MaterialIcons",
+                    "color": "rgba(211,43,83,1.00)",
                     "fontSize": "30px",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                    "transform": "scaleX(1)",
                   }
                 }
               >
-                
+                □
               </div>
             </div>
           </div>
@@ -569,17 +544,12 @@ Array [
                 role="img"
                 style={
                   Object {
-                    "WebkitTransform": "scaleX(1)",
                     "color": "rgba(128,128,128,1.00)",
-                    "fontFamily": "MaterialIcons",
                     "fontSize": "30px",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                    "transform": "scaleX(1)",
                   }
                 }
               >
-                
+                □
               </div>
             </div>
           </div>
@@ -701,17 +671,12 @@ Array [
                 role="img"
                 style={
                   Object {
-                    "WebkitTransform": "scaleX(1)",
-                    "color": "rgba(128,128,128,1.00)",
-                    "fontFamily": "MaterialIcons",
+                    "color": "rgba(211,43,83,1.00)",
                     "fontSize": "30px",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                    "transform": "scaleX(1)",
                   }
                 }
               >
-                
+                □
               </div>
             </div>
           </div>
@@ -762,17 +727,12 @@ Array [
                 role="img"
                 style={
                   Object {
-                    "WebkitTransform": "scaleX(1)",
                     "color": "rgba(128,128,128,1.00)",
-                    "fontFamily": "MaterialIcons",
                     "fontSize": "30px",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                    "transform": "scaleX(1)",
                   }
                 }
               >
-                
+                □
               </div>
             </div>
           </div>

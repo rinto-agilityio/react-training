@@ -130,6 +130,7 @@ const userToggleRecipe = graphql(TOGGLE_RECIPE, {
         const {
           userToggleRecipe: { results },
         } = data
+
         const dataQuery = proxy.readQuery({ query: GET_RECIPES })
         const dataUpdated = {
           ...dataQuery,

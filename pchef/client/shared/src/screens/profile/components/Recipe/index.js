@@ -10,10 +10,7 @@ import Image from '../../../../components/Image'
 import Reaction from '../../../../components/Reaction'
 
 // Helpers
-import {
-  checkFavorited,
-  formatUserToggleSaveRes,
-} from '../../../../helpers/utils'
+import { checkFavorited } from '../../../../helpers/utils'
 
 type Props = {
   recipe: {
@@ -29,7 +26,9 @@ type Props = {
   }>,
   userToggleRecipe: (
     recipeId: string,
-    favoriteRecipe: Array<{ id: string }>
+    favoriteRecipe: Array<{
+      id: string,
+    }>
   ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
 }
 
@@ -41,20 +40,12 @@ const Recipe = ({
 }: Props) => {
   const { id, title, description, imgUrl, votes } = recipe
 
-  const isFavorited = checkFavorited(favoriteRecipe, id)
-
-  const handleSaveRecipe = async () => {
-    await userToggleRecipe(id, favoriteRecipe).then(({ data }) => {
-      console.log('data', data)
-      const {
-        userToggleRecipe: { results },
-      } = data
-
-      if (results) {
-        checkFavorited(formatUserToggleSaveRes(results), id)
-      }
-    })
+  // Call mutation for save recipe
+  const handleSaveRecipe = () => {
+    userToggleRecipe(id, favoriteRecipe)
   }
+
+  const isFavorited = checkFavorited(favoriteRecipe, id)
 
   return (
     <TouchableOpacity style={[styles.wrapper, styles[`${size}Wrapper`]]}>
