@@ -34,40 +34,37 @@ const CategoryScreen = ({
   error,
 }: Props) => {
   const size = Platform.OS === 'web' ? 'large' : 'small'
-  const [column, setColumn] = useState(3)
-  // const [key, setKey] = useState(1)
-  const [isListView, setIsListView] = useState(true)
+  const [columns, setColumns] = useState(1)
+  const [isGrid, setIsGrid] = useState(false)
 
   if (loading) return <Loading size="small" />
   if (error) return <Error message={error.message} size={size} />
 
+  const handleSelectListView = itemName => {
+    console.log('itemName = ', itemName)
+    if (itemName === 'view-list') {
+      // view List
+      setColumns(1)
+      setIsGrid(false)
+    } else {
+      // view Grid
+      setColumns(3)
+      setIsGrid(true)
+    }
+  }
+
   return (
     <>
-      <Header category={category} isGrid size={size} />
+      <Header category={category} isGrid={isGrid} onSelectListView={handleSelectListView} size={size} />
       <View style={styles.container}>
-        <Button
-          onPress={() => {
-            setColumn(1)
-            // setKey(key + 1)
-            setIsListView(true)
-          }}
-          title="List View"
-        />
-        <Button
-          onPress={() => {
-            setColumn(3)
-            // setKey(key + 1)
-            setIsListView(false)
-          }}
-          title="Grid View"
-        />
         <FlatList
-          // key={key}
           showsVerticalScrollIndicator={false}
-          numColumns={column}
+          numColumns={columns}
+          horizontal={false}
           data={recipes}
-          renderItem={({ item }) => <Recipe isListView={isListView} recipe={item} size={size} />}
-          keyExtractor={index => index}
+          renderItem={({ item }) => <Recipe isGrid={isGrid} recipe={item} size={size} />}
+          keyExtractor={item => item.id}
+          key={columns}
         />
       </View>
     </>
