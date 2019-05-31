@@ -23,7 +23,7 @@ type Props = {
   customWrapperIcon?: {},
   size?: string,
   onFollowing?: () => void,
-  onSelectListView?: () => void,
+  onSelectListView?: (itemName: string) => void,
 }
 
 const Header = ({
@@ -32,7 +32,7 @@ const Header = ({
   customTitle,
   isGrid,
   customWrapperIcon,
-  onSelectListView,
+  onSelectListView = () => {},
   size = '',
 }: Props) => {
   const { name, imgUrl } = category
