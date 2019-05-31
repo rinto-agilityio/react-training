@@ -2,7 +2,7 @@
 import { StyleSheet, Dimensions } from 'react-native'
 
 // Thmemes
-import { METRICS, FONTS, COLORS } from '../../../../themes'
+import { METRICS, FONTS } from '../../../../themes'
 
 // Define screen width
 const screenWidth = Math.round(Dimensions.get('window').width)
@@ -12,18 +12,21 @@ const styles = StyleSheet.create({
   recipe: {
     // width: screenWidth,
     width: '33.33%',
-    borderBottomWidth: METRICS.smallBorderWidth,
-    borderColor: COLORS.baseGray,
-    marginLeft: METRICS.mediumMargin,
-    marginRight: METRICS.mediumMargin,
-    marginBottom: METRICS.largeMargin,
+    boxSizing: 'border-box',
+    margin: 0,
+    // borderWidth: METRICS.smallBorderWidth,
+    borderColor: 'red',
+    // marginLeft: METRICS.mediumMargin,
+    // marginRight: METRICS.mediumMargin,
+    marginBottom: METRICS.mediumMargin,
   },
   wrapper: {
+    overflow: 'hidden',
     height: METRICS.smallWrapper,
     width: screenWidth - METRICS.mediumImage - METRICS.largeMargin,
     marginLeft: METRICS.mediumMargin,
-    marginRight: METRICS.mediumMargin,
-    marginBottom: METRICS.mediumMargin,
+    // marginRight: METRICS.mediumMargin,
+    // marginBottom: METRICS.mediumMargin,
   },
   wrapperText: {
     width: '100%',
@@ -42,13 +45,20 @@ const styles = StyleSheet.create({
     bottom: METRICS.smallPosition,
     right: METRICS.mediumPosition,
   },
-  largeContent: {
-    // width: METRICS.extraLargeScreen,
+  largeGridContent: {
+    borderColor: 'green',
+  },
+  largeListContent: {
+    width: METRICS.extraLargeScreen,
+    borderBottomWidth: METRICS.smallBorderWidth,
+    borderColor: 'pink',
     height: METRICS.smallContent,
     position: 'relative',
+    overflow: 'hidden',
+    marginBottom: METRICS.largeMargin,
   },
   largeWrapper: {
-    width: METRICS.extraLargeScreen - METRICS.largeImage - METRICS.largeMargin,
+    width: METRICS.extraLargeScreen - METRICS.largeImage - METRICS.extraLargeMargin,
     height: METRICS.largeWrapper,
     paddingLeft: METRICS.mediumPadding,
   },
