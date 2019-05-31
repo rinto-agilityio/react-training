@@ -24,6 +24,7 @@ type Props = {
     imgUrl: string,
     description: string,
   },
+  isGrid: Boolean,
   handlePressIcon?: () => void,
   size?: string,
   color?: string,
@@ -36,13 +37,14 @@ const Recipe = ({
   size = '',
   color,
   handlePressImage,
+  isGrid,
 }: Props) => {
   const { title, imgUrl, description } = recipe
   const formatDescription =
     formatStringToArray(description, SEPARATOR_SPLIT_STRING) || []
 
   return (
-    <View style={[styles.recipe, styles[`${size}Content`]]}>
+    <View style={[styles.recipe, isGrid ? styles[`${size}GridContent`] : styles[`${size}ListContent`]]}>
       <Text style={[styles.title, styles[`${size}Title`]]}>{title}</Text>
       <Wrapper direction="row" childPosition="left">
         <Image
