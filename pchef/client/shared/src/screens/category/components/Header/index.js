@@ -44,12 +44,12 @@ const Header = ({
       wrapperIconStyle: {
         marginRight: METRICS.extraLargeMargin,
       },
-      color: isGrid ? COLORS.lighterGray : COLORS.baseGray,
+      color: isGrid ? COLORS.baseGray : COLORS.lighterGray,
     },
     {
       name: 'apps',
       wrapperIconStyle: {},
-      color: isGrid ? COLORS.baseGray : COLORS.lighterGray,
+      color: isGrid ? COLORS.lighterGray : COLORS.baseGray,
     },
   ]
 
@@ -82,7 +82,7 @@ const Header = ({
             size={METRICS[`${size}Icon`]}
             color={item.color}
             wrapperIconStyle={item.wrapperIconStyle}
-            onPress={onSelectListView}
+            onPress={() => onSelectListView(item.name)}
           />
         ))}
       </View>
