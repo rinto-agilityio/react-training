@@ -1,6 +1,6 @@
 // Libs
 import React, { useRef } from 'react'
-import { View, Text } from 'react-native'
+import { Text } from 'react-native'
 
 // Styles
 import styles from './styles'
@@ -28,26 +28,24 @@ const IngredientsForm = ({
   const ingredientRef = useRef(null)
 
   return (
-    <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
-      <Modal
-        title="Ingredients"
-        dismissBtn
-        onDismiss={onDismiss}
-        onSubmit={() => handleSubmitIngredients(ingredientRef.current ? ingredientRef.current._node.value.trim() : '')}
-        visible={visible}
-        size={size}
-      >
-        <TextBox
-          placeholder="Write your ingredients"
-          refInput={ingredientRef}
-          customStyle={[styles.input, styles[`${size}Input`]]}
-          placeholderTextColor={COLORS.grayNavy}
-        />
-        <Text style={{ marginTop: METRICS.mediumMargin, color: COLORS.red }}>
-           Note: If you typing multiple ingredients, each ingredient separated by commas (,)
-        </Text>
-      </Modal>
-    </View>
+    <Modal
+      title="Ingredients"
+      dismissBtn
+      onDismiss={onDismiss}
+      onSubmit={() => handleSubmitIngredients(ingredientRef.current ? ingredientRef.current._node.value.trim() : '')}
+      visible={visible}
+      size={size}
+    >
+      <TextBox
+        placeholder="Write your ingredients"
+        refInput={ingredientRef}
+        customStyle={[styles.input, styles[`${size}Input`]]}
+        placeholderTextColor={COLORS.grayNavy}
+      />
+      <Text style={{ marginTop: METRICS.mediumMargin, color: COLORS.red }}>
+          Note: If you typing multiple ingredients, each ingredient separated by commas (,)
+      </Text>
+    </Modal>
   )
 }
 

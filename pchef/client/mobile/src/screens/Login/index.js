@@ -1,26 +1,25 @@
 import React from 'react'
-import { View, StyleSheet, Text } from 'react-native'
+import AsyncStorage from '@react-native-community/async-storage'
 
 // Component
-import BtnPaper from 'pchef-shared/src/components/Button'
+import LoginContainer from 'pchef-shared/src/containers/Login'
 
-// define Login page styles
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+type Props = {
+  navigation: {
+    navigate: (name: string) => void,
   },
-})
-
+}
 // Login
-const Login = () => (
-  <View style={styles.container}>
-    <Text>test</Text>
-    <Text>This is login screen</Text>
-    <BtnPaper
-      onPress={() => console.log('Press BtnPaper')}
-      title="BtnPaper"
-    />
-  </View>
-)
+const Login = ({ navigation }: Props) => {
+  // save token and navigation to home screen
+  const handlingLoginSuccess = async (token: string) => {
+    await AsyncStorage.setItem('token', token)
+    navigation.navigate('Home')
+  }
+
+  return (
+    <LoginContainer handlingLoginSuccess={handlingLoginSuccess} />
+  )
+}
 
 export default Login

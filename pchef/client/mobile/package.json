@@ -14,6 +14,7 @@
     "prestorybook": "./node_modules/.bin/rnstl --searchDir ./src --pattern '**/*.story.js' --outputFile ./storybook/storyLoader.js"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.4.2",
     "apollo-boost": "^0.3.1",
     "apollo-cache-inmemory": "^1.5.1",
     "apollo-link": "^1.2.11",
@@ -30,6 +31,7 @@
     "react-native-calendars": "^1.84.0",
     "react-native-fs": "^2.13.3",
     "react-native-gesture-handler": "^1.2.1",
+    "react-native-image-picker": "^0.28.1",
     "react-navigation": "^3.9.1",
     "subscriptions-transport-ws": "^0.9.16"
   },

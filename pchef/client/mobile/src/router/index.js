@@ -1,37 +1,20 @@
-import { createStackNavigator, createAppContainer } from 'react-navigation'
-import ROUTES from '@constants/routes'
-import RecipeDetail from '@screen/RecipeDetail'
-import Login from '@screen/Login'
-import Home from '@screen/Home'
-import Category from '@screen/Category'
+// Libs
+import { createAppContainer, createSwitchNavigator } from 'react-navigation'
 
-// app router
-const appRouter = createStackNavigator(
+// Navigations
+import PrivateNav from './PrivateNav'
+import PublicNav from './PublicNav'
+import AuthLoading from './AuthLoading'
+
+const appRoute = createSwitchNavigator(
   {
-    Login: {
-      screen: Login,
-      headerMode: 'none',
-    },
-    Home: {
-      screen: Home,
-      headerMode: 'none',
-    },
-    Category: {
-      screen: Category,
-      headerMode: 'none',
-    },
-    RecipeDetail: {
-      screen: RecipeDetail,
-      headerMode: 'none',
-    },
+    AuthLoading,
+    PrivateNav,
+    PublicNav,
   },
   {
-    navigationOptions: {
-      header: null,
-    },
-    headerMode: 'none',
-    initialRouteName: ROUTES.LOGIN,
+    initialRouteName: 'AuthLoading',
   },
 )
 
-export default createAppContainer(appRouter)
+export default createAppContainer(appRoute)
