@@ -1,8 +1,8 @@
 // Lib
 import { StyleSheet, Dimensions } from 'react-native'
 
-// Thmemes
-import { METRICS, FONTS } from '../../../../themes'
+// Themes
+import { METRICS, FONTS, COLORS } from '../../../../themes'
 
 // Define screen width
 const screenWidth = Math.round(Dimensions.get('window').width)
@@ -10,23 +10,14 @@ const screenWidth = Math.round(Dimensions.get('window').width)
 // Create style for Recipe
 const styles = StyleSheet.create({
   recipe: {
-    // width: screenWidth,
-    width: '33.33%',
+    width: '32.5%',
     boxSizing: 'border-box',
-    margin: 0,
-    // borderWidth: METRICS.smallBorderWidth,
-    borderColor: 'red',
-    // marginLeft: METRICS.mediumMargin,
-    // marginRight: METRICS.mediumMargin,
     marginBottom: METRICS.mediumMargin,
   },
   wrapper: {
     overflow: 'hidden',
     height: METRICS.smallWrapper,
     width: screenWidth - METRICS.mediumImage - METRICS.largeMargin,
-    marginLeft: METRICS.mediumMargin,
-    // marginRight: METRICS.mediumMargin,
-    // marginBottom: METRICS.mediumMargin,
   },
   wrapperText: {
     width: '100%',
@@ -46,21 +37,30 @@ const styles = StyleSheet.create({
     right: METRICS.mediumPosition,
   },
   largeGridContent: {
-    borderColor: 'green',
+    borderWidth: METRICS.smallBorderWidth,
+    borderColor: COLORS.baseGray,
+    borderRadius: METRICS.smallBorderRadius,
+    marginBottom: METRICS.mediumMargin,
+    padding: METRICS.mediumPadding,
   },
   largeListContent: {
     width: METRICS.extraLargeScreen,
     borderBottomWidth: METRICS.smallBorderWidth,
-    borderColor: 'pink',
+    borderColor: COLORS.baseGray,
     height: METRICS.smallContent,
     position: 'relative',
     overflow: 'hidden',
     marginBottom: METRICS.largeMargin,
   },
+  largeGridWrapper: {
+    width: '100%',
+    marginTop: METRICS.mediumPadding,
+  },
   largeWrapper: {
     width: METRICS.extraLargeScreen - METRICS.largeImage - METRICS.extraLargeMargin,
     height: METRICS.largeWrapper,
     paddingLeft: METRICS.mediumPadding,
+    marginLeft: METRICS.mediumMargin,
   },
   largeImage: {
     width: METRICS.largeImage,
@@ -72,6 +72,8 @@ const styles = StyleSheet.create({
   },
   largeTitle: {
     fontSize: FONTS.fontSize.extraLarge,
+    paddingRight: METRICS.mediumPadding,
+    paddingBottom: METRICS.mediumPadding,
   },
   largeText: {
     fontSize: FONTS.fontSize.medium,
