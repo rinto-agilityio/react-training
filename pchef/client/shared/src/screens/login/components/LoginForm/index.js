@@ -1,6 +1,6 @@
 // Libs
 import React, { useRef } from 'react'
-import { View } from 'react-native'
+import { View, Platform } from 'react-native'
 
 // Components
 import TextBox from '../../../../components/TextBox'
@@ -32,13 +32,14 @@ const LoginForm = ({
   const emailRef = useRef(null)
   const passwordRef = useRef(null)
 
+  const getValue = current => (
+    Platform.OS === 'web' ? current._node.value : current._lastNativeText
+  )
   // handling submit form
   const handlingSubmit = () => {
     // get email input and password input
-    const email = emailRef.current ? emailRef.current._node.value.trim() : ''
-    const password = passwordRef.current
-      ? passwordRef.current._node.value.trim()
-      : ''
+    const email = emailRef.current ? getValue(emailRef.current).trim() : ''
+    const password = passwordRef.current ? getValue(passwordRef.current).trim() : ''
 
     // validate email and password
     if (PATTERN.EMAIL.test(email) && password.length >= 8) {
