@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     marginBottom: METRICS.smallMargin + METRICS.mediumMargin,
     borderColor: COLORS.ghost,
     borderWidth: METRICS.smallBorderWidth,
+    width: '100%',
   },
   errorFormGroup: {
     borderColor: COLORS.baseRed,

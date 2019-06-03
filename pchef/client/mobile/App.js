@@ -7,6 +7,7 @@ import { WebSocketLink } from 'apollo-link-ws'
 import { createHttpLink } from 'apollo-link-http'
 import { split } from 'apollo-link'
 import { getMainDefinition } from 'apollo-utilities'
+import AsyncStorage from '@react-native-community/async-storage'
 import * as constants from '@constants/api'
 
 // create web sockket link
@@ -36,6 +37,15 @@ const link = split(
 const client = new ApolloClient({
   link,
   cache: new InMemoryCache(),
+  request: async operation => {
+    const token = await AsyncStorage.getItem('token');
+
+    operation.setContext({
+      headers: {
+        authorization: token,
+      },
+    });
+  },
 })
 
 // app

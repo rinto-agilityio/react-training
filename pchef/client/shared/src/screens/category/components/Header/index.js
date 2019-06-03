@@ -23,7 +23,7 @@ type Props = {
   customWrapperIcon?: {},
   size?: string,
   onFollowing?: () => void,
-  onSelectListView?: () => void,
+  onSelectListView?: (itemName: string) => void,
 }
 
 const Header = ({
@@ -32,7 +32,7 @@ const Header = ({
   customTitle,
   isGrid,
   customWrapperIcon,
-  onSelectListView,
+  onSelectListView = () => {},
   size = '',
 }: Props) => {
   const { name, imgUrl } = category
@@ -44,12 +44,12 @@ const Header = ({
       wrapperIconStyle: {
         marginRight: METRICS.extraLargeMargin,
       },
-      color: isGrid ? COLORS.lighterGray : COLORS.baseGray,
+      color: isGrid ? COLORS.baseGray : COLORS.lighterGray,
     },
     {
       name: 'apps',
       wrapperIconStyle: {},
-      color: isGrid ? COLORS.baseGray : COLORS.lighterGray,
+      color: isGrid ? COLORS.lighterGray : COLORS.baseGray,
     },
   ]
 
@@ -82,7 +82,7 @@ const Header = ({
             size={METRICS[`${size}Icon`]}
             color={item.color}
             wrapperIconStyle={item.wrapperIconStyle}
-            onPress={onSelectListView}
+            onPress={() => onSelectListView(item.name)}
           />
         ))}
       </View>

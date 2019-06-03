@@ -67,8 +67,7 @@ declare module 'react-native-dotenv' {
   declare module.exports: any
 }
 
-// TODO: Remove this RNE
-declare module 'react-native-elements' {
+declare module '@react-native-community/async-storage' {
   declare module.exports: any
 }
 
@@ -116,6 +115,14 @@ declare module '@storybook/react/demo' {
 }
 
 // shared components
-declare module 'pchef-shared/src/components/Button' {
+declare module 'pchef-shared' {
+  declare module.exports: any
+}
+
+declare module 'pchef-shared/src/containers/Login' {
+  declare module.exports: any
+}
+
+declare module 'pchef-shared/src/components/Loading' {
   declare module.exports: any
 }
