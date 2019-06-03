@@ -1,7 +1,7 @@
 // Libs
 import * as React from 'react'
-import { View } from 'react-native'
 import { Dialog } from 'react-native-paper'
+import { Platform } from 'react-native'
 
 // Styles
 import styles from './styles'
@@ -30,39 +30,37 @@ const Modal = ({
   onDismiss,
   customDialog,
 }: Props) => (
-  <View style={styles.wrapper}>
-    <Dialog
-      visible={visible}
-      onDismiss={onDismiss}
-      style={[styles.dialog, styles[`${size}Dialog`], customDialog]}
-    >
-      {title ? (
-        <Dialog.Title
-          style={[styles.titleModal, styles[`${size}TitleModal`]]}
-          accessibilityRole="heading"
-        >
-          {title}
-        </Dialog.Title>
-      ) : null }
-      <Dialog.Content style={[styles.content, styles[`${size}Content`]]}>
-        {children}
-      </Dialog.Content>
-      <Dialog.Actions>
-        {dismissBtn && (
-          <Button
-            onPress={onDismiss}
-            title="Cancel"
-            buttonStyle={[styles.btnModal, styles[`${size}btnModal`]]}
-          />
-        )}
+  <Dialog
+    visible={visible}
+    onDismiss={onDismiss}
+    style={[styles.dialog, styles[`${size}Dialog`], customDialog]}
+  >
+    {title ? (
+      <Dialog.Title
+        style={[styles.titleModal, styles[`${size}TitleModal`]]}
+        accessibilityRole={Platform.OS === 'web' ? 'heading' : 'header'}
+      >
+        {title}
+      </Dialog.Title>
+    ) : null }
+    <Dialog.Content style={[styles.content, styles[`${size}Content`]]}>
+      {children}
+    </Dialog.Content>
+    <Dialog.Actions>
+      {dismissBtn && (
         <Button
-          onPress={onSubmit}
-          title="Done"
+          onPress={onDismiss}
+          title="Cancel"
           buttonStyle={[styles.btnModal, styles[`${size}btnModal`]]}
         />
-      </Dialog.Actions>
-    </Dialog>
-  </View>
+      )}
+      <Button
+        onPress={onSubmit}
+        title="Done"
+        buttonStyle={[styles.btnModal, styles[`${size}btnModal`]]}
+      />
+    </Dialog.Actions>
+  </Dialog>
 )
 
 Modal.defaultProps = {

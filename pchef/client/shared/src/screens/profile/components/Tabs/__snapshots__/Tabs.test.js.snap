@@ -177,17 +177,12 @@ exports[`Components Tabs should render Tabs component 1`] = `
                   role="img"
                   style={
                     Object {
-                      "WebkitTransform": "scaleX(1)",
-                      "color": "rgba(128,128,128,1.00)",
-                      "fontFamily": "MaterialIcons",
+                      "color": "rgba(70,91,174,1.00)",
                       "fontSize": "30px",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                      "transform": "scaleX(1)",
                     }
                   }
                 >
-                  
+                  □
                 </div>
               </div>
             </div>
@@ -238,17 +233,12 @@ exports[`Components Tabs should render Tabs component 1`] = `
                   role="img"
                   style={
                     Object {
-                      "WebkitTransform": "scaleX(1)",
                       "color": "rgba(128,128,128,1.00)",
-                      "fontFamily": "MaterialIcons",
                       "fontSize": "30px",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                      "transform": "scaleX(1)",
                     }
                   }
                 >
-                  
+                  □
                 </div>
               </div>
             </div>
@@ -256,7 +246,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
               className="css-text-76zvg2 r-marginLeft-1n0xq6e"
               dir="auto"
             >
-              1
+              2
             </div>
           </div>
         </div>
@@ -376,17 +366,12 @@ exports[`Components Tabs should render Tabs component 1`] = `
                   role="img"
                   style={
                     Object {
-                      "WebkitTransform": "scaleX(1)",
-                      "color": "rgba(128,128,128,1.00)",
-                      "fontFamily": "MaterialIcons",
+                      "color": "rgba(70,91,174,1.00)",
                       "fontSize": "30px",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                      "transform": "scaleX(1)",
                     }
                   }
                 >
-                  
+                  □
                 </div>
               </div>
             </div>
@@ -437,210 +422,12 @@ exports[`Components Tabs should render Tabs component 1`] = `
                   role="img"
                   style={
                     Object {
-                      "WebkitTransform": "scaleX(1)",
                       "color": "rgba(128,128,128,1.00)",
-                      "fontFamily": "MaterialIcons",
                       "fontSize": "30px",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                      "transform": "scaleX(1)",
                     }
                   }
                 >
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="css-view-1dbjc4n r-paddingLeft-qhyqy2 r-paddingRight-19gegkz r-width-b8tw3c"
-    >
-      <div
-        className="css-view-1dbjc4n r-cursor-1loqt21 r-display-6koalj r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr"
-        data-focusable={true}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        tabIndex="0"
-      >
-        <div
-          className="css-view-1dbjc4n"
-        >
-          <div
-            className="css-text-76zvg2 css-textOneLine-bfa6kz r-color-cqee49 r-fontSize-adyw6z r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
-            dir="auto"
-          >
-            Crispy Fried Chicken
-          </div>
-          <div
-            className="css-text-76zvg2 css-textOneLine-bfa6kz r-color-1h2fve2 r-fontSize-1i10wst r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
-            dir="auto"
-          >
-            Description for Crispy Fried Chicken
-          </div>
-          <div
-            className="css-view-1dbjc4n r-cursor-1loqt21 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr"
-            data-focusable={true}
-            disabled={false}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            tabIndex="0"
-          >
-            <div
-              className="css-view-1dbjc4n r-flexBasis-1mlwlqe r-overflow-1udh08x r-width-13qz1uu r-zIndex-417010"
-              style={
-                Object {
-                  "height": "230px",
-                  "marginTop": "10px",
-                }
-              }
-            >
-              <div
-                className="css-view-1dbjc4n r-backgroundColor-1niwhzg r-backgroundPosition-vvn4in r-backgroundRepeat-u6sd8q r-backgroundSize-4gszlv r-bottom-1p0dtai r-height-1pi2tsx r-left-1d2f490 r-position-u8s1d r-right-zchlnj r-top-ipm5af r-width-13qz1uu r-zIndex-1wyyakw"
-                style={
-                  Object {
-                    "backgroundImage": "url(\\"https://www.tasteofhome.com/wp-content/uploads/2018/01/Crispy-Fried-Chicken_EXPS_FRBZ19_6445_C01_31_3b.jpg\\")",
-                  }
-                }
-              />
-              <img
-                alt=""
-                className="css-accessibilityImage-9pa8cd"
-                draggable={false}
-                src="https://www.tasteofhome.com/wp-content/uploads/2018/01/Crispy-Fried-Chicken_EXPS_FRBZ19_6445_C01_31_3b.jpg"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          className="css-view-1dbjc4n r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1wtj0ep r-padding-1pcd2l5"
-        >
-          <div
-            className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz"
-          >
-            <div
-              className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
-              data-focusable={true}
-              disabled={false}
-              onKeyDown={[Function]}
-              onKeyPress={[Function]}
-              onKeyUp={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              role="button"
-              tabIndex="0"
-            >
-              <span
-                className="css-hitSlop-mjp8i1"
-                style={
-                  Object {
-                    "bottom": "-6px",
-                    "left": "-6px",
-                    "right": "-6px",
-                    "top": "-6px",
-                  }
-                }
-              />
-              <div
-                className="css-view-1dbjc4n"
-              >
-                <div
-                  className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
-                  dir="auto"
-                  focusable={false}
-                  role="img"
-                  style={
-                    Object {
-                      "WebkitTransform": "scaleX(1)",
-                      "color": "rgba(128,128,128,1.00)",
-                      "fontFamily": "MaterialIcons",
-                      "fontSize": "30px",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                      "transform": "scaleX(1)",
-                    }
-                  }
-                >
-                  
-                </div>
-              </div>
-            </div>
-            <div
-              className="css-text-76zvg2 r-marginLeft-1n0xq6e"
-              dir="auto"
-            >
-              Save
-            </div>
-          </div>
-          <div
-            className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz"
-          >
-            <div
-              className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
-              data-focusable={true}
-              disabled={false}
-              onKeyDown={[Function]}
-              onKeyPress={[Function]}
-              onKeyUp={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              role="button"
-              tabIndex="0"
-            >
-              <span
-                className="css-hitSlop-mjp8i1"
-                style={
-                  Object {
-                    "bottom": "-6px",
-                    "left": "-6px",
-                    "right": "-6px",
-                    "top": "-6px",
-                  }
-                }
-              />
-              <div
-                className="css-view-1dbjc4n"
-              >
-                <div
-                  className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
-                  dir="auto"
-                  focusable={false}
-                  role="img"
-                  style={
-                    Object {
-                      "WebkitTransform": "scaleX(1)",
-                      "color": "rgba(128,128,128,1.00)",
-                      "fontFamily": "MaterialIcons",
-                      "fontSize": "30px",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                      "transform": "scaleX(1)",
-                    }
-                  }
-                >
-                  
+                  □
                 </div>
               </div>
             </div>
@@ -762,17 +549,12 @@ exports[`Components Tabs should render Tabs component 1`] = `
                   role="img"
                   style={
                     Object {
-                      "WebkitTransform": "scaleX(1)",
-                      "color": "rgba(128,128,128,1.00)",
-                      "fontFamily": "MaterialIcons",
+                      "color": "rgba(70,91,174,1.00)",
                       "fontSize": "30px",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                      "transform": "scaleX(1)",
                     }
                   }
                 >
-                  
+                  □
                 </div>
               </div>
             </div>
@@ -823,17 +605,195 @@ exports[`Components Tabs should render Tabs component 1`] = `
                   role="img"
                   style={
                     Object {
-                      "WebkitTransform": "scaleX(1)",
                       "color": "rgba(128,128,128,1.00)",
-                      "fontFamily": "MaterialIcons",
                       "fontSize": "30px",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                      "transform": "scaleX(1)",
                     }
                   }
                 >
-                  
+                  □
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n r-paddingLeft-qhyqy2 r-paddingRight-19gegkz r-width-b8tw3c"
+    >
+      <div
+        className="css-view-1dbjc4n r-cursor-1loqt21 r-display-6koalj r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr"
+        data-focusable={true}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        tabIndex="0"
+      >
+        <div
+          className="css-view-1dbjc4n"
+        >
+          <div
+            className="css-text-76zvg2 css-textOneLine-bfa6kz r-color-cqee49 r-fontSize-adyw6z r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
+            dir="auto"
+          >
+            Crispy Fried Chicken
+          </div>
+          <div
+            className="css-text-76zvg2 css-textOneLine-bfa6kz r-color-1h2fve2 r-fontSize-1i10wst r-fontWeight-1kfrs79 r-paddingLeft-b5h31w r-paddingRight-1ah4tor"
+            dir="auto"
+          >
+            Description for Crispy Fried Chicken
+          </div>
+          <div
+            className="css-view-1dbjc4n r-cursor-1loqt21 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr"
+            data-focusable={true}
+            disabled={false}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            tabIndex="0"
+          >
+            <div
+              className="css-view-1dbjc4n r-flexBasis-1mlwlqe r-overflow-1udh08x r-width-13qz1uu r-zIndex-417010"
+              style={
+                Object {
+                  "height": "230px",
+                  "marginTop": "10px",
+                }
+              }
+            >
+              <div
+                className="css-view-1dbjc4n r-backgroundColor-1niwhzg r-backgroundPosition-vvn4in r-backgroundRepeat-u6sd8q r-backgroundSize-4gszlv r-bottom-1p0dtai r-height-1pi2tsx r-left-1d2f490 r-position-u8s1d r-right-zchlnj r-top-ipm5af r-width-13qz1uu r-zIndex-1wyyakw"
+                style={
+                  Object {
+                    "backgroundImage": "url(\\"https://www.tasteofhome.com/wp-content/uploads/2018/01/Crispy-Fried-Chicken_EXPS_FRBZ19_6445_C01_31_3b.jpg\\")",
+                  }
+                }
+              />
+              <img
+                alt=""
+                className="css-accessibilityImage-9pa8cd"
+                draggable={false}
+                src="https://www.tasteofhome.com/wp-content/uploads/2018/01/Crispy-Fried-Chicken_EXPS_FRBZ19_6445_C01_31_3b.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-view-1dbjc4n r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1wtj0ep r-padding-1pcd2l5"
+        >
+          <div
+            className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz"
+          >
+            <div
+              className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+              data-focusable={true}
+              disabled={false}
+              onKeyDown={[Function]}
+              onKeyPress={[Function]}
+              onKeyUp={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              <span
+                className="css-hitSlop-mjp8i1"
+                style={
+                  Object {
+                    "bottom": "-6px",
+                    "left": "-6px",
+                    "right": "-6px",
+                    "top": "-6px",
+                  }
+                }
+              />
+              <div
+                className="css-view-1dbjc4n"
+              >
+                <div
+                  className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+                  dir="auto"
+                  focusable={false}
+                  role="img"
+                  style={
+                    Object {
+                      "color": "rgba(70,91,174,1.00)",
+                      "fontSize": "30px",
+                    }
+                  }
+                >
+                  □
+                </div>
+              </div>
+            </div>
+            <div
+              className="css-text-76zvg2 r-marginLeft-1n0xq6e"
+              dir="auto"
+            >
+              Save
+            </div>
+          </div>
+          <div
+            className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz"
+          >
+            <div
+              className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+              data-focusable={true}
+              disabled={false}
+              onKeyDown={[Function]}
+              onKeyPress={[Function]}
+              onKeyUp={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              <span
+                className="css-hitSlop-mjp8i1"
+                style={
+                  Object {
+                    "bottom": "-6px",
+                    "left": "-6px",
+                    "right": "-6px",
+                    "top": "-6px",
+                  }
+                }
+              />
+              <div
+                className="css-view-1dbjc4n"
+              >
+                <div
+                  className="css-text-76zvg2 r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+                  dir="auto"
+                  focusable={false}
+                  role="img"
+                  style={
+                    Object {
+                      "color": "rgba(128,128,128,1.00)",
+                      "fontSize": "30px",
+                    }
+                  }
+                >
+                  □
                 </div>
               </div>
             </div>

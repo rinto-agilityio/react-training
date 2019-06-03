@@ -2,43 +2,69 @@
 import InterestedCategories from '.'
 import { categories } from '../../../../mocks'
 
-it('InterestedCategories snapshots', () => {
-  // define props
-  const props = {
+describe('InterestedCategories', () => {
+  let props = {
     onChooseCategory: () => {},
     activeList: [categories[0].id, categories[1].id],
     categories,
   }
 
-  const primaryComponent = shallow(
-    <InterestedCategories {...props} type="primary" customStyle={{ flex: 1 }} />,
-  )
-  const secondaryComponent = shallow(
-    <InterestedCategories {...props} type="secondary" />,
-  )
+  it('InterestedCategories snapshots with type primary', () => {
+    props = {
+      ...props,
+      type: 'primary',
+    }
 
-  expect(primaryComponent).toMatchSnapshot()
-  expect(secondaryComponent).toMatchSnapshot()
-})
+    const primaryComponent = renderer.create(
+      <InterestedCategories {...props} />,
+    ).toJSON()
 
-it('InterestedCategories actions', () => {
-  // define props
-  const props = {
-    customStyle: {},
-    onChooseCategory: jest.fn(),
-    activeList: [categories[0].id, categories[1].id],
-    categories,
-  }
+    expect(primaryComponent).toMatchSnapshot()
+  })
 
-  const component = shallow(<InterestedCategories {...props} />)
+  it('InterestedCategories snapshots with type secondary', () => {
+    props = {
+      ...props,
+      type: 'secondary',
+    }
 
-  // simulate press item
-  component.props().onLayout()
-  component
-    .find('TouchableOpacity')
-    .at(0)
-    .props()
-    .onPress()
+    const secondaryComponent = renderer.create(
+      <InterestedCategories {...props} />,
+    ).toJSON()
 
-  expect(props.onChooseCategory).toHaveBeenCalled()
+    expect(secondaryComponent).toMatchSnapshot()
+  })
+
+  it('InterestedCategories actions', () => {
+    // define props
+    props = {
+      ...props,
+      onChooseCategory: jest.fn(),
+    }
+
+    const component = shallow(<InterestedCategories {...props} />)
+
+    // simulate press item
+    component.props().onLayout()
+    component
+      .find('TouchableOpacity')
+      .at(0)
+      .props()
+      .onPress()
+
+    expect(props.onChooseCategory).toHaveBeenCalled()
+  })
+
+  it('InterestedCategories snapshots with type categories undefined', () => {
+    props = {
+      ...props,
+      categories: undefined,
+    }
+
+    const primaryComponent = renderer.create(
+      <InterestedCategories {...props} />,
+    ).toJSON()
+
+    expect(primaryComponent).toMatchSnapshot()
+  })
 })

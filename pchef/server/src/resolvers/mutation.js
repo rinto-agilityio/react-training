@@ -73,10 +73,10 @@ const Mutation = {
 
     return getDocument(currentUserRef)
       .then(user => {
-        const newCategories = toggleItemInArray(user.follow_category, categoryId)
+        const newCategories = toggleItemInArray(user.followCategory, categoryId)
 
         return updateDocument(currentUserRef, {
-          follow_category: newCategories,
+          followCategory: newCategories,
         }).then(() => ({
           results: newCategories,
         })).catch(error => error)
@@ -126,6 +126,23 @@ const Mutation = {
         })
           .then(() => ({
             results: newRecipes,
+          }))
+          .catch(error => error)
+      })
+      .catch(error => error)
+  }),
+
+  userToggleVote: authenticated((_, { recipeId }, { currentUser }) => {
+
+    return getDocument(`${COLLECTION_NAME.RECIPE}/${recipeId}`)
+      .then(recipe => {
+        const newVotes = toggleItemInArray(recipe.votes, currentUser.id)
+
+        return updateDocument(`${COLLECTION_NAME.RECIPE}/${recipeId}`, {
+          votes: newVotes,
+        })
+          .then(() => ({
+            results: newVotes
           }))
           .catch(error => error)
       })

@@ -20,7 +20,7 @@ import Error from '../../../../components/Error'
 import { recipes } from '../../../../mocks'
 
 // utils
-import { findStep, compareStep, customError, checkFavorited, formatUserToggleSaveRes } from '../../../../helpers/utils'
+import { findStep, customError, checkContainField, formatFiledOnObject } from '../../../../helpers/utils'
 
 type Props = {
   recipeSteps: Array<{
@@ -50,13 +50,25 @@ type Props = {
   loading: boolean,
   error: string,
   getUser: {
+    user: {
+      id: string,
+      name: string,
+      avatar: string,
+    },
     favoriteRecipe: Array<{id: string}>
   },
   userToggleRecipe: (
     recipeId: string,
     favoriteRecipe: Array<{id: string}>
   ) => Promise<{ data: {userToggleRecipe: {results: Array<string>}}}>,
+  userToggleVote: (
+    recipeId: string,
+    votes: Array<string>,
+    userId: string
+  ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
   id: string,
+  votes: Array<string>,
+  views: number,
   error: {
     graphQLErrors: Array<{message: string}>
   }
@@ -82,10 +94,11 @@ const Recipe = ({
   error,
   id,
   userToggleRecipe,
+  userToggleVote,
+  votes,
+  views,
 }: Props) => {
-  // order recipeSteps by step asc
-  const orderRecipeSteps = recipeSteps.sort(compareStep)
-  const defaultStepInfo = orderRecipeSteps[0]
+  const defaultStepInfo = recipeSteps[0]
   const [stepInfo, setStepInfo] = useState({})
 
   useEffect(() => (
@@ -95,18 +108,20 @@ const Recipe = ({
   const {
     title,
     subTitle,
-    votes,
-    userId,
-    views,
   } = recipes[0]
 
   if (loading) {
     return <Loading />
   }
-
   if (error) {
     return <Error message={customError(error.graphQLErrors)} />
   }
+
+  const {
+    favoriteRecipe,
+    user,
+  } = getUser
+
   /**
    * Handle when user click prev or next icon
    * param {name}
@@ -116,10 +131,10 @@ const Recipe = ({
 
     switch (name) {
       case 'next':
-        nextStepInfo = findStep(orderRecipeSteps, stepInfo.step + 1)
+        nextStepInfo = findStep(recipeSteps, stepInfo.step + 1)
         break;
       case 'prev':
-        nextStepInfo = findStep(orderRecipeSteps, stepInfo.step - 1)
+        nextStepInfo = findStep(recipeSteps, stepInfo.step - 1)
         break;
       default:
         break;
@@ -132,20 +147,33 @@ const Recipe = ({
    * @param {step}
    */
   const onPressStep = step => {
-    const stepInfoSelect = findStep(orderRecipeSteps, step)
+    const stepInfoSelect = findStep(recipeSteps, step)
     setStepInfo(stepInfoSelect)
   }
 
   const handleSaveRecipe = async () => {
-    await userToggleRecipe(id, getUser.favoriteRecipe).then(({ data }) => {
+    await userToggleRecipe(id, favoriteRecipe).then(({ data }) => {
       const {
         userToggleRecipe: { results },
       } = data
 
       if (results) {
-        checkFavorited(formatUserToggleSaveRes(results), id)
+        checkContainField(formatFiledOnObject(results), id)
       }
     })
+  }
+
+  const handleToggleVote = async () => {
+    await userToggleVote(id, votes, user.id)
+      .then(({ data }) => {
+        const {
+          userToggleVote: { results },
+        } = data
+
+        if (results) {
+          checkContainField(formatFiledOnObject(votes), id)
+        }
+      })
   }
 
   return (
@@ -197,7 +225,7 @@ const Recipe = ({
             </Text>
           </Text>
           <Progress
-            steps={orderRecipeSteps}
+            steps={recipeSteps}
             size={size}
             step={stepInfo.step}
             onPressSelectStep={onPressSelectStep}
@@ -217,11 +245,14 @@ const Recipe = ({
       <Reaction
         votes={votes}
         size={size}
-        isFavorited={checkFavorited(getUser.favoriteRecipe, id)}
+        isFavorited={checkContainField(getUser.favoriteRecipe, id)}
         onPressFavorite={handleSaveRecipe}
+        onPressVote={handleToggleVote}
+        isVote={checkContainField(formatFiledOnObject(votes), user.id)}
       />
       <Comment
-        name={`by ${userId}`}
+        name={`by ${user.name}`}
+        avatarUri={user.avatar}
         publishedAt={Date.now()}
         isGetTime
         customStyle={{

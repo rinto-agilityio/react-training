@@ -11,12 +11,18 @@ import Directions from './Directions'
 import Loading from '../../../../components/Loading'
 import Error from '../../../../components/Error'
 
+// Containers
+import RecipeStepContainer from '../../../../containers/RecipeStep'
+
 // Helper
-import { customError } from '../../../../helpers/utils'
+import { customError, compareStep } from '../../../../helpers/utils'
 
 type Props = {
-  recipe: {
+  getRecipe: {
+    id: string,
     description: string,
+    votes: Array<string>,
+    views: number,
   },
   size: string,
   onSelectStep?: () => void,
@@ -29,12 +35,17 @@ type Props = {
 }
 
 const Recipe = ({
-  recipe,
+  getRecipe,
   size = 'medium',
   onSelectStep,
   loading,
   error,
-  recipeSteps,
+  recipeSteps = [{
+    description: '',
+    imgUrl: '',
+    step: 1,
+    title: '',
+  }],
 }: Props) => {
   if (loading) {
     return <Loading />
@@ -45,8 +56,13 @@ const Recipe = ({
 
   const {
     description,
-  } = recipe
+    votes,
+    id,
+    views,
+  } = getRecipe
 
+  // order recipeSteps by step asc
+  const orderRecipeSteps = recipeSteps.sort(compareStep)
   return (
     <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
       <Ingredients
@@ -58,6 +74,16 @@ const Recipe = ({
         size={size}
         onSelectStep={onSelectStep}
       />
+      {
+        true && (
+        <RecipeStepContainer
+          id={id}
+          votes={votes}
+          views={views}
+          recipeSteps={orderRecipeSteps}
+        />
+        )
+      }
     </View>
   )
 }

@@ -23,8 +23,16 @@ type Props = {
     description: string,
     votes: Array<string>,
   }>,
+  userToggleRecipe: (
+    recipeId: string,
+    favoriteRecipe: Array<{ id: string }>
+  ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
 }
-const Tabs = ({ ownRecipes = [], favoriteRecipe = [] }: Props) => {
+const Tabs = ({
+  ownRecipes = [],
+  favoriteRecipe = [],
+  userToggleRecipe,
+}: Props) => {
   // state
   const [tabActive, setTabActive] = useState(0)
   const totalOfFavoriteRecipes = favoriteRecipe.length
@@ -50,9 +58,17 @@ const Tabs = ({ ownRecipes = [], favoriteRecipe = [] }: Props) => {
       </View>
       <View style={styles.wrapContent}>
         {tabActive === 0 ? (
-          <TabContent recipes={ownRecipes} />
+          <TabContent
+            recipes={ownRecipes}
+            userToggleRecipe={userToggleRecipe}
+            favoriteRecipe={favoriteRecipe}
+            isRecipeTab
+          />
         ) : (
-          <TabContent recipes={favoriteRecipe} />
+          <TabContent
+            recipes={favoriteRecipe}
+            userToggleRecipe={userToggleRecipe}
+          />
         )}
       </View>
     </View>
