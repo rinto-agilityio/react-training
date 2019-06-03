@@ -7,6 +7,6 @@ export const user = {
   email: 'alex@gmail.com',
   avatar:
     'https://cdn4.iconfinder.com/data/icons/avatars-21/512/avatar-circle-human-female-black-7-512.png',
-  favoriteRecipe: recipes,
+  favoriteRecipe: recipes.map(item => item.id),
   followCategory: categories,
 }
