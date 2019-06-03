@@ -1,6 +1,7 @@
 // Libs
 import * as React from 'react'
 import { Dialog } from 'react-native-paper'
+import { Platform } from 'react-native'
 
 // Styles
 import styles from './styles'
@@ -37,7 +38,7 @@ const Modal = ({
     {title ? (
       <Dialog.Title
         style={[styles.titleModal, styles[`${size}TitleModal`]]}
-        accessibilityRole="heading"
+        accessibilityRole={Platform.OS === 'web' ? 'heading' : 'header'}
       >
         {title}
       </Dialog.Title>
