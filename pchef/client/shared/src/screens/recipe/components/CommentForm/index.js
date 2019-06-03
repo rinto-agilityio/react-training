@@ -17,7 +17,13 @@ type Props = {
   customStyle?: {} | Array<{}>,
   type?: string,
   onSubmit: () => void,
-  commentRef: { current: { _node: HTMLInputElement } | null },
+  commentRef: {
+    current: {
+      _node: HTMLInputElement,
+      _lastNativeText: string,
+    } |
+    null
+  },
 }
 
 const CommentForm = ({
