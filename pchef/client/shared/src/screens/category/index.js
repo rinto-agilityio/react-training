@@ -60,7 +60,6 @@ const CategoryScreen = ({
       <Header category={category} isGrid={isGrid} onSelectListView={handleSelectListView} size={size} />
       <View style={styles.container}>
         <FlatList
-          showsVerticalScrollIndicator={false}
           numColumns={columns}
           horizontal={false}
           data={recipes}
