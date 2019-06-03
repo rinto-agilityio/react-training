@@ -67,6 +67,7 @@ const CategoryScreen = ({
           renderItem={({ item }) => <Recipe isGrid={isGrid} recipe={item} size={size} />}
           keyExtractor={item => item.id}
           key={columns}
+          columnWrapperStyle={isGrid && { justifyContent: 'space-between' }}
         />
       </View>
     </>
