@@ -1,5 +1,13 @@
 // Shared component from local package
-declare module 'pchef-newshared' {
+declare module 'pchef-shared' {
+  declare module.exports: any
+}
+
+declare module 'pchef-shared/src/containers/Login' {
+  declare module.exports: any
+}
+
+declare module 'pchef-shared/src/config/apollo-client' {
   declare module.exports: any
 }
 
@@ -26,3 +34,4 @@ declare module 'pages/RecipeDetail' {
 declare module 'router/MainRouter' {
   declare module.exports: any
 }
+

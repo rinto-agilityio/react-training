@@ -19,15 +19,15 @@
     "fromnow": "3.0.0",
     "graphql": "^14.3.0",
     "graphql-tag": "^2.10.1",
-    "react": "16.8.3",
+    "react": "16.8.6",
     "react-apollo": "^2.5.5",
     "react-art": "16.8.3",
-    "react-dom": "16.8.3",
+    "react-dom": "16.8.6",
     "react-native": "^0.59.8",
     "react-native-calendars": "1.133.0",
     "react-native-paper": "^2.15.2",
     "react-native-vector-icons": "^6.4.2",
-    "react-native-web": "^0.11.2",
+    "react-native-web": "0.11.4",
     "react-scripts": "^3.0.1"
   },
   "devDependencies": {
@@ -105,3 +105,4 @@
     ]
   }
 }
+
