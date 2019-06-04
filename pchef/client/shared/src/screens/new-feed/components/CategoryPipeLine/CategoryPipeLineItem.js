@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import { Avatar } from 'react-native-paper'
 
 // Styles
@@ -18,9 +18,11 @@ const CategoryPipeLineItem = ({
   category,
   onPressCategoryPipeline,
 }: Props) => (
-  <View style={styles.pipelineItem} onPress={() => onPressCategoryPipeline(category.id)}>
+  <View style={styles.pipelineItem}>
     <Text style={styles.pipelineItemName}>{category.name}</Text>
-    <Avatar.Image style={styles.pipelineItemImage} size={70} source={category.imgUrl} />
+    <TouchableOpacity onPress={() => onPressCategoryPipeline(category.id)}>
+      <Avatar.Image style={styles.pipelineItemImage} size={70} source={category.imgUrl} />
+    </TouchableOpacity>
   </View>
 )
 
