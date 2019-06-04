@@ -1,13 +1,16 @@
 // Libs
 import React from 'react'
-import { ScrollView } from 'react-native'
+import { ScrollView, View } from 'react-native'
 
 // Components
-import styles from './styles'
 import Header from './components/Header'
 import RecipeList from './components/RecipeList'
 import Error from '../../components/Error'
 import Loading from '../../components/Loading'
+import CategoryPipeLine from './components/CategoryPipeLine'
+
+// Styles 
+import styles from './styles'
 
 type Props = {
   customStyles?: {},
@@ -39,7 +42,7 @@ type Props = {
 // Home screen
 const NewFeed = ({
   customStyles = {},
-  type = 'primary',
+  type = 'secondary',
   loading,
   error,
   data,
@@ -75,14 +78,18 @@ const NewFeed = ({
         type={type}
       />
 
-      {recipesList && (
-        <RecipeList
-          recipes={recipesList}
-          type={type}
-          favoriteRecipe={favoriteRecipe}
-          userToggleRecipe={userToggleRecipe}
-        />
-      )}
+      <View style={styles[`secondaryRecipeListContainer`]}>
+        {/** Choosen category pipeline */}
+        <CategoryPipeLine followCategory={followCategory} loading={loading} />
+        {recipesList && (
+          <RecipeList
+            recipes={recipesList}
+            type={type}
+            favoriteRecipe={favoriteRecipe}
+            userToggleRecipe={userToggleRecipe}
+          />
+        )}
+      </View>
     </ScrollView>
   )
 }
