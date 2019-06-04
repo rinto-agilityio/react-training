@@ -9,7 +9,7 @@ import Error from '../../components/Error'
 import Loading from '../../components/Loading'
 import CategoryPipeLine from './components/CategoryPipeLine'
 
-// Styles 
+// Styles
 import styles from './styles'
 
 type Props = {
@@ -67,6 +67,10 @@ const NewFeed = ({
     recipesList = recipesList.concat(category.recipes)
   })
 
+  const handlePressCategoryPipeline = categoryId => (
+    console.log('categoryId', categoryId)
+  )
+
   return (
     <ScrollView
       style={[styles.container, styles[`${type}Container`], customStyles]}
@@ -80,7 +84,12 @@ const NewFeed = ({
 
       <View style={styles[`secondaryRecipeListContainer`]}>
         {/** Choosen category pipeline */}
-        <CategoryPipeLine followCategory={followCategory} loading={loading} />
+        <CategoryPipeLine
+          followCategory={followCategory}
+          loading={loading}
+          onPressCategoryPipeline={handlePressCategoryPipeline}
+        />
+
         {recipesList && (
           <RecipeList
             recipes={recipesList}

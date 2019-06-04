@@ -9,7 +9,17 @@ import CategoryPipeLineItem from './CategoryPipeLineItem'
 import styles from './styles'
 import Loading from '../../../../components/Loading';
 
-const CategoryPipeLine = ({ followCategory, loading }: Props) => (
+type Props = {
+  followCategory: Array<{
+    id: string,
+    name: string,
+    imgUrl: string,
+  }>,
+  onPressCategoryPipeline?: () => void,
+  loading: boolean,
+}
+
+const CategoryPipeLine = ({ followCategory, onPressCategoryPipeline, loading }: Props) => (
   <View style={styles.pipelineWrapper}>
     {
       loading
@@ -18,11 +28,16 @@ const CategoryPipeLine = ({ followCategory, loading }: Props) => (
           followCategory
           &&
           followCategory.map(item => (
-            <CategoryPipeLineItem key={item.id} category={item} />
+            <CategoryPipeLineItem key={item.id} category={item} onPressCategoryPipeline={onPressCategoryPipeline} />
           ))
         )
     }
   </View>
 )
+
+CategoryPipeLine.defaultProps = {
+  onPressCategoryPipeline: () => {},
+}
+
 
 export default CategoryPipeLine
