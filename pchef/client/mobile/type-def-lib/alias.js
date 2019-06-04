@@ -14,6 +14,10 @@ declare module '@screen/RecipeDetail' {
   declare module.exports: any;
 }
 
+declare module '@screen/Welcome' {
+  declare module.exports: any;
+}
+
 declare module '@constants/routes' {
   declare module.exports: any;
 }
