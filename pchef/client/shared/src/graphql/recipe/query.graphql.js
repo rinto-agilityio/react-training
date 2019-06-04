@@ -26,6 +26,9 @@ const GET_RECIPES = gql`
         id
       }
       followCategory {
+        id
+        name
+        imgUrl
         recipes {
           id
           title
