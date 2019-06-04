@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const { override, addBabelPlugins, babelInclude, addWebpackExternals } = require('customize-cra')
+const { override, addBabelPlugins, babelInclude } = require('customize-cra')
 
 const appDirectory = fs.realpathSync(process.cwd())
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath)
