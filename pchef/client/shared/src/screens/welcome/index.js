@@ -29,6 +29,8 @@ type Props = {
     imgUrl: string,
   }>,
   userToggleCategory: (recipeId: string) => Promise<{ data: {userToggleCategory: {results: Array<string>}}}>,
+  customButtonStyle?: {},
+  navigateToHomePage: () => void
 }
 
 // component Comment Form
@@ -41,15 +43,21 @@ const Welcome = ({
   error,
   categories = [],
   userToggleCategory,
+  customButtonStyle,
+  navigateToHomePage,
 }: Props) => {
   const [chosenCategories, setChosenCategories] = useState([])
   const [errors, setErrors] = useState()
 
   useEffect(() => {
     const followCategory = data.followCategory || []
-    const followCategoryIds = followCategory.map(item => item.id)
-    setChosenCategories(followCategoryIds)
-    !loading && setErrors(error)
+    if (followCategory.length >= 4) {
+      navigateToHomePage()
+    } else {
+      const followCategoryIds = followCategory.map(item => item.id)
+      setChosenCategories(followCategoryIds)
+      !loading && setErrors(error)
+    }
   }, [loading, data.followCategory, error])
 
   if (loading) return <Loading size={type === 'primary' ? 'small' : 'large'} />
@@ -73,7 +81,7 @@ const Welcome = ({
   return (
     <View style={[styles.container, styles[`${type}Container`], customStyle]}>
       <TouchableOpacity
-        style={[styles.button, styles[`${type}Button`]]}
+        style={[styles.button, styles[`${type}Button`], customButtonStyle]}
         disabled={missingCategory}
         onPress={handleSkipCategories}
       >
@@ -114,6 +122,7 @@ Welcome.defaultProps = {
   customStyle: {},
   type: 'primary',
   handleSkipCategories: () => {},
+  customButtonStyle: {},
 }
 
 export default Welcome

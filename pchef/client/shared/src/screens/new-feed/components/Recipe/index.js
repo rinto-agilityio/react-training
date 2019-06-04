@@ -15,6 +15,9 @@ import {
   formatFiledOnObject,
 } from '../../../../helpers/utils'
 
+// Constants
+import { DEFAULT_IMAGE } from '../../../../constants'
+
 type Props = {
   recipe: {
     id: string,
@@ -45,7 +48,6 @@ const Recipe = ({
 
   const handleSaveRecipe = async () => {
     await userToggleRecipe(id, favoriteRecipe).then(({ data }) => {
-
       const {
         userToggleRecipe: { results },
       } = data
@@ -74,7 +76,7 @@ const Recipe = ({
           {description}
         </Text>
         <Image
-          url={imgUrl}
+          url={imgUrl || DEFAULT_IMAGE}
           customImageStyle={[styles.image, styles[`${size}Image`]]}
         />
       </View>
