@@ -3,6 +3,7 @@ const ROUTES = {
   HOME: 'Home',
   CATEGORY: 'Category',
   DETAIL: 'RecipeDetail',
+  WELCOME: 'Welcome',
 }
 
 export default ROUTES

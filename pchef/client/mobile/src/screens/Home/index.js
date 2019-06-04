@@ -1,18 +1,24 @@
+// Libs
 import React from 'react'
-import { View, StyleSheet, Text } from 'react-native'
+import AsyncStorage from '@react-native-community/async-storage'
 
-// define Login page styles
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+// Components
+import NewFeed from 'pchef-shared/src/containers/NewFeed'
+import BtnPaper from 'pchef-shared/src/components/Button'
+
+// Constants
+import ROUTES from '@constants/routes'
+
+type Props = {
+  navigation: {
+    navigate: (name: string) => void,
   },
-})
-
-// Home
-const Home = () => (
-  <View style={styles.container}>
-    <Text>test</Text>
-  </View>
+}
+const Home = ({ navigation }: Props) => (
+  <>
+    <BtnPaper title="BtnPaper" onPress={() => AsyncStorage.removeItem('token')} />
+    <NewFeed onPressCategoryIcon={() => navigation.navigate(ROUTES.WELCOME)} />
+  </>
 )
 
 export default Home
