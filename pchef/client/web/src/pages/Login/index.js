@@ -14,12 +14,9 @@ const Login = ({ history }: Props) => {
   }
 
   return (
-    <>
-      <h3>Login page</h3>
-      <LoginContainer
-        handlingLoginSuccess={handlingLoginSuccess}
-      />
-    </>
+    <LoginContainer
+      handlingLoginSuccess={handlingLoginSuccess}
+    />
   )
 }
 
