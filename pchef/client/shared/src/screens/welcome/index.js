@@ -30,7 +30,6 @@ type Props = {
   }>,
   userToggleCategory: (recipeId: string) => Promise<{ data: {userToggleCategory: {results: Array<string>}}}>,
   customButtonStyle?: {},
-  navigateToHomePage: () => void
 }
 
 // component Comment Form
@@ -44,20 +43,15 @@ const Welcome = ({
   categories = [],
   userToggleCategory,
   customButtonStyle,
-  navigateToHomePage,
 }: Props) => {
   const [chosenCategories, setChosenCategories] = useState([])
   const [errors, setErrors] = useState()
 
   useEffect(() => {
     const followCategory = data.followCategory || []
-    if (followCategory.length >= 4) {
-      navigateToHomePage()
-    } else {
-      const followCategoryIds = followCategory.map(item => item.id)
-      setChosenCategories(followCategoryIds)
-      !loading && setErrors(error)
-    }
+    const followCategoryIds = followCategory.map(item => item.id)
+    setChosenCategories(followCategoryIds)
+    !loading && setErrors(error)
   }, [loading, data.followCategory, error])
 
   if (loading) return <Loading size={type === 'primary' ? 'small' : 'large'} />
