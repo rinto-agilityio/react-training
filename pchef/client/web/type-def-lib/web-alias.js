@@ -6,6 +6,9 @@ declare module 'pchef-shared' {
 declare module 'pchef-shared/src/containers/Login' {
   declare module.exports: any
 }
+declare module 'pchef-shared/src/containers/Welcome' {
+  declare module.exports: any
+}
 
 declare module 'pchef-shared/src/config/apollo-client' {
   declare module.exports: any
