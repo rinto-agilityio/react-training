@@ -7,22 +7,24 @@ type Props = {
   loginPath: string,
 }
 
-const isAuthenticated = localStorage.getItem('token') !== null
+const PrivateRoute = ({ component: Component, loginPath, path, ...rest }: Props) => {
+  const isAuthenticated = localStorage.getItem('token') !== null
 
-const PrivateRoute = ({ component: Component, loginPath, path, ...rest }: Props) => (
-  <Route
-    {...rest}
-    render={props => (
-      isAuthenticated || (!isAuthenticated && loginPath === path) ? (
-        <Component path={path} {...props} />
-      ) : (
-        <Redirect to={{
-          pathname: loginPath,
-        }}
-        />
-      )
-    )}
-  />
-)
+  return (
+    <Route
+      {...rest}
+      render={props => (
+        isAuthenticated || (!isAuthenticated && loginPath === path) ? (
+          <Component path={path} {...props} />
+        ) : (
+          <Redirect to={{
+            pathname: loginPath,
+          }}
+          />
+        )
+      )}
+    />
+  )
+}
 
 export default PrivateRoute

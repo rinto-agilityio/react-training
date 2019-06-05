@@ -8,7 +8,6 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath)
 module.exports = override(
   babelInclude([
     resolveApp('src'),
-    path.resolve('./node_modules/react/.*/'),
 
     // Local package for shared-component
     resolveApp('./node_modules/pchef-shared'), // Will be removed after migrated
