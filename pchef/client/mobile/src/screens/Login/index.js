@@ -4,6 +4,9 @@ import AsyncStorage from '@react-native-community/async-storage'
 // Component
 import LoginContainer from 'pchef-shared/src/containers/Login'
 
+// Constants
+import ROUTES from '@constants/routes'
+
 type Props = {
   navigation: {
     navigate: (name: string) => void,
@@ -14,7 +17,7 @@ const Login = ({ navigation }: Props) => {
   // save token and navigation to home screen
   const handlingLoginSuccess = async (token: string) => {
     await AsyncStorage.setItem('token', token)
-    navigation.navigate('Home')
+    navigation.navigate(ROUTES.WELCOME)
   }
 
   return (

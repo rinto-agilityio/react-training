@@ -61,7 +61,7 @@ const NewFeed = ({
     return <Error message={errorMessage} />
   }
 
-  if (loading) return <Loading />
+  if (loading) return <Loading size={type === 'primary' ? 'small' : 'large'} />
 
   const { followCategory, favoriteRecipe } = data
 

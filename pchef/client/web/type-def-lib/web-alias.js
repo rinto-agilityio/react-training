@@ -50,3 +50,6 @@ declare module 'router/MainRouter' {
   declare module.exports: any
 }
 
+declare module 'pchef-shared/src/containers/Category' {
+  declare module.exports: any
+}

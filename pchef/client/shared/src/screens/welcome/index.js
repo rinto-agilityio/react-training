@@ -29,6 +29,7 @@ type Props = {
     imgUrl: string,
   }>,
   userToggleCategory: (recipeId: string) => Promise<{ data: {userToggleCategory: {results: Array<string>}}}>,
+  customButtonStyle?: {},
 }
 
 // component Comment Form
@@ -41,6 +42,7 @@ const Welcome = ({
   error,
   categories = [],
   userToggleCategory,
+  customButtonStyle,
 }: Props) => {
   const [chosenCategories, setChosenCategories] = useState([])
   const [errors, setErrors] = useState()
@@ -73,7 +75,7 @@ const Welcome = ({
   return (
     <View style={[styles.container, styles[`${type}Container`], customStyle]}>
       <TouchableOpacity
-        style={[styles.button, styles[`${type}Button`]]}
+        style={[styles.button, styles[`${type}Button`], customButtonStyle]}
         disabled={missingCategory}
         onPress={handleSkipCategories}
       >
@@ -114,6 +116,7 @@ Welcome.defaultProps = {
   customStyle: {},
   type: 'primary',
   handleSkipCategories: () => {},
+  customButtonStyle: {},
 }
 
 export default Welcome

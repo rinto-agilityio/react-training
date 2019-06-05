@@ -126,3 +126,19 @@ declare module 'pchef-shared/src/containers/Login' {
 declare module 'pchef-shared/src/components/Loading' {
   declare module.exports: any
 }
+
+declare module 'pchef-shared/src/containers/NewFeed' {
+  declare module.exports: any;
+}
+
+declare module 'pchef-shared/src/components/Button' {
+  declare module.exports: any;
+}
+
+declare module 'pchef-shared/src/containers/Welcome' {
+  declare module.exports: any;
+}
+
+declare module 'pchef-shared/src/themes' {
+  declare module.exports: any;
+}

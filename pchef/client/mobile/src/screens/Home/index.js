@@ -1,18 +1,19 @@
+// Libs
 import React from 'react'
-import { View, StyleSheet, Text } from 'react-native'
 
-// define Login page styles
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+// Components
+import NewFeed from 'pchef-shared/src/containers/NewFeed'
+
+// Constants
+import ROUTES from '@constants/routes'
+
+type Props = {
+  navigation: {
+    navigate: (name: string) => void,
   },
-})
-
-// Home
-const Home = () => (
-  <View style={styles.container}>
-    <Text>test</Text>
-  </View>
+}
+const Home = ({ navigation }: Props) => (
+  <NewFeed onPressCategoryIcon={() => navigation.navigate(ROUTES.WELCOME)} />
 )
 
 export default Home

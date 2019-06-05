@@ -12,12 +12,9 @@ const Welcome = ({ history }: Props) => {
     history.push('/')
   }
   return (
-    <>
-      <h3>Welcome page</h3>
-      <WelcomeContainer
-        handleSkipCategories={handleSkipCategories}
-      />
-    </>
+    <WelcomeContainer
+      handleSkipCategories={handleSkipCategories}
+    />
   )
 }
 
