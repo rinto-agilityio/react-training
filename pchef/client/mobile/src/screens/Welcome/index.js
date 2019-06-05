@@ -11,11 +11,6 @@ import { METRICS } from 'pchef-shared/src/themes'
 // Constants
 import ROUTES from '@constants/routes'
 
-import AsyncStorage from '@react-native-community/async-storage'
-
-// Components
-import BtnPaper from 'pchef-shared/src/components/Button'
-
 const styles = StyleSheet.create({
   button: {
     top: METRICS.extraLargeMargin + METRICS.smallMargin,
@@ -29,13 +24,10 @@ type Props = {
 }
 
 const Welcome = ({ navigation }: Props) => (
-  <>
-    <WelcomeContainer
-      customButtonStyle={styles.button}
-      handleSkipCategories={() => navigation.navigate(ROUTES.HOME)}
-    />
-    <BtnPaper title="BtnPaper" onPress={() => AsyncStorage.removeItem('token')} />
-  </>
+  <WelcomeContainer
+    customButtonStyle={styles.button}
+    handleSkipCategories={() => navigation.navigate(ROUTES.HOME)}
+  />
 )
 
 export default Welcome
