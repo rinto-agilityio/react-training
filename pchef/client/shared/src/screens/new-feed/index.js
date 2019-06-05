@@ -21,6 +21,9 @@ type Props = {
       id: string,
     }>,
     followCategory: Array<{
+      id: string,
+      imgUrl: string,
+      name: string,
       recipes: Array<{
         id: string,
         title: string,
