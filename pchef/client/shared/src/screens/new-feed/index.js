@@ -71,7 +71,7 @@ const NewFeed = ({
   })
 
   const handlePressCategoryPipeline = categoryId => (
-    console.log('categoryId', categoryId)
+    console.log('categoryId****', categoryId)
   )
 
   return (
