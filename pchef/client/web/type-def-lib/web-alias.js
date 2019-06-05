@@ -18,6 +18,9 @@ declare module 'pchef-shared/src/containers/NewFeed' {
 declare module 'pchef-shared/src/containers/Recipe' {
   declare module.exports: any
 }
+declare module 'pchef-shared/src/containers/Welcome' {
+  declare module.exports: any
+}
 
 declare module 'pchef-shared/src/config/apollo-client' {
   declare module.exports: any
