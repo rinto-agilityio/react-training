@@ -18,10 +18,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     paddingBottom: METRICS.mediumPadding,
   },
-  pipelineItemImage: {
-    // borderWidth: METRICS.largeBorderWidth,
-    // padding: METRICS.smallPadding,
-  },
 })
 
 export default styles
