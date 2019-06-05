@@ -11,12 +11,12 @@ type Props = {
     name: string,
     imgUrl: string,
   },
-  onPressCategoryPipeline?: () => void,
+  onPressCategoryPipeline?: (name: string) => void,
 }
 
 const CategoryPipeLineItem = ({
   category,
-  onPressCategoryPipeline,
+  onPressCategoryPipeline = () => {},
 }: Props) => (
   <View style={styles.pipelineItem}>
     <Text style={styles.pipelineItemName}>{category.name}</Text>
