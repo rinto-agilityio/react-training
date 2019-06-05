@@ -40,6 +40,7 @@ type Props = {
   type?: string,
   onPressCategoryIcon: () => void,
   onPressLogo: () => void,
+  handleClickRecipe: () => void,
 }
 
 // Home screen
@@ -52,6 +53,7 @@ const NewFeed = ({
   onPressCategoryIcon,
   onPressLogo,
   userToggleRecipe,
+  handleClickRecipe,
 }: Props) => {
   const errorMessage = 'Connect failed!!!'
 
@@ -97,6 +99,7 @@ const NewFeed = ({
             type={type}
             favoriteRecipe={favoriteRecipe}
             userToggleRecipe={userToggleRecipe}
+            handleClickRecipe={handleClickRecipe}
           />
         )}
       </View>
