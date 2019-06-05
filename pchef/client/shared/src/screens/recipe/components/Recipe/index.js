@@ -1,95 +1,95 @@
 // Libs
 import React from 'react'
-import { Text, View, TouchableOpacity } from 'react-native'
+import { View } from 'react-native'
 
 // Styles
 import styles from './styles'
 
 // Components
-import Image from '../../../../components/Image'
-import Reaction from '../../../../components/Reaction'
+import Ingredients from './Ingredients'
+import Directions from './Directions'
+import Loading from '../../../../components/Loading'
+import Error from '../../../../components/Error'
 
-// Helpers
-import {
-  checkContainField,
-  formatFiledOnObject,
-} from '../../../../helpers/utils'
+// Containers
+import RecipeStepContainer from '../../../../containers/RecipeStep'
+
+// Helper
+import { customError, compareStep } from '../../../../helpers/utils'
 
 type Props = {
-  recipe: {
+  getRecipe: {
     id: string,
-    title: string,
     description: string,
-    imgUrl: string,
     votes: Array<string>,
+    views: number,
   },
-  size?: string,
-  favoriteRecipe: Array<{
-    id: string,
+  size: string,
+  onSelectStep?: () => void,
+  loading: boolean,
+  error: Object,
+  recipeSteps: Array<{
+    step: number,
+    title: string
   }>,
-  userToggleRecipe: (
-    recipeId: string,
-    favoriteRecipe: Array<{ id: string }>
-  ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
 }
 
 const Recipe = ({
-  recipe,
-  size = 'large',
-  favoriteRecipe,
-  userToggleRecipe,
+  getRecipe,
+  size = 'medium',
+  onSelectStep,
+  loading,
+  error,
+  recipeSteps = [{
+    description: '',
+    imgUrl: '',
+    step: 1,
+    title: '',
+  }],
 }: Props) => {
-  const { id, title, description, imgUrl, votes } = recipe
-
-  const isFavorited = checkContainField(favoriteRecipe, id)
-
-  const handleSaveRecipe = async () => {
-    await userToggleRecipe(id, favoriteRecipe).then(({ data }) => {
-
-      const {
-        userToggleRecipe: { results },
-      } = data
-
-      if (results) {
-        checkContainField(formatFiledOnObject(results), id)
-      }
-    })
+  if (loading) {
+    return <Loading />
+  }
+  if (error) {
+    return <Error message={customError(error.graphQLErrors)} />
   }
 
+  const {
+    description,
+    votes,
+    id,
+    views,
+  } = getRecipe
+
+  // order recipeSteps by step asc
+  const orderRecipeSteps = recipeSteps.sort(compareStep)
   return (
-    <TouchableOpacity style={[styles.wrapper, styles[`${size}Wrapper`]]}>
-      <View style={styles.recipe}>
-        <Text
-          style={[styles.title, styles[`${size}Title`]]}
-          numberOfLines={1}
-          ellipsizeMode="tail"
-        >
-          {title}
-        </Text>
-        <Text
-          style={[styles.description, styles[`${size}Description`]]}
-          numberOfLines={1}
-          ellipsizeMode="tail"
-        >
-          {description}
-        </Text>
-        <Image
-          url={imgUrl}
-          customImageStyle={[styles.image, styles[`${size}Image`]]}
-        />
-      </View>
-      <Reaction
-        votes={votes}
+    <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
+      <Ingredients
+        description={description}
         size={size}
-        isFavorited={isFavorited}
-        onPressFavorite={handleSaveRecipe}
       />
-    </TouchableOpacity>
+      <Directions
+        steps={recipeSteps}
+        size={size}
+        onSelectStep={onSelectStep}
+      />
+      {
+        true && (
+        <RecipeStepContainer
+          id={id}
+          votes={votes}
+          views={views}
+          recipeSteps={orderRecipeSteps}
+        />
+        )
+      }
+    </View>
   )
 }
 
 Recipe.defaultProps = {
-  size: 'large',
+  onSelectStep: () => {},
 }
 
 export default Recipe
