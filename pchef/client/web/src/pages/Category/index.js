@@ -1,5 +1,17 @@
 import React from 'react'
+import CategoryContainer from 'pchef-shared/src/containers/Category'
 
-const Category = () => <h3>Category page</h3>
+type Props = {
+  category: {},
+}
+
+const Category = ({ category }: props) => {
+  // const { id } = category
+  return (
+    <>
+      <CategoryContainer id="3xjHYbeO7D4b4UhjKeWU" />
+    </>
+  )
+}
 
 export default Category
