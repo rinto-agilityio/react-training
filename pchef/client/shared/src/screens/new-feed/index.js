@@ -70,9 +70,7 @@ const NewFeed = ({
     recipesList = recipesList.concat(category.recipes)
   })
 
-  const handlePressCategoryPipeline = categoryId => (
-    console.log('categoryId****', categoryId)
-  )
+  const handlePressCategoryPipeline = categoryId => (categoryId)
 
   return (
     <ScrollView
