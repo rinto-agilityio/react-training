@@ -7,6 +7,17 @@ declare module 'pchef-shared/src/containers/Login' {
   declare module.exports: any
 }
 
+declare module 'pchef-shared/src/containers/Category' {
+  declare module.exports: any
+}
+
+declare module 'pchef-shared/src/containers/NewFeed' {
+  declare module.exports: any
+}
+
+declare module 'pchef-shared/src/containers/Recipe' {
+  declare module.exports: any
+}
 declare module 'pchef-shared/src/containers/Welcome' {
   declare module.exports: any
 }

@@ -1,17 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-// Component
-// $FlowFixMe
-import BtnPaper from 'pchef-shared/src/components/Button'
+// Containers
+import NewFeed from 'pchef-shared/src/containers/NewFeed'
 
-const Home = () => (
-  <>
-    <h3>Home page</h3>
-    <Link to="profile">Link to Profile</Link>
-    <Link to="category">Link to Category</Link>
-    <BtnPaper title="BtnPaper" onPress={() => console.log('Click')} />
-  </>
-)
+type Props = {
+  history: Object
+}
+
+const Home = ({ history }: Props) => {
+  const handleClickRecipe = recipeId => {
+    history.push(`/recipe-detail/${recipeId}/`)
+  }
+
+  return (
+    <NewFeed handleClickRecipe={handleClickRecipe} />
+  )
+}
 
 export default Home
