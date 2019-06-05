@@ -17,14 +17,18 @@ type Props = {
 const CategoryPipeLineItem = ({
   category,
   onPressCategoryPipeline = () => {},
-}: Props) => (
-  <View style={styles.pipelineItem}>
-    <Text style={styles.pipelineItemName}>{category.name}</Text>
-    <TouchableOpacity onPress={() => onPressCategoryPipeline(category.id)}>
-      <Avatar.Image style={styles.pipelineItemImage} size={70} source={category.imgUrl} />
-    </TouchableOpacity>
-  </View>
-)
+}: Props) => {
+  const { id, name, imgUrl } = category
+
+  return (
+    <View style={styles.pipelineItem}>
+      <Text style={styles.pipelineItemName}>{name}</Text>
+      <TouchableOpacity onPress={() => onPressCategoryPipeline(id)}>
+        <Avatar.Image style={styles.pipelineItemImage} size={70} source={imgUrl} />
+      </TouchableOpacity>
+    </View>
+  )
+}
 
 CategoryPipeLineItem.defaultProps = {
   onPressCategoryPipeline: () => {},
