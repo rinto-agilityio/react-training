@@ -15,6 +15,18 @@ type Props = {
     name: string,
     imgUrl: string,
   }>,
+  followCategory: Array<{
+    id: string,
+    imgUrl: string,
+    name: string,
+    recipes: Array<{
+      id: string,
+      title: string,
+      description: string,
+      imgUrl: string,
+      votes: Array<string>,
+    }>,
+  }>,
   onPressCategoryPipeline?: () => void,
   loading: boolean,
 }
