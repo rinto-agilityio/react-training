@@ -31,7 +31,6 @@ type Props = {
     recipeId: string,
     favoriteRecipe: Array<{ id: string }>
   ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
-  handleClickRecipe: (recipeId: string) => void,
 }
 
 const Recipe = ({
@@ -39,7 +38,6 @@ const Recipe = ({
   size = 'large',
   favoriteRecipe,
   userToggleRecipe,
-  handleClickRecipe,
 }: Props) => {
   const { id, title, description, imgUrl, votes } = recipe
 
@@ -59,10 +57,7 @@ const Recipe = ({
   }
 
   return (
-    <TouchableOpacity
-      style={[styles.wrapper, styles[`${size}Wrapper`]]}
-      onPress={() => handleClickRecipe(recipe.id)}
-    >
+    <TouchableOpacity style={[styles.wrapper, styles[`${size}Wrapper`]]}>
       <View style={styles.recipe}>
         <Text
           style={[styles.title, styles[`${size}Title`]]}

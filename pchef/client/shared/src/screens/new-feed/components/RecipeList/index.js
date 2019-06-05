@@ -26,7 +26,7 @@ type Props = {
     recipeId: string,
     favoriteRecipe: Array<{ id: string }>
   ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
-  handleClickRecipe: (recipeId: string) => void,
+  handleClickRecipe: () => void,
 }
 
 const RecipeList = ({
@@ -53,7 +53,7 @@ const RecipeList = ({
             size={size}
             favoriteRecipe={favoriteRecipe}
             userToggleRecipe={userToggleRecipe}
-            handleClickRecipe={() => handleClickRecipe(recipe.id)}
+            handleClickRecipe={handleClickRecipe}
           />
         ))
       )}
