@@ -5,7 +5,7 @@ type Props = {
   category: {},
 }
 
-const Category = ({ category }: props) => {
+const Category = ({ category }: Props) => {
   // const { id } = category
   return (
     <>
