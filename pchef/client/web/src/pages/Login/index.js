@@ -10,7 +10,7 @@ type Props = {
 const Login = ({ history }: Props) => {
   const handlingLoginSuccess = (token: string) => {
     localStorage.setItem('token', token)
-    history.push('/')
+    history.push('/welcome')
   }
 
   return (

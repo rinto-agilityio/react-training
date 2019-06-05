@@ -9,6 +9,7 @@ import Home from 'pages/Home'
 import Profile from 'pages/Profile'
 import Category from 'pages/Category'
 import Login from '../pages/Login'
+import Welcome from '../pages/Welcome'
 
 // helpers
 import PrivateRoute from '../helpers/PrivateRoute'
@@ -22,6 +23,7 @@ const MainRouter = () => (
       <PrivateRoute exact path="/" loginPath={loginPath} component={Home} />
       <PrivateRoute exact loginPath={loginPath} path="/category" component={Category} />
       <PrivateRoute exact loginPath={loginPath} path="/profile" component={Profile} />
+      <PrivateRoute exact loginPath={loginPath} path="/welcome" component={Welcome} />
     </Switch>
   </Router>
 )
