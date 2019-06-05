@@ -30,12 +30,11 @@ type Props = {
 
 const Welcome = ({ navigation }: Props) => (
   <>
-  <WelcomeContainer
-    customButtonStyle={styles.button}
-    handleSkipCategories={() => navigation.navigate(ROUTES.HOME)}
-    navigateToHomePage={() => navigation.navigate(ROUTES.HOME)}
-  />
-  <BtnPaper title="BtnPaper" onPress={() => AsyncStorage.removeItem('token')} />
+    <WelcomeContainer
+      customButtonStyle={styles.button}
+      handleSkipCategories={() => navigation.navigate(ROUTES.HOME)}
+    />
+    <BtnPaper title="BtnPaper" onPress={() => AsyncStorage.removeItem('token')} />
   </>
 )
 
