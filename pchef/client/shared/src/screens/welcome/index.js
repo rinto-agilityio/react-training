@@ -25,7 +25,7 @@ type Props = {
   },
   loading: boolean,
   error: {
-    graphQLErrors: Array<{ message: string }>,
+    graphQLErrors: Array<{message: string}>,
   },
   categories: Array<{
     id: string,
