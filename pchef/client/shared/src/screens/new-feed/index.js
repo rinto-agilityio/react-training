@@ -49,6 +49,7 @@ type Props = {
   handleClickRecipe: () => void,
   history: Object,
   size: string,
+  handleRedirectLogin: Function
 }
 
 // Home screen
@@ -62,14 +63,14 @@ const NewFeed = ({
   onPressLogo,
   userToggleRecipe,
   handleClickRecipe,
-  history,
+  handleRedirectLogin,
   size = 'medium',
 }: Props) => {
   const [visible, setVisible] = useState(true)
 
   const handleNavigateLogin = () => {
     setVisible(false)
-    history.push('/login')
+    handleRedirectLogin()
   }
 
   if (error) {
