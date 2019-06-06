@@ -13,12 +13,10 @@ const Welcome = ({ history }: Props) => {
   }
 
   return (
-    <>
-      <WelcomeContainer
-        handleSkipCategories={handleSkipCategories}
-        history={history}
-      />
-    </>
+    <WelcomeContainer
+      handleSkipCategories={handleSkipCategories}
+      history={history}
+    />
   )
 }
 
