@@ -29,7 +29,7 @@ type Props = {
     title: string,
     id: string,
   }>,
-  history: Object,
+  handleRedirectLogin: Function,
 }
 
 const Recipe = ({
@@ -46,7 +46,7 @@ const Recipe = ({
     title: '',
     id: '',
   }],
-  history,
+  handleRedirectLogin,
 }: Props) => {
   const [visible, setVisible] = useState(true)
 
@@ -56,7 +56,7 @@ const Recipe = ({
 
   const handleNavigateLogin = () => {
     setVisible(false)
-    history.push('/login')
+    handleRedirectLogin()
   }
 
   if (error) {
