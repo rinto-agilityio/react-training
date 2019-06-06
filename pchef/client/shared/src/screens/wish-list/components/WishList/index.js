@@ -12,7 +12,7 @@ import styles from './styles'
 import Item from './Item'
 import Loading from '../../../../components/Loading'
 import Modal from '../../../../components/Modal'
-import Error from '../../components/Error'
+import Error from '../../../../components/Error'
 
 type Props = {
   wishList: Array<{

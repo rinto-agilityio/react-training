@@ -10,7 +10,7 @@ import Ingredients from './Ingredients'
 import Directions from './Directions'
 import Loading from '../../../../components/Loading'
 import Modal from '../../../../components/Modal'
-import Error from '../../components/Error'
+import Error from '../../../../components/Error'
 
 // Helper
 import { customError } from '../../../../helpers/utils'
