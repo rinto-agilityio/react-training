@@ -47,7 +47,6 @@ const Recipe = ({
 
   const handleSaveRecipe = async () => {
     await userToggleRecipe(id, favoriteRecipe).then(({ data }) => {
-
       const {
         userToggleRecipe: { results },
       } = data
