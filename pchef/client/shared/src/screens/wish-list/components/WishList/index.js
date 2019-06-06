@@ -78,7 +78,7 @@ const WishList = ({
           categories={categories}
           cookingTypes={cookingTypes}
         />
-      )) }
+      ))}
     </View>
   )
 }
