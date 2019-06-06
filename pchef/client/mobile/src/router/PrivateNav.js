@@ -6,6 +6,7 @@ import RecipeDetail from '@screen/RecipeDetail'
 import Home from '@screen/Home'
 import Category from '@screen/Category'
 import Welcome from '@screen/Welcome'
+import RecipeStep from '@screen/RecipeStep'
 
 const PrivateNav = createStackNavigator(
   {
@@ -23,6 +24,7 @@ const PrivateNav = createStackNavigator(
     },
     Category,
     RecipeDetail,
+    RecipeStep,
   },
 )
 

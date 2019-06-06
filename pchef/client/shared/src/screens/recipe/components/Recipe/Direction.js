@@ -15,7 +15,7 @@ import Wrapper from '../../../../layout/Wrapper'
 type Props = {
   item: {
     step: number,
-    title: string
+    title: string,
   },
   size: string,
   customDescription?: {},
@@ -39,9 +39,9 @@ const Direction = ({
       title={item.step ? item.step.toString() : ''}
       buttonStyle={[styles.button, styles[`${size}Button`]]}
       titleStyle={[styles.titleBtn, styles[`${size}TitleBtn`]]}
-      onPress={onSelectStep}
+      onPress={() => onSelectStep(item.id)}
     />
-    <Text style={styles.wrapperDescriptions}>
+    <Text style={[styles.wrapperDescriptions, styles[`${size}WrapperDescriptions`]]}>
       <Text
         style={[
           styles.descriptionDirections,

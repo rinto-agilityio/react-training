@@ -1,5 +1,6 @@
 import React from 'react'
 import AsyncStorage from '@react-native-community/async-storage'
+import { NavigationScreenProps } from 'react-navigation'
 
 // Component
 import LoginContainer from 'pchef-shared/src/containers/Login'
@@ -8,9 +9,7 @@ import LoginContainer from 'pchef-shared/src/containers/Login'
 import ROUTES from '@constants/routes'
 
 type Props = {
-  navigation: {
-    navigate: (name: string) => void,
-  },
+  navigation: NavigationScreenProps,
 }
 // Login
 const Login = ({ navigation }: Props) => {

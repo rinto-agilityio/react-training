@@ -49,7 +49,7 @@ const Recipe = ({
   const [visible, setVisible] = useState(true)
 
   if (loading) {
-    return <Loading />
+    return <Loading size={size} />
   }
 
   const handleNavigateLogin = () => {

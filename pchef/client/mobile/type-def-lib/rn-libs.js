@@ -142,3 +142,11 @@ declare module 'pchef-shared/src/containers/Welcome' {
 declare module 'pchef-shared/src/themes' {
   declare module.exports: any;
 }
+
+declare module 'pchef-shared/src/containers/RecipeStep' {
+  declare module.exports: any;
+}
+
+declare module 'pchef-shared/src/containers/Recipe' {
+  declare module.exports: any;
+}

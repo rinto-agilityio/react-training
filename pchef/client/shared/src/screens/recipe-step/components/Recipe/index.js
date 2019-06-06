@@ -114,7 +114,7 @@ const Recipe = ({
   } = recipes[0]
 
   if (loading) {
-    return <Loading />
+    return <Loading size={size} />
   }
 
   const handleNavigateLogin = () => {
