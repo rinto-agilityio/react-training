@@ -13,7 +13,10 @@ const Home = ({ history }: Props) => {
   }
 
   return (
-    <NewFeed handleClickRecipe={handleClickRecipe} />
+    <NewFeed
+      handleClickRecipe={handleClickRecipe}
+      history={history}
+    />
   )
 }
 

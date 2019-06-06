@@ -9,6 +9,8 @@ import { GRID_VIEW_COLUMN, LIST_VIEW_COLUMN } from '../../constants/index'
 import Header from './components/Header'
 import Recipe from './components/Recipe'
 import Loading from '../../components/Loading'
+import { customError } from '../../helpers/utils'
+import Modal from '../../components/Modal'
 import Error from '../../components/Error'
 
 // styles
@@ -27,21 +29,41 @@ type Props = {
   }>,
   loading: boolean,
   error: {
-    message: string,
+    graphQLErrors: Array<{ message: string }>,
   },
+  history: Object,
 }
 const CategoryScreen = ({
   category = {},
   recipes = [],
   loading,
   error,
+  history,
 }: Props) => {
   const size = Platform.OS === 'web' ? 'large' : 'small'
   const [columns, setColumns] = useState(LIST_VIEW_COLUMN)
   const [isGrid, setIsGrid] = useState(false)
+  const [visible, setVisible] = useState(true)
 
   if (loading) return <Loading size="small" />
-  if (error) return <Error message={error.message} size={size} />
+
+  const handleNavigateLogin = () => {
+    setVisible(false)
+    history.push('/login')
+  }
+
+  if (error) {
+    return (
+      <Modal
+        visible={visible}
+        onDismiss={() => handleNavigateLogin()}
+        onSubmit={() => handleNavigateLogin()}
+        size="medium"
+      >
+        <Error message={customError(error.graphQLErrors)} size="medium" />
+      </Modal>
+    )
+  }
 
   const handleSelectListView = itemName => {
     if (itemName === 'view-list') {

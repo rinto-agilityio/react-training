@@ -14,6 +14,7 @@ import ImageBackground from '../../../../components/ImageBackground'
 import Reaction from '../../../../components/Reaction'
 import Comment from '../../../recipe/components/Comment'
 import Loading from '../../../../components/Loading'
+import Modal from '../../../../components/Modal'
 import Error from '../../../../components/Error'
 
 // mock data
@@ -66,11 +67,12 @@ type Props = {
     recipeId: string,
     votes: Array<string>,
     userId: string
-  ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
+  ) => Promise<{ data: {userToggleVote: {results: Array<string>}}}>,
   id: string,
   error: {
     graphQLErrors: Array<{message: string}>
-  }
+  },
+  history: Object,
 }
 
 const Recipe = ({
@@ -94,11 +96,14 @@ const Recipe = ({
   userToggleRecipe,
   userToggleVote,
   getRecipe,
+  history,
 }: Props) => {
   // order recipeSteps by step asc
   const orderRecipeSteps = recipeSteps.sort(compareStep)
   const defaultStepInfo = orderRecipeSteps[0]
   const [stepInfo, setStepInfo] = useState({})
+  const [visible, setVisible] = useState(true)
+
   useEffect(() => (
     setStepInfo(defaultStepInfo)
   ), [loading, defaultStepInfo])
@@ -111,8 +116,23 @@ const Recipe = ({
   if (loading) {
     return <Loading />
   }
+
+  const handleNavigateLogin = () => {
+    setVisible(false)
+    history.push('/login')
+  }
+
   if (error) {
-    return <Error message={customError(error.graphQLErrors)} />
+    return (
+      <Modal
+        visible={visible}
+        onDismiss={() => handleNavigateLogin()}
+        onSubmit={() => handleNavigateLogin()}
+        size={size}
+      >
+        <Error message={customError(error.graphQLErrors)} size="medium" />
+      </Modal>
+    )
   }
 
   const {
