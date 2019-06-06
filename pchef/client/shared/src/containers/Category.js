@@ -1,7 +1,11 @@
 import { compose } from 'react-apollo'
 
-// import graphQL query + component
+// graphQL query + component
 import { getCategory } from '../graphql/category'
-import CategoryScreen from '../screens/category'
+import { userToggleRecipe } from '../graphql/recipe'
+import { getRecipes } from '../graphql/recipe'
 
-export default compose(getCategory)(CategoryScreen)
+// component
+import Category from '../screens/category'
+
+export default compose(getCategory, userToggleRecipe, getRecipes)(Category)

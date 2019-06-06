@@ -26,7 +26,8 @@ type Props = {
   error: Object,
   recipeSteps: Array<{
     step: number,
-    title: string
+    title: string,
+    id: string,
   }>,
   history: Object,
 }
@@ -37,12 +38,13 @@ const Recipe = ({
     id: '',
   },
   size = 'medium',
-  onSelectStep,
+  onSelectStep = () => {},
   loading,
   error,
   recipeSteps = [{
     step: 1,
     title: '',
+    id: '',
   }],
   history,
 }: Props) => {
