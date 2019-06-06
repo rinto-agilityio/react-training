@@ -28,7 +28,7 @@ type Props = {
   }>,
   loading: boolean,
   error: {
-    message: string,
+    graphQLErrors: Array<{ message: string }>,
   },
   history: Object,
 }
@@ -57,6 +57,7 @@ const CategoryScreen = ({
         visible={visible}
         onDismiss={() => handleNavigateLogin()}
         onSubmit={() => handleNavigateLogin()}
+        size={size}
       >
         <Text>{ customError(error.graphQLErrors) }</Text>
       </Modal>
