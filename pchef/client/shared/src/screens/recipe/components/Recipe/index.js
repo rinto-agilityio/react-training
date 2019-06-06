@@ -1,6 +1,6 @@
 // Libs
 import React, { useState } from 'react'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 
 // Styles
 import styles from './styles'
@@ -10,6 +10,7 @@ import Ingredients from './Ingredients'
 import Directions from './Directions'
 import Loading from '../../../../components/Loading'
 import Modal from '../../../../components/Modal'
+import Error from '../../components/Error'
 
 // Helper
 import { customError } from '../../../../helpers/utils'
@@ -64,7 +65,7 @@ const Recipe = ({
         onSubmit={() => handleNavigateLogin()}
         size={size}
       >
-        <Text>{ customError(error.graphQLErrors) }</Text>
+        <Error message={customError(error.graphQLErrors)} size="medium" />
       </Modal>
     )
   }

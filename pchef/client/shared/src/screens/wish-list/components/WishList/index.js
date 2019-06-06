@@ -1,6 +1,6 @@
 // Libs
 import React, { useState } from 'react'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 
 // Helpers
 import { customError } from '../../../../helpers/utils'
@@ -12,6 +12,7 @@ import styles from './styles'
 import Item from './Item'
 import Loading from '../../../../components/Loading'
 import Modal from '../../../../components/Modal'
+import Error from '../../components/Error'
 
 type Props = {
   wishList: Array<{
@@ -63,7 +64,7 @@ const WishList = ({
         onSubmit={() => handleNavigateLogin()}
         size={size}
       >
-        <Text>{ customError(error.graphQLErrors) }</Text>
+        <Error message={customError(error.graphQLErrors)} size="medium" />
       </Modal>
     )
   }

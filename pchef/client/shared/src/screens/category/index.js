@@ -1,6 +1,6 @@
 // Libs
 import React, { useState } from 'react'
-import { Platform, View, FlatList, Text } from 'react-native'
+import { Platform, View, FlatList } from 'react-native'
 
 // Constant
 import { GRID_VIEW_COLUMN, LIST_VIEW_COLUMN } from '../../constants/index'
@@ -11,6 +11,7 @@ import Recipe from './components/Recipe'
 import Loading from '../../components/Loading'
 import { customError } from '../../helpers/utils'
 import Modal from '../../components/Modal'
+import Error from '../../components/Error'
 
 // styles
 import styles from './styles'
@@ -57,9 +58,9 @@ const CategoryScreen = ({
         visible={visible}
         onDismiss={() => handleNavigateLogin()}
         onSubmit={() => handleNavigateLogin()}
-        size={size}
+        size="medium"
       >
-        <Text>{ customError(error.graphQLErrors) }</Text>
+        <Error message={customError(error.graphQLErrors)} size="medium" />
       </Modal>
     )
   }

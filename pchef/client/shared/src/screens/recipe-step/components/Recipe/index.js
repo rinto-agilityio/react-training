@@ -15,6 +15,7 @@ import Reaction from '../../../../components/Reaction'
 import Comment from '../../../recipe/components/Comment'
 import Loading from '../../../../components/Loading'
 import Modal from '../../../../components/Modal'
+import Error from '../../components/Error'
 
 // mock data
 import { recipes } from '../../../../mocks'
@@ -129,7 +130,7 @@ const Recipe = ({
         onSubmit={() => handleNavigateLogin()}
         size={size}
       >
-        <Text>{ customError(error.graphQLErrors) }</Text>
+        <Error message={customError(error.graphQLErrors)} size="medium" />
       </Modal>
     )
   }

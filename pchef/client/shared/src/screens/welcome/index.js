@@ -9,7 +9,7 @@ import styles from './styles'
 import Loading from '../../components/Loading'
 import { customError } from '../../helpers/utils'
 import Modal from '../../components/Modal'
-
+import Error from '../../components/Error'
 
 // Interested Category props type
 type Props = {
@@ -76,7 +76,7 @@ const Welcome = ({
         onSubmit={() => handleNavigateLogin()}
         size={size}
       >
-        <Text>{ customError(error.graphQLErrors) }</Text>
+        <Error message={customError(error.graphQLErrors)} size="medium" />
       </Modal>
     )
   }

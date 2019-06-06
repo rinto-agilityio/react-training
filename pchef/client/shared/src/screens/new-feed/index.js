@@ -1,6 +1,6 @@
 // Libs
 import React, { useState } from 'react'
-import { ScrollView, View, Text } from 'react-native'
+import { ScrollView, View } from 'react-native'
 
 // Components
 import Header from './components/Header'
@@ -8,6 +8,7 @@ import RecipeList from './components/RecipeList'
 import Loading from '../../components/Loading'
 import CategoryPipeLine from './components/CategoryPipeLine'
 import Modal from '../../components/Modal'
+import Error from '../../components/Error'
 
 // Helpers
 import { customError } from '../../helpers/utils'
@@ -79,7 +80,7 @@ const NewFeed = ({
         onSubmit={() => handleNavigateLogin()}
         size={size}
       >
-        <Text>{ customError(error.graphQLErrors) }</Text>
+        <Error message={customError(error.graphQLErrors)} size="medium" />
       </Modal>
     )
   }
@@ -102,21 +103,21 @@ const NewFeed = ({
       style={[styles.container, styles[`${type}Container`], customStyles]}
     >
       <Header
-        onPressIcon={() => {}}
+        onPressIcon={() => { }}
         onPressCategoryIcon={onPressCategoryIcon}
         onPressLogo={onPressLogo}
         type={type}
       />
 
       <View style={styles[`${type}RecipeListContainer`]}>
-        {/** Choosen category pipeline */}
+        {/** Choosen category pipeline */ }
         <CategoryPipeLine
           followCategory={followCategory}
           loading={loading}
           onPressCategoryPipeline={handlePressCategoryPipeline}
         />
 
-        {recipesList && (
+        { recipesList && (
           <RecipeList
             recipes={recipesList}
             type={type}
@@ -124,7 +125,7 @@ const NewFeed = ({
             userToggleRecipe={userToggleRecipe}
             handleClickRecipe={handleClickRecipe}
           />
-        )}
+        ) }
       </View>
     </ScrollView>
   )
