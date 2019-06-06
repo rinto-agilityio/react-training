@@ -103,21 +103,21 @@ const NewFeed = ({
       style={[styles.container, styles[`${type}Container`], customStyles]}
     >
       <Header
-        onPressIcon={() => { }}
+        onPressIcon={() => {}}
         onPressCategoryIcon={onPressCategoryIcon}
         onPressLogo={onPressLogo}
         type={type}
       />
 
       <View style={styles[`${type}RecipeListContainer`]}>
-        {/** Choosen category pipeline */ }
+        {/** Choosen category pipeline */}
         <CategoryPipeLine
           followCategory={followCategory}
           loading={loading}
           onPressCategoryPipeline={handlePressCategoryPipeline}
         />
 
-        { recipesList && (
+        {recipesList && (
           <RecipeList
             recipes={recipesList}
             type={type}
@@ -125,7 +125,7 @@ const NewFeed = ({
             userToggleRecipe={userToggleRecipe}
             handleClickRecipe={handleClickRecipe}
           />
-        ) }
+        )}
       </View>
     </ScrollView>
   )

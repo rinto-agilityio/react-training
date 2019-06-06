@@ -62,12 +62,12 @@ type Props = {
   userToggleRecipe: (
     recipeId: string,
     favoriteRecipe: Array<{id: string}>
-  ) => Promise<{ data: {userToggleRecipe: { results: Array<string> }}}>,
+  ) => Promise<{ data: {userToggleRecipe: {results: Array<string>}}}>,
   userToggleVote: (
     recipeId: string,
     votes: Array<string>,
     userId: string
-  ) => Promise<{ data: {userToggleVote: { results: Array<string> }}}>,
+  ) => Promise<{ data: {userToggleVote: {results: Array<string>}}}>,
   id: string,
   error: {
     graphQLErrors: Array<{message: string}>

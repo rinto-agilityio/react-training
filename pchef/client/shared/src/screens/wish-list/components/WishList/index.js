@@ -71,7 +71,7 @@ const WishList = ({
 
   return (
     <View style={styles.container}>
-      { wishList.map(item => (
+      {wishList.map(item => (
         <Item
           key={item.id}
           item={item}
