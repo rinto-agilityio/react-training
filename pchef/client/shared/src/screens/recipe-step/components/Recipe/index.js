@@ -56,20 +56,20 @@ type Props = {
       name: string,
       avatar: string,
     },
-    favoriteRecipe: Array<{ id: string }>
+    favoriteRecipe: Array<{id: string}>
   },
   userToggleRecipe: (
     recipeId: string,
-    favoriteRecipe: Array<{ id: string }>
-  ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
+    favoriteRecipe: Array<{id: string}>
+  ) => Promise<{ data: {userToggleRecipe: { results: Array<string> }}}>,
   userToggleVote: (
     recipeId: string,
     votes: Array<string>,
     userId: string
-  ) => Promise<{ data: { userToggleVote: { results: Array<string> } } }>,
+  ) => Promise<{ data: {userToggleVote: { results: Array<string> }}}>,
   id: string,
   error: {
-    graphQLErrors: Array<{ message: string }>
+    graphQLErrors: Array<{message: string}>
   },
   history: Object,
 }
@@ -215,7 +215,7 @@ const Recipe = ({
           ]}
           onPress={onPress}
         >
-          { title }
+          {title}
         </Text>
         <Text
           style={[
@@ -225,7 +225,7 @@ const Recipe = ({
           ]}
           onPress={onPress}
         >
-          { subTitle }
+          {subTitle}
         </Text>
         <ImageBackground
           url={stepInfo.imgUrl}
@@ -244,7 +244,7 @@ const Recipe = ({
                 customTitleStep,
               ]}
             >
-              { stepInfo.title }
+              {stepInfo.title}
             </Text>
           </Text>
           <Progress
@@ -263,7 +263,7 @@ const Recipe = ({
           customDescription,
         ]}
       >
-        { stepInfo.description }
+        {stepInfo.description}
       </Text>
       <Reaction
         votes={votes}
@@ -295,14 +295,14 @@ const Recipe = ({
           styles[`${size}Views`],
         ]}
       >
-        { `viewed by ${views}` }
+        {`viewed by ${views}`}
       </Text>
     </View>
   )
 }
 
 Recipe.defaultProps = {
-  onPress: () => { },
+  onPress: () => {},
   customRecipe: {},
   customTitle: {},
   customDescription: {},
