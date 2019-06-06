@@ -89,7 +89,7 @@ const CategoryScreen = ({
   }
 
   // handle toggle save Recipe
-  const handlePressIcon = async (id: string) => {
+  const handleToggleSaveRecipe = async (id: string) => {
     await userToggleRecipe(id, favoriteRecipe)
   }
 
@@ -112,7 +112,7 @@ const CategoryScreen = ({
                 isGrid={isGrid}
                 recipe={item}
                 size={size}
-                onPressIcon={handlePressIcon}
+                onPressIcon={handleToggleSaveRecipe}
                 isFavorite={checkContainField(favoriteRecipe, item.id)}
               />
             )
