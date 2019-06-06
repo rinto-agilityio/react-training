@@ -22,8 +22,15 @@ declare module 'pchef-shared/src/containers/Recipe' {
 declare module 'pchef-shared/src/containers/RecipeStep' {
   declare module.exports: any
 }
-
 declare module 'pchef-shared/src/containers/Welcome' {
+  declare module.exports: any
+}
+
+declare module 'pchef-shared/src/containers/WishList' {
+  declare module.exports: any
+}
+
+declare module 'pchef-shared/src/containers/WishListForm' {
   declare module.exports: any
 }
 
