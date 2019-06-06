@@ -7,9 +7,9 @@ type Props = {
   history: Object
 }
 
-const WishList = ({history}: Props) => (
+const WishList = ( { history }: Props ) => (
   <WishListContainer
-    history={history}
+    handleRedirectLogin={ () => history.push( '/login' ) }
   />
 )
 
