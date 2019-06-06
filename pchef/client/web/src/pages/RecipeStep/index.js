@@ -7,10 +7,9 @@ type Props = {
       recipeId: string
     }
   },
-  history: Object
 }
 
-const RecipeStep = ({ match, history }: Props) => {
+const RecipeStep = ({ match }: Props) => {
   const {
     recipeId,
   } = match.params
@@ -18,8 +17,6 @@ const RecipeStep = ({ match, history }: Props) => {
   return (
     <RecipeStepContainer
       id={recipeId}
-      history={history}
-
     />
   )
 }
