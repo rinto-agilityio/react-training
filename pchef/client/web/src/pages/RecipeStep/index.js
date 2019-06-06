@@ -15,11 +15,9 @@ const RecipeStep = ({ match }: Props) => {
   } = match.params
 
   return (
-    <div>
-      <RecipeStepContainer
-        id={recipeId}
-      />
-    </div>
+    <RecipeStepContainer
+      id={recipeId}
+    />
   )
 }
 
