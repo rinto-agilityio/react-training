@@ -1,20 +1,26 @@
 // Libs
-import React from 'react'
+import React, { useState } from 'react'
 import { ScrollView, View } from 'react-native'
 
 // Components
 import Header from './components/Header'
 import RecipeList from './components/RecipeList'
-import Error from '../../components/Error'
 import Loading from '../../components/Loading'
 import CategoryPipeLine from './components/CategoryPipeLine'
+import Modal from '../../components/Modal'
+import Error from '../../components/Error'
+
+// Helpers
+import { customError } from '../../helpers/utils'
 
 // Styles
 import styles from './styles'
 
 type Props = {
   customStyles?: {},
-  error: string,
+  error: {
+    graphQLErrors: Array<{ message: string }>,
+  },
   loading: boolean,
   data: {
     favoriteRecipe: Array<{
@@ -41,6 +47,8 @@ type Props = {
   onPressCategoryIcon: () => void,
   onPressLogo: () => void,
   handleClickRecipe: () => void,
+  history: Object,
+  size: string,
 }
 
 // Home screen
@@ -54,11 +62,27 @@ const NewFeed = ({
   onPressLogo,
   userToggleRecipe,
   handleClickRecipe,
+  history,
+  size = 'medium',
 }: Props) => {
-  const errorMessage = 'Connect failed!!!'
+  const [visible, setVisible] = useState(true)
+
+  const handleNavigateLogin = () => {
+    setVisible(false)
+    history.push('/login')
+  }
 
   if (error) {
-    return <Error message={errorMessage} />
+    return (
+      <Modal
+        visible={visible}
+        onDismiss={() => handleNavigateLogin()}
+        onSubmit={() => handleNavigateLogin()}
+        size={size}
+      >
+        <Error message={customError(error.graphQLErrors)} size="medium" />
+      </Modal>
+    )
   }
 
   if (loading) return <Loading size={type === 'primary' ? 'small' : 'large'} />

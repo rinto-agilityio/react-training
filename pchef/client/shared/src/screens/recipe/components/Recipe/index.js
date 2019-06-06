@@ -1,5 +1,5 @@
 // Libs
-import React from 'react'
+import React, { useState } from 'react'
 import { View } from 'react-native'
 
 // Styles
@@ -9,6 +9,7 @@ import styles from './styles'
 import Ingredients from './Ingredients'
 import Directions from './Directions'
 import Loading from '../../../../components/Loading'
+import Modal from '../../../../components/Modal'
 import Error from '../../../../components/Error'
 
 // Helper
@@ -25,8 +26,10 @@ type Props = {
   error: Object,
   recipeSteps: Array<{
     step: number,
-    title: string
+    title: string,
+    id: string,
   }>,
+  history: Object,
 }
 
 const Recipe = ({
@@ -35,19 +38,38 @@ const Recipe = ({
     id: '',
   },
   size = 'medium',
-  onSelectStep,
+  onSelectStep = () => {},
   loading,
   error,
   recipeSteps = [{
     step: 1,
     title: '',
+    id: '',
   }],
+  history,
 }: Props) => {
+  const [visible, setVisible] = useState(true)
+
   if (loading) {
-    return <Loading />
+    return <Loading size={size} />
   }
+
+  const handleNavigateLogin = () => {
+    setVisible(false)
+    history.push('/login')
+  }
+
   if (error) {
-    return <Error message={customError(error.graphQLErrors)} />
+    return (
+      <Modal
+        visible={visible}
+        onDismiss={() => handleNavigateLogin()}
+        onSubmit={() => handleNavigateLogin()}
+        size={size}
+      >
+        <Error message={customError(error.graphQLErrors)} size="medium" />
+      </Modal>
+    )
   }
 
   const {

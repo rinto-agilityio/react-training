@@ -11,6 +11,8 @@ import Category from 'pages/Category'
 import Login from '../pages/Login'
 import RecipeDetail from '../pages/RecipeDetail'
 import Welcome from '../pages/Welcome'
+import WishList from '../pages/WishList'
+import WishListForm from '../pages/WishListForm'
 import RecipeStep from '../pages/RecipeStep'
 
 // helpers
@@ -28,6 +30,8 @@ const MainRouter = () => (
       <PrivateRoute exact loginPath={loginPath} path="/profile" component={Profile} />
       <PrivateRoute exact loginPath={loginPath} path="/welcome" component={Welcome} />
       <PrivateRoute exact loginPath={loginPath} path="/recipe-step/:recipeId/" component={RecipeStep} />
+      <PrivateRoute exact loginPath={loginPath} path="/wishlist" component={WishList} />
+      <PrivateRoute exact loginPath={loginPath} path="/wishlist-form" component={WishListForm} />
     </Switch>
   </Router>
 )

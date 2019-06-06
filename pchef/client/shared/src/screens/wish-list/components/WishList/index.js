@@ -1,5 +1,5 @@
 // Libs
-import React from 'react'
+import React, { useState } from 'react'
 import { View } from 'react-native'
 
 // Helpers
@@ -11,6 +11,7 @@ import styles from './styles'
 // Components
 import Item from './Item'
 import Loading from '../../../../components/Loading'
+import Modal from '../../../../components/Modal'
 import Error from '../../../../components/Error'
 
 type Props = {
@@ -35,6 +36,7 @@ type Props = {
     name: string,
     imgUrl: string,
   }>,
+  history: Object,
 }
 
 const WishList = ({
@@ -44,9 +46,28 @@ const WishList = ({
   error,
   categories = [],
   cookingTypes = [],
+  history,
 }: Props) => {
   if (loading) return <Loading size={size} />
-  if (error) return <Error message={customError(error.graphQLErrors)} />
+  const [visible, setVisible] = useState(true)
+
+  const handleNavigateLogin = () => {
+    setVisible(false)
+    history.push('/login')
+  }
+
+  if (error) {
+    return (
+      <Modal
+        visible={visible}
+        onDismiss={() => handleNavigateLogin()}
+        onSubmit={() => handleNavigateLogin()}
+        size={size}
+      >
+        <Error message={customError(error.graphQLErrors)} size="medium" />
+      </Modal>
+    )
+  }
 
   return (
     <View style={styles.container}>

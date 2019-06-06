@@ -10,6 +10,8 @@ import { checkContainField } from '../../helpers/utils'
 import Header from './components/Header'
 import Recipe from './components/Recipe'
 import Loading from '../../components/Loading'
+import { customError } from '../../helpers/utils'
+import Modal from '../../components/Modal'
 import Error from '../../components/Error'
 
 // styles
@@ -28,7 +30,7 @@ type Props = {
   }>,
   loading: boolean,
   error: {
-    message: string,
+    graphQLErrors: Array<{ message: string }>,
   },
   data: {
     favoriteRecipe: Array<{id: string}>
@@ -37,6 +39,7 @@ type Props = {
     id: string,
     favoriteRecipe: Array<{id: string}>,
   ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
+  history: Object,
 }
 const CategoryScreen = ({
   category = {},
@@ -45,14 +48,33 @@ const CategoryScreen = ({
   error,
   userToggleRecipe,
   data = {},
+  history,
 }: Props) => {
   const size = Platform.OS === 'web' ? 'large' : 'small'
   const [columns, setColumns] = useState(LIST_VIEW_COLUMN)
   const [isGrid, setIsGrid] = useState(false)
+  const [visible, setVisible] = useState(true)
   const { favoriteRecipe } = data
 
   if (loading) return <Loading size="small" />
-  if (error) return <Error message={error.message} size={size} />
+
+  const handleNavigateLogin = () => {
+    setVisible(false)
+    history.push('/login')
+  }
+
+  if (error) {
+    return (
+      <Modal
+        visible={visible}
+        onDismiss={() => handleNavigateLogin()}
+        onSubmit={() => handleNavigateLogin()}
+        size="medium"
+      >
+        <Error message={customError(error.graphQLErrors)} size="medium" />
+      </Modal>
+    )
+  }
 
   const handleSelectListView = itemName => {
     if (itemName === 'view-list') {

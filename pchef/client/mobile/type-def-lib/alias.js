@@ -33,3 +33,7 @@ declare module '@configs/firebase' {
 declare module '@constants/api' {
   declare module.exports: any;
 }
+
+declare module '@screen/RecipeStep' {
+  declare module.exports: any;
+}

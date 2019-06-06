@@ -7,9 +7,10 @@ type Props = {
       recipeId: string
     }
   },
+  history: Object
 }
 
-const RecipeStep = ({ match }: Props) => {
+const RecipeStep = ({ match, history }: Props) => {
   const {
     recipeId,
   } = match.params
@@ -17,8 +18,9 @@ const RecipeStep = ({ match }: Props) => {
   return (
     <RecipeStepContainer
       id={recipeId}
+      history={history}
+
     />
   )
 }
-
 export default RecipeStep

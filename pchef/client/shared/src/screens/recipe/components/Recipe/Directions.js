@@ -11,7 +11,8 @@ import Direction from './Direction'
 type Props = {
   steps: Array<{
     step: number,
-    title: string
+    title: string,
+    id: string,
   }>,
   size: string,
   customDirections?: {},

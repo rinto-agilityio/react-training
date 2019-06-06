@@ -4,6 +4,7 @@ const ROUTES = {
   CATEGORY: 'Category',
   DETAIL: 'RecipeDetail',
   WELCOME: 'Welcome',
+  STEP: 'RecipeStep',
 }
 
 export default ROUTES
