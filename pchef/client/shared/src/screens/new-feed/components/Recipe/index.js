@@ -83,6 +83,7 @@ const Recipe = ({
         <Image
           url={imgUrl || DEFAULT_IMAGE}
           customImageStyle={[styles.image, styles[`${size}Image`]]}
+          handleTouch={() => handleClickRecipe(recipe.id)}
         />
       </View>
       <Reaction

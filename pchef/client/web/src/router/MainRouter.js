@@ -11,6 +11,7 @@ import Category from 'pages/Category'
 import Login from '../pages/Login'
 import RecipeDetail from '../pages/RecipeDetail'
 import Welcome from '../pages/Welcome'
+import RecipeStep from '../pages/RecipeStep'
 
 // helpers
 import PrivateRoute from '../helpers/PrivateRoute'
@@ -26,6 +27,7 @@ const MainRouter = () => (
       <PrivateRoute exact loginPath={loginPath} path="/category" component={Category} />
       <PrivateRoute exact loginPath={loginPath} path="/profile" component={Profile} />
       <PrivateRoute exact loginPath={loginPath} path="/welcome" component={Welcome} />
+      <PrivateRoute exact loginPath={loginPath} path="/recipe-step/:recipeId/" component={RecipeStep} />
     </Switch>
   </Router>
 )
