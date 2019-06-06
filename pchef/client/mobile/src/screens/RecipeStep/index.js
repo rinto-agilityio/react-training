@@ -15,7 +15,7 @@ const RecipeStep = ({ navigation }: Props) => {
   } = navigation.state.params
 
   return (
-    <RecipeStepContainer id={stepId} />
+    <RecipeStepContainer id={stepId} size="medium" />
   )
 }
 
