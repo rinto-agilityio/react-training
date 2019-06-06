@@ -1,21 +1,12 @@
 // Libs
 import React from 'react'
+import { NavigationScreenProps } from 'react-navigation'
 
 // Containers
 import RecipeStepContainer from 'pchef-shared/src/containers/RecipeStep'
 
-// Constants
-import ROUTES from '@constants/routes'
-
 type Props = {
-  navigation: {
-    state: {
-      params: {
-        recipeId: string
-      }
-    },
-    navigate: (name: string) => void,
-  }
+  navigation: NavigationScreenProps
 }
 
 const RecipeStep = ({ navigation }: Props) => {
@@ -24,9 +15,7 @@ const RecipeStep = ({ navigation }: Props) => {
   } = navigation.state.params
 
   return (
-    <RecipeStepContainer
-      id={stepId}
-    />
+    <RecipeStepContainer id={stepId} />
   )
 }
 

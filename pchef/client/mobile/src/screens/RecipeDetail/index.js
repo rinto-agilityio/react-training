@@ -1,18 +1,28 @@
+// Libs
 import React from 'react'
-import { View, StyleSheet, Text } from 'react-native'
+import { NavigationScreenProps } from 'react-navigation'
 
-// define Login page styles
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-})
+// Containers
+import RecipeDetailContainer from 'pchef-shared/src/containers/Recipe'
 
-// RecipeDetail
-const RecipeDetail = () => (
-  <View style={styles.container}>
-    <Text>test</Text>
-  </View>
-)
+// Constants
+import ROUTES from '@constants/routes'
+
+type Props = {
+  navigation: NavigationScreenProps
+}
+
+const RecipeDetail = ({ navigation }: Props) => {
+  const {
+    recipeId,
+  } = navigation.state.params
+
+  return (
+    <RecipeDetailContainer
+      id={recipeId}
+      onSelectStep={id => navigation.navigate(ROUTES.STEP, { stepId: id })}
+    />
+  )
+}
 
 export default RecipeDetail

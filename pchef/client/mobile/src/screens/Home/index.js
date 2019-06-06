@@ -1,5 +1,6 @@
 // Libs
 import React from 'react'
+import { NavigationScreenProps } from 'react-navigation'
 
 // Components
 import NewFeed from 'pchef-shared/src/containers/NewFeed'
@@ -9,11 +10,14 @@ import ROUTES from '@constants/routes'
 
 type Props = {
   navigation: {
-    navigate: (name: string) => void,
+    navigate: NavigationScreenProps,
   },
 }
 const Home = ({ navigation }: Props) => (
-  <NewFeed onPressCategoryIcon={() => navigation.navigate(ROUTES.WELCOME)} />
+  <NewFeed
+    onPressCategoryIcon={() => navigation.navigate(ROUTES.WELCOME)}
+    handleClickRecipe={id => navigation.navigate(ROUTES.DETAIL, { recipeId: id })}
+  />
 )
 
 export default Home
