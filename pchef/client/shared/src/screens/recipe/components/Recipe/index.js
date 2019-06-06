@@ -48,7 +48,7 @@ const Recipe = ({
   }],
 }: Props) => {
   if (loading) {
-    return <Loading />
+    return <Loading size={size} />
   }
   if (error) {
     return <Error message={customError(error.graphQLErrors)} />

@@ -55,6 +55,9 @@ const styles = StyleSheet.create({
     lineHeight: METRICS.smallLineHeight,
     width: '85%',
   },
+  mediumWrapperDescriptions: {
+    width: '75%',
+  },
   descriptionDirections: {
     color: COLORS.white,
     backgroundColor: COLORS.black,
