@@ -24,7 +24,13 @@ const CategoryPipeLineItem = ({
     <View style={styles.pipelineItem}>
       <Text style={styles.pipelineItemName}>{name}</Text>
       <TouchableOpacity onPress={() => onPressCategoryPipeline(id)}>
-        <Avatar.Image style={styles.pipelineItemImage} size={70} source={imgUrl} />
+        <Avatar.Image
+          style={styles.pipelineItemImage}
+          size={70}
+          source={{
+            uri: imgUrl,
+          }}
+        />
       </TouchableOpacity>
     </View>
   )

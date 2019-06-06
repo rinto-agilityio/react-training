@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Components
-import { ActivityIndicator } from 'react-native'
+import { ActivityIndicator, View } from 'react-native'
 
 // Themes
 import { COLORS, METRICS } from '../../themes'
@@ -13,7 +13,9 @@ type Props = {
 }
 
 const Loading = ({ size, color, customStyle }: Props) => (
-  <ActivityIndicator size={size === 'medium' ? 'small' : size} color={color} style={customStyle} />
+  <View style={{ flex: 1, justifyContent: 'center' }}>
+    <ActivityIndicator size={size === 'medium' ? 'small' : size} color={color} style={customStyle} />
+  </View>
 )
 
 Loading.defaultProps = {

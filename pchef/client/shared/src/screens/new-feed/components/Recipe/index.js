@@ -15,6 +15,9 @@ import {
   formatFiledOnObject,
 } from '../../../../helpers/utils'
 
+// Constants
+import { DEFAULT_IMAGE } from '../../../../constants'
+
 type Props = {
   recipe: {
     id: string,
@@ -78,8 +81,9 @@ const Recipe = ({
           {description}
         </Text>
         <Image
-          url={imgUrl}
+          url={imgUrl || DEFAULT_IMAGE}
           customImageStyle={[styles.image, styles[`${size}Image`]]}
+          handleTouch={() => handleClickRecipe(recipe.id)}
         />
       </View>
       <Reaction

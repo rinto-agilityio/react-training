@@ -13,3 +13,4 @@ export const ELLIPSIS_LINE = 1
 export const PATTERN = {
   EMAIL: /^[a-zA-Z0-9_.+-]+@asnet.com.vn$/,
 }
+export const DEFAULT_IMAGE = 'https://www.tastefullysimple.com/_/media/images/recipe-default-image.png'

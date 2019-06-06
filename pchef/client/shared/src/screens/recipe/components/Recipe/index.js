@@ -11,21 +11,16 @@ import Directions from './Directions'
 import Loading from '../../../../components/Loading'
 import Error from '../../../../components/Error'
 
-// Containers
-import RecipeStepContainer from '../../../../containers/RecipeStep'
-
 // Helper
-import { customError, compareStep } from '../../../../helpers/utils'
+import { customError } from '../../../../helpers/utils'
 
 type Props = {
   getRecipe: {
-    id: string,
     description: string,
-    votes: Array<string>,
-    views: number,
+    id: string,
   },
   size: string,
-  onSelectStep?: () => void,
+  onSelectStep: (id: string) => void,
   loading: boolean,
   error: Object,
   recipeSteps: Array<{
@@ -35,14 +30,15 @@ type Props = {
 }
 
 const Recipe = ({
-  getRecipe,
+  getRecipe = {
+    description: '',
+    id: '',
+  },
   size = 'medium',
   onSelectStep,
   loading,
   error,
   recipeSteps = [{
-    description: '',
-    imgUrl: '',
     step: 1,
     title: '',
   }],
@@ -56,13 +52,9 @@ const Recipe = ({
 
   const {
     description,
-    votes,
     id,
-    views,
   } = getRecipe
 
-  // order recipeSteps by step asc
-  const orderRecipeSteps = recipeSteps.sort(compareStep)
   return (
     <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
       <Ingredients
@@ -72,24 +64,10 @@ const Recipe = ({
       <Directions
         steps={recipeSteps}
         size={size}
-        onSelectStep={onSelectStep}
+        onSelectStep={() => onSelectStep(id)}
       />
-      {
-        true && (
-        <RecipeStepContainer
-          id={id}
-          votes={votes}
-          views={views}
-          recipeSteps={orderRecipeSteps}
-        />
-        )
-      }
     </View>
   )
-}
-
-Recipe.defaultProps = {
-  onSelectStep: () => {},
 }
 
 export default Recipe
