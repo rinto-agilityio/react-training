@@ -10,7 +10,7 @@ import Image from '../../../../components/Image'
 import Reaction from '../../../../components/Reaction'
 
 // Helpers
-import { checkContainField } from '../../../../helpers/utils'
+import { checkContainField, checkContain } from '../../../../helpers/utils'
 
 type Props = {
   recipe: {
@@ -30,6 +30,12 @@ type Props = {
       id: string,
     }>
   ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
+  userToggleVote: (
+    recipeId: string,
+    votes: Array<string>,
+    userId: string
+  ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
+  userId: string,
 }
 
 const Recipe = ({
@@ -37,12 +43,27 @@ const Recipe = ({
   size = 'large',
   favoriteRecipe,
   userToggleRecipe,
+  userToggleVote,
+  userId,
 }: Props) => {
   const { id, title, description, imgUrl, votes } = recipe
 
   // Call mutation for save recipe
   const handleSaveRecipe = () => {
     userToggleRecipe(id, favoriteRecipe)
+  }
+
+  const handleToggleVote = async () => {
+    await userToggleVote(id, votes, userId)
+      .then(({ data }) => {
+        const {
+          userToggleVote: { results },
+        } = data
+
+        if (results) {
+          checkContain(votes, id)
+        }
+      })
   }
 
   const isFavorited = checkContainField(favoriteRecipe, id)
@@ -73,7 +94,9 @@ const Recipe = ({
         votes={votes}
         size={size}
         isFavorited={isFavorited}
+        isVote={checkContain(votes, userId)}
         onPressFavorite={handleSaveRecipe}
+        onPressVote={handleToggleVote}
       />
     </TouchableOpacity>
   )

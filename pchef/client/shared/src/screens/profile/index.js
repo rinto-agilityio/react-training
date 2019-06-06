@@ -17,6 +17,7 @@ type Props = {
     user: {
       name: string,
       avatar: string,
+      id: string,
     },
     ownRecipes: Array<{
       id: string,
@@ -37,8 +38,13 @@ type Props = {
     recipeId: string,
     favoriteRecipe: Array<{ id: string }>
   ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
+  userToggleVote: (
+    recipeId: string,
+    votes: Array<string>,
+    userId: string
+  ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
 }
-const Profile = ({ data, loading, error, userToggleRecipe }: Props) => {
+const Profile = ({ data, loading, error, userToggleRecipe, userToggleVote }: Props) => {
   const errorMessage =
     'Can not load information of user. Please check for connection!!!'
 
@@ -59,6 +65,8 @@ const Profile = ({ data, loading, error, userToggleRecipe }: Props) => {
         ownRecipes={ownRecipes}
         favoriteRecipe={favoriteRecipe}
         userToggleRecipe={userToggleRecipe}
+        userToggleVote={userToggleVote}
+        userId={user.id}
       />
     </View>
   )
