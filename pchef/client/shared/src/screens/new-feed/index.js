@@ -1,20 +1,25 @@
 // Libs
-import React from 'react'
-import { ScrollView, View } from 'react-native'
+import React, { useState } from 'react'
+import { ScrollView, View, Text } from 'react-native'
 
 // Components
 import Header from './components/Header'
 import RecipeList from './components/RecipeList'
-import Error from '../../components/Error'
 import Loading from '../../components/Loading'
 import CategoryPipeLine from './components/CategoryPipeLine'
+import Modal from '../../components/Modal'
+
+// Helpers
+import { customError } from '../../helpers/utils'
 
 // Styles
 import styles from './styles'
 
 type Props = {
   customStyles?: {},
-  error: string,
+  error: {
+    graphQLErrors: Array<{ message: string }>,
+  },
   loading: boolean,
   data: {
     favoriteRecipe: Array<{
@@ -41,6 +46,8 @@ type Props = {
   onPressCategoryIcon: () => void,
   onPressLogo: () => void,
   handleClickRecipe: () => void,
+  history: Object,
+  size: string,
 }
 
 // Home screen
@@ -54,11 +61,27 @@ const NewFeed = ({
   onPressLogo,
   userToggleRecipe,
   handleClickRecipe,
+  history,
+  size = 'medium',
 }: Props) => {
-  const errorMessage = 'Connect failed!!!'
+  const [visible, setVisible] = useState(true)
+
+  const handleNavigateLogin = () => {
+    setVisible(false)
+    history.push('/login')
+  }
 
   if (error) {
-    return <Error message={errorMessage} />
+    return (
+      <Modal
+        visible={visible}
+        onDismiss={() => handleNavigateLogin()}
+        onSubmit={() => handleNavigateLogin()}
+        size={size}
+      >
+        <Text>{ customError(error.graphQLErrors) }</Text>
+      </Modal>
+    )
   }
 
   if (loading) return <Loading size={type === 'primary' ? 'small' : 'large'} />
@@ -79,21 +102,21 @@ const NewFeed = ({
       style={[styles.container, styles[`${type}Container`], customStyles]}
     >
       <Header
-        onPressIcon={() => {}}
+        onPressIcon={() => { }}
         onPressCategoryIcon={onPressCategoryIcon}
         onPressLogo={onPressLogo}
         type={type}
       />
 
       <View style={styles[`${type}RecipeListContainer`]}>
-        {/** Choosen category pipeline */}
+        {/** Choosen category pipeline */ }
         <CategoryPipeLine
           followCategory={followCategory}
           loading={loading}
           onPressCategoryPipeline={handlePressCategoryPipeline}
         />
 
-        {recipesList && (
+        { recipesList && (
           <RecipeList
             recipes={recipesList}
             type={type}
@@ -101,7 +124,7 @@ const NewFeed = ({
             userToggleRecipe={userToggleRecipe}
             handleClickRecipe={handleClickRecipe}
           />
-        )}
+        ) }
       </View>
     </ScrollView>
   )
