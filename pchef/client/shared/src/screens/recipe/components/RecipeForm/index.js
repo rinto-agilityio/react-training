@@ -1,5 +1,5 @@
 // Libs
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, forwardRef, useImperativeHandle } from 'react'
 import { View, Text } from 'react-native'
 
 // Styles
@@ -10,6 +10,7 @@ import { COLORS, METRICS } from '../../../../themes'
 
 // Helpers
 import { validator } from '../../../../helpers/validators'
+import { getValueTextBox } from '../../../../helpers/utils'
 
 // Components
 import IngredientsForm from './IngredientsForm'
@@ -36,11 +37,11 @@ type Props = {
   ) => Promise<{ data: { createRecipe: { id: string } } }>,
 }
 
-const RecipeForm = ({
+const RecipeForm = forwardRef(({
   size = 'medium',
   handleAddRecipeImage,
   createRecipe,
-}: Props) => {
+}: Props, ref) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
   const [visibleIngredients, setVisibleIngredients] = useState(false)
@@ -80,7 +81,7 @@ const RecipeForm = ({
   ]
 
   const handleCreateRecipe = async () => {
-    const title = titleRef.current ? titleRef.current._node.value.trim() : ''
+    const title = getValueTextBox(titleRef.current)
     const categoryId = category.id
     const cookingTypeId = cookingType.id
     const errors = validator({
@@ -95,7 +96,7 @@ const RecipeForm = ({
           categoryId,
           cookingTypeId,
           title,
-          subTitleRef.current ? subTitleRef.current._node.value.trim() : '',
+          getValueTextBox(subTitleRef.current),
           '',
           ingredients,
           true,
@@ -107,6 +108,10 @@ const RecipeForm = ({
       }
     }
   }
+
+  useImperativeHandle(ref, () => ({
+    handleCreateRecipe,
+  }))
 
   if (error) {
     return <Error message={error} />
@@ -229,7 +234,7 @@ const RecipeForm = ({
       )}
     </View>
   )
-}
+})
 
 RecipeForm.defaultProps = {
   handleAddRecipeImage: () => {},
