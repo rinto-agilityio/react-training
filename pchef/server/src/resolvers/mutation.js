@@ -142,7 +142,8 @@ const Mutation = {
           votes: newVotes,
         })
           .then(() => ({
-            results: newVotes
+            results: newVotes,
+            recipeId: recipeId,
           }))
           .catch(error => error)
       })
