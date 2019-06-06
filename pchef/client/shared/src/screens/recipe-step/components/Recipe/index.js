@@ -14,7 +14,7 @@ import ImageBackground from '../../../../components/ImageBackground'
 import Reaction from '../../../../components/Reaction'
 import Comment from '../../../recipe/components/Comment'
 import Loading from '../../../../components/Loading'
-import Error from '../../../../components/Error'
+import Modal from '../../../../components/Modal'
 
 // mock data
 import { recipes } from '../../../../mocks'
@@ -56,21 +56,22 @@ type Props = {
       name: string,
       avatar: string,
     },
-    favoriteRecipe: Array<{id: string}>
+    favoriteRecipe: Array<{ id: string }>
   },
   userToggleRecipe: (
     recipeId: string,
-    favoriteRecipe: Array<{id: string}>
-  ) => Promise<{ data: {userToggleRecipe: {results: Array<string>}}}>,
+    favoriteRecipe: Array<{ id: string }>
+  ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
   userToggleVote: (
     recipeId: string,
     votes: Array<string>,
     userId: string
-  ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
+  ) => Promise<{ data: { userToggleVote: { results: Array<string> } } }>,
   id: string,
   error: {
-    graphQLErrors: Array<{message: string}>
-  }
+    graphQLErrors: Array<{ message: string }>
+  },
+  history: Object,
 }
 
 const Recipe = ({
@@ -94,11 +95,14 @@ const Recipe = ({
   userToggleRecipe,
   userToggleVote,
   getRecipe,
+  history,
 }: Props) => {
   // order recipeSteps by step asc
   const orderRecipeSteps = recipeSteps.sort(compareStep)
   const defaultStepInfo = orderRecipeSteps[0]
   const [stepInfo, setStepInfo] = useState({})
+  const [visible, setVisible] = useState(true)
+
   useEffect(() => (
     setStepInfo(defaultStepInfo)
   ), [loading, defaultStepInfo])
@@ -111,8 +115,23 @@ const Recipe = ({
   if (loading) {
     return <Loading />
   }
+
+  const handleNavigateLogin = () => {
+    setVisible(false)
+    history.push('/login')
+  }
+
   if (error) {
-    return <Error message={customError(error.graphQLErrors)} />
+    return (
+      <Modal
+        visible={visible}
+        onDismiss={() => handleNavigateLogin()}
+        onSubmit={() => handleNavigateLogin()}
+        size={size}
+      >
+        <Text>{ customError(error.graphQLErrors) }</Text>
+      </Modal>
+    )
   }
 
   const {
@@ -196,7 +215,7 @@ const Recipe = ({
           ]}
           onPress={onPress}
         >
-          {title}
+          { title }
         </Text>
         <Text
           style={[
@@ -206,7 +225,7 @@ const Recipe = ({
           ]}
           onPress={onPress}
         >
-          {subTitle}
+          { subTitle }
         </Text>
         <ImageBackground
           url={stepInfo.imgUrl}
@@ -225,7 +244,7 @@ const Recipe = ({
                 customTitleStep,
               ]}
             >
-              {stepInfo.title}
+              { stepInfo.title }
             </Text>
           </Text>
           <Progress
@@ -244,7 +263,7 @@ const Recipe = ({
           customDescription,
         ]}
       >
-        {stepInfo.description}
+        { stepInfo.description }
       </Text>
       <Reaction
         votes={votes}
@@ -276,14 +295,14 @@ const Recipe = ({
           styles[`${size}Views`],
         ]}
       >
-        {`viewed by ${views}`}
+        { `viewed by ${views}` }
       </Text>
     </View>
   )
 }
 
 Recipe.defaultProps = {
-  onPress: () => {},
+  onPress: () => { },
   customRecipe: {},
   customTitle: {},
   customDescription: {},
