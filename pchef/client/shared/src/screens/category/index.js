@@ -39,7 +39,7 @@ type Props = {
     id: string,
     favoriteRecipe: Array<{id: string}>,
   ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
-  history: Object,
+  handleRedirectLogin: Function,
 }
 const CategoryScreen = ({
   category = {},
@@ -48,7 +48,7 @@ const CategoryScreen = ({
   error,
   userToggleRecipe,
   data = {},
-  history,
+  handleRedirectLogin,
 }: Props) => {
   const size = Platform.OS === 'web' ? 'large' : 'small'
   const [columns, setColumns] = useState(LIST_VIEW_COLUMN)
@@ -60,7 +60,7 @@ const CategoryScreen = ({
 
   const handleNavigateLogin = () => {
     setVisible(false)
-    history.push('/login')
+    handleRedirectLogin()
   }
 
   if (error) {
