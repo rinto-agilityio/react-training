@@ -1,7 +1,8 @@
 import { compose } from 'react-apollo'
 
 // GraphQL
-import { getUser, userToggleRecipe, userToggleVote } from '../graphql/recipe-step'
+import { getAllRecipeSteps, getUser, userToggleRecipe, userToggleVote } from '../graphql/recipe-step'
+import { recipeDetail } from '../graphql/recipe'
 import RecipeStep from '../screens/recipe-step/components/Recipe'
 
-export default compose(getUser, userToggleRecipe, userToggleVote)(RecipeStep)
+export default compose(getAllRecipeSteps, recipeDetail, getUser, userToggleRecipe, userToggleVote)(RecipeStep)

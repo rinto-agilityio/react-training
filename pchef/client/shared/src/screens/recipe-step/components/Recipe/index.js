@@ -20,7 +20,7 @@ import Error from '../../../../components/Error'
 import { recipes } from '../../../../mocks'
 
 // utils
-import { findStep, customError, checkContainField, formatFiledOnObject } from '../../../../helpers/utils'
+import { findStep, customError, checkContainField, formatFiledOnObject, compareStep } from '../../../../helpers/utils'
 
 type Props = {
   recipeSteps: Array<{
@@ -29,15 +29,16 @@ type Props = {
     step: number,
     title: string,
   }>,
-  recipe: {
+  getRecipe: {
     title: string,
-    votes: Array<number>,
+    votes: Array<string>,
     subTitle: string,
     userId: number,
     views: number,
     steps: Array<{
       step: number
     }>,
+    id: string,
   },
   size: string,
   onPress?: () => void,
@@ -67,8 +68,6 @@ type Props = {
     userId: string
   ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
   id: string,
-  votes: Array<string>,
-  views: number,
   error: {
     graphQLErrors: Array<{message: string}>
   }
@@ -92,15 +91,14 @@ const Recipe = ({
   }],
   loading,
   error,
-  id,
   userToggleRecipe,
   userToggleVote,
-  votes,
-  views,
+  getRecipe,
 }: Props) => {
-  const defaultStepInfo = recipeSteps[0]
+  // order recipeSteps by step asc
+  const orderRecipeSteps = recipeSteps.sort(compareStep)
+  const defaultStepInfo = orderRecipeSteps[0]
   const [stepInfo, setStepInfo] = useState({})
-
   useEffect(() => (
     setStepInfo(defaultStepInfo)
   ), [loading, defaultStepInfo])
@@ -118,6 +116,12 @@ const Recipe = ({
   }
 
   const {
+    votes,
+    id,
+    views,
+  } = getRecipe
+
+  const {
     favoriteRecipe,
     user,
   } = getUser
@@ -131,10 +135,10 @@ const Recipe = ({
 
     switch (name) {
       case 'next':
-        nextStepInfo = findStep(recipeSteps, stepInfo.step + 1)
+        nextStepInfo = findStep(orderRecipeSteps, stepInfo.step + 1)
         break;
       case 'prev':
-        nextStepInfo = findStep(recipeSteps, stepInfo.step - 1)
+        nextStepInfo = findStep(orderRecipeSteps, stepInfo.step - 1)
         break;
       default:
         break;
@@ -147,7 +151,7 @@ const Recipe = ({
    * @param {step}
    */
   const onPressStep = step => {
-    const stepInfoSelect = findStep(recipeSteps, step)
+    const stepInfoSelect = findStep(orderRecipeSteps, step)
     setStepInfo(stepInfoSelect)
   }
 
@@ -225,7 +229,7 @@ const Recipe = ({
             </Text>
           </Text>
           <Progress
-            steps={recipeSteps}
+            steps={orderRecipeSteps}
             size={size}
             step={stepInfo.step}
             onPressSelectStep={onPressSelectStep}

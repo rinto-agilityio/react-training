@@ -6,16 +6,26 @@ type Props = {
     params: {
       recipeId: string
     }
-  }
+  },
+  history: Object,
 }
 
-const RecipeDetail = ({ match }: Props) => {
+const RecipeDetail = ({ match, history }: Props) => {
   const {
     recipeId,
   } = match.params
 
+  const handleClickRecipeStep = recipeId => {
+    history.push(`/recipe-step/${recipeId}/`)
+  }
+
   return (
-    <RecipeDetailContainer id={recipeId} />
+    <div>
+      <RecipeDetailContainer
+        id={recipeId}
+        onSelectStep={handleClickRecipeStep}
+      />
+    </div>
   )
 }
 
