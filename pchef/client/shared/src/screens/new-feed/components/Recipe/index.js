@@ -61,15 +61,13 @@ const Recipe = ({
   }
 
   return (
-    <TouchableOpacity
-      style={[styles.wrapper, styles[`${size}Wrapper`]]}
-      onPress={() => handleClickRecipe(recipe.id)}
-    >
+    <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
       <View style={styles.recipe}>
         <Text
           style={[styles.title, styles[`${size}Title`]]}
           numberOfLines={1}
           ellipsizeMode="tail"
+          onPress={() => handleClickRecipe(recipe.id)}
         >
           {title}
         </Text>
@@ -92,7 +90,7 @@ const Recipe = ({
         isFavorited={isFavorited}
         onPressFavorite={handleSaveRecipe}
       />
-    </TouchableOpacity>
+    </View>
   )
 }
 

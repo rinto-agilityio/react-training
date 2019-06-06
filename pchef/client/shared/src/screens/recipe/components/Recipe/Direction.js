@@ -16,7 +16,6 @@ type Props = {
   item: {
     step: number,
     title: string,
-    id: string,
   },
   size: string,
   customDescription?: {},

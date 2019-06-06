@@ -12,7 +12,6 @@ type Props = {
   steps: Array<{
     step: number,
     title: string,
-    id: string,
   }>,
   size: string,
   customDirections?: {},
@@ -49,7 +48,7 @@ const Directions = ({
         item={item}
         size={size}
         onSelectStep={onSelectStep}
-        key={item.id}
+        key={item.step}
       />
     ))}
   </View>
