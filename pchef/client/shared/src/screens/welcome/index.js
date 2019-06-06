@@ -34,7 +34,7 @@ type Props = {
   }>,
   userToggleCategory: (recipeId: string) => Promise<{ data: {userToggleCategory: {results: Array<string>}}}>,
   customButtonStyle?: {},
-  history: Object,
+  handleRedirectLogin: Function,
   size: string,
 }
 
@@ -49,7 +49,7 @@ const Welcome = ({
   categories = [],
   userToggleCategory,
   customButtonStyle,
-  history,
+  handleRedirectLogin,
   size = 'medium',
 }: Props) => {
   const [chosenCategories, setChosenCategories] = useState([])
@@ -65,7 +65,7 @@ const Welcome = ({
 
   const handleNavigateLogin = () => {
     setVisible(false)
-    history.push('/login')
+    handleRedirectLogin()
   }
 
   if (errors) {
