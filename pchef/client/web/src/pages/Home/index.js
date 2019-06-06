@@ -15,7 +15,7 @@ const Home = ({ history }: Props) => {
   return (
     <NewFeed
       handleClickRecipe={handleClickRecipe}
-      history={history}
+      handleRedirectLogin={() => history.push('/login')}
     />
   )
 }
