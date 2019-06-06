@@ -11,10 +11,14 @@ const Welcome = ({ history }: Props) => {
   const handleSkipCategories = () => {
     history.push('/')
   }
+
   return (
-    <WelcomeContainer
-      handleSkipCategories={handleSkipCategories}
-    />
+    <>
+      <WelcomeContainer
+        handleSkipCategories={handleSkipCategories}
+        history={history}
+      />
+    </>
   )
 }
 
