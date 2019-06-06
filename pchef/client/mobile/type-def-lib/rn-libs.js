@@ -150,3 +150,7 @@ declare module 'pchef-shared/src/containers/RecipeStep' {
 declare module 'pchef-shared/src/containers/Recipe' {
   declare module.exports: any;
 }
+
+declare module 'pchef-shared/src/containers/RecipeForm' {
+  declare module.exports: any;
+}
