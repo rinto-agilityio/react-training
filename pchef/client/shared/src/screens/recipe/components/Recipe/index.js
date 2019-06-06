@@ -70,8 +70,4 @@ const Recipe = ({
   )
 }
 
-// Recipe.defaultProps = {
-//   onSelectStep: () => {},
-// }
-
 export default Recipe
