@@ -11,7 +11,7 @@ const Home = ({ history }: Props) => {
   const handleClickRecipe = recipeId => {
     history.push(`/recipe-detail/${recipeId}/`)
   }
-  const handlePressPipelineCategory = categoryId => {
+  const handlePressPipelineCategory = (categoryId: string) => {
     history.push(`category/${categoryId}`)
   }
 
