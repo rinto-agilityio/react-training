@@ -1,4 +1,4 @@
-const { db } = require('../config/firebase')
+const { db, storage } = require('../config/firebase')
 
 // Format data return for FireStore Document and Collections
 const mapDocumentToEntity = doc => ({ id: doc.id, ...doc.data() })
@@ -66,11 +66,22 @@ const getDocumentWithListId = (path, ids) => {
 }
 
 // Add data
-const addDocument = (path, data) => (
-  db.collection(path).add(data)
+const addDocument = (path, data) => {
+  const dataUpdate = {...data}
+  if (data.imgUrl) {
+    console.log(data.imgUrl)
+    const file = JSON.parse(data.imgUrl)
+    const fileName = `image_${(new Date()).getTime()}`
+    const ref = storage.ref().child(`images/${fileName}`)
+    Promise.all([ref.put(file, { contentType: 'image/jpeg' }), ref.getDownloadURL()]).then(url => {
+      console.log(url)
+      dataUpdate.imgUrl = url
+    })
+  }
+  return db.collection(path).add(dataUpdate)
     .then(docRef => docRef.id)
     .catch(error => error)
-)
+}
 
 const addDocumentWithId = (path, id, data) => (
   db.collection(path).doc(id).set(data)
