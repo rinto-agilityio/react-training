@@ -79,17 +79,17 @@ const Login = ({
 
   return (
     <View style={[styles.container, styles[`${type}Container`]]}>
-      {/* Display error */ }
-      { error ? (
+      {/* Display error */}
+      {error ? (
         <View style={[styles.errorWrapper, styles[`${type}ErrorWrapper`]]}>
           <Text style={[styles.error, styles[`${type}Error`]]}>
             Login failed! Email or password incorrect.
           </Text>
         </View>
-      ) : null }
+      ) : null}
 
-      {/* Show app name on mobile app */ }
-      { type === 'primary' && <Text style={styles.text}>PChef</Text> }
+      {/* Show app name on mobile app */}
+      {type === 'primary' && <Text style={styles.text}>PChef</Text>}
 
       <LoginForm
         customStyles={customStyles}
