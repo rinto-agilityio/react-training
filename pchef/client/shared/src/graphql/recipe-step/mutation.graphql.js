@@ -16,6 +16,7 @@ const TOGGLE_VOTE = gql`
   mutation userToggleVote($recipeId: String!) {
     userToggleVote(recipeId: $recipeId) {
       results
+      recipeId
     }
   }
 `
@@ -101,4 +102,6 @@ const userToggleVote = graphql(TOGGLE_VOTE, {
 export {
   userToggleRecipe,
   userToggleVote,
+  TOGGLE_VOTE,
+  TOGGLE_RECIPE,
 }

@@ -15,6 +15,7 @@ type Props = {
     description: string,
     votes: Array<string>,
   }>,
+  userId: string,
   favoriteRecipe?: Array<{
     id: string,
     title: string,
@@ -27,6 +28,11 @@ type Props = {
     recipeId: string,
     favoriteRecipe: Array<{ id: string }>
   ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
+  userToggleVote: (
+    recipeId: string,
+    votes: Array<string>,
+    userId: string
+  ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
 }
 
 const TabContent = ({
@@ -34,6 +40,8 @@ const TabContent = ({
   userToggleRecipe,
   favoriteRecipe,
   isRecipeTab,
+  userToggleVote,
+  userId,
 }: Props) => {
   const NO_RECIPES_MESSAGE = 'No recipes to show'
 
@@ -53,6 +61,8 @@ const TabContent = ({
               recipe={recipe}
               favoriteRecipe={isRecipeTab ? favoriteRecipeIds : recipeIds}
               userToggleRecipe={userToggleRecipe}
+              userToggleVote={userToggleVote}
+              userId={userId}
             />
           </View>
         ))

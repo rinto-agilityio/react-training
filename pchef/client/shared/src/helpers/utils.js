@@ -117,3 +117,22 @@ export const mergeArrayObject = (array1: Array<Item>, array2: Array<Item>) => {
 
   return newArray
 }
+
+/**
+ * Updated item on array with id
+ * @param {array} arr
+ * @param {string} id
+ * @param {object} results
+ */
+export const updateArrayById = (arr: Array<Item>, id: string, results: Object) => {
+  const newArr: Array<Item> = arr.map(item => (
+    item.id === id ? { ...item, votes: results } : item
+  ))
+
+  return newArr
+}
+
+/**
+ * Checking contain item in array
+ */
+export const checkContain = (arr: Array<string>, currentId: string) => arr.findIndex(item => item === currentId) !== -1

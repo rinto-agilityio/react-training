@@ -71,6 +71,7 @@ const typeDefs = gql`
 
   type PayloadResults {
     results: [String]
+    recipeId: String
   }
 
   type UserFullInfos {
