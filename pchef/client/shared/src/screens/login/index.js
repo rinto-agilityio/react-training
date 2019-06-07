@@ -86,7 +86,7 @@ const Login = ({
         </View>
       ) : null}
 
-      {/* Show app name on mobile app */ }
+      {/* Show app name on mobile app */}
       {type === 'primary' && <Text style={styles.text}>PChef</Text>}
 
       <LoginForm
