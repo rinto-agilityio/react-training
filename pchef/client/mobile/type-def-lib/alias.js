@@ -41,3 +41,7 @@ declare module '@screen/RecipeStep' {
 declare module '@screen/RecipeForm' {
   declare module.exports: any;
 }
+
+declare module '@helpers/uploadImage' {
+  declare module.exports: any;
+}
