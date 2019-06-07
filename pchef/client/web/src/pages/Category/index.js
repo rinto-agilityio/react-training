@@ -11,10 +11,11 @@ type Props = {
 }
 
 const Category = ({ history, match }: Props) => {
-  const { categoryId } = match
+  const { params: { categoryId } } = match
+
   return (
     <CategoryContainer
-      categoryId={categoryId}
+      id={categoryId}
       handleRedirectLogin={() => history.push('/login')}
     />
   )
