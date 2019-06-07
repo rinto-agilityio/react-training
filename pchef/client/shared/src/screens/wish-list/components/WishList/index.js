@@ -36,7 +36,7 @@ type Props = {
     name: string,
     imgUrl: string,
   }>,
-  history: Object,
+  handleRedirectLogin: Function,
 }
 
 const WishList = ({
@@ -46,14 +46,14 @@ const WishList = ({
   error,
   categories = [],
   cookingTypes = [],
-  history,
+  handleRedirectLogin,
 }: Props) => {
   if (loading) return <Loading size={size} />
   const [visible, setVisible] = useState(true)
 
   const handleNavigateLogin = () => {
     setVisible(false)
-    history.push('/login')
+    handleRedirectLogin()
   }
 
   if (error) {

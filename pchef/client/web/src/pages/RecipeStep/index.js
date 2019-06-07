@@ -7,7 +7,7 @@ type Props = {
       recipeId: string
     }
   },
-  history: Object
+  history: Object,
 }
 
 const RecipeStep = ({ match, history }: Props) => {
@@ -18,8 +18,7 @@ const RecipeStep = ({ match, history }: Props) => {
   return (
     <RecipeStepContainer
       id={recipeId}
-      history={history}
-
+      handleRedirectLogin={() => history.push('/login')}      
     />
   )
 }

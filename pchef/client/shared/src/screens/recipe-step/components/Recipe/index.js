@@ -72,7 +72,7 @@ type Props = {
   error: {
     graphQLErrors: Array<{message: string}>
   },
-  history: Object,
+  handleRedirectLogin: Function,
 }
 
 const Recipe = ({
@@ -96,7 +96,7 @@ const Recipe = ({
   userToggleRecipe,
   userToggleVote,
   getRecipe,
-  history,
+  handleRedirectLogin,
 }: Props) => {
   // order recipeSteps by step asc
   const orderRecipeSteps = recipeSteps.sort(compareStep)
@@ -119,7 +119,7 @@ const Recipe = ({
 
   const handleNavigateLogin = () => {
     setVisible(false)
-    history.push('/login')
+    handleRedirectLogin()
   }
 
   if (error) {
@@ -128,7 +128,7 @@ const Recipe = ({
         visible={visible}
         onDismiss={() => handleNavigateLogin()}
         onSubmit={() => handleNavigateLogin()}
-        size={size}
+        size="medium"
       >
         <Error message={customError(error.graphQLErrors)} size="medium" />
       </Modal>
