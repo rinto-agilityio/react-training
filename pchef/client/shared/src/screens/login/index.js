@@ -6,7 +6,7 @@ import { View, Text } from 'react-native'
 import LoginForm from './components/LoginForm'
 import styles from './styles'
 
-import { MINIMUMFOLLOWEDCATEGORY } from '../../constants/index'
+import { MINIMUM_FOLLOWED_CATEGORY } from '../../constants/index'
 
 type Props = {
   customStyles?: Object,
@@ -45,7 +45,7 @@ const Login = ({
   }, [data.followCategory])
 
   const handleNavigatePage = () => {
-    if (followCategory.length >= MINIMUMFOLLOWEDCATEGORY) {
+    if (followCategory.length >= MINIMUM_FOLLOWED_CATEGORY) {
       handleNavigateHome()
     } else {
       handleNavigateWelcome()
