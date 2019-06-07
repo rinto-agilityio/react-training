@@ -6,12 +6,12 @@ import { View } from 'react-native'
 import Header from './components/Header'
 import Loading from '../../components/Loading'
 import Error from '../../components/Error'
-
-// Styles
-import styles from './styles'
 import Tabs from './components/Tabs'
 import Modal from '../../components/Modal'
 import Setting from '../settings'
+
+// Styles
+import styles from './styles'
 
 type Props = {
   loading: boolean,
