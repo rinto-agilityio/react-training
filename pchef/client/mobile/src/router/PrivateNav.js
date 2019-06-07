@@ -38,9 +38,9 @@ const PrivateNav = createStackNavigator(
     },
     TabNavigator: {
       screen: TabNavigator,
-      navigationOptions: {
-        header: null,
-      },
+      // navigationOptions: {
+      //   header: null,
+      // },
     },
   },
 )
