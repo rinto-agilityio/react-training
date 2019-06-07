@@ -85,6 +85,7 @@ const createRecipe = graphql(CREATE_RECIPE, {
       },
     }),
   }),
+  withRef: true,
 })
 
 const createRecipeStep = graphql(CREATE_RECIPE_STEP, {

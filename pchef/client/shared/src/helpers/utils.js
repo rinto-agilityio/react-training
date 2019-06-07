@@ -1,3 +1,4 @@
+import { Platform } from 'react-native'
 /**
  * Format string to array if string contain ,
  * @param {string} description
