@@ -9,7 +9,7 @@ export const LIST_VIEW_COLUMN = 1
 
 export const ELLIPSIS_LINE = 1
 
-export const FOLLOWEDCATEGORY = 4
+export const MINIMUMFOLLOWEDCATEGORY = 4
 
 // validate pattern
 export const PATTERN = {
