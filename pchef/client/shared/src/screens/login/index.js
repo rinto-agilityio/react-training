@@ -6,6 +6,8 @@ import { View, Text } from 'react-native'
 import LoginForm from './components/LoginForm'
 import styles from './styles'
 
+import { FOLLOWEDCATEGORY } from '../../constants/index'
+
 type Props = {
   customStyles?: Object,
   signInUser: (
@@ -19,8 +21,8 @@ type Props = {
       id: string,
     }>,
   },
-  handleNavigateHome: Function,
-  handleNavigateWelcome: Function,
+  handleNavigateHome: () => void,
+  handleNavigateWelcome: () => void,
 }
 
 // Login screen
@@ -43,7 +45,7 @@ const Login = ({
   }, [data.followCategory])
 
   const handleNavigatePage = () => {
-    if (followCategory.length >= 4) {
+    if (followCategory.length >= FOLLOWEDCATEGORY) {
       handleNavigateHome()
     } else {
       handleNavigateWelcome()
@@ -77,17 +79,17 @@ const Login = ({
 
   return (
     <View style={[styles.container, styles[`${type}Container`]]}>
-      {/* Display error */}
-      {error ? (
+      {/* Display error */ }
+      { error ? (
         <View style={[styles.errorWrapper, styles[`${type}ErrorWrapper`]]}>
           <Text style={[styles.error, styles[`${type}Error`]]}>
             Login failed! Email or password incorrect.
           </Text>
         </View>
-      ) : null}
+      ) : null }
 
-      {/* Show app name on mobile app */}
-      {type === 'primary' && <Text style={styles.text}>PChef</Text>}
+      {/* Show app name on mobile app */ }
+      { type === 'primary' && <Text style={styles.text}>PChef</Text> }
 
       <LoginForm
         customStyles={customStyles}
