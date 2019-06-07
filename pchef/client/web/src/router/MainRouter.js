@@ -26,7 +26,7 @@ const MainRouter = () => (
       <Route exact path={loginPath} component={Login} />
       <PrivateRoute exact path="/" loginPath={loginPath} component={Home} />
       <PrivateRoute loginPath={loginPath} exact path="/recipe-detail/:recipeId/" component={RecipeDetail} />
-      <PrivateRoute exact loginPath={loginPath} path="/category" component={Category} />
+      <PrivateRoute exact loginPath={loginPath} path="/category/:categoryId" component={Category} />
       <PrivateRoute exact loginPath={loginPath} path="/profile" component={Profile} />
       <PrivateRoute exact loginPath={loginPath} path="/welcome" component={Welcome} />
       <PrivateRoute exact loginPath={loginPath} path="/recipe-step/:recipeId/" component={RecipeStep} />

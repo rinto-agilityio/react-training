@@ -40,7 +40,11 @@ const CategoryPipeLine = ({ followCategory, onPressCategoryPipeline, loading }: 
           followCategory
           &&
           followCategory.map(item => (
-            <CategoryPipeLineItem key={item.id} category={item} onPressCategoryPipeline={onPressCategoryPipeline} />
+            <CategoryPipeLineItem
+              key={item.id}
+              category={item}
+              onPressCategoryPipeline={onPressCategoryPipeline}
+            />
           ))
         )
     }

@@ -3,13 +3,22 @@ import CategoryContainer from 'pchef-shared/src/containers/Category'
 
 type Props = {
   history: Object,
+  match: {
+    params: {
+      categoryId: string,
+    },
+  }
 }
 
-const Category = ({ history }: Props) => (
-  <CategoryContainer
-    id="3xjHYbeO7D4b4UhjKeWU"
-    handleRedirectLogin={() => history.push('/login')}
-  />
-)
+const Category = ({ history, match }: Props) => {
+  const { params: { categoryId } } = match
+
+  return (
+    <CategoryContainer
+      id={categoryId}
+      handleRedirectLogin={() => history.push('/login')}
+    />
+  )
+}
 
 export default Category
