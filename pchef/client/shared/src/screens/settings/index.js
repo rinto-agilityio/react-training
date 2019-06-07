@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Components
-import { View, Text } from 'react-native'
+import { View, Text, TextInput } from 'react-native'
 import Button from '../../components/Button'
 
 // styles
@@ -22,10 +22,19 @@ const Settings = ({ user, handleLogout }: Props) => {
   return (
     <View style={styles.settingForm}>
       <Text style={styles.settingLabel}>User name:</Text>
-      <Text style={styles.settingField}>{name}</Text>
+
+      <TextInput
+        style={styles.settingField}
+        value={name}
+        editable={false}
+      />
 
       <Text style={styles.settingLabel}>Email:</Text>
-      <Text style={styles.settingField}>{email}</Text>
+      <TextInput
+        style={styles.settingField}
+        value={email}
+        editable={false}
+      />
 
       <Button
         title="Logout"
