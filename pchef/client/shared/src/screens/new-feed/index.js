@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { ScrollView, View } from 'react-native'
 
 // Components
-import Header from './components/Header'
+import Header from '../../components/Header'
 import RecipeList from './components/RecipeList'
 import Loading from '../../components/Loading'
 import CategoryPipeLine from './components/CategoryPipeLine'
