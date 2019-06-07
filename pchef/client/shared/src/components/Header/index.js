@@ -1,10 +1,10 @@
 // Libs
 import React from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
-import Icon from '../../../../components/Icon'
+import Icon from '../Icon'
 
 // Themes
-import { COLORS, FONTS } from '../../../../themes'
+import { COLORS, FONTS } from '../../themes'
 
 // Styles
 import styles from './styles'
@@ -32,7 +32,7 @@ const Header = ({
       <TouchableOpacity onPress={onPressLogo} style={styles.logo}>
         <View style={[styles.imageWrapper, styles[`${type}ImageWrapper`]]}>
           <Image
-            source={require('../../../../assets/images/logo.png')}
+            source={require('../../assets/images/logo.png')}
             style={[styles.image, styles[`${type}Image`]]}
           />
         </View>

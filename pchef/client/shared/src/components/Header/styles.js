@@ -2,7 +2,7 @@
 import { StyleSheet } from 'react-native'
 
 // Themes
-import { COLORS, METRICS, FONTS } from '../../../../themes'
+import { COLORS, METRICS, FONTS } from '../../themes'
 
 // Create style for Header
 const styles = StyleSheet.create({
