@@ -15,12 +15,13 @@
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.4.2",
-    "apollo-boost": "^0.3.1",
+    "apollo-boost": "^0.4.2",
     "apollo-cache-inmemory": "^1.5.1",
     "apollo-link": "^1.2.11",
     "apollo-link-http": "^1.5.14",
     "apollo-link-ws": "^1.0.17",
     "apollo-utilities": "^1.2.1",
+    "firebase": "5.11.0",
     "fromnow": "^3.0.0",
     "graphql": "^14.2.1",
     "path": "^0.12.7",
@@ -70,22 +71,6 @@
     "react-native-dotenv": "^0.2.0",
     "react-native-storybook-loader": "^1.8.0",
     "react-test-renderer": "16.8.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && flow check"
-    }
-  },
-  "lint-staged": {
-    "{src}/**/*.{js,jsx}": [
-      "prettier --write",
-      "eslint --fix",
-      "git add"
-    ],
-    "*.{png,jpeg,jpg,gif,svg}": [
-      "imagemin-lint-staged",
-      "git add"
-    ]
   },
   "config": {
     "react-native-storybook-loader": {
