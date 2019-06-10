@@ -12,17 +12,15 @@ import Button from 'pchef-shared/src/components/Button'
 import { selectImage } from '@helpers/uploadImage'
 
 const RecipeForm = () => {
-  const childRef = useRef<Object>(null)
+  const childRef = useRef(null)
   const [url, setUrl] = useState()
 
   const handleClick = () => {
-    url && childRef.current.wrappedInstance.handleCreateRecipe(JSON.stringify(url))
+    url && childRef.current.wrappedInstance.handleCreateRecipe(url)
   }
 
   const handleAddRecipeImage = async () => {
-    await selectImage(response => {
-      setUrl(response)
-    })
+    await selectImage(url => setUrl(url))
   }
 
   return (
@@ -30,6 +28,7 @@ const RecipeForm = () => {
       <RecipeFormContainer
         ref={childRef}
         handleAddRecipeImage={handleAddRecipeImage}
+        previewImage={url}
       />
       <Button
         title="Add"
