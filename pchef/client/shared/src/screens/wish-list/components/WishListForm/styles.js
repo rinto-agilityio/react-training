@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.baseGray,
     padding: METRICS.largePadding,
     marginTop: METRICS.mediumMargin,
-    zIndex: -1,
+    zIndex: METRICS.iconZindex,
   },
   icon: {
     display: 'flex',
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   
   // Modal
   modal: {
-    marginTop: 200,
+    marginTop: METRICS.superLargeMargin,
   },
 })
 
