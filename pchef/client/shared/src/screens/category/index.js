@@ -7,7 +7,7 @@ import { GRID_VIEW_COLUMN, LIST_VIEW_COLUMN } from '../../constants/index'
 import { checkContainField } from '../../helpers/utils'
 
 // Components
-import MainHeader from '../../components/Header'
+import MainHeader from '../../containers/Header'
 import Banner from './components/Header'
 import Recipe from './components/Recipe'
 import Loading from '../../components/Loading'
