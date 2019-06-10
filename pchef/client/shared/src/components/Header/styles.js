@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   avataDropdown: {
-    left: 0,
-    top: 55,
+    left: METRICS.resetPosition,
+    top: METRICS.largePosition,
   },
   container: {
     maxWidth:

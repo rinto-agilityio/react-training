@@ -36,10 +36,12 @@ const Header = ({
   error,
 }: Props) => {
   const [visible, setVisible] = useState(false)
+
   if (loading) return <Loading />
   if (error) return <Error message="Failed!" />
 
   const { user: { avatar } } = data
+
   return (
     <View style={[styles.wrapHeader, styles[`${type}Container`]]}>
       <View style={styles.container}>

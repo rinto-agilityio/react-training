@@ -38,8 +38,10 @@ export default {
   extraLargeWrapper: 380,
 
   // Position
+  resetPosition: 0,
   smallPosition: 10,
   mediumPosition: 15,
+  largePosition: 50,
 
   // Line Height
   smallLineHeight: 21,
