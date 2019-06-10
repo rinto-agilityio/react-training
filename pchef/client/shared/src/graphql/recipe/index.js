@@ -8,6 +8,7 @@ import {
   createRecipe,
   createRecipeStep,
   userToggleRecipe,
+  publishRecipe,
 } from './mutation.graphql'
 
 export {
@@ -18,4 +19,5 @@ export {
   getRecipes,
   recipeDetail,
   userToggleRecipe,
+  publishRecipe,
 }

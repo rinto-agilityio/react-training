@@ -83,6 +83,10 @@ const updateDocument = (path, data) => (
   db.doc(path).update(data)
 )
 
+const updateDocumentNotExist = (path, data) => (
+  db.doc(path).set(data)
+)
+
 module.exports = {
   mapDocumentToEntity,
   mapCollectionToEntities,
@@ -97,4 +101,5 @@ module.exports = {
   addDocumentWithId,
 
   updateDocument,
+  updateDocumentNotExist,
 }

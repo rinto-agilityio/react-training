@@ -21,6 +21,7 @@ import Categories from '../../../../containers/Categories'
 import CookingTypes from '../../../../containers/CookingTypes'
 import DirectionForm from '../../../../containers/DirectionForm'
 import Error from '../../../../components/Error'
+import Button from '../../../../components/Button';
 
 type Props = {
   size: string,
@@ -34,12 +35,16 @@ type Props = {
     description: string,
     isDraft: boolean,
   ) => Promise<{ data: { createRecipe: { id: string } } }>,
+  publishRecipe: (id: string) => Promise<{ data:{ publishRecipe: { id: string } } }>,
+  redirectAfterPublish: () => {},
 }
 
 const RecipeForm = ({
   size = 'medium',
   handleAddRecipeImage,
   createRecipe,
+  publishRecipe,
+  redirectAfterPublish,
 }: Props) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
@@ -52,34 +57,10 @@ const RecipeForm = ({
   const [ingredients, setIngredients] = useState('')
   const [recipe, setRecipe] = useState({})
   const [error, setError] = useState('')
+  const [directors, setDirectors] = useState([])
+  const [errorValidator, setErrorValidator] = useState({})
 
-  const dataIcon = [
-    {
-      name: 'shopping-cart',
-      label: 'Add ingredients',
-      onPress: setVisibleIngredients,
-    },
-    {
-      name: 'create',
-      label: 'Write a step',
-      onPress: setVisibleDirections,
-    },
-  ]
-
-  const dataIconClassify = [
-    {
-      label: 'Add categories',
-      onPress: setVisibleCategories,
-      value: category.name || '',
-    },
-    {
-      label: 'Add cooking types',
-      onPress: setVisibleCookingTypes,
-      value: cookingType.name || '',
-    },
-  ]
-
-  const handleCreateRecipe = async () => {
+  const handleCreateRecipe = async isOnpen => {
     const title = titleRef.current ? titleRef.current._node.value.trim() : ''
     const categoryId = category.id
     const cookingTypeId = cookingType.id
@@ -88,6 +69,10 @@ const RecipeForm = ({
       categoryId,
       cookingTypeId,
     })
+
+    if (errors) {
+      setErrorValidator(errors)
+    }
 
     if (!Object.keys(errors).length) {
       try {
@@ -99,7 +84,11 @@ const RecipeForm = ({
           '',
           ingredients,
           true,
-        ).then(({ data = {} }) => {
+        ).then(({ data }) => {
+          const { id } = data.createRecipe
+          if (id) {
+            setVisibleDirections(isOnpen)
+          }
           setRecipe(data.createRecipe)
         })
       } catch (err) {
@@ -107,6 +96,53 @@ const RecipeForm = ({
       }
     }
   }
+
+  const handleSubmitStep = data => {
+    setDirectors(data)
+    setVisibleDirections(false)
+  }
+
+  const handlePublishRecipe = async () => {
+    try {
+      await publishRecipe(recipe.id)
+      .then(({ data }) => {
+        const { id } = data.publishRecipe
+        if (id) {
+          redirectAfterPublish()
+        }
+      })
+    } catch (err) {
+      setError(err)
+    }
+  }
+
+  const dataIcon = [
+    {
+      name: 'shopping-cart',
+      label: 'Add ingredients',
+      onPress: setVisibleIngredients,
+    },
+    {
+      name: 'create',
+      label: 'Write a step',
+      onPress: handleCreateRecipe,
+    },
+  ]
+
+  const dataIconClassify = [
+    {
+      label: 'Add categories',
+      onPress: setVisibleCategories,
+      value: category.name || '',
+      error: errorValidator.categoryId,
+    },
+    {
+      label: 'Add cooking types',
+      onPress: setVisibleCookingTypes,
+      value: cookingType.name || '',
+      error: errorValidator.cookingTypeId,
+    },
+  ]
 
   if (error) {
     return <Error message={error} />
@@ -120,6 +156,7 @@ const RecipeForm = ({
         customStyle={[styles.input, styles.inputTitle, styles[`${size}Input`]]}
         placeholderTextColor={COLORS.grayNavy}
       />
+      <Error message={errorValidator.title} />
       <Icon
         name="add-a-photo"
         size={METRICS[`${size}Icon`] * 2}
@@ -139,7 +176,7 @@ const RecipeForm = ({
         childPosition="middle"
         customStyles={[styles.wrapperIcon, styles.wrapperClassifyIcon]}
       >
-        {dataIconClassify.map(({ onPress, label, value }, index) => (
+        {dataIconClassify.map(({ onPress, label, value, error }, index) => (
           <View key={`add-circle_${index}`} style={{ width: '100%' }}>
             <Icon
               name="add-circle"
@@ -153,6 +190,9 @@ const RecipeForm = ({
               <Text style={[{ marginBottom: METRICS.largeMargin }, styles[`${size}Input`]]}>
                 {value}
               </Text>
+            ) : null}
+            {error ? (
+              <Error message={error} />
             ) : null}
           </View>
         ))}
@@ -171,7 +211,6 @@ const RecipeForm = ({
             label={label}
             wrapperIconStyle={[styles.icon, styles[`${name}Icon`], styles[`${size}Icon`]]}
             customStyle={[styles.label, styles[`${size}Input`]]}
-            disabled={name === 'create' && !recipe.id}
           />
         ))}
       </Wrapper>
@@ -195,10 +234,11 @@ const RecipeForm = ({
           }}
         />
       )}
+
       {visibleDirections && (
         <DirectionForm
           size={size}
-          onDismiss={() => setVisibleDirections(false)}
+          onDismiss={handleSubmitStep}
           visible={visibleDirections}
           recipeId={recipe.id}
         />
@@ -227,6 +267,12 @@ const RecipeForm = ({
           }}
         />
       )}
+      <Button
+        onPress={handlePublishRecipe}
+        title="Save"
+        buttonStyle={[styles.btnModal, styles[`${size}btnModal`]]}
+        disabled={directors.length > 0 ? false : true}
+      />
     </View>
   )
 }

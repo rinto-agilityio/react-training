@@ -37,7 +37,7 @@ const RadioButton = ({
   >
     <RadioButtonComponent
       value={value}
-      onPress={onPress}
+      onClick={onPress}
       status={status ? 'checked' : 'unchecked'}
       disabled={disabled}
       color={color}
