@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.baseGray,
     padding: METRICS.largePadding,
     marginTop: METRICS.mediumMargin,
+    zIndex: METRICS.iconZindex,
   },
   icon: {
     display: 'flex',
@@ -51,6 +52,11 @@ const styles = StyleSheet.create({
   },
   largeInput: {
     fontSize: FONTS.fontSize.medium,
+  },
+  
+  // Modal
+  modal: {
+    marginTop: METRICS.superLargeMargin,
   },
 })
 

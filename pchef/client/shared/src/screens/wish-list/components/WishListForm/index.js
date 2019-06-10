@@ -101,6 +101,7 @@ const WishListForm = ({
           visible={visible}
           onSubmit={() => setVisible(false)}
           size={size}
+          customDialog={styles.modal}
         >
           <Calendar
             selectedDay={selectedDay}
