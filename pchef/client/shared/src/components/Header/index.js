@@ -62,36 +62,34 @@ const Header = ({
               <Text style={styles.text}>Cooking</Text>
             </TouchableOpacity>
           </View>
-          <View style={{ alignSelf: 'center' }}>
+          <View style={styles.wrapUserInfo}>
             <Provider>
-              <View>
-                <Menu
-                  style={styles.avataDropdown}
-                  visible={visible}
-                  onDismiss={() => setVisible(false)}
-                  anchor={
-                    (
-                      <TouchableOpacity onPress={() => setVisible(true)} style={styles.logo}>
-                        <Avatar.Image
-                          style={styles.pipelineItemImage}
-                          size={40}
-                          source={{
-                            uri: (
-                              avatar
-                                ? avatar
-                                : 'https://www.pngkey.com/png/full/115-1150152_default-profile-picture-avatar-png-green.png'
-                            ),
-                          }}
-                        />
-                      </TouchableOpacity>
-                    )
-                  }
-                >
-                  <Menu.Item onPress={() => {}} title="View Profile" />
-                  <Menu.Item onPress={() => {}} title="Wish List" />
-                  <Menu.Item onPress={() => {}} title="Logout" />
-                </Menu>
-              </View>
+              <Menu
+                style={styles.avataDropdown}
+                visible={visible}
+                onDismiss={() => setVisible(false)}
+                anchor={
+                  (
+                    <TouchableOpacity onPress={() => setVisible(true)} style={styles.logo}>
+                      <Avatar.Image
+                        style={styles.pipelineItemImage}
+                        size={40}
+                        source={{
+                          uri: (
+                            avatar
+                              ? avatar
+                              : 'https://www.pngkey.com/png/full/115-1150152_default-profile-picture-avatar-png-green.png'
+                          ),
+                        }}
+                      />
+                    </TouchableOpacity>
+                  )
+                }
+              >
+                <Menu.Item onPress={() => {}} title="View Profile" />
+                <Menu.Item onPress={() => {}} title="Wish List" />
+                <Menu.Item onPress={() => {}} title="Logout" />
+              </Menu>
             </Provider>
           </View>
         </View>

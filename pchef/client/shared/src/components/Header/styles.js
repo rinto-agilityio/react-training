@@ -14,6 +14,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  wrapUserInfo: {
+    alignSelf: 'center',
+  },
   avataDropdown: {
     left: 0,
     top: 55,
