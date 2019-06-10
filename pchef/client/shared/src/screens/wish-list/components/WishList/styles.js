@@ -5,6 +5,10 @@ import { StyleSheet } from 'react-native'
 import { COLORS, METRICS, FONTS } from '../../../../themes'
 
 const styles = StyleSheet.create({
+  // Container
+  container: {
+    ...METRICS.flexCenter,
+  },
   // Item
   wrapperItem: {
     display: 'flex',
@@ -41,6 +45,12 @@ const styles = StyleSheet.create({
   },
   specialContent: {
     fontWeight: 'bold',
+  },
+
+  // Button
+  button: {
+    marginTop: METRICS.largeMargin,
+    marginBottom: METRICS.largeMargin,
   },
 })
 
