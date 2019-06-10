@@ -22,6 +22,7 @@ import Categories from '../../../../containers/Categories'
 import CookingTypes from '../../../../containers/CookingTypes'
 import DirectionForm from '../../../../containers/DirectionForm'
 import Error from '../../../../components/Error'
+import ImageBackground from '../../../../components/ImageBackground'
 
 type Props = {
   size: string,
@@ -35,12 +36,14 @@ type Props = {
     description: string,
     isDraft: boolean,
   ) => Promise<{ data: { createRecipe: { id: string } } }>,
+  previewImage?: string,
 }
 
 const RecipeForm = forwardRef(({
   size = 'medium',
   handleAddRecipeImage,
   createRecipe,
+  previewImage,
 }: Props, ref) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
@@ -80,7 +83,7 @@ const RecipeForm = forwardRef(({
     },
   ]
 
-  const handleCreateRecipe = async () => {
+  const handleCreateRecipe = async (url: string | null) => {
     const title = getValueTextBox(titleRef.current)
     const categoryId = category.id
     const cookingTypeId = cookingType.id
@@ -97,7 +100,7 @@ const RecipeForm = forwardRef(({
           cookingTypeId,
           title,
           getValueTextBox(subTitleRef.current),
-          '',
+          url,
           ingredients,
           true,
         ).then(({ data = {} }) => {
@@ -125,14 +128,29 @@ const RecipeForm = forwardRef(({
         customStyle={[styles.input, styles.inputTitle, styles[`${size}Input`]]}
         placeholderTextColor={COLORS.grayNavy}
       />
-      <Icon
-        name="add-a-photo"
-        size={METRICS[`${size}Icon`] * 2}
-        onPress={handleAddRecipeImage}
-        label="Set cover photo"
-        wrapperIconStyle={styles.wrapperMainPhoto}
-        customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`]]}
-      />
+      {
+        previewImage ? (
+          <ImageBackground url={previewImage} customImageBg={{ height: 150 }}>
+            <Icon
+              name="add-a-photo"
+              size={METRICS[`${size}Icon`] * 2}
+              onPress={handleAddRecipeImage}
+              label="Set cover photo"
+              wrapperIconStyle={styles.wrapperMainPhoto}
+              customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`]]}
+            />
+          </ImageBackground>
+        ) : (
+          <Icon
+            name="add-a-photo"
+            size={METRICS[`${size}Icon`] * 2}
+            onPress={handleAddRecipeImage}
+            label="Set cover photo"
+            wrapperIconStyle={styles.wrapperMainPhoto}
+            customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`]]}
+          />
+        )
+      }
       <TextBox
         placeholder="Subtitle"
         refInput={subTitleRef}
@@ -238,6 +256,7 @@ const RecipeForm = forwardRef(({
 
 RecipeForm.defaultProps = {
   handleAddRecipeImage: () => {},
+  previewImage: '',
 }
 
 export default RecipeForm
