@@ -9,6 +9,18 @@ const styles = StyleSheet.create({
   wrapHeader: {
     backgroundColor: COLORS.black,
   },
+  wrapHeaderContent: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  wrapUserInfo: {
+    alignSelf: 'center',
+  },
+  avataDropdown: {
+    left: METRICS.resetPosition,
+    top: METRICS.largePosition,
+  },
   container: {
     maxWidth:
       METRICS.screenWidth > METRICS.mediumScreen
