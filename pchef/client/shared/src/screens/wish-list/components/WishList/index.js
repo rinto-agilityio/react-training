@@ -52,6 +52,7 @@ const WishList = ({
   handleRedirectWishlistForm,
 }: Props) => {
   const [visible, setVisible] = useState(true)
+  const isWeb = Platform.OS === 'web'
   if (loading) return <Loading size={size} />
 
   const handleNavigateLogin = () => {
@@ -84,7 +85,7 @@ const WishList = ({
         />
       ))}
       {
-        Platform.OS === 'web' && (
+        isWeb && (
           <Button
             title="Add Wishlist"
             onPress={() => handleRedirectWishlistForm()}
