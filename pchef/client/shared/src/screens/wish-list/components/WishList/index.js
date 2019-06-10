@@ -1,6 +1,6 @@
 // Libs
 import React, { useState } from 'react'
-import { View } from 'react-native'
+import { Platform, View } from 'react-native'
 
 // Helpers
 import { customError } from '../../../../helpers/utils'
@@ -13,6 +13,7 @@ import Item from './Item'
 import Loading from '../../../../components/Loading'
 import Modal from '../../../../components/Modal'
 import Error from '../../../../components/Error'
+import Button from '../../../../components/Button';
 
 type Props = {
   wishList: Array<{
@@ -36,7 +37,8 @@ type Props = {
     name: string,
     imgUrl: string,
   }>,
-  handleRedirectLogin: Function,
+  handleRedirectLogin: () => void,
+  handleRedirectWishlistForm: () => void,
 }
 
 const WishList = ({
@@ -47,9 +49,11 @@ const WishList = ({
   categories = [],
   cookingTypes = [],
   handleRedirectLogin,
+  handleRedirectWishlistForm,
 }: Props) => {
-  if (loading) return <Loading size={size} />
   const [visible, setVisible] = useState(true)
+  const isWeb = Platform.OS === 'web'
+  if (loading) return <Loading size={size} />
 
   const handleNavigateLogin = () => {
     setVisible(false)
@@ -80,6 +84,14 @@ const WishList = ({
           cookingTypes={cookingTypes}
         />
       ))}
+      {
+        isWeb && (
+          <Button
+            title="Add Wishlist"
+            onPress={() => handleRedirectWishlistForm()}
+          />
+        )
+      }
     </View>
   )
 }

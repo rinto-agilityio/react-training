@@ -9,6 +9,8 @@ export const LIST_VIEW_COLUMN = 1
 
 export const ELLIPSIS_LINE = 1
 
+export const MINIMUM_FOLLOWED_CATEGORY = 4
+
 // validate pattern
 export const PATTERN = {
   EMAIL: /^[a-zA-Z0-9_.+-]+@asnet.com.vn$/,

@@ -9,6 +9,7 @@ const GET_USER = gql`
         name
         avatar
         favoriteRecipe
+        email
       }
       ownRecipes {
         id

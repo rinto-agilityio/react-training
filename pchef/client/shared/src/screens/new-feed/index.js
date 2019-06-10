@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { ScrollView, View } from 'react-native'
 
 // Components
-import Header from './components/Header'
+import Header from '../../components/Header'
 import RecipeList from './components/RecipeList'
 import Loading from '../../components/Loading'
 import CategoryPipeLine from './components/CategoryPipeLine'
@@ -49,7 +49,8 @@ type Props = {
   handleClickRecipe: () => void,
   history: Object,
   size: string,
-  handleRedirectLogin: Function
+  handleRedirectLogin: Function,
+  onPressCategoryPipeline: () => void,
 }
 
 // Home screen
@@ -64,6 +65,7 @@ const NewFeed = ({
   userToggleRecipe,
   handleClickRecipe,
   handleRedirectLogin,
+  onPressCategoryPipeline,
   size = 'medium',
 }: Props) => {
   const [visible, setVisible] = useState(true)
@@ -97,8 +99,6 @@ const NewFeed = ({
     recipesList = recipesList.concat(category.recipes)
   })
 
-  const handlePressCategoryPipeline = categoryId => (categoryId)
-
   return (
     <ScrollView
       style={[styles.container, styles[`${type}Container`], customStyles]}
@@ -115,7 +115,7 @@ const NewFeed = ({
         <CategoryPipeLine
           followCategory={followCategory}
           loading={loading}
-          onPressCategoryPipeline={handlePressCategoryPipeline}
+          onPressCategoryPipeline={onPressCategoryPipeline}
         />
 
         {recipesList && (

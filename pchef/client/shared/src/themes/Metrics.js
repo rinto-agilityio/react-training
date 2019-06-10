@@ -12,6 +12,7 @@ export default {
   mediumMargin: 10,
   largeMargin: 20,
   extraLargeMargin: 30,
+  superLargeMargin: 200,
 
   // Input
   smallInput: 20,
@@ -108,6 +109,7 @@ export default {
 
   // z-index
   modalZindex: 1000,
+  iconZindex: -1,
 
   // Directions icon
   smallDirectionsIcon: 120,
