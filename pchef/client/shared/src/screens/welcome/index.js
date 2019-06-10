@@ -34,7 +34,7 @@ type Props = {
   }>,
   userToggleCategory: (recipeId: string) => Promise<{ data: {userToggleCategory: {results: Array<string>}}}>,
   customButtonStyle?: {},
-  handleRedirectLogin: Function,
+  handleRedirectLogin: () => void,
   size: string,
 }
 
