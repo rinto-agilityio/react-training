@@ -1,10 +1,12 @@
 // Libs
 import React, { useState } from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
-import { Avatar, Provider, Divider, Menu, Button } from 'react-native-paper'
+import { Avatar, Provider, Menu } from 'react-native-paper'
 
 // Common components
 import Icon from '../Icon'
+import Loading from '../Loading'
+import Error from '../Error'
 
 // Themes
 import { COLORS, FONTS } from '../../themes'
@@ -13,6 +15,13 @@ import { COLORS, FONTS } from '../../themes'
 import styles from './styles'
 
 type Props = {
+  data: {
+    user: {
+      avatar: string,
+    }
+  },
+  loading: boolean,
+  error: boolean,
   type?: string,
   onPressLogo?: () => void,
   onPressCategoryIcon?: () => void,
@@ -22,9 +31,15 @@ const Header = ({
   type = 'primary',
   onPressLogo,
   onPressCategoryIcon,
+  data,
+  loading,
+  error,
 }: Props) => {
   const [visible, setVisible] = useState(false)
+  if (loading) return <Loading />
+  if (error) return <Error message="Failed!" />
 
+  const { user: { avatar } } = data
   return (
     <View style={[styles.wrapHeader, styles[`${type}Container`]]}>
       <View style={styles.container}>
@@ -61,7 +76,11 @@ const Header = ({
                           style={styles.pipelineItemImage}
                           size={50}
                           source={{
-                            uri: ('../../assets/images/logo.png'),
+                            uri: (
+                              avatar
+                              ? avatar
+                              : 'https://www.pngkey.com/png/full/115-1150152_default-profile-picture-avatar-png-green.png'
+                            ),
                           }}
                         />
                       </TouchableOpacity>
