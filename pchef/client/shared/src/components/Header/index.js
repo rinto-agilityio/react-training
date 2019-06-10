@@ -74,7 +74,7 @@ const Header = ({
                       <TouchableOpacity onPress={() => setVisible(true)} style={styles.logo}>
                         <Avatar.Image
                           style={styles.pipelineItemImage}
-                          size={50}
+                          size={40}
                           source={{
                             uri: (
                               avatar
