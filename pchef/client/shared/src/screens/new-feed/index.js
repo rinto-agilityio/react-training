@@ -121,10 +121,10 @@ const NewFeed = ({
         <View style={styles.tabListContainer}>
           <View style={styles.tabWrap}>
             <Text style={styles.tab} onPress={() => setIsViewRecipeList(true)}>
-              Recipes List
+              All Recipes
             </Text>
             <Text style={styles.tab} onPress={() => setIsViewRecipeList(false)}>
-              Most votes List
+              Top Votes Recipes
             </Text>
           </View>
           {isViewRecipeList && recipesList ? (
