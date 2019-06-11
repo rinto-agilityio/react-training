@@ -19,6 +19,7 @@ import Button from '../../../../components/Button'
 import TextBox from '../../../../components/TextBox'
 import Icon from '../../../../components/Icon'
 import Error from '../../../../components/Error'
+import Image from '../../../../components/Image'
 
 type Props = {
   size: string,
@@ -40,6 +41,7 @@ type Props = {
         title: string,
       }
     }}>,
+  stepUrl?: string,
 }
 
 const DirectionsForm = ({
@@ -49,6 +51,7 @@ const DirectionsForm = ({
   visible,
   recipeId,
   createRecipeStep,
+  stepUrl,
 }: Props) => {
   const stepTitleRef = useRef(null)
   const stepDescriptionRef = useRef(null)
@@ -81,7 +84,7 @@ const DirectionsForm = ({
           recipeId,
           title,
           nextStep,
-          '',
+          stepUrl,
           getValueTextBox(stepDescriptionRef.current),
         ).then(({ data = {} }) => {
           directions.push(data.createRecipeStep)
@@ -153,6 +156,9 @@ const DirectionsForm = ({
               label="Set cover photo"
               wrapperIconStyle={[styles.wrapperIcon, styles.wrapperIconDirections]}
             />
+            {stepUrl ? (
+              <Image url={stepUrl} customImageStyle={{ width: '100%', height: 150 }} />
+            ) : null}
           </Wrapper>
         </Wrapper>
       ) : null }
@@ -185,6 +191,7 @@ const DirectionsForm = ({
 DirectionsForm.defaultProps = {
   visible: false,
   handleAddStepImage: () => {},
+  stepUrl: '',
 }
 
 export default DirectionsForm

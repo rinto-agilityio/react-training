@@ -43,6 +43,8 @@ type Props = {
   redirectAfterPublish: () => {},
   customStyle: Object,
   customStyleError: Object,
+  handleAddStepImage?: () => void,
+  stepUrl?: string,
 }
 
 const RecipeForm = ({
@@ -54,6 +56,8 @@ const RecipeForm = ({
   redirectAfterPublish,
   customStyle,
   customStyleError,
+  handleAddStepImage = () => {},
+  stepUrl,
 }: Props) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
@@ -259,6 +263,8 @@ const RecipeForm = ({
           onDismiss={handleSubmitStep}
           visible={visibleDirections}
           recipeId={recipe.id}
+          handleAddStepImage={handleAddStepImage}
+          stepUrl={stepUrl}
         />
       )}
       {visibleCategories && (
@@ -298,6 +304,8 @@ const RecipeForm = ({
 RecipeForm.defaultProps = {
   handleAddRecipeImage: () => {},
   previewImage: '',
+  handleAddStepImage: () => {},
+  stepUrl: '',
 }
 
 export default RecipeForm
