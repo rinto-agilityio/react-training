@@ -76,10 +76,10 @@ const WishListForm = ({
     })
 
     if (errors) {
-      setErrorValidator(errors)
+      setErrorValidator(errors.errorMessage)
     }
 
-    if (!Object.keys(errors).length) {
+    if (!errors.isError) {
       try {
         await createWishList(
           categoryId,
@@ -185,11 +185,7 @@ const WishListForm = ({
         isWeb && (
           <Button
             title="Add"
-            onPress={() => {
-              handleCreateWishList()
-              // handleRedirectWishlist()
-            }
-            }
+            onPress={() => handleCreateWishList()}
             buttonStyle={styles.button}
           />
         )
