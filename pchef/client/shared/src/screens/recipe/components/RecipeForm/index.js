@@ -1,5 +1,5 @@
 // Libs
-import React, { useRef, useState, forwardRef, useImperativeHandle } from 'react'
+import React, { useRef, useState } from 'react'
 import { View, Text } from 'react-native'
 
 // Styles
@@ -24,6 +24,7 @@ import DirectionForm from '../../../../containers/DirectionForm'
 import Error from '../../../../components/Error'
 import Image from '../../../../components/Image'
 import Button from '../../../../components/Button'
+import Loading from '../../../../components/Loading'
 
 type Props = {
   size: string,
@@ -42,14 +43,14 @@ type Props = {
   redirectAfterPublish: () => {},
 }
 
-const RecipeForm = forwardRef(({
+const RecipeForm = ({
   size = 'medium',
   handleAddRecipeImage,
   createRecipe,
   previewImage,
   publishRecipe,
   redirectAfterPublish,
-}: Props, ref) => {
+}: Props) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
   const [visibleIngredients, setVisibleIngredients] = useState(false)
@@ -63,6 +64,7 @@ const RecipeForm = forwardRef(({
   const [error, setError] = useState('')
   const [directors, setDirectors] = useState([])
   const [errorValidator, setErrorValidator] = useState({})
+  const [loadingImage, setLoadingImage] = useState(false)
 
   const handleCreateRecipe = async (isOnpen, url) => {
     const title = getValueTextBox(titleRef.current)
@@ -101,10 +103,6 @@ const RecipeForm = forwardRef(({
     }
   }
 
-  useImperativeHandle(ref, () => ({
-    handleCreateRecipe,
-  }))
-
   const handleSubmitStep = data => {
     setDirectors(data)
     setVisibleDirections(false)
@@ -113,12 +111,12 @@ const RecipeForm = forwardRef(({
   const handlePublishRecipe = async () => {
     try {
       await publishRecipe(recipe.id)
-      .then(({ data }) => {
-        const { id } = data.publishRecipe
-        if (id) {
-          redirectAfterPublish()
-        }
-      })
+        .then(({ data }) => {
+          const { id } = data.publishRecipe
+          if (id) {
+            redirectAfterPublish()
+          }
+        })
     } catch (err) {
       setError(err)
     }
@@ -168,14 +166,21 @@ const RecipeForm = forwardRef(({
       <Icon
         name="add-a-photo"
         size={METRICS[`${size}Icon`] * 2}
-        onPress={handleAddRecipeImage}
+        onPress={() => {
+          handleAddRecipeImage()
+          setLoadingImage(true)
+        }}
         label="Set cover photo"
         wrapperIconStyle={styles.wrapperMainPhoto}
         customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`]]}
       />
-      {previewImage ? (
-        <Image url={previewImage} customImageStyle={{ width: '100%', height: 150 }} />
-      ) : null}
+      {
+        previewImage ? (
+          <Image url={previewImage} customImageStyle={{ width: '100%', height: 150 }} />
+        ) : (
+          loadingImage && <Loading size={size} />
+        )
+      }
       <TextBox
         placeholder="Subtitle"
         refInput={subTitleRef}
@@ -286,7 +291,7 @@ const RecipeForm = forwardRef(({
       />
     </View>
   )
-})
+}
 
 RecipeForm.defaultProps = {
   handleAddRecipeImage: () => {},
