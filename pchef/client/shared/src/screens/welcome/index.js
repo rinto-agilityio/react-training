@@ -1,11 +1,15 @@
+// Libs
 import React, { useState, useEffect } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import { Divider } from 'react-native-paper'
+
+// Components
 import InterestedCategories from './components/InterestedCategories'
 import styles from './styles'
 import Loading from '../../components/Loading'
-import Error from '../../components/Error'
 import { customError } from '../../helpers/utils'
+import Modal from '../../components/Modal'
+import Error from '../../components/Error'
 
 // Interested Category props type
 type Props = {
@@ -30,6 +34,8 @@ type Props = {
   }>,
   userToggleCategory: (recipeId: string) => Promise<{ data: {userToggleCategory: {results: Array<string>}}}>,
   customButtonStyle?: {},
+  handleRedirectLogin: () => void,
+  size: string,
 }
 
 // component Comment Form
@@ -43,9 +49,12 @@ const Welcome = ({
   categories = [],
   userToggleCategory,
   customButtonStyle,
+  handleRedirectLogin,
+  size = 'medium',
 }: Props) => {
   const [chosenCategories, setChosenCategories] = useState([])
   const [errors, setErrors] = useState()
+  const [visible, setVisible] = useState(true)
 
   useEffect(() => {
     const followCategory = data.followCategory || []
@@ -54,8 +63,24 @@ const Welcome = ({
     !loading && setErrors(error)
   }, [loading, data.followCategory, error])
 
+  const handleNavigateLogin = () => {
+    setVisible(false)
+    handleRedirectLogin()
+  }
+
+  if (errors) {
+    return (
+      <Modal
+        visible={visible}
+        onDismiss={() => handleNavigateLogin()}
+        onSubmit={() => handleNavigateLogin()}
+        size={size}
+      >
+        <Error message={customError(error.graphQLErrors)} size="medium" />
+      </Modal>
+    )
+  }
   if (loading) return <Loading size={type === 'primary' ? 'small' : 'large'} />
-  if (errors) return <Error message={customError(errors.graphQLErrors)} />
 
   // handling toggle choose or not choose a category
   const handlingChooseCategory = async (categoryId: string) => {

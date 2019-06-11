@@ -21,6 +21,7 @@ const RecipeDetail = ({ match, history }: Props) => {
     <RecipeDetailContainer
       id={recipeId}
       onSelectStep={handleClickRecipeStep}
+      handleRedirectLogin={() => history.push('/login')}
     />
   )
 }

@@ -55,6 +55,16 @@ const CREATE_RECIPE_STEP = gql`
     }
   }
 `
+
+const PUBLISH_RECIPE = gql`
+  mutation publishRecipe($id: String!) {
+    publishRecipe(id: $id) {
+      id
+    }
+  }
+
+`
+
 const TOGGLE_RECIPE = gql`
   mutation userToggleRecipe($recipeId: String!) {
     userToggleRecipe(recipeId: $recipeId) {
@@ -86,6 +96,14 @@ const createRecipe = graphql(CREATE_RECIPE, {
     }),
   }),
   withRef: true,
+})
+
+const publishRecipe = graphql(PUBLISH_RECIPE, {
+  props: ({ mutate }) => ({
+    publishRecipe: id => mutate({
+      variables: { id },
+    }),
+  }),
 })
 
 const createRecipeStep = graphql(CREATE_RECIPE_STEP, {
@@ -153,4 +171,5 @@ export {
   createRecipe,
   createRecipeStep,
   userToggleRecipe,
+  publishRecipe,
 }

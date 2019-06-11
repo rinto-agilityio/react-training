@@ -16,17 +16,18 @@ type Props = {
   item: {
     step: number,
     title: string,
+    id: string,
   },
   size: string,
   customDescription?: {},
-  onSelectStep?: () => void,
+  onSelectStep?: (id: string) => void,
 }
 
 const Direction = ({
   item = {},
   size = 'medium',
   customDescription,
-  onSelectStep,
+  onSelectStep = () => {},
 }: Props) => (
   <Wrapper
     direction="row"

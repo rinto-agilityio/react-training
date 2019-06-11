@@ -7,6 +7,7 @@ const {
   addDocument,
   updateDocument,
   getDocumentWithConditions,
+  updateDocumentNotExist,
 } = require('../helpers/firestore')
 const {
   createUserWithEmailAndPassword,
@@ -105,7 +106,7 @@ const Mutation = {
   })),
 
   publishRecipe: authenticated((_, { id }) => (
-    updateDocument(`${COLLECTION_NAME.RECIPE}/${id}}`, {
+    updateDocumentNotExist(`${COLLECTION_NAME.RECIPE}/${id}}`, {
       isDraft: false,
       publishedDate: Date.now().toString(),
       modifyDate: Date.now().toString(),
@@ -142,7 +143,8 @@ const Mutation = {
           votes: newVotes,
         })
           .then(() => ({
-            results: newVotes
+            results: newVotes,
+            recipeId,
           }))
           .catch(error => error)
       })

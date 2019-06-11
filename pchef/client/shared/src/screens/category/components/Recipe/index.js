@@ -25,7 +25,8 @@ type Props = {
     description: string,
   },
   isGrid: boolean,
-  handlePressIcon?: () => void,
+  isFavorite: boolean,
+  onPressIcon?: (id: string) => void | Promise<void>,
   size?: string,
   color?: string,
   handlePressImage?: () => void,
@@ -33,13 +34,14 @@ type Props = {
 
 const Recipe = ({
   recipe,
-  handlePressIcon,
+  onPressIcon = () => {},
   size = '',
   color,
   handlePressImage,
   isGrid,
+  isFavorite,
 }: Props) => {
-  const { title, imgUrl, description } = recipe
+  const { id, title, imgUrl, description } = recipe
   const formatDescription =
     formatStringToArray(description, SEPARATOR_SPLIT_STRING) || []
 
@@ -78,14 +80,14 @@ const Recipe = ({
 
           <Icon
             wrapperIconStyle={styles.icon}
-            name="favorite-border"
+            name="favorite"
             size={
               size === 'large'
                 ? FONTS.fontSize.extraLarge
                 : FONTS.fontSize.medium
             }
-            onPress={handlePressIcon}
-            color={color}
+            onPress={() => onPressIcon(id)}
+            color={isFavorite ? COLORS.red : color}
           />
         </Wrapper>
       </Wrapper>
@@ -94,7 +96,7 @@ const Recipe = ({
 }
 
 Recipe.defaultProps = {
-  handlePressIcon: () => {},
+  onPressIcon: () => {},
   size: 'medium',
   color: COLORS.grayDarker,
   handlePressImage: () => {},

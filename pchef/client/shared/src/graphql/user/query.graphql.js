@@ -5,9 +5,11 @@ const GET_USER = gql`
   query {
     getUser {
       user {
+        id
         name
         avatar
         favoriteRecipe
+        email
       }
       ownRecipes {
         id

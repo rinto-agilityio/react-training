@@ -1,6 +1,6 @@
 // Libs
-import React from 'react'
-import { View } from 'react-native'
+import React, { useState } from 'react'
+import { Platform, View } from 'react-native'
 
 // Helpers
 import { customError } from '../../../../helpers/utils'
@@ -11,7 +11,9 @@ import styles from './styles'
 // Components
 import Item from './Item'
 import Loading from '../../../../components/Loading'
+import Modal from '../../../../components/Modal'
 import Error from '../../../../components/Error'
+import Button from '../../../../components/Button';
 
 type Props = {
   wishList: Array<{
@@ -35,6 +37,8 @@ type Props = {
     name: string,
     imgUrl: string,
   }>,
+  handleRedirectLogin: () => void,
+  handleRedirectWishlistForm: () => void,
 }
 
 const WishList = ({
@@ -44,9 +48,30 @@ const WishList = ({
   error,
   categories = [],
   cookingTypes = [],
+  handleRedirectLogin,
+  handleRedirectWishlistForm,
 }: Props) => {
+  const [visible, setVisible] = useState(true)
+  const isWeb = Platform.OS === 'web'
   if (loading) return <Loading size={size} />
-  if (error) return <Error message={customError(error.graphQLErrors)} />
+
+  const handleNavigateLogin = () => {
+    setVisible(false)
+    handleRedirectLogin()
+  }
+
+  if (error) {
+    return (
+      <Modal
+        visible={visible}
+        onDismiss={() => handleNavigateLogin()}
+        onSubmit={() => handleNavigateLogin()}
+        size={size}
+      >
+        <Error message={customError(error.graphQLErrors)} size="medium" />
+      </Modal>
+    )
+  }
 
   return (
     <View style={styles.container}>
@@ -59,6 +84,14 @@ const WishList = ({
           cookingTypes={cookingTypes}
         />
       ))}
+      {
+        isWeb && (
+          <Button
+            title="Add Wishlist"
+            onPress={() => handleRedirectWishlistForm()}
+          />
+        )
+      }
     </View>
   )
 }

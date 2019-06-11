@@ -4,13 +4,15 @@ import gql from 'graphql-tag'
 
 // GraphQL
 import { GET_USER } from './query.graphql'
-
+import { TOGGLE_VOTE, TOGGLE_RECIPE } from '../recipe-step/mutation.graphql'
 // Helpers
 import {
   checkContainField,
   formatFavoriteRecipe,
   mergeArrayObject,
   formatFiledOnObject,
+  updateArrayById,
+  checkContain,
 } from '../../helpers/utils'
 
 const USER_SIGNIN = gql`
@@ -24,14 +26,6 @@ const USER_SIGNIN = gql`
 const USER_TOGGLE_CATEGORY = gql`
   mutation userToggleCategory($categoryId: String!) {
     userToggleCategory(categoryId: $categoryId) {
-      results
-    }
-  }
-`
-
-const TOGGLE_RECIPE = gql`
-  mutation userToggleRecipe($recipeId: String!) {
-    userToggleRecipe(recipeId: $recipeId) {
       results
     }
   }
@@ -140,9 +134,56 @@ const userToggleRecipe = graphql(TOGGLE_RECIPE, {
   },
 })
 
+const userToggleVote = graphql(TOGGLE_VOTE, {
+  props: ({ mutate }) => ({
+    userToggleVote: (recipeId, votes, userId) => mutate({
+      variables: {
+        recipeId,
+      },
+      optimisticResponse: {
+        userToggleVote: {
+          __typename: 'PayloadResults',
+          results: checkContain(votes, userId) ?
+            votes.filter(item => item !== userId)
+            :
+            votes.concat(userId),
+          recipeId,
+        },
+      },
+    }),
+  }),
+  options: () => ({
+    update: (proxy, { data }) => {
+      const {
+        userToggleVote: { results, recipeId },
+      } = data
+      try {
+        const dataQuery = proxy.readQuery({ query: GET_USER })
+        const { getUser: { ownRecipes, favoriteRecipe } } = dataQuery
+
+        const favoritesUpdating = updateArrayById(favoriteRecipe, recipeId, results)
+        const ownRecipesUpdating = updateArrayById(ownRecipes, recipeId, results)
+
+        const dataUpdated = {
+          ...dataQuery,
+          getUser: {
+            ...dataQuery.getUser,
+            favoriteRecipe: favoritesUpdating,
+            ownRecipes: ownRecipesUpdating,
+          },
+        }
+
+        proxy.writeQuery({ query: GET_USER, data: dataUpdated })
+      } catch (err) {
+        console.error(err)
+      }
+    },
+  }),
+})
 
 export {
   signInUser,
   userToggleCategory,
   userToggleRecipe,
+  userToggleVote,
 }

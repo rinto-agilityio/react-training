@@ -12,6 +12,7 @@ type Props = {
   steps: Array<{
     step: number,
     title: string,
+    id: string,
   }>,
   size: string,
   customDirections?: {},

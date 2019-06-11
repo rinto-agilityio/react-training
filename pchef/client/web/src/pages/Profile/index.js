@@ -1,5 +1,8 @@
 import React from 'react'
+import ProfileContainer from 'pchef-shared/src/containers/Profile'
 
-const Profile = () => <h3>Profile page</h3>
+const Profile = () => (
+  <ProfileContainer />
+)
 
 export default Profile

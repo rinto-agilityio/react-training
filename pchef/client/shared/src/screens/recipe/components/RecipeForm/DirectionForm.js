@@ -25,7 +25,7 @@ type Props = {
   recipeId: string,
   visible?: boolean,
   handleAddStepImage?: () => void,
-  onDismiss?: () => void,
+  onDismiss: (directions: Object) => void,
   createRecipeStep: (
     recipeId: string,
     title: string,
@@ -102,7 +102,7 @@ const DirectionsForm = ({
   return (
     <Modal
       title="Directions"
-      onSubmit={onDismiss}
+      onSubmit={() => onDismiss(directions)}
       onDismiss={onDismiss}
       visible={visible}
       size={size}
@@ -185,7 +185,6 @@ const DirectionsForm = ({
 
 DirectionsForm.defaultProps = {
   visible: false,
-  onDismiss: () => {},
   handleAddStepImage: () => {},
 }
 

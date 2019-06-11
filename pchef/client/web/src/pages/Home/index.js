@@ -11,9 +11,16 @@ const Home = ({ history }: Props) => {
   const handleClickRecipe = recipeId => {
     history.push(`/recipe-detail/${recipeId}/`)
   }
+  const handlePressPipelineCategory = (categoryId: string) => {
+    history.push(`category/${categoryId}`)
+  }
 
   return (
-    <NewFeed handleClickRecipe={handleClickRecipe} />
+    <NewFeed
+      onPressCategoryPipeline={handlePressPipelineCategory}
+      handleClickRecipe={handleClickRecipe}
+      handleRedirectLogin={() => history.push('/login')}
+    />
   )
 }
 
