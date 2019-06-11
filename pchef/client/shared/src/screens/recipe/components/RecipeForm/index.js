@@ -92,9 +92,9 @@ const RecipeForm = ({
         await createRecipe(
           categoryId,
           cookingTypeId,
-          title,
-          getValueTextBox(subTitleRef.current),
-          previewImage,
+          title || '',
+          getValueTextBox(subTitleRef.current) || '',
+          previewImage || '',
           ingredients,
           true,
         ).then(({ data }) => {
@@ -251,7 +251,7 @@ const RecipeForm = ({
           onDismiss={() => setVisibleIngredients(false)}
           visible={visibleIngredients}
           handleSubmitIngredients={value => {
-            setIngredients(value)
+            setIngredients(value || '')
             setVisibleIngredients(false)
           }}
         />

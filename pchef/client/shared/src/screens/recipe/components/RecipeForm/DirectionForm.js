@@ -72,7 +72,7 @@ const DirectionsForm = ({
   ]
 
   const handleSubmit = async () => {
-    const title = getValueTextBox(stepTitleRef.current)
+    const title = getValueTextBox(stepTitleRef.current) || ''
     const errors = validator({
       title,
       step: nextStep,
@@ -84,8 +84,8 @@ const DirectionsForm = ({
           recipeId,
           title,
           nextStep,
-          stepUrl,
-          getValueTextBox(stepDescriptionRef.current),
+          stepUrl || '',
+          getValueTextBox(stepDescriptionRef.current) || '',
         ).then(({ data = {} }) => {
           directions.push(data.createRecipeStep)
           setDirections(directions)
