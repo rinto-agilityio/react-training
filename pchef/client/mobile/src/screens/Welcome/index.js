@@ -25,14 +25,10 @@ type Props = {
 }
 
 const Welcome = ({ navigation }: Props) => (
-  <>
-    <WelcomeContainer
-      customButtonStyle={styles.button}
-      handleSkipCategories={() => navigation.navigate(ROUTES.HOME)}
-    />
-    <Button onPress={() => AsyncStorage.removeItem('token')}>Logout</Button>
-    <Button onPress={() => navigation.navigate(ROUTES.HOME)}>Logout</Button>
-  </>
+  <WelcomeContainer
+    customButtonStyle={styles.button}
+    handleSkipCategories={() => navigation.navigate(ROUTES.HOME)}
+  />
 )
 
 export default Welcome

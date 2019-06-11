@@ -65,7 +65,7 @@ const RecipeForm = ({
   const [directors, setDirectors] = useState([])
   const [errorValidator, setErrorValidator] = useState({})
 
-  const handleCreateRecipe = async (isOnpen, url) => {
+  const handleCreateRecipe = async isOnpen => {
     const title = getValueTextBox(titleRef.current)
     const categoryId = category.id
     const cookingTypeId = cookingType.id
@@ -86,7 +86,7 @@ const RecipeForm = ({
           cookingTypeId,
           title,
           getValueTextBox(subTitleRef.current),
-          url,
+          previewImage,
           ingredients,
           true,
         ).then(({ data }) => {
