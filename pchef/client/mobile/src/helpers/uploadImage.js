@@ -9,11 +9,12 @@ const { storage } = require('@configs/firebase')
  * uploadImage
  * @param  {object} dataImage
  */
+
 type params = {
   uri: string,
   type: string,
 }
-export const uploadImage = ({ uri, type }: params) => {
+export const uploadImage = ({ uri, type }: params): any => {
   const { Blob } = RNFetchBlob.polyfill
   window.Blob = Blob
   window.XMLHttpRequest = RNFetchBlob.polyfill.XMLHttpRequest
@@ -21,16 +22,17 @@ export const uploadImage = ({ uri, type }: params) => {
   return new Promise((resolve, reject) => {
     let tmpBlob = null
     const uploadUri = Platform.OS === 'ios' ? uri.replace('file://', '') : uri
-    const imageRef = storage.ref('images').child(`image_${(new Date()).getTime()}`)
+    const imageRef = storage.ref('recipes').child(`image_${(new Date()).getTime()}`)
 
     // create a blob from BASE64 encoded string
     RNFetchBlob.fs.readFile(uploadUri, 'base64')
       .then(response => Blob.build(response, { type: 'application/octet-stream;base64' }))
       .then(blob => {
         tmpBlob = blob
-        return imageRef.put(blob, { contentType: type })
+        imageRef.put(blob, { contentType: type })
+        return tmpBlob
       })
-      .then(() => {
+      .then(tmpBlob => {
         tmpBlob.close()
         return imageRef.getDownloadURL()
       })
@@ -51,8 +53,7 @@ export const selectImage = (callback: Function) => {
 
   ImagePicker.showImagePicker(option, response => {
     if (!response.didCancel && !response.error && !response.customButton) {
-      uploadImage(response)
-        .then(uri => callback(uri))
+      uploadImage(response).then(uri => callback(uri))
     }
   })
 }

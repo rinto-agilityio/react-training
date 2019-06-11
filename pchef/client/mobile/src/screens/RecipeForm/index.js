@@ -5,9 +5,6 @@ import { ScrollView } from 'react-native'
 // Containers
 import RecipeFormContainer from 'pchef-shared/src/containers/RecipeForm'
 
-// Component
-import Button from 'pchef-shared/src/components/Button'
-
 // Helpers
 import { selectImage } from '@helpers/uploadImage'
 
@@ -15,12 +12,10 @@ const RecipeForm = () => {
   const childRef = useRef(null)
   const [url, setUrl] = useState()
 
-  const handleClick = () => {
-    url && childRef.current.wrappedInstance.handleCreateRecipe(url)
-  }
-
   const handleAddRecipeImage = async () => {
-    await selectImage(url => setUrl(url))
+    await selectImage(url => {
+      setUrl(url)
+    })
   }
 
   return (
@@ -29,10 +24,6 @@ const RecipeForm = () => {
         ref={childRef}
         handleAddRecipeImage={() => handleAddRecipeImage()}
         previewImage={url}
-      />
-      <Button
-        title="Add"
-        onPress={() => handleClick()}
       />
     </ScrollView>
   )

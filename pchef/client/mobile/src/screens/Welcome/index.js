@@ -31,7 +31,7 @@ const Welcome = ({ navigation }: Props) => (
       handleSkipCategories={() => navigation.navigate(ROUTES.HOME)}
     />
     <Button onPress={() => AsyncStorage.removeItem('token')}>Logout</Button>
-    <Button onPress={() => AsyncStorage.removeItem('token')}>Logout</Button>
+    <Button onPress={() => navigation.navigate(ROUTES.HOME)}>Logout</Button>
   </>
 )
 

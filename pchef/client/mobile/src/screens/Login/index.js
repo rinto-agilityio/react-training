@@ -20,7 +20,11 @@ const Login = ({ navigation }: Props) => {
   }
 
   return (
-    <LoginContainer handlingLoginSuccess={handlingLoginSuccess} />
+    <LoginContainer
+      handlingLoginSuccess={handlingLoginSuccess}
+      handleNavigateHome={() => navigation.navigate(ROUTES.HOME)}
+      hleNavigateWelcome={() => navigation.navigate(ROUTES.WELCOME)}
+    />
   )
 }
 
