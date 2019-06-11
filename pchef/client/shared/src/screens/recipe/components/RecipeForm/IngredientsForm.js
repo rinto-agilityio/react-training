@@ -18,7 +18,7 @@ import { getValueTextBox } from '../../../../helpers/utils'
 type Props = {
   size: string,
   visible?: boolean,
-  handleSubmitIngredients: (value: string) => void,
+  handleSubmitIngredients: (value?: string) => void,
   onDismiss?: () => void,
 }
 
