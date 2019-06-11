@@ -27,6 +27,12 @@ type Props = {
     favoriteRecipe: Array<{ id: string }>
   ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
   handleClickRecipe: () => void,
+  userToggleVote: (
+    recipeId: string,
+    votes: Array<string>,
+    userId: string
+  ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
+  userId: string,
 }
 
 const RecipeList = ({
@@ -36,6 +42,8 @@ const RecipeList = ({
   favoriteRecipe,
   userToggleRecipe,
   handleClickRecipe,
+  userToggleVote,
+  userId,
 }: Props) => {
   // define recipe size follow type
   const size = type === 'primary' ? 'medium' : 'large'
@@ -54,6 +62,8 @@ const RecipeList = ({
             favoriteRecipe={favoriteRecipe}
             userToggleRecipe={userToggleRecipe}
             handleClickRecipe={handleClickRecipe}
+            userToggleVote={userToggleVote}
+            userId={userId}
           />
         ))
       )}

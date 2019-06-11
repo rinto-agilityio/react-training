@@ -22,6 +22,9 @@ const GET_ALL_COOKING_TYPES = gql`
 const GET_RECIPES = gql`
   query {
     getUser {
+      user {
+        id
+      }
       favoriteRecipe {
         id
       }
