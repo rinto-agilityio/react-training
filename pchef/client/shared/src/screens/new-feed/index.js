@@ -38,11 +38,17 @@ type Props = {
         votes: Array<string>,
       }>,
     }>,
+    user: Object,
   },
   userToggleRecipe: (
     recipeId: string,
     favoriteRecipe: Array<{ id: string }>
   ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
+  userToggleVote: (
+    recipeId: string,
+    votes: Array<string>,
+    userId: string
+  ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
   type?: string,
   onPressCategoryIcon: () => void,
   onPressLogo: () => void,
@@ -67,6 +73,7 @@ const NewFeed = ({
   handleRedirectLogin,
   onPressCategoryPipeline,
   size = 'medium',
+  userToggleVote,
 }: Props) => {
   const [visible, setVisible] = useState(true)
 
@@ -90,7 +97,7 @@ const NewFeed = ({
 
   if (loading) return <Loading size={type === 'primary' ? 'small' : 'large'} />
 
-  const { followCategory, favoriteRecipe } = data
+  const { followCategory, favoriteRecipe, user } = data
 
   // Get all recipes on follow categories
   let recipesList = []
@@ -125,6 +132,8 @@ const NewFeed = ({
             favoriteRecipe={favoriteRecipe}
             userToggleRecipe={userToggleRecipe}
             handleClickRecipe={handleClickRecipe}
+            userToggleVote={userToggleVote}
+            userId={user.id}
           />
         )}
       </View>

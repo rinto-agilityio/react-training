@@ -1,6 +1,6 @@
 // Libs
 import React from 'react'
-import { Text, View, TouchableOpacity } from 'react-native'
+import { Text, View } from 'react-native'
 
 // Styles
 import styles from './styles'
@@ -13,6 +13,7 @@ import Reaction from '../../../../components/Reaction'
 import {
   checkContainField,
   formatFiledOnObject,
+  checkContain,
 } from '../../../../helpers/utils'
 
 // Constants
@@ -35,6 +36,12 @@ type Props = {
     favoriteRecipe: Array<{ id: string }>
   ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
   handleClickRecipe: (recipeId: string) => void,
+  userToggleVote: (
+    recipeId: string,
+    votes: Array<string>,
+    userId: string
+  ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
+  userId: string,
 }
 
 const Recipe = ({
@@ -43,6 +50,8 @@ const Recipe = ({
   favoriteRecipe,
   userToggleRecipe,
   handleClickRecipe,
+  userToggleVote,
+  userId,
 }: Props) => {
   const { id, title, description, imgUrl, votes } = recipe
 
@@ -58,6 +67,19 @@ const Recipe = ({
         checkContainField(formatFiledOnObject(results), id)
       }
     })
+  }
+
+  const handleToggleVote = async () => {
+    await userToggleVote(id, votes, userId)
+      .then(({ data }) => {
+        const {
+          userToggleVote: { results },
+        } = data
+
+        if (results) {
+          checkContain(votes, id)
+        }
+      })
   }
 
   return (
@@ -89,6 +111,8 @@ const Recipe = ({
         size={size}
         isFavorited={isFavorited}
         onPressFavorite={handleSaveRecipe}
+        onPressVote={handleToggleVote}
+        isVote={checkContain(votes, userId)}
       />
     </View>
   )

@@ -9,6 +9,7 @@ import {
   createRecipeStep,
   userToggleRecipe,
   publishRecipe,
+  userToggleVote,
 } from './mutation.graphql'
 
 export {
@@ -20,4 +21,5 @@ export {
   recipeDetail,
   userToggleRecipe,
   publishRecipe,
+  userToggleVote,
 }
