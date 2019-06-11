@@ -37,6 +37,8 @@ type Props = {
   ) => Promise<{ data: { createRecipe: { id: string } } }>,
   publishRecipe: (id: string) => Promise<{ data: { publishRecipe: { id: string } } }>,
   redirectAfterPublish: () => {},
+  customStyle: Object,
+  customStyleError: Object,
 }
 
 const RecipeForm = ({
@@ -45,6 +47,8 @@ const RecipeForm = ({
   createRecipe,
   publishRecipe,
   redirectAfterPublish,
+  customStyle,
+  customStyleError,
 }: Props) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
@@ -149,14 +153,17 @@ const RecipeForm = ({
   }
 
   return (
-    <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
+    <View style={[styles.wrapper, styles[`${size}Wrapper`], customStyle]}>
       <TextBox
         placeholder="Title"
         refInput={titleRef}
         customStyle={[styles.input, styles.inputTitle, styles[`${size}Input`]]}
         placeholderTextColor={COLORS.grayNavy}
       />
-      <Error message={errorValidator.title} />
+      <Error
+        message={errorValidator.title}
+        customStyle={customStyleError}
+      />
       <Icon
         name="add-a-photo"
         size={METRICS[`${size}Icon`] * 2}
@@ -192,7 +199,10 @@ const RecipeForm = ({
               </Text>
             ) : null}
             {error ? (
-              <Error message={error} />
+              <Error
+                message={error}
+                customStyle={customStyleError}
+              />
             ) : null}
           </View>
         ))}

@@ -13,7 +13,18 @@ const CreateRecipe = ({ history }: Props) => {
   )
 
   return (
-    <RecipeFormContainer redirectAfterPublish={redirectAfterPublish} />
+    <RecipeFormContainer
+      redirectAfterPublish={redirectAfterPublish}
+      customStyle={{
+        marginTop: '0',
+        marginBottom: '0',
+        marginRight: 'auto',
+        marginLeft: 'auto',
+      }}
+      customStyleError={{
+        color: 'red',
+      }}
+    />
   )
 }
 
