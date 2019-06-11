@@ -1,3 +1,4 @@
+import { Platform } from 'react-native'
 /**
  * Format string to array if string contain ,
  * @param {string} description
@@ -116,6 +117,17 @@ export const mergeArrayObject = (array1: Array<Item>, array2: Array<Item>) => {
   }, [])
 
   return newArray
+}
+
+/**
+ * Get value of text box by platform
+ * @param {RefElement} current
+ */
+export const getValueTextBox = current => {
+  if (current) {
+    const value = Platform.OS === 'web' ? current._node.value : current._lastNativeText
+    return value ? value.trim() : ''
+  }
 }
 
 /**

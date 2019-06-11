@@ -2,12 +2,14 @@ import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
 import { GET_RECIPES } from './query.graphql'
+import { TOGGLE_VOTE } from '../recipe-step/mutation.graphql'
 
 // Helpers
 import {
   checkContainField,
   formatFavoriteRecipe,
   formatFiledOnObject,
+  checkContain,
 } from '../../helpers/utils'
 
 const CREATE_RECIPE = gql`
@@ -166,9 +168,72 @@ const userToggleRecipe = graphql(TOGGLE_RECIPE, {
   },
 })
 
+const userToggleVote = graphql(TOGGLE_VOTE, {
+  props: ({ mutate }) => ({
+    userToggleVote: (recipeId, votes, userId) => mutate({
+      variables: {
+        recipeId,
+      },
+      optimisticResponse: {
+        userToggleVote: {
+          __typename: 'PayloadResults',
+          results: checkContain(votes, userId) ?
+            votes.filter(item => item !== userId)
+            :
+            votes.concat(userId),
+          recipeId,
+        },
+      },
+    }),
+  }),
+  options: () => ({
+    update: (proxy, { data }) => {
+      const {
+        userToggleVote: { results, recipeId },
+      } = data
+      try {
+        const dataQuery = proxy.readQuery({ query: GET_RECIPES })
+        const { getUser: { followCategory } } = dataQuery
+
+        const currentCategory = followCategory.find(category => (
+          category.recipes.find(recipe => recipe.id === recipeId)
+        ))
+
+        const followCategoryUpdated = followCategory.map(category => (
+          category.id === currentCategory.id ?
+            {
+              ...category,
+              recipes: category.recipes.map(recipe => (
+                recipe.id === recipeId ?
+                  {
+                    ...recipe,
+                    votes: results,
+                  } : recipe
+              )),
+            }
+            : category
+        ))
+
+        const dataUpdated = {
+          ...dataQuery,
+          getUser: {
+            ...dataQuery.getUser,
+            followCategory: followCategoryUpdated,
+          },
+        }
+
+        proxy.writeQuery({ query: GET_RECIPES, data: dataUpdated })
+      } catch (err) {
+        console.error(err)
+      }
+    },
+  }),
+})
+
 export {
   createRecipe,
   createRecipeStep,
   userToggleRecipe,
   publishRecipe,
+  userToggleVote,
 }

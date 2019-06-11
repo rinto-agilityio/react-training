@@ -9,6 +9,7 @@ import { COLORS, METRICS } from '../../../../themes'
 
 // Helpers
 import { validator } from '../../../../helpers/validators'
+import { getValueTextBox } from '../../../../helpers/utils'
 
 // Components
 import Directions from '../Recipe/Directions'
@@ -68,21 +69,20 @@ const DirectionsForm = ({
   ]
 
   const handleSubmit = async () => {
-    const title = stepTitleRef.current ? stepTitleRef.current._node.value.trim() : ''
+    const title = getValueTextBox(stepTitleRef.current)
     const errors = validator({
       title,
       step: nextStep,
       recipeId,
     })
-
-    if (!Object.keys(errors).length) {
+    if (!errors.isError) {
       try {
         await createRecipeStep(
           recipeId,
           title,
           nextStep,
           '',
-          stepDescriptionRef.current ? stepDescriptionRef.current._node.value.trim() : '',
+          getValueTextBox(stepDescriptionRef.current),
         ).then(({ data = {} }) => {
           directions.push(data.createRecipeStep)
           setDirections(directions)

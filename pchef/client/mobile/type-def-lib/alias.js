@@ -37,3 +37,11 @@ declare module '@constants/api' {
 declare module '@screen/RecipeStep' {
   declare module.exports: any;
 }
+
+declare module '@screen/RecipeForm' {
+  declare module.exports: any;
+}
+
+declare module '@helpers/upload-image' {
+  declare module.exports: any;
+}

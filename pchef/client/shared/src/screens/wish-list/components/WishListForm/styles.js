@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   icon: {
     display: 'flex',
     flexDirection: 'column',
-    backgroundColor: COLORS.green,
+    backgroundColor: COLORS.baseBlue,
     borderRadius: METRICS.mediumBorderRadius,
     ...METRICS.flexCenter,
     paddingRight: METRICS.mediumPadding,
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   wrapperMainPhoto: {
     ...METRICS.flexCenter,
     flexDirection: 'column',
-    backgroundColor: COLORS.green,
+    backgroundColor: COLORS.baseBlue,
     marginTop: METRICS.mediumMargin,
     marginBottom: METRICS.mediumMargin,
     paddingBottom: METRICS.mediumPadding,
@@ -41,6 +41,11 @@ const styles = StyleSheet.create({
   largeDialog: {
     width: METRICS.mediumContent,
     alignSelf: 'center',
+  },
+
+  // Text
+  text: {
+    marginBottom: METRICS.largeMargin,
   },
 
   // Input
@@ -53,10 +58,16 @@ const styles = StyleSheet.create({
   largeInput: {
     fontSize: FONTS.fontSize.medium,
   },
-  
+
   // Modal
   modal: {
     marginTop: METRICS.superLargeMargin,
+  },
+
+  // Button
+  button: {
+    zIndex: METRICS.iconZindex,
+    marginTop: METRICS.largeMargin,
   },
 })
 

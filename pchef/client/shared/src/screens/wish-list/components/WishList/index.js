@@ -89,6 +89,7 @@ const WishList = ({
           <Button
             title="Add Wishlist"
             onPress={() => handleRedirectWishlistForm()}
+            buttonStyle={styles.button}
           />
         )
       }

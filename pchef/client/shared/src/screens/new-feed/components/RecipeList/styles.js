@@ -33,15 +33,9 @@ const styles = StyleSheet.create({
     marginTop: METRICS.largeMargin,
   },
   tab: {
-    borderWidth: 2,
-    borderColor: 'black',
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
-    paddingTop: 20,
-    paddingBottom: 20,
-    paddingRight: 20,
-    paddingLeft: 20,
-    display: 'inline-block',
+    borderWidth: METRICS.smallBorderWidth,
+    borderTopLeftRadius: METRICS.mediumBorderRadius,
+    borderTopRightRadius: METRICS.mediumBorderRadius,
   },
   tabViewActive: {
     backgroundColor: COLORS.red,

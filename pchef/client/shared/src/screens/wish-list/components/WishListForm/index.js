@@ -1,6 +1,6 @@
 // Libs
 import React, { useState } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Platform } from 'react-native'
 
 // Styles
 import styles from './styles'
@@ -17,6 +17,7 @@ import CookingTypes from '../../../../containers/CookingTypes'
 import Error from '../../../../components/Error'
 import Wrapper from '../../../../layout/Wrapper';
 import Icon from '../../../../components/Icon'
+import Button from '../../../../components/Button';
 
 // Themes
 import { METRICS } from '../../../../themes'
@@ -28,11 +29,13 @@ type Props = {
     cookingTypeId: string,
     date: string,
   ) => Promise<{ data: { createWishList: { id: string } }}>,
+  handleRedirectWishlist: () => void,
 }
 
 const WishListForm = ({
   size = 'medium',
   createWishList,
+  handleRedirectWishlist,
 }: Props) => {
   const [visible, setVisible] = useState(false)
   const [visibleCategories, setVisibleCategories] = useState(false)
@@ -42,6 +45,8 @@ const WishListForm = ({
   const today = getDateForCalendar(Date.now())
   const [selectedDay, setSelectedDay] = useState(today)
   const [error, setError] = useState('')
+  const [errorValidator, setErrorValidator] = useState({})
+  const isWeb = Platform.OS === 'web'
 
   const dayRange = getDateOfWeek()
 
@@ -50,11 +55,13 @@ const WishListForm = ({
       label: 'Add categories',
       onPress: setVisibleCategories,
       value: category.name || '',
+      error: errorValidator.categoryId,
     },
     {
       label: 'Add cooking types',
       onPress: setVisibleCookingTypes,
       value: cookingType.name || '',
+      error: errorValidator.cookingTypeId,
     },
   ]
 
@@ -68,13 +75,22 @@ const WishListForm = ({
       cookingTypeId,
     })
 
-    if (!Object.keys(errors).length) {
+    if (errors) {
+      setErrorValidator(errors.errorMessage)
+    }
+
+    if (!errors.isError) {
       try {
         await createWishList(
           categoryId,
           cookingTypeId,
           getMilisecondsFromTime(date).toString(),
-        ).then(({ data = {} }) => data.createWishList)
+        ).then(({ data = {} }) => {
+          const { id } = data.createWishList
+          if (id) {
+            handleRedirectWishlist()
+          }
+        })
       } catch (err) {
         setError(err)
       }
@@ -116,7 +132,7 @@ const WishListForm = ({
         childPosition="middle"
         customStyles={[styles.wrapperIcon]}
       >
-        { dataIconClassify.map(({ onPress, label, value }, index) => (
+        { dataIconClassify.map(({ onPress, label, value, error }, index) => (
           <View key={`add-circle_${index}`} style={{ width: '100%' }}>
             <Icon
               name="add-circle"
@@ -127,9 +143,12 @@ const WishListForm = ({
               customStyle={styles[`${size}Input`]}
             />
             { value ? (
-              <Text style={[{ marginBottom: METRICS.largeMargin }, styles[`${size}Input`]]}>
+              <Text style={[styles.text, styles[`${size}Input`]]}>
                 { value }
               </Text>
+            ) : null }
+            { error ? (
+              <Error message={error} />
             ) : null }
           </View>
         )) }
@@ -159,6 +178,15 @@ const WishListForm = ({
               setCookingType(value)
               setVisibleCookingTypes(false)
             }}
+          />
+        )
+      }
+      {
+        isWeb && (
+          <Button
+            title="Add"
+            onPress={() => handleCreateWishList()}
+            buttonStyle={styles.button}
           />
         )
       }

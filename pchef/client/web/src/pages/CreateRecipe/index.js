@@ -3,8 +3,29 @@ import React from 'react'
 // Containers
 import RecipeFormContainer from 'pchef-shared/src/containers/RecipeForm'
 
-const CreateRecipe = () => (
-  <RecipeFormContainer />
-)
+type Props = {
+  history: Object
+}
+
+const CreateRecipe = ({ history }: Props) => {
+  const redirectAfterPublish = () => (
+    history.push('/')
+  )
+
+  return (
+    <RecipeFormContainer
+      redirectAfterPublish={redirectAfterPublish}
+      customStyle={{
+        marginTop: '0',
+        marginBottom: '0',
+        marginRight: 'auto',
+        marginLeft: 'auto',
+      }}
+      customStyleError={{
+        color: 'red',
+      }}
+    />
+  )
+}
 
 export default CreateRecipe

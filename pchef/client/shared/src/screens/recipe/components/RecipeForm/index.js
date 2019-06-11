@@ -10,6 +10,7 @@ import { COLORS, METRICS } from '../../../../themes'
 
 // Helpers
 import { validator } from '../../../../helpers/validators'
+import { getValueTextBox } from '../../../../helpers/utils'
 
 // Components
 import IngredientsForm from './IngredientsForm'
@@ -21,7 +22,9 @@ import Categories from '../../../../containers/Categories'
 import CookingTypes from '../../../../containers/CookingTypes'
 import DirectionForm from '../../../../containers/DirectionForm'
 import Error from '../../../../components/Error'
-import Button from '../../../../components/Button';
+import Image from '../../../../components/Image'
+import Button from '../../../../components/Button'
+import Loading from '../../../../components/Loading'
 
 type Props = {
   size: string,
@@ -35,16 +38,22 @@ type Props = {
     description: string,
     isDraft: boolean,
   ) => Promise<{ data: { createRecipe: { id: string } } }>,
-  publishRecipe: (id: string) => Promise<{ data:{ publishRecipe: { id: string } } }>,
+  previewImage?: string,
+  publishRecipe: (id: string) => Promise<{ data: { publishRecipe: { id: string } } }>,
   redirectAfterPublish: () => {},
+  customStyle: Object,
+  customStyleError: Object,
 }
 
 const RecipeForm = ({
   size = 'medium',
   handleAddRecipeImage,
   createRecipe,
+  previewImage,
   publishRecipe,
   redirectAfterPublish,
+  customStyle,
+  customStyleError,
 }: Props) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
@@ -61,7 +70,7 @@ const RecipeForm = ({
   const [errorValidator, setErrorValidator] = useState({})
 
   const handleCreateRecipe = async isOnpen => {
-    const title = titleRef.current ? titleRef.current._node.value.trim() : ''
+    const title = getValueTextBox(titleRef.current)
     const categoryId = category.id
     const cookingTypeId = cookingType.id
     const errors = validator({
@@ -71,17 +80,17 @@ const RecipeForm = ({
     })
 
     if (errors) {
-      setErrorValidator(errors)
+      setErrorValidator(errors.errorMessage)
     }
 
-    if (!Object.keys(errors).length) {
+    if (!errors.isError) {
       try {
         await createRecipe(
           categoryId,
           cookingTypeId,
           title,
-          subTitleRef.current ? subTitleRef.current._node.value.trim() : '',
-          '',
+          getValueTextBox(subTitleRef.current),
+          previewImage,
           ingredients,
           true,
         ).then(({ data }) => {
@@ -105,12 +114,12 @@ const RecipeForm = ({
   const handlePublishRecipe = async () => {
     try {
       await publishRecipe(recipe.id)
-      .then(({ data }) => {
-        const { id } = data.publishRecipe
-        if (id) {
-          redirectAfterPublish()
-        }
-      })
+        .then(({ data }) => {
+          const { id } = data.publishRecipe
+          if (id) {
+            redirectAfterPublish()
+          }
+        })
     } catch (err) {
       setError(err)
     }
@@ -124,7 +133,7 @@ const RecipeForm = ({
     },
     {
       name: 'create',
-      label: 'Write a step',
+      label: 'Save And Write Steps',
       onPress: handleCreateRecipe,
     },
   ]
@@ -149,14 +158,17 @@ const RecipeForm = ({
   }
 
   return (
-    <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
+    <View style={[styles.wrapper, styles[`${size}Wrapper`], customStyle]}>
       <TextBox
         placeholder="Title"
         refInput={titleRef}
         customStyle={[styles.input, styles.inputTitle, styles[`${size}Input`]]}
         placeholderTextColor={COLORS.grayNavy}
       />
-      <Error message={errorValidator.title} />
+      <Error
+        message={errorValidator.title}
+        customStyle={customStyleError}
+      />
       <Icon
         name="add-a-photo"
         size={METRICS[`${size}Icon`] * 2}
@@ -165,6 +177,9 @@ const RecipeForm = ({
         wrapperIconStyle={styles.wrapperMainPhoto}
         customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`]]}
       />
+      {previewImage ? (
+        <Image url={previewImage} customImageStyle={{ width: '100%', height: 150 }} />
+      ) : null}
       <TextBox
         placeholder="Subtitle"
         refInput={subTitleRef}
@@ -192,7 +207,10 @@ const RecipeForm = ({
               </Text>
             ) : null}
             {error ? (
-              <Error message={error} />
+              <Error
+                message={error}
+                customStyle={customStyleError}
+              />
             ) : null}
           </View>
         ))}
@@ -279,6 +297,7 @@ const RecipeForm = ({
 
 RecipeForm.defaultProps = {
   handleAddRecipeImage: () => {},
+  previewImage: '',
 }
 
 export default RecipeForm
