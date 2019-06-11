@@ -18,7 +18,6 @@ import client from './config/apollo-client'
 
 // Containers
 import LoginContainer from './containers/Login'
-import NewFeedContainer from './containers/NewFeed'
 
 type AppProps = {}
 
@@ -37,11 +36,10 @@ export default class App extends Component<AppProps> {
             <Text style={styles.welcome}>
               Shared-components for both Web and Mobile
             </Text>
-            {/* <LoginContainer
+            <LoginContainer
               type="secondary"
               handlingLoginSuccess={this.handlingLoginSuccess}
-            /> */}
-            <NewFeedContainer type="secondary" />
+            />
           </View>
         </PaperProvider>
       </ApolloProvider>
