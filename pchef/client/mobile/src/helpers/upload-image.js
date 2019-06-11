@@ -14,8 +14,7 @@ type params = {
  * @param  {object} { uri, type }
  */
 export const uploadImage = ({ uri, type }: params): any => {
-  const { Blob } = RNFetchBlob.polyfill
-  window.Blob = Blob
+  window.Blob = RNFetchBlob.polyfill.Blob
   window.XMLHttpRequest = RNFetchBlob.polyfill.XMLHttpRequest
 
   return new Promise((resolve, reject) => {
@@ -25,7 +24,7 @@ export const uploadImage = ({ uri, type }: params): any => {
 
     // create a blob from BASE64 encoded string
     RNFetchBlob.fs.readFile(uploadUri, 'base64')
-      .then(response => Blob.build(response, { type: 'application/octet-stream;base64' }))
+      .then(response => RNFetchBlob.polyfill.Blob.build(response, { type: 'application/octet-stream;base64' }))
       .then(blob => {
         tmpBlob = blob
         return imageRef.put(blob, { contentType: type })
