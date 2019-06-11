@@ -6,16 +6,14 @@ import { ScrollView } from 'react-native'
 import RecipeFormContainer from 'pchef-shared/src/containers/RecipeForm'
 
 // Helpers
-import { selectImage } from '@helpers/uploadImage'
+import { selectImage } from '@helpers/upload-image'
 
 const RecipeForm = () => {
   const childRef = useRef(null)
   const [url, setUrl] = useState()
 
   const handleAddRecipeImage = async () => {
-    await selectImage(url => {
-      setUrl(url)
-    })
+    await selectImage(url => setUrl(url))
   }
 
   return (

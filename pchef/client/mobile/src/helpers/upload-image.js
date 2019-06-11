@@ -2,18 +2,17 @@
 import ImagePicker from 'react-native-image-picker'
 import RNFetchBlob from 'react-native-fetch-blob'
 import { Platform } from 'react-native'
-
-const { storage } = require('@configs/firebase')
-
-/**
- * uploadImage
- * @param  {object} dataImage
- */
+import { storage } from '@configs/firebase'
 
 type params = {
   uri: string,
   type: string,
 }
+
+/**
+ * Upload image to firebase dtorage
+ * @param  {object} { uri, type }
+ */
 export const uploadImage = ({ uri, type }: params): any => {
   const { Blob } = RNFetchBlob.polyfill
   window.Blob = Blob
@@ -29,11 +28,10 @@ export const uploadImage = ({ uri, type }: params): any => {
       .then(response => Blob.build(response, { type: 'application/octet-stream;base64' }))
       .then(blob => {
         tmpBlob = blob
-        imageRef.put(blob, { contentType: type })
-        return tmpBlob
+        return imageRef.put(blob, { contentType: type })
       })
-      .then(tmpBlob => {
-        tmpBlob.close()
+      .then(() => {
+        tmpBlob && tmpBlob.close()
         return imageRef.getDownloadURL()
       })
       .then(url => {
@@ -45,6 +43,10 @@ export const uploadImage = ({ uri, type }: params): any => {
   })
 }
 
+/**
+ * Select image to upload
+ * @param {Function} callback
+ */
 export const selectImage = (callback: Function) => {
   const option = {
     title: 'Select a image',

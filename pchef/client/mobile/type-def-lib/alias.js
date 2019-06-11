@@ -42,6 +42,6 @@ declare module '@screen/RecipeForm' {
   declare module.exports: any;
 }
 
-declare module '@helpers/uploadImage' {
+declare module '@helpers/upload-image' {
   declare module.exports: any;
 }
