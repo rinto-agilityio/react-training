@@ -64,7 +64,6 @@ const RecipeForm = ({
   const [error, setError] = useState('')
   const [directors, setDirectors] = useState([])
   const [errorValidator, setErrorValidator] = useState({})
-  const [loadingImage, setLoadingImage] = useState(false)
 
   const handleCreateRecipe = async (isOnpen, url) => {
     const title = getValueTextBox(titleRef.current)
@@ -166,21 +165,14 @@ const RecipeForm = ({
       <Icon
         name="add-a-photo"
         size={METRICS[`${size}Icon`] * 2}
-        onPress={() => {
-          handleAddRecipeImage()
-          setLoadingImage(true)
-        }}
+        onPress={handleAddRecipeImage}
         label="Set cover photo"
         wrapperIconStyle={styles.wrapperMainPhoto}
         customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`]]}
       />
-      {
-        previewImage ? (
-          <Image url={previewImage} customImageStyle={{ width: '100%', height: 150 }} />
-        ) : (
-          loadingImage && <Loading size={size} />
-        )
-      }
+      {previewImage ? (
+        <Image url={previewImage} customImageStyle={{ width: '100%', height: 150 }} />
+      ) : null}
       <TextBox
         placeholder="Subtitle"
         refInput={subTitleRef}
