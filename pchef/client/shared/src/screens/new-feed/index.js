@@ -1,6 +1,6 @@
 // Libs
 import React, { useState } from 'react'
-import { ScrollView, View, Text } from 'react-native'
+import { ScrollView, View } from 'react-native'
 
 // Components
 import Header from '../../containers/Header'
@@ -69,7 +69,6 @@ const NewFeed = ({
   size = 'medium',
 }: Props) => {
   const [visible, setVisible] = useState(true)
-  const [isViewRecipeList, setIsViewRecipeList] = useState(true)
 
   const handleNavigateLogin = () => {
     setVisible(false)
@@ -118,26 +117,18 @@ const NewFeed = ({
           loading={loading}
           onPressCategoryPipeline={onPressCategoryPipeline}
         />
-        <View style={styles.tabListContainer}>
-          <View style={styles.tabWrap}>
-            <Text style={styles.tab} onPress={() => setIsViewRecipeList(true)}>
-              All Recipes
-            </Text>
-            <Text style={styles.tab} onPress={() => setIsViewRecipeList(false)}>
-              Top Votes Recipes
-            </Text>
-          </View>
-          {isViewRecipeList && recipesList ? (
-            <RecipeList
-              recipes={recipesList}
-              type={type}
-              favoriteRecipe={favoriteRecipe}
-              userToggleRecipe={userToggleRecipe}
-              handleClickRecipe={handleClickRecipe}
-            />
-          ) : <Text> Most View Data </Text>
-          }
-        </View>
+
+        {
+          recipesList && (
+          <RecipeList
+            recipes={recipesList}
+            type={type}
+            favoriteRecipe={favoriteRecipe}
+            userToggleRecipe={userToggleRecipe}
+            handleClickRecipe={handleClickRecipe}
+          />
+          )
+        }
       </View>
     </ScrollView>
   )
