@@ -64,7 +64,7 @@ const NewFeed = ({
   onPressLogo,
   userToggleRecipe,
   handleClickRecipe,
-  handleRedirectLogin,
+  handleRedirectLogin = () => {},
   onPressCategoryPipeline,
   size = 'medium',
 }: Props) => {
