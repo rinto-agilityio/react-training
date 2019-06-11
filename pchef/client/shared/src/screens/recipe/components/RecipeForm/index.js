@@ -22,7 +22,7 @@ import Categories from '../../../../containers/Categories'
 import CookingTypes from '../../../../containers/CookingTypes'
 import DirectionForm from '../../../../containers/DirectionForm'
 import Error from '../../../../components/Error'
-import ImageBackground from '../../../../components/ImageBackground'
+import Image from '../../../../components/Image'
 
 type Props = {
   size: string,
@@ -128,29 +128,17 @@ const RecipeForm = forwardRef(({
         customStyle={[styles.input, styles.inputTitle, styles[`${size}Input`]]}
         placeholderTextColor={COLORS.grayNavy}
       />
-      {
-        previewImage ? (
-          <ImageBackground url={previewImage} customImageBg={{ height: 150 }}>
-            <Icon
-              name="add-a-photo"
-              size={METRICS[`${size}Icon`] * 2}
-              onPress={handleAddRecipeImage}
-              label="Set cover photo"
-              wrapperIconStyle={styles.wrapperMainPhoto}
-              customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`]]}
-            />
-          </ImageBackground>
-        ) : (
-          <Icon
-            name="add-a-photo"
-            size={METRICS[`${size}Icon`] * 2}
-            onPress={handleAddRecipeImage}
-            label="Set cover photo"
-            wrapperIconStyle={styles.wrapperMainPhoto}
-            customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`]]}
-          />
-        )
-      }
+      <Icon
+        name="add-a-photo"
+        size={METRICS[`${size}Icon`] * 2}
+        onPress={handleAddRecipeImage}
+        label="Set cover photo"
+        wrapperIconStyle={styles.wrapperMainPhoto}
+        customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`]]}
+      />
+      {previewImage ? (
+        <Image url={previewImage} customImageStyle={{ width: '100%', height: 150 }} />
+      ) : null}
       <TextBox
         placeholder="Subtitle"
         refInput={subTitleRef}

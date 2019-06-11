@@ -72,6 +72,22 @@
     "react-native-storybook-loader": "^1.8.0",
     "react-test-renderer": "16.8.3"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && flow check"
+    }
+  },
+  "lint-staged": {
+    "{src}/**/*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{png,jpeg,jpg,gif,svg}": [
+      "imagemin-lint-staged",
+      "git add"
+    ]
+  },
   "config": {
     "react-native-storybook-loader": {
       "searchDir": [

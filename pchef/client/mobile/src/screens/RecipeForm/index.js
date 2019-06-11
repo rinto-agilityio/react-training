@@ -27,7 +27,7 @@ const RecipeForm = () => {
     <ScrollView style={{ marginTop: 30 }}>
       <RecipeFormContainer
         ref={childRef}
-        handleAddRecipeImage={handleAddRecipeImage}
+        handleAddRecipeImage={() => handleAddRecipeImage()}
         previewImage={url}
       />
       <Button
