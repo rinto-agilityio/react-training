@@ -40,7 +40,7 @@ const Login = ({
   const [followCategory, setFollowCategory] = useState([])
 
   useEffect(() => {
-    const followCategory = data.followCategory || []
+    const { followCategory } = data
     setFollowCategory(followCategory)
   }, [data.followCategory])
 
