@@ -23,6 +23,9 @@ import { recipes } from '../../../../mocks'
 // utils
 import { findStep, customError, checkContainField, formatFiledOnObject, compareStep } from '../../../../helpers/utils'
 
+// Constants
+import { DEFAULT_IMAGE } from '../../../../constants'
+
 type Props = {
   recipeSteps: Array<{
     description: string,
@@ -229,7 +232,7 @@ const Recipe = ({
           {subTitle}
         </Text>
         <ImageBackground
-          url={stepInfo.imgUrl}
+          url={stepInfo.imgUrl || DEFAULT_IMAGE}
           customImageBg={[
             styles.image,
             styles[`${size}Image`],

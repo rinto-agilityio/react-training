@@ -119,11 +119,15 @@ export const mergeArrayObject = (array1: Array<Item>, array2: Array<Item>) => {
   return newArray
 }
 
+type refProps = {
+  _node: HTMLInputElement,
+  _lastNativeText: string
+}
 /**
  * Get value of text box by platform
  * @param {RefElement} current
  */
-export const getValueTextBox = current => {
+export const getValueTextBox = (current: refProps | null) => {
   if (current) {
     const value = Platform.OS === 'web' ? current._node.value : current._lastNativeText
     return value ? value.trim() : ''
