@@ -5,6 +5,7 @@ import gql from 'graphql-tag'
 // GraphQL
 import { GET_USER } from './query.graphql'
 import { TOGGLE_VOTE, TOGGLE_RECIPE } from '../recipe-step/mutation.graphql'
+
 // Helpers
 import {
   checkContainField,
