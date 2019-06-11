@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderBottomWidth: METRICS.smallBorderWidth,
     borderColor: COLORS.baseGray,
-    margintop: METRICS.largeMargin,
+    marginTop: METRICS.largeMargin,
   },
   tab: {
     borderWidth: 2,
