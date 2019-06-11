@@ -1,5 +1,5 @@
 // Libs
-import { createStackNavigator } from 'react-navigation'
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation'
 
 // Components
 import RecipeDetail from '@screen/RecipeDetail'
@@ -7,6 +7,26 @@ import Home from '@screen/Home'
 import Category from '@screen/Category'
 import Welcome from '@screen/Welcome'
 import RecipeStep from '@screen/RecipeStep'
+import RecipeForm from '@screen/RecipeForm'
+
+const stackNavigator = createStackNavigator({
+  Home: {
+    screen: Home,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  Category,
+  RecipeDetail,
+  RecipeStep,
+})
+
+const TabNavigator = createBottomTabNavigator({
+  Home: {
+    screen: stackNavigator,
+  },
+  RecipeForm,
+})
 
 const PrivateNav = createStackNavigator(
   {
@@ -16,15 +36,12 @@ const PrivateNav = createStackNavigator(
         header: null,
       },
     },
-    Home: {
-      screen: Home,
+    TabNavigator: {
+      screen: TabNavigator,
       navigationOptions: {
         header: null,
       },
     },
-    Category,
-    RecipeDetail,
-    RecipeStep,
   },
 )
 

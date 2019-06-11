@@ -10,6 +10,7 @@ import { COLORS, METRICS } from '../../../../themes'
 
 // Helpers
 import { validator } from '../../../../helpers/validators'
+import { getValueTextBox } from '../../../../helpers/utils'
 
 // Components
 import IngredientsForm from './IngredientsForm'
@@ -21,7 +22,9 @@ import Categories from '../../../../containers/Categories'
 import CookingTypes from '../../../../containers/CookingTypes'
 import DirectionForm from '../../../../containers/DirectionForm'
 import Error from '../../../../components/Error'
-import Button from '../../../../components/Button';
+import Image from '../../../../components/Image'
+import Button from '../../../../components/Button'
+import Loading from '../../../../components/Loading'
 
 type Props = {
   size: string,
@@ -35,6 +38,7 @@ type Props = {
     description: string,
     isDraft: boolean,
   ) => Promise<{ data: { createRecipe: { id: string } } }>,
+  previewImage?: string,
   publishRecipe: (id: string) => Promise<{ data: { publishRecipe: { id: string } } }>,
   redirectAfterPublish: () => {},
   customStyle: Object,
@@ -45,6 +49,7 @@ const RecipeForm = ({
   size = 'medium',
   handleAddRecipeImage,
   createRecipe,
+  previewImage,
   publishRecipe,
   redirectAfterPublish,
   customStyle,
@@ -65,7 +70,7 @@ const RecipeForm = ({
   const [errorValidator, setErrorValidator] = useState({})
 
   const handleCreateRecipe = async isOnpen => {
-    const title = titleRef.current ? titleRef.current._node.value.trim() : ''
+    const title = getValueTextBox(titleRef.current)
     const categoryId = category.id
     const cookingTypeId = cookingType.id
     const errors = validator({
@@ -84,8 +89,8 @@ const RecipeForm = ({
           categoryId,
           cookingTypeId,
           title,
-          subTitleRef.current ? subTitleRef.current._node.value.trim() : '',
-          '',
+          getValueTextBox(subTitleRef.current),
+          previewImage,
           ingredients,
           true,
         ).then(({ data }) => {
@@ -172,6 +177,9 @@ const RecipeForm = ({
         wrapperIconStyle={styles.wrapperMainPhoto}
         customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`]]}
       />
+      {previewImage ? (
+        <Image url={previewImage} customImageStyle={{ width: '100%', height: 150 }} />
+      ) : null}
       <TextBox
         placeholder="Subtitle"
         refInput={subTitleRef}
@@ -289,6 +297,7 @@ const RecipeForm = ({
 
 RecipeForm.defaultProps = {
   handleAddRecipeImage: () => {},
+  previewImage: '',
 }
 
 export default RecipeForm

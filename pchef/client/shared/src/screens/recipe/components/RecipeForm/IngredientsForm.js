@@ -12,6 +12,9 @@ import { COLORS, METRICS } from '../../../../themes'
 import TextBox from '../../../../components/TextBox'
 import Modal from '../../../../components/Modal'
 
+// Helpers
+import { getValueTextBox } from '../../../../helpers/utils'
+
 type Props = {
   size: string,
   visible?: boolean,
@@ -32,7 +35,7 @@ const IngredientsForm = ({
       title="Ingredients"
       dismissBtn
       onDismiss={onDismiss}
-      onSubmit={() => handleSubmitIngredients(ingredientRef.current ? ingredientRef.current._node.value.trim() : '')}
+      onSubmit={() => handleSubmitIngredients(getValueTextBox(ingredientRef.current))}
       visible={visible}
       size={size}
     >

@@ -71,6 +71,14 @@ declare module '@react-native-community/async-storage' {
   declare module.exports: any
 }
 
+declare module 'react-native-image-picker' {
+  declare module.exports: any
+}
+
+declare module 'react-native-fetch-blob' {
+  declare module.exports: any
+}
+
 // react libs
 declare module 'react-navigation' {
   declare module.exports: any
@@ -148,5 +156,9 @@ declare module 'pchef-shared/src/containers/RecipeStep' {
 }
 
 declare module 'pchef-shared/src/containers/Recipe' {
+  declare module.exports: any;
+}
+
+declare module 'pchef-shared/src/containers/RecipeForm' {
   declare module.exports: any;
 }
