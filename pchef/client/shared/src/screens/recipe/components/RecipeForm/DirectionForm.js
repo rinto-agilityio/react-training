@@ -74,8 +74,7 @@ const DirectionsForm = ({
       step: nextStep,
       recipeId,
     })
-
-    if (!Object.keys(errors).length) {
+    if (!errors.isError) {
       try {
         await createRecipeStep(
           recipeId,

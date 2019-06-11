@@ -35,8 +35,10 @@ type Props = {
     description: string,
     isDraft: boolean,
   ) => Promise<{ data: { createRecipe: { id: string } } }>,
-  publishRecipe: (id: string) => Promise<{ data:{ publishRecipe: { id: string } } }>,
+  publishRecipe: (id: string) => Promise<{ data: { publishRecipe: { id: string } } }>,
   redirectAfterPublish: () => {},
+  customStyle: Object,
+  customStyleError: Object,
 }
 
 const RecipeForm = ({
@@ -45,6 +47,8 @@ const RecipeForm = ({
   createRecipe,
   publishRecipe,
   redirectAfterPublish,
+  customStyle,
+  customStyleError,
 }: Props) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
@@ -71,10 +75,10 @@ const RecipeForm = ({
     })
 
     if (errors) {
-      setErrorValidator(errors)
+      setErrorValidator(errors.errorMessage)
     }
 
-    if (!Object.keys(errors).length) {
+    if (!errors.isError) {
       try {
         await createRecipe(
           categoryId,
@@ -105,12 +109,12 @@ const RecipeForm = ({
   const handlePublishRecipe = async () => {
     try {
       await publishRecipe(recipe.id)
-      .then(({ data }) => {
-        const { id } = data.publishRecipe
-        if (id) {
-          redirectAfterPublish()
-        }
-      })
+        .then(({ data }) => {
+          const { id } = data.publishRecipe
+          if (id) {
+            redirectAfterPublish()
+          }
+        })
     } catch (err) {
       setError(err)
     }
@@ -124,7 +128,7 @@ const RecipeForm = ({
     },
     {
       name: 'create',
-      label: 'Write a step',
+      label: 'Save And Write Steps',
       onPress: handleCreateRecipe,
     },
   ]
@@ -149,14 +153,17 @@ const RecipeForm = ({
   }
 
   return (
-    <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
+    <View style={[styles.wrapper, styles[`${size}Wrapper`], customStyle]}>
       <TextBox
         placeholder="Title"
         refInput={titleRef}
         customStyle={[styles.input, styles.inputTitle, styles[`${size}Input`]]}
         placeholderTextColor={COLORS.grayNavy}
       />
-      <Error message={errorValidator.title} />
+      <Error
+        message={errorValidator.title}
+        customStyle={customStyleError}
+      />
       <Icon
         name="add-a-photo"
         size={METRICS[`${size}Icon`] * 2}
@@ -192,7 +199,10 @@ const RecipeForm = ({
               </Text>
             ) : null}
             {error ? (
-              <Error message={error} />
+              <Error
+                message={error}
+                customStyle={customStyleError}
+              />
             ) : null}
           </View>
         ))}
