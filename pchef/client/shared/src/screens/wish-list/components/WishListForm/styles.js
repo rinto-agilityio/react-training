@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
 
   // Text
   text: {
-    marginBottom: 20,
+    marginBottom: METRICS.largeMargin,
   },
 
   // Input
