@@ -3,8 +3,14 @@ import React from 'react'
 // Containers
 import WishListFormContainer from 'pchef-shared/src/containers/WishListForm'
 
-const WishList = () => (
-  <WishListFormContainer />
+type Props = {
+  history: Object
+}
+
+const WishList = ({ history }: Props) => (
+  <WishListFormContainer
+    handleRedirectWishlist={() => history.push('/wishlist')}
+  />
 )
 
 export default WishList
