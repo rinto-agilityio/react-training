@@ -11,7 +11,6 @@ const screenWidth = Math.round(Dimensions.get('window').width)
 const styles = StyleSheet.create({
   recipe: {
     width: '32.5%',
-    boxSizing: 'border-box',
     marginBottom: METRICS.mediumMargin,
   },
   wrapper: {
