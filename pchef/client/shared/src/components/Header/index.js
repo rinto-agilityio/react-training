@@ -7,6 +7,7 @@ import { Avatar, Provider, Menu } from 'react-native-paper'
 import Icon from '../Icon'
 import Loading from '../Loading'
 import Error from '../Error'
+import Button from '../Button'
 
 // Themes
 import { COLORS, FONTS } from '../../themes'
@@ -65,6 +66,11 @@ const Header = ({
             </TouchableOpacity>
           </View>
           <View style={styles.wrapUserInfo}>
+            <Button
+              onPress={() => {}}
+              title="Create Recipe"
+              buttonStyle={styles.createRecipeBtn}
+            />
             <Provider>
               <Menu
                 style={styles.avataDropdown}

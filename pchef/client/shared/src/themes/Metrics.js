@@ -42,6 +42,7 @@ export default {
   smallPosition: 10,
   mediumPosition: 15,
   largePosition: 50,
+  extraLargePosition: 150,
 
   // Line Height
   smallLineHeight: 21,
