@@ -9,14 +9,15 @@ import NewFeed from 'pchef-shared/src/containers/NewFeed'
 import ROUTES from '@constants/routes'
 
 type Props = {
-  navigation: {
-    navigate: NavigationScreenProps,
-  },
+  navigation: NavigationScreenProps,
 }
+
 const Home = ({ navigation }: Props) => (
   <NewFeed
     onPressCategoryIcon={() => navigation.navigate(ROUTES.WELCOME)}
     handleClickRecipe={id => navigation.navigate(ROUTES.DETAIL, { recipeId: id })}
+
+    onPressCategoryPipeline={id => navigation.navigate(ROUTES.CATEGORY, { categoryId: id })}
   />
 )
 
