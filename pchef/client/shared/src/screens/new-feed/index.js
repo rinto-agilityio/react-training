@@ -70,7 +70,7 @@ const NewFeed = ({
   onPressLogo,
   userToggleRecipe,
   handleClickRecipe,
-  handleRedirectLogin,
+  handleRedirectLogin = () => {},
   onPressCategoryPipeline,
   size = 'medium',
   userToggleVote,
@@ -125,7 +125,8 @@ const NewFeed = ({
           onPressCategoryPipeline={onPressCategoryPipeline}
         />
 
-        {recipesList && (
+        {
+          recipesList && (
           <RecipeList
             recipes={recipesList}
             type={type}
@@ -135,7 +136,8 @@ const NewFeed = ({
             userToggleVote={userToggleVote}
             userId={user.id}
           />
-        )}
+          )
+        }
       </View>
     </ScrollView>
   )

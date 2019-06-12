@@ -152,3 +152,11 @@ export const updateArrayById = (arr: Array<Item>, id: string, results: Object) =
  * Checking contain item in array
  */
 export const checkContain = (arr: Array<string>, currentId: string) => arr.findIndex(item => item === currentId) !== -1
+
+/**
+ * Sort recipes by top votes
+*/
+export const sortRecipes = (recipes: Array<Item>) => {
+  const newList: Array<Item> = recipes.sort((a, b) => b.votes.length - a.votes.length)
+  return newList
+}
