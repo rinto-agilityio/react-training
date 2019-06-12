@@ -2,7 +2,7 @@
 
 exports[`Components Error should render Error component 1`] = `
 <div
-  className="css-text-76zvg2 r-color-1vs7qoz r-fontSize-1i10wst r-fontStyle-36ujnk"
+  className="css-text-901oao r-color-1vs7qoz r-fontSize-1i10wst r-fontStyle-36ujnk"
   dir="auto"
 >
   Failed!!!

@@ -5,7 +5,7 @@ exports[`Login snapshots 1`] = `
   className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1umu7ot r-flex-13awgt0 r-position-bnwqim r-width-13qz1uu"
 >
   <div
-    className="css-text-76zvg2 r-color-jwli3a r-fontSize-1ra0lkn r-fontWeight-vw2c0b r-marginTop-qhrmrs r-textAlign-q4m81j"
+    className="css-text-901oao r-color-jwli3a r-fontSize-1ra0lkn r-fontWeight-vw2c0b r-marginTop-qhrmrs r-textAlign-q4m81j"
     dir="auto"
   >
     PChef
@@ -22,16 +22,16 @@ exports[`Login snapshots 1`] = `
     }
   >
     <div
-      className="css-view-1dbjc4n r-borderColor-1qh06s0 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-marginBottom-ku1wi2"
+      className="css-view-1dbjc4n r-borderColor-1qh06s0 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-marginBottom-ku1wi2 r-width-13qz1uu"
     >
       <div
-        className="css-view-1dbjc4n r-flex-13awgt0 r-flexDirection-18u37iz"
+        className="css-view-1dbjc4n"
       >
         <input
           autoCapitalize="none"
           autoComplete="on"
           autoCorrect="off"
-          className="css-textinput-1cwyjr8 r-borderBottomWidth-ndvcnb r-borderColor-34efmp r-borderRadius-1xfd6ze r-color-cqee49 r-flex-13awgt0 r-fontSize-ubezar r-height-eu3ka r-paddingLeft-1yt7n81 r-paddingRight-ry3cjt r-placeholderTextColor-d9raxc"
+          className="css-textinput-1cwyjr8 r-borderBottomWidth-ndvcnb r-borderColor-34efmp r-borderRadius-1xfd6ze r-color-cqee49 r-fontSize-ubezar r-height-eu3ka r-paddingLeft-1yt7n81 r-paddingRight-ry3cjt r-placeholderTextColor-d9raxc"
           data-focusable={true}
           defaultValue=""
           dir="auto"
@@ -49,16 +49,16 @@ exports[`Login snapshots 1`] = `
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-borderColor-1qh06s0 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-marginBottom-ku1wi2"
+      className="css-view-1dbjc4n r-borderColor-1qh06s0 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-marginBottom-ku1wi2 r-width-13qz1uu"
     >
       <div
-        className="css-view-1dbjc4n r-flex-13awgt0 r-flexDirection-18u37iz"
+        className="css-view-1dbjc4n"
       >
         <input
           autoCapitalize="none"
           autoComplete="on"
           autoCorrect="off"
-          className="css-textinput-1cwyjr8 r-borderBottomWidth-ndvcnb r-borderColor-34efmp r-borderRadius-1xfd6ze r-color-cqee49 r-flex-13awgt0 r-fontSize-ubezar r-height-eu3ka r-paddingLeft-1yt7n81 r-paddingRight-ry3cjt r-placeholderTextColor-d9raxc"
+          className="css-textinput-1cwyjr8 r-borderBottomWidth-ndvcnb r-borderColor-34efmp r-borderRadius-1xfd6ze r-color-cqee49 r-fontSize-ubezar r-height-eu3ka r-paddingLeft-1yt7n81 r-paddingRight-ry3cjt r-placeholderTextColor-d9raxc"
           data-focusable={true}
           defaultValue=""
           dir="auto"
@@ -76,7 +76,7 @@ exports[`Login snapshots 1`] = `
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-borderColor-1qh06s0 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-marginBottom-ku1wi2"
+      className="css-view-1dbjc4n r-borderColor-1qh06s0 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-marginBottom-ku1wi2 r-width-13qz1uu"
     >
       <div
         className="css-view-1dbjc4n r-alignItems-1awozwy r-borderRadius-1xfd6ze r-justifyContent-1777fci"
@@ -134,7 +134,7 @@ exports[`Login snapshots 1`] = `
             className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1umu7ot r-borderRadius-1xfd6ze r-flexDirection-18u37iz r-height-1iud8zs r-justifyContent-1777fci r-width-8upyzv"
           >
             <div
-              className="css-text-76zvg2 css-textOneLine-bfa6kz r-color-cqee49 r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
+              className="css-text-901oao css-textOneLine-bfa6kz r-color-cqee49 r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
               dir="auto"
               style={
                 Object {
@@ -144,7 +144,7 @@ exports[`Login snapshots 1`] = `
               }
             >
               <span
-                className="css-text-76zvg2 css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+                className="css-text-901oao css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
                 dir="auto"
                 style={
                   Object {
@@ -181,16 +181,16 @@ exports[`Login snapshots 2`] = `
     }
   >
     <div
-      className="css-view-1dbjc4n r-borderColor-1qh06s0 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-marginBottom-ku1wi2"
+      className="css-view-1dbjc4n r-borderColor-1qh06s0 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-marginBottom-ku1wi2 r-width-13qz1uu"
     >
       <div
-        className="css-view-1dbjc4n r-flex-13awgt0 r-flexDirection-18u37iz"
+        className="css-view-1dbjc4n"
       >
         <input
           autoCapitalize="none"
           autoComplete="on"
           autoCorrect="off"
-          className="css-textinput-1cwyjr8 r-borderBottomWidth-ndvcnb r-borderColor-34efmp r-borderRadius-1xfd6ze r-color-cqee49 r-flex-13awgt0 r-fontSize-1i10wst r-height-eu3ka r-paddingLeft-1yt7n81 r-paddingRight-ry3cjt r-placeholderTextColor-d9raxc"
+          className="css-textinput-1cwyjr8 r-borderBottomWidth-ndvcnb r-borderColor-34efmp r-borderRadius-1xfd6ze r-color-cqee49 r-fontSize-1i10wst r-height-eu3ka r-paddingLeft-1yt7n81 r-paddingRight-ry3cjt r-placeholderTextColor-d9raxc"
           data-focusable={true}
           defaultValue=""
           dir="auto"
@@ -208,16 +208,16 @@ exports[`Login snapshots 2`] = `
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-borderColor-1qh06s0 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-marginBottom-ku1wi2"
+      className="css-view-1dbjc4n r-borderColor-1qh06s0 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-marginBottom-ku1wi2 r-width-13qz1uu"
     >
       <div
-        className="css-view-1dbjc4n r-flex-13awgt0 r-flexDirection-18u37iz"
+        className="css-view-1dbjc4n"
       >
         <input
           autoCapitalize="none"
           autoComplete="on"
           autoCorrect="off"
-          className="css-textinput-1cwyjr8 r-borderBottomWidth-ndvcnb r-borderColor-34efmp r-borderRadius-1xfd6ze r-color-cqee49 r-flex-13awgt0 r-fontSize-1i10wst r-height-eu3ka r-paddingLeft-1yt7n81 r-paddingRight-ry3cjt r-placeholderTextColor-d9raxc"
+          className="css-textinput-1cwyjr8 r-borderBottomWidth-ndvcnb r-borderColor-34efmp r-borderRadius-1xfd6ze r-color-cqee49 r-fontSize-1i10wst r-height-eu3ka r-paddingLeft-1yt7n81 r-paddingRight-ry3cjt r-placeholderTextColor-d9raxc"
           data-focusable={true}
           defaultValue=""
           dir="auto"
@@ -235,7 +235,7 @@ exports[`Login snapshots 2`] = `
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-borderColor-1qh06s0 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-marginBottom-ku1wi2"
+      className="css-view-1dbjc4n r-borderColor-1qh06s0 r-borderRadius-1xfd6ze r-borderWidth-rs99b7 r-marginBottom-ku1wi2 r-width-13qz1uu"
     >
       <div
         className="css-view-1dbjc4n r-alignItems-1awozwy r-borderRadius-1xfd6ze r-justifyContent-1777fci"
@@ -293,7 +293,7 @@ exports[`Login snapshots 2`] = `
             className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1umu7ot r-borderRadius-1xfd6ze r-flexDirection-18u37iz r-height-1iud8zs r-justifyContent-1777fci r-width-1ipicw7"
           >
             <div
-              className="css-text-76zvg2 css-textOneLine-bfa6kz r-color-cqee49 r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
+              className="css-text-901oao css-textOneLine-bfa6kz r-color-cqee49 r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
               dir="auto"
               style={
                 Object {
@@ -303,7 +303,7 @@ exports[`Login snapshots 2`] = `
               }
             >
               <span
-                className="css-text-76zvg2 css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+                className="css-text-901oao css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
                 dir="auto"
                 style={
                   Object {

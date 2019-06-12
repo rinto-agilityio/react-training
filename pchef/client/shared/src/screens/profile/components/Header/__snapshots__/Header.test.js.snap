@@ -27,16 +27,16 @@ Array [
           style={
             Object {
               "borderBottomColor": "rgba(255,255,255,1.00)",
-              "borderBottomLeftRadius": "50%",
-              "borderBottomRightRadius": "50%",
+              "borderBottomLeftRadius": "40px",
+              "borderBottomRightRadius": "40px",
               "borderBottomWidth": "3px",
               "borderLeftColor": "rgba(255,255,255,1.00)",
               "borderLeftWidth": "3px",
               "borderRightColor": "rgba(255,255,255,1.00)",
               "borderRightWidth": "3px",
               "borderTopColor": "rgba(255,255,255,1.00)",
-              "borderTopLeftRadius": "50%",
-              "borderTopRightRadius": "50%",
+              "borderTopLeftRadius": "40px",
+              "borderTopRightRadius": "40px",
               "borderTopWidth": "3px",
               "height": "80px",
               "marginBottom": "-10px",
@@ -66,7 +66,7 @@ Array [
     className="css-view-1dbjc4n r-backgroundColor-14lw9ot r-flexDirection-18u37iz r-justifyContent-1wtj0ep r-marginLeft-1jj8364 r-marginRight-lchren r-maxWidth-c3zab1 r-padding-1pcd2l5 r-width-13qz1uu r-zIndex-1wyyakw"
   >
     <div
-      className="css-text-76zvg2 r-fontSize-adyw6z r-fontWeight-1kfrs79"
+      className="css-text-901oao r-fontSize-adyw6z r-fontWeight-1kfrs79"
       dir="auto"
     >
       Alex
@@ -136,7 +136,7 @@ Array [
           className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-justifyContent-1777fci"
         >
           <div
-            className="css-text-76zvg2 css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
+            className="css-text-901oao css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
             dir="auto"
             style={
               Object {
@@ -147,7 +147,7 @@ Array [
             }
           >
             <span
-              className="css-text-76zvg2 css-textHasAncestor-16my406 r-color-cqee49 r-fontWeight-1kfrs79 r-textTransform-3twk1y"
+              className="css-text-901oao css-textHasAncestor-16my406 r-color-cqee49 r-fontWeight-1kfrs79 r-textTransform-3twk1y"
               dir="auto"
               style={
                 Object {
