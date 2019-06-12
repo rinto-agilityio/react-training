@@ -20,6 +20,7 @@ const CreateRecipe = ({ history }: Props) => {
         marginBottom: '0',
         marginRight: 'auto',
         marginLeft: 'auto',
+        minWidth: '800px',
       }}
       customStyleError={{
         color: 'red',
