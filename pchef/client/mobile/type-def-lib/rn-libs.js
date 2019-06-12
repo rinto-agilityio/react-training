@@ -162,3 +162,7 @@ declare module 'pchef-shared/src/containers/Recipe' {
 declare module 'pchef-shared/src/containers/RecipeForm' {
   declare module.exports: any;
 }
+
+declare module 'pchef-shared/src/containers/Profile' {
+  declare module.exports: any;
+}
