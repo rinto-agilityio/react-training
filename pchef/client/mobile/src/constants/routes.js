@@ -5,6 +5,7 @@ const ROUTES = {
   DETAIL: 'RecipeDetail',
   WELCOME: 'Welcome',
   STEP: 'RecipeStep',
+  PROFILE: 'Profile',
 }
 
 export default ROUTES

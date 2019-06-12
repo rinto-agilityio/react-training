@@ -8,6 +8,7 @@ import Category from '@screen/Category'
 import Welcome from '@screen/Welcome'
 import RecipeStep from '@screen/RecipeStep'
 import RecipeForm from '@screen/RecipeForm'
+import Profile from '@screen/Profile'
 
 const stackNavigator = createStackNavigator({
   Home: {
@@ -26,6 +27,7 @@ const TabNavigator = createBottomTabNavigator({
     screen: stackNavigator,
   },
   RecipeForm,
+  Profile,
 })
 
 const PrivateNav = createStackNavigator(
