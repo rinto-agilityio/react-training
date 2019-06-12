@@ -48,8 +48,21 @@ type Props = {
     userId: string
   ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
   client: Object,
+  size: string,
+  store: Object,
+  handleRedirectLogin?: () => void,
 }
-const Profile = ({ data, client, loading, error, userToggleRecipe, userToggleVote }: Props) => {
+const Profile = ({
+  data,
+  client,
+  loading,
+  error,
+  userToggleRecipe,
+  userToggleVote,
+  size = 'small',
+  store,
+  handleRedirectLogin = () => {},
+}: Props) => {
   const [isOpenModal, setIsOpenModal] = useState(false)
 
   const handleToSetting = () => {
@@ -58,15 +71,16 @@ const Profile = ({ data, client, loading, error, userToggleRecipe, userToggleVot
 
   const handleLogout = () => {
     client.resetStore()
-    localStorage.removeItem('token')
+    store ? store.removeItem('token') : localStorage.removeItem('token')
     setIsOpenModal(false)
+    handleRedirectLogin()
   }
 
   const errorMessage =
     'Can not load information of user. Please check for connection!!!'
 
   if (loading) {
-    return <Loading />
+    return <Loading size={size} />
   }
 
   if (error) {
@@ -101,6 +115,10 @@ const Profile = ({ data, client, loading, error, userToggleRecipe, userToggleVot
       </Modal>
     </View>
   )
+}
+
+Profile.defaultProps = {
+  handleRedirectLogin: () => {},
 }
 
 export default withApollo(Profile)

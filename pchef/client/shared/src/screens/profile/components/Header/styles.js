@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     height: METRICS.extraSmallImage,
     borderWidth: METRICS.mediumBorderWidth,
     borderColor: COLORS.white,
-    borderRadius: '50%',
+    borderRadius: METRICS.extraSmallImage / 2,
     marginBottom: -METRICS.mediumMargin,
   },
   largeImage: {
