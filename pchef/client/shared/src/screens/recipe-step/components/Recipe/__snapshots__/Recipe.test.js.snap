@@ -1,6 +1,155 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Recipe by step Renders correctly progress steps commponent 1`] = `ShallowWrapper {}`;
+exports[`Recipe by step Render progress step component with steps array 1`] = `
+<div
+  className="css-view-1dbjc4n r-alignItems-1awozwy r-display-6koalj r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-a2tzq0"
+  style={
+    Object {
+      "WebkitBoxFlex": 0,
+      "WebkitFlexGrow": 0,
+      "flexGrow": 0,
+      "msFlexPositive": 0,
+    }
+  }
+>
+  <div
+    className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz"
+  >
+    <div
+      aria-disabled={true}
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-height-1r8g8re r-justifyContent-1777fci r-opacity-qzm50q r-overflow-bztko3 r-userSelect-lrvibr r-width-1acpoxo"
+      disabled={true}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      role="button"
+      style={
+        Object {
+          "marginBottom": "0px",
+          "marginLeft": "0px",
+          "marginRight": "0px",
+          "marginTop": "0px",
+        }
+      }
+    >
+      <span
+        className="css-hitSlop-mjp8i1"
+        style={
+          Object {
+            "bottom": "-6px",
+            "left": "-6px",
+            "right": "-6px",
+            "top": "-6px",
+          }
+        }
+      />
+      <div
+        className="css-view-1dbjc4n"
+      >
+        <div
+          className="css-text-901oao r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+          dir="auto"
+          focusable={false}
+          role="img"
+          style={
+            Object {
+              "WebkitTransform": "scaleX(1)",
+              "color": "rgba(197,197,197,1.00)",
+              "fontFamily": "MaterialIcons",
+              "fontSize": "18px",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "transform": "scaleX(1)",
+            }
+          }
+        >
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-view-1dbjc4n r-alignItems-1awozwy r-display-6koalj r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-a2tzq0"
+    style={
+      Object {
+        "WebkitBoxFlex": 0,
+        "WebkitFlexGrow": 0,
+        "flexGrow": 0,
+        "msFlexPositive": 0,
+      }
+    }
+  />
+  <div
+    className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz"
+  >
+    <div
+      className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+      data-focusable={true}
+      disabled={false}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      role="button"
+      style={
+        Object {
+          "marginBottom": "0px",
+          "marginLeft": "0px",
+          "marginRight": "0px",
+          "marginTop": "0px",
+        }
+      }
+      tabIndex="0"
+    >
+      <span
+        className="css-hitSlop-mjp8i1"
+        style={
+          Object {
+            "bottom": "-6px",
+            "left": "-6px",
+            "right": "-6px",
+            "top": "-6px",
+          }
+        }
+      />
+      <div
+        className="css-view-1dbjc4n"
+      >
+        <div
+          className="css-text-901oao r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+          dir="auto"
+          focusable={false}
+          role="img"
+          style={
+            Object {
+              "WebkitTransform": "scaleX(1)",
+              "color": "rgba(66,165,245,1.00)",
+              "fontFamily": "MaterialIcons",
+              "fontSize": "18px",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "transform": "scaleX(1)",
+            }
+          }
+        >
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Recipe by step Renders correctly progress steps commponent 1`] = `[Function]`;
 
 exports[`Recipe by step Renders correctly recipe commponent 1`] = `
 <div

@@ -5,29 +5,53 @@ exports[`Screens Settings should render Setting screen 1`] = `
   className="css-view-1dbjc4n r-padding-1sp51qo r-width-13qz1uu"
 >
   <div
-    className="css-text-76zvg2 r-color-1h2fve2"
+    className="css-text-901oao r-color-1h2fve2"
     dir="auto"
   >
     User name:
   </div>
-  <div
-    className="css-text-76zvg2 r-borderBottomWidth-qklmqi r-borderColor-34efmp r-borderStyle-1phboty r-color-cqee49 r-flex-13awgt0 r-fontSize-1i10wst r-height-1g7fiml r-marginBottom-1yflyrw r-marginTop-156q2ks"
+  <input
+    autoCapitalize="sentences"
+    autoComplete="on"
+    autoCorrect="on"
+    className="css-textinput-1cwyjr8 r-borderBottomWidth-qklmqi r-borderColor-34efmp r-borderStyle-1phboty r-color-cqee49 r-flex-13awgt0 r-fontSize-1i10wst r-height-1g7fiml r-marginBottom-1yflyrw r-marginTop-156q2ks"
+    data-focusable={true}
     dir="auto"
-  >
-    Alex
-  </div>
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyPress={[Function]}
+    onSelect={[Function]}
+    readOnly={true}
+    spellCheck={true}
+    type="text"
+    value="Alex"
+  />
   <div
-    className="css-text-76zvg2 r-color-1h2fve2"
+    className="css-text-901oao r-color-1h2fve2"
     dir="auto"
   >
     Email:
   </div>
-  <div
-    className="css-text-76zvg2 r-borderBottomWidth-qklmqi r-borderColor-34efmp r-borderStyle-1phboty r-color-cqee49 r-flex-13awgt0 r-fontSize-1i10wst r-height-1g7fiml r-marginBottom-1yflyrw r-marginTop-156q2ks"
+  <input
+    autoCapitalize="sentences"
+    autoComplete="on"
+    autoCorrect="on"
+    className="css-textinput-1cwyjr8 r-borderBottomWidth-qklmqi r-borderColor-34efmp r-borderStyle-1phboty r-color-cqee49 r-flex-13awgt0 r-fontSize-1i10wst r-height-1g7fiml r-marginBottom-1yflyrw r-marginTop-156q2ks"
+    data-focusable={true}
     dir="auto"
-  >
-    alex@gmail.com
-  </div>
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyPress={[Function]}
+    onSelect={[Function]}
+    readOnly={true}
+    spellCheck={true}
+    type="text"
+    value="alex@gmail.com"
+  />
   <div
     className="css-view-1dbjc4n r-borderStyle-1phboty"
     style={
@@ -93,7 +117,7 @@ exports[`Screens Settings should render Setting screen 1`] = `
         className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-justifyContent-1777fci"
       >
         <div
-          className="css-text-76zvg2 css-textOneLine-bfa6kz r-color-cqee49 r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
+          className="css-text-901oao css-textOneLine-bfa6kz r-color-cqee49 r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
           dir="auto"
           style={
             Object {
@@ -103,7 +127,7 @@ exports[`Screens Settings should render Setting screen 1`] = `
           }
         >
           <span
-            className="css-text-76zvg2 css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+            className="css-text-901oao css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
             dir="auto"
             style={
               Object {
