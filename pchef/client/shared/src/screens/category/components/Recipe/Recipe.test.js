@@ -18,20 +18,20 @@ describe('Components', () => {
   describe('Recipe', () => {
     let wrapper
     let handlePressImage
-    let handlePressIcon
+    let onPressIcon
 
     beforeEach(() => {
       handlePressImage = jest.fn()
       handlePressImage.mockReturnValue('Image on press invoked')
 
-      handlePressIcon = jest.fn()
-      handlePressIcon.mockReturnValue('Icon on press invoked')
+      onPressIcon = jest.fn()
+      onPressIcon.mockReturnValue('Icon on press invoked')
 
       wrapper = shallow(
         <Recipe
           {...props}
           handlePressImage={handlePressImage}
-          handlePressIcon={handlePressIcon}
+          onPressIcon={onPressIcon}
         />,
       )
     })
@@ -49,12 +49,12 @@ describe('Components', () => {
       expect(handlePressImage.mock.calls.length).toBe(1)
     })
 
-    it('should call handlePressIcon when press on Icon', () => {
+    it('should call onPressIcon when press on Icon', () => {
       wrapper
         .find(Icon)
         .props()
         .onPress()
-      expect(handlePressIcon.mock.calls.length).toBe(1)
+      expect(onPressIcon.mock.calls.length).toBe(1)
     })
 
     it('size icon equal medium if pass medium size to props', () => {
@@ -64,9 +64,9 @@ describe('Components', () => {
       expect(sizeIcon).toEqual(18)
     })
 
-    it('should have default handlePressIcon props', () => {
-      Recipe.defaultProps.handlePressIcon()
-      expect(Recipe.defaultProps.handlePressIcon).toBeDefined()
+    it('should have default onPressIcon props', () => {
+      Recipe.defaultProps.onPressIcon()
+      expect(Recipe.defaultProps.onPressIcon).toBeDefined()
     })
 
     it('should have default handlePressImage props', () => {
