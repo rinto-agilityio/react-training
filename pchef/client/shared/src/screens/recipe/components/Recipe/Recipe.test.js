@@ -50,7 +50,7 @@ describe('Recipe by step', () => {
 
   it('Render directions component with steps array', () => {
     directionsComponent.setProps({
-      steps: recipe.steps,
+      steps: getRecipe.steps,
     })
     expect(directionsComponent).toMatchSnapshot()
   })
@@ -73,7 +73,7 @@ describe('Recipe by step', () => {
 
   it('Render direction component with step info', () => {
     directionsComponent.setProps({
-      item: recipe.steps[0],
+      item: getRecipe.steps[0],
     })
     expect(directionComponent).toMatchSnapshot()
   })
@@ -96,7 +96,7 @@ describe('Recipe by step', () => {
 
   it('Render directions component with recipe description', () => {
     ingredientsComponent.setProps({
-      description: recipe.description,
+      description: getRecipe.description,
     })
     expect(ingredientsComponent).toMatchSnapshot()
   })
