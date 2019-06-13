@@ -9,6 +9,7 @@ const tinyPadding = 3
 const styles = StyleSheet.create({
   wrapper: {
     display: 'flex',
+    zIndex: METRICS.iconZindex,
   },
 
   // Title
