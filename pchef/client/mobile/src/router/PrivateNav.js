@@ -1,6 +1,7 @@
 // Libs
 import React from 'react'
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation'
+import { Button } from 'react-native-paper'
 
 // Components
 import RecipeDetail from '@screen/RecipeDetail'
@@ -12,7 +13,6 @@ import RecipeForm from '@screen/RecipeForm'
 import Profile from '@screen/Profile'
 import WishList from '@screen/WishList'
 import WishListForm from '@screen/WishListForm'
-import { Button } from 'react-native-paper'
 
 // Constants
 import ROUTES from '@constants/routes'
