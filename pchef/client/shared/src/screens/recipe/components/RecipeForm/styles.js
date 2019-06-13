@@ -129,10 +129,6 @@ const styles = StyleSheet.create({
     marginTop: '20px',
     fontSize: FONTS.fontSize.large,
   },
-
-  inputWeb: {
-    display: 'none',
-  },
 })
 
 export default styles
