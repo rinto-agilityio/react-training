@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     borderBottomColor: COLORS.baseGray,
     borderBottomWidth: METRICS.smallBorderWidth,
   },
+
   // Date
   date: {
     color: COLORS.black,
