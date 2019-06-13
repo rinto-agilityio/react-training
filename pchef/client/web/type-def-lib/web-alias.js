@@ -72,3 +72,7 @@ declare module 'router/MainRouter' {
 declare module 'pchef-shared/src/containers/Category' {
   declare module.exports: any
 }
+
+declare module 'pchef-shared/src/layout/MainContainer' {
+  declare module.exports: any
+}

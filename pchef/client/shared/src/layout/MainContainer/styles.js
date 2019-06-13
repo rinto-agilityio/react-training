@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
     marginBottom: METRICS.resetMargin,
     marginRight: 'auto',
     marginLeft: 'auto',
+    zIndex: METRICS.iconZindex,
   },
   mobileContainer: {},
 })
