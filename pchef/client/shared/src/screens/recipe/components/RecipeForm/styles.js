@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     marginTop: METRICS.mediumMargin,
     marginBottom: METRICS.mediumMargin,
     height: 150,
+    width: '100%',
   },
   wrapperIcon: {
     backgroundColor: COLORS.baseGray,
@@ -114,6 +115,19 @@ const styles = StyleSheet.create({
     borderColor: COLORS.baseGray,
     borderWidth: METRICS.smallBorderWidth,
     borderRadius: METRICS.mediumBorderRadius,
+  },
+
+  wrapperButton: {
+    marginTop: METRICS.largeMargin,
+    marginBottom: '0',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+
+  headerForm: {
+    textAlign: 'center',
+    marginTop: METRICS.largeMargin,
+    fontSize: FONTS.fontSize.large,
   },
 })
 

@@ -1,6 +1,6 @@
 // Libs
 import React, { useRef, useState } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Platform } from 'react-native'
 
 // Styles
 import styles from './styles'
@@ -45,6 +45,7 @@ type Props = {
   customStyleError: Object,
   handleAddStepImage?: () => void,
   stepUrl?: string,
+  handleAddRecipeImageOnWeb?: () => void,
 }
 
 const RecipeForm = ({
@@ -58,6 +59,7 @@ const RecipeForm = ({
   customStyleError,
   handleAddStepImage = () => {},
   stepUrl,
+  handleAddRecipeImageOnWeb,
 }: Props) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
@@ -72,6 +74,7 @@ const RecipeForm = ({
   const [error, setError] = useState('')
   const [directors, setDirectors] = useState([])
   const [errorValidator, setErrorValidator] = useState({})
+  const isWeb = Platform.OS === 'web'
 
   const handleCreateRecipe = async isOnpen => {
     const title = getValueTextBox(titleRef.current)
@@ -163,6 +166,7 @@ const RecipeForm = ({
 
   return (
     <View style={[styles.wrapper, styles[`${size}Wrapper`], customStyle]}>
+      <Text style={[styles.headerForm]}>CREATE NEW A RECIPE</Text>
       <TextBox
         placeholder="Title"
         refInput={titleRef}
@@ -173,14 +177,34 @@ const RecipeForm = ({
         message={errorValidator.title}
         customStyle={customStyleError}
       />
-      <Icon
-        name="add-a-photo"
-        size={METRICS[`${size}Icon`] * 2}
-        onPress={handleAddRecipeImage}
-        label="Set cover photo"
-        wrapperIconStyle={styles.wrapperMainPhoto}
-        customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`]]}
-      />
+      <View>
+        <Text
+          for="file-input"
+          accessibilityRole="label"
+        >
+          <Icon
+            name="add-a-photo"
+            size={METRICS[`${size}Icon`] * 2}
+            onPress={handleAddRecipeImage}
+            label="Set cover photo"
+            wrapperIconStyle={styles.wrapperMainPhoto}
+            customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`]]}
+          />
+        </Text>
+        {
+          isWeb && (
+            <input
+              id="file-input"
+              type="file"
+              style={{
+                display: 'none',
+              }}
+              onChange={handleAddRecipeImageOnWeb}
+            />
+          )
+        }
+      </View>
+
       {previewImage ? (
         <Image url={previewImage} customImageStyle={{ width: '100%', height: 150 }} />
       ) : null}
@@ -291,12 +315,18 @@ const RecipeForm = ({
           }}
         />
       )}
-      <Button
-        onPress={handlePublishRecipe}
-        title="Save"
-        buttonStyle={[styles.btnModal, styles[`${size}btnModal`]]}
-        disabled={directors.length > 0 ? false : true}
-      />
+      {
+        isWeb && (
+          <View style={[styles.wrapperButton]}>
+            <Button
+              onPress={handlePublishRecipe}
+              title="Save Recipe"
+              buttonStyle={[styles.btnModal, styles[`${size}btnModal`]]}
+              disabled={directors.length > 0 ? false : true}
+            />
+          </View>
+        )
+      }
     </View>
   )
 }
@@ -306,6 +336,7 @@ RecipeForm.defaultProps = {
   previewImage: '',
   handleAddStepImage: () => {},
   stepUrl: '',
+  handleAddRecipeImageOnWeb: () => {},
 }
 
 export default RecipeForm
