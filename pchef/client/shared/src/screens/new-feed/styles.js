@@ -15,6 +15,9 @@ const styles = StyleSheet.create({
     marginRight: 'auto',
     marginLeft: 'auto',
   },
+  wrapper: {
+    zIndex: METRICS.iconZindex,
+  },
 })
 
 export default styles
