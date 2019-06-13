@@ -36,7 +36,11 @@ const Header = ({
   type = 'primary',
   onPressLogo,
   onPressCategoryIcon,
-  data,
+  data = {
+    user: {
+      avatar: '',
+    },
+  },
   loading,
   error,
   onDirectTo,
