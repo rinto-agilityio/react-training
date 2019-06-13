@@ -16,9 +16,13 @@ const styles = StyleSheet.create({
   },
   wrapUserInfo: {
     alignSelf: 'center',
+    flexDirection: 'row',
+  },
+  createRecipeBtn: {
+    marginRight: METRICS.largeMargin,
   },
   avataDropdown: {
-    left: METRICS.resetPosition,
+    left: METRICS.extraLargePosition,
     top: METRICS.largePosition,
   },
   container: {

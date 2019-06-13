@@ -8,6 +8,7 @@ export default {
   extraLargePadding: 30,
 
   // Margin
+  resetMargin: 0,
   smallMargin: 5,
   mediumMargin: 10,
   largeMargin: 20,
@@ -42,6 +43,7 @@ export default {
   smallPosition: 10,
   mediumPosition: 15,
   largePosition: 50,
+  extraLargePosition: 150,
 
   // Line Height
   smallLineHeight: 21,
