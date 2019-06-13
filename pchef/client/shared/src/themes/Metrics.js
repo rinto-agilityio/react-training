@@ -8,6 +8,7 @@ export default {
   extraLargePadding: 30,
 
   // Margin
+  resetMargin: 0,
   smallMargin: 5,
   mediumMargin: 10,
   largeMargin: 20,
