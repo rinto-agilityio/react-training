@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
   wrapper: {
     display: 'flex',
     padding: METRICS.mediumPadding,
+    zIndex: METRICS.iconZindex,
   },
 
   // Title
