@@ -90,7 +90,7 @@ const Profile = ({
   const { user, favoriteRecipe, ownRecipes } = data
 
   return (
-    <View style={styles.profile}>
+    <View style={[styles.profile, styles.wrapper]}>
       <Header
         user={user}
         handleToSetting={handleToSetting}
