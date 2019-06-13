@@ -76,3 +76,7 @@ declare module 'pchef-shared/src/containers/Category' {
 declare module 'pchef-shared/src/layout/MainContainer' {
   declare module.exports: any
 }
+
+declare module 'pchef-shared/src/constants/index' {
+  declare module.exports: any
+}

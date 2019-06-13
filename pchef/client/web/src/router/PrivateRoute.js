@@ -8,7 +8,7 @@ import MainContainer from 'pchef-shared/src/layout/MainContainer'
 import Header from 'pchef-shared/src/containers/Header'
 
 // Constants
-import { URL } from '../constants'
+import { URL } from 'pchef-shared/src/constants/index'
 
 type Props = {
   component: any,
@@ -46,10 +46,10 @@ const PrivateRoute = ({ component: Component, loginPath, path, history, ...rest 
       case URL.PROFILE.TITLE:
         handleRedirectProfile()
         break
-      case URL.PROFILE.WISH_LIST:
+      case URL.WISH_LIST.TITLE:
         handleRedirectWishList()
         break
-      case URL.PROFILE.LOG_OUT:
+      case URL.LOG_OUT.TITLE:
         handleLogout()
         break
       default:
