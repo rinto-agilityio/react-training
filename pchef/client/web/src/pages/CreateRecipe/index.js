@@ -26,7 +26,7 @@ const CreateRecipe = ({ history }: Props) => {
   return (
     <RecipeFormContainer
       redirectAfterPublish={redirectAfterPublish}
-      handleAddRecipeImageOnWeb={handleAddRecipeImageOnWeb}
+      handleAddRecipeImageOnWeb={event => handleAddRecipeImageOnWeb(event)}
       previewImage={imgUrl}
       customStyle={{
         marginTop: '0',

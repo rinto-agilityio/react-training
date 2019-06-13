@@ -199,7 +199,7 @@ const RecipeForm = ({
               style={{
                 display: 'none',
               }}
-              onChange={event => handleAddRecipeImageOnWeb(event)}
+              onChange={handleAddRecipeImageOnWeb}
             />
           )
         }
