@@ -45,6 +45,7 @@ type Props = {
   customStyleError: Object,
   handleAddStepImage?: () => void,
   stepUrl?: string,
+  handleAddRecipeImageOnWeb?: () => void,
 }
 
 const RecipeForm = forwardRef(({
@@ -58,6 +59,7 @@ const RecipeForm = forwardRef(({
   customStyleError,
   handleAddStepImage = () => {},
   stepUrl = '',
+  handleAddRecipeImageOnWeb,
 }: Props, ref) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
@@ -168,6 +170,7 @@ const RecipeForm = forwardRef(({
 
   return (
     <View style={[styles.wrapper, styles[`${size}Wrapper`], customStyle]}>
+      <Text style={[styles.headerForm]}>CREATE NEW A RECIPE</Text>
       <TextBox
         placeholder="Title"
         refInput={titleRef}
@@ -178,14 +181,34 @@ const RecipeForm = forwardRef(({
         message={errorValidator.title}
         customStyle={customStyleError}
       />
-      <Icon
-        name="add-a-photo"
-        size={METRICS[`${size}Icon`] * 2}
-        onPress={handleAddRecipeImage}
-        label="Set cover photo"
-        wrapperIconStyle={styles.wrapperMainPhoto}
-        customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`]]}
-      />
+      <View>
+        <Text
+          for="file-input"
+          accessibilityRole="label"
+        >
+          <Icon
+            name="add-a-photo"
+            size={METRICS[`${size}Icon`] * 2}
+            onPress={handleAddRecipeImage}
+            label="Set cover photo"
+            wrapperIconStyle={styles.wrapperMainPhoto}
+            customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`]]}
+          />
+        </Text>
+        {
+          isWeb && (
+            <input
+              id="file-input"
+              type="file"
+              style={{
+                display: 'none',
+              }}
+              onChange={handleAddRecipeImageOnWeb}
+            />
+          )
+        }
+      </View>
+
       {previewImage ? (
         <Image url={previewImage} customImageStyle={{ width: '100%', height: 150 }} />
       ) : null}
@@ -297,12 +320,14 @@ const RecipeForm = forwardRef(({
         />
       )}
       {isWeb ? (
-        <Button
-          onPress={handlePublishRecipe}
-          title="Save"
-          buttonStyle={[styles.btnModal, styles[`${size}btnModal`]]}
-          disabled={directors.length > 0 ? false : true}
-        />
+        <View style={[styles.wrapperButton]}>
+          <Button
+            onPress={handlePublishRecipe}
+            title="Save Recipe"
+            buttonStyle={[styles.btnModal, styles[`${size}btnModal`]]}
+            disabled={directors.length > 0 ? false : true}
+          />
+        </View>
       ) : null}
     </View>
   )

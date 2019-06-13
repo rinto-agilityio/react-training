@@ -9,6 +9,7 @@ export const validator = (fields: {}) => {
 
   Object.keys(fields).forEach(key => {
     const value = fields[key]
+
     if (!value) {
       errorMessage[key] = 'Required'
       isError = true

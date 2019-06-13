@@ -21,7 +21,7 @@ type Props = {
     id: string,
   },
   size: string,
-  onSelectStep: (id: string) => void,
+  onSelectStep?: (id: string) => void,
   loading: boolean,
   error: Object,
   recipeSteps: Array<{
@@ -29,7 +29,7 @@ type Props = {
     title: string,
     id: string,
   }>,
-  handleRedirectLogin: Function,
+  handleRedirectLogin: () => void,
 }
 
 const Recipe = ({
@@ -90,6 +90,10 @@ const Recipe = ({
       />
     </View>
   )
+}
+
+Recipe.defaultProps = {
+  onSelectStep: () => {},
 }
 
 export default Recipe

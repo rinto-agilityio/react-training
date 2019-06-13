@@ -9,6 +9,7 @@ exports[`Button Renders correctly 1`] = `
     className="css-cursor-18t94o4 css-view-1dbjc4n r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-touchAction-1otgn73 r-userSelect-lrvibr"
     data-focusable={true}
     disabled={false}
+    onClick={[Function]}
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     onKeyUp={[Function]}
@@ -65,6 +66,7 @@ exports[`Button Renders correctly radio button component with label 1`] = `
     className="css-cursor-18t94o4 css-view-1dbjc4n r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-touchAction-1otgn73 r-userSelect-lrvibr"
     data-focusable={true}
     disabled={false}
+    onClick={[Function]}
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     onKeyUp={[Function]}
@@ -110,7 +112,7 @@ exports[`Button Renders correctly radio button component with label 1`] = `
     />
   </div>
   <div
-    className="css-text-76zvg2 r-marginLeft-1n0xq6e"
+    className="css-text-901oao r-marginLeft-1n0xq6e"
     dir="auto"
   >
     First
@@ -127,6 +129,7 @@ exports[`Button Renders correctly radio button component with status true 1`] = 
     className="css-cursor-18t94o4 css-view-1dbjc4n r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-touchAction-1otgn73 r-userSelect-lrvibr"
     data-focusable={true}
     disabled={false}
+    onClick={[Function]}
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     onKeyUp={[Function]}
@@ -193,7 +196,7 @@ exports[`Button Renders correctly radio button component with status true 1`] = 
     </div>
   </div>
   <div
-    className="css-text-76zvg2 r-marginLeft-1n0xq6e"
+    className="css-text-901oao r-marginLeft-1n0xq6e"
     dir="auto"
   >
     First

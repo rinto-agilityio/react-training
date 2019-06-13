@@ -2,7 +2,7 @@
 import { StyleSheet } from 'react-native'
 
 // Themes
-import { METRICS } from '../../../../themes'
+import { METRICS, COLORS } from '../../../../themes'
 
 // Create style for Header
 const styles = StyleSheet.create({
@@ -23,6 +23,25 @@ const styles = StyleSheet.create({
   },
   indicator: {
     marginTop: METRICS.largeMargin * 10,
+  },
+  tabListContainer: {},
+  tabWrap: {
+    display: 'flex',
+    flexDirection: 'row',
+    borderBottomWidth: METRICS.smallBorderWidth,
+    borderColor: COLORS.baseGray,
+    marginTop: METRICS.largeMargin,
+  },
+  tab: {
+    borderWidth: METRICS.smallBorderWidth,
+    borderTopLeftRadius: METRICS.mediumBorderRadius,
+    borderTopRightRadius: METRICS.mediumBorderRadius,
+  },
+  tabViewActive: {
+    backgroundColor: COLORS.red,
+  },
+  tabView: {
+    backgroundColor: COLORS.baseGray,
   },
 })
 

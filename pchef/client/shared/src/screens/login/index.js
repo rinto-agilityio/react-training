@@ -33,7 +33,7 @@ const Login = ({
   handlingLoginSuccess,
   data = {},
   handleNavigateHome,
-  handleNavigateWelcome,
+  handleNavigateWelcome = () => {},
 }: Props) => {
   const [error, setError] = useState(false)
   const [isSubmit, setSubmit] = useState(false)

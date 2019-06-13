@@ -18,26 +18,26 @@ exports[`Welcome Render Welcome component with categories empty 1`] = `
     onStartShouldSetResponder={[Function]}
   >
     <div
-      className="css-text-76zvg2 r-color-1dnsj32 r-fontSize-1i10wst r-fontWeight-1kfrs79 r-opacity-17tb59b"
+      className="css-text-901oao r-color-1dnsj32 r-fontSize-1i10wst r-fontWeight-1kfrs79 r-opacity-17tb59b"
       dir="auto"
     >
       Skip
     </div>
   </div>
   <div
-    className="css-text-76zvg2 r-fontSize-adyw6z r-fontWeight-majxgm r-textAlign-q4m81j"
+    className="css-text-901oao r-fontSize-adyw6z r-fontWeight-majxgm r-textAlign-q4m81j"
     dir="auto"
   >
     Select 4 or more interests
   </div>
   <div
-    className="css-text-76zvg2 r-fontSize-ubezar r-marginTop-1g94qm0 r-textAlign-q4m81j"
+    className="css-text-901oao r-fontSize-ubezar r-marginTop-1g94qm0 r-textAlign-q4m81j"
     dir="auto"
   >
     Select below to personalize the app with your tastes
   </div>
   <div
-    className="css-text-76zvg2 r-color-kaiwep r-fontSize-1i10wst r-fontWeight-1kfrs79 r-marginTop-19h5ruw r-textAlign-q4m81j"
+    className="css-text-901oao r-color-kaiwep r-fontSize-1i10wst r-fontWeight-1kfrs79 r-marginTop-19h5ruw r-textAlign-q4m81j"
     dir="auto"
   >
     I have a special diet
@@ -82,26 +82,26 @@ exports[`Welcome Render Welcome component with data 1`] = `
     tabIndex="0"
   >
     <div
-      className="css-text-76zvg2 r-color-1dnsj32 r-fontSize-1i10wst r-fontWeight-1kfrs79"
+      className="css-text-901oao r-color-1dnsj32 r-fontSize-1i10wst r-fontWeight-1kfrs79"
       dir="auto"
     >
       Skip
     </div>
   </div>
   <div
-    className="css-text-76zvg2 r-fontSize-adyw6z r-fontWeight-majxgm r-textAlign-q4m81j"
+    className="css-text-901oao r-fontSize-adyw6z r-fontWeight-majxgm r-textAlign-q4m81j"
     dir="auto"
   >
     Select 4 or more interests
   </div>
   <div
-    className="css-text-76zvg2 r-fontSize-ubezar r-marginTop-1g94qm0 r-textAlign-q4m81j"
+    className="css-text-901oao r-fontSize-ubezar r-marginTop-1g94qm0 r-textAlign-q4m81j"
     dir="auto"
   >
     Select below to personalize the app with your tastes
   </div>
   <div
-    className="css-text-76zvg2 r-color-kaiwep r-fontSize-1i10wst r-fontWeight-1kfrs79 r-marginTop-19h5ruw r-textAlign-q4m81j"
+    className="css-text-901oao r-color-kaiwep r-fontSize-1i10wst r-fontWeight-1kfrs79 r-marginTop-19h5ruw r-textAlign-q4m81j"
     dir="auto"
   >
     I have a special diet
@@ -170,7 +170,7 @@ exports[`Welcome Render Welcome component with data 1`] = `
             />
           </div>
           <div
-            className="css-text-76zvg2 r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
+            className="css-text-901oao r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
             dir="auto"
           >
             Fish
@@ -233,7 +233,7 @@ exports[`Welcome Render Welcome component with data 1`] = `
             />
           </div>
           <div
-            className="css-text-76zvg2 r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
+            className="css-text-901oao r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
             dir="auto"
           >
             Pizza
@@ -296,7 +296,7 @@ exports[`Welcome Render Welcome component with data 1`] = `
             />
           </div>
           <div
-            className="css-text-76zvg2 r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
+            className="css-text-901oao r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
             dir="auto"
           >
             Cake
@@ -359,7 +359,7 @@ exports[`Welcome Render Welcome component with data 1`] = `
             />
           </div>
           <div
-            className="css-text-76zvg2 r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
+            className="css-text-901oao r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
             dir="auto"
           >
             Deserts
@@ -422,7 +422,7 @@ exports[`Welcome Render Welcome component with data 1`] = `
             />
           </div>
           <div
-            className="css-text-76zvg2 r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
+            className="css-text-901oao r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
             dir="auto"
           >
             Salad
@@ -485,7 +485,7 @@ exports[`Welcome Render Welcome component with data 1`] = `
             />
           </div>
           <div
-            className="css-text-76zvg2 r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
+            className="css-text-901oao r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
             dir="auto"
           >
             Kids
@@ -548,7 +548,7 @@ exports[`Welcome Render Welcome component with data 1`] = `
             />
           </div>
           <div
-            className="css-text-76zvg2 r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
+            className="css-text-901oao r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
             dir="auto"
           >
             Meat
@@ -611,7 +611,7 @@ exports[`Welcome Render Welcome component with data 1`] = `
             />
           </div>
           <div
-            className="css-text-76zvg2 r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
+            className="css-text-901oao r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
             dir="auto"
           >
             Easy Lunch
@@ -634,16 +634,162 @@ exports[`Welcome Render Welcome component with data 1`] = `
 
 exports[`Welcome Render Welcome component with error 1`] = `
 <div
-  className="css-text-76zvg2 r-color-1vs7qoz r-fontSize-1i10wst r-fontStyle-36ujnk"
-  dir="auto"
+  aria-live="polite"
+  className="css-view-1dbjc4n r-bottom-1p0dtai r-left-1d2f490 r-position-u8s1d r-right-zchlnj r-top-ipm5af"
 >
-  Error!
+  <div
+    className="css-view-1dbjc4n r-cursor-1loqt21 r-flex-13awgt0 r-touchAction-1otgn73"
+    data-focusable={true}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "rgba(0,0,0,0.50)",
+        "opacity": 1,
+      }
+    }
+    tabIndex="0"
+  />
+  <div
+    className="css-view-1dbjc4n r-bottom-1p0dtai r-justifyContent-1777fci r-left-1d2f490 r-pointerEvents-12vffkv r-position-u8s1d r-right-zchlnj r-top-ipm5af"
+  >
+    <div
+      className="css-view-1dbjc4n r-justifyContent-1h0z5md"
+      style={
+        Object {
+          "backgroundColor": "rgba(255,255,255,1.00)",
+          "borderBottomLeftRadius": "4px",
+          "borderBottomRightRadius": "4px",
+          "borderTopLeftRadius": "4px",
+          "borderTopRightRadius": "4px",
+          "boxShadow": "0px 23px 24px rgba(0,0,0,0.24)",
+          "marginBottom": "0px",
+          "marginLeft": "26px",
+          "marginRight": "26px",
+          "marginTop": "0px",
+          "opacity": 1,
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n r-paddingBottom-qn3fzs r-paddingHorizontal-1guathk"
+        style={
+          Object {
+            "paddingTop": "24px",
+          }
+        }
+      >
+        <div
+          className="css-text-901oao r-color-1vs7qoz r-fontSize-1i10wst r-fontStyle-36ujnk"
+          dir="auto"
+        >
+          Error!
+        </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-justifyContent-17s6mgv r-padding-edyy15"
+      >
+        <div
+          className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
+          style={
+            Object {
+              "backgroundColor": "rgba(66,165,245,1.00)",
+              "borderBottomColor": "rgba(0,0,0,0.00)",
+              "borderBottomLeftRadius": "4px",
+              "borderBottomRightRadius": "4px",
+              "borderBottomStyle": "solid",
+              "borderBottomWidth": "0px",
+              "borderLeftColor": "rgba(0,0,0,0.00)",
+              "borderLeftStyle": "solid",
+              "borderLeftWidth": "0px",
+              "borderRightColor": "rgba(0,0,0,0.00)",
+              "borderRightStyle": "solid",
+              "borderRightWidth": "0px",
+              "borderTopColor": "rgba(0,0,0,0.00)",
+              "borderTopLeftRadius": "4px",
+              "borderTopRightRadius": "4px",
+              "borderTopStyle": "solid",
+              "borderTopWidth": "0px",
+              "boxShadow": "0px 0.75px 1.5px rgba(0,0,0,0.24)",
+              "marginRight": "10px",
+              "minWidth": "64px",
+              "paddingBottom": "5px",
+              "paddingLeft": "5px",
+              "paddingRight": "5px",
+              "paddingTop": "5px",
+            }
+          }
+        >
+          <div
+            className="css-cursor-18t94o4 css-view-1dbjc4n r-backgroundColor-1niwhzg r-cursor-1loqt21 r-overflow-1udh08x r-touchAction-1otgn73 r-userSelect-lrvibr"
+            data-focusable={true}
+            disabled={false}
+            onKeyDown={[Function]}
+            onKeyPress={[Function]}
+            onKeyUp={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            role="button"
+            style={
+              Object {
+                "borderBottomLeftRadius": "4px",
+                "borderBottomRightRadius": "4px",
+                "borderTopLeftRadius": "4px",
+                "borderTopRightRadius": "4px",
+              }
+            }
+            tabIndex="0"
+          >
+            <div
+              className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-justifyContent-1777fci"
+            >
+              <div
+                className="css-text-901oao css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
+                dir="auto"
+                style={
+                  Object {
+                    "color": "rgba(0,0,0,1.00)",
+                    "direction": "ltr",
+                    "fontFamily": "Roboto-Medium, Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  }
+                }
+              >
+                <span
+                  className="css-text-901oao css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+                  dir="auto"
+                  style={
+                    Object {
+                      "direction": "ltr",
+                      "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "textAlign": "left",
+                    }
+                  }
+                >
+                  Done
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Welcome Render Welcome component with loading true 1`] = `
 <div
-  className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-drfeu3 r-bottom-1p0dtai r-justifyContent-1777fci r-left-1d2f490 r-position-1xcajam r-right-zchlnj r-top-ipm5af r-zIndex-1sg8ghl"
+  className="css-view-1dbjc4n r-flex-13awgt0 r-justifyContent-1777fci"
 >
   <div
     aria-valuemax="1"
@@ -694,7 +840,7 @@ exports[`Welcome Render Welcome component with loading true 1`] = `
 
 exports[`Welcome Render Welcome component with loading true 2`] = `
 <div
-  className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-drfeu3 r-bottom-1p0dtai r-justifyContent-1777fci r-left-1d2f490 r-position-1xcajam r-right-zchlnj r-top-ipm5af r-zIndex-1sg8ghl"
+  className="css-view-1dbjc4n r-flex-13awgt0 r-justifyContent-1777fci"
 >
   <div
     aria-valuemax="1"
@@ -761,26 +907,26 @@ exports[`Welcome Render Welcome component with missingCategory 1`] = `
     onStartShouldSetResponder={[Function]}
   >
     <div
-      className="css-text-76zvg2 r-color-1dnsj32 r-fontSize-1i10wst r-fontWeight-1kfrs79 r-opacity-17tb59b"
+      className="css-text-901oao r-color-1dnsj32 r-fontSize-1i10wst r-fontWeight-1kfrs79 r-opacity-17tb59b"
       dir="auto"
     >
       Skip
     </div>
   </div>
   <div
-    className="css-text-76zvg2 r-fontSize-adyw6z r-fontWeight-majxgm r-textAlign-q4m81j"
+    className="css-text-901oao r-fontSize-adyw6z r-fontWeight-majxgm r-textAlign-q4m81j"
     dir="auto"
   >
     Select 4 or more interests
   </div>
   <div
-    className="css-text-76zvg2 r-fontSize-ubezar r-marginTop-1g94qm0 r-textAlign-q4m81j"
+    className="css-text-901oao r-fontSize-ubezar r-marginTop-1g94qm0 r-textAlign-q4m81j"
     dir="auto"
   >
     Select below to personalize the app with your tastes
   </div>
   <div
-    className="css-text-76zvg2 r-color-kaiwep r-fontSize-1i10wst r-fontWeight-1kfrs79 r-marginTop-19h5ruw r-textAlign-q4m81j"
+    className="css-text-901oao r-color-kaiwep r-fontSize-1i10wst r-fontWeight-1kfrs79 r-marginTop-19h5ruw r-textAlign-q4m81j"
     dir="auto"
   >
     I have a special diet
@@ -849,7 +995,7 @@ exports[`Welcome Render Welcome component with missingCategory 1`] = `
             />
           </div>
           <div
-            className="css-text-76zvg2 r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
+            className="css-text-901oao r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
             dir="auto"
           >
             Pizza
@@ -912,7 +1058,7 @@ exports[`Welcome Render Welcome component with missingCategory 1`] = `
             />
           </div>
           <div
-            className="css-text-76zvg2 r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
+            className="css-text-901oao r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
             dir="auto"
           >
             Cake
@@ -975,7 +1121,7 @@ exports[`Welcome Render Welcome component with missingCategory 1`] = `
             />
           </div>
           <div
-            className="css-text-76zvg2 r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
+            className="css-text-901oao r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
             dir="auto"
           >
             Deserts
@@ -1038,7 +1184,7 @@ exports[`Welcome Render Welcome component with missingCategory 1`] = `
             />
           </div>
           <div
-            className="css-text-76zvg2 r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
+            className="css-text-901oao r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
             dir="auto"
           >
             Salad
@@ -1101,7 +1247,7 @@ exports[`Welcome Render Welcome component with missingCategory 1`] = `
             />
           </div>
           <div
-            className="css-text-76zvg2 r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
+            className="css-text-901oao r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
             dir="auto"
           >
             Kids
@@ -1164,7 +1310,7 @@ exports[`Welcome Render Welcome component with missingCategory 1`] = `
             />
           </div>
           <div
-            className="css-text-76zvg2 r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
+            className="css-text-901oao r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
             dir="auto"
           >
             Meat
@@ -1227,7 +1373,7 @@ exports[`Welcome Render Welcome component with missingCategory 1`] = `
             />
           </div>
           <div
-            className="css-text-76zvg2 r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
+            className="css-text-901oao r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
             dir="auto"
           >
             Easy Lunch
