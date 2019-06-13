@@ -8,7 +8,6 @@ import { COLORS, METRICS, FONTS } from '../../../../themes'
 const styles = StyleSheet.create({
   wrapperHeader: {
     display: 'flex',
-    zIndex: METRICS.iconZindex,
   },
   smallHeader: {
     height: METRICS.smallHeader,

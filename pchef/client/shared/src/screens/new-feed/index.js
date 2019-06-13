@@ -102,7 +102,7 @@ const NewFeed = ({
 
   return (
 
-    <View style={[styles[`${type}RecipeListContainer`], styles.wrapper]}>
+    <View style={styles[`${type}RecipeListContainer`]}>
       {/** Choosen category pipeline */ }
       <CategoryPipeLine
         followCategory={followCategory}

@@ -36,9 +36,6 @@ const styles = StyleSheet.create({
     marginBottom: METRICS.mediumMargin,
     paddingBottom: METRICS.mediumPadding,
   },
-  wrapper: {
-    zIndex: METRICS.iconZindex,
-  },
   // Dialog
   // Width full container for small/medium dialog
   largeDialog: {
