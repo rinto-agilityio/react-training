@@ -7,7 +7,6 @@ import WishListFormContainer from 'pchef-shared/src/containers/WishListForm'
 
 // Constants
 import ROUTES from '@constants/routes'
-import Button from 'pchef-shared/src/components/Button';
 
 type Props = {
   navigation: NavigationScreenProps
@@ -18,15 +17,16 @@ const WishListForm = ({ navigation }: Props) => {
   const [statusPress, setStatusPress] = useState(false)
 
   const handleCreateWishList = async () => {
-    console.log(wishListFormRef.current)
-    // await wishListFormRef.current.wrappedInstance.handleCreateWishList()
-    // setStatusPress(false)
+    // Get method handlePublishRecipe of wish list form
+    const { wrappedInstance } = wishListFormRef.current.wrappedInstance.getWrappedInstance()
+    await wrappedInstance.handleCreateWishList()
+    navigation.setParams({ status: false })
+    setStatusPress(false)
   }
 
   useEffect(() => {
     setStatusPress(navigation.getParam('status', false))
     statusPress && handleCreateWishList()
-    // navigation.setParams({ status: false })
   })
 
   return (

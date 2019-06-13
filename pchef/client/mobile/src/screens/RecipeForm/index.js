@@ -23,9 +23,11 @@ const RecipeForm = ({ navigation }: Props) => {
   const [statusPress, setStatusPress] = useState(false)
 
   const handlePublishRecipe = async () => {
-    console.log(recipeFormRef.current)
-    // await recipeFormRef.current.wrappedInstance.handlePublishRecipe()
-    // setStatusPress(false)
+    // Get method handlePublishRecipe of recipe form
+    const { handlePublishRecipe } = recipeFormRef.current.wrappedInstance.getWrappedInstance()
+    await handlePublishRecipe()
+    navigation.setParams({ status: false })
+    setStatusPress(false)
   }
 
   useEffect(() => {
