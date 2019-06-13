@@ -29,7 +29,7 @@ describe('Components', () => {
       expect(
         component
           .find('Icon')
-          .at(0)
+          .at(1)
           .props().color,
       ).toEqual('#c5c5c5')
     })
