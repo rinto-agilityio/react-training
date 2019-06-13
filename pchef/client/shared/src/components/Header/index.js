@@ -72,7 +72,7 @@ const Header = ({
           </View>
           <View style={styles.wrapUserInfo}>
             <Button
-              onPress={() => {}}
+              onPress={() => onDirectTo(URL.CREATE_RECIPE.TITLE)}
               title="Create Recipe"
               buttonStyle={styles.createRecipeBtn}
             />
