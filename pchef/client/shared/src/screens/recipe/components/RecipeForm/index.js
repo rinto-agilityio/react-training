@@ -46,6 +46,8 @@ type Props = {
   handleAddStepImage?: () => void,
   stepUrl?: string,
   handleAddRecipeImageOnWeb?: () => void,
+  customStyleLabel: Object,
+  handleAddStepImageOnWeb?: () => void,
 }
 
 const RecipeForm = forwardRef(({
@@ -60,6 +62,8 @@ const RecipeForm = forwardRef(({
   handleAddStepImage = () => {},
   stepUrl = '',
   handleAddRecipeImageOnWeb,
+  customStyleLabel,
+  handleAddStepImageOnWeb,
 }: Props, ref) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
@@ -75,6 +79,7 @@ const RecipeForm = forwardRef(({
   const [directors, setDirectors] = useState([])
   const [errorValidator, setErrorValidator] = useState({})
   const isWeb = Platform.OS === 'web'
+  const isDisabled = directors.length > 0 ? false : true
 
   const handleCreateRecipe = async isOnpen => {
     const title = getValueTextBox(titleRef.current) || ''
@@ -192,7 +197,7 @@ const RecipeForm = forwardRef(({
             onPress={handleAddRecipeImage}
             label="Set cover photo"
             wrapperIconStyle={styles.wrapperMainPhoto}
-            customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`]]}
+            customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`], customStyleLabel]}
           />
         </Text>
         {
@@ -293,6 +298,7 @@ const RecipeForm = forwardRef(({
           recipeId={recipe.id}
           handleAddStepImage={handleAddStepImage}
           stepUrl={stepUrl}
+          handleAddStepImageOnWeb={handleAddStepImageOnWeb}
         />
       )}
       {visibleCategories && (
@@ -324,8 +330,8 @@ const RecipeForm = forwardRef(({
           <Button
             onPress={handlePublishRecipe}
             title="Save Recipe"
-            buttonStyle={[styles.btnModal, styles[`${size}btnModal`]]}
-            disabled={directors.length > 0 ? false : true}
+            buttonStyle={isDisabled ? styles.disableButton : [styles.btnModal, styles[`${size}btnModal`]]}
+            disabled={isDisabled}
           />
         </View>
       ) : null}
