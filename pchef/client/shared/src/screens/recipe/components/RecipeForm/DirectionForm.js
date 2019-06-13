@@ -104,6 +104,7 @@ const DirectionsForm = ({
   if (error) {
     return <Error message={error} />
   }
+  console.log('stepUrl', stepUrl);
 
   return (
     <Modal
@@ -155,7 +156,7 @@ const DirectionsForm = ({
             ))}
             <View>
               <Text
-                for="file-input"
+                for="file-input-step"
                 accessibilityRole="label"
               >
                 <Icon
@@ -169,7 +170,7 @@ const DirectionsForm = ({
               {
                 isWeb && (
                   <input
-                    id="file-input"
+                    id="file-input-step"
                     type="file"
                     style={{
                       display: 'none',

@@ -22,9 +22,7 @@ const CreateRecipe = ({ history }: Props) => {
   )
   const handleAddRecipeImageOnWeb = (event, name) => {
     handleUploadImage(event.target.files[0])
-      .then(response => {
-        name === 'addStep' ? setImgUrl(response.data) : setStepUrl(response.data)
-      })
+      .then(response => (name === 'add-recipe' ? setImgUrl(response.data) : setStepUrl(response.data)))
       .catch(error => error)
   }
 
