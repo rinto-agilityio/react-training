@@ -46,6 +46,14 @@ declare module '@screen/Profile' {
   declare module.exports: any;
 }
 
+declare module '@screen/WishList' {
+  declare module.exports: any;
+}
+
+declare module '@screen/WishListForm' {
+  declare module.exports: any;
+}
+
 declare module '@helpers/upload-image' {
   declare module.exports: any;
 }

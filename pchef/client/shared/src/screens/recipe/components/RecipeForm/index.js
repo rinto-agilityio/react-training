@@ -1,5 +1,6 @@
+/* eslint-disable react/require-default-props */
 // Libs
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, forwardRef, useImperativeHandle } from 'react'
 import { View, Text, Platform } from 'react-native'
 
 // Styles
@@ -24,7 +25,6 @@ import DirectionForm from '../../../../containers/DirectionForm'
 import Error from '../../../../components/Error'
 import Image from '../../../../components/Image'
 import Button from '../../../../components/Button'
-import Loading from '../../../../components/Loading'
 
 type Props = {
   size: string,
@@ -48,19 +48,19 @@ type Props = {
   handleAddRecipeImageOnWeb?: () => void,
 }
 
-const RecipeForm = ({
+const RecipeForm = forwardRef(({
   size = 'medium',
-  handleAddRecipeImage,
+  handleAddRecipeImage = () => {},
   createRecipe,
-  previewImage,
+  previewImage = '',
   publishRecipe,
   redirectAfterPublish,
   customStyle,
   customStyleError,
   handleAddStepImage = () => {},
-  stepUrl,
+  stepUrl = '',
   handleAddRecipeImageOnWeb,
-}: Props) => {
+}: Props, ref) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
   const [visibleIngredients, setVisibleIngredients] = useState(false)
@@ -77,7 +77,7 @@ const RecipeForm = ({
   const isWeb = Platform.OS === 'web'
 
   const handleCreateRecipe = async isOnpen => {
-    const title = getValueTextBox(titleRef.current)
+    const title = getValueTextBox(titleRef.current) || ''
     const categoryId = category.id
     const cookingTypeId = cookingType.id
     const errors = validator({
@@ -95,9 +95,9 @@ const RecipeForm = ({
         await createRecipe(
           categoryId,
           cookingTypeId,
-          title || '',
+          title,
           getValueTextBox(subTitleRef.current) || '',
-          previewImage || '',
+          previewImage,
           ingredients,
           true,
         ).then(({ data }) => {
@@ -131,6 +131,10 @@ const RecipeForm = ({
       setError(err)
     }
   }
+
+  useImperativeHandle(ref, () => ({
+    handlePublishRecipe,
+  }))
 
   const dataIcon = [
     {
@@ -315,28 +319,18 @@ const RecipeForm = ({
           }}
         />
       )}
-      {
-        isWeb && (
-          <View style={[styles.wrapperButton]}>
-            <Button
-              onPress={handlePublishRecipe}
-              title="Save Recipe"
-              buttonStyle={[styles.btnModal, styles[`${size}btnModal`]]}
-              disabled={directors.length > 0 ? false : true}
-            />
-          </View>
-        )
-      }
+      {isWeb ? (
+        <View style={[styles.wrapperButton]}>
+          <Button
+            onPress={handlePublishRecipe}
+            title="Save Recipe"
+            buttonStyle={[styles.btnModal, styles[`${size}btnModal`]]}
+            disabled={directors.length > 0 ? false : true}
+          />
+        </View>
+      ) : null}
     </View>
   )
-}
-
-RecipeForm.defaultProps = {
-  handleAddRecipeImage: () => {},
-  previewImage: '',
-  handleAddStepImage: () => {},
-  stepUrl: '',
-  handleAddRecipeImageOnWeb: () => {},
-}
+})
 
 export default RecipeForm

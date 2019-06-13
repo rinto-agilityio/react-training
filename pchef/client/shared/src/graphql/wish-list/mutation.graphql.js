@@ -31,6 +31,7 @@ const createWishList = graphql(CREATE_WISHLIST, {
       },
     }),
   }),
+  withRef: true,
 })
 
 export {

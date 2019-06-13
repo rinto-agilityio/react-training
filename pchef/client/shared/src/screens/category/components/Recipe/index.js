@@ -9,7 +9,7 @@ import Image from '../../../../components/Image'
 
 // Constants and Helpers
 import { formatStringToArray } from '../../../../helpers/utils'
-import { SEPARATOR_SPLIT_STRING, ELLIPSIS_LINE } from '../../../../constants/index'
+import { SEPARATOR_SPLIT_STRING, ELLIPSIS_LINE, DEFAULT_IMAGE } from '../../../../constants/index'
 
 // Themes
 import { COLORS, FONTS } from '../../../../themes'
@@ -55,7 +55,7 @@ const Recipe = ({
       </Text>
       <Wrapper direction="row" childPosition="left">
         <Image
-          url={imgUrl}
+          url={imgUrl || DEFAULT_IMAGE}
           customImageStyle={[styles.image, styles[`${size}Image`]]}
           handleTouch={handlePressImage}
         />
