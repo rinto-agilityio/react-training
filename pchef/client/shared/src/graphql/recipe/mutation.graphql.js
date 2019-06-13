@@ -97,6 +97,7 @@ const createRecipe = graphql(CREATE_RECIPE, {
       },
     }),
   }),
+  withRef: true,
 })
 
 const publishRecipe = graphql(PUBLISH_RECIPE, {

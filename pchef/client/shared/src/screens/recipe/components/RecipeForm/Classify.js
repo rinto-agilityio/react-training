@@ -1,5 +1,6 @@
+/* eslint-disable react/require-default-props */
 // Libs
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, forwardRef } from 'react'
 
 // Themes
 import { METRICS } from '../../../../themes'
@@ -30,17 +31,17 @@ type Props = {
   handleSubmit: (value: {}) => void,
 }
 
-const Classify = ({
+const Classify = forwardRef(({
   size = 'medium',
   categories = [],
   cookingTypes = [],
-  onDismiss,
-  visible,
+  onDismiss = () => {},
+  visible = false,
   title,
   handleSubmit,
   loading,
   error,
-}: Props) => {
+}: Props, ref) => {
   const data = title === 'Categories' ? categories : cookingTypes
   const defaultValue = data[0] || {}
   const [value, setValue] = useState(defaultValue)
@@ -83,11 +84,6 @@ const Classify = ({
       </Wrapper>
     </Modal>
   )
-}
-
-Classify.defaultProps = {
-  visible: false,
-  onDismiss: () => {},
-}
+})
 
 export default Classify

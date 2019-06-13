@@ -47,7 +47,7 @@ type Props = {
   stepUrl?: string,
 }
 
-const RecipeForm = forwardRef<Props, Object>(({
+const RecipeForm = forwardRef(({
   size = 'medium',
   handleAddRecipeImage = () => {},
   createRecipe,

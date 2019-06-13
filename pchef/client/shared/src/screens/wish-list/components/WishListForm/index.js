@@ -35,7 +35,7 @@ type Props = {
   customModal?: {},
 }
 
-const WishListForm = forwardRef<Props, Object>(({
+const WishListForm = forwardRef(({
   size = 'medium',
   createWishList,
   handleRedirectWishlist,
