@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 // Libs
 import React, { useState, forwardRef, useImperativeHandle } from 'react'
 import { View, Text, Platform } from 'react-native'
@@ -34,7 +35,7 @@ type Props = {
   customModal?: {},
 }
 
-const WishListForm = forwardRef<Props, Function>(({
+const WishListForm = forwardRef<Props, Object>(({
   size = 'medium',
   createWishList,
   handleRedirectWishlist,
@@ -207,10 +208,5 @@ const WishListForm = forwardRef<Props, Function>(({
     </View>
   )
 })
-
-WishListForm.defaultProps = {
-  customContainer: {},
-  customModal: {},
-}
 
 export default WishListForm

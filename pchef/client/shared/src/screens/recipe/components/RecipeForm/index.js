@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 // Libs
 import React, { useRef, useState, forwardRef, useImperativeHandle } from 'react'
 import { View, Text, Platform } from 'react-native'
@@ -46,9 +47,9 @@ type Props = {
   stepUrl?: string,
 }
 
-const RecipeForm = forwardRef<Props, Function>(({
+const RecipeForm = forwardRef<Props, Object>(({
   size = 'medium',
-  handleAddRecipeImage,
+  handleAddRecipeImage = () => {},
   createRecipe,
   previewImage = '',
   publishRecipe,
@@ -56,7 +57,7 @@ const RecipeForm = forwardRef<Props, Function>(({
   customStyle,
   customStyleError,
   handleAddStepImage = () => {},
-  stepUrl,
+  stepUrl = '',
 }: Props, ref) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
@@ -306,12 +307,5 @@ const RecipeForm = forwardRef<Props, Function>(({
     </View>
   )
 })
-
-RecipeForm.defaultProps = {
-  handleAddRecipeImage: () => {},
-  previewImage: '',
-  handleAddStepImage: () => {},
-  stepUrl: '',
-}
 
 export default RecipeForm
