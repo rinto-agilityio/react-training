@@ -72,7 +72,7 @@ const Header = ({
           </View>
           <View style={styles.wrapUserInfo}>
             <Button
-              onPress={() => { }}
+              onPress={() => {}}
               title="Create Recipe"
               buttonStyle={styles.createRecipeBtn}
             />
@@ -113,8 +113,8 @@ const Header = ({
 
 Header.defaultProps = {
   type: 'primary',
-  onPressLogo: () => { },
-  onPressCategoryIcon: () => { },
+  onPressLogo: () => {},
+  onPressCategoryIcon: () => {},
 }
 
 export default Header
