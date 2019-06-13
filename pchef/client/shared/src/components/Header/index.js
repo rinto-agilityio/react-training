@@ -26,6 +26,7 @@ type Props = {
   type?: string,
   onPressLogo?: () => void,
   onPressCategoryIcon?: () => void,
+  onDirectTo: (id: string) => void,
 }
 
 const Header = ({
@@ -35,6 +36,7 @@ const Header = ({
   data,
   loading,
   error,
+  onDirectTo,
 }: Props) => {
   const [visible, setVisible] = useState(false)
 
@@ -94,9 +96,9 @@ const Header = ({
                   )
                 }
               >
-                <Menu.Item onPress={() => {}} title="View Profile" />
-                <Menu.Item onPress={() => {}} title="Wish List" />
-                <Menu.Item onPress={() => {}} title="Logout" />
+                <Menu.Item onPress={() => onDirectTo('profile')} title="View Profile" />
+                <Menu.Item onPress={() => onDirectTo('wish-list')} title="Wish List" />
+                <Menu.Item onPress={() => onDirectTo('logout')} title="Logout" />
               </Menu>
             </Provider>
           </View>
