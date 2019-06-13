@@ -24,7 +24,6 @@ import DirectionForm from '../../../../containers/DirectionForm'
 import Error from '../../../../components/Error'
 import Image from '../../../../components/Image'
 import Button from '../../../../components/Button'
-import Loading from '../../../../components/Loading'
 
 type Props = {
   size: string,
@@ -46,6 +45,8 @@ type Props = {
   handleAddStepImage?: () => void,
   stepUrl?: string,
   handleAddRecipeImageOnWeb?: () => void,
+  customStyleLabel: Object,
+  handleAddStepImageOnWeb?: () => void,
 }
 
 const RecipeForm = ({
@@ -60,6 +61,8 @@ const RecipeForm = ({
   handleAddStepImage = () => {},
   stepUrl,
   handleAddRecipeImageOnWeb,
+  customStyleLabel,
+  handleAddStepImageOnWeb,
 }: Props) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
@@ -75,6 +78,7 @@ const RecipeForm = ({
   const [directors, setDirectors] = useState([])
   const [errorValidator, setErrorValidator] = useState({})
   const isWeb = Platform.OS === 'web'
+  const isDisabled = directors.length > 0 ? false : true
 
   const handleCreateRecipe = async isOnpen => {
     const title = getValueTextBox(titleRef.current)
@@ -188,7 +192,7 @@ const RecipeForm = ({
             onPress={handleAddRecipeImage}
             label="Set cover photo"
             wrapperIconStyle={styles.wrapperMainPhoto}
-            customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`]]}
+            customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`], customStyleLabel]}
           />
         </Text>
         {
@@ -289,6 +293,7 @@ const RecipeForm = ({
           recipeId={recipe.id}
           handleAddStepImage={handleAddStepImage}
           stepUrl={stepUrl}
+          handleAddStepImageOnWeb={handleAddStepImageOnWeb}
         />
       )}
       {visibleCategories && (
@@ -321,8 +326,8 @@ const RecipeForm = ({
             <Button
               onPress={handlePublishRecipe}
               title="Save Recipe"
-              buttonStyle={[styles.btnModal, styles[`${size}btnModal`]]}
-              disabled={directors.length > 0 ? false : true}
+              buttonStyle={isDisabled ? styles.disableButton : [styles.btnModal, styles[`${size}btnModal`]]}
+              disabled={isDisabled}
             />
           </View>
         )
@@ -337,6 +342,7 @@ RecipeForm.defaultProps = {
   handleAddStepImage: () => {},
   stepUrl: '',
   handleAddRecipeImageOnWeb: () => {},
+  handleAddStepImageOnWeb: () => {},
 }
 
 export default RecipeForm

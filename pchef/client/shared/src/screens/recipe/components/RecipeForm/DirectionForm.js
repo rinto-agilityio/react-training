@@ -1,5 +1,6 @@
 // Libs
 import React, { useRef, useState } from 'react'
+import { View, Text, Platform } from 'react-native'
 
 // Styles
 import styles from './styles'
@@ -42,6 +43,7 @@ type Props = {
       }
     }}>,
   stepUrl?: string,
+  handleAddStepImageOnWeb?: () => void,
 }
 
 const DirectionsForm = ({
@@ -52,6 +54,7 @@ const DirectionsForm = ({
   recipeId,
   createRecipeStep,
   stepUrl,
+  handleAddStepImageOnWeb,
 }: Props) => {
   const stepTitleRef = useRef(null)
   const stepDescriptionRef = useRef(null)
@@ -59,6 +62,7 @@ const DirectionsForm = ({
   const [isShowForm, setNextStep] = useState(!directions.length)
   const [error, setError] = useState('')
   const nextStep = directions.length + 1
+  const isWeb = Platform.OS === 'web'
 
   const data = [
     {
@@ -149,13 +153,32 @@ const DirectionsForm = ({
                 customContainer={styles.inputDirections}
               />
             ))}
-            <Icon
-              name="add-a-photo"
-              size={METRICS[`${size}Icon`]}
-              onPress={handleAddStepImage}
-              label="Set cover photo"
-              wrapperIconStyle={[styles.wrapperIcon, styles.wrapperIconDirections]}
-            />
+            <View>
+              <Text
+                for="file-input"
+                accessibilityRole="label"
+              >
+                <Icon
+                  name="add-a-photo"
+                  size={METRICS[`${size}Icon`]}
+                  onPress={handleAddStepImage}
+                  label="Set cover photo"
+                  wrapperIconStyle={[styles.wrapperIcon, styles.wrapperIconDirections]}
+                />
+              </Text>
+              {
+                isWeb && (
+                  <input
+                    id="file-input"
+                    type="file"
+                    style={{
+                      display: 'none',
+                    }}
+                    onChange={handleAddStepImageOnWeb}
+                  />
+                )
+              }
+            </View>
             {stepUrl ? (
               <Image url={stepUrl} customImageStyle={{ width: '100%', height: 150 }} />
             ) : null}
@@ -192,6 +215,7 @@ DirectionsForm.defaultProps = {
   visible: false,
   handleAddStepImage: () => {},
   stepUrl: '',
+  handleAddStepImageOnWeb: () => {},
 }
 
 export default DirectionsForm
