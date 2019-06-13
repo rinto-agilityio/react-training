@@ -97,7 +97,7 @@ const Header = ({
                 }
               >
                 <Menu.Item onPress={() => onDirectTo('profile')} title="View Profile" />
-                <Menu.Item onPress={() => onDirectTo('wish-list')} title="Wish List" />
+                <Menu.Item onPress={() => onDirectTo('wishlist')} title="Wish List" />
                 <Menu.Item onPress={() => onDirectTo('logout')} title="Logout" />
               </Menu>
             </Provider>
