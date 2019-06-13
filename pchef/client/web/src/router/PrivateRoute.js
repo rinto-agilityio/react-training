@@ -7,6 +7,9 @@ import MainContainer from 'pchef-shared/src/layout/MainContainer'
 
 import Header from 'pchef-shared/src/containers/Header'
 
+// Constants
+import { URL, PROFILE, WISH_LIST, LOG_OUT } from '../constants'
+
 type Props = {
   component: any,
   path: string,
@@ -19,34 +22,34 @@ const PrivateRoute = ({ component: Component, loginPath, path, history, ...rest 
   const platform = Platform.OS
 
   const handleRedirectProfile = () => {
-    history.push('/profile')
+    history.push(URL.PROFILE)
   }
   const handleLogout = () => {
     localStorage.removeItem('token')
-    history.push('/login')
+    history.push(URL.LOGIN)
   }
 
   const handleRedirectWishList = () => {
-    history.push('/wishlist')
+    history.push(URL.WISH_LIST)
   }
 
   const handleRedirectWelcome = () => {
-    history.push('/welcome')
+    history.push(URL.WELCOME)
   }
 
   const handleRedirectHome = () => {
-    history.push('/')
+    history.push(URL.HOME)
   }
 
   const handleDirectTo = id => {
     switch (id) {
-      case 'profile':
+      case PROFILE:
         handleRedirectProfile()
         break
-      case 'wish-list':
+      case WISH_LIST:
         handleRedirectWishList()
         break
-      case 'logout':
+      case LOG_OUT:
         handleLogout()
         break
       default:
@@ -56,7 +59,7 @@ const PrivateRoute = ({ component: Component, loginPath, path, history, ...rest 
 
   const handleHeaderMenu = () => {
     const currentRoute = window.location.pathname
-    if (!currentRoute.includes('/welcome') && !currentRoute.includes('/login')) {
+    if (!currentRoute.includes(URL.WELCOME) && !currentRoute.includes(URL.LOGIN)) {
       return (
         <Header
           onPressCategoryIcon={handleRedirectWelcome}
