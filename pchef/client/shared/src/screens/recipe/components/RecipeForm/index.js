@@ -45,6 +45,7 @@ type Props = {
   customStyleError: Object,
   handleAddStepImage?: () => void,
   stepUrl?: string,
+  handleAddRecipeImageOnWeb?: () => void,
 }
 
 const RecipeForm = ({
@@ -58,10 +59,10 @@ const RecipeForm = ({
   customStyleError,
   handleAddStepImage = () => {},
   stepUrl,
+  handleAddRecipeImageOnWeb,
 }: Props) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
-  const inputImageRef = useRef('')
   const [visibleIngredients, setVisibleIngredients] = useState(false)
   const [visibleDirections, setVisibleDirections] = useState(false)
   const [visibleCategories, setVisibleCategories] = useState(false)
@@ -131,10 +132,6 @@ const RecipeForm = ({
     }
   }
 
-  const handleAddRecipeImageOnWeb = () => {
-    console.log('inputImageRef', inputImageRef.current)
-  }
-
   const dataIcon = [
     {
       name: 'shopping-cart',
@@ -181,7 +178,10 @@ const RecipeForm = ({
         customStyle={customStyleError}
       />
       <View>
-        <Text for="file-input" accessibilityRole="label">
+        <Text
+          for="file-input"
+          accessibilityRole="label"
+        >
           <Icon
             name="add-a-photo"
             size={METRICS[`${size}Icon`] * 2}
@@ -199,7 +199,7 @@ const RecipeForm = ({
               style={{
                 display: 'none',
               }}
-              onClick={handleAddRecipeImageOnWeb}
+              onChange={event => handleAddRecipeImageOnWeb(event)}
             />
           )
         }
@@ -336,6 +336,7 @@ RecipeForm.defaultProps = {
   previewImage: '',
   handleAddStepImage: () => {},
   stepUrl: '',
+  handleAddRecipeImageOnWeb: () => {},
 }
 
 export default RecipeForm
