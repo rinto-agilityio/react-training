@@ -17,7 +17,7 @@ import RecipeStep from '../pages/RecipeStep'
 import CreateRecipe from '../pages/CreateRecipe'
 
 // helpers
-import PrivateRoute from '../helpers/PrivateRoute'
+import PrivateRoute from './PrivateRoute'
 
 const loginPath = '/login'
 

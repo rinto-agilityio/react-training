@@ -1,9 +1,8 @@
 // Libs
 import React, { useState } from 'react'
-import { ScrollView, View } from 'react-native'
+import { View } from 'react-native'
 
 // Components
-import Header from '../../containers/Header'
 import RecipeList from './components/RecipeList'
 import Loading from '../../components/Loading'
 import CategoryPipeLine from './components/CategoryPipeLine'
@@ -50,10 +49,7 @@ type Props = {
     userId: string
   ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
   type?: string,
-  onPressCategoryIcon: () => void,
-  onPressLogo: () => void,
   handleClickRecipe: () => void,
-  history: Object,
   size: string,
   handleRedirectLogin: Function,
   onPressCategoryPipeline: () => void,
@@ -66,8 +62,6 @@ const NewFeed = ({
   loading,
   error,
   data,
-  onPressCategoryIcon,
-  onPressLogo,
   userToggleRecipe,
   handleClickRecipe,
   handleRedirectLogin = () => {},
@@ -107,26 +101,17 @@ const NewFeed = ({
   })
 
   return (
-    <ScrollView
-      style={[styles.container, styles[`${type}Container`], customStyles]}
-    >
-      <Header
-        onPressIcon={() => {}}
-        onPressCategoryIcon={onPressCategoryIcon}
-        onPressLogo={onPressLogo}
-        type={type}
+
+    <View style={styles[`${type}RecipeListContainer`]}>
+      {/** Choosen category pipeline */ }
+      <CategoryPipeLine
+        followCategory={followCategory}
+        loading={loading}
+        onPressCategoryPipeline={onPressCategoryPipeline}
       />
 
-      <View style={styles[`${type}RecipeListContainer`]}>
-        {/** Choosen category pipeline */}
-        <CategoryPipeLine
-          followCategory={followCategory}
-          loading={loading}
-          onPressCategoryPipeline={onPressCategoryPipeline}
-        />
-
-        {
-          recipesList && (
+      {
+        recipesList && (
           <RecipeList
             recipes={recipesList}
             type={type}
@@ -136,10 +121,9 @@ const NewFeed = ({
             userToggleVote={userToggleVote}
             userId={user.id}
           />
-          )
-        }
-      </View>
-    </ScrollView>
+        )
+      }
+    </View>
   )
 }
 
