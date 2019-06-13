@@ -1,5 +1,9 @@
 import * as React from 'react'
 import { Route, Redirect, withRouter } from 'react-router-dom'
+import { Platform } from 'react-native'
+
+// Layouts
+import MainContainer from 'pchef-shared/src/layout/MainContainer'
 
 import Header from 'pchef-shared/src/containers/Header'
 
@@ -12,6 +16,7 @@ type Props = {
 
 const PrivateRoute = ({ component: Component, loginPath, path, history, ...rest }: Props) => {
   const isAuthenticated = localStorage.getItem('token') !== null
+  const platform = Platform.OS
 
   const handleRedirectProfile = () => {
     history.push('/profile')
@@ -69,7 +74,10 @@ const PrivateRoute = ({ component: Component, loginPath, path, history, ...rest 
         isAuthenticated || (!isAuthenticated && loginPath === path) ? (
           <>
             { handleHeaderMenu() }
-            <Component path={path} {...props} />
+            <MainContainer type={platform}>
+              <Component path={path} {...props} />
+            </MainContainer>
+
           </>
         ) : (
           <Redirect to={{
