@@ -13,7 +13,7 @@ type Props = {
 }
 
 const WishListForm = ({ navigation }: Props) => {
-  const wishListFormRef = useRef()
+  const wishListFormRef: Object = useRef(null)
   const [statusPress, setStatusPress] = useState(false)
 
   const handleCreateWishList = async () => {

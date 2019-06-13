@@ -17,7 +17,7 @@ type Props = {
 }
 
 const RecipeForm = ({ navigation }: Props) => {
-  const recipeFormRef = useRef(null)
+  const recipeFormRef: Object = useRef(null)
   const [url, setUrl] = useState()
   const [stepUrl, setStepUrl] = useState()
   const [statusPress, setStatusPress] = useState(false)
