@@ -73,6 +73,7 @@ const getAllCookingTypes = graphql(GET_ALL_COOKING_TYPES, {
       cookingTypes: getAllCookingTypes,
     }
   },
+  withRef: true,
 })
 
 const getAllCategories = graphql(GET_ALL_CATEGORIES, {
@@ -85,6 +86,7 @@ const getAllCategories = graphql(GET_ALL_CATEGORIES, {
       categories: getAllCategories,
     }
   },
+  withRef: true,
 })
 
 const getRecipes = graphql(GET_RECIPES, {

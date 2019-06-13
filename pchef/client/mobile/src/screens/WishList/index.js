@@ -1,11 +1,11 @@
 // Libs
 import React from 'react'
-import AsyncStorage from '@react-native-community/async-storage'
 import { NavigationScreenProps } from 'react-navigation'
 import { ScrollView } from 'react-native'
 
 // Containers
-import ProfileContainer from 'pchef-shared/src/containers/Profile'
+import WishListContainer from 'pchef-shared/src/containers/WishList'
+import WishListComponent from 'pchef-shared/src/screens/wish-list/components/WishList'
 
 // Constants
 import ROUTES from '@constants/routes'
@@ -14,14 +14,13 @@ type Props = {
   navigation: NavigationScreenProps
 }
 
-const Profile = ({ navigation }: Props) => (
+const WishList = ({ navigation }: Props) => (
   <ScrollView>
-    <ProfileContainer
-      size="small"
-      store={AsyncStorage}
+    <WishListContainer
       handleRedirectLogin={() => navigation.navigate(ROUTES.LOGIN)}
+      handleRedirectWishlistForm={() => navigation.navigate(ROUTES.WISHLIST_FORM)}
     />
   </ScrollView>
 )
 
-export default Profile
+export default WishList

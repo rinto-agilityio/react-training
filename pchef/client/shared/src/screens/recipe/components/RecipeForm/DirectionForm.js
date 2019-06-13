@@ -104,7 +104,6 @@ const DirectionsForm = ({
   if (error) {
     return <Error message={error} />
   }
-  console.log('stepUrl', stepUrl);
 
   return (
     <Modal

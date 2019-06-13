@@ -6,6 +6,8 @@ const ROUTES = {
   WELCOME: 'Welcome',
   STEP: 'RecipeStep',
   PROFILE: 'Profile',
+  WISHLIST: 'WishList',
+  WISHLIST_FORM: 'WishListForm',
 }
 
 export default ROUTES

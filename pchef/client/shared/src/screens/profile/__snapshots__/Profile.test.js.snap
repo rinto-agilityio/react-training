@@ -29,16 +29,16 @@ exports[`Screen Profile should render Category component with grid 1`] = `
           style={
             Object {
               "borderBottomColor": "rgba(255,255,255,1.00)",
-              "borderBottomLeftRadius": "50%",
-              "borderBottomRightRadius": "50%",
+              "borderBottomLeftRadius": "40px",
+              "borderBottomRightRadius": "40px",
               "borderBottomWidth": "3px",
               "borderLeftColor": "rgba(255,255,255,1.00)",
               "borderLeftWidth": "3px",
               "borderRightColor": "rgba(255,255,255,1.00)",
               "borderRightWidth": "3px",
               "borderTopColor": "rgba(255,255,255,1.00)",
-              "borderTopLeftRadius": "50%",
-              "borderTopRightRadius": "50%",
+              "borderTopLeftRadius": "40px",
+              "borderTopRightRadius": "40px",
               "borderTopWidth": "3px",
               "height": "80px",
               "marginBottom": "-10px",
@@ -68,7 +68,7 @@ exports[`Screen Profile should render Category component with grid 1`] = `
     className="css-view-1dbjc4n r-backgroundColor-14lw9ot r-flexDirection-18u37iz r-justifyContent-1wtj0ep r-marginLeft-1jj8364 r-marginRight-lchren r-maxWidth-c3zab1 r-padding-1pcd2l5 r-width-13qz1uu r-zIndex-1wyyakw"
   >
     <div
-      className="css-text-76zvg2 r-fontSize-adyw6z r-fontWeight-1kfrs79"
+      className="css-text-901oao r-fontSize-adyw6z r-fontWeight-1kfrs79"
       dir="auto"
     >
       Alex
@@ -138,7 +138,7 @@ exports[`Screen Profile should render Category component with grid 1`] = `
           className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-justifyContent-1777fci"
         >
           <div
-            className="css-text-76zvg2 css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
+            className="css-text-901oao css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
             dir="auto"
             style={
               Object {
@@ -149,7 +149,7 @@ exports[`Screen Profile should render Category component with grid 1`] = `
             }
           >
             <span
-              className="css-text-76zvg2 css-textHasAncestor-16my406 r-color-cqee49 r-fontWeight-1kfrs79 r-textTransform-3twk1y"
+              className="css-text-901oao css-textHasAncestor-16my406 r-color-cqee49 r-fontWeight-1kfrs79 r-textTransform-3twk1y"
               dir="auto"
               style={
                 Object {
@@ -186,13 +186,13 @@ exports[`Screen Profile should render Category component with grid 1`] = `
         tabIndex="0"
       >
         <div
-          className="css-text-76zvg2 r-fontWeight-majxgm"
+          className="css-text-901oao r-fontWeight-majxgm"
           dir="auto"
         >
           0
         </div>
         <div
-          className="css-text-76zvg2 r-fontWeight-majxgm"
+          className="css-text-901oao r-fontWeight-majxgm"
           dir="auto"
         >
           recipes
@@ -212,13 +212,13 @@ exports[`Screen Profile should render Category component with grid 1`] = `
         tabIndex="0"
       >
         <div
-          className="css-text-76zvg2 r-fontWeight-majxgm"
+          className="css-text-901oao r-fontWeight-majxgm"
           dir="auto"
         >
           4
         </div>
         <div
-          className="css-text-76zvg2 r-fontWeight-majxgm"
+          className="css-text-901oao r-fontWeight-majxgm"
           dir="auto"
         >
           favorites
@@ -229,11 +229,85 @@ exports[`Screen Profile should render Category component with grid 1`] = `
       className="css-view-1dbjc4n r-backgroundColor-n2h5ot r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-marginLeft-1jj8364 r-marginRight-lchren r-maxWidth-c3zab1 r-minHeight-fo66li r-padding-1pcd2l5 r-width-13qz1uu"
     >
       <div
-        className="css-text-76zvg2"
+        className="css-text-901oao"
         dir="auto"
       >
         No recipes to show
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Screen Profile should render Error when query failed 1`] = `
+<div
+  className="css-text-901oao r-color-1vs7qoz r-fontSize-1i10wst r-fontStyle-36ujnk"
+  dir="auto"
+>
+  Can not load information of user. Please check for connection!!!
+</div>
+`;
+
+exports[`Screen Profile should render Loading component when query is loading 1`] = `
+<div
+  className="css-view-1dbjc4n r-justifyContent-1777fci"
+  style={
+    Object {
+      "WebkitBoxFlex": 1,
+      "WebkitFlexBasis": "0%",
+      "WebkitFlexGrow": 1,
+      "WebkitFlexShrink": 1,
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "msFlexNegative": 1,
+      "msFlexPositive": 1,
+      "msFlexPreferredSize": "0%",
+    }
+  }
+>
+  <div
+    aria-valuemax="1"
+    aria-valuemin="0"
+    className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
+    role="progressbar"
+  >
+    <div
+      className="css-view-1dbjc4n r-animationDuration-17bb2tj r-animationIterationCount-1muvv40 r-animationKeyframes-127358a r-animationTimingFunction-1ldzwu0 r-height-z80fyv r-width-19wmn03"
+    >
+      <svg
+        height="100%"
+        viewBox="0 0 32 32"
+        width="100%"
+      >
+        <circle
+          cx="16"
+          cy="16"
+          fill="none"
+          r="14"
+          strokeWidth="4"
+          style={
+            Object {
+              "opacity": 0.2,
+              "stroke": "#c5c5c5",
+            }
+          }
+        />
+        <circle
+          cx="16"
+          cy="16"
+          fill="none"
+          r="14"
+          strokeWidth="4"
+          style={
+            Object {
+              "stroke": "#c5c5c5",
+              "strokeDasharray": 80,
+              "strokeDashoffset": 60,
+            }
+          }
+        />
+      </svg>
     </div>
   </div>
 </div>

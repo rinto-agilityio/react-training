@@ -1,18 +1,25 @@
+// Libs
 import React from 'react'
-import { View, StyleSheet, Text } from 'react-native'
+import { NavigationScreenProps } from 'react-navigation'
 
-// define Login page styles
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-})
+// Containers
+import CategoryContainer from 'pchef-shared/src/containers/Category'
+import ROUTES from '@constants/routes';
 
-// Category
-const Category = () => (
-  <View style={styles.container}>
-    <Text>test</Text>
-  </View>
-)
+type Props = {
+  navigation: NavigationScreenProps
+}
+
+const Category = ({ navigation }: Props) => {
+  const {
+    categoryId,
+  } = navigation.state.params
+
+  return (
+    <CategoryContainer
+      id={categoryId}
+    />
+  )
+}
 
 export default Category

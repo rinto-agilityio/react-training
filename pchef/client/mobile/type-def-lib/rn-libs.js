@@ -166,3 +166,19 @@ declare module 'pchef-shared/src/containers/RecipeForm' {
 declare module 'pchef-shared/src/containers/Profile' {
   declare module.exports: any;
 }
+
+declare module 'pchef-shared/src/containers/Category' {
+  declare module.exports: any;
+}
+
+declare module 'pchef-shared/src/containers/WishList' {
+  declare module.exports: any;
+}
+
+declare module 'pchef-shared/src/screens/wish-list/components/WishList' {
+  declare module.exports: any;
+}
+
+declare module 'pchef-shared/src/containers/WishListForm' {
+  declare module.exports: any;
+}

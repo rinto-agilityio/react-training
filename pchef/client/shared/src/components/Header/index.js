@@ -15,6 +15,9 @@ import { COLORS, FONTS } from '../../themes'
 // Styles
 import styles from './styles'
 
+// Constants
+import { URL } from '../../constants/index'
+
 type Props = {
   data: {
     user: {
@@ -26,6 +29,7 @@ type Props = {
   type?: string,
   onPressLogo?: () => void,
   onPressCategoryIcon?: () => void,
+  onDirectTo: (id: string) => void,
 }
 
 const Header = ({
@@ -35,6 +39,7 @@ const Header = ({
   data,
   loading,
   error,
+  onDirectTo,
 }: Props) => {
   const [visible, setVisible] = useState(false)
 
@@ -67,8 +72,8 @@ const Header = ({
           </View>
           <View style={styles.wrapUserInfo}>
             <Button
-              onPress={() => {}}
-              title="Create Recipe"
+              onPress={() => onDirectTo(URL.CREATE_RECIPE.PATH)}
+              title={URL.CREATE_RECIPE.TITLE}
               buttonStyle={styles.createRecipeBtn}
             />
             <Provider>
@@ -94,9 +99,9 @@ const Header = ({
                   )
                 }
               >
-                <Menu.Item onPress={() => {}} title="View Profile" />
-                <Menu.Item onPress={() => {}} title="Wish List" />
-                <Menu.Item onPress={() => {}} title="Logout" />
+                <Menu.Item onPress={() => onDirectTo(URL.PROFILE.PATH)} title={URL.PROFILE.TITLE} />
+                <Menu.Item onPress={() => onDirectTo(URL.WISH_LIST.PATH)} title={URL.WISH_LIST.TITLE} />
+                <Menu.Item onPress={() => onDirectTo(URL.LOG_OUT.PATH)} title={URL.LOG_OUT.TITLE} />
               </Menu>
             </Provider>
           </View>

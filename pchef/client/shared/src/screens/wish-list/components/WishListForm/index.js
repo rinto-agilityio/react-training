@@ -1,5 +1,6 @@
+/* eslint-disable react/require-default-props */
 // Libs
-import React, { useState } from 'react'
+import React, { useState, forwardRef, useImperativeHandle } from 'react'
 import { View, Text, Platform } from 'react-native'
 
 // Styles
@@ -15,9 +16,9 @@ import Modal from '../../../../components/Modal'
 import Categories from '../../../../containers/Categories'
 import CookingTypes from '../../../../containers/CookingTypes'
 import Error from '../../../../components/Error'
-import Wrapper from '../../../../layout/Wrapper';
+import Wrapper from '../../../../layout/Wrapper'
 import Icon from '../../../../components/Icon'
-import Button from '../../../../components/Button';
+import Button from '../../../../components/Button'
 
 // Themes
 import { METRICS } from '../../../../themes'
@@ -30,13 +31,17 @@ type Props = {
     date: string,
   ) => Promise<{ data: { createWishList: { id: string } }}>,
   handleRedirectWishlist: () => void,
+  customContainer?: {},
+  customModal?: {},
 }
 
-const WishListForm = ({
+const WishListForm = forwardRef(({
   size = 'medium',
   createWishList,
   handleRedirectWishlist,
-}: Props) => {
+  customContainer = {},
+  customModal = {},
+}: Props, ref) => {
   const [visible, setVisible] = useState(false)
   const [visibleCategories, setVisibleCategories] = useState(false)
   const [visibleCookingTypes, setVisibleCookingTypes] = useState(false)
@@ -47,6 +52,7 @@ const WishListForm = ({
   const [error, setError] = useState('')
   const [errorValidator, setErrorValidator] = useState({})
   const isWeb = Platform.OS === 'web'
+  const isShowSelectedDay = selectedDay && (selectedDay !== today)
 
   const dayRange = getDateOfWeek()
 
@@ -97,12 +103,16 @@ const WishListForm = ({
     }
   }
 
+  useImperativeHandle(ref, () => ({
+    handleCreateWishList,
+  }))
+
   if (error) {
     return <Error message={error} />
   }
 
   return (
-    <View style={styles.container}>
+    <View style={isWeb ? styles.container : customContainer}>
       <Icon
         name="date-range"
         size={METRICS[`${size}Icon`]}
@@ -111,13 +121,18 @@ const WishListForm = ({
         wrapperIconStyle={[styles.icon, styles.wrapperMainPhoto]}
         customStyle={styles[`${size}Input`]}
       />
+      { isShowSelectedDay ? (
+        <Text style={[styles.text, styles[`${size}Input`]]}>
+          { selectedDay }
+        </Text>
+      ) : null }
       { visible && (
         <Modal
           onDismiss={() => setVisible(false)}
           visible={visible}
           onSubmit={() => setVisible(false)}
           size={size}
-          customDialog={styles.modal}
+          customDialog={[styles.modal, customModal]}
         >
           <Calendar
             selectedDay={selectedDay}
@@ -192,6 +207,6 @@ const WishListForm = ({
       }
     </View>
   )
-}
+})
 
 export default WishListForm

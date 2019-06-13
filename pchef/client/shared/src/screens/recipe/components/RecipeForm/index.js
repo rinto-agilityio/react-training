@@ -1,5 +1,6 @@
+/* eslint-disable react/require-default-props */
 // Libs
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, forwardRef, useImperativeHandle } from 'react'
 import { View, Text, Platform } from 'react-native'
 
 // Styles
@@ -49,21 +50,21 @@ type Props = {
   handleAddStepImageOnWeb?: () => void,
 }
 
-const RecipeForm = ({
+const RecipeForm = forwardRef(({
   size = 'medium',
-  handleAddRecipeImage,
+  handleAddRecipeImage = () => {},
   createRecipe,
-  previewImage,
+  previewImage = '',
   publishRecipe,
   redirectAfterPublish,
   customStyle,
   customStyleError,
   handleAddStepImage = () => {},
-  stepUrl,
+  stepUrl = '',
   handleAddRecipeImageOnWeb,
   customStyleLabel,
   handleAddStepImageOnWeb,
-}: Props) => {
+}: Props, ref) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
   const [visibleIngredients, setVisibleIngredients] = useState(false)
@@ -81,7 +82,7 @@ const RecipeForm = ({
   const isDisabled = directors.length > 0 ? false : true
 
   const handleCreateRecipe = async isOnpen => {
-    const title = getValueTextBox(titleRef.current)
+    const title = getValueTextBox(titleRef.current) || ''
     const categoryId = category.id
     const cookingTypeId = cookingType.id
     const errors = validator({
@@ -99,9 +100,9 @@ const RecipeForm = ({
         await createRecipe(
           categoryId,
           cookingTypeId,
-          title || '',
+          title,
           getValueTextBox(subTitleRef.current) || '',
-          previewImage || '',
+          previewImage,
           ingredients,
           true,
         ).then(({ data }) => {
@@ -135,6 +136,10 @@ const RecipeForm = ({
       setError(err)
     }
   }
+
+  useImperativeHandle(ref, () => ({
+    handlePublishRecipe,
+  }))
 
   const dataIcon = [
     {
@@ -320,29 +325,18 @@ const RecipeForm = ({
           }}
         />
       )}
-      {
-        isWeb && (
-          <View style={[styles.wrapperButton]}>
-            <Button
-              onPress={handlePublishRecipe}
-              title="Save Recipe"
-              buttonStyle={isDisabled ? styles.disableButton : [styles.btnModal, styles[`${size}btnModal`]]}
-              disabled={isDisabled}
-            />
-          </View>
-        )
-      }
+      {isWeb ? (
+        <View style={[styles.wrapperButton]}>
+          <Button
+            onPress={handlePublishRecipe}
+            title="Save Recipe"
+            buttonStyle={isDisabled ? styles.disableButton : [styles.btnModal, styles[`${size}btnModal`]]}
+            disabled={isDisabled}
+          />
+        </View>
+      ) : null}
     </View>
   )
-}
-
-RecipeForm.defaultProps = {
-  handleAddRecipeImage: () => {},
-  previewImage: '',
-  handleAddStepImage: () => {},
-  stepUrl: '',
-  handleAddRecipeImageOnWeb: () => {},
-  handleAddStepImageOnWeb: () => {},
-}
+})
 
 export default RecipeForm

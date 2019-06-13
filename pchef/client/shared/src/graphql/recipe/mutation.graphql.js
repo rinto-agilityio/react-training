@@ -97,6 +97,7 @@ const createRecipe = graphql(CREATE_RECIPE, {
       },
     }),
   }),
+  withRef: true,
 })
 
 const publishRecipe = graphql(PUBLISH_RECIPE, {
@@ -105,6 +106,7 @@ const publishRecipe = graphql(PUBLISH_RECIPE, {
       variables: { id },
     }),
   }),
+  withRef: true,
 })
 
 const createRecipeStep = graphql(CREATE_RECIPE_STEP, {

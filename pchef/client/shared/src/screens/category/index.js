@@ -7,7 +7,6 @@ import { GRID_VIEW_COLUMN, LIST_VIEW_COLUMN } from '../../constants/index'
 import { checkContainField } from '../../helpers/utils'
 
 // Components
-import MainHeader from '../../containers/Header'
 import Banner from './components/Header'
 import Recipe from './components/Recipe'
 import Loading from '../../components/Loading'
@@ -41,9 +40,6 @@ type Props = {
     favoriteRecipe: Array<{id: string}>,
   ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
   handleRedirectLogin: Function,
-  onPressCategoryIcon: () => void,
-  onPressLogo: () => void,
-  type?: string,
 }
 const CategoryScreen = ({
   category = {},
@@ -53,9 +49,6 @@ const CategoryScreen = ({
   userToggleRecipe,
   data = {},
   handleRedirectLogin,
-  onPressCategoryIcon,
-  onPressLogo,
-  type,
 }: Props) => {
   const size = Platform.OS === 'web' ? 'large' : 'small'
   const [columns, setColumns] = useState(LIST_VIEW_COLUMN)
@@ -102,12 +95,6 @@ const CategoryScreen = ({
 
   return (
     <>
-      <MainHeader
-        onPressIcon={() => {}}
-        onPressCategoryIcon={onPressCategoryIcon}
-        onPressLogo={onPressLogo}
-        type={type}
-      />
       <Banner
         category={category}
         isGrid={isGrid}
@@ -137,10 +124,6 @@ const CategoryScreen = ({
       </View>
     </>
   )
-}
-
-CategoryScreen.defaultProps = {
-  type: 'primary',
 }
 
 export default CategoryScreen

@@ -16,3 +16,22 @@ export const PATTERN = {
   EMAIL: /^[a-zA-Z0-9_.+-]+@asnet.com.vn$/,
 }
 export const DEFAULT_IMAGE = 'https://www.tastefullysimple.com/_/media/images/recipe-default-image.png'
+
+export const URL = {
+  PROFILE: {
+    PATH: 'profile',
+    TITLE: 'View Profile',
+  },
+  WISH_LIST: {
+    PATH: 'wishlist',
+    TITLE: 'Wish List',
+  },
+  LOG_OUT: {
+    PATH: 'logout',
+    TITLE: 'Logout',
+  },
+  CREATE_RECIPE: {
+    PATH: 'create-recipe',
+    TITLE: 'Create Recipe',
+  },
+}
