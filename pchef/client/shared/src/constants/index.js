@@ -42,4 +42,8 @@ export const URL = {
     PATH: '/',
     TITLE: '',
   },
+  CREATE_RECIPE: {
+    PATH: '/create-recipe',
+    TITLE: 'create-recipe',
+  },
 }

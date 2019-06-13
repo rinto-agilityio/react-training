@@ -40,6 +40,10 @@ const PrivateRoute = ({ component: Component, loginPath, path, history, ...rest 
   const handleRedirectHome = () => {
     history.push(URL.HOME.PATH)
   }
+  
+  const handleRedirectCreateRecipe = () => {
+    history.push(URL.CREATE_RECIPE.PATH)
+  }
 
   const handleDirectTo = id => {
     switch (id) {
@@ -51,6 +55,9 @@ const PrivateRoute = ({ component: Component, loginPath, path, history, ...rest 
         break
       case URL.LOG_OUT.TITLE:
         handleLogout()
+        break
+      case URL.CREATE_RECIPE.TITLE:
+        handleRedirectCreateRecipe()
         break
       default:
         handleRedirectProfile()
