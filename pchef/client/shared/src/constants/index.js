@@ -19,31 +19,19 @@ export const DEFAULT_IMAGE = 'https://www.tastefullysimple.com/_/media/images/re
 
 export const URL = {
   PROFILE: {
-    PATH: '/profile',
-    TITLE: 'profile',
+    PATH: 'profile',
+    TITLE: 'View Profile',
   },
   WISH_LIST: {
-    PATH: '/wishlist',
-    TITLE: 'wishlist',
+    PATH: 'wishlist',
+    TITLE: 'Wish List',
   },
   LOG_OUT: {
-    PATH: '/logout',
-    TITLE: 'logout',
-  },
-  LOG_IN: {
-    PATH: '/login',
-    TITLE: 'login',
-  },
-  WELCOME: {
-    PATH: '/welcome',
-    TITLE: 'welcome',
-  },
-  HOME: {
-    PATH: '/',
-    TITLE: '',
+    PATH: 'logout',
+    TITLE: 'Logout',
   },
   CREATE_RECIPE: {
-    PATH: '/create-recipe',
-    TITLE: 'create-recipe',
+    PATH: 'create-recipe',
+    TITLE: 'Create Recipe',
   },
 }

@@ -72,8 +72,8 @@ const Header = ({
           </View>
           <View style={styles.wrapUserInfo}>
             <Button
-              onPress={() => onDirectTo(URL.CREATE_RECIPE.TITLE)}
-              title="Create Recipe"
+              onPress={() => onDirectTo(URL.CREATE_RECIPE.PATH)}
+              title={URL.CREATE_RECIPE.TITLE}
               buttonStyle={styles.createRecipeBtn}
             />
             <Provider>
@@ -99,9 +99,9 @@ const Header = ({
                   )
                 }
               >
-                <Menu.Item onPress={() => onDirectTo(URL.PROFILE.TITLE)} title="View Profile" />
-                <Menu.Item onPress={() => onDirectTo(URL.WISH_LIST.TITLE)} title="Wish List" />
-                <Menu.Item onPress={() => onDirectTo(URL.LOG_OUT.TITLE)} title="Logout" />
+                <Menu.Item onPress={() => onDirectTo(URL.PROFILE.PATH)} title={URL.PROFILE.TITLE} />
+                <Menu.Item onPress={() => onDirectTo(URL.WISH_LIST.PATH)} title={URL.WISH_LIST.TITLE} />
+                <Menu.Item onPress={() => onDirectTo(URL.LOG_OUT.PATH)} title={URL.LOG_OUT.TITLE} />
               </Menu>
             </Provider>
           </View>

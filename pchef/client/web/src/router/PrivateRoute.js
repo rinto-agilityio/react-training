@@ -8,7 +8,7 @@ import MainContainer from 'pchef-shared/src/layout/MainContainer'
 import Header from 'pchef-shared/src/containers/Header'
 
 // Constants
-import { URL } from 'pchef-shared/src/constants/index'
+import { HOME, WELCOME, LOG_IN, PROFILE, WISH_LIST, LOG_OUT, CREATE_RECIPE } from '../constants'
 
 type Props = {
   component: any,
@@ -22,41 +22,41 @@ const PrivateRoute = ({ component: Component, loginPath, path, history, ...rest 
   const platform = Platform.OS
 
   const handleRedirectProfile = () => {
-    history.push(URL.PROFILE.PATH)
+    history.push(`/${PROFILE}`)
   }
   const handleLogout = () => {
     localStorage.removeItem('token')
-    history.push(URL.LOG_IN.PATH)
+    history.push(`/${LOG_IN}`)
   }
 
   const handleRedirectWishList = () => {
-    history.push(URL.WISH_LIST.PATH)
+    history.push(`/${WISH_LIST}`)
   }
 
   const handleRedirectWelcome = () => {
-    history.push(URL.WELCOME.PATH)
+    history.push(`/${WELCOME}`)
   }
 
   const handleRedirectHome = () => {
-    history.push(URL.HOME.PATH)
+    history.push(`/${HOME}`)
   }
-  
+
   const handleRedirectCreateRecipe = () => {
-    history.push(URL.CREATE_RECIPE.PATH)
+    history.push(`/${CREATE_RECIPE}`)
   }
 
   const handleDirectTo = id => {
     switch (id) {
-      case URL.PROFILE.TITLE:
+      case PROFILE:
         handleRedirectProfile()
         break
-      case URL.WISH_LIST.TITLE:
+      case WISH_LIST:
         handleRedirectWishList()
         break
-      case URL.LOG_OUT.TITLE:
+      case LOG_OUT:
         handleLogout()
         break
-      case URL.CREATE_RECIPE.TITLE:
+      case CREATE_RECIPE:
         handleRedirectCreateRecipe()
         break
       default:
@@ -66,7 +66,7 @@ const PrivateRoute = ({ component: Component, loginPath, path, history, ...rest 
 
   const handleHeaderMenu = () => {
     const currentRoute = window.location.pathname
-    if (!currentRoute.includes(URL.WELCOME.PATH) && !currentRoute.includes(URL.LOG_IN.PATH)) {
+    if (!currentRoute.includes(`/${WELCOME}`) && !currentRoute.includes(`/${LOG_IN}`)) {
       return (
         <Header
           onPressCategoryIcon={handleRedirectWelcome}
