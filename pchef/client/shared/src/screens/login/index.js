@@ -42,7 +42,7 @@ const Login = ({
   useEffect(() => {
     const { followCategory } = data
     setFollowCategory(followCategory)
-  }, [data.followCategory])
+  }, [data])
 
   const handleNavigatePage = () => {
     if (followCategory.length >= MINIMUM_FOLLOWED_CATEGORY) {

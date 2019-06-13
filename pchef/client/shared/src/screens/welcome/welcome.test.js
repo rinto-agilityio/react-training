@@ -128,6 +128,6 @@ describe('Welcome', () => {
     component.find('InterestedCategories').props().onChooseCategory()
     await wait()
 
-    expect(component.find('Error').exists()).toEqual(true)
+    expect(component.find('InterestedCategories').props().activeList.length).toEqual(0)
   })
 })
