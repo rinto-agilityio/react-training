@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
   },
 
   wrapperButton: {
-    marginTop: '20px',
+    marginTop: METRICS.largeMargin,
     marginBottom: '0',
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
 
   headerForm: {
     textAlign: 'center',
-    marginTop: '20px',
+    marginTop: METRICS.largeMargin,
     fontSize: FONTS.fontSize.large,
   },
 })
