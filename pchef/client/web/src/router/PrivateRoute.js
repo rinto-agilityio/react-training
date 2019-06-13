@@ -8,7 +8,7 @@ import MainContainer from 'pchef-shared/src/layout/MainContainer'
 import Header from 'pchef-shared/src/containers/Header'
 
 // Constants
-import { HOME, WELCOME, LOG_IN, PROFILE, WISH_LIST, LOG_OUT } from '../constants'
+import { URL } from '../constants'
 
 type Props = {
   component: any,
@@ -22,34 +22,34 @@ const PrivateRoute = ({ component: Component, loginPath, path, history, ...rest 
   const platform = Platform.OS
 
   const handleRedirectProfile = () => {
-    history.push(`/${PROFILE}`)
+    history.push(URL.PROFILE.PATH)
   }
   const handleLogout = () => {
     localStorage.removeItem('token')
-    history.push(`/${LOG_IN}`)
+    history.push(URL.LOG_IN.PATH)
   }
 
   const handleRedirectWishList = () => {
-    history.push(`/${WISH_LIST}`)
+    history.push(URL.WISH_LIST.PATH)
   }
 
   const handleRedirectWelcome = () => {
-    history.push(`/${WELCOME}`)
+    history.push(URL.WELCOME.PATH)
   }
 
   const handleRedirectHome = () => {
-    history.push(`/${HOME}`)
+    history.push(URL.HOME.PATH)
   }
 
   const handleDirectTo = id => {
     switch (id) {
-      case PROFILE:
+      case URL.PROFILE.TITLE:
         handleRedirectProfile()
         break
-      case WISH_LIST:
+      case URL.PROFILE.WISH_LIST:
         handleRedirectWishList()
         break
-      case LOG_OUT:
+      case URL.PROFILE.LOG_OUT:
         handleLogout()
         break
       default:
@@ -59,7 +59,7 @@ const PrivateRoute = ({ component: Component, loginPath, path, history, ...rest 
 
   const handleHeaderMenu = () => {
     const currentRoute = window.location.pathname
-    if (!currentRoute.includes(`/${WELCOME}`) && !currentRoute.includes(`/${LOG_IN}`)) {
+    if (!currentRoute.includes(URL.WELCOME.PATH) && !currentRoute.includes(URL.LOG_IN.PATH)) {
       return (
         <Header
           onPressCategoryIcon={handleRedirectWelcome}
@@ -80,7 +80,6 @@ const PrivateRoute = ({ component: Component, loginPath, path, history, ...rest 
             <MainContainer type={platform}>
               <Component path={path} {...props} />
             </MainContainer>
-
           </>
         ) : (
           <Redirect to={{
