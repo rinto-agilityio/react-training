@@ -48,6 +48,8 @@ type Props = {
   handleAddRecipeImageOnWeb?: () => void,
   customStyleLabel: Object,
   handleAddStepImageOnWeb?: () => void,
+  uploadImage: () => void,
+  uploadStepImage: () => void,
 }
 
 const RecipeForm = forwardRef(({
@@ -64,6 +66,8 @@ const RecipeForm = forwardRef(({
   handleAddRecipeImageOnWeb,
   customStyleLabel,
   handleAddStepImageOnWeb,
+  uploadImage,
+  uploadStepImage,
 }: Props, ref) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)

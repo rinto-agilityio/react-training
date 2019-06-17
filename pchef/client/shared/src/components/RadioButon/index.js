@@ -10,7 +10,7 @@ import styles from './styles'
 import { COLORS } from '../../themes'
 
 type Props = {
-  onPress?: () => void,
+  onPress?: (value: string) => void,
   customStyle?: {} | Array<{}>,
   color?: string,
   value: string,
@@ -19,11 +19,12 @@ type Props = {
   group: Array<{
     id: string,
     name: string,
+    imgUrl: string,
   }>,
 };
 
 const RadioButton = ({
-  onPress,
+  onPress = () => {},
   customStyle,
   color,
   value,
