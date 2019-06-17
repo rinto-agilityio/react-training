@@ -117,6 +117,6 @@ export default {
 
   // Directions icon
   smallDirectionsIcon: 120,
-  mediumDirectionsIcon: 150,
-  largeDirectionsIcon: 170,
+  mediumDirectionsIcon: 170,
+  largeDirectionsIcon: 190,
 }
