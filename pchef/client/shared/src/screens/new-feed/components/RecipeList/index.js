@@ -8,6 +8,7 @@ import Loading from '../../../../components/Loading'
 
 // Utils
 import { sortRecipes } from '../../../../helpers/utils'
+import { NO_RECIPES_MESSAGE } from '../../../../constants'
 // Styles
 import styles from './styles'
 
@@ -81,7 +82,7 @@ const RecipeList = ({
     ))
 
   const recipeList = recipes.length
-    ? renderRecipeList() : <Text> No Recipes found. </Text>
+    ? renderRecipeList() : <Text>{NO_RECIPES_MESSAGE}</Text>
 
   return (
     <View style={[styles.container, styles[`${type}Container`]]}>
@@ -103,7 +104,7 @@ const RecipeList = ({
           </View>
 
           {/** Render Recipe list here */}
-          { recipeList }
+          {recipeList}
         </View>
       )}
     </View>
