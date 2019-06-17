@@ -5,8 +5,6 @@ import { Avatar, Provider, Menu } from 'react-native-paper'
 
 // Common components
 import Icon from '../Icon'
-import Loading from '../Loading'
-import Error from '../Error'
 import Button from '../Button'
 
 // Themes
