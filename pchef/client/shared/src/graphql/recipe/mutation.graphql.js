@@ -10,6 +10,7 @@ import {
   formatFavoriteRecipe,
   formatFiledOnObject,
   checkContain,
+  updateArrayById,
 } from '../../helpers/utils'
 
 const CREATE_RECIPE = gql`
@@ -61,10 +62,14 @@ const CREATE_RECIPE_STEP = gql`
 const PUBLISH_RECIPE = gql`
   mutation publishRecipe($id: String!) {
     publishRecipe(id: $id) {
+      categoryId
       id
+      title
+      imgUrl
+      votes
+      description
     }
   }
-
 `
 
 const TOGGLE_RECIPE = gql`
@@ -106,6 +111,32 @@ const publishRecipe = graphql(PUBLISH_RECIPE, {
       variables: { id },
     }),
   }),
+  options: {
+    update: (proxy, { data }) => {
+      try {
+        const { publishRecipe } = data
+        const dataQuery = proxy.readQuery({ query: GET_RECIPES })
+        const { getUser: { followCategory } } = dataQuery
+
+        const currentCategory = followCategory.find(category => publishRecipe.categoryId === category.id)
+        const currentCategoryUpdated = currentCategory.recipes.concat(publishRecipe)
+
+        const dataUpdated = {
+          ...dataQuery,
+          getUser: {
+            ...dataQuery.getUser,
+            followCategory: followCategory.map(category => (
+              category.id === currentCategory ? currentCategoryUpdated : category
+            )),
+            __typename: 'UserFullInfos',
+          },
+        }
+        proxy.writeQuery({ query: GET_RECIPES, data: dataUpdated })
+      } catch (err) {
+        return { error: 'Failed!' }
+      }
+    },
+  },
   withRef: true,
 })
 

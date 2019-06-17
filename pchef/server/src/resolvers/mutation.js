@@ -95,24 +95,31 @@ const Mutation = {
   })),
 
   // Recipe
-  createRecipe: authenticated((_, data) => ({
-    id: addDocument(COLLECTION_NAME.RECIPE, {
-      ...data,
+  createRecipe: authenticated((_, data) => {
+    const newRecipe = {
       views: 0,
       votes: [],
       modifyDate: Date.now().toString(),
       publishedDate: Date.now().toString(),
-    }),
-  })),
+    }
 
-  publishRecipe: authenticated((_, { id }) => (
-    updateDocumentNotExist(`${COLLECTION_NAME.RECIPE}/${id}`, {
-      isDraft: false,
-      publishedDate: Date.now().toString(),
-      modifyDate: Date.now().toString(),
-    }).then(() => ({ id }))
+    return ({
+      id: addDocument(COLLECTION_NAME.RECIPE, {
+        ...data,
+        ...newRecipe,
+      }),
+      newRecipe,
+    })
+  }),
+
+  publishRecipe: authenticated((_, { id }) => {
+    return getDocument(`${COLLECTION_NAME.RECIPE}/${id}`)
+      .then(recipe => {
+        return updateDocumentNotExist(`${COLLECTION_NAME.RECIPE}/${id}`, recipe)
+      .then(() => ({ ...recipe }))
       .catch(error => error)
-  )),
+      })
+  }),
 
   // List recipes user mark favorite
   userToggleRecipe: authenticated((_, { recipeId }, { currentUser }) => {
