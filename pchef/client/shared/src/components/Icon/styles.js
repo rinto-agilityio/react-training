@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
   },
   label: {
     marginLeft: METRICS.mediumMargin,
+    textAlign: 'center',
   },
 })
 

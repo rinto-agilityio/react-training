@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 
+// Containers
+import RecipeFormContainer from 'pchef-shared/src/containers/RecipeForm'
+
 // helpers
 import { handleUploadImage } from '../../helpers/upload-image'
 
-// Containers
-import RecipeFormContainer from 'pchef-shared/src/containers/RecipeForm'
+// constants
+import { IMAGE_TYPE } from '../../constants'
 
 // styles
 import './CustomStyle.css'
@@ -16,21 +19,24 @@ type Props = {
 const CreateRecipe = ({ history }: Props) => {
   const [imgUrl, setImgUrl] = useState('')
   const [stepUrl, setStepUrl] = useState('')
+  const [fileEvent, setFileEvent] = useState({})
 
   const redirectAfterPublish = () => (
     history.push('/')
   )
-  const handleAddRecipeImageOnWeb = (event, name) => {
-    handleUploadImage(event.target.files[0])
-      .then(response => (name === 'add-recipe' ? setImgUrl(response.data) : setStepUrl(response.data)))
-      .catch(error => error)
+
+  const handleAddRecipeImageOnWeb = (e, name) => {
+    const url = e.target.files[0] && (window.URL || window.webkitURL).createObjectURL(e.target.files[0])
+    e.target.files[0] && setFileEvent(e.target.files[0])
+    name === IMAGE_TYPE.RECIPE ? setImgUrl(url) : setStepUrl(url)
   }
 
   return (
     <RecipeFormContainer
       redirectAfterPublish={redirectAfterPublish}
-      handleAddRecipeImageOnWeb={event => handleAddRecipeImageOnWeb(event, 'add-recipe')}
-      handleAddStepImageOnWeb={event => handleAddRecipeImageOnWeb(event, 'add-step')}
+      handleAddRecipeImageOnWeb={event => handleAddRecipeImageOnWeb(event, IMAGE_TYPE.RECIPE)}
+      handleAddStepImageOnWeb={event => handleAddRecipeImageOnWeb(event, IMAGE_TYPE.RECIPE_STEP)}
+      uploadImage={() => handleUploadImage(fileEvent)}
       previewImage={imgUrl}
       stepUrl={stepUrl}
       customStyle={{
@@ -44,7 +50,7 @@ const CreateRecipe = ({ history }: Props) => {
         color: 'red',
       }}
       customStyleLabel={{
-        marginTop: '30px'
+        marginTop: '30px',
       }}
     />
   )
