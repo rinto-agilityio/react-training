@@ -129,11 +129,6 @@ const styles = StyleSheet.create({
     marginTop: METRICS.largeMargin,
     fontSize: FONTS.fontSize.large,
   },
-  disableButton: {
-    cursor: 'not-allowed',
-    pointerEvents: 'none',
-    backgroundColor: COLORS.grayDarker,
-  },
 })
 
 export default styles
