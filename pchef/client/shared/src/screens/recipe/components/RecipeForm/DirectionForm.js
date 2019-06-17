@@ -86,12 +86,12 @@ const DirectionsForm = ({
     })
     if (!errors.isError) {
       try {
-        await uploadStepImage()
+        const imageStep = await uploadStepImage()
         await createRecipeStep(
           recipeId,
           title,
           nextStep,
-          stepUrl || '',
+          imageStep || '',
           getValueTextBox(stepDescriptionRef.current) || '',
         ).then(({ data = {} }) => {
           directions.push(data.createRecipeStep)

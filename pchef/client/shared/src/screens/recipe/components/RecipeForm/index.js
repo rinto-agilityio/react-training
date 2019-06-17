@@ -49,7 +49,7 @@ type Props = {
   customStyleLabel: Object,
   handleAddStepImageOnWeb?: () => void,
   uploadImage: () => Promise<void>,
-  uploadStepImage: () => Promise<void>,,
+  uploadStepImage: () => Promise<void>,
 }
 
 const RecipeForm = forwardRef(({
@@ -313,7 +313,7 @@ const RecipeForm = forwardRef(({
           handleAddStepImage={handleAddStepImage}
           stepUrl={stepUrl}
           handleAddStepImageOnWeb={handleAddStepImageOnWeb}
-          uploadStepImage={uploadStepImage}
+          uploadStepImage={isWeb ? uploadImage : uploadStepImage}
         />
       )}
       {visibleCategories && (

@@ -18,6 +18,9 @@ const styles = StyleSheet.create({
   },
 
   // Title
+  titleModal: {
+    marginLeft: METRICS.extraLargeMargin,
+  },
   smallTitleModal: {
     fontSize: FONTS.fontSize.small,
   },
