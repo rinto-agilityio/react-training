@@ -11,6 +11,8 @@ export const ELLIPSIS_LINE = 1
 
 export const MINIMUM_FOLLOWED_CATEGORY = 4
 
+export const MODAL_PADDING = 48
+
 // validate pattern
 export const PATTERN = {
   EMAIL: /^[a-zA-Z0-9_.+-]+@asnet.com.vn$/,

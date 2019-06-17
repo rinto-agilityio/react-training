@@ -48,6 +48,8 @@ type Props = {
   handleAddRecipeImageOnWeb?: () => void,
   customStyleLabel: Object,
   handleAddStepImageOnWeb?: () => void,
+  uploadImage: () => Promise<void>,
+  uploadStepImage: () => Promise<void>,,
 }
 
 const RecipeForm = forwardRef(({
@@ -64,6 +66,8 @@ const RecipeForm = forwardRef(({
   handleAddRecipeImageOnWeb,
   customStyleLabel,
   handleAddStepImageOnWeb,
+  uploadImage,
+  uploadStepImage,
 }: Props, ref) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
@@ -97,12 +101,13 @@ const RecipeForm = forwardRef(({
 
     if (!errors.isError) {
       try {
+        const imageUrl = await uploadImage()
         await createRecipe(
           categoryId,
           cookingTypeId,
           title,
           getValueTextBox(subTitleRef.current) || '',
-          previewImage,
+          imageUrl || '',
           ingredients,
           true,
         ).then(({ data }) => {
@@ -187,21 +192,21 @@ const RecipeForm = forwardRef(({
         customStyle={customStyleError}
       />
       <View>
-        <Text
-          for="file-input"
-          accessibilityRole="label"
-        >
-          <Icon
-            name="add-a-photo"
-            size={METRICS[`${size}Icon`] * 2}
-            onPress={handleAddRecipeImage}
-            label="Set cover photo"
-            wrapperIconStyle={styles.wrapperMainPhoto}
-            customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`], customStyleLabel]}
-          />
-        </Text>
-        {
-          isWeb && (
+        {isWeb ? (
+          <>
+            <Text
+              for="file-input"
+              accessibilityRole="label"
+            >
+              <Icon
+                name="add-a-photo"
+                size={METRICS[`${size}Icon`] * 2}
+                onPress={handleAddRecipeImage}
+                label="Set cover photo"
+                wrapperIconStyle={styles.wrapperMainPhoto}
+                customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`], customStyleLabel]}
+              />
+            </Text>
             <input
               id="file-input"
               type="file"
@@ -210,8 +215,17 @@ const RecipeForm = forwardRef(({
               }}
               onChange={handleAddRecipeImageOnWeb}
             />
-          )
-        }
+          </>
+        ) : (
+          <Icon
+            name="add-a-photo"
+            size={METRICS[`${size}Icon`] * 2}
+            onPress={handleAddRecipeImage}
+            label="Set cover photo"
+            wrapperIconStyle={styles.wrapperMainPhoto}
+            customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`], customStyleLabel]}
+          />
+        )}
       </View>
 
       {previewImage ? (
@@ -299,6 +313,7 @@ const RecipeForm = forwardRef(({
           handleAddStepImage={handleAddStepImage}
           stepUrl={stepUrl}
           handleAddStepImageOnWeb={handleAddStepImageOnWeb}
+          uploadStepImage={uploadStepImage}
         />
       )}
       {visibleCategories && (
@@ -330,7 +345,7 @@ const RecipeForm = forwardRef(({
           <Button
             onPress={handlePublishRecipe}
             title="Save Recipe"
-            buttonStyle={isDisabled ? styles.disableButton : [styles.btnModal, styles[`${size}btnModal`]]}
+            buttonStyle={[styles.btnModal, styles[`${size}btnModal`]]}
             disabled={isDisabled}
           />
         </View>

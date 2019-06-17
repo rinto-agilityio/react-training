@@ -57,3 +57,7 @@ declare module '@screen/WishListForm' {
 declare module '@helpers/upload-image' {
   declare module.exports: any;
 }
+
+declare module '@constants/variables' {
+  declare module.exports: any;
+}

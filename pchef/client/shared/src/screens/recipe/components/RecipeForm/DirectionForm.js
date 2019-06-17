@@ -44,6 +44,7 @@ type Props = {
     }}>,
   stepUrl?: string,
   handleAddStepImageOnWeb?: () => void,
+  uploadStepImage: () => Promise<void>,
 }
 
 const DirectionsForm = ({
@@ -55,6 +56,7 @@ const DirectionsForm = ({
   createRecipeStep,
   stepUrl,
   handleAddStepImageOnWeb,
+  uploadStepImage,
 }: Props) => {
   const stepTitleRef = useRef(null)
   const stepDescriptionRef = useRef(null)
@@ -84,6 +86,7 @@ const DirectionsForm = ({
     })
     if (!errors.isError) {
       try {
+        await uploadStepImage()
         await createRecipeStep(
           recipeId,
           title,
@@ -153,32 +156,38 @@ const DirectionsForm = ({
                 customContainer={styles.inputDirections}
               />
             ))}
-            <View>
-              <Text
-                for="file-input-step"
-                accessibilityRole="label"
-              >
-                <Icon
-                  name="add-a-photo"
-                  size={METRICS[`${size}Icon`]}
-                  onPress={handleAddStepImage}
-                  label="Set cover photo"
-                  wrapperIconStyle={[styles.wrapperIcon, styles.wrapperIconDirections]}
-                />
-              </Text>
-              {
-                isWeb && (
-                  <input
-                    id="file-input-step"
-                    type="file"
-                    style={{
-                      display: 'none',
-                    }}
-                    onChange={handleAddStepImageOnWeb}
+            {isWeb ? (
+              <View>
+                <Text
+                  for="file-input-step"
+                  accessibilityRole="label"
+                >
+                  <Icon
+                    name="add-a-photo"
+                    size={METRICS[`${size}Icon`]}
+                    onPress={handleAddStepImage}
+                    label="Set cover photo"
+                    wrapperIconStyle={[styles.wrapperIcon, styles.wrapperIconDirections]}
                   />
-                )
-              }
-            </View>
+                </Text>
+                <input
+                  id="file-input-step"
+                  type="file"
+                  style={{
+                    display: 'none',
+                  }}
+                  onChange={handleAddStepImageOnWeb}
+                />
+              </View>
+            ) : (
+              <Icon
+                name="add-a-photo"
+                size={METRICS[`${size}Icon`]}
+                onPress={handleAddStepImage}
+                label="Set cover photo"
+                wrapperIconStyle={[styles.wrapperIcon, styles.wrapperIconDirections]}
+              />
+            )}
             {stepUrl ? (
               <Image url={stepUrl} customImageStyle={{ width: '100%', height: 150 }} />
             ) : null}

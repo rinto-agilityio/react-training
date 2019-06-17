@@ -7,10 +7,11 @@ import { NavigationScreenProps } from 'react-navigation'
 import RecipeFormContainer from 'pchef-shared/src/containers/RecipeForm'
 
 // Helpers
-import { selectImage } from '@helpers/upload-image'
+import { selectImage, uploadImage } from '@helpers/upload-image'
 
 // Constants
 import ROUTES from '@constants/routes'
+import { IMAGE_TYPE } from '@constants/variables'
 
 type Props = {
   navigation: NavigationScreenProps
@@ -18,8 +19,8 @@ type Props = {
 
 const RecipeForm = ({ navigation }: Props) => {
   const recipeFormRef: Object = useRef(null)
-  const [url, setUrl] = useState()
-  const [stepUrl, setStepUrl] = useState()
+  const [imageData, setImageData] = useState({})
+  const [imageStep, setImageStep] = useState({})
   const [statusPress, setStatusPress] = useState(false)
 
   const handlePublishRecipe = async () => {
@@ -30,24 +31,27 @@ const RecipeForm = ({ navigation }: Props) => {
     setStatusPress(false)
   }
 
+  const handleAddRecipeImage = async type => {
+    await selectImage(response => (type === IMAGE_TYPE.RECIPE ? setImageData(response) : setImageStep(response)))
+  }
+
   useEffect(() => {
     setStatusPress(navigation.getParam('status', false))
     statusPress && handlePublishRecipe()
   })
 
-  const handleAddRecipeImage = async type => {
-    await selectImage(url => (type === 'recipe_image' ? setUrl(url) : setStepUrl(url)))
-  }
-
   return (
     <ScrollView style={{ marginTop: 30 }}>
       <RecipeFormContainer
         ref={recipeFormRef}
-        handleAddRecipeImage={() => handleAddRecipeImage('recipe_image')}
-        previewImage={url}
+        handleAddRecipeImage={() => handleAddRecipeImage(IMAGE_TYPE.RECIPE)}
+        previewImage={imageData.uri}
         redirectAfterPublish={() => navigation.navigate(ROUTES.HOME)}
-        handleAddStepImage={() => handleAddRecipeImage('step_image')}
-        stepUrl={stepUrl}
+        handleAddStepImage={() => handleAddRecipeImage(IMAGE_TYPE.STEP)}
+        stepUrl={imageStep.uri}
+        size="small"
+        uploadImage={() => uploadImage(imageData)}
+        uploadStepImage={() => uploadImage(imageStep)}
       />
     </ScrollView>
   )

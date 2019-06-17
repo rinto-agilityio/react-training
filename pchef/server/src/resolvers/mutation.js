@@ -106,7 +106,7 @@ const Mutation = {
   })),
 
   publishRecipe: authenticated((_, { id }) => (
-    updateDocumentNotExist(`${COLLECTION_NAME.RECIPE}/${id}}`, {
+    updateDocumentNotExist(`${COLLECTION_NAME.RECIPE}/${id}`, {
       isDraft: false,
       publishedDate: Date.now().toString(),
       modifyDate: Date.now().toString(),
@@ -208,25 +208,27 @@ const Mutation = {
               `${COLLECTION_NAME.WISH_LIST}/${result.id}`,
               { users: toggleItemInArray(result.users, currentUser.id) },
             )
-              .then(() => ({ id: result.id }))
+              .then(() => result)
               .catch(error => error)
           }
 
           // If it exists, do nothing
-          return {
-            id: result.id,
-          }
+          return result
         }
 
-        return {
+        return ({
           id: addDocument(COLLECTION_NAME.WISH_LIST, {
             categoryId,
             cookingTypeId,
             date,
             users: [currentUser.id],
           }),
-        }
+          categoryId,
+          cookingTypeId,
+          date,
+        })
       })
+      .then(data => data)
       .catch(error => error)
   }),
 }

@@ -11,6 +11,9 @@ import Wrapper from '../../../../layout/Wrapper'
 import RadioButton from '../../../../components/RadioButon'
 import Loading from '../../../../components/Loading'
 
+// Constants
+import { MODAL_PADDING } from '../../../../constants'
+
 type Props = {
   size: string,
   title: string,
@@ -44,10 +47,12 @@ const Classify = forwardRef(({
 }: Props, ref) => {
   const data = title === 'Categories' ? categories : cookingTypes
   const defaultValue = data[0] || {}
-  const [value, setValue] = useState(defaultValue)
+  const [value, setValue] = useState(defaultValue.id)
+  const [radioWidth, setRadioWidth] = useState()
+  const radioButtonValue = data.find(item => item.id === value) || {}
   useEffect(() => (
-    setValue(defaultValue)
-  ), [loading, defaultValue])
+    setValue(defaultValue.id)
+  ), [loading, defaultValue.id])
 
   if (loading) {
     return <Loading size={size} />
@@ -58,29 +63,28 @@ const Classify = forwardRef(({
       title={title}
       dismissBtn
       onDismiss={onDismiss}
-      onSubmit={() => handleSubmit(value)}
+      onSubmit={() => handleSubmit(radioButtonValue)}
       visible={visible}
       size={size}
     >
       <Wrapper
         direction="row"
-        childPosition="left"
+        childPosition="spaceBetween"
         customStyles={{
           marginBottom: METRICS.largeMargin,
+          paddingRight: 0,
+          paddingLeft: 0,
         }}
+        onLayout={event => event && setRadioWidth((event.nativeEvent.layout.width - MODAL_PADDING) / 2)} // 48 is padding of content modal
       >
-        {data.map(({ id, name }) => (
-          <RadioButton
-            key={id}
-            value={id}
-            onPress={() => setValue({ id, name })}
-            label={name}
-            status={value.id === id}
-            customWrapperStyle={{
-              width: '33.33%',
-            }}
-          />
-        ))}
+        <RadioButton
+          onPress={info => info && setValue(info)}
+          customWrapperStyle={{
+            width: radioWidth,
+          }}
+          group={data}
+          value={value}
+        />
       </Wrapper>
     </Modal>
   )
