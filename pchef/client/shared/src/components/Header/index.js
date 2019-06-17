@@ -41,15 +41,9 @@ const Header = ({
       avatar: '',
     },
   },
-  loading,
-  error,
   onDirectTo,
 }: Props) => {
   const [visible, setVisible] = useState(false)
-
-  if (loading) return <Loading />
-  if (error) return <Error message="Failed!" />
-
   const { user: { avatar } } = data
 
   return (
