@@ -24,8 +24,6 @@ type Props = {
       avatar: string,
     }
   },
-  loading: boolean,
-  error: boolean,
   type?: string,
   onPressLogo?: () => void,
   onPressCategoryIcon?: () => void,
