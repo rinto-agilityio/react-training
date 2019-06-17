@@ -44,7 +44,6 @@ type Props = {
     }}>,
   stepUrl?: string,
   handleAddStepImageOnWeb?: () => void,
-  uploadStepImage: () => Promise<void>,
 }
 
 const DirectionsForm = ({
@@ -56,7 +55,6 @@ const DirectionsForm = ({
   createRecipeStep,
   stepUrl,
   handleAddStepImageOnWeb,
-  uploadStepImage,
 }: Props) => {
   const stepTitleRef = useRef(null)
   const stepDescriptionRef = useRef(null)

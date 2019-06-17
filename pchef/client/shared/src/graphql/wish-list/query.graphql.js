@@ -2,7 +2,7 @@
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
-const GET_ALL_WISH_LIST = gql`
+export const GET_ALL_WISH_LIST = gql`
   {
     getAllWishList {
       id

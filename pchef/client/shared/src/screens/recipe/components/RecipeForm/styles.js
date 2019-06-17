@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: METRICS.largeMargin,
     fontSize: FONTS.fontSize.large,
-  },
+  }
 })
 
 export default styles

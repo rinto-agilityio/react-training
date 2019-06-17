@@ -2,10 +2,8 @@ import { StyleSheet } from 'react-native'
 import { METRICS, COLORS, FONTS } from '../../themes'
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   primaryContainer: {
+    flex: 1,
     paddingTop: 80,
   },
   secondaryContainer: {

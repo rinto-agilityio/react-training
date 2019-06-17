@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   label: {
-    marginLeft: METRICS.mediumMargin,
+    marginLeft: METRICS.smallmMargin,
   },
 })
 
