@@ -10,47 +10,54 @@ import styles from './styles'
 import { COLORS } from '../../themes'
 
 type Props = {
-  label?: string | number,
-  onPress?: () => void,
+  onPress?: (value: string) => void,
   customStyle?: {} | Array<{}>,
   color?: string,
-  status?: boolean,
   value: string,
   disabled?: boolean,
   customWrapperStyle?: {} | Array<{}>,
+  group: Array<{
+    id: string,
+    name: string,
+    imgUrl: string,
+  }>,
 };
 
 const RadioButton = ({
-  label,
-  onPress,
+  onPress = () => {},
   customStyle,
   color,
-  status,
   value,
   customWrapperStyle,
   disabled,
+  group = [],
 }: Props) => (
-  <View style={[
-    styles.wrapper,
-    customWrapperStyle,
-  ]}
+  <RadioButtonComponent.Group
+    onValueChange={value => onPress(value)}
+    value={value}
   >
-    <RadioButtonComponent
-      value={value}
-      onClick={onPress}
-      status={status ? 'checked' : 'unchecked'}
-      disabled={disabled}
-      color={color}
-    />
-    {label ? <Text style={[styles.label, customStyle]}>{label}</Text> : null}
-  </View>
+    {group.map(item => (
+      <View
+        key={item.id}
+        style={[
+          styles.wrapper,
+          customWrapperStyle,
+        ]}
+      >
+        <RadioButtonComponent
+          value={item.id}
+          disabled={disabled}
+          color={color}
+        />
+        {item.name ? <Text style={[styles.label, customStyle]}>{item.name}</Text> : null}
+      </View>
+    ))}
+  </RadioButtonComponent.Group>
 )
 
 RadioButton.defaultProps = {
-  label: '',
   onPress: () => {},
   customStyle: {},
-  status: false,
   color: COLORS.black,
   customWrapperStyle: {},
   disabled: false,

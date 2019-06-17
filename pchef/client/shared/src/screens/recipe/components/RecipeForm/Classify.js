@@ -78,7 +78,7 @@ const Classify = forwardRef(({
         onLayout={event => event && setRadioWidth((event.nativeEvent.layout.width - MODAL_PADDING) / 2)} // 48 is padding of content modal
       >
         <RadioButton
-          onPress={info => info && setValue(info)}
+          onPress={info => setValue(info)}
           customWrapperStyle={{
             width: radioWidth,
           }}
