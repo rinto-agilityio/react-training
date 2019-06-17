@@ -44,7 +44,7 @@ export const selectImage = (callback: Function) => {
 
   ImagePicker.showImagePicker(option, response => {
     if (!response.didCancel && !response.error && !response.customButton) {
-      uploadImage(response).then(uri => callback(uri))
+      return callback(response)
     }
   })
 }
