@@ -5,8 +5,6 @@ import { Avatar, Provider, Menu } from 'react-native-paper'
 
 // Common components
 import Icon from '../Icon'
-import Loading from '../Loading'
-import Error from '../Error'
 import Button from '../Button'
 
 // Themes
@@ -24,8 +22,6 @@ type Props = {
       avatar: string,
     }
   },
-  loading: boolean,
-  error: boolean,
   type?: string,
   onPressLogo?: () => void,
   onPressCategoryIcon?: () => void,
@@ -41,15 +37,9 @@ const Header = ({
       avatar: '',
     },
   },
-  loading,
-  error,
   onDirectTo,
 }: Props) => {
   const [visible, setVisible] = useState(false)
-
-  if (loading) return <Loading />
-  if (error) return <Error message="Failed!" />
-
   const { user: { avatar } } = data
 
   return (

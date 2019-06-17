@@ -3,7 +3,6 @@ import { withApollo } from 'react-apollo'
 
 // Components
 import { View } from 'react-native'
-import Header from './components/Header'
 import Loading from '../../components/Loading'
 import Error from '../../components/Error'
 import Tabs from './components/Tabs'
@@ -91,10 +90,6 @@ const Profile = ({
 
   return (
     <View style={styles.profile}>
-      <Header
-        user={user}
-        handleToSetting={handleToSetting}
-      />
       <Tabs
         ownRecipes={ownRecipes}
         favoriteRecipe={favoriteRecipe}
