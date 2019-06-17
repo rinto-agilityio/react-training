@@ -8,6 +8,7 @@ import Loading from '../../../../components/Loading'
 
 // Utils
 import { sortRecipes } from '../../../../helpers/utils'
+import { NO_RECIPES_MESSAGE } from '../../../../constants'
 // Styles
 import styles from './styles'
 
@@ -39,7 +40,7 @@ type Props = {
 
 const RecipeList = ({
   loading,
-  recipes,
+  recipes = [],
   type = '',
   favoriteRecipe,
   userToggleRecipe,
@@ -51,6 +52,37 @@ const RecipeList = ({
 
   // define recipe size follow type
   const size = type === 'primary' ? 'medium' : 'large'
+  const renderRecipeList = () => (isViewRecipeList
+    ? (recipes.map(recipe => (
+      <Recipe
+        key={recipe.id}
+        recipe={recipe}
+        size={size}
+        favoriteRecipe={favoriteRecipe}
+        userToggleRecipe={userToggleRecipe}
+        handleClickRecipe={handleClickRecipe}
+        userToggleVote={userToggleVote}
+        userId={userId}
+      />
+    )))
+    : (
+      // Sort recipes by most Votes
+      recipes && sortRecipes(recipes).map(recipe => (
+        <Recipe
+          key={recipe.id}
+          recipe={recipe}
+          size={size}
+          favoriteRecipe={favoriteRecipe}
+          userToggleRecipe={userToggleRecipe}
+          handleClickRecipe={handleClickRecipe}
+          userToggleVote={userToggleVote}
+          userId={userId}
+        />
+      ))
+    ))
+
+  const recipeList = recipes.length
+    ? renderRecipeList() : <Text>{NO_RECIPES_MESSAGE}</Text>
 
   return (
     <View style={[styles.container, styles[`${type}Container`]]}>
@@ -70,35 +102,9 @@ const RecipeList = ({
             > Top Votes Recipes
             </Text>
           </View>
-          {isViewRecipeList && recipes
-            ? (recipes.map(recipe => (
-              <Recipe
-                key={recipe.id}
-                recipe={recipe}
-                size={size}
-                favoriteRecipe={favoriteRecipe}
-                userToggleRecipe={userToggleRecipe}
-                handleClickRecipe={handleClickRecipe}
-                userToggleVote={userToggleVote}
-                userId={userId}
-              />
-            )))
-            : (
-              // Sort recipes by most Votes
-              recipes && sortRecipes(recipes).map(recipe => (
-                <Recipe
-                  key={recipe.id}
-                  recipe={recipe}
-                  size={size}
-                  favoriteRecipe={favoriteRecipe}
-                  userToggleRecipe={userToggleRecipe}
-                  handleClickRecipe={handleClickRecipe}
-                  userToggleVote={userToggleVote}
-                  userId={userId}
-                />
-              ))
-            )
-          }
+
+          {/** Render Recipe list here */}
+          {recipeList}
         </View>
       )}
     </View>
