@@ -48,8 +48,8 @@ type Props = {
   handleAddRecipeImageOnWeb?: () => void,
   customStyleLabel: Object,
   handleAddStepImageOnWeb?: () => void,
-  uploadImage: () => void,
-  uploadStepImage: () => void,
+  uploadImage: () => Promise<void>,
+  uploadStepImage: () => Promise<void>,,
 }
 
 const RecipeForm = forwardRef(({
@@ -107,7 +107,7 @@ const RecipeForm = forwardRef(({
           cookingTypeId,
           title,
           getValueTextBox(subTitleRef.current) || '',
-          imageUrl,
+          imageUrl || '',
           ingredients,
           true,
         ).then(({ data }) => {
