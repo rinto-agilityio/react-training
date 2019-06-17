@@ -81,7 +81,7 @@ const RecipeList = ({
     ))
 
   const recipeList = recipes.length
-    ? renderRecipeList() : <Text>No Recipes found.</Text>
+    ? renderRecipeList() : <Text> No Recipes found. </Text>
 
   return (
     <View style={[styles.container, styles[`${type}Container`]]}>
