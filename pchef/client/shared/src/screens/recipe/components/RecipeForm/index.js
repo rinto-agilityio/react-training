@@ -49,7 +49,7 @@ type Props = {
   customStyleLabel: Object,
   handleAddStepImageOnWeb?: () => void,
   uploadImage: () => Promise<void>,
-  uploadStepImage: () => Promise<void>,,
+  uploadStepImage: () => Promise<void>,
 }
 
 const RecipeForm = forwardRef(({
