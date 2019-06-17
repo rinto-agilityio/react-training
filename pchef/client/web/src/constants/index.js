@@ -5,3 +5,7 @@ export const WELCOME = 'welcome'
 export const HOME = ''
 export const CREATE_RECIPE = 'create-recipe'
 export const PROFILE = 'profile'
+export const IMAGE_TYPE = {
+  RECIPE: 'add-recipe',
+  RECIPE_STEP: 'add-step'
+}

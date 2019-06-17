@@ -6,7 +6,7 @@ import { storage } from '../config/firebase'
  * @param {object} file: file is uploaded
  */
 export const handleUploadImage = async (file: {}) => {
-  const ref = storage.ref();
+  const ref = storage.ref('recipes');
   if (file && file.name) {
     const name = `${new Date()}'-'${file.name}`
     const metadata = { contentType: file.type }
@@ -16,9 +16,7 @@ export const handleUploadImage = async (file: {}) => {
         const snapshot = await ref.child(name).put(file, metadata)
         const downloadUrl = await snapshot.ref.getDownloadURL()
 
-        return {
-          data: downloadUrl,
-        }
+        return downloadUrl
       } catch (error) {
         return error
       }
