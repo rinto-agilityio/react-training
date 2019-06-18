@@ -90,7 +90,7 @@ const Header = ({
                           uri: (
                             avatar
                               ? avatar
-                              : 'https://www.pngkey.com/png/full/115-1150152_default-profile-picture-avatar-png-green.png'
+                              : require('../../assets/images/default_avatar.png')
                           ),
                         }}
                       />
