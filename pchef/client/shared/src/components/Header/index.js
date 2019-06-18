@@ -48,7 +48,7 @@ const Header = ({
       <View style={styles.container}>
         <Icon
           name="apps"
-          size={FONTS.fontSize.extraExtraLarge}
+          size={type === 'secondary' ? FONTS.fontSize.extraExtraLarge : FONTS.fontSize.moreExtraLarge}
           onPress={onPressCategoryIcon}
           color={COLORS.white}
           wrapperIconStyle={styles.wrapIcon}

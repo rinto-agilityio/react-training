@@ -62,9 +62,13 @@ const PUBLISH_RECIPE = gql`
   mutation publishRecipe($id: String!) {
     publishRecipe(id: $id) {
       id
+      title
+      imgUrl
+      votes
+      description
+      categoryId
     }
   }
-
 `
 
 const TOGGLE_RECIPE = gql`
@@ -106,6 +110,37 @@ const publishRecipe = graphql(PUBLISH_RECIPE, {
       variables: { id },
     }),
   }),
+  options: {
+    update: (proxy, { data }) => {
+      try {
+        const { publishRecipe } = data
+        const dataQuery = proxy.readQuery({ query: GET_RECIPES })
+        const { getUser: { followCategory } } = dataQuery
+
+        const currentCategory = followCategory.find(category => publishRecipe.categoryId === category.id)
+        const recipes = currentCategory.recipes.concat(publishRecipe)
+        const currentCategoryUpdated = {
+          ...currentCategory,
+          recipes,
+        }
+
+        const dataUpdated = {
+          ...dataQuery,
+          getUser: {
+            ...dataQuery.getUser,
+            followCategory: followCategory.map(category => (
+              category.id === currentCategory.id ? currentCategoryUpdated : category
+            )),
+            __typename: 'UserFullInfos',
+          },
+        }
+
+        proxy.writeQuery({ query: GET_RECIPES, data: dataUpdated })
+      } catch (err) {
+        return { error: 'Failed!' }
+      }
+    },
+  },
   withRef: true,
 })
 
