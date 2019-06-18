@@ -31,6 +31,7 @@ export const URL = {
     PATH: 'wishlist',
     TITLE: 'Wish List',
   },
+
   // Logout section
   LOG_OUT: {
     PATH: 'logout',
