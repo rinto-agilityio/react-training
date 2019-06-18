@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native'
-import { METRICS } from './themes'
+import { METRICS, COLORS } from './themes'
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: COLORS.lighterBlue,
   },
   welcome: {
     fontSize: 20,
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   },
   instructions: {
     textAlign: 'center',
-    color: '#333',
+    color: COLORS.darkBlack,
     marginBottom: METRICS.smallMargin,
   },
 })
