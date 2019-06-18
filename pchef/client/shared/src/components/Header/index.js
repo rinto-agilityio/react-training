@@ -42,6 +42,11 @@ const Header = ({
   const [visible, setVisible] = useState(false)
   const { user: { avatar } } = data
 
+  const handleDirectTo = URL => {
+    onDirectTo(URL)
+    setVisible(false)
+  }
+
   return (
     <View style={[styles.wrapHeader, styles[`${type}Container`]]}>
       <View style={styles.container}>
@@ -93,8 +98,8 @@ const Header = ({
                   )
                 }
               >
-                <Menu.Item onPress={() => onDirectTo(URL.PROFILE.PATH)} title={URL.PROFILE.TITLE} />
-                <Menu.Item onPress={() => onDirectTo(URL.WISH_LIST.PATH)} title={URL.WISH_LIST.TITLE} />
+                <Menu.Item onPress={() => handleDirectTo(URL.PROFILE.PATH)} title={URL.PROFILE.TITLE} />
+                <Menu.Item onPress={() => handleDirectTo(URL.WISH_LIST.PATH)} title={URL.WISH_LIST.TITLE} />
                 <Menu.Item onPress={() => onDirectTo(URL.LOG_OUT.PATH)} title={URL.LOG_OUT.TITLE} />
               </Menu>
             </Provider>
