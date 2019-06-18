@@ -119,14 +119,18 @@ const publishRecipe = graphql(PUBLISH_RECIPE, {
         const { getUser: { followCategory } } = dataQuery
 
         const currentCategory = followCategory.find(category => publishRecipe.categoryId === category.id)
-        const currentCategoryUpdated = currentCategory.recipes.concat(publishRecipe)
+        const recipes = currentCategory.recipes.concat(publishRecipe)
+        const currentCategoryUpdated = {
+          ...currentCategory,
+          recipes,
+        }
 
         const dataUpdated = {
           ...dataQuery,
           getUser: {
             ...dataQuery.getUser,
             followCategory: followCategory.map(category => (
-              category.id === currentCategory ? currentCategoryUpdated : category
+              category.id === currentCategory.id ? currentCategoryUpdated : category
             )),
             __typename: 'UserFullInfos',
           },
