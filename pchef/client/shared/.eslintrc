@@ -68,6 +68,7 @@
     "import/prefer-default-export": 0,
     "flowtype/generic-spacing": [2, "never"],
     "flowtype/no-types-missing-file-annotation": 0,
+    "react/require-default-props": 0,
     "react/jsx-filename-extension": [
       1,
       {
