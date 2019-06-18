@@ -5,7 +5,6 @@ import { Platform } from 'react-native'
  * @param {string} separator
  * @return {array} array of string
  */
-
 export const formatStringToArray = (string: string, separator: string) =>
   string.split(separator) // Split string to array by separator
 
@@ -22,7 +21,6 @@ const defaultValue = {
  * @param {array} arr
  * @param {number} index
  */
-
 export const findStep = (
   arr: Array<{
     description: string,
@@ -97,7 +95,6 @@ export const formatFiledOnObject = (arr: Array<string>, typename?: string) => {
  * @param {Array} array1
  * @param {Array} array2
  */
-
 type Item = {
   id: string,
   title: string,

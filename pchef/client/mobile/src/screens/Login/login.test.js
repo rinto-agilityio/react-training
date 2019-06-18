@@ -6,7 +6,3 @@ it('Login snapshot', () => {
 
   expect(input).toMatchSnapshot()
 })
-
-it('test', () => {
-  expect(1).toBe(1)
-})
