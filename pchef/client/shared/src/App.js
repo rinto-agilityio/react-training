@@ -15,7 +15,7 @@ import { Provider as PaperProvider } from 'react-native-paper'
 // $FlowFixMe
 import client from './config/apollo-client'
 
-// Components
+// Containers
 import LoginContainer from './containers/Login'
 
 // Styles
