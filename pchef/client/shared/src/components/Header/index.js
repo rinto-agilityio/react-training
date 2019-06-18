@@ -110,10 +110,5 @@ const Header = ({
   )
 }
 
-Header.defaultProps = {
-  type: 'primary',
-  onPressLogo: () => {},
-  onPressCategoryIcon: () => {},
-}
 
 export default Header
