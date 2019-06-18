@@ -7,17 +7,19 @@
  */
 
 import React, { Component } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 import { ApolloProvider } from 'react-apollo'
-
 import { Provider as PaperProvider } from 'react-native-paper'
 
 // Apollo Client
 // $FlowFixMe
 import client from './config/apollo-client'
 
-// Containers
+// Components
 import LoginContainer from './containers/Login'
+
+// Styles
+import styles from './AppStyle'
 
 type AppProps = {}
 
@@ -25,7 +27,6 @@ export default class App extends Component<AppProps> {
   // save token and navigation to home screen
   handlingLoginSuccess = (token: string) => {
     localStorage.setItem('token', token)
-    // history.push('/home')
   }
 
   render() {
@@ -46,20 +47,3 @@ export default class App extends Component<AppProps> {
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-})
