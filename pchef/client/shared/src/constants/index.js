@@ -20,18 +20,24 @@ export const PATTERN = {
 export const DEFAULT_IMAGE = 'https://www.tastefullysimple.com/_/media/images/recipe-default-image.png'
 
 export const URL = {
+  // Profile section
   PROFILE: {
     PATH: 'profile',
     TITLE: 'View Profile',
   },
+
+  // Wishlist section
   WISH_LIST: {
     PATH: 'wishlist',
     TITLE: 'Wish List',
   },
+  // Logout section
   LOG_OUT: {
     PATH: 'logout',
     TITLE: 'Logout',
   },
+
+  // Create Recipe section
   CREATE_RECIPE: {
     PATH: 'create-recipe',
     TITLE: 'Create Recipe',
