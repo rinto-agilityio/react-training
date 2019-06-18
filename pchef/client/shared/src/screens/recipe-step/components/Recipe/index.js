@@ -17,9 +17,6 @@ import Loading from '../../../../components/Loading'
 import Modal from '../../../../components/Modal'
 import Error from '../../../../components/Error'
 
-// mock data
-import { recipes } from '../../../../mocks'
-
 // utils
 import { findStep, customError, checkContainField, formatFiledOnObject, compareStep } from '../../../../helpers/utils'
 
@@ -71,7 +68,6 @@ type Props = {
     votes: Array<string>,
     userId: string
   ) => Promise<{ data: {userToggleVote: {results: Array<string>}}}>,
-  id: string,
   error: {
     graphQLErrors: Array<{message: string}>
   },
@@ -80,13 +76,6 @@ type Props = {
 
 const Recipe = ({
   size = 'large',
-  onPress,
-  customRecipe,
-  customTitle,
-  customDescription,
-  customImage = {},
-  customSubTitle,
-  customTitleStep,
   getUser,
   recipeSteps = [{
     description: '',
@@ -100,6 +89,13 @@ const Recipe = ({
   userToggleVote,
   getRecipe,
   handleRedirectLogin,
+  onPress = () => {},
+  customRecipe = {},
+  customTitle = {},
+  customDescription = {},
+  customSubTitle = {},
+  customTitleStep = {},
+  customImage = {},
 }: Props) => {
   // order recipeSteps by step asc
   const orderRecipeSteps = recipeSteps.sort(compareStep)
@@ -110,11 +106,6 @@ const Recipe = ({
   useEffect(() => (
     setStepInfo(defaultStepInfo)
   ), [loading, defaultStepInfo])
-
-  const {
-    title,
-    subTitle,
-  } = recipes[0]
 
   if (loading) {
     return <Loading size={size} />
@@ -142,6 +133,8 @@ const Recipe = ({
     votes,
     id,
     views,
+    title,
+    subTitle,
   } = getRecipe
 
   const {
@@ -303,16 +296,6 @@ const Recipe = ({
       </Text>
     </View>
   )
-}
-
-Recipe.defaultProps = {
-  onPress: () => {},
-  customRecipe: {},
-  customTitle: {},
-  customDescription: {},
-  customSubTitle: {},
-  customTitleStep: {},
-  customImage: {},
 }
 
 export default Recipe
