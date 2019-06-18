@@ -182,7 +182,7 @@ const RecipeForm = forwardRef(({
     <View style={[styles.wrapper, styles[`${size}Wrapper`], customStyle]}>
       <Text style={[styles.headerForm]}>CREATE NEW A RECIPE</Text>
       <TextBox
-        placeholder="Title"
+        placeholder="Name"
         refInput={titleRef}
         customStyle={[styles.input, styles.inputTitle, styles[`${size}Input`]]}
         placeholderTextColor={COLORS.grayNavy}
@@ -234,7 +234,7 @@ const RecipeForm = forwardRef(({
       <TextBox
         placeholder="Subtitle"
         refInput={subTitleRef}
-        customStyle={[styles.input, styles[`${size}Input`]]}
+        customStyle={[styles.input, styles.inputTitle, styles[`${size}Input`]]}
         placeholderTextColor={COLORS.grayNavy}
       />
       <Wrapper

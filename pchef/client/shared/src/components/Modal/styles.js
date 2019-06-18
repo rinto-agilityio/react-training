@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
   // Title
   titleModal: {
     marginLeft: METRICS.extraLargeMargin,
+    fontWeight: 'bold',
   },
   smallTitleModal: {
     fontSize: FONTS.fontSize.small,
