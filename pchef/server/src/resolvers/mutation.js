@@ -113,12 +113,20 @@ const Mutation = {
   }),
 
   publishRecipe: authenticated((_, { id }) => {
+    const data = {
+      isDraft: false,
+      publishedDate: Date.now().toString(),
+      modifyDate: Date.now().toString(),
+    }
+
     return getDocument(`${COLLECTION_NAME.RECIPE}/${id}`)
       .then(recipe => {
-        return updateDocumentNotExist(`${COLLECTION_NAME.RECIPE}/${id}`, recipe)
-      .then(() => ({ ...recipe }))
-      .catch(error => error)
+        const newRecipe = { ...recipe, ...data }
+        return updateDocumentNotExist(`${COLLECTION_NAME.RECIPE}/${id}`, newRecipe)
+          .then(() => newRecipe)
+          .catch(error => error)
       })
+      .catch(error => error)
   }),
 
   // List recipes user mark favorite
