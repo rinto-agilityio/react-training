@@ -1,6 +1,6 @@
 // Libs
 import React, { useState, useEffect } from 'react'
-import { View, Platform } from 'react-native'
+import { View, Platform, ScrollView } from 'react-native'
 
 // Components
 import RecipeList from './components/RecipeList'
@@ -18,7 +18,6 @@ import { MINIMUM_FOLLOWED_CATEGORY } from '../../constants/index'
 
 // Styles
 import styles from './styles'
-import { ScrollView } from 'react-native-gesture-handler';
 
 type Props = {
   handleNavigateWelcome?: () => void,
@@ -115,9 +114,7 @@ const NewFeed = ({
 
     <View style={styles[`${type}RecipeListContainer`]}>
       {isMobile ? (
-        <Header
-          onPressCategoryIcon={handleNavigateWelcome}
-        />
+        <Header onPressCategoryIcon={handleNavigateWelcome} />
       ) : null}
       {/** Choosen category pipeline */ }
       <ScrollView horizontal>

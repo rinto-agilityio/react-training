@@ -17,7 +17,7 @@ import styles from './styles'
 import { URL } from '../../constants/index'
 
 type Props = {
-  data: {
+  data?: {
     user: {
       avatar: string,
     }
@@ -25,7 +25,7 @@ type Props = {
   type?: string,
   onPressLogo?: () => void,
   onPressCategoryIcon?: () => void,
-  onDirectTo: (id: string) => void,
+  onDirectTo?: (id: string) => void,
 }
 
 const Header = ({
@@ -37,7 +37,7 @@ const Header = ({
       avatar: '',
     },
   },
-  onDirectTo,
+  onDirectTo = () => {},
 }: Props) => {
   const [visible, setVisible] = useState(false)
   const isWeb = Platform === 'web'
