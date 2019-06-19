@@ -48,8 +48,8 @@ type Props = {
   handleAddRecipeImageOnWeb?: () => void,
   customStyleLabel: Object,
   handleAddStepImageOnWeb?: () => void,
-  uploadImage: () => Promise<void>,
-  uploadStepImage: () => Promise<void>,
+  uploadImage: () => void,
+  uploadStepImage: () => void,
 }
 
 const RecipeForm = forwardRef(({
@@ -101,13 +101,12 @@ const RecipeForm = forwardRef(({
 
     if (!errors.isError) {
       try {
-        const imageUrl = await uploadImage()
         await createRecipe(
           categoryId,
           cookingTypeId,
           title,
           getValueTextBox(subTitleRef.current) || '',
-          imageUrl || '',
+          previewImage,
           ingredients,
           true,
         ).then(({ data }) => {
@@ -151,11 +150,13 @@ const RecipeForm = forwardRef(({
       name: 'shopping-cart',
       label: 'Add ingredients',
       onPress: setVisibleIngredients,
+      style: styles.label,
     },
     {
       name: 'create',
       label: 'Save And Write Steps',
       onPress: handleCreateRecipe,
+      style: {},
     },
   ]
 
@@ -219,7 +220,7 @@ const RecipeForm = forwardRef(({
         ) : (
           <Icon
             name="add-a-photo"
-            size={METRICS[`${size}Icon`] * 2}
+            size={METRICS[`${size}Icon`]}
             onPress={handleAddRecipeImage}
             label="Set cover photo"
             wrapperIconStyle={styles.wrapperMainPhoto}
@@ -232,7 +233,7 @@ const RecipeForm = forwardRef(({
         <Image url={previewImage} customImageStyle={{ width: '100%', height: 150 }} />
       ) : null}
       <TextBox
-        placeholder="Subtitle"
+        placeholder="Description"
         refInput={subTitleRef}
         customStyle={[styles.input, styles.inputTitle, styles[`${size}Input`]]}
         placeholderTextColor={COLORS.grayNavy}
@@ -271,7 +272,7 @@ const RecipeForm = forwardRef(({
         childPosition="spaceAround"
         customStyles={styles.wrapperIcon}
       >
-        {dataIcon.map(({ name, onPress, label }) => (
+        {dataIcon.map(({ name, onPress, label, style }) => (
           <Icon
             key={`${name}_icon`}
             name={name}
@@ -279,7 +280,7 @@ const RecipeForm = forwardRef(({
             onPress={() => onPress(true)}
             label={label}
             wrapperIconStyle={[styles.icon, styles[`${name}Icon`], styles[`${size}Icon`]]}
-            customStyle={[styles.label, styles[`${size}Input`]]}
+            customStyle={[style, styles[`${size}Input`]]}
           />
         ))}
       </Wrapper>

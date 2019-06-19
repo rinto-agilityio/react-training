@@ -44,7 +44,7 @@ type Props = {
     }}>,
   stepUrl?: string,
   handleAddStepImageOnWeb?: () => void,
-  uploadStepImage: () => Promise<void>,
+  uploadStepImage: () => void,
 }
 
 const DirectionsForm = ({

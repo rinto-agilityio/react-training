@@ -1,7 +1,6 @@
-import { WS, SERVER, authDomain, apiKey, databaseURL, projectId, storageBucket } from 'react-native-dotenv'
+import { SERVER, authDomain, apiKey, databaseURL, projectId, storageBucket } from 'react-native-dotenv'
 
 // config values
-export const WS_URI = WS
 export const SERVER_URI = SERVER
 export const API_KEY = apiKey
 export const AUTH_DOMAIN = authDomain

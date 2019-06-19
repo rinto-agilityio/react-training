@@ -16,7 +16,7 @@ const Login = ({ navigation }: Props) => {
   // save token and navigation to home screen
   const handlingLoginSuccess = async (token: string) => {
     await AsyncStorage.setItem('token', token)
-    navigation.navigate(ROUTES.WELCOME)
+    navigation.navigate(ROUTES.HOME)
   }
 
   return (

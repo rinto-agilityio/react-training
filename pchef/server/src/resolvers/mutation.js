@@ -102,7 +102,6 @@ const Mutation = {
       modifyDate: Date.now().toString(),
       publishedDate: Date.now().toString(),
     }
-
     return ({
       id: addDocument(COLLECTION_NAME.RECIPE, {
         ...data,

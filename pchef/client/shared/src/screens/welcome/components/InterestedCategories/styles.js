@@ -2,10 +2,6 @@ import { StyleSheet } from 'react-native'
 import { METRICS, COLORS, FONTS } from '../../../../themes'
 
 const styles = StyleSheet.create({
-  container: {
-    margin: -1,
-    minHeight: 300,
-  },
   item: {
     margin: 1,
     position: 'relative',

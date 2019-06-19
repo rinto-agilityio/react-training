@@ -11,9 +11,6 @@ import Wrapper from '../../../../layout/Wrapper'
 import RadioButton from '../../../../components/RadioButon'
 import Loading from '../../../../components/Loading'
 
-// Constants
-import { MODAL_PADDING } from '../../../../constants'
-
 type Props = {
   size: string,
   title: string,
@@ -75,7 +72,7 @@ const Classify = forwardRef(({
           paddingRight: 0,
           paddingLeft: 0,
         }}
-        onLayout={event => event && setRadioWidth((event.nativeEvent.layout.width - MODAL_PADDING) / 2)} // 48 is padding of content modal
+        onLayout={event => setRadioWidth((event.nativeEvent.layout.width - 48) / 2)}
       >
         <RadioButton
           onPress={info => setValue(info)}
