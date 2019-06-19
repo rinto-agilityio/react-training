@@ -16,7 +16,6 @@ const Home = ({ navigation }: Props) => (
   <NewFeed
     onPressCategoryIcon={() => navigation.navigate(ROUTES.WELCOME)}
     handleClickRecipe={id => navigation.navigate(ROUTES.DETAIL, { recipeId: id })}
-
     onPressCategoryPipeline={id => navigation.navigate(ROUTES.CATEGORY, { categoryId: id })}
   />
 )
