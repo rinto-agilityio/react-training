@@ -1,6 +1,7 @@
 // Libs
 import React from 'react'
 import { NavigationScreenProps } from 'react-navigation'
+import { ScrollView } from 'react-native'
 
 // Components
 import NewFeed from 'pchef-shared/src/containers/NewFeed'
@@ -13,12 +14,14 @@ type Props = {
 }
 
 const Home = ({ navigation }: Props) => (
-  <NewFeed
-    onPressCategoryIcon={() => navigation.navigate(ROUTES.WELCOME)}
-    handleClickRecipe={id => navigation.navigate(ROUTES.DETAIL, { recipeId: id })}
-
-    onPressCategoryPipeline={id => navigation.navigate(ROUTES.CATEGORY, { categoryId: id })}
-  />
+  <ScrollView>
+    <NewFeed
+      handleClickRecipe={id => navigation.navigate(ROUTES.DETAIL, { recipeId: id })}
+      onPressCategoryPipeline={id => navigation.navigate(ROUTES.CATEGORY, { categoryId: id })}
+      handleRedirectLogin={() => navigation.navigate(ROUTES.LOGIN)}
+      handleNavigateWelcome={() => navigation.navigate(ROUTES.WELCOME)}
+    />
+  </ScrollView>
 )
 
 export default Home

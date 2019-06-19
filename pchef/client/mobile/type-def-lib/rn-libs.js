@@ -75,10 +75,6 @@ declare module 'react-native-image-picker' {
   declare module.exports: any
 }
 
-declare module 'react-native-fetch-blob' {
-  declare module.exports: any
-}
-
 // react libs
 declare module 'react-navigation' {
   declare module.exports: any

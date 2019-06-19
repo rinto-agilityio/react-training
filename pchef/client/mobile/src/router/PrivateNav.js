@@ -13,6 +13,7 @@ import RecipeForm from '@screen/RecipeForm'
 import Profile from '@screen/Profile'
 import WishList from '@screen/WishList'
 import WishListForm from '@screen/WishListForm'
+import Icon from 'pchef-shared/src/components/Icon'
 
 // Constants
 import ROUTES from '@constants/routes'
@@ -93,29 +94,79 @@ const RecipeFormNav = createStackNavigator({
 const TabNavigator = createBottomTabNavigator({
   Home: {
     screen: stackNavigator,
+    navigationOptions: ({ navigation }) => ({
+      tabBarIcon: (
+        <Icon
+          name="home"
+          onPress={() => navigation.navigate(ROUTES.HOME)}
+        />
+      ),
+    }),
+    tabBarOptions: {
+      showLabel: false,
+      showIcon: true,
+    },
   },
   RecipeForm: {
     screen: RecipeFormNav,
+    navigationOptions: ({ navigation }) => ({
+      tabBarIcon: (
+        <Icon
+          name="add-circle-outline"
+          onPress={() => navigation.navigate(ROUTES.RECIPE_FORM)}
+        />
+      ),
+    }),
+    tabBarOptions: {
+      showLabel: false,
+      showIcon: true,
+    },
   },
-  Profile,
+  Profile: {
+    screen: Profile,
+    navigationOptions: ({ navigation }) => ({
+      tabBarIcon: (
+        <Icon
+          name="account-circle"
+          onPress={() => navigation.navigate(ROUTES.PROFILE)}
+        />
+      ),
+    }),
+    tabBarOptions: {
+      showLabel: false,
+      showIcon: true,
+    },
+  },
   WishList: {
     screen: stackWishListNav,
+    navigationOptions: ({ navigation }) => ({
+      tabBarIcon: (
+        <Icon
+          name="playlist-add-check"
+          onPress={() => navigation.navigate(ROUTES.WISHLIST)}
+        />
+      ),
+    }),
+    tabBarOptions: {
+      showLabel: false,
+      showIcon: true,
+    },
   },
 })
 
 const PrivateNav = createStackNavigator(
   {
+    TabNavigator: {
+      screen: TabNavigator,
+      navigationOptions: {
+        header: null,
+      },
+    },
     Welcome: {
       screen: Welcome,
       navigationOptions: {
         header: null,
         headerBackTitleVisible: false,
-      },
-    },
-    TabNavigator: {
-      screen: TabNavigator,
-      navigationOptions: {
-        header: null,
       },
     },
   },
