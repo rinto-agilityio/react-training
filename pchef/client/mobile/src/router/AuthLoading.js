@@ -10,6 +10,7 @@ type Props = {
     navigate: (name: string) => void,
   },
 }
+
 class AuthLoading extends Component<Props> {
   constructor() {
     super()
