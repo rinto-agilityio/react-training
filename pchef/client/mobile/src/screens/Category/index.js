@@ -15,8 +15,7 @@ const Category = ({ navigation }: Props) => {
   } = navigation.state.params
 
   return (
-    <CategoryContainer id={categoryId}
-    />
+    <CategoryContainer id={categoryId} />
   )
 }
 
