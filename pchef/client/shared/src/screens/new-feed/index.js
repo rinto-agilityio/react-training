@@ -144,9 +144,4 @@ const NewFeed = ({
   )
 }
 
-NewFeed.defaultProps = {
-  handleNavigateWelcome: () => {},
-  type: 'primary',
-}
-
 export default NewFeed

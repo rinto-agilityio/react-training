@@ -18,6 +18,7 @@ const Home = ({ navigation }: Props) => (
     onPressCategoryPipeline={id => navigation.navigate(ROUTES.CATEGORY, { categoryId: id })}
     handleRedirectLogin={() => navigation.navigate(ROUTES.LOGIN)}
     handleNavigateWelcome={() => navigation.navigate(ROUTES.WELCOME)}
+    type="primary"
   />
 )
 
