@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
   indicator: {
     marginTop: METRICS.largeMargin * 10,
   },
-  // tabListContainer: {},
   tabWrap: {
     display: 'flex',
     flexDirection: 'row',

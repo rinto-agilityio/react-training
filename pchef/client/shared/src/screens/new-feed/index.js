@@ -74,14 +74,14 @@ const NewFeed = ({
   userToggleVote,
 }: Props) => {
   const [visible, setVisible] = useState(true)
-  const { followCategory = [], favoriteRecipe, user } = data
   const isMobile = Platform.OS !== 'web'
 
   useEffect(() => {
-    if (!loading && followCategory.length < MINIMUM_FOLLOWED_CATEGORY) {
+    const { followCategory = [] } = data
+    if (isMobile && !loading && followCategory.length < MINIMUM_FOLLOWED_CATEGORY) {
       handleNavigateWelcome()
     }
-  }, [followCategory])
+  }, [data.followCategory])
 
   const handleNavigateLogin = () => {
     setVisible(false)
@@ -102,6 +102,8 @@ const NewFeed = ({
   }
 
   if (loading) return <Loading size={type === 'primary' ? 'small' : 'large'} />
+
+  const { followCategory, favoriteRecipe, user } = data
 
   // Get all recipes on follow categories
   let recipesList = []
