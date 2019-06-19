@@ -4,7 +4,6 @@ import { NavigationScreenProps } from 'react-navigation'
 
 // Containers
 import CategoryContainer from 'pchef-shared/src/containers/Category'
-import ROUTES from '@constants/routes';
 
 type Props = {
   navigation: NavigationScreenProps
@@ -16,8 +15,7 @@ const Category = ({ navigation }: Props) => {
   } = navigation.state.params
 
   return (
-    <CategoryContainer
-      id={categoryId}
+    <CategoryContainer id={categoryId}
     />
   )
 }
