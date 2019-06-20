@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: METRICS.smallBorderWidth,
     borderColor: COLORS.baseGray,
     marginTop: METRICS.largeMargin,
-    marginBottom: METRICS.largeMargin,
+    marginBottom: METRICS.extraLargeMargin,
   },
   tab: {
     paddingTop: METRICS.mediumPadding,
@@ -43,6 +43,10 @@ const styles = StyleSheet.create({
   },
   tabView: {
     backgroundColor: COLORS.baseGray,
+  },
+  noRecipeMessage: {
+    fontSize: 17,
+    textAlign: 'center',
   },
 })
 

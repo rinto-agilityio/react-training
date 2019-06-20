@@ -82,7 +82,7 @@ const RecipeList = ({
     ))
 
   const recipeList = recipes.length
-    ? renderRecipeList() : <Text>{NO_RECIPES_MESSAGE}</Text>
+    ? renderRecipeList() : <Text style={styles.noRecipeMessage}>{NO_RECIPES_MESSAGE}</Text>
 
   return (
     <View style={[styles.container, styles[`${type}Container`]]}>
@@ -99,7 +99,7 @@ const RecipeList = ({
             <Text
               style={[styles.tab, isViewRecipeList ? styles.tabView : styles.tabViewActive]}
               onPress={() => setViewRecipeList(false)}
-            > Top Votes Recipes
+            > Top Votest Recipes
             </Text>
           </View>
 
