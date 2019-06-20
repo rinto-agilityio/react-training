@@ -108,7 +108,7 @@ const Welcome = ({
     try {
       await userToggleCategory(chosenCategories)
     } catch (error) {
-      setErrors
+      setErrors(error)
     }
   }
 
