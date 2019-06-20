@@ -117,8 +117,4 @@ const Profile = ({
   )
 }
 
-Profile.defaultProps = {
-  handleRedirectLogin: () => {},
-}
-
 export default withApollo(Profile)

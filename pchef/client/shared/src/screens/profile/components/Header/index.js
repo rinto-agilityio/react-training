@@ -16,7 +16,7 @@ type Props = {
   handleToSetting?: () => void,
 }
 
-const Header = ({ user, handleToSetting }: Props) => {
+const Header = ({ user, handleToSetting = () => {} }: Props) => {
   const { name, avatar } = user
   const isMobile = Platform.OS !== 'web'
 
@@ -40,10 +40,6 @@ const Header = ({ user, handleToSetting }: Props) => {
       </View>
     </>
   )
-}
-
-Header.defaultProps = {
-  handleToSetting: () => {},
 }
 
 export default Header
