@@ -1,6 +1,6 @@
 // Libs
 import React, { useState, useEffect } from 'react'
-import { View, Text, TouchableOpacity, ScrollView, Dimensions, Platform } from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView, Dimensions } from 'react-native'
 import { Divider } from 'react-native-paper'
 
 // Components
@@ -12,7 +12,7 @@ import Modal from '../../components/Modal'
 import Error from '../../components/Error'
 
 // Constants
-import { PADDING_CATEGORIES } from '../../constants'
+import { CATEGORIES_PADDING, WEB_PLATFORM } from '../../constants'
 
 const { height } = Dimensions.get('window')
 
@@ -61,7 +61,6 @@ const Welcome = ({
   const [errors, setErrors] = useState()
   const [visible, setVisible] = useState(true)
   const [heightHeader, setHeightHeader] = useState(0)
-  const isWeb = Platform.OS === 'web'
 
   useEffect(() => {
     const followCategory = data.followCategory || []
@@ -103,7 +102,7 @@ const Welcome = ({
 
   // check user do not choose category
   const missingCategory = chosenCategories.length < 4
-  const heightCategories = height - heightHeader - PADDING_CATEGORIES
+  const heightCategories = height - heightHeader - CATEGORIES_PADDING
 
   const renderHeaderCategories = () => (
     <>
@@ -137,13 +136,13 @@ const Welcome = ({
           Skip
         </Text>
       </TouchableOpacity>
-      {isWeb ? renderHeaderCategories() : (
+      {WEB_PLATFORM ? renderHeaderCategories() : (
         <View onLayout={event => event && setHeightHeader(event.nativeEvent.layout.height)}>
           {renderHeaderCategories()}
         </View>
       )}
-      <View style={[styles.categoryWrapper, isWeb ? {} : { height: heightCategories || '100%' }]}>
-        {isWeb ? (
+      <View style={[styles.categoryWrapper, WEB_PLATFORM ? {} : { height: heightCategories || '100%' }]}>
+        {WEB_PLATFORM ? (
           <InterestedCategories
             categories={categories}
             onChooseCategory={handlingChooseCategory}

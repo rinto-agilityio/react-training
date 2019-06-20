@@ -1,7 +1,7 @@
 /* eslint-disable react/require-default-props */
 // Libs
 import React, { useState, forwardRef, useImperativeHandle } from 'react'
-import { View, Text, Platform } from 'react-native'
+import { View, Text } from 'react-native'
 
 // Styles
 import styles from './styles'
@@ -22,6 +22,9 @@ import Button from '../../../../components/Button'
 
 // Themes
 import { METRICS } from '../../../../themes'
+
+// Constants
+import { WEB_PLATFORM } from '../../../../constants'
 
 type Props = {
   size: string,
@@ -49,7 +52,6 @@ const WishListForm = forwardRef(({
   const [cookingType, setCookingType] = useState({})
   const [error, setError] = useState('')
   const [errorValidator, setErrorValidator] = useState({})
-  const isWeb = Platform.OS === 'web'
 
   // Default selectedDay is the start date of next week
   const startDateNextWeek = getDateOfWeek().minDate
@@ -114,7 +116,7 @@ const WishListForm = forwardRef(({
   }
 
   return (
-    <View style={isWeb ? styles.container : customContainer}>
+    <View style={WEB_PLATFORM ? styles.container : customContainer}>
       <Icon
         name="date-range"
         size={METRICS[`${size}Icon`]}
@@ -199,7 +201,7 @@ const WishListForm = forwardRef(({
         )
       }
       {
-        isWeb && (
+        WEB_PLATFORM && (
           <Button
             title="Add"
             onPress={() => handleCreateWishList()}

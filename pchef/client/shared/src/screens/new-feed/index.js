@@ -14,7 +14,7 @@ import Header from '../../components/Header'
 import { customError } from '../../helpers/utils'
 
 // Constants
-import { MINIMUM_FOLLOWED_CATEGORY, HEIGHT_TABBAR } from '../../constants/index'
+import { MINIMUM_FOLLOWED_CATEGORY, TABBAR_HEIGHT } from '../../constants/index'
 
 // Styles
 import styles from './styles'
@@ -151,7 +151,7 @@ const NewFeed = ({
       ) : null}
       {/** Choosen category pipeline */ }
       {isMobile ? (
-        <View style={{ height: (height - heightHeader - HEIGHT_TABBAR) || '100%' }}>
+        <View style={{ height: (height - heightHeader - TABBAR_HEIGHT) || '100%' }}>
           <ScrollView>
             {renderListRecipes()}
           </ScrollView>

@@ -1,6 +1,6 @@
 // Libs
 import React, { useState } from 'react'
-import { View, Text, Image, TouchableOpacity, Platform } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { Avatar, Provider, Menu } from 'react-native-paper'
 
 // Common components
@@ -14,7 +14,7 @@ import { COLORS, FONTS } from '../../themes'
 import styles from './styles'
 
 // Constants
-import { URL } from '../../constants/index'
+import { URL, WEB_PLATFORM } from '../../constants/index'
 
 type Props = {
   data?: {
@@ -26,7 +26,13 @@ type Props = {
   onPressLogo?: () => void,
   onPressCategoryIcon?: () => void,
   onDirectTo?: (id: string) => void,
-  onLayout?: (event: Object) => void,
+  onLayout?: (event: {
+    nativeEvent: {
+      layout: {
+        height: number,
+      },
+    },
+  }) => void,
 }
 
 const Header = ({
@@ -42,7 +48,6 @@ const Header = ({
   onLayout = () => {},
 }: Props) => {
   const [visible, setVisible] = useState(false)
-  const isWeb = Platform.OS === 'web'
   const { user: { avatar } } = data
 
   const handleDirectTo = URL => {
@@ -75,7 +80,7 @@ const Header = ({
               <Text style={styles.text}>Cooking</Text>
             </TouchableOpacity>
           </View>
-          {isWeb ? (
+          {WEB_PLATFORM ? (
             <View style={styles.wrapUserInfo}>
               <Button
                 onPress={() => onDirectTo(URL.CREATE_RECIPE.PATH)}
