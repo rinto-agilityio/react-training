@@ -89,6 +89,10 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
   },
+  saveCategoryBtn: {
+    width: METRICS.mediumWrapper,
+    margin: 'auto',
+  },
 })
 
 export default styles
