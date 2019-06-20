@@ -1,6 +1,6 @@
 // Libs
 import React, { useState } from 'react'
-import { Platform, View } from 'react-native'
+import { View } from 'react-native'
 
 // Helpers
 import { customError } from '../../../../helpers/utils'
@@ -13,7 +13,10 @@ import Item from './Item'
 import Loading from '../../../../components/Loading'
 import Modal from '../../../../components/Modal'
 import Error from '../../../../components/Error'
-import Button from '../../../../components/Button';
+import Button from '../../../../components/Button'
+
+// Constants
+import { WEB_PLATFORM } from '../../../../constants'
 
 type Props = {
   wishList: Array<{
@@ -52,7 +55,6 @@ const WishList = ({
   handleRedirectWishlistForm,
 }: Props) => {
   const [visible, setVisible] = useState(true)
-  const isWeb = Platform.OS === 'web'
   if (loading) return <Loading size={size} />
 
   const handleNavigateLogin = () => {
@@ -85,7 +87,7 @@ const WishList = ({
         />
       ))}
       {
-        isWeb && (
+        WEB_PLATFORM && (
           <Button
             title="Add Wishlist"
             onPress={() => handleRedirectWishlistForm()}

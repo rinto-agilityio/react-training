@@ -1,3 +1,6 @@
+// Libs
+import { Platform } from 'react-native'
+
 export const CALENDAR_TITLE_FORMAT = 'MMMM yyyy'
 
 export const SEPARATOR_SPLIT_STRING = ','
@@ -12,6 +15,10 @@ export const ELLIPSIS_LINE = 1
 export const MINIMUM_FOLLOWED_CATEGORY = 4
 
 export const MODAL_PADDING = 48
+
+export const CATEGORIES_PADDING = 80
+
+export const TABBAR_HEIGHT = 30
 
 // validate pattern
 export const PATTERN = {
@@ -46,3 +53,5 @@ export const URL = {
 }
 
 export const NO_RECIPES_MESSAGE = 'No Recipes to show.'
+
+export const WEB_PLATFORM = Platform.OS === 'web'
