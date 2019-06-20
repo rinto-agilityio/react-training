@@ -14,7 +14,7 @@ import { COLORS, FONTS } from '../../themes'
 import styles from './styles'
 
 // Constants
-import { URL, WEB_PLATFORM } from '../../constants/index'
+import { URL, WEB_PLATFORM } from '../../constants'
 
 type Props = {
   data?: {
