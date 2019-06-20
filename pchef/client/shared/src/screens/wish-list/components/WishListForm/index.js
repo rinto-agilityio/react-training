@@ -7,7 +7,7 @@ import { View, Text, Platform } from 'react-native'
 import styles from './styles'
 
 // Helpers
-import { getDateForCalendar, getDateOfWeek, getMilisecondsFromTime } from '../../../../helpers/date-time'
+import { getDateOfWeek, getMilisecondsFromTime } from '../../../../helpers/date-time'
 import { validator } from '../../../../helpers/validators'
 
 // Components
@@ -47,12 +47,14 @@ const WishListForm = forwardRef(({
   const [visibleCookingTypes, setVisibleCookingTypes] = useState(false)
   const [category, setCategory] = useState({})
   const [cookingType, setCookingType] = useState({})
-  const today = getDateForCalendar(Date.now())
-  const [selectedDay, setSelectedDay] = useState(today)
   const [error, setError] = useState('')
   const [errorValidator, setErrorValidator] = useState({})
   const isWeb = Platform.OS === 'web'
-  const isShowSelectedDay = selectedDay && (selectedDay !== today)
+
+  // Default selectedDay is the start date of next week
+  const startDateNextWeek = getDateOfWeek().minDate
+  const [selectedDay, setSelectedDay] = useState(startDateNextWeek)
+  const isShowSelectedDay = selectedDay && (selectedDay !== startDateNextWeek)
 
   const dayRange = getDateOfWeek()
 
