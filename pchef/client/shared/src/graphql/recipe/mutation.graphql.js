@@ -10,7 +10,6 @@ import {
   formatFavoriteRecipe,
   formatFiledOnObject,
   checkContain,
-  updateArrayById,
 } from '../../helpers/utils'
 
 const CREATE_RECIPE = gql`

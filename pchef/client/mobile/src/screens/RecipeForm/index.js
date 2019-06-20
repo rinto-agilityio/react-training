@@ -21,7 +21,12 @@ const RecipeForm = ({ navigation }: Props) => {
   const recipeFormRef: Object = useRef(null)
   const [imageData, setImageData] = useState({})
   const [imageStep, setImageStep] = useState({})
-  const [statusPress, setStatusPress] = useState(false)
+  const [statusPress, setStatusPress] = useState( false )
+  
+  useEffect(() => {
+    setStatusPress(navigation.getParam('status', false))
+    statusPress && handlePublishRecipe()
+  })
 
   const handlePublishRecipe = async () => {
     // Get method handlePublishRecipe of recipe form
@@ -35,11 +40,6 @@ const RecipeForm = ({ navigation }: Props) => {
     await selectImage(response => (type === IMAGE_TYPE.RECIPE ? setImageData(response) : setImageStep(response)))
   }
 
-  useEffect(() => {
-    setStatusPress(navigation.getParam('status', false))
-    statusPress && handlePublishRecipe()
-  })
-
   return (
     <ScrollView style={{ marginTop: 30 }}>
       <RecipeFormContainer
@@ -50,8 +50,8 @@ const RecipeForm = ({ navigation }: Props) => {
         handleAddStepImage={() => handleAddRecipeImage(IMAGE_TYPE.STEP)}
         stepUrl={imageStep.uri}
         size="small"
-        uploadImage={() => uploadImage(imageData)}
-        uploadStepImage={() => uploadImage(imageStep)}
+        uploadImage={() => imageData.uri && uploadImage(imageData)}
+        uploadStepImage={() => imageStep.uri && uploadImage(imageStep)}
       />
     </ScrollView>
   )

@@ -7,6 +7,7 @@ import Loading from '../../components/Loading'
 import Error from '../../components/Error'
 import Tabs from './components/Tabs'
 import Modal from '../../components/Modal'
+import Header from './components/Header'
 import Setting from '../settings'
 
 // Styles
@@ -90,6 +91,10 @@ const Profile = ({
 
   return (
     <View style={styles.profile}>
+      <Header
+        user={user}
+        handleToSetting={handleToSetting}
+      />
       <Tabs
         ownRecipes={ownRecipes}
         favoriteRecipe={favoriteRecipe}
@@ -101,6 +106,7 @@ const Profile = ({
         visible={isOpenModal}
         dismissBtn
         onDismiss={handleToSetting}
+        onSubmit={handleToSetting}
         size="medium"
       >
         <Setting
@@ -110,10 +116,6 @@ const Profile = ({
       </Modal>
     </View>
   )
-}
-
-Profile.defaultProps = {
-  handleRedirectLogin: () => {},
 }
 
 export default withApollo(Profile)

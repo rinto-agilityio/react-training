@@ -8,6 +8,7 @@ const ROUTES = {
   PROFILE: 'Profile',
   WISHLIST: 'WishList',
   WISHLIST_FORM: 'WishListForm',
+  RECIPE_FORM: 'RecipeForm',
 }
 
 export default ROUTES
