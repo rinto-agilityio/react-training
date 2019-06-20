@@ -13,6 +13,10 @@ export const MINIMUM_FOLLOWED_CATEGORY = 4
 
 export const MODAL_PADDING = 48
 
+export const PADDING_CATEGORIES = 80
+
+export const HEIGHT_TABBAR = 30
+
 // validate pattern
 export const PATTERN = {
   EMAIL: /^[a-zA-Z0-9_.+-]+@asnet.com.vn$/,
