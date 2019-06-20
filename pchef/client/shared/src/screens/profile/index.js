@@ -106,6 +106,7 @@ const Profile = ({
         visible={isOpenModal}
         dismissBtn
         onDismiss={handleToSetting}
+        onSubmit={handleToSetting}
         size="medium"
       >
         <Setting

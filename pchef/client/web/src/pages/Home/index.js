@@ -20,6 +20,7 @@ const Home = ({ history }: Props) => {
       onPressCategoryPipeline={handlePressPipelineCategory}
       handleClickRecipe={handleClickRecipe}
       handleRedirectLogin={() => history.push('/login')}
+      handleNavigateWelcome={() => history.push('/welcome')}
     />
   )
 }

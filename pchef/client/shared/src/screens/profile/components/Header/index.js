@@ -25,7 +25,14 @@ const Header = ({ user, handleToSetting = () => {} }: Props) => {
       {isMobile ? (
         <View style={styles.wrapHeader}>
           <View style={[styles.contentHeader, styles.container]}>
-            <Image url={avatar} customImageStyle={styles.image} />
+            <Image
+              url={
+                avatar
+                  ? avatar
+                  : require('../../../../assets/images/default_avatar.png')
+              }
+              customImageStyle={styles.image}
+            />
           </View>
         </View>
       ) : null}

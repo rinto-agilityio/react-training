@@ -49,4 +49,4 @@ export const URL = {
   },
 }
 
-export const NO_RECIPES_MESSAGE = 'No Recipes found.'
+export const NO_RECIPES_MESSAGE = 'No Recipes to show.'
