@@ -1,6 +1,6 @@
 // Libs
 import React, { useState, useEffect } from 'react'
-import { View, Platform, ScrollView } from 'react-native'
+import { View, Platform, ScrollView, Dimensions } from 'react-native'
 
 // Components
 import RecipeList from './components/RecipeList'
@@ -14,10 +14,12 @@ import Header from '../../components/Header'
 import { customError } from '../../helpers/utils'
 
 // Constants
-import { MINIMUM_FOLLOWED_CATEGORY } from '../../constants/index'
+import { MINIMUM_FOLLOWED_CATEGORY, HEIGHT_TABBAR } from '../../constants/index'
 
 // Styles
 import styles from './styles'
+
+const { height } = Dimensions.get('window')
 
 type Props = {
   handleNavigateWelcome?: () => void,
@@ -75,6 +77,7 @@ const NewFeed = ({
 }: Props) => {
   const [visible, setVisible] = useState(true)
   const isMobile = Platform.OS !== 'web'
+  const [heightHeader, setHeightHeader] = useState(0)
 
   useEffect(() => {
     const { followCategory = [] } = data
@@ -112,13 +115,8 @@ const NewFeed = ({
     recipesList = recipesList.concat(category.recipes)
   })
 
-  return (
-
-    <View style={styles[`${type}RecipeListContainer`]}>
-      {isMobile ? (
-        <Header onPressCategoryIcon={handleNavigateWelcome} />
-      ) : null}
-      {/** Choosen category pipeline */ }
+  const renderListRecipes = () => (
+    <>
       <ScrollView horizontal>
         <CategoryPipeLine
           followCategory={followCategory}
@@ -140,6 +138,25 @@ const NewFeed = ({
           />
         )
       }
+    </>
+  )
+
+  return (
+    <View style={styles[`${type}RecipeListContainer`]}>
+      {isMobile ? (
+        <Header
+          onPressCategoryIcon={handleNavigateWelcome}
+          onLayout={event => event && setHeightHeader(event.nativeEvent.layout.height)}
+        />
+      ) : null}
+      {/** Choosen category pipeline */ }
+      {isMobile ? (
+        <View style={{ height: (height - heightHeader - HEIGHT_TABBAR) || '100%' }}>
+          <ScrollView>
+            {renderListRecipes()}
+          </ScrollView>
+        </View>
+      ) : renderListRecipes()}
     </View>
   )
 }

@@ -26,6 +26,7 @@ type Props = {
   onPressLogo?: () => void,
   onPressCategoryIcon?: () => void,
   onDirectTo?: (id: string) => void,
+  onLayout?: (event: Object) => void,
 }
 
 const Header = ({
@@ -38,9 +39,10 @@ const Header = ({
     },
   },
   onDirectTo = () => {},
+  onLayout = () => {},
 }: Props) => {
   const [visible, setVisible] = useState(false)
-  const isWeb = Platform === 'web'
+  const isWeb = Platform.OS === 'web'
   const { user: { avatar } } = data
 
   const handleDirectTo = URL => {
@@ -49,7 +51,10 @@ const Header = ({
   }
 
   return (
-    <View style={[styles.wrapHeader, styles[`${type}Container`]]}>
+    <View
+      style={[styles.wrapHeader, styles[`${type}Container`]]}
+      onLayout={onLayout}
+    >
       <View style={styles.container}>
         <Icon
           name="apps"
