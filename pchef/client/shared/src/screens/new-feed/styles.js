@@ -7,7 +7,6 @@ import { METRICS } from '../../themes'
 // Create style for Header
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     width: '100%',
   },
   secondaryRecipeListContainer: {

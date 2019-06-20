@@ -14,9 +14,11 @@ type Props = {
 
 const Home = ({ navigation }: Props) => (
   <NewFeed
-    onPressCategoryIcon={() => navigation.navigate(ROUTES.WELCOME)}
     handleClickRecipe={id => navigation.navigate(ROUTES.DETAIL, { recipeId: id })}
     onPressCategoryPipeline={id => navigation.navigate(ROUTES.CATEGORY, { categoryId: id })}
+    handleRedirectLogin={() => navigation.navigate(ROUTES.LOGIN)}
+    handleNavigateWelcome={() => navigation.navigate(ROUTES.WELCOME)}
+    type="primary"
   />
 )
 

@@ -1,6 +1,6 @@
 // Libs
-import React, { useState } from 'react'
-import { View } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { View, Platform, ScrollView } from 'react-native'
 
 // Components
 import RecipeList from './components/RecipeList'
@@ -8,15 +8,19 @@ import Loading from '../../components/Loading'
 import CategoryPipeLine from './components/CategoryPipeLine'
 import Modal from '../../components/Modal'
 import Error from '../../components/Error'
+import Header from '../../components/Header'
 
 // Helpers
 import { customError } from '../../helpers/utils'
+
+// Constants
+import { MINIMUM_FOLLOWED_CATEGORY } from '../../constants/index'
 
 // Styles
 import styles from './styles'
 
 type Props = {
-  customStyles?: {},
+  handleNavigateWelcome?: () => void,
   error: {
     graphQLErrors: Array<{ message: string }>,
   },
@@ -57,11 +61,11 @@ type Props = {
 
 // Home screen
 const NewFeed = ({
-  customStyles = {},
+  handleNavigateWelcome = () => {},
   type = 'secondary',
   loading,
   error,
-  data,
+  data = {},
   userToggleRecipe,
   handleClickRecipe,
   handleRedirectLogin = () => {},
@@ -70,6 +74,14 @@ const NewFeed = ({
   userToggleVote,
 }: Props) => {
   const [visible, setVisible] = useState(true)
+  const isMobile = Platform.OS !== 'web'
+
+  useEffect(() => {
+    const { followCategory = [] } = data
+    if (isMobile && !loading && followCategory.length < MINIMUM_FOLLOWED_CATEGORY) {
+      handleNavigateWelcome()
+    }
+  }, [data.followCategory])
 
   const handleNavigateLogin = () => {
     setVisible(false)
@@ -103,12 +115,17 @@ const NewFeed = ({
   return (
 
     <View style={styles[`${type}RecipeListContainer`]}>
+      {isMobile ? (
+        <Header onPressCategoryIcon={handleNavigateWelcome} />
+      ) : null}
       {/** Choosen category pipeline */ }
-      <CategoryPipeLine
-        followCategory={followCategory}
-        loading={loading}
-        onPressCategoryPipeline={onPressCategoryPipeline}
-      />
+      <ScrollView horizontal>
+        <CategoryPipeLine
+          followCategory={followCategory}
+          loading={loading}
+          onPressCategoryPipeline={onPressCategoryPipeline}
+        />
+      </ScrollView>
 
       {
         recipesList && (
@@ -125,11 +142,6 @@ const NewFeed = ({
       }
     </View>
   )
-}
-
-NewFeed.defaultProps = {
-  customStyles: {},
-  type: 'primary',
 }
 
 export default NewFeed

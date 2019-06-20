@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
   // Item
   wrapperItem: {
     display: 'flex',
+    width: '100%',
     padding: METRICS.largePadding,
     borderBottomColor: COLORS.baseGray,
     borderBottomWidth: METRICS.smallBorderWidth,
