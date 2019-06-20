@@ -244,13 +244,15 @@ const Recipe = ({
               {stepInfo.title}
             </Text>
           </Text>
-          <Progress
-            steps={orderRecipeSteps}
-            size={size}
-            step={stepInfo.step}
-            onPressSelectStep={onPressSelectStep}
-            onPressStep={onPressStep}
-          />
+          { orderRecipeSteps.length > 1 && (
+            <Progress
+              steps={orderRecipeSteps}
+              size={size}
+              step={stepInfo.step}
+              onPressSelectStep={onPressSelectStep}
+              onPressStep={onPressStep}
+            />
+          )}
         </ImageBackground>
       </View>
       <Text
