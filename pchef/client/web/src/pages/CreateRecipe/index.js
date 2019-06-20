@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import RecipeFormContainer from 'pchef-shared/src/containers/RecipeForm'
 
 // helpers
-import { handleUploadImage } from '../../helpers/upload-image'
+import { handleUploadImage, compressImage } from '../../helpers/upload-image'
 
 // constants
 import { IMAGE_TYPE } from '../../constants'
@@ -31,12 +31,19 @@ const CreateRecipe = ({ history }: Props) => {
     name === IMAGE_TYPE.RECIPE ? setImgUrl(url) : setStepUrl(url)
   }
 
+  const minifyOptions = {
+    maxSizeMB: 1,
+    maxWidthOrHeight: 300,
+    useWebWorker: true,
+  }
+
   return (
     <RecipeFormContainer
       redirectAfterPublish={redirectAfterPublish}
       handleAddRecipeImageOnWeb={event => handleAddRecipeImageOnWeb(event, IMAGE_TYPE.RECIPE)}
       handleAddStepImageOnWeb={event => handleAddRecipeImageOnWeb(event, IMAGE_TYPE.RECIPE_STEP)}
       uploadImage={() => handleUploadImage(fileEvent)}
+      compressImage={() => compressImage(fileEvent, minifyOptions)}
       previewImage={imgUrl}
       stepUrl={stepUrl}
       customStyle={{

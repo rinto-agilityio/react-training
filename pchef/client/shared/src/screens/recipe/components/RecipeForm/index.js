@@ -38,6 +38,7 @@ type Props = {
     title: string,
     subTitle: string,
     imgUrl: string,
+    thumbnail: string,
     description: string,
     isDraft: boolean,
   ) => Promise<{ data: { createRecipe: { id: string } } }>,
@@ -53,6 +54,7 @@ type Props = {
   handleAddStepImageOnWeb?: () => void,
   uploadImage: () => Promise<void>,
   uploadStepImage: () => Promise<void>,
+  compressImage: () => Promise<void>,
 }
 
 const RecipeForm = forwardRef(({
@@ -71,6 +73,7 @@ const RecipeForm = forwardRef(({
   handleAddStepImageOnWeb,
   uploadImage,
   uploadStepImage,
+  compressImage,
 }: Props, ref) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
@@ -103,13 +106,15 @@ const RecipeForm = forwardRef(({
 
     if (!errors.isError) {
       try {
-        const imageUrl = await uploadImage()
+        const imageUrl = await compressImage()
+        const thumbnail = await compressImage()
         await createRecipe(
           categoryId,
           cookingTypeId,
           title,
           getValueTextBox(subTitleRef.current) || '',
           imageUrl || '',
+          thumbnail || '',
           ingredients,
           true,
         ).then(({ data }) => {

@@ -31,6 +31,7 @@ const typeDefs = gql`
     isDraft: Boolean!
     subTitle: String
     imgUrl: String
+    thumbnail: String
     description: String
     views: Int
     votes: [String]
@@ -119,6 +120,7 @@ const typeDefs = gql`
       title: String!
       subTitle: String
       imgUrl: String
+      thumbnail: String
       description: String
       isDraft: Boolean! = true
     ): Recipe!
