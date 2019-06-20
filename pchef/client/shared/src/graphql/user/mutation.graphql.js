@@ -25,7 +25,7 @@ const USER_SIGNIN = gql`
 `
 
 const USER_TOGGLE_CATEGORY = gql`
-  mutation userToggleCategory($categoryId: String!) {
+  mutation userToggleCategory($categoryId: [String]!) {
     userToggleCategory(categoryId: $categoryId) {
       results
     }

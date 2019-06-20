@@ -3,13 +3,20 @@ import React, { useState, useEffect } from 'react'
 import { View, Text, TouchableOpacity, ScrollView, Dimensions } from 'react-native'
 import { Divider } from 'react-native-paper'
 
-// Components
-import InterestedCategories from './components/InterestedCategories'
-import styles from './styles'
+// Helpers
+import { customError, checkContain } from '../../helpers/utils'
+
+// Common Components
 import Loading from '../../components/Loading'
-import { customError } from '../../helpers/utils'
 import Modal from '../../components/Modal'
 import Error from '../../components/Error'
+import Button from '../../components/Button'
+
+// Components
+import InterestedCategories from './components/InterestedCategories'
+
+// Styles
+import styles from './styles'
 
 // Constants
 import { CATEGORIES_PADDING, WEB_PLATFORM } from '../../constants'
@@ -37,7 +44,7 @@ type Props = {
     name: string,
     imgUrl: string,
   }>,
-  userToggleCategory: (recipeId: string) => Promise<{ data: {userToggleCategory: {results: Array<string>}}}>,
+  userToggleCategory: (categoryId: Array<string>) => Promise<{ data: {userToggleCategory: {results: Array<string>}}}>,
   customButtonStyle?: {},
   handleRedirectLogin: () => void,
   size: string,
@@ -90,11 +97,16 @@ const Welcome = ({
 
   // handling toggle choose or not choose a category
   const handlingChooseCategory = async (categoryId: string) => {
+    const chosenCategoryIds = checkContain(chosenCategories, categoryId)
+      ? chosenCategories.filter(item => item !== categoryId)
+      : chosenCategories.concat(categoryId)
+
+    setChosenCategories(chosenCategoryIds)
+  }
+
+  const handleSaveCategory = async () => {
     try {
-      await userToggleCategory(categoryId).then(({ data }) => {
-        const categories = data.userToggleCategory
-        setChosenCategories(categories.results)
-      })
+      await userToggleCategory(chosenCategories)
     } catch (error) {
       setErrors(error)
     }
@@ -116,6 +128,9 @@ const Welcome = ({
         I have a special diet
       </Text>
       <Divider style={[styles.divider, styles[`${type}Divider`]]} />
+      <View style={styles.saveCategoryBtn}>
+        <Button onPress={handleSaveCategory} title="Save Category" />
+      </View>
     </>
   )
 
