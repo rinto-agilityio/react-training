@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "apollo-boost": "^0.3.1",
+    "browser-image-compression": "^1.0.5",
     "dotenv": "^8.0.0",
     "fromnow": "3.0.0",
     "graphql": "^14.3.0",
@@ -105,4 +106,3 @@
     ]
   }
 }
-

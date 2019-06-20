@@ -19,6 +19,7 @@ const CREATE_RECIPE = gql`
     $title: String!,
     $subTitle: String,
     $imgUrl: String,
+    $thumbnail: String,
     $description: String,
     $isDraft: Boolean! = true,
   ) {
@@ -28,6 +29,7 @@ const CREATE_RECIPE = gql`
       title: $title,
       subTitle: $subTitle,
       imgUrl: $imgUrl,
+      thumbnail: $thumbnail,
       description: $description,
       isDraft: $isDraft,
     ) {
@@ -87,6 +89,7 @@ const createRecipe = graphql(CREATE_RECIPE, {
       title,
       subTitle,
       imgUrl,
+      thumbnail,
       description,
       isDraft,
     ) => mutate({
@@ -96,6 +99,7 @@ const createRecipe = graphql(CREATE_RECIPE, {
         title,
         subTitle,
         imgUrl,
+        thumbnail,
         description,
         isDraft,
       },

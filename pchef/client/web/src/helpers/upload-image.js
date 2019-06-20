@@ -1,3 +1,4 @@
+import imageCompression from 'browser-image-compression'
 import { storage } from '../config/firebase'
 
 /**
@@ -24,4 +25,16 @@ export const handleUploadImage = async (file: {}) => {
       return error
     }
   }
+}
+
+export const compressImage = async (file, minifyOptions) => {
+  let compressedFileUrl
+  if (file) {
+    const compressedFile = await imageCompression(file, minifyOptions).then(
+      compressedFile => compressedFile,
+    )
+    compressedFileUrl = await handleUploadImage(compressedFile)
+  }
+
+  return compressedFileUrl
 }
