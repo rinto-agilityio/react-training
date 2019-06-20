@@ -1,7 +1,7 @@
 /* eslint-disable react/require-default-props */
 // Libs
 import React, { useRef, useState, forwardRef, useImperativeHandle } from 'react'
-import { View, Text, Platform } from 'react-native'
+import { View, Text } from 'react-native'
 
 // Styles
 import styles from './styles'
@@ -25,6 +25,9 @@ import DirectionForm from '../../../../containers/DirectionForm'
 import Error from '../../../../components/Error'
 import Image from '../../../../components/Image'
 import Button from '../../../../components/Button'
+
+// Constants
+import { WEB_PLATFORM } from '../../../../constants'
 
 type Props = {
   size: string,
@@ -82,7 +85,6 @@ const RecipeForm = forwardRef(({
   const [error, setError] = useState('')
   const [directors, setDirectors] = useState([])
   const [errorValidator, setErrorValidator] = useState({})
-  const isWeb = Platform.OS === 'web'
   const isDisabled = directors.length > 0 ? false : true
 
   const handleCreateRecipe = async isOnpen => {
@@ -194,7 +196,7 @@ const RecipeForm = forwardRef(({
         customStyle={customStyleError}
       />
       <View>
-        {isWeb ? (
+        {WEB_PLATFORM ? (
           <>
             <Text
               for="file-input"
@@ -315,7 +317,7 @@ const RecipeForm = forwardRef(({
           handleAddStepImage={handleAddStepImage}
           stepUrl={stepUrl}
           handleAddStepImageOnWeb={handleAddStepImageOnWeb}
-          uploadStepImage={isWeb ? uploadImage : uploadStepImage}
+          uploadStepImage={WEB_PLATFORM ? uploadImage : uploadStepImage}
         />
       )}
       {visibleCategories && (
@@ -342,7 +344,7 @@ const RecipeForm = forwardRef(({
           }}
         />
       )}
-      {isWeb ? (
+      {WEB_PLATFORM ? (
         <View style={[styles.wrapperButton]}>
           <Button
             onPress={handlePublishRecipe}

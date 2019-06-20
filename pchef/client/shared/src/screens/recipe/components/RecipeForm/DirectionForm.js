@@ -1,6 +1,6 @@
 // Libs
 import React, { useRef, useState } from 'react'
-import { View, Text, Platform } from 'react-native'
+import { View, Text } from 'react-native'
 
 // Styles
 import styles from './styles'
@@ -21,6 +21,9 @@ import TextBox from '../../../../components/TextBox'
 import Icon from '../../../../components/Icon'
 import Error from '../../../../components/Error'
 import Image from '../../../../components/Image'
+
+// Constants
+import { WEB_PLATFORM } from '../../../../constants'
 
 type Props = {
   size: string,
@@ -64,7 +67,6 @@ const DirectionsForm = ({
   const [isShowForm, setNextStep] = useState(!directions.length)
   const [error, setError] = useState('')
   const nextStep = directions.length + 1
-  const isWeb = Platform.OS === 'web'
 
   const data = [
     {
@@ -156,7 +158,7 @@ const DirectionsForm = ({
                 customContainer={styles.inputDirections}
               />
             ))}
-            {isWeb ? (
+            {WEB_PLATFORM ? (
               <View>
                 <Text
                   for="file-input-step"

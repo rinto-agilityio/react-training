@@ -1,6 +1,6 @@
 // Libs
 import React, { useState, useEffect } from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView, Dimensions } from 'react-native'
 import { Divider } from 'react-native-paper'
 
 // Helpers
@@ -17,6 +17,11 @@ import InterestedCategories from './components/InterestedCategories'
 
 // Styles
 import styles from './styles'
+
+// Constants
+import { CATEGORIES_PADDING, WEB_PLATFORM } from '../../constants'
+
+const { height } = Dimensions.get('window')
 
 // Interested Category props type
 type Props = {
@@ -62,6 +67,7 @@ const Welcome = ({
   const [chosenCategories, setChosenCategories] = useState([])
   const [errors, setErrors] = useState()
   const [visible, setVisible] = useState(true)
+  const [heightHeader, setHeightHeader] = useState(0)
 
   useEffect(() => {
     const followCategory = data.followCategory || []
@@ -108,6 +114,25 @@ const Welcome = ({
 
   // check user do not choose category
   const missingCategory = chosenCategories.length < 4
+  const heightCategories = height - heightHeader - CATEGORIES_PADDING
+
+  const renderHeaderCategories = () => (
+    <>
+      <Text style={[styles.description, styles[`${type}Description`]]}>
+        Select 4 or more interests
+      </Text>
+      <Text style={[styles.content, styles[`${type}Content`]]}>
+        Select below to personalize the app with your tastes
+      </Text>
+      <Text style={[styles.introduction, styles[`${type}Introduction`]]}>
+        I have a special diet
+      </Text>
+      <Divider style={[styles.divider, styles[`${type}Divider`]]} />
+      <View style={styles.saveCategoryBtn}>
+        <Button onPress={handleSaveCategory} title="Save Category" />
+      </View>
+    </>
+  )
 
   return (
     <View style={[styles.container, styles[`${type}Container`], customStyle]}>
@@ -126,26 +151,29 @@ const Welcome = ({
           Skip
         </Text>
       </TouchableOpacity>
-      <Text style={[styles.description, styles[`${type}Description`]]}>
-        Select 4 or more interests
-      </Text>
-      <Text style={[styles.content, styles[`${type}Content`]]}>
-        Select below to personalize the app with your tastes
-      </Text>
-      <Text style={[styles.introduction, styles[`${type}Introduction`]]}>
-        I have a special diet
-      </Text>
-      <Divider style={[styles.divider, styles[`${type}Divider`]]} />
-      <View style={styles.saveCategoryBtn}>
-        <Button onPress={handleSaveCategory} title="Save Category" />
-      </View>
-      <View style={styles.categoryWrapper}>
-        <InterestedCategories
-          categories={categories}
-          onChooseCategory={handlingChooseCategory}
-          type={type}
-          activeList={chosenCategories}
-        />
+      {WEB_PLATFORM ? renderHeaderCategories() : (
+        <View onLayout={event => event && setHeightHeader(event.nativeEvent.layout.height)}>
+          {renderHeaderCategories()}
+        </View>
+      )}
+      <View style={[styles.categoryWrapper, WEB_PLATFORM ? {} : { height: heightCategories || '100%' }]}>
+        {WEB_PLATFORM ? (
+          <InterestedCategories
+            categories={categories}
+            onChooseCategory={handlingChooseCategory}
+            type={type}
+            activeList={chosenCategories}
+          />
+        ) : (
+          <ScrollView>
+            <InterestedCategories
+              categories={categories}
+              onChooseCategory={handlingChooseCategory}
+              type={type}
+              activeList={chosenCategories}
+            />
+          </ScrollView>
+        )}
       </View>
     </View>
   )
