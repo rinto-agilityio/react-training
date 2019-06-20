@@ -50,8 +50,8 @@ const RecipeForm = ({ navigation }: Props) => {
         handleAddStepImage={() => handleAddRecipeImage(IMAGE_TYPE.STEP)}
         stepUrl={imageStep.uri}
         size="small"
-        uploadImage={() => uploadImage(imageData)}
-        uploadStepImage={() => uploadImage(imageStep)}
+        uploadImage={() => imageData.uri && uploadImage(imageData)}
+        uploadStepImage={() => imageStep.uri && uploadImage(imageStep)}
       />
     </ScrollView>
   )

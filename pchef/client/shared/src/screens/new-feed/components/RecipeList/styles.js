@@ -6,13 +6,8 @@ import { METRICS, COLORS } from '../../../../themes'
 
 // Create style for Header
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  primaryContainer: {
-    paddingTop: METRICS.extraLargePadding,
-  },
   secondaryContainer: {
+    flex: 1,
     paddingTop: METRICS.extraLargePadding + METRICS.largePadding,
     maxWidth: METRICS.extraLargeScreen,
     width: '100%',
