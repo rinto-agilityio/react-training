@@ -74,10 +74,17 @@ const Mutation = {
 
     return getDocument(currentUserRef)
       .then(user => {
+        let newCategories = [...user.followCategory]
+        categoryId.forEach(id => {
+          newCategories = toggleItemInArray(newCategories, id)
+        })
+        return newCategories
+      })
+      .then(newCategories => {
         return updateDocument(currentUserRef, {
-          followCategory: categoryId,
+          followCategory: newCategories,
         }).then(() => ({
-          results: categoryId,
+          results: newCategories,
         })).catch(error => error)
       })
       .catch(error => error)
