@@ -139,7 +139,7 @@ const typeDefs = gql`
     ): PayloadAuth!
 
     userToggleCategory(
-      categoryId: String!
+      categoryId: [String]!
     ): PayloadResults!
 
     userToggleRecipe(
