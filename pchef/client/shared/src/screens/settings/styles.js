@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     fontSize: FONTS.fontSize.medium,
     color: COLORS.black,
-    flex: 1,
   },
   settingButton: {
     backgroundColor: COLORS.red,

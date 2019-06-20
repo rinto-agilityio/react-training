@@ -253,7 +253,11 @@ const RecipeForm = forwardRef(({
               size={METRICS[`${size}Icon`]}
               onPress={() => onPress(true)}
               label={label}
-              wrapperIconStyle={[styles.icon, styles.classifyIcon]}
+              wrapperIconStyle={[
+                styles.icon,
+                styles.classifyIcon,
+                error ? { marginBottom: 0 } : {},
+              ]}
               customStyle={styles[`${size}Input`]}
             />
             {value ? (
