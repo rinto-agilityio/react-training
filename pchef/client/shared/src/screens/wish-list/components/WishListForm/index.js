@@ -47,12 +47,13 @@ const WishListForm = forwardRef(({
   const [visibleCookingTypes, setVisibleCookingTypes] = useState(false)
   const [category, setCategory] = useState({})
   const [cookingType, setCookingType] = useState({})
-  // Default selectedDay is the start date of next week
-  const startDateNextWeek = getDateOfWeek().minDate
-  const [selectedDay, setSelectedDay] = useState(startDateNextWeek)
   const [error, setError] = useState('')
   const [errorValidator, setErrorValidator] = useState({})
   const isWeb = Platform.OS === 'web'
+
+  // Default selectedDay is the start date of next week
+  const startDateNextWeek = getDateOfWeek().minDate
+  const [selectedDay, setSelectedDay] = useState(startDateNextWeek)
   const isShowSelectedDay = selectedDay && (selectedDay !== startDateNextWeek)
 
   const dayRange = getDateOfWeek()
