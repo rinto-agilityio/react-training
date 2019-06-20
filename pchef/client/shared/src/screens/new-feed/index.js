@@ -78,7 +78,7 @@ const NewFeed = ({
 
   useEffect(() => {
     const { followCategory = [] } = data
-    if (isMobile && !loading && followCategory.length < MINIMUM_FOLLOWED_CATEGORY) {
+    if (!loading && followCategory.length < MINIMUM_FOLLOWED_CATEGORY) {
       handleNavigateWelcome()
     }
   }, [data.followCategory])

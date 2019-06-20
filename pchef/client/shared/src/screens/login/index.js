@@ -1,12 +1,11 @@
 // Libs
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { View, Text } from 'react-native'
 
 // Components
 import LoginForm from './components/LoginForm'
 import styles from './styles'
 
-import { MINIMUM_FOLLOWED_CATEGORY } from '../../constants/index'
 
 type Props = {
   customStyles?: Object,
@@ -31,26 +30,9 @@ const Login = ({
   signInUser,
   type = 'primary',
   handlingLoginSuccess,
-  data = {},
-  handleNavigateHome,
-  handleNavigateWelcome = () => {},
 }: Props) => {
   const [error, setError] = useState(false)
   const [isSubmit, setSubmit] = useState(false)
-  const [followCategory, setFollowCategory] = useState([])
-
-  useEffect(() => {
-    const followCategory = data.followCategory || []
-    setFollowCategory(followCategory)
-  }, [data])
-
-  const handleNavigatePage = () => {
-    if (followCategory.length >= MINIMUM_FOLLOWED_CATEGORY) {
-      handleNavigateHome()
-    } else {
-      handleNavigateWelcome()
-    }
-  }
 
   // handling sign in with email and password
   const handlingSignIn = async (email: string, password: string) => {
@@ -67,7 +49,6 @@ const Login = ({
         if (token) {
           setError(false)
           handlingLoginSuccess(token)
-          handleNavigatePage()
         }
         setSubmit(false)
       })
