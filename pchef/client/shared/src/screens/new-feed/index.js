@@ -41,6 +41,7 @@ type Props = {
         description: string,
         imgUrl: string,
         votes: Array<string>,
+        thumbnail: string,
       }>,
     }>,
     user: Object,
@@ -59,6 +60,8 @@ type Props = {
   size: string,
   handleRedirectLogin: Function,
   onPressCategoryPipeline: () => void,
+  customStyleWrapRecipes: Object,
+  wrapperIconStyle: Object,
 }
 
 // Home screen
@@ -74,6 +77,8 @@ const NewFeed = ({
   onPressCategoryPipeline,
   size = 'medium',
   userToggleVote,
+  customStyleWrapRecipes,
+  wrapperIconStyle,
 }: Props) => {
   const [visible, setVisible] = useState(true)
   const isMobile = Platform.OS !== 'web'
@@ -135,6 +140,8 @@ const NewFeed = ({
             handleClickRecipe={handleClickRecipe}
             userToggleVote={userToggleVote}
             userId={user.id}
+            customStyleWrapRecipes={customStyleWrapRecipes}
+            wrapperIconStyle={wrapperIconStyle}
           />
         )
       }

@@ -101,6 +101,7 @@ type Item = {
   imgUrl: string,
   description: string,
   votes: Array<string>,
+  thumbnail: string,
 }
 
 export const mergeArrayObject = (array1: Array<Item>, array2: Array<Item>) => {

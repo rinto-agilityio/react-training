@@ -25,6 +25,7 @@ type Props = {
       description: string,
       imgUrl: string,
       votes: Array<string>,
+      thumbnail: string,
     }>,
   }>,
   onPressCategoryPipeline?: () => void,

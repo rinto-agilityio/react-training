@@ -18,12 +18,18 @@ const styles = StyleSheet.create({
 
   // Title
   title: {
+    ...METRICS.truncate,
+    maxWidth: '250px',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
     color: COLORS.black,
     fontWeight: FONTS.fontWeight.large,
     paddingLeft: METRICS.largePadding,
     paddingRight: METRICS.largePadding,
   },
   smallTitle: {
+    ...METRICS.truncate,
     fontSize: FONTS.fontSize.medium,
   },
   mediumTitle: {
@@ -35,6 +41,7 @@ const styles = StyleSheet.create({
 
   // Description
   description: {
+    ...METRICS.truncate,
     color: COLORS.baseGray,
     fontWeight: FONTS.fontWeight.large,
     paddingLeft: METRICS.largePadding,

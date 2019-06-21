@@ -43,6 +43,7 @@ type Props = {
     userId: string
   ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
   userId: string,
+  wrapperIconStyle: Object,
 }
 
 const Recipe = ({
@@ -53,6 +54,7 @@ const Recipe = ({
   handleClickRecipe,
   userToggleVote,
   userId,
+  wrapperIconStyle,
 }: Props) => {
   const { id, title, description, thumbnail, votes } = recipe
 
@@ -114,6 +116,7 @@ const Recipe = ({
         onPressFavorite={handleSaveRecipe}
         onPressVote={handleToggleVote}
         isVote={checkContain(votes, userId)}
+        wrapperIconStyle={wrapperIconStyle}
       />
     </View>
   )
