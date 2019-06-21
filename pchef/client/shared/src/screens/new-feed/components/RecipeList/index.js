@@ -20,6 +20,7 @@ type Props = {
     description: string,
     imgUrl: string,
     votes: Array<string>,
+    thumbnail: string,
   }>,
   favoriteRecipe: Array<{
     id: string,
@@ -36,6 +37,9 @@ type Props = {
     userId: string
   ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
   userId: string,
+  customStyleWrapRecipes: Object,
+  wrapperIconStyle: Object,
+
 }
 
 const RecipeList = ({
@@ -47,6 +51,8 @@ const RecipeList = ({
   handleClickRecipe,
   userToggleVote,
   userId,
+  customStyleWrapRecipes,
+  wrapperIconStyle,
 }: Props) => {
   const [isViewRecipeList, setViewRecipeList] = useState(true)
 
@@ -63,6 +69,7 @@ const RecipeList = ({
         handleClickRecipe={handleClickRecipe}
         userToggleVote={userToggleVote}
         userId={userId}
+        wrapperIconStyle={wrapperIconStyle}
       />
     )))
     : (
@@ -77,6 +84,7 @@ const RecipeList = ({
           handleClickRecipe={handleClickRecipe}
           userToggleVote={userToggleVote}
           userId={userId}
+          wrapperIconStyle={wrapperIconStyle}
         />
       ))
     ))
@@ -104,7 +112,9 @@ const RecipeList = ({
           </View>
 
           {/** Render Recipe list here */}
-          {recipeList}
+          <View style={customStyleWrapRecipes}>
+            {recipeList}
+          </View>
         </View>
       )}
     </View>

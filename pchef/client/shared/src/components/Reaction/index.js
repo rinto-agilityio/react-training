@@ -19,6 +19,7 @@ type Props = {
   votes: Array<string>,
   onPressFavorite?: () => void | Promise<void>,
   onPressVote?: () => void | Promise<void>,
+  wrapperIconStyle?: Object,
 }
 
 const Reaction = ({
@@ -29,6 +30,7 @@ const Reaction = ({
   isVote,
   size = '',
   votes = [],
+  wrapperIconStyle,
 }: Props) => {
   // Data render reaction icon
   const data = [
@@ -57,6 +59,7 @@ const Reaction = ({
           onPress={item.onPress}
           underlayColor="transparent"
           label={item.label}
+          wrapperIconStyle={wrapperIconStyle}
         />
       ))}
     </View>
