@@ -38,6 +38,7 @@ const GET_RECIPES = gql`
           imgUrl
           votes
           description
+          thumbnail
         }
       }
     }

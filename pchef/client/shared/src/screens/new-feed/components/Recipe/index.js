@@ -26,6 +26,7 @@ type Props = {
     description: string,
     imgUrl: string,
     votes: Array<string>,
+    thumbnail: string,
   },
   size?: string,
   favoriteRecipe: Array<{
@@ -53,7 +54,7 @@ const Recipe = ({
   userToggleVote,
   userId,
 }: Props) => {
-  const { id, title, description, imgUrl, votes } = recipe
+  const { id, title, description, thumbnail, votes } = recipe
 
   const isFavorited = checkContainField(favoriteRecipe, id)
 
@@ -101,7 +102,7 @@ const Recipe = ({
           {description}
         </Text>
         <Image
-          url={imgUrl || DEFAULT_IMAGE}
+          url={thumbnail || DEFAULT_IMAGE}
           customImageStyle={[styles.image, styles[`${size}Image`]]}
           handleTouch={() => handleClickRecipe(recipe.id)}
         />
