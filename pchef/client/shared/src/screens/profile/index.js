@@ -47,14 +47,12 @@ type Props = {
     votes: Array<string>,
     userId: string
   ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
-  client: Object,
   size: string,
   store: Object,
   handleRedirectLogin?: () => void,
 }
 const Profile = ({
   data,
-  client,
   loading,
   error,
   userToggleRecipe,
@@ -70,7 +68,6 @@ const Profile = ({
   }
 
   const handleLogout = () => {
-    client.resetStore()
     store ? store.removeItem('token') : localStorage.removeItem('token')
     setIsOpenModal(false)
     handleRedirectLogin()
