@@ -136,7 +136,7 @@ const getAllRecipes = graphql(GET_ALL_RECIPES, {
     return {
       loading,
       error,
-      categories: getAllRecipes,
+      recipes: getAllRecipes,
     }
   },
   withRef: true,
