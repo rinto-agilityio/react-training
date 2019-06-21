@@ -16,12 +16,23 @@ const Home = ({ history }: Props) => {
   }
 
   return (
-    <NewFeed
-      onPressCategoryPipeline={handlePressPipelineCategory}
-      handleClickRecipe={handleClickRecipe}
-      handleRedirectLogin={() => history.push('/login')}
-      handleNavigateWelcome={() => history.push('/welcome')}
-    />
+    <div>
+      <NewFeed
+        onPressCategoryPipeline={handlePressPipelineCategory}
+        handleClickRecipe={handleClickRecipe}
+        handleRedirectLogin={() => history.push('/login')}
+        handleNavigateWelcome={() => history.push('/welcome')}
+        customStyleWrapRecipes={{
+          display: 'flex',
+          flexDirection: 'row',
+          maxWidth: '1024px',
+          flexWrap: 'wrap',
+        }}
+        wrapperIconStyle={{
+          maxWidth: '45px',
+        }}
+      />
+    </div>
   )
 }
 
