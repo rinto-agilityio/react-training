@@ -17,11 +17,11 @@ const WishListForm = ({ navigation }: Props) => {
   const [statusPress, setStatusPress] = useState(false)
 
   const handleCreateWishList = async () => {
+    navigation.setParams({ status: false })
+    setStatusPress(false)
     // Get method handlePublishRecipe of wish list form
     const { wrappedInstance } = wishListFormRef.current.wrappedInstance.getWrappedInstance()
     await wrappedInstance.handleCreateWishList()
-    navigation.setParams({ status: false })
-    setStatusPress(false)
   }
 
   useEffect(() => {
