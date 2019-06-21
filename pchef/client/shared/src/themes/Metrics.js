@@ -119,4 +119,12 @@ export default {
   smallDirectionsIcon: 120,
   mediumDirectionsIcon: 170,
   largeDirectionsIcon: 190,
+
+  // Truncate text
+  truncate: {
+    maxWidth: '250px',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+  },
 }
