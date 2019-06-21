@@ -21,19 +21,19 @@ const RecipeForm = ({ navigation }: Props) => {
   const recipeFormRef: Object = useRef(null)
   const [imageData, setImageData] = useState({})
   const [imageStep, setImageStep] = useState({})
-  const [statusPress, setStatusPress] = useState( false )
-  
+  const [statusPress, setStatusPress] = useState(false)
+
   useEffect(() => {
     setStatusPress(navigation.getParam('status', false))
     statusPress && handlePublishRecipe()
   })
 
   const handlePublishRecipe = async () => {
+    navigation.setParams({ status: false })
+    setStatusPress(false)
     // Get method handlePublishRecipe of recipe form
     const { handlePublishRecipe } = recipeFormRef.current.wrappedInstance.getWrappedInstance()
     await handlePublishRecipe()
-    navigation.setParams({ status: false })
-    setStatusPress(false)
   }
 
   const handleAddRecipeImage = async type => {
