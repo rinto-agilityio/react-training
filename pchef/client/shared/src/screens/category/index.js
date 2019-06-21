@@ -1,9 +1,9 @@
 // Libs
 import React, { useState } from 'react'
-import { Platform, View, FlatList } from 'react-native'
+import { Platform, View, Text, FlatList } from 'react-native'
 
 // Constant
-import { GRID_VIEW_COLUMN, LIST_VIEW_COLUMN } from '../../constants/index'
+import { GRID_VIEW_COLUMN, LIST_VIEW_COLUMN, NO_RECIPES_MESSAGE } from '../../constants/index'
 import { checkContainField } from '../../helpers/utils'
 
 // Components
@@ -102,25 +102,31 @@ const CategoryScreen = ({
         size={size}
       />
       <View style={styles.container}>
-        <FlatList
-          numColumns={columns}
-          horizontal={false}
-          data={recipes}
-          renderItem={
-            ({ item }) => (
-              <Recipe
-                isGrid={isGrid}
-                recipe={item}
-                size={size}
-                onPressIcon={handleToggleSaveRecipe}
-                isFavorite={checkContainField(favoriteRecipe, item.id)}
+        {
+          recipes
+            ? (
+              <FlatList
+                numColumns={columns}
+                horizontal={false}
+                data={recipes}
+                renderItem={
+                  ({ item }) => (
+                    <Recipe
+                      isGrid={isGrid}
+                      recipe={item}
+                      size={size}
+                      onPressIcon={handleToggleSaveRecipe}
+                      isFavorite={checkContainField(favoriteRecipe, item.id)}
+                    />
+                  )
+                }
+                keyExtractor={item => item.id}
+                key={columns}
+                columnWrapperStyle={isGrid && { justifyContent: 'space-between' }}
               />
             )
-          }
-          keyExtractor={item => item.id}
-          key={columns}
-          columnWrapperStyle={isGrid && { justifyContent: 'space-between' }}
-        />
+            : <Text>{NO_RECIPES_MESSAGE}</Text>
+        }
       </View>
     </>
   )
