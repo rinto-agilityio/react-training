@@ -1,6 +1,6 @@
 /* eslint-disable react/require-default-props */
 // Libs
-import React, { useState, forwardRef, useImperativeHandle } from 'react'
+import React, { useState, forwardRef, useImperativeHandle, useEffect } from 'react'
 import { View, Text } from 'react-native'
 
 // Styles
@@ -19,6 +19,7 @@ import Error from '../../../../components/Error'
 import Wrapper from '../../../../layout/Wrapper'
 import Icon from '../../../../components/Icon'
 import Button from '../../../../components/Button'
+import Recipe from './components/Recipe'
 
 // Themes
 import { METRICS } from '../../../../themes'
@@ -36,6 +37,13 @@ type Props = {
   handleRedirectWishlist: () => void,
   customContainer?: {},
   customModal?: {},
+  recipes: Array<{
+    id: string,
+    categoryId: string,
+    cookingTypeId: string,
+    title: string,
+    imgUrl: string,
+  }>,
 }
 
 const WishListForm = forwardRef(({
@@ -44,6 +52,7 @@ const WishListForm = forwardRef(({
   handleRedirectWishlist,
   customContainer = {},
   customModal = {},
+  recipes = [],
 }: Props, ref) => {
   const [visible, setVisible] = useState(false)
   const [visibleCategories, setVisibleCategories] = useState(false)
@@ -52,6 +61,7 @@ const WishListForm = forwardRef(({
   const [cookingType, setCookingType] = useState({})
   const [error, setError] = useState('')
   const [errorValidator, setErrorValidator] = useState({})
+  const [recipeList, setRecipeList] = useState([])
 
   // Default selectedDay is the start date of next week
   const startDateNextWeek = getDateOfWeek().minDate
@@ -59,6 +69,11 @@ const WishListForm = forwardRef(({
   const isShowSelectedDay = selectedDay && (selectedDay !== startDateNextWeek)
 
   const dayRange = getDateOfWeek()
+
+  useEffect(() => {
+    const recipeList = recipes
+    setRecipeList(recipeList)
+  }, [recipes])
 
   const dataIconClassify = [
     {
@@ -114,6 +129,14 @@ const WishListForm = forwardRef(({
   if (error) {
     return <Error message={error} />
   }
+
+  const suggestedRecipeList = recipeList && category.id && cookingType.id && recipeList.filter(recipe => (recipe.categoryId === category.id && recipe.cookingTypeId === cookingType.id))
+  const recipeListData = suggestedRecipeList && suggestedRecipeList.map(recipe => (
+    <Recipe
+      recipe={recipe}
+      key={recipe.id}
+    />
+  ))
 
   return (
     <View style={WEB_PLATFORM ? styles.container : customContainer}>
@@ -199,6 +222,9 @@ const WishListForm = forwardRef(({
             }}
           />
         )
+      }
+      {
+        recipeListData
       }
       {
         WEB_PLATFORM && (

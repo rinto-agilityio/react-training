@@ -3,6 +3,7 @@ import {
   getAllCategories,
   getRecipes,
   recipeDetail,
+  getAllRecipes,
 } from './query.graphql'
 import {
   createRecipe,
@@ -22,4 +23,5 @@ export {
   userToggleRecipe,
   publishRecipe,
   userToggleVote,
+  getAllRecipes,
 }
