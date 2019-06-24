@@ -72,6 +72,7 @@ const PrivateRoute = ({ component: Component, loginPath, path, history, ...rest 
           onPressCategoryIcon={handleRedirectWelcome}
           onPressLogo={handleRedirectHome}
           onDirectTo={handleDirectTo}
+          type="secondary"
         />
       )
     }
