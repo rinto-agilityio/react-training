@@ -105,6 +105,7 @@ const Profile = ({
         onDismiss={handleToSetting}
         onSubmit={handleToSetting}
         size="medium"
+        customDialog={{ top: 150 }}
       >
         <Setting
           user={user}

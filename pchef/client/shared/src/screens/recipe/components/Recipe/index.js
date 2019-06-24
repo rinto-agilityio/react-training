@@ -66,6 +66,7 @@ const Recipe = ({
         onDismiss={() => handleNavigateLogin()}
         onSubmit={() => handleNavigateLogin()}
         size={size}
+        customDialog={{ top: 150 }}
       >
         <Error message={customError(error.graphQLErrors)} size="medium" />
       </Modal>
