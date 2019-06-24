@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
 
   // Title
   title: {
+    ...METRICS.truncate,
     color: COLORS.black,
     fontWeight: FONTS.fontWeight.large,
     paddingLeft: METRICS.largePadding,
