@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
     height: METRICS.largeImage,
   },
   title: {
+    ...METRICS.truncate,
     fontSize: FONTS.fontSize.large,
     paddingBottom: METRICS.mediumPadding,
   },
