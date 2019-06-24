@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     marginBottom: METRICS.mediumMargin,
     paddingBottom: METRICS.mediumPadding,
   },
+
   // Dialog
   // Width full container for small/medium dialog
   largeDialog: {
@@ -68,38 +69,6 @@ const styles = StyleSheet.create({
   button: {
     zIndex: METRICS.iconZindex,
     marginTop: METRICS.largeMargin,
-  },
-
-  // Title
-  title: {
-    color: COLORS.black,
-    fontWeight: FONTS.fontWeight.large,
-    paddingLeft: METRICS.largePadding,
-    paddingRight: METRICS.largePadding,
-  },
-  smallTitle: {
-    fontSize: FONTS.fontSize.medium,
-  },
-  mediumTitle: {
-    fontSize: FONTS.fontSize.large,
-  },
-  largeTitle: {
-    fontSize: FONTS.fontSize.extraLarge,
-  },
-
-  // Image
-  image: {
-    width: '100%',
-    marginTop: METRICS.mediumMargin,
-  },
-  smallImage: {
-    height: METRICS.smallBgImage,
-  },
-  mediumImage: {
-    height: METRICS.mediumBgImage,
-  },
-  largeImage: {
-    height: METRICS.largeBgImage,
   },
 })
 

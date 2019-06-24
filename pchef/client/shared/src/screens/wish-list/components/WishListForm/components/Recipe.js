@@ -3,7 +3,7 @@ import React from 'react'
 import { Text, View } from 'react-native'
 
 // Styles
-import styles from '../styles'
+import styles from './styles'
 
 // Components
 import Image from '../../../../../components/Image'
@@ -16,7 +16,7 @@ type Props = {
     title: string,
     imgUrl: string,
   },
-  size?: string,  
+  size?: string,
 }
 
 const Recipe = ({
