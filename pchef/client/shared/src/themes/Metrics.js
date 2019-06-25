@@ -97,6 +97,7 @@ export default {
 
   // height
   mediumHeight: 50,
+  smallHeight: 20,
 
   // button
   largeButton: 260,
