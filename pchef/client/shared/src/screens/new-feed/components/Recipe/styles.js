@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
     fontWeight: FONTS.fontWeight.large,
     paddingLeft: METRICS.largePadding,
     paddingRight: METRICS.largePadding,
+    height: METRICS.smallHeight,
   },
   smallDescription: {
     fontSize: FONTS.fontSize.small,
