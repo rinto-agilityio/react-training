@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
   button: {
     zIndex: METRICS.iconZindex,
     marginTop: METRICS.largeMargin,
+    marginBottom: METRICS.largeMargin,
   },
 })
 
