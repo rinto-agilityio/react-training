@@ -96,8 +96,8 @@ export default {
   largeBorderWidth: 5,
 
   // height
-  mediumHeight: 50,
   smallHeight: 20,
+  mediumHeight: 50,
 
   // button
   largeButton: 260,
