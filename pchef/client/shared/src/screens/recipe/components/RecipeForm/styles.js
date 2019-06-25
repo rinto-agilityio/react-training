@@ -122,6 +122,7 @@ const styles = StyleSheet.create({
     marginBottom: '0',
     marginLeft: 'auto',
     marginRight: 'auto',
+    marginBottom: METRICS.largeMargin,
   },
 
   headerForm: {
