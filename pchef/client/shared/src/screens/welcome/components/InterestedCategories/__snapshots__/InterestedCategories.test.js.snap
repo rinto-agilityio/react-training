@@ -2,7 +2,7 @@
 
 exports[`InterestedCategories InterestedCategories snapshots with type categories undefined 1`] = `
 <div
-  className="css-view-1dbjc4n r-alignItems-obd0qt r-display-6koalj r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-1h0z5md r-margin-1cis278 r-minHeight-1xfddsp"
+  className="css-view-1dbjc4n r-alignItems-obd0qt r-display-6koalj r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-1h0z5md"
   style={
     Object {
       "WebkitBoxFlex": 0,
@@ -16,7 +16,7 @@ exports[`InterestedCategories InterestedCategories snapshots with type categorie
 
 exports[`InterestedCategories InterestedCategories snapshots with type primary 1`] = `
 <div
-  className="css-view-1dbjc4n r-alignItems-obd0qt r-display-6koalj r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-1h0z5md r-margin-1cis278 r-minHeight-1xfddsp"
+  className="css-view-1dbjc4n r-alignItems-obd0qt r-display-6koalj r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-1h0z5md"
   style={
     Object {
       "WebkitBoxFlex": 0,
@@ -787,7 +787,7 @@ exports[`InterestedCategories InterestedCategories snapshots with type primary 1
 
 exports[`InterestedCategories InterestedCategories snapshots with type secondary 1`] = `
 <div
-  className="css-view-1dbjc4n r-alignItems-obd0qt r-display-6koalj r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-1h0z5md r-margin-1cis278 r-minHeight-1xfddsp"
+  className="css-view-1dbjc4n r-alignItems-obd0qt r-display-6koalj r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-1h0z5md"
   style={
     Object {
       "WebkitBoxFlex": 0,

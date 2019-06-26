@@ -45,7 +45,7 @@ exports[`renders correctly 1`] = `
           style={
             Object {
               "WebkitTransform": "scaleX(1)",
-              "color": "rgba(70,91,174,1.00)",
+              "color": "rgba(211,43,83,1.00)",
               "fontFamily": "MaterialIcons",
               "fontSize": "30px",
               "fontStyle": "normal",
@@ -59,7 +59,7 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="css-text-901oao r-marginLeft-1n0xq6e"
+      className="css-text-901oao r-marginLeft-1n0xq6e r-textAlign-q4m81j"
       dir="auto"
     >
       Save
@@ -120,7 +120,7 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="css-text-901oao r-marginLeft-1n0xq6e"
+      className="css-text-901oao r-marginLeft-1n0xq6e r-textAlign-q4m81j"
       dir="auto"
     >
       1

@@ -5,66 +5,6 @@ exports[`Screen Profile should render Category component with grid 1`] = `
   className="css-view-1dbjc4n r-backgroundColor-14lw9ot r-width-13qz1uu"
 >
   <div
-    className="css-view-1dbjc4n r-backgroundColor-kemksi r-opacity-1g80hic"
-  >
-    <div
-      className="css-view-1dbjc4n r-alignItems-1habvwh r-height-7r4507 r-justifyContent-17s6mgv r-marginLeft-1jj8364 r-marginRight-lchren r-maxWidth-c3zab1 r-paddingHorizontal-d9fdf6 r-width-13qz1uu"
-    >
-      <div
-        className="css-view-1dbjc4n r-cursor-1loqt21 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr"
-        data-focusable={true}
-        disabled={false}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        tabIndex="0"
-      >
-        <div
-          className="css-view-1dbjc4n r-flexBasis-1mlwlqe r-overflow-1udh08x r-zIndex-417010"
-          style={
-            Object {
-              "borderBottomColor": "rgba(255,255,255,1.00)",
-              "borderBottomLeftRadius": "40px",
-              "borderBottomRightRadius": "40px",
-              "borderBottomWidth": "3px",
-              "borderLeftColor": "rgba(255,255,255,1.00)",
-              "borderLeftWidth": "3px",
-              "borderRightColor": "rgba(255,255,255,1.00)",
-              "borderRightWidth": "3px",
-              "borderTopColor": "rgba(255,255,255,1.00)",
-              "borderTopLeftRadius": "40px",
-              "borderTopRightRadius": "40px",
-              "borderTopWidth": "3px",
-              "height": "80px",
-              "marginBottom": "-10px",
-              "width": "80px",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n r-backgroundColor-1niwhzg r-backgroundPosition-vvn4in r-backgroundRepeat-u6sd8q r-backgroundSize-4gszlv r-bottom-1p0dtai r-height-1pi2tsx r-left-1d2f490 r-position-u8s1d r-right-zchlnj r-top-ipm5af r-width-13qz1uu r-zIndex-1wyyakw"
-            style={
-              Object {
-                "backgroundImage": "url(\\"https://cdn4.iconfinder.com/data/icons/avatars-21/512/avatar-circle-human-female-black-7-512.png\\")",
-              }
-            }
-          />
-          <img
-            alt=""
-            className="css-accessibilityImage-9pa8cd"
-            draggable={false}
-            src="https://cdn4.iconfinder.com/data/icons/avatars-21/512/avatar-circle-human-female-black-7-512.png"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
     className="css-view-1dbjc4n r-backgroundColor-14lw9ot r-flexDirection-18u37iz r-justifyContent-1wtj0ep r-marginLeft-1jj8364 r-marginRight-lchren r-maxWidth-c3zab1 r-padding-1pcd2l5 r-width-13qz1uu r-zIndex-1wyyakw"
   >
     <div
@@ -111,7 +51,7 @@ exports[`Screen Profile should render Category component with grid 1`] = `
       }
     >
       <div
-        className="css-cursor-18t94o4 css-view-1dbjc4n r-backgroundColor-1niwhzg r-cursor-1loqt21 r-overflow-1udh08x r-touchAction-1otgn73 r-userSelect-lrvibr"
+        className="css-cursor-18t94o4 css-view-1dbjc4n r-backgroundColor-1niwhzg r-cursor-1loqt21 r-touchAction-1otgn73 r-userSelect-lrvibr"
         data-focusable={true}
         disabled={false}
         onKeyDown={[Function]}
@@ -130,6 +70,8 @@ exports[`Screen Profile should render Category component with grid 1`] = `
             "borderBottomRightRadius": "4px",
             "borderTopLeftRadius": "4px",
             "borderTopRightRadius": "4px",
+            "overflowX": "hidden",
+            "overflowY": "hidden",
           }
         }
         tabIndex="0"

@@ -2,7 +2,7 @@
 
 exports[`Wish list Render wish component with category, cookingType 1`] = `
 <div
-  className="css-view-1dbjc4n r-borderBottomColor-1nd8m0h r-borderBottomWidth-qklmqi r-display-6koalj r-padding-1pcd2l5"
+  className="css-view-1dbjc4n r-borderBottomColor-1nd8m0h r-borderBottomWidth-qklmqi r-display-6koalj r-padding-1pcd2l5 r-width-13qz1uu"
 >
   <div
     className="css-text-901oao r-color-cqee49 r-fontSize-adyw6z r-fontWeight-vw2c0b r-marginBottom-117bsoe"
@@ -195,6 +195,7 @@ exports[`Wish list Render wish list component with error 1`] = `
           "marginTop": "0px",
           "msFlexPack": "start",
           "opacity": 1,
+          "top": "150px",
         }
       }
     >

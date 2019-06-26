@@ -74,6 +74,12 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
   className="css-view-1dbjc4n"
 >
   <div
+    className="css-text-901oao r-fontSize-adyw6z r-marginTop-1x0uki6 r-textAlign-q4m81j"
+    dir="auto"
+  >
+    CREATE NEW A RECIPE
+  </div>
+  <div
     className="css-view-1dbjc4n"
   >
     <input
@@ -90,7 +96,7 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
       onKeyDown={[Function]}
       onKeyPress={[Function]}
       onSelect={[Function]}
-      placeholder="Title"
+      placeholder="Name"
       readOnly={false}
       spellCheck={false}
       type="text"
@@ -101,64 +107,83 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
     dir="auto"
   />
   <div
-    className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1pzepah r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-marginBottom-15d164r r-marginTop-156q2ks"
+    className="css-view-1dbjc4n"
   >
-    <div
-      className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
-      data-focusable={true}
-      disabled={false}
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      onKeyUp={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      role="button"
-      tabIndex="0"
+    <label
+      className="css-text-901oao"
+      dir="auto"
+      for="file-input"
     >
-      <span
-        className="css-hitSlop-mjp8i1"
-        style={
-          Object {
-            "bottom": "-6px",
-            "left": "-6px",
-            "right": "-6px",
-            "top": "-6px",
-          }
-        }
-      />
       <div
-        className="css-view-1dbjc4n"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1pzepah r-display-xoduu5 r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-marginBottom-15d164r r-marginTop-156q2ks r-width-13qz1uu"
       >
         <div
-          className="css-text-901oao r-backgroundColor-1niwhzg r-color-cqee49 r-pointerEvents-633pao"
-          dir="auto"
-          focusable={false}
-          role="img"
-          style={
-            Object {
-              "WebkitTransform": "scaleX(1)",
-              "fontFamily": "MaterialIcons",
-              "fontSize": "60px",
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-              "transform": "scaleX(1)",
-            }
-          }
+          className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-display-xoduu5 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          tabIndex="0"
         >
-          
+          <span
+            className="css-hitSlop-mjp8i1"
+            style={
+              Object {
+                "bottom": "-6px",
+                "left": "-6px",
+                "right": "-6px",
+                "top": "-6px",
+              }
+            }
+          />
+          <div
+            className="css-view-1dbjc4n r-display-xoduu5"
+          >
+            <span
+              className="css-text-901oao css-textHasAncestor-16my406 r-backgroundColor-1niwhzg r-color-cqee49 r-pointerEvents-633pao"
+              dir="auto"
+              focusable={false}
+              role="img"
+              style={
+                Object {
+                  "WebkitTransform": "scaleX(1)",
+                  "fontFamily": "MaterialIcons",
+                  "fontSize": "60px",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                  "transform": "scaleX(1)",
+                }
+              }
+            >
+              
+            </span>
+          </div>
         </div>
+        <span
+          className="css-text-901oao css-textHasAncestor-16my406 r-fontSize-ubezar r-marginLeft-11wrixw r-marginTop-1x0uki6 r-textAlign-q4m81j"
+          dir="auto"
+        >
+          Set cover photo
+        </span>
       </div>
-    </div>
-    <div
-      className="css-text-901oao r-fontSize-ubezar r-marginLeft-11wrixw r-marginTop-1x0uki6"
-      dir="auto"
-    >
-      Set cover photo
-    </div>
+    </label>
+    <input
+      id="file-input"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="file"
+    />
   </div>
   <div
     className="css-view-1dbjc4n"
@@ -167,7 +192,7 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
       autoCapitalize="none"
       autoComplete="on"
       autoCorrect="off"
-      className="css-textinput-1cwyjr8 r-borderBottomWidth-qklmqi r-borderColor-34efmp r-color-cqee49 r-fontSize-ubezar r-height-eu3ka r-placeholderTextColor-1fufmm0"
+      className="css-textinput-1cwyjr8 r-borderBottomWidth-qklmqi r-borderColor-34efmp r-color-cqee49 r-fontSize-ubezar r-fontWeight-vw2c0b r-height-eu3ka r-placeholderTextColor-1fufmm0"
       data-focusable={true}
       defaultValue=""
       dir="auto"
@@ -177,7 +202,7 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
       onKeyDown={[Function]}
       onKeyPress={[Function]}
       onSelect={[Function]}
-      placeholder="Subtitle"
+      placeholder="Description"
       readOnly={false}
       spellCheck={false}
       type="text"
@@ -195,12 +220,7 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
     }
   >
     <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "width": "100%",
-        }
-      }
+      className="css-view-1dbjc4n r-width-13qz1uu"
     >
       <div
         className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe"
@@ -256,7 +276,7 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
           </div>
         </div>
         <div
-          className="css-text-901oao r-fontSize-ubezar r-marginLeft-1n0xq6e"
+          className="css-text-901oao r-fontSize-ubezar r-marginLeft-1n0xq6e r-textAlign-q4m81j"
           dir="auto"
         >
           Add categories
@@ -264,12 +284,7 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "width": "100%",
-        }
-      }
+      className="css-view-1dbjc4n r-width-13qz1uu"
     >
       <div
         className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe"
@@ -325,7 +340,7 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
           </div>
         </div>
         <div
-          className="css-text-901oao r-fontSize-ubezar r-marginLeft-1n0xq6e"
+          className="css-text-901oao r-fontSize-ubezar r-marginLeft-1n0xq6e r-textAlign-q4m81j"
           dir="auto"
         >
           Add cooking types
@@ -345,7 +360,7 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
     }
   >
     <div
-      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-width-1iadsmv"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-1dciyrv r-justifyContent-1777fci r-width-62p4ah"
     >
       <div
         className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -398,14 +413,14 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
         </div>
       </div>
       <div
-        className="css-text-901oao r-fontSize-ubezar r-marginLeft-11wrixw"
+        className="css-text-901oao r-fontSize-ubezar r-marginLeft-11wrixw r-textAlign-q4m81j"
         dir="auto"
       >
         Add ingredients
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-marginLeft-1n0xq6e r-width-1iadsmv"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-1dciyrv r-justifyContent-1777fci r-marginLeft-1n0xq6e r-width-62p4ah"
     >
       <div
         className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -458,7 +473,7 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
         </div>
       </div>
       <div
-        className="css-text-901oao r-fontSize-ubezar r-marginLeft-11wrixw"
+        className="css-text-901oao r-fontSize-ubezar r-marginLeft-1n0xq6e r-textAlign-q4m81j"
         dir="auto"
       >
         Save And Write Steps
@@ -466,84 +481,88 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
     </div>
   </div>
   <div
-    className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
-    style={
-      Object {
-        "backgroundColor": "rgba(66,165,245,1.00)",
-        "borderBottomColor": "rgba(0,0,0,0.00)",
-        "borderBottomLeftRadius": "4px",
-        "borderBottomRightRadius": "4px",
-        "borderBottomStyle": "solid",
-        "borderBottomWidth": "0px",
-        "borderLeftColor": "rgba(0,0,0,0.00)",
-        "borderLeftStyle": "solid",
-        "borderLeftWidth": "0px",
-        "borderRightColor": "rgba(0,0,0,0.00)",
-        "borderRightStyle": "solid",
-        "borderRightWidth": "0px",
-        "borderTopColor": "rgba(0,0,0,0.00)",
-        "borderTopLeftRadius": "4px",
-        "borderTopRightRadius": "4px",
-        "borderTopStyle": "solid",
-        "borderTopWidth": "0px",
-        "minWidth": "64px",
-        "paddingBottom": "5px",
-        "paddingLeft": "5px",
-        "paddingRight": "5px",
-        "paddingTop": "5px",
-      }
-    }
+    className="css-view-1dbjc4n r-marginBottom-117bsoe r-marginLeft-1jj8364 r-marginRight-lchren r-marginTop-1x0uki6"
   >
     <div
-      aria-disabled={true}
-      className="css-view-1dbjc4n r-backgroundColor-1niwhzg r-userSelect-lrvibr"
-      disabled={true}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      role="button"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
       style={
         Object {
+          "backgroundColor": "rgba(66,165,245,1.00)",
+          "borderBottomColor": "rgba(0,0,0,0.00)",
           "borderBottomLeftRadius": "4px",
           "borderBottomRightRadius": "4px",
+          "borderBottomStyle": "solid",
+          "borderBottomWidth": "0px",
+          "borderLeftColor": "rgba(0,0,0,0.00)",
+          "borderLeftStyle": "solid",
+          "borderLeftWidth": "0px",
+          "borderRightColor": "rgba(0,0,0,0.00)",
+          "borderRightStyle": "solid",
+          "borderRightWidth": "0px",
+          "borderTopColor": "rgba(0,0,0,0.00)",
           "borderTopLeftRadius": "4px",
           "borderTopRightRadius": "4px",
-          "overflowX": "hidden",
-          "overflowY": "hidden",
+          "borderTopStyle": "solid",
+          "borderTopWidth": "0px",
+          "minWidth": "64px",
+          "paddingBottom": "5px",
+          "paddingLeft": "5px",
+          "paddingRight": "5px",
+          "paddingTop": "5px",
         }
       }
     >
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-justifyContent-1777fci"
+        aria-disabled={true}
+        className="css-view-1dbjc4n r-backgroundColor-1niwhzg r-userSelect-lrvibr"
+        disabled={true}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        role="button"
+        style={
+          Object {
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "overflowX": "hidden",
+            "overflowY": "hidden",
+          }
+        }
       >
         <div
-          className="css-text-901oao css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(0,0,0,0.32)",
-              "direction": "ltr",
-              "fontFamily": "Roboto-Medium, Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            }
-          }
+          className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-justifyContent-1777fci"
         >
-          <span
-            className="css-text-901oao css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+          <div
+            className="css-text-901oao css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
             dir="auto"
             style={
               Object {
+                "color": "rgba(0,0,0,0.32)",
                 "direction": "ltr",
-                "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "textAlign": "left",
+                "fontFamily": "Roboto-Medium, Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               }
             }
           >
-            Save
-          </span>
+            <span
+              className="css-text-901oao css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+              dir="auto"
+              style={
+                Object {
+                  "direction": "ltr",
+                  "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "textAlign": "left",
+                }
+              }
+            >
+              Save Recipe
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -556,6 +575,12 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
   className="css-view-1dbjc4n"
 >
   <div
+    className="css-text-901oao r-fontSize-adyw6z r-marginTop-1x0uki6 r-textAlign-q4m81j"
+    dir="auto"
+  >
+    CREATE NEW A RECIPE
+  </div>
+  <div
     className="css-view-1dbjc4n"
   >
     <input
@@ -572,7 +597,7 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
       onKeyDown={[Function]}
       onKeyPress={[Function]}
       onSelect={[Function]}
-      placeholder="Title"
+      placeholder="Name"
       readOnly={false}
       spellCheck={false}
       type="text"
@@ -583,64 +608,83 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
     dir="auto"
   />
   <div
-    className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1pzepah r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-marginBottom-15d164r r-marginTop-156q2ks"
+    className="css-view-1dbjc4n"
   >
-    <div
-      className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
-      data-focusable={true}
-      disabled={false}
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      onKeyUp={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      role="button"
-      tabIndex="0"
+    <label
+      className="css-text-901oao"
+      dir="auto"
+      for="file-input"
     >
-      <span
-        className="css-hitSlop-mjp8i1"
-        style={
-          Object {
-            "bottom": "-6px",
-            "left": "-6px",
-            "right": "-6px",
-            "top": "-6px",
-          }
-        }
-      />
       <div
-        className="css-view-1dbjc4n"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1pzepah r-display-xoduu5 r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-marginBottom-15d164r r-marginTop-156q2ks r-width-13qz1uu"
       >
         <div
-          className="css-text-901oao r-backgroundColor-1niwhzg r-color-cqee49 r-pointerEvents-633pao"
-          dir="auto"
-          focusable={false}
-          role="img"
-          style={
-            Object {
-              "WebkitTransform": "scaleX(1)",
-              "fontFamily": "MaterialIcons",
-              "fontSize": "60px",
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-              "transform": "scaleX(1)",
-            }
-          }
+          className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-display-xoduu5 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          tabIndex="0"
         >
-          
+          <span
+            className="css-hitSlop-mjp8i1"
+            style={
+              Object {
+                "bottom": "-6px",
+                "left": "-6px",
+                "right": "-6px",
+                "top": "-6px",
+              }
+            }
+          />
+          <div
+            className="css-view-1dbjc4n r-display-xoduu5"
+          >
+            <span
+              className="css-text-901oao css-textHasAncestor-16my406 r-backgroundColor-1niwhzg r-color-cqee49 r-pointerEvents-633pao"
+              dir="auto"
+              focusable={false}
+              role="img"
+              style={
+                Object {
+                  "WebkitTransform": "scaleX(1)",
+                  "fontFamily": "MaterialIcons",
+                  "fontSize": "60px",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                  "transform": "scaleX(1)",
+                }
+              }
+            >
+              
+            </span>
+          </div>
         </div>
+        <span
+          className="css-text-901oao css-textHasAncestor-16my406 r-fontSize-ubezar r-marginLeft-11wrixw r-marginTop-1x0uki6 r-textAlign-q4m81j"
+          dir="auto"
+        >
+          Set cover photo
+        </span>
       </div>
-    </div>
-    <div
-      className="css-text-901oao r-fontSize-ubezar r-marginLeft-11wrixw r-marginTop-1x0uki6"
-      dir="auto"
-    >
-      Set cover photo
-    </div>
+    </label>
+    <input
+      id="file-input"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="file"
+    />
   </div>
   <div
     className="css-view-1dbjc4n"
@@ -649,7 +693,7 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
       autoCapitalize="none"
       autoComplete="on"
       autoCorrect="off"
-      className="css-textinput-1cwyjr8 r-borderBottomWidth-qklmqi r-borderColor-34efmp r-color-cqee49 r-fontSize-ubezar r-height-eu3ka r-placeholderTextColor-1fufmm0"
+      className="css-textinput-1cwyjr8 r-borderBottomWidth-qklmqi r-borderColor-34efmp r-color-cqee49 r-fontSize-ubezar r-fontWeight-vw2c0b r-height-eu3ka r-placeholderTextColor-1fufmm0"
       data-focusable={true}
       defaultValue=""
       dir="auto"
@@ -659,7 +703,7 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
       onKeyDown={[Function]}
       onKeyPress={[Function]}
       onSelect={[Function]}
-      placeholder="Subtitle"
+      placeholder="Description"
       readOnly={false}
       spellCheck={false}
       type="text"
@@ -677,12 +721,7 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
     }
   >
     <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "width": "100%",
-        }
-      }
+      className="css-view-1dbjc4n r-width-13qz1uu"
     >
       <div
         className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe"
@@ -738,7 +777,7 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
           </div>
         </div>
         <div
-          className="css-text-901oao r-fontSize-ubezar r-marginLeft-1n0xq6e"
+          className="css-text-901oao r-fontSize-ubezar r-marginLeft-1n0xq6e r-textAlign-q4m81j"
           dir="auto"
         >
           Add categories
@@ -746,12 +785,7 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "width": "100%",
-        }
-      }
+      className="css-view-1dbjc4n r-width-13qz1uu"
     >
       <div
         className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe"
@@ -807,7 +841,7 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
           </div>
         </div>
         <div
-          className="css-text-901oao r-fontSize-ubezar r-marginLeft-1n0xq6e"
+          className="css-text-901oao r-fontSize-ubezar r-marginLeft-1n0xq6e r-textAlign-q4m81j"
           dir="auto"
         >
           Add cooking types
@@ -827,7 +861,7 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
     }
   >
     <div
-      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-width-1iadsmv"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-1dciyrv r-justifyContent-1777fci r-width-62p4ah"
     >
       <div
         className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -880,14 +914,14 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
         </div>
       </div>
       <div
-        className="css-text-901oao r-fontSize-ubezar r-marginLeft-11wrixw"
+        className="css-text-901oao r-fontSize-ubezar r-marginLeft-11wrixw r-textAlign-q4m81j"
         dir="auto"
       >
         Add ingredients
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-marginLeft-1n0xq6e r-width-1iadsmv"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-1dciyrv r-justifyContent-1777fci r-marginLeft-1n0xq6e r-width-62p4ah"
     >
       <div
         className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -940,7 +974,7 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
         </div>
       </div>
       <div
-        className="css-text-901oao r-fontSize-ubezar r-marginLeft-11wrixw"
+        className="css-text-901oao r-fontSize-ubezar r-marginLeft-1n0xq6e r-textAlign-q4m81j"
         dir="auto"
       >
         Save And Write Steps
@@ -948,84 +982,88 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
     </div>
   </div>
   <div
-    className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
-    style={
-      Object {
-        "backgroundColor": "rgba(66,165,245,1.00)",
-        "borderBottomColor": "rgba(0,0,0,0.00)",
-        "borderBottomLeftRadius": "4px",
-        "borderBottomRightRadius": "4px",
-        "borderBottomStyle": "solid",
-        "borderBottomWidth": "0px",
-        "borderLeftColor": "rgba(0,0,0,0.00)",
-        "borderLeftStyle": "solid",
-        "borderLeftWidth": "0px",
-        "borderRightColor": "rgba(0,0,0,0.00)",
-        "borderRightStyle": "solid",
-        "borderRightWidth": "0px",
-        "borderTopColor": "rgba(0,0,0,0.00)",
-        "borderTopLeftRadius": "4px",
-        "borderTopRightRadius": "4px",
-        "borderTopStyle": "solid",
-        "borderTopWidth": "0px",
-        "minWidth": "64px",
-        "paddingBottom": "5px",
-        "paddingLeft": "5px",
-        "paddingRight": "5px",
-        "paddingTop": "5px",
-      }
-    }
+    className="css-view-1dbjc4n r-marginBottom-117bsoe r-marginLeft-1jj8364 r-marginRight-lchren r-marginTop-1x0uki6"
   >
     <div
-      aria-disabled={true}
-      className="css-view-1dbjc4n r-backgroundColor-1niwhzg r-userSelect-lrvibr"
-      disabled={true}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      role="button"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
       style={
         Object {
+          "backgroundColor": "rgba(66,165,245,1.00)",
+          "borderBottomColor": "rgba(0,0,0,0.00)",
           "borderBottomLeftRadius": "4px",
           "borderBottomRightRadius": "4px",
+          "borderBottomStyle": "solid",
+          "borderBottomWidth": "0px",
+          "borderLeftColor": "rgba(0,0,0,0.00)",
+          "borderLeftStyle": "solid",
+          "borderLeftWidth": "0px",
+          "borderRightColor": "rgba(0,0,0,0.00)",
+          "borderRightStyle": "solid",
+          "borderRightWidth": "0px",
+          "borderTopColor": "rgba(0,0,0,0.00)",
           "borderTopLeftRadius": "4px",
           "borderTopRightRadius": "4px",
-          "overflowX": "hidden",
-          "overflowY": "hidden",
+          "borderTopStyle": "solid",
+          "borderTopWidth": "0px",
+          "minWidth": "64px",
+          "paddingBottom": "5px",
+          "paddingLeft": "5px",
+          "paddingRight": "5px",
+          "paddingTop": "5px",
         }
       }
     >
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-justifyContent-1777fci"
+        aria-disabled={true}
+        className="css-view-1dbjc4n r-backgroundColor-1niwhzg r-userSelect-lrvibr"
+        disabled={true}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        role="button"
+        style={
+          Object {
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "overflowX": "hidden",
+            "overflowY": "hidden",
+          }
+        }
       >
         <div
-          className="css-text-901oao css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(0,0,0,0.32)",
-              "direction": "ltr",
-              "fontFamily": "Roboto-Medium, Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            }
-          }
+          className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-justifyContent-1777fci"
         >
-          <span
-            className="css-text-901oao css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+          <div
+            className="css-text-901oao css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
             dir="auto"
             style={
               Object {
+                "color": "rgba(0,0,0,0.32)",
                 "direction": "ltr",
-                "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "textAlign": "left",
+                "fontFamily": "Roboto-Medium, Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               }
             }
           >
-            Save
-          </span>
+            <span
+              className="css-text-901oao css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+              dir="auto"
+              style={
+                Object {
+                  "direction": "ltr",
+                  "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "textAlign": "left",
+                }
+              }
+            >
+              Save Recipe
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -1050,6 +1088,12 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
   className="css-view-1dbjc4n"
 >
   <div
+    className="css-text-901oao r-fontSize-adyw6z r-marginTop-1x0uki6 r-textAlign-q4m81j"
+    dir="auto"
+  >
+    CREATE NEW A RECIPE
+  </div>
+  <div
     className="css-view-1dbjc4n"
   >
     <input
@@ -1066,7 +1110,7 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
       onKeyDown={[Function]}
       onKeyPress={[Function]}
       onSelect={[Function]}
-      placeholder="Title"
+      placeholder="Name"
       readOnly={false}
       spellCheck={false}
       type="text"
@@ -1077,64 +1121,83 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
     dir="auto"
   />
   <div
-    className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1pzepah r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-marginBottom-15d164r r-marginTop-156q2ks"
+    className="css-view-1dbjc4n"
   >
-    <div
-      className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
-      data-focusable={true}
-      disabled={false}
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      onKeyUp={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      role="button"
-      tabIndex="0"
+    <label
+      className="css-text-901oao"
+      dir="auto"
+      for="file-input"
     >
-      <span
-        className="css-hitSlop-mjp8i1"
-        style={
-          Object {
-            "bottom": "-6px",
-            "left": "-6px",
-            "right": "-6px",
-            "top": "-6px",
-          }
-        }
-      />
       <div
-        className="css-view-1dbjc4n"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1pzepah r-display-xoduu5 r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-marginBottom-15d164r r-marginTop-156q2ks r-width-13qz1uu"
       >
         <div
-          className="css-text-901oao r-backgroundColor-1niwhzg r-color-cqee49 r-pointerEvents-633pao"
-          dir="auto"
-          focusable={false}
-          role="img"
-          style={
-            Object {
-              "WebkitTransform": "scaleX(1)",
-              "fontFamily": "MaterialIcons",
-              "fontSize": "60px",
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-              "transform": "scaleX(1)",
-            }
-          }
+          className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-display-xoduu5 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          tabIndex="0"
         >
-          
+          <span
+            className="css-hitSlop-mjp8i1"
+            style={
+              Object {
+                "bottom": "-6px",
+                "left": "-6px",
+                "right": "-6px",
+                "top": "-6px",
+              }
+            }
+          />
+          <div
+            className="css-view-1dbjc4n r-display-xoduu5"
+          >
+            <span
+              className="css-text-901oao css-textHasAncestor-16my406 r-backgroundColor-1niwhzg r-color-cqee49 r-pointerEvents-633pao"
+              dir="auto"
+              focusable={false}
+              role="img"
+              style={
+                Object {
+                  "WebkitTransform": "scaleX(1)",
+                  "fontFamily": "MaterialIcons",
+                  "fontSize": "60px",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                  "transform": "scaleX(1)",
+                }
+              }
+            >
+              
+            </span>
+          </div>
         </div>
+        <span
+          className="css-text-901oao css-textHasAncestor-16my406 r-fontSize-ubezar r-marginLeft-11wrixw r-marginTop-1x0uki6 r-textAlign-q4m81j"
+          dir="auto"
+        >
+          Set cover photo
+        </span>
       </div>
-    </div>
-    <div
-      className="css-text-901oao r-fontSize-ubezar r-marginLeft-11wrixw r-marginTop-1x0uki6"
-      dir="auto"
-    >
-      Set cover photo
-    </div>
+    </label>
+    <input
+      id="file-input"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="file"
+    />
   </div>
   <div
     className="css-view-1dbjc4n"
@@ -1143,7 +1206,7 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
       autoCapitalize="none"
       autoComplete="on"
       autoCorrect="off"
-      className="css-textinput-1cwyjr8 r-borderBottomWidth-qklmqi r-borderColor-34efmp r-color-cqee49 r-fontSize-ubezar r-height-eu3ka r-placeholderTextColor-1fufmm0"
+      className="css-textinput-1cwyjr8 r-borderBottomWidth-qklmqi r-borderColor-34efmp r-color-cqee49 r-fontSize-ubezar r-fontWeight-vw2c0b r-height-eu3ka r-placeholderTextColor-1fufmm0"
       data-focusable={true}
       defaultValue=""
       dir="auto"
@@ -1153,7 +1216,7 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
       onKeyDown={[Function]}
       onKeyPress={[Function]}
       onSelect={[Function]}
-      placeholder="Subtitle"
+      placeholder="Description"
       readOnly={false}
       spellCheck={false}
       type="text"
@@ -1171,12 +1234,7 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
     }
   >
     <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "width": "100%",
-        }
-      }
+      className="css-view-1dbjc4n r-width-13qz1uu"
     >
       <div
         className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe"
@@ -1232,7 +1290,7 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
           </div>
         </div>
         <div
-          className="css-text-901oao r-fontSize-ubezar r-marginLeft-1n0xq6e"
+          className="css-text-901oao r-fontSize-ubezar r-marginLeft-1n0xq6e r-textAlign-q4m81j"
           dir="auto"
         >
           Add categories
@@ -1240,12 +1298,7 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "width": "100%",
-        }
-      }
+      className="css-view-1dbjc4n r-width-13qz1uu"
     >
       <div
         className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe"
@@ -1301,7 +1354,7 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
           </div>
         </div>
         <div
-          className="css-text-901oao r-fontSize-ubezar r-marginLeft-1n0xq6e"
+          className="css-text-901oao r-fontSize-ubezar r-marginLeft-1n0xq6e r-textAlign-q4m81j"
           dir="auto"
         >
           Add cooking types
@@ -1321,7 +1374,7 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
     }
   >
     <div
-      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-width-1iadsmv"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-1dciyrv r-justifyContent-1777fci r-width-62p4ah"
     >
       <div
         className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -1374,14 +1427,14 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
         </div>
       </div>
       <div
-        className="css-text-901oao r-fontSize-ubezar r-marginLeft-11wrixw"
+        className="css-text-901oao r-fontSize-ubezar r-marginLeft-11wrixw r-textAlign-q4m81j"
         dir="auto"
       >
         Add ingredients
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-marginLeft-1n0xq6e r-width-1iadsmv"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-1dciyrv r-justifyContent-1777fci r-marginLeft-1n0xq6e r-width-62p4ah"
     >
       <div
         className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -1434,7 +1487,7 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
         </div>
       </div>
       <div
-        className="css-text-901oao r-fontSize-ubezar r-marginLeft-11wrixw"
+        className="css-text-901oao r-fontSize-ubezar r-marginLeft-1n0xq6e r-textAlign-q4m81j"
         dir="auto"
       >
         Save And Write Steps
@@ -1442,84 +1495,88 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
     </div>
   </div>
   <div
-    className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
-    style={
-      Object {
-        "backgroundColor": "rgba(66,165,245,1.00)",
-        "borderBottomColor": "rgba(0,0,0,0.00)",
-        "borderBottomLeftRadius": "4px",
-        "borderBottomRightRadius": "4px",
-        "borderBottomStyle": "solid",
-        "borderBottomWidth": "0px",
-        "borderLeftColor": "rgba(0,0,0,0.00)",
-        "borderLeftStyle": "solid",
-        "borderLeftWidth": "0px",
-        "borderRightColor": "rgba(0,0,0,0.00)",
-        "borderRightStyle": "solid",
-        "borderRightWidth": "0px",
-        "borderTopColor": "rgba(0,0,0,0.00)",
-        "borderTopLeftRadius": "4px",
-        "borderTopRightRadius": "4px",
-        "borderTopStyle": "solid",
-        "borderTopWidth": "0px",
-        "minWidth": "64px",
-        "paddingBottom": "5px",
-        "paddingLeft": "5px",
-        "paddingRight": "5px",
-        "paddingTop": "5px",
-      }
-    }
+    className="css-view-1dbjc4n r-marginBottom-117bsoe r-marginLeft-1jj8364 r-marginRight-lchren r-marginTop-1x0uki6"
   >
     <div
-      aria-disabled={true}
-      className="css-view-1dbjc4n r-backgroundColor-1niwhzg r-userSelect-lrvibr"
-      disabled={true}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      role="button"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
       style={
         Object {
+          "backgroundColor": "rgba(66,165,245,1.00)",
+          "borderBottomColor": "rgba(0,0,0,0.00)",
           "borderBottomLeftRadius": "4px",
           "borderBottomRightRadius": "4px",
+          "borderBottomStyle": "solid",
+          "borderBottomWidth": "0px",
+          "borderLeftColor": "rgba(0,0,0,0.00)",
+          "borderLeftStyle": "solid",
+          "borderLeftWidth": "0px",
+          "borderRightColor": "rgba(0,0,0,0.00)",
+          "borderRightStyle": "solid",
+          "borderRightWidth": "0px",
+          "borderTopColor": "rgba(0,0,0,0.00)",
           "borderTopLeftRadius": "4px",
           "borderTopRightRadius": "4px",
-          "overflowX": "hidden",
-          "overflowY": "hidden",
+          "borderTopStyle": "solid",
+          "borderTopWidth": "0px",
+          "minWidth": "64px",
+          "paddingBottom": "5px",
+          "paddingLeft": "5px",
+          "paddingRight": "5px",
+          "paddingTop": "5px",
         }
       }
     >
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-justifyContent-1777fci"
+        aria-disabled={true}
+        className="css-view-1dbjc4n r-backgroundColor-1niwhzg r-userSelect-lrvibr"
+        disabled={true}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        role="button"
+        style={
+          Object {
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "overflowX": "hidden",
+            "overflowY": "hidden",
+          }
+        }
       >
         <div
-          className="css-text-901oao css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(0,0,0,0.32)",
-              "direction": "ltr",
-              "fontFamily": "Roboto-Medium, Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            }
-          }
+          className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-justifyContent-1777fci"
         >
-          <span
-            className="css-text-901oao css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+          <div
+            className="css-text-901oao css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
             dir="auto"
             style={
               Object {
+                "color": "rgba(0,0,0,0.32)",
                 "direction": "ltr",
-                "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "textAlign": "left",
+                "fontFamily": "Roboto-Medium, Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               }
             }
           >
-            Save
-          </span>
+            <span
+              className="css-text-901oao css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+              dir="auto"
+              style={
+                Object {
+                  "direction": "ltr",
+                  "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "textAlign": "left",
+                }
+              }
+            >
+              Save Recipe
+            </span>
+          </div>
         </div>
       </div>
     </div>
