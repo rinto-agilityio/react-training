@@ -44,6 +44,7 @@ type Props = {
     title: string,
     imgUrl: string,
   }>,
+  handleRedirectLogin: () => void,  
 }
 
 const WishListForm = forwardRef(({
@@ -53,6 +54,7 @@ const WishListForm = forwardRef(({
   customContainer = {},
   customModal = {},
   recipes = [],
+  handleRedirectLogin,
 }: Props, ref) => {
   const [visible, setVisible] = useState(false)
   const [visibleCategories, setVisibleCategories] = useState(false)
@@ -206,6 +208,7 @@ const WishListForm = forwardRef(({
               setCategory(value)
               setVisibleCategories(false)
             }}
+            handleRedirectLogin={handleRedirectLogin}
           />
         )
       }
@@ -220,6 +223,7 @@ const WishListForm = forwardRef(({
               setCookingType(value)
               setVisibleCookingTypes(false)
             }}
+            handleRedirectLogin={handleRedirectLogin}
           />
         )
       }
