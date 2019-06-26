@@ -59,6 +59,7 @@ const CreateRecipe = ({ history }: Props) => {
       customStyleLabel={{
         marginTop: '30px',
       }}
+      handleRedirectLogin={() => history.push('/login')}
     />
   )
 }

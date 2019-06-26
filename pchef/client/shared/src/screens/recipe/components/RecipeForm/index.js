@@ -55,6 +55,7 @@ type Props = {
   uploadImage: () => Promise<void>,
   uploadStepImage: () => Promise<void>,
   compressImage: () => Promise<void>,
+  handleRedirectLogin: () => void,
 }
 
 const RecipeForm = forwardRef(({
@@ -74,6 +75,7 @@ const RecipeForm = forwardRef(({
   uploadImage,
   uploadStepImage,
   compressImage,
+  handleRedirectLogin,
 }: Props, ref) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
@@ -339,6 +341,7 @@ const RecipeForm = forwardRef(({
             setCategory(value)
             setVisibleCategories(false)
           }}
+          handleRedirectLogin={handleRedirectLogin}
         />
       )}
       {visibleCookingTypes && (
@@ -351,6 +354,7 @@ const RecipeForm = forwardRef(({
             setCookingType(value)
             setVisibleCookingTypes(false)
           }}
+          handleRedirectLogin={handleRedirectLogin}
         />
       )}
       {WEB_PLATFORM ? (

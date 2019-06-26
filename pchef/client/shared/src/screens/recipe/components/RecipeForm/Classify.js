@@ -10,9 +10,13 @@ import Modal from '../../../../components/Modal'
 import Wrapper from '../../../../layout/Wrapper'
 import RadioButton from '../../../../components/RadioButon'
 import Loading from '../../../../components/Loading'
+import Error from '../../../../components/Error'
 
 // Constants
 import { MODAL_PADDING } from '../../../../constants'
+
+// Helpers
+import { customError } from '../../../../helpers/utils'
 
 type Props = {
   size: string,
@@ -29,9 +33,12 @@ type Props = {
     imgUrl: string,
   }>,
   loading: boolean,
-  error: {},
+  error: {
+    graphQLErrors: Array<{ message: string }>,
+  },
   onDismiss?: () => void,
   handleSubmit: (value: {}) => void,
+  handleRedirectLogin: () => void,
 }
 
 const Classify = forwardRef(({
@@ -44,18 +51,40 @@ const Classify = forwardRef(({
   handleSubmit,
   loading,
   error,
+  handleRedirectLogin,
 }: Props, ref) => {
   const data = title === 'Categories' ? categories : cookingTypes
   const defaultValue = data[0] || {}
   const [value, setValue] = useState(defaultValue.id)
   const [radioWidth, setRadioWidth] = useState()
   const radioButtonValue = data.find(item => item.id === value) || {}
+  const [visibled, setVisibled] = useState(true)
+
   useEffect(() => (
     setValue(defaultValue.id)
   ), [loading, defaultValue.id])
 
   if (loading) {
     return <Loading size={size} />
+  }
+
+  const handleNavigateLogin = () => {
+    setVisibled(false)
+    handleRedirectLogin()
+  }
+
+  if (error) {
+    return (
+      <Modal
+        visible={visibled}
+        onDismiss={() => handleNavigateLogin()}
+        onSubmit={() => handleNavigateLogin()}
+        size={size}
+        customDialog={{ top: 150 }}
+      >
+        <Error message={customError(error.graphQLErrors)} size="medium" />
+      </Modal>
+    )
   }
 
   return (

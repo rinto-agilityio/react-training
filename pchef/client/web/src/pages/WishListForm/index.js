@@ -10,6 +10,7 @@ type Props = {
 const WishList = ({ history }: Props) => (
   <WishListFormContainer
     handleRedirectWishlist={() => history.push('/wishlist')}
+    handleRedirectLogin={() => history.push('/login')}
   />
 )
 
