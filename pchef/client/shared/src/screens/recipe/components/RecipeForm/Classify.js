@@ -45,7 +45,7 @@ const Classify = forwardRef(({
   size = 'medium',
   categories = [],
   cookingTypes = [],
-  onDismiss = () => { },
+  onDismiss = () => {},
   visible = false,
   title,
   handleSubmit,
