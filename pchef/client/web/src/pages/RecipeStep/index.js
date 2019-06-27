@@ -18,7 +18,10 @@ const RecipeStep = ({ match, history }: Props) => {
   return (
     <RecipeStepContainer
       id={recipeId}
-      handleRedirectLogin={() => history.push('/login')}      
+      handleRedirectLogin={() => history.push('/login')}
+      wrapperIconStyle={{
+        fontSize: '30px',
+      }}
     />
   )
 }

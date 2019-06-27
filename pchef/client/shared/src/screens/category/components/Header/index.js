@@ -6,7 +6,7 @@ import { Text, View } from 'react-native'
 import styles from './styles'
 
 // Themes
-import { COLORS, METRICS } from '../../../../themes'
+import { COLORS, METRICS, FONTS } from '../../../../themes'
 
 // Components
 import ImageBackground from '../../../../components/ImageBackground'
@@ -43,12 +43,15 @@ const Header = ({
       name: 'view-list',
       wrapperIconStyle: {
         marginRight: METRICS.extraLargeMargin,
+        fontSize: FONTS.fontSize.extraExtraLarge,
       },
       color: isGrid ? COLORS.baseGray : COLORS.lighterGray,
     },
     {
       name: 'apps',
-      wrapperIconStyle: {},
+      wrapperIconStyle: {
+        fontSize: FONTS.fontSize.extraExtraLarge,
+      },
       color: isGrid ? COLORS.lighterGray : COLORS.baseGray,
     },
   ]

@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: METRICS.smallPosition,
     right: METRICS.mediumPosition,
+    fontSize: FONTS.fontSize.extraLarge,
   },
   largeGridContent: {
     borderWidth: METRICS.smallBorderWidth,

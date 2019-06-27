@@ -30,6 +30,7 @@ const Home = ({ history }: Props) => {
         }}
         wrapperIconStyle={{
           maxWidth: '45px',
+          fontSize: '30px',
         }}
       />
     </div>
