@@ -33,6 +33,7 @@ type Props = {
     votes: Array<string>,
     userId: string
   ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
+  wrapperIconStyle: Object,
 }
 
 const TabContent = ({
@@ -42,6 +43,7 @@ const TabContent = ({
   isRecipeTab,
   userToggleVote,
   userId,
+  wrapperIconStyle,
 }: Props) => {
   const NO_RECIPES_MESSAGE = 'No recipes to show'
 
@@ -63,6 +65,7 @@ const TabContent = ({
               userToggleRecipe={userToggleRecipe}
               userToggleVote={userToggleVote}
               userId={userId}
+              wrapperIconStyle={wrapperIconStyle}
             />
           </View>
         ))
