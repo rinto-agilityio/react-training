@@ -7,6 +7,8 @@ import MainContainer from 'pchef-shared/src/layout/MainContainer'
 
 import Header from 'pchef-shared/src/containers/Header'
 
+import './CustomStyle.css'
+
 // Constants
 import { HOME, WELCOME, LOG_IN, PROFILE, WISH_LIST, LOG_OUT, CREATE_RECIPE } from '../constants'
 
