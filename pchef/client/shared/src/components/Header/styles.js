@@ -92,6 +92,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  wrapIcon: {
+    fontSize: FONTS.fontSize.extraExtraLarge,
+  },
 })
 
 export default styles
