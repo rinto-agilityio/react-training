@@ -8,6 +8,7 @@ export default {
     extraLarge: 28,
     moreExtraLarge: 30,
     extraExtraLarge: 40,
+    superLarge: 60,
   },
 
   fontWeight: {
