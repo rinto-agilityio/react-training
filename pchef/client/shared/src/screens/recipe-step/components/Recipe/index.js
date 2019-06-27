@@ -72,6 +72,7 @@ type Props = {
     graphQLErrors: Array<{message: string}>
   },
   handleRedirectLogin: Function,
+  wrapperIconStyle: Object,
 }
 
 const Recipe = ({
@@ -96,6 +97,7 @@ const Recipe = ({
   customSubTitle = {},
   customTitleStep = {},
   customImage = {},
+  wrapperIconStyle = {},
 }: Props) => {
   // order recipeSteps by step asc
   const orderRecipeSteps = recipeSteps.sort(compareStep)
@@ -272,6 +274,7 @@ const Recipe = ({
         onPressFavorite={handleSaveRecipe}
         onPressVote={handleToggleVote}
         isVote={checkContainField(formatFiledOnObject(votes), user.id)}
+        wrapperIconStyle={wrapperIconStyle}
       />
       <Comment
         name={`by ${user.name}`}
