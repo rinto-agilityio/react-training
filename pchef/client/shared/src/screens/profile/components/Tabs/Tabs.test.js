@@ -1,8 +1,16 @@
+// Libs
+import { JSDOM } from 'jsdom'
+
 // Components
 import Tabs from '.'
 
 // Mocks
 import { recipes } from '../../../../mocks'
+
+const { document } = new JSDOM('').window
+global.document = document
+global.window = document.defaultView
+global.Image = window.Image
 
 const props = {
   ownRecipes: recipes,
