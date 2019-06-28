@@ -13,9 +13,15 @@ import Setting from '../settings'
 // Styles
 import styles from './styles'
 
+// Helpers
+import { customError } from '../../helpers/utils'
+
 type Props = {
   loading: boolean,
-  error: string,
+  error: {
+    graphQLErrors: Array<{ message: string }>,
+  },
+
   data: {
     user: {
       name: string,
@@ -64,6 +70,7 @@ const Profile = ({
   wrapperIconStyle,
 }: Props) => {
   const [isOpenModal, setIsOpenModal] = useState(false)
+  const [visible, setVisible] = useState(true)
 
   const handleToSetting = () => {
     setIsOpenModal(!isOpenModal)
@@ -80,6 +87,25 @@ const Profile = ({
 
   if (loading) {
     return <Loading size={size} />
+  }
+
+  const handleNavigateLogin = () => {
+    setVisible(false)
+    handleRedirectLogin()
+  }
+
+  if (error) {
+    return (
+      <Modal
+        visible={visible}
+        onDismiss={() => handleNavigateLogin()}
+        onSubmit={() => handleNavigateLogin()}
+        size="medium"
+        customDialog={{ top: 150 }}
+      >
+        <Error message={customError(error.graphQLErrors)} size="medium" />
+      </Modal>
+    )
   }
 
   if (error) {
@@ -108,7 +134,6 @@ const Profile = ({
         onDismiss={handleToSetting}
         onSubmit={handleToSetting}
         size="medium"
-        customDialog={{ top: 150 }}
       >
         <Setting
           user={user}

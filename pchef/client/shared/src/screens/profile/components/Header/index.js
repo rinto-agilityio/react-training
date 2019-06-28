@@ -41,7 +41,7 @@ const Header = ({ user, handleToSetting = () => {} }: Props) => {
         <Button
           buttonStyle={styles.userButton}
           titleStyle={styles.userTitleButton}
-          title="Edit profile"
+          title="View profile"
           onPress={handleToSetting}
         />
       </View>
