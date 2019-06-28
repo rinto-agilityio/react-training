@@ -141,8 +141,6 @@ const WishListForm = forwardRef(({
     />
   ))
 
-  console.log('test1', visibleCategories)
-
   return (
     <View style={WEB_PLATFORM ? styles.container : customContainer}>
       <Icon
