@@ -1,6 +1,7 @@
 // Libs
 import React from 'react'
 import renderer from 'react-test-renderer'
+import { JSDOM } from 'jsdom'
 
 // Components
 import Recipe from '.'
@@ -9,6 +10,11 @@ import Icon from '../../../../components/Icon'
 
 // Mocks
 import { recipes } from '../../../../mocks'
+
+const { document } = new JSDOM('').window
+global.document = document
+global.window = document.defaultView
+global.Image = window.Image
 
 const props = {
   recipe: recipes[0],
@@ -32,7 +38,7 @@ describe('Components', () => {
           {...props}
           handlePressImage={handlePressImage}
           onPressIcon={onPressIcon}
-        />,
+        />
       )
     })
 

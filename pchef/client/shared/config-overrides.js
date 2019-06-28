@@ -14,7 +14,9 @@ module.exports = function override(config) {
         presets: [
           '@babel/preset-env',
           '@babel/preset-react',
-          '@babel/preset-flow',
+          ['@babel/preset-flow', {
+            all: true,
+          }],
         ],
         plugins: [
           '@babel/plugin-proposal-class-properties',

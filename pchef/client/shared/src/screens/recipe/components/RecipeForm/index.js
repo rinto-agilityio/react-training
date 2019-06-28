@@ -1,3 +1,5 @@
+// @flow
+
 /* eslint-disable react/require-default-props */
 // Libs
 import React, { useRef, useState, forwardRef, useImperativeHandle } from 'react'

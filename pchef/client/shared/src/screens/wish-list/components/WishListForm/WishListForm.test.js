@@ -1,9 +1,19 @@
+// Libs
+import wait from 'waait'
+
 // Components
 import WistListForm from '.'
+import Categories from '../../../../containers/Categories'
+import CookingTypes from '../../../../containers/CookingTypes'
+
+// Mocks
+import { recipes } from '../../../../mocks'
 
 describe('Wish list', () => {
-  let props
-  const component = shallow(<WistListForm />)
+  let props = {
+    recipes,
+  }
+  const component = shallow(<WistListForm {...props} />)
 
   it('Renders correctly wish list form commponent', () => {
     const wishList = renderer.create(<WistListForm />).toJSON()
@@ -13,6 +23,7 @@ describe('Wish list', () => {
   it('Render wish list form component with size medium', () => {
     props = {
       size: 'medium',
+      recipes,
     }
     const wishList = renderer.create(<WistListForm {...props} />).toJSON()
     expect(wishList).toMatchSnapshot()
@@ -26,7 +37,10 @@ describe('Wish list', () => {
     selectDateIcon.props().onPress()
     expect(component.find('Modal').props().visible).toEqual(true)
 
-    component.find('Modal').props().onSubmit()
+    component
+      .find('Modal')
+      .props()
+      .onSubmit()
     expect(component.find('Modal').exists()).toEqual(false)
   })
 
@@ -58,45 +72,64 @@ describe('Wish list', () => {
 
   it('Should show categories form', () => {
     const icon = component.find('Icon')
-    expect(component.find('Apollo(Classify)').exists()).toEqual(false)
-    icon.at(1).props().onPress()
-    expect(component.find('Apollo(Classify)').exists()).toEqual(true)
+    expect(component.find(Categories).exists()).toEqual(false)
+    icon
+      .at(1)
+      .props()
+      .onPress()
+    expect(component.find(Categories).exists()).toEqual(true)
 
     // Submit Categories form
-    const cookingTypesProps = component.find('Apollo(Classify)').props()
+    const cookingTypesProps = component.find(Categories).props()
     cookingTypesProps.handleSubmit({
       id: '1',
       name: 'test',
     })
-    expect(component.find('Apollo(Classify)').exists()).toEqual(false)
+    expect(component.find(Categories).exists()).toEqual(false)
   })
 
   it('Should show cooking types form', () => {
     const icon = component.find('Icon')
-    expect(component.find('Apollo(Classify)').exists()).toEqual(false)
-    icon.at(2).props().onPress()
-    expect(component.find('Apollo(Classify)').exists()).toEqual(true)
+    expect(component.find(CookingTypes).exists()).toEqual(false)
+    icon
+      .at(2)
+      .props()
+      .onPress()
+    expect(component.find(CookingTypes).exists()).toEqual(true)
 
     // Submit Cooking types form
-    const cookingTypesProps = component.find('Apollo(Classify)').props()
+    const cookingTypesProps = component.find(CookingTypes).props()
     cookingTypesProps.handleSubmit({
       id: '1',
       name: 'test',
     })
-    expect(component.find('Apollo(Classify)').exists()).toEqual(false)
+    expect(component.find(CookingTypes).exists()).toEqual(false)
   })
 
   it('Should hide categories form', () => {
     const icon = component.find('Icon')
-    icon.at(1).props().onPress()
-    component.find('Apollo(Classify)').props().onDismiss()
-    expect(component.find('Apollo(Classify)').exists()).toEqual(false)
+    icon
+      .at(1)
+      .props()
+      .onPress()
+    component
+      .find(Categories)
+      .props()
+      .onDismiss()
+    expect(component.find(Categories).exists()).toEqual(false)
   })
 
-  it('Should hide cooking types form', () => {
+  it('Should hide cooking types form', async () => {
     const icon = component.find('Icon')
-    icon.at(2).props().onPress()
-    component.find('Apollo(Classify)').props().onDismiss()
-    expect(component.find('Apollo(Classify)').exists()).toEqual(false)
+    icon
+      .at(2)
+      .props()
+      .onPress()
+
+    component
+      .find(CookingTypes)
+      .props()
+      .onDismiss()
+    expect(component.find(CookingTypes).exists()).toEqual(false)
   })
 })

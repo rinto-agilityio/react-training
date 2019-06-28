@@ -1,3 +1,6 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
 import React, { useState, useEffect, memo, Suspense } from 'react'
 import { Image as ImageNative, TouchableOpacity } from 'react-native'
@@ -68,4 +71,4 @@ const ImageComponent = ({
   )
 }
 
-export default memo(ImageComponent)
+export default memo<Props>(ImageComponent)

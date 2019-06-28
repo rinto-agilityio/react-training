@@ -67,6 +67,7 @@ export const recipes = [
       'https://www.tasteofhome.com/wp-content/uploads/2018/01/Crispy-Fried-Chicken_EXPS_FRBZ19_6445_C01_31_3b.jpg',
 
     description: 'Description for Crispy Fried Chicken',
+    votes: ['1', '2'],
   },
   {
     id: '2',
@@ -76,6 +77,7 @@ export const recipes = [
       'https://www.tasteofhome.com/wp-content/uploads/2018/01/Crispy-Fried-Chicken_EXPS_FRBZ19_6445_C01_31_3b.jpg',
 
     description: 'Description for Crispy Fried Chicken',
+    votes: ['1', '2'],
   },
   {
     id: '3',
@@ -84,5 +86,6 @@ export const recipes = [
       'https://www.tasteofhome.com/wp-content/uploads/2018/01/Crispy-Fried-Chicken_EXPS_FRBZ19_6445_C01_31_3b.jpg',
 
     description: 'Description for Crispy Fried Chicken',
+    votes: ['1', '2'],
   },
 ]

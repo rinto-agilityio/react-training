@@ -8,16 +8,18 @@ import { recipes, user } from '../../../../mocks'
 const recipe = recipes[0]
 describe('Recipe by step', () => {
   const recipeProps = {
-    stepInfo: recipe.steps[0],
-    votes: recipe.votes,
-    recipe,
+    recipeSteps: recipe.steps,
     getUser: {
       favoriteRecipe: user.favoriteRecipe,
       user,
     },
     onSelectStep: jest.fn(),
+    getRecipe: recipe,
+    onPress: jest.fn(),
   }
+
   const stepProps = {
+    steps: recipe.steps,
     step: 1,
     onPressStep: jest.fn(),
     onPressSelectStep: jest.fn(),
@@ -51,27 +53,19 @@ describe('Recipe by step', () => {
     expect(progressStepComponent).toMatchSnapshot()
   })
 
-  it('Function props of recipe component should be defined', () => {
-    const props = {
-      ...recipeProps,
-      size: 'medium',
-    }
-
-    const recipeComponent = renderer.create(<Recipe {...props} />).toJSON()
-
-    recipeComponent.props.onPress()
-    expect(Recipe.props.onPress).toBeDefined()
+  it('Should call onPress when press on Title', () => {
+    const recipeComponent = shallow(<Recipe {...recipeProps} />)
+    recipeComponent.find('Text').at(1).props().onPress()
+    expect(recipeProps.onPress).toHaveBeenCalled()
   })
 
-  it('Function props of progress step component should be defined', () => {
+  it('Should call onPressStep when press on Button of ProgressStep', () => {
     const props = {
       ...stepProps,
       size: 'medium',
     }
-    const ProgressStep = renderer.create(<ProgressStep {...props} />).toJSON()
-    ProgressStep.props.onPressStep()
-    ProgressStep.props.onPressSelectStep()
-    expect(ProgressStep.props.onPressStep).toBeDefined()
-    expect(ProgressStep.props.onPressSelectStep).toBeDefined()
+    const progressStep = shallow(<ProgressStep {...props} />)
+    progressStep.find('Button').at(0).props().onPress()
+    expect(stepProps.onPressStep).toHaveBeenCalled()
   })
 })
