@@ -50,6 +50,7 @@ type Props = {
   size: string,
   store: Object,
   handleRedirectLogin?: () => void,
+  wrapperIconStyle: Object,
 }
 const Profile = ({
   data,
@@ -60,6 +61,7 @@ const Profile = ({
   size = 'small',
   store,
   handleRedirectLogin = () => {},
+  wrapperIconStyle,
 }: Props) => {
   const [isOpenModal, setIsOpenModal] = useState(false)
 
@@ -98,6 +100,7 @@ const Profile = ({
         userToggleRecipe={userToggleRecipe}
         userToggleVote={userToggleVote}
         userId={user.id}
+        wrapperIconStyle={wrapperIconStyle}
       />
       <Modal
         visible={isOpenModal}

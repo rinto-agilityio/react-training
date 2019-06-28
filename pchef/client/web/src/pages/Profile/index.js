@@ -8,6 +8,9 @@ type Props = {
 const Profile = ({ history }: Props) => (
   <ProfileContainer
     handleRedirectLogin={() => history.push('/login')}
+    wrapperIconStyle={{
+      fontSize: '30px',
+    }}
   />
 )
 

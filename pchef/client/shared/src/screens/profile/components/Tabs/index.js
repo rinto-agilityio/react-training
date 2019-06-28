@@ -33,6 +33,7 @@ type Props = {
     userId: string
   ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
   userId: string,
+  wrapperIconStyle: Object,
 }
 const Tabs = ({
   ownRecipes = [],
@@ -40,6 +41,7 @@ const Tabs = ({
   userToggleRecipe,
   userToggleVote,
   userId,
+  wrapperIconStyle,
 }: Props) => {
   // state
   const [tabActive, setTabActive] = useState(0)
@@ -73,6 +75,7 @@ const Tabs = ({
             isRecipeTab
             userToggleVote={userToggleVote}
             userId={userId}
+            wrapperIconStyle={wrapperIconStyle}
           />
         ) : (
           <TabContent
@@ -80,6 +83,7 @@ const Tabs = ({
             userToggleRecipe={userToggleRecipe}
             userToggleVote={userToggleVote}
             userId={userId}
+            wrapperIconStyle={wrapperIconStyle}
           />
         )}
       </View>

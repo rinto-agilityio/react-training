@@ -1,0 +1,7 @@
+/* Style for iconButton */
+div[role='img'],
+span[role='img']{
+  padding-top: 10px;  
+  padding-bottom: 55px;
+  margin-top: 30px;
+}

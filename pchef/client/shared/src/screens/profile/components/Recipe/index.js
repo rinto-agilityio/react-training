@@ -39,6 +39,7 @@ type Props = {
     userId: string
   ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
   userId: string,
+  wrapperIconStyle: Object,
 }
 
 const Recipe = ({
@@ -48,6 +49,7 @@ const Recipe = ({
   userToggleRecipe,
   userToggleVote,
   userId,
+  wrapperIconStyle,
 }: Props) => {
   const { id, title, description, imgUrl, votes } = recipe
 
@@ -100,6 +102,7 @@ const Recipe = ({
         isVote={checkContain(votes, userId)}
         onPressFavorite={handleSaveRecipe}
         onPressVote={handleToggleVote}
+        wrapperIconStyle={wrapperIconStyle} 
       />
     </TouchableOpacity>
   )
