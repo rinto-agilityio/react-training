@@ -1,5 +1,312 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Wish list Render wish list form component with size medium 1`] = `
+<div
+  className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
+>
+  <div
+    className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-xmd3h9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-justifyContent-1777fci r-marginBottom-15d164r r-marginTop-156q2ks r-paddingBottom-1mi0q7o r-paddingRight-1qfoi16"
+  >
+    <div
+      className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+      data-focusable={true}
+      disabled={false}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      role="button"
+      tabIndex="0"
+    >
+      <span
+        className="css-hitSlop-mjp8i1"
+        style={
+          Object {
+            "bottom": "-6px",
+            "left": "-6px",
+            "right": "-6px",
+            "top": "-6px",
+          }
+        }
+      />
+      <div
+        className="css-view-1dbjc4n"
+      >
+        <div
+          className="css-text-901oao r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+          dir="auto"
+          focusable={false}
+          role="img"
+          style={
+            Object {
+              "WebkitTransform": "scaleX(1)",
+              "color": "rgba(0,0,0,1.00)",
+              "fontFamily": "MaterialIcons",
+              "fontSize": "30px",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "transform": "scaleX(1)",
+            }
+          }
+        >
+          
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-text-901oao r-fontSize-ubezar r-marginLeft-1n0xq6e r-textAlign-q4m81j"
+      dir="auto"
+    >
+      Select date
+    </div>
+  </div>
+  <div
+    className="css-view-1dbjc4n r-alignItems-1habvwh r-backgroundColor-1pzepah r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-justifyContent-1wtj0ep r-marginTop-156q2ks r-padding-1pcd2l5 r-zIndex-1wyyakw"
+    style={
+      Object {
+        "WebkitBoxFlex": 0,
+        "WebkitFlexGrow": 0,
+        "flexGrow": 0,
+        "msFlexPositive": 0,
+      }
+    }
+  >
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-xmd3h9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe r-paddingRight-1qfoi16"
+      >
+        <div
+          className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <span
+            className="css-hitSlop-mjp8i1"
+            style={
+              Object {
+                "bottom": "-6px",
+                "left": "-6px",
+                "right": "-6px",
+                "top": "-6px",
+              }
+            }
+          />
+          <div
+            className="css-view-1dbjc4n"
+          >
+            <div
+              className="css-text-901oao r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+              dir="auto"
+              focusable={false}
+              role="img"
+              style={
+                Object {
+                  "WebkitTransform": "scaleX(1)",
+                  "color": "rgba(0,0,0,1.00)",
+                  "fontFamily": "MaterialIcons",
+                  "fontSize": "30px",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                  "transform": "scaleX(1)",
+                }
+              }
+            >
+              
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-text-901oao r-fontSize-ubezar r-marginLeft-1n0xq6e r-textAlign-q4m81j"
+          dir="auto"
+        >
+          Add categories
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-xmd3h9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe r-paddingRight-1qfoi16"
+      >
+        <div
+          className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <span
+            className="css-hitSlop-mjp8i1"
+            style={
+              Object {
+                "bottom": "-6px",
+                "left": "-6px",
+                "right": "-6px",
+                "top": "-6px",
+              }
+            }
+          />
+          <div
+            className="css-view-1dbjc4n"
+          >
+            <div
+              className="css-text-901oao r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+              dir="auto"
+              focusable={false}
+              role="img"
+              style={
+                Object {
+                  "WebkitTransform": "scaleX(1)",
+                  "color": "rgba(0,0,0,1.00)",
+                  "fontFamily": "MaterialIcons",
+                  "fontSize": "30px",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                  "transform": "scaleX(1)",
+                }
+              }
+            >
+              
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-text-901oao r-fontSize-ubezar r-marginLeft-1n0xq6e r-textAlign-q4m81j"
+          dir="auto"
+        >
+          Add cooking types
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-xmd3h9 r-justifyContent-1777fci r-marginBottom-117bsoe r-zIndex-1wyyakw"
+    style={
+      Object {
+        "borderBottomColor": "rgba(0,0,0,0.00)",
+        "borderBottomLeftRadius": "4px",
+        "borderBottomRightRadius": "4px",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px",
+        "borderLeftColor": "rgba(0,0,0,0.00)",
+        "borderLeftStyle": "solid",
+        "borderLeftWidth": "0px",
+        "borderRightColor": "rgba(0,0,0,0.00)",
+        "borderRightStyle": "solid",
+        "borderRightWidth": "0px",
+        "borderTopColor": "rgba(0,0,0,0.00)",
+        "borderTopLeftRadius": "4px",
+        "borderTopRightRadius": "4px",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "boxShadow": "0px 0.75px 1.5px rgba(0,0,0,0.24)",
+        "marginTop": "20px",
+        "minWidth": "64px",
+        "paddingBottom": "5px",
+        "paddingLeft": "5px",
+        "paddingRight": "5px",
+        "paddingTop": "5px",
+      }
+    }
+  >
+    <div
+      className="css-cursor-18t94o4 css-view-1dbjc4n r-backgroundColor-1niwhzg r-cursor-1loqt21 r-touchAction-1otgn73 r-userSelect-lrvibr"
+      data-focusable={true}
+      disabled={false}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      role="button"
+      style={
+        Object {
+          "borderBottomLeftRadius": "4px",
+          "borderBottomRightRadius": "4px",
+          "borderTopLeftRadius": "4px",
+          "borderTopRightRadius": "4px",
+          "overflowX": "hidden",
+          "overflowY": "hidden",
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-justifyContent-1777fci"
+      >
+        <div
+          className="css-text-901oao css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(0,0,0,1.00)",
+              "direction": "ltr",
+              "fontFamily": "Roboto-Medium, Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            }
+          }
+        >
+          <span
+            className="css-text-901oao css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+            dir="auto"
+            style={
+              Object {
+                "direction": "ltr",
+                "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "textAlign": "left",
+              }
+            }
+          >
+            Add
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Wish list Renders correctly wish list form commponent 1`] = `
 <div
   className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"

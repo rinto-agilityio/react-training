@@ -1,3 +1,4 @@
+// @flow
 /* eslint-disable react/require-default-props */
 // Libs
 import React, { useState, forwardRef, useImperativeHandle, useEffect } from 'react'
@@ -44,7 +45,7 @@ type Props = {
     title: string,
     imgUrl: string,
   }>,
-  handleRedirectLogin: () => void,  
+  handleRedirectLogin: () => void,
 }
 
 const WishListForm = forwardRef(({
@@ -139,6 +140,8 @@ const WishListForm = forwardRef(({
       key={recipe.id}
     />
   ))
+
+  console.log('test1', visibleCategories)
 
   return (
     <View style={WEB_PLATFORM ? styles.container : customContainer}>
