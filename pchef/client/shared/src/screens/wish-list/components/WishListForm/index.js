@@ -48,7 +48,7 @@ type Props = {
   handleRedirectLogin: () => void,
 }
 
-const WishListForm = forwardRef(({
+const WishListForm = forwardRef<Props, Function>(({
   size = 'medium',
   createWishList,
   handleRedirectWishlist,
