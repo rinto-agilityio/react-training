@@ -8,7 +8,7 @@ exports[`Components Header Login snapshots 1`] = `
     className="css-view-1dbjc4n r-marginLeft-1jj8364 r-marginRight-lchren r-maxWidth-c3zab1 r-width-13qz1uu"
   >
     <div
-      className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-fontSize-xb2eav"
     >
       <div
         className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -285,7 +285,7 @@ exports[`Components Header Login snapshots 2`] = `
     className="css-view-1dbjc4n r-marginLeft-1jj8364 r-marginRight-lchren r-maxWidth-c3zab1 r-width-13qz1uu"
   >
     <div
-      className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-fontSize-xb2eav"
     >
       <div
         className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -318,7 +318,7 @@ exports[`Components Header Login snapshots 2`] = `
           className="css-view-1dbjc4n"
         >
           <div
-            className="css-text-901oao r-backgroundColor-1niwhzg r-color-jwli3a r-pointerEvents-633pao"
+            className="css-text-901oao r-backgroundColor-1niwhzg r-color-jwli3a r-fontSize-xb2eav r-pointerEvents-633pao"
             dir="auto"
             focusable={false}
             role="img"
@@ -326,7 +326,6 @@ exports[`Components Header Login snapshots 2`] = `
               Object {
                 "WebkitTransform": "scaleX(1)",
                 "fontFamily": "MaterialIcons",
-                "fontSize": "40px",
                 "fontStyle": "normal",
                 "fontWeight": "normal",
                 "transform": "scaleX(1)",

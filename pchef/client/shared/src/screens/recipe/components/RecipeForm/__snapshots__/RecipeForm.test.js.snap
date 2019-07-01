@@ -115,7 +115,7 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
       for="file-input"
     >
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1pzepah r-display-xoduu5 r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-marginBottom-15d164r r-marginTop-156q2ks r-width-13qz1uu"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1pzepah r-display-xoduu5 r-flexDirection-eqz5dr r-fontSize-18i18we r-height-7r4507 r-justifyContent-1777fci r-marginBottom-15d164r r-marginTop-156q2ks r-width-13qz1uu"
       >
         <div
           className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-display-xoduu5 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -148,7 +148,7 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
             className="css-view-1dbjc4n r-display-xoduu5"
           >
             <span
-              className="css-text-901oao css-textHasAncestor-16my406 r-backgroundColor-1niwhzg r-color-cqee49 r-pointerEvents-633pao"
+              className="css-text-901oao css-textHasAncestor-16my406 r-backgroundColor-1niwhzg r-color-cqee49 r-fontSize-18i18we r-pointerEvents-633pao"
               dir="auto"
               focusable={false}
               role="img"
@@ -156,7 +156,6 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
                 Object {
                   "WebkitTransform": "scaleX(1)",
                   "fontFamily": "MaterialIcons",
-                  "fontSize": "60px",
                   "fontStyle": "normal",
                   "fontWeight": "normal",
                   "transform": "scaleX(1)",
@@ -223,7 +222,7 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
       className="css-view-1dbjc4n r-width-13qz1uu"
     >
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-fontSize-zz5t5d r-justifyContent-1h0z5md r-marginBottom-117bsoe"
       >
         <div
           className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -287,7 +286,7 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
       className="css-view-1dbjc4n r-width-13qz1uu"
     >
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-fontSize-zz5t5d r-justifyContent-1h0z5md r-marginBottom-117bsoe"
       >
         <div
           className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -360,7 +359,7 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
     }
   >
     <div
-      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-1dciyrv r-justifyContent-1777fci r-width-62p4ah"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-fontSize-zz5t5d r-height-1dciyrv r-justifyContent-1777fci r-width-62p4ah"
     >
       <div
         className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -420,7 +419,7 @@ exports[`recipe form Render recipe form component with defaultProps 1`] = `
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-1dciyrv r-justifyContent-1777fci r-marginLeft-1n0xq6e r-width-62p4ah"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-fontSize-zz5t5d r-height-1dciyrv r-justifyContent-1777fci r-marginLeft-1n0xq6e r-width-62p4ah"
     >
       <div
         className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -616,7 +615,7 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
       for="file-input"
     >
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1pzepah r-display-xoduu5 r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-marginBottom-15d164r r-marginTop-156q2ks r-width-13qz1uu"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1pzepah r-display-xoduu5 r-flexDirection-eqz5dr r-fontSize-18i18we r-height-7r4507 r-justifyContent-1777fci r-marginBottom-15d164r r-marginTop-156q2ks r-width-13qz1uu"
       >
         <div
           className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-display-xoduu5 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -649,7 +648,7 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
             className="css-view-1dbjc4n r-display-xoduu5"
           >
             <span
-              className="css-text-901oao css-textHasAncestor-16my406 r-backgroundColor-1niwhzg r-color-cqee49 r-pointerEvents-633pao"
+              className="css-text-901oao css-textHasAncestor-16my406 r-backgroundColor-1niwhzg r-color-cqee49 r-fontSize-18i18we r-pointerEvents-633pao"
               dir="auto"
               focusable={false}
               role="img"
@@ -657,7 +656,6 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
                 Object {
                   "WebkitTransform": "scaleX(1)",
                   "fontFamily": "MaterialIcons",
-                  "fontSize": "60px",
                   "fontStyle": "normal",
                   "fontWeight": "normal",
                   "transform": "scaleX(1)",
@@ -724,7 +722,7 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
       className="css-view-1dbjc4n r-width-13qz1uu"
     >
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-fontSize-zz5t5d r-justifyContent-1h0z5md r-marginBottom-117bsoe"
       >
         <div
           className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -788,7 +786,7 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
       className="css-view-1dbjc4n r-width-13qz1uu"
     >
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-fontSize-zz5t5d r-justifyContent-1h0z5md r-marginBottom-117bsoe"
       >
         <div
           className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -861,7 +859,7 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
     }
   >
     <div
-      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-1dciyrv r-justifyContent-1777fci r-width-62p4ah"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-fontSize-zz5t5d r-height-1dciyrv r-justifyContent-1777fci r-width-62p4ah"
     >
       <div
         className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -921,7 +919,7 @@ exports[`recipe form Render recipe form component with size medium 1`] = `
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-1dciyrv r-justifyContent-1777fci r-marginLeft-1n0xq6e r-width-62p4ah"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-fontSize-zz5t5d r-height-1dciyrv r-justifyContent-1777fci r-marginLeft-1n0xq6e r-width-62p4ah"
     >
       <div
         className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -1129,7 +1127,7 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
       for="file-input"
     >
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1pzepah r-display-xoduu5 r-flexDirection-eqz5dr r-height-7r4507 r-justifyContent-1777fci r-marginBottom-15d164r r-marginTop-156q2ks r-width-13qz1uu"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1pzepah r-display-xoduu5 r-flexDirection-eqz5dr r-fontSize-18i18we r-height-7r4507 r-justifyContent-1777fci r-marginBottom-15d164r r-marginTop-156q2ks r-width-13qz1uu"
       >
         <div
           className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-display-xoduu5 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -1162,7 +1160,7 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
             className="css-view-1dbjc4n r-display-xoduu5"
           >
             <span
-              className="css-text-901oao css-textHasAncestor-16my406 r-backgroundColor-1niwhzg r-color-cqee49 r-pointerEvents-633pao"
+              className="css-text-901oao css-textHasAncestor-16my406 r-backgroundColor-1niwhzg r-color-cqee49 r-fontSize-18i18we r-pointerEvents-633pao"
               dir="auto"
               focusable={false}
               role="img"
@@ -1170,7 +1168,6 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
                 Object {
                   "WebkitTransform": "scaleX(1)",
                   "fontFamily": "MaterialIcons",
-                  "fontSize": "60px",
                   "fontStyle": "normal",
                   "fontWeight": "normal",
                   "transform": "scaleX(1)",
@@ -1237,7 +1234,7 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
       className="css-view-1dbjc4n r-width-13qz1uu"
     >
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-fontSize-zz5t5d r-justifyContent-1h0z5md r-marginBottom-117bsoe"
       >
         <div
           className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -1301,7 +1298,7 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
       className="css-view-1dbjc4n r-width-13qz1uu"
     >
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-fontSize-zz5t5d r-justifyContent-1h0z5md r-marginBottom-117bsoe"
       >
         <div
           className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -1374,7 +1371,7 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
     }
   >
     <div
-      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-1dciyrv r-justifyContent-1777fci r-width-62p4ah"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-fontSize-zz5t5d r-height-1dciyrv r-justifyContent-1777fci r-width-62p4ah"
     >
       <div
         className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -1434,7 +1431,7 @@ exports[`recipe form Renders correctly recipe form commponent 1`] = `
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-height-1dciyrv r-justifyContent-1777fci r-marginLeft-1n0xq6e r-width-62p4ah"
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-14lw9ot r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-fontSize-zz5t5d r-height-1dciyrv r-justifyContent-1777fci r-marginLeft-1n0xq6e r-width-62p4ah"
     >
       <div
         className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
