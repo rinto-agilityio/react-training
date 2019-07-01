@@ -121,9 +121,9 @@ const CategoryScreen = ({
                     />
                   )
                 }
+                contentContainerStyle={{ justifyContent: 'space-between' }}
                 keyExtractor={item => item.id}
                 key={columns}
-                columnWrapperStyle={isGrid && { justifyContent: 'space-between' }}
               />
             )
             : <Text>{NO_RECIPES_MESSAGE}</Text>
