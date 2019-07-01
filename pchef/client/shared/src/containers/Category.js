@@ -4,8 +4,9 @@ import { compose } from 'react-apollo'
 import { getCategory } from '../graphql/category'
 import { userToggleRecipe } from '../graphql/recipe'
 import { getRecipes } from '../graphql/recipe'
+import { userToggleCategory } from '../graphql/user'
 
 // component
 import Category from '../screens/category'
 
-export default compose(getCategory, userToggleRecipe, getRecipes)(Category)
+export default compose(getCategory, userToggleRecipe, getRecipes, userToggleCategory)(Category)

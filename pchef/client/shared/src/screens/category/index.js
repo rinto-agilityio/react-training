@@ -40,6 +40,8 @@ type Props = {
     favoriteRecipe: Array<{id: string}>,
   ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
   handleRedirectLogin: Function,
+  userToggleCategory: (categoryId: Array<string>) => Promise<{ data: {userToggleCategory: {results: Array<string>}}}>,
+  id: string,
 }
 const CategoryScreen = ({
   category = {},
@@ -49,6 +51,8 @@ const CategoryScreen = ({
   userToggleRecipe,
   data = {},
   handleRedirectLogin,
+  userToggleCategory,
+  id,
 }: Props) => {
   const size = WEB_PLATFORM ? 'large' : 'small'
   const [columns, setColumns] = useState(LIST_VIEW_COLUMN)
@@ -94,6 +98,10 @@ const CategoryScreen = ({
     await userToggleRecipe(id, favoriteRecipe)
   }
 
+  const handleSaveCategory = async () => {
+    await userToggleCategory(id)
+  }
+
   return (
     <>
       <Banner
@@ -101,6 +109,7 @@ const CategoryScreen = ({
         isGrid={isGrid}
         onSelectListView={handleSelectListView}
         size={size}
+        onFollowing={handleSaveCategory}
       />
       <View style={styles.container}>
         {
