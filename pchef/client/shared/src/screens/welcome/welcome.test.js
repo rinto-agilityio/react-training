@@ -89,7 +89,7 @@ describe('Welcome', () => {
     expect(Welcome.defaultProps.handleSkipCategories).toBeDefined()
   })
 
-  it('userToggleCategory success when user toggle category', async () => {
+  it('call userToggleCategory when user toggle category', async () => {
     const props = {
       categories,
       loading: false,
@@ -107,27 +107,14 @@ describe('Welcome', () => {
 
     expect(component.find('InterestedCategories').props().activeList.length).toEqual(0)
 
+    // press category
     component.find('InterestedCategories').props().onChooseCategory()
     await wait()
-
     expect(component.find('InterestedCategories').props().activeList.length).toEqual(1)
-  })
 
-  it('userToggleCategory fail when user toggle category', async () => {
-    const props = {
-      categories,
-      loading: false,
-      error: null,
-      userToggleCategory: jest.fn(() => ({
-        graphQLErrors: [{ message: 'Error!' }],
-      })),
-    }
-
-    const component = shallow(<Welcome {...props} />)
-
+    // press category again
     component.find('InterestedCategories').props().onChooseCategory()
     await wait()
-
     expect(component.find('InterestedCategories').props().activeList.length).toEqual(0)
   })
 })
