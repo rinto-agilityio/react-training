@@ -60,7 +60,7 @@ type Props = {
   handleRedirectLogin: () => void,
 }
 
-const RecipeForm = forwardRef(({
+const RecipeForm = forwardRef<Props, Function>(({
   size = 'medium',
   handleAddRecipeImage = () => {},
   createRecipe,
