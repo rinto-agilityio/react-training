@@ -43,7 +43,7 @@ type Props = {
   handleRedirectLogin: () => void,
 }
 
-const Classify = forwardRef(({
+const Classify = forwardRef<Props, Function>(({
   size = 'medium',
   categories = [],
   cookingTypes = [],
