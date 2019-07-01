@@ -1,12 +1,15 @@
 // Libs
 import React, { useRef } from 'react'
-import { View, Platform } from 'react-native'
+import { View } from 'react-native'
 
 // Components
 import TextBox from '../../../../components/TextBox'
 import Button from '../../../../components/Button'
 import Wrapper from '../../../../layout/Wrapper'
 import { PATTERN } from '../../../../constants'
+
+// Constants
+import { WEB_PLATFORM } from '../../../../constants'
 
 // Styles
 import styles from './styles'
@@ -33,7 +36,7 @@ const LoginForm = ({
   const passwordRef = useRef(null)
 
   const getValue = current => (
-    Platform.OS === 'web' ? current._node.value : current._lastNativeText
+    WEB_PLATFORM ? current._node.value : current._lastNativeText
   )
   // handling submit form
   const handlingSubmit = () => {

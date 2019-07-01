@@ -1,9 +1,9 @@
 // Libs
 import React, { useState } from 'react'
-import { Platform, View, Text, FlatList } from 'react-native'
+import { View, Text, FlatList } from 'react-native'
 
 // Constant
-import { GRID_VIEW_COLUMN, LIST_VIEW_COLUMN, NO_RECIPES_MESSAGE } from '../../constants/index'
+import { GRID_VIEW_COLUMN, LIST_VIEW_COLUMN, NO_RECIPES_MESSAGE, WEB_PLATFORM } from '../../constants/index'
 import { checkContainField } from '../../helpers/utils'
 
 // Components
@@ -50,7 +50,7 @@ const CategoryScreen = ({
   data = {},
   handleRedirectLogin,
 }: Props) => {
-  const size = Platform.OS === 'web' ? 'large' : 'small'
+  const size = WEB_PLATFORM ? 'large' : 'small'
   const [columns, setColumns] = useState(LIST_VIEW_COLUMN)
   const [isGrid, setIsGrid] = useState(false)
   const [visible, setVisible] = useState(true)

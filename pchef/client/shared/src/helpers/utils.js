@@ -1,4 +1,5 @@
-import { Platform } from 'react-native'
+// Constants
+import { WEB_PLATFORM } from '../constants'
 /**
  * Format string to array if string contain ,
  * @param {string} description
@@ -127,7 +128,7 @@ type refProps = {
  */
 export const getValueTextBox = (current: refProps | null) => {
   if (current) {
-    const value = Platform.OS === 'web' ? current._node.value : current._lastNativeText
+    const value = WEB_PLATFORM ? current._node.value : current._lastNativeText
     return value ? value.trim() : ''
   }
 }
