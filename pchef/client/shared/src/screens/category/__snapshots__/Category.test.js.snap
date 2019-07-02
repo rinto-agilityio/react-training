@@ -6,19 +6,7 @@ Array [
     className="css-view-1dbjc4n r-display-6koalj r-height-dcqb1h"
   >
     <div
-      className="css-view-1dbjc4n r-height-1pi2tsx r-width-13qz1uu"
-      style={
-        Object {
-          "WebkitAlignItems": "center",
-          "WebkitBoxAlign": "center",
-          "WebkitBoxPack": "center",
-          "WebkitJustifyContent": "center",
-          "alignItems": "center",
-          "justifyContent": "center",
-          "msFlexAlign": "center",
-          "msFlexPack": "center",
-        }
-      }
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-height-1pi2tsx r-justifyContent-1777fci r-width-13qz1uu"
     >
       <div
         className="css-view-1dbjc4n r-bottom-1p0dtai r-flexBasis-1mlwlqe r-left-1d2f490 r-overflow-1udh08x r-position-u8s1d r-right-zchlnj r-top-ipm5af r-zIndex-1wyyakw"
@@ -45,14 +33,9 @@ Array [
         Chicken
       </div>
       <div
-        className="css-view-1dbjc4n r-backgroundColor-1niwhzg"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-justifyContent-1777fci"
         style={
           Object {
-            "WebkitAlignItems": "center",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxPack": "center",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
             "borderBottomColor": "rgba(255,255,255,1.00)",
             "borderBottomLeftRadius": "20px",
             "borderBottomRightRadius": "20px",
@@ -70,10 +53,7 @@ Array [
             "borderTopStyle": "solid",
             "borderTopWidth": "2px",
             "boxShadow": "0px 0.75px 1.5px rgba(0,0,0,0.24)",
-            "justifyContent": "center",
             "minWidth": "64px",
-            "msFlexAlign": "center",
-            "msFlexPack": "center",
             "paddingBottom": "5px",
             "paddingLeft": "20px",
             "paddingRight": "20px",
@@ -130,7 +110,7 @@ Array [
                   }
                 }
               >
-                Following
+                Followed
               </span>
             </div>
           </div>
@@ -271,15 +251,7 @@ Array [
       onWheel={[Function]}
     >
       <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitBoxPack": "justify",
-            "WebkitJustifyContent": "space-between",
-            "justifyContent": "space-between",
-            "msFlexPack": "justify",
-          }
-        }
+        className="css-view-1dbjc4n r-justifyContent-1wtj0ep"
       >
         <div
           className="css-view-1dbjc4n"

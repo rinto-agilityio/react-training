@@ -27,6 +27,11 @@ const props = {
         id: 'testId',
       },
     ],
+    followCategory: [
+      {
+        id: 'testId',
+      },
+    ],
   },
 }
 describe('Screen', () => {
