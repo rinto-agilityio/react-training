@@ -173,6 +173,7 @@ const DirectionsForm = ({
                     onPress={handleAddStepImage}
                     label="Set cover photo"
                     wrapperIconStyle={[styles.wrapperIcon, styles.wrapperIconDirections]}
+                    customIconStyles={styles.customIconStyles}
                   />
                 </Text>
                 <input
@@ -194,7 +195,7 @@ const DirectionsForm = ({
               />
             )}
             {stepUrl ? (
-              <Image url={stepUrl} customImageStyle={{ width: '100%', height: 150 }} />
+              <Image url={stepUrl} customImageStyle={{ width: '100%', height: 150, marginTop: 20 }} />
             ) : null}
           </Wrapper>
         </Wrapper>
