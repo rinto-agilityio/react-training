@@ -40,6 +40,7 @@ const Header = ({
   wrapperIconStyle,
 }: Props) => {
   const { name, imgUrl } = category
+  const titleButton = isFollow ? 'Unfollowed' : 'Followed'
 
   // Data render list view category
   const data = [
@@ -65,7 +66,7 @@ const Header = ({
             {name}
           </Text>
           <Button
-            title={`${isFollow ? 'unfollowed' : 'followed'}`}
+            title={titleButton}
             type="outline"
             onPress={onFollowing}
             buttonStyle={styles.button}
