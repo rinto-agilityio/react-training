@@ -55,6 +55,8 @@ type Props = {
   handleRedirectLogin: Function,
   userToggleCategory: (categoryId: Array<string>) => Promise<{ data: {userToggleCategory: {results: Array<string>}}}>,
   id: string,
+  wrapperIconStyle: Object,
+  customIconStyle: Object,
 }
 const CategoryScreen = ({
   category = {},
@@ -66,6 +68,8 @@ const CategoryScreen = ({
   handleRedirectLogin,
   userToggleCategory,
   id,
+  wrapperIconStyle,
+  customIconStyle,
 }: Props) => {
   const size = WEB_PLATFORM ? 'large' : 'small'
   const [columns, setColumns] = useState(LIST_VIEW_COLUMN)
@@ -135,6 +139,7 @@ const CategoryScreen = ({
         size={size}
         onFollowing={handleSaveCategory}
         isFollow={checkContain(selectedCategories, id)}
+        wrapperIconStyle={wrapperIconStyle}
       />
       <View style={styles.container}>
         {
@@ -152,12 +157,13 @@ const CategoryScreen = ({
                       size={size}
                       onPressIcon={handleToggleSaveRecipe}
                       isFavorite={checkContainField(favoriteRecipe, item.id)}
+                      customIconStyle={customIconStyle}
                     />
                   )
                 }
+                contentContainerStyle={{ justifyContent: 'space-between' }}
                 keyExtractor={item => item.id}
                 key={columns}
-                columnWrapperStyle={isGrid && { justifyContent: 'space-between' }}
               />
             )
             : <Text>{NO_RECIPES_MESSAGE}</Text>

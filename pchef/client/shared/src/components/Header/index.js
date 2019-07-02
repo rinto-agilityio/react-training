@@ -33,6 +33,7 @@ type Props = {
       },
     },
   }) => void,
+  wrapperIconStyle?: Object,
 }
 
 const Header = ({
@@ -46,6 +47,7 @@ const Header = ({
   },
   onDirectTo = () => {},
   onLayout = () => {},
+  wrapperIconStyle,
 }: Props) => {
   const [visible, setVisible] = useState(false)
   const { user: { avatar } } = data
@@ -66,7 +68,7 @@ const Header = ({
           size={type === 'secondary' ? FONTS.fontSize.extraExtraLarge : FONTS.fontSize.moreExtraLarge}
           onPress={onPressCategoryIcon}
           color={COLORS.white}
-          wrapperIconStyle={styles.wrapIcon}
+          wrapperIconStyle={wrapperIconStyle}
         />
         <View style={styles.wrapHeaderContent}>
           <View>

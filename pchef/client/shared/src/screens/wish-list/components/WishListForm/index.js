@@ -46,6 +46,7 @@ type Props = {
     imgUrl: string,
   }>,
   handleRedirectLogin: () => void,
+  wrapperIconStyle: Object,
 }
 
 const WishListForm = forwardRef<Props, Function>(({
@@ -56,6 +57,7 @@ const WishListForm = forwardRef<Props, Function>(({
   customModal = {},
   recipes = [],
   handleRedirectLogin,
+  wrapperIconStyle,
 }: Props, ref) => {
   const [visible, setVisible] = useState(false)
   const [visibleCategories, setVisibleCategories] = useState(false)
@@ -148,7 +150,7 @@ const WishListForm = forwardRef<Props, Function>(({
         size={METRICS[`${size}Icon`]}
         onPress={() => setVisible(true)}
         label="Select date"
-        wrapperIconStyle={[styles.icon, styles.wrapperMainPhoto]}
+        wrapperIconStyle={[styles.icon, styles.wrapperMainPhoto, wrapperIconStyle]}
         customStyle={styles[`${size}Input`]}
       />
       { isShowSelectedDay ? (
@@ -184,7 +186,7 @@ const WishListForm = forwardRef<Props, Function>(({
               size={METRICS[`${size}Icon`]}
               onPress={() => onPress(true)}
               label={label}
-              wrapperIconStyle={[styles.icon, styles.classifyIcon]}
+              wrapperIconStyle={[styles.icon, styles.classifyIcon, wrapperIconStyle]}
               customStyle={styles[`${size}Input`]}
             />
             { value ? (

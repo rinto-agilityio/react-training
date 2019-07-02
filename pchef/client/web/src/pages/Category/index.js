@@ -17,6 +17,14 @@ const Category = ({ history, match }: Props) => {
     <CategoryContainer
       id={categoryId}
       handleRedirectLogin={() => history.push('/login')}
+      // Update style for icon at banner
+      wrapperIconStyle={{
+        fontSize: '40px',
+      }}
+      // Update style for icon at each recipe
+      customIconStyle={{
+        fontSize: '30px',
+      }}
     />
   )
 }
