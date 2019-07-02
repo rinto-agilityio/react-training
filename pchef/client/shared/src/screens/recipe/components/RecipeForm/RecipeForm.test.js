@@ -3,7 +3,9 @@ import wait from 'waait'
 
 // Components
 import RecipeForm from '.'
+import DirectionFormContainer from '../../../../containers/DirectionForm'
 import DirectionForm from './DirectionForm'
+
 import IngredientsForm from './IngredientsForm'
 import Classify from './Classify'
 import Categories from '../../../../containers/Categories'
@@ -12,18 +14,30 @@ import Button from '../../../../components/Button'
 
 // Mocks
 import { categories, cookingTypes } from '../../../../mocks'
+// import { isError } from 'util';
 
 import { validator } from '../../../../helpers/validators'
 
-jest.mock('../../../../helpers/validators')
+jest.mock('../../../../helpers/validators', () => ({
+  validator: jest.fn(),
+}))
+
 
 describe('recipe form', () => {
   const recipeProps = {
     recipre: {
       id: '1',
     },
-    createRecipe: jest.fn(),
+    compressImage: jest.fn(),
+    createRecipe: () => new Promise(resolve => {
+      resolve({ data: {
+        createRecipe: {
+          id: '1',
+        },
+      } })
+    }),
   }
+
   let classifyProps = {}
 
   it('Renders correctly recipe form commponent', () => {
@@ -57,17 +71,22 @@ describe('recipe form', () => {
     expect(recipe.find('IngredientsForm').exists()).toEqual(false)
   })
 
-  it('Should show directions form', () => {
+  it('Should show directions form', async () => {
     const recipe = shallow(<RecipeForm {...recipeProps} />)
     const icon = recipe.find('Icon')
-    expect(recipe.find(DirectionForm).exists()).toEqual(false)
-    icon.at(4).props().onPress()
-    expect(recipe.find(DirectionForm).exists()).toEqual(true)
 
-    // Submit Directions Form
-    const directionProps = recipe.find(DirectionForm).props()
-    directionProps.onDismiss()
-    expect(recipe.find(DirectionForm).exists()).toEqual(false)
+    expect(recipe.find(DirectionFormContainer).exists()).toEqual(false)
+
+    validator.mockImplementation(() => ({
+      errors: {
+        isError: false,
+      },
+    }))
+
+    icon.at(4).props().onPress()
+    await wait(0)
+
+    expect(recipe.find(DirectionFormContainer).exists()).toEqual(true)
   })
 
   it('Should hide ingredients form', () => {
@@ -78,12 +97,24 @@ describe('recipe form', () => {
     expect(recipe.find('IngredientsForm').exists()).toEqual(false)
   })
 
-  it('Should hide directions form', () => {
+  it('Should hide directions form', async () => {
     const recipe = shallow(<RecipeForm {...recipeProps} />)
+    validator.mockImplementation(() => ({
+      errors: {
+        isError: false,
+      },
+    }))
+
     const icon = recipe.find('Icon')
     icon.at(4).props().onPress()
-    recipe.find(DirectionForm).props().onDismiss()
-    expect(recipe.find(DirectionForm).exists()).toEqual(false)
+    await wait(0)
+
+    expect(recipe.find(DirectionFormContainer).exists()).toEqual(true)
+
+    const formProps = recipe.find(DirectionFormContainer).props()
+    formProps.onDismiss({ directors: 1 })
+
+    expect(recipe.find('DirectionFormContainer').exists()).toEqual(false)
   })
 
   it('Renders correctly ingredients form commponent', () => {
@@ -153,8 +184,13 @@ describe('recipe form', () => {
       createRecipeStep: () => new Promise((response, error) => {
         error()
       }),
+      uploadStepImage: jest.fn(),
     }
-    validator.mockReturnValue({})
+    validator.mockImplementation(() => ({
+      errors: {
+        isError: false,
+      },
+    }))
 
     const directions = shallow(<DirectionForm {...props} />)
 

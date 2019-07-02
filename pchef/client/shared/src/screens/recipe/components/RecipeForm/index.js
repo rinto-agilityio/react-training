@@ -108,7 +108,7 @@ const RecipeForm = forwardRef<Props, Function>(({
       cookingTypeId,
     })
 
-    if (errors) {
+    if (errors.isError) {
       setErrorValidator(errors.errorMessage)
     }
 
@@ -116,6 +116,7 @@ const RecipeForm = forwardRef<Props, Function>(({
       try {
         const imageUrl = await compressImage()
         const thumbnail = await compressImage()
+
         await createRecipe(
           categoryId,
           cookingTypeId,
@@ -127,6 +128,7 @@ const RecipeForm = forwardRef<Props, Function>(({
           true,
         ).then(({ data }) => {
           const { id } = data.createRecipe
+
           if (id) {
             setVisibleDirections(isOnpen)
           }
