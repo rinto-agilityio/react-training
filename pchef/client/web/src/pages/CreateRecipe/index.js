@@ -60,9 +60,11 @@ const CreateRecipe = ({ history }: Props) => {
         marginTop: '30px',
       }}
       handleRedirectLogin={() => history.push('/login')}
+      // Update style for icon at upload image
       wrapperIconStyle={{
         fontSize: '60px',
       }}
+      // Update style for the remaining icon
       customIconStyle={{
         fontSize: '30px',
       }}
