@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
     borderRadius: METRICS.mediumBorderRadius,
     ...METRICS.flexCenter,
     paddingRight: METRICS.mediumPadding,
-    fontSize: FONTS.fontSize.extraLarge,
   },
   classifyIcon: {
     flexDirection: 'row',
