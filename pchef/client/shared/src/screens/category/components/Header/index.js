@@ -24,6 +24,7 @@ type Props = {
   size?: string,
   onFollowing?: () => void,
   onSelectListView?: (itemName: string) => void,
+  wrapperIconStyle: Object,
 }
 
 const Header = ({
@@ -34,6 +35,7 @@ const Header = ({
   customWrapperIcon,
   onSelectListView = () => {},
   size = '',
+  wrapperIconStyle,
 }: Props) => {
   const { name, imgUrl } = category
 
@@ -41,17 +43,10 @@ const Header = ({
   const data = [
     {
       name: 'view-list',
-      wrapperIconStyle: {
-        marginRight: METRICS.extraLargeMargin,
-        fontSize: FONTS.fontSize.extraExtraLarge,
-      },
       color: isGrid ? COLORS.baseGray : COLORS.lighterGray,
     },
     {
       name: 'apps',
-      wrapperIconStyle: {
-        fontSize: FONTS.fontSize.extraExtraLarge,
-      },
       color: isGrid ? COLORS.lighterGray : COLORS.baseGray,
     },
   ]
@@ -84,7 +79,7 @@ const Header = ({
             name={item.name}
             size={METRICS[`${size}Icon`]}
             color={item.color}
-            wrapperIconStyle={item.wrapperIconStyle}
+            wrapperIconStyle={wrapperIconStyle}
             onPress={() => onSelectListView(item.name)}
           />
         ))}

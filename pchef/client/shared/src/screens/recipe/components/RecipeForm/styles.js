@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
     marginBottom: METRICS.mediumMargin,
     height: 150,
     width: '100%',
-    fontSize: FONTS.fontSize.superLarge,
   },
   wrapperIcon: {
     backgroundColor: COLORS.baseGray,
@@ -33,7 +32,6 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
     borderRadius: METRICS.mediumBorderRadius,
     ...METRICS.flexCenter,
-    fontSize: FONTS.fontSize.extraLarge,
   },
   classifyIcon: {
     flexDirection: 'row',

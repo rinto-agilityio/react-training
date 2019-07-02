@@ -30,6 +30,7 @@ type Props = {
   size?: string,
   color?: string,
   handlePressImage?: () => void,
+  customIconStyle: Object,
 }
 
 const Recipe = ({
@@ -40,6 +41,7 @@ const Recipe = ({
   handlePressImage,
   isGrid,
   isFavorite,
+  customIconStyle,
 }: Props) => {
   const { id, title, imgUrl, description } = recipe
   const formatDescription =
@@ -79,7 +81,7 @@ const Recipe = ({
           </View>
 
           <Icon
-            wrapperIconStyle={styles.icon}
+            wrapperIconStyle={[styles.icon, customIconStyle]}
             name="favorite"
             size={
               size === 'large'
