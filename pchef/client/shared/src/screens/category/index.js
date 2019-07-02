@@ -40,6 +40,8 @@ type Props = {
     favoriteRecipe: Array<{id: string}>,
   ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
   handleRedirectLogin: Function,
+  wrapperIconStyle: Object,
+  customIconStyle: Object,
 }
 const CategoryScreen = ({
   category = {},
@@ -49,6 +51,8 @@ const CategoryScreen = ({
   userToggleRecipe,
   data = {},
   handleRedirectLogin,
+  wrapperIconStyle,
+  customIconStyle,
 }: Props) => {
   const size = WEB_PLATFORM ? 'large' : 'small'
   const [columns, setColumns] = useState(LIST_VIEW_COLUMN)
@@ -101,6 +105,7 @@ const CategoryScreen = ({
         isGrid={isGrid}
         onSelectListView={handleSelectListView}
         size={size}
+        wrapperIconStyle={wrapperIconStyle}
       />
       <View style={styles.container}>
         {
@@ -118,6 +123,7 @@ const CategoryScreen = ({
                       size={size}
                       onPressIcon={handleToggleSaveRecipe}
                       isFavorite={checkContainField(favoriteRecipe, item.id)}
+                      customIconStyle={customIconStyle}
                     />
                   )
                 }

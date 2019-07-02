@@ -17,6 +17,12 @@ const Category = ({ history, match }: Props) => {
     <CategoryContainer
       id={categoryId}
       handleRedirectLogin={() => history.push('/login')}
+      wrapperIconStyle={{
+        fontSize: '40px',
+      }}
+      customIconStyle={{
+        fontSize: '30px',
+      }}
     />
   )
 }
