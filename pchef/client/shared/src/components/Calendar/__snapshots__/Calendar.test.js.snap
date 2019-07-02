@@ -107,7 +107,7 @@ exports[`renders correctly 1`] = `
             dir="auto"
             role="heading"
           >
-            June 2019
+            July 2019
           </h1>
         </div>
         <div
@@ -268,91 +268,6 @@ exports[`renders correctly 1`] = `
           }
         />
         <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitBoxFlex": 1,
-              "WebkitFlexBasis": "0%",
-              "WebkitFlexGrow": 1,
-              "WebkitFlexShrink": 1,
-              "flexBasis": "0%",
-              "flexGrow": 1,
-              "flexShrink": 1,
-              "msFlexNegative": 1,
-              "msFlexPositive": 1,
-              "msFlexPreferredSize": "0%",
-            }
-          }
-        />
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitBoxFlex": 1,
-              "WebkitFlexBasis": "0%",
-              "WebkitFlexGrow": 1,
-              "WebkitFlexShrink": 1,
-              "flexBasis": "0%",
-              "flexGrow": 1,
-              "flexShrink": 1,
-              "msFlexNegative": 1,
-              "msFlexPositive": 1,
-              "msFlexPreferredSize": "0%",
-            }
-          }
-        />
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitBoxFlex": 1,
-              "WebkitFlexBasis": "0%",
-              "WebkitFlexGrow": 1,
-              "WebkitFlexShrink": 1,
-              "flexBasis": "0%",
-              "flexGrow": 1,
-              "flexShrink": 1,
-              "msFlexNegative": 1,
-              "msFlexPositive": 1,
-              "msFlexPreferredSize": "0%",
-            }
-          }
-        />
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitBoxFlex": 1,
-              "WebkitFlexBasis": "0%",
-              "WebkitFlexGrow": 1,
-              "WebkitFlexShrink": 1,
-              "flexBasis": "0%",
-              "flexGrow": 1,
-              "flexShrink": 1,
-              "msFlexNegative": 1,
-              "msFlexPositive": 1,
-              "msFlexPreferredSize": "0%",
-            }
-          }
-        />
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitBoxFlex": 1,
-              "WebkitFlexBasis": "0%",
-              "WebkitFlexGrow": 1,
-              "WebkitFlexShrink": 1,
-              "flexBasis": "0%",
-              "flexGrow": 1,
-              "flexShrink": 1,
-              "msFlexNegative": 1,
-              "msFlexPositive": 1,
-              "msFlexPreferredSize": "0%",
-            }
-          }
-        />
-        <div
           className="css-view-1dbjc4n r-alignItems-1awozwy"
           style={
             Object {
@@ -370,9 +285,9 @@ exports[`renders correctly 1`] = `
           }
         >
           <div
-            className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
+            className="css-view-1dbjc4n r-alignItems-1awozwy r-borderRadius-1867qdf r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-01"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-01"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -391,10 +306,6 @@ exports[`renders correctly 1`] = `
             </div>
           </div>
         </div>
-      </div>
-      <div
-        className="css-view-1dbjc4n r-flexDirection-18u37iz r-justifyContent-a2tzq0 r-marginBottom-11mo1y0 r-marginTop-100vyta"
-      >
         <div
           className="css-view-1dbjc4n r-alignItems-1awozwy"
           style={
@@ -415,7 +326,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-02"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-02"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -454,7 +365,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-03"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-03"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -493,7 +404,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-04"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-04"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -532,7 +443,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-05"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-05"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -571,7 +482,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-06"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-06"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -590,6 +501,10 @@ exports[`renders correctly 1`] = `
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n r-flexDirection-18u37iz r-justifyContent-a2tzq0 r-marginBottom-11mo1y0 r-marginTop-100vyta"
+      >
         <div
           className="css-view-1dbjc4n r-alignItems-1awozwy"
           style={
@@ -610,7 +525,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-07"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-07"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -649,7 +564,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-08"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-08"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -668,10 +583,6 @@ exports[`renders correctly 1`] = `
             </div>
           </div>
         </div>
-      </div>
-      <div
-        className="css-view-1dbjc4n r-flexDirection-18u37iz r-justifyContent-a2tzq0 r-marginBottom-11mo1y0 r-marginTop-100vyta"
-      >
         <div
           className="css-view-1dbjc4n r-alignItems-1awozwy"
           style={
@@ -692,7 +603,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-09"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-09"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -731,7 +642,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-10"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-10"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -770,7 +681,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-11"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-11"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -809,7 +720,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-12"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-12"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -848,7 +759,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-13"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-13"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -867,6 +778,10 @@ exports[`renders correctly 1`] = `
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n r-flexDirection-18u37iz r-justifyContent-a2tzq0 r-marginBottom-11mo1y0 r-marginTop-100vyta"
+      >
         <div
           className="css-view-1dbjc4n r-alignItems-1awozwy"
           style={
@@ -887,7 +802,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-14"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-14"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -926,7 +841,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-15"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-15"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -945,10 +860,6 @@ exports[`renders correctly 1`] = `
             </div>
           </div>
         </div>
-      </div>
-      <div
-        className="css-view-1dbjc4n r-flexDirection-18u37iz r-justifyContent-a2tzq0 r-marginBottom-11mo1y0 r-marginTop-100vyta"
-      >
         <div
           className="css-view-1dbjc4n r-alignItems-1awozwy"
           style={
@@ -969,7 +880,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-16"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-16"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -1008,7 +919,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-17"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-17"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -1047,7 +958,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-18"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-18"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -1086,7 +997,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-19"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-19"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -1125,7 +1036,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-20"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-20"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -1144,6 +1055,10 @@ exports[`renders correctly 1`] = `
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n r-flexDirection-18u37iz r-justifyContent-a2tzq0 r-marginBottom-11mo1y0 r-marginTop-100vyta"
+      >
         <div
           className="css-view-1dbjc4n r-alignItems-1awozwy"
           style={
@@ -1164,7 +1079,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-21"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-21"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -1203,7 +1118,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-22"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-22"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -1222,10 +1137,6 @@ exports[`renders correctly 1`] = `
             </div>
           </div>
         </div>
-      </div>
-      <div
-        className="css-view-1dbjc4n r-flexDirection-18u37iz r-justifyContent-a2tzq0 r-marginBottom-11mo1y0 r-marginTop-100vyta"
-      >
         <div
           className="css-view-1dbjc4n r-alignItems-1awozwy"
           style={
@@ -1246,7 +1157,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-23"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-23"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -1285,7 +1196,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-24"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-24"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -1324,7 +1235,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-25"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-25"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -1363,7 +1274,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-26"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-26"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -1402,7 +1313,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-27"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-27"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -1421,6 +1332,10 @@ exports[`renders correctly 1`] = `
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n r-flexDirection-18u37iz r-justifyContent-a2tzq0 r-marginBottom-11mo1y0 r-marginTop-100vyta"
+      >
         <div
           className="css-view-1dbjc4n r-alignItems-1awozwy"
           style={
@@ -1439,9 +1354,9 @@ exports[`renders correctly 1`] = `
           }
         >
           <div
-            className="css-view-1dbjc4n r-alignItems-1awozwy r-borderRadius-1867qdf r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
+            className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-28"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-28"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -1480,7 +1395,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-29"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-29"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -1499,10 +1414,6 @@ exports[`renders correctly 1`] = `
             </div>
           </div>
         </div>
-      </div>
-      <div
-        className="css-view-1dbjc4n r-flexDirection-18u37iz r-justifyContent-a2tzq0 r-marginBottom-11mo1y0 r-marginTop-100vyta"
-      >
         <div
           className="css-view-1dbjc4n r-alignItems-1awozwy"
           style={
@@ -1523,7 +1434,7 @@ exports[`renders correctly 1`] = `
           <div
             className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
             data-focusable={true}
-            data-testid="native.calendar.SELECT_DATE_SLOT-2019-06-30"
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-30"
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -1543,7 +1454,7 @@ exports[`renders correctly 1`] = `
           </div>
         </div>
         <div
-          className="css-view-1dbjc4n"
+          className="css-view-1dbjc4n r-alignItems-1awozwy"
           style={
             Object {
               "WebkitBoxFlex": 1,
@@ -1558,41 +1469,29 @@ exports[`renders correctly 1`] = `
               "msFlexPreferredSize": "0%",
             }
           }
-        />
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitBoxFlex": 1,
-              "WebkitFlexBasis": "0%",
-              "WebkitFlexGrow": 1,
-              "WebkitFlexShrink": 1,
-              "flexBasis": "0%",
-              "flexGrow": 1,
-              "flexShrink": 1,
-              "msFlexNegative": 1,
-              "msFlexPositive": 1,
-              "msFlexPreferredSize": "0%",
-            }
-          }
-        />
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitBoxFlex": 1,
-              "WebkitFlexBasis": "0%",
-              "WebkitFlexGrow": 1,
-              "WebkitFlexShrink": 1,
-              "flexBasis": "0%",
-              "flexGrow": 1,
-              "flexShrink": 1,
-              "msFlexNegative": 1,
-              "msFlexPositive": 1,
-              "msFlexPreferredSize": "0%",
-            }
-          }
-        />
+        >
+          <div
+            className="css-view-1dbjc4n r-alignItems-1awozwy r-cursor-1loqt21 r-height-mabqd8 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr r-width-1yvhtrz"
+            data-focusable={true}
+            data-testid="native.calendar.SELECT_DATE_SLOT-2019-07-31"
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            tabIndex="0"
+          >
+            <div
+              className="css-text-901oao r-backgroundColor-1stjixc r-color-zd8e7p r-fontFamily-1qd0xha r-fontSize-ubezar r-fontWeight-1od2jal r-marginTop-kc8jnq"
+              dir="auto"
+            >
+              31
+            </div>
+          </div>
+        </div>
         <div
           className="css-view-1dbjc4n"
           style={

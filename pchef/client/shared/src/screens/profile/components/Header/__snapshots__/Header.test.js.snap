@@ -98,7 +98,7 @@ exports[`Components Header should render Header component with grid 1`] = `
               }
             }
           >
-            Edit profile
+            View profile
           </span>
         </div>
       </div>
