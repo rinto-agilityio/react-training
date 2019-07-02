@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React from 'react'
+import React, { memo } from 'react'
 import { Text, View, TouchableOpacity } from 'react-native'
 
 // Styles
@@ -102,7 +105,7 @@ const Recipe = ({
         isVote={checkContain(votes, userId)}
         onPressFavorite={handleSaveRecipe}
         onPressVote={handleToggleVote}
-        wrapperIconStyle={wrapperIconStyle} 
+        wrapperIconStyle={wrapperIconStyle}
       />
     </TouchableOpacity>
   )
@@ -112,4 +115,4 @@ Recipe.defaultProps = {
   size: 'large',
 }
 
-export default Recipe
+export default memo<Props>(Recipe)

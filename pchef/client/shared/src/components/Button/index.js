@@ -1,5 +1,9 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
+// Libs
 // libs
-import React from 'react'
+import React, { memo } from 'react'
 import { Button as ButtonComponent, Text } from 'react-native-paper'
 
 // Styles
@@ -56,4 +60,4 @@ Button.defaultProps = {
   type: 'default',
 }
 
-export default Button
+export default memo<Props>(Button)

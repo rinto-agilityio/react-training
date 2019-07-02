@@ -1,12 +1,15 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React from 'react'
+import React, { memo } from 'react'
 import { Text, View } from 'react-native'
 
 // Styles
 import styles from './styles'
 
 // Themes
-import { COLORS, METRICS, FONTS } from '../../../../themes'
+import { COLORS, METRICS } from '../../../../themes'
 
 // Components
 import ImageBackground from '../../../../components/ImageBackground'
@@ -99,4 +102,4 @@ Header.defaultProps = {
   onSelectListView: () => {},
 }
 
-export default Header
+export default memo<Props>(Header)

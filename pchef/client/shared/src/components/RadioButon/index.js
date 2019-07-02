@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React from 'react'
+import React, { memo } from 'react'
 import { View, Text } from 'react-native'
 import { RadioButton as RadioButtonComponent } from 'react-native-paper'
 
@@ -63,4 +66,4 @@ RadioButton.defaultProps = {
   disabled: false,
 };
 
-export default RadioButton
+export default memo<Props>(RadioButton)

@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React from 'react';
+import React, { memo } from 'react';
 import { View } from 'react-native'
 
 // Components
@@ -57,4 +60,4 @@ CategoryPipeLine.defaultProps = {
 }
 
 
-export default CategoryPipeLine
+export default memo<Props>(CategoryPipeLine)

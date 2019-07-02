@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, memo } from 'react'
 import { View, Text } from 'react-native'
 
 // Styles
@@ -229,4 +232,4 @@ DirectionsForm.defaultProps = {
   handleAddStepImageOnWeb: () => {},
 }
 
-export default DirectionsForm
+export default memo<Props>(DirectionsForm)

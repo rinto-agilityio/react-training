@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React from 'react'
+import React, { memo } from 'react'
 import { Text, View } from 'react-native'
 
 // Styles
@@ -78,4 +81,4 @@ const Item = ({
   )
 }
 
-export default Item
+export default memo<Props>(Item)

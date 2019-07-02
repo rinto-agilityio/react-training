@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React, { useRef } from 'react'
+import React, { useRef, memo } from 'react'
 import { Text } from 'react-native'
 
 // Styles
@@ -57,4 +60,4 @@ IngredientsForm.defaultProps = {
   onDismiss: () => {},
 }
 
-export default IngredientsForm
+export default memo<Props>(IngredientsForm)

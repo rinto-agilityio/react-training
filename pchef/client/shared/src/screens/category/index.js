@@ -1,5 +1,9 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React, { useState, useEffect } from 'react'
+// Libs
+import React, { useState, useEffect, memo } from 'react'
 import { View, Text, FlatList } from 'react-native'
 
 // Constant
@@ -173,4 +177,4 @@ const CategoryScreen = ({
   )
 }
 
-export default CategoryScreen
+export default memo<Props>(CategoryScreen)

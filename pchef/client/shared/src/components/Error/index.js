@@ -1,4 +1,8 @@
-import React from 'react'
+// @flow
+// add flow above to fix for using flow with React.memo
+
+// Libs
+import React, { memo } from 'react'
 
 // Components
 import { Text } from 'react-native'
@@ -19,4 +23,4 @@ Error.defaultProps = {
   customStyle: {},
 }
 
-export default Error
+export default memo<Props>(Error)

@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React, { useState } from 'react'
+import React, { useState, memo } from 'react'
 import { View } from 'react-native'
 
 // Helpers
@@ -100,4 +103,4 @@ const WishList = ({
   )
 }
 
-export default WishList
+export default memo<Props>(WishList)
