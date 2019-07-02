@@ -58,6 +58,8 @@ type Props = {
   uploadStepImage: () => Promise<void>,
   compressImage: () => Promise<void>,
   handleRedirectLogin: () => void,
+  wrapperIconStyle: Object,
+  customIconStyle: Object,
 }
 
 const RecipeForm = forwardRef<Props, Function>(({
@@ -78,6 +80,8 @@ const RecipeForm = forwardRef<Props, Function>(({
   uploadStepImage,
   compressImage,
   handleRedirectLogin,
+  wrapperIconStyle,
+  customIconStyle,
 }: Props, ref) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
@@ -216,7 +220,7 @@ const RecipeForm = forwardRef<Props, Function>(({
                 size={METRICS[`${size}Icon`] * 2}
                 onPress={handleAddRecipeImage}
                 label="Set cover photo"
-                wrapperIconStyle={styles.wrapperMainPhoto}
+                wrapperIconStyle={[styles.wrapperMainPhoto, wrapperIconStyle]}
                 customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`], customStyleLabel]}
               />
             </Text>
@@ -235,7 +239,7 @@ const RecipeForm = forwardRef<Props, Function>(({
             size={METRICS[`${size}Icon`]}
             onPress={handleAddRecipeImage}
             label="Set cover photo"
-            wrapperIconStyle={styles.wrapperMainPhoto}
+            wrapperIconStyle={[styles.wrapperMainPhoto, wrapperIconStyle]}
             customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`], customStyleLabel]}
           />
         )}
@@ -266,6 +270,7 @@ const RecipeForm = forwardRef<Props, Function>(({
                 styles.icon,
                 styles.classifyIcon,
                 error ? { marginBottom: 0 } : {},
+                customIconStyle,
               ]}
               customStyle={styles[`${size}Input`]}
             />
@@ -295,7 +300,7 @@ const RecipeForm = forwardRef<Props, Function>(({
             size={METRICS[`${size}Icon`]}
             onPress={() => onPress(true)}
             label={label}
-            wrapperIconStyle={[styles.icon, styles[`${name}Icon`], styles[`${size}Icon`]]}
+            wrapperIconStyle={[styles.icon, styles[`${name}Icon`], styles[`${size}Icon`], customIconStyle]}
             customStyle={[style, styles[`${size}Input`]]}
           />
         ))}
