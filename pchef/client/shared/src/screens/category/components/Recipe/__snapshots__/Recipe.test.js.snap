@@ -94,7 +94,7 @@ exports[`Components Recipe should render Header component with grid 1`] = `
         </div>
       </div>
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-bottom-1ebgqk7 r-flexDirection-18u37iz r-fontSize-zz5t5d r-position-u8s1d r-right-r19jdo"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-bottom-1ebgqk7 r-flexDirection-18u37iz r-position-u8s1d r-right-r19jdo"
       >
         <div
           className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
