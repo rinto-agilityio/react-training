@@ -22,8 +22,9 @@ type Props = {
   isGrid: boolean,
   customWrapperIcon?: {},
   size?: string,
-  onFollowing?: () => void,
+  onFollowing?: () => void | Promise<void>,
   onSelectListView?: (itemName: string) => void,
+  isFollow: boolean,
   wrapperIconStyle: Object,
 }
 
@@ -35,9 +36,11 @@ const Header = ({
   customWrapperIcon,
   onSelectListView = () => {},
   size = '',
+  isFollow,
   wrapperIconStyle,
 }: Props) => {
   const { name, imgUrl } = category
+  const titleButton = isFollow ? 'Unfollowed' : 'Followed'
 
   // Data render list view category
   const data = [
@@ -63,7 +66,7 @@ const Header = ({
             {name}
           </Text>
           <Button
-            title="Following"
+            title={titleButton}
             type="outline"
             onPress={onFollowing}
             buttonStyle={styles.button}

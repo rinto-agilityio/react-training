@@ -1,5 +1,5 @@
 // Libs
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, FlatList } from 'react-native'
 
 // Constant
@@ -10,9 +10,11 @@ import { checkContainField } from '../../helpers/utils'
 import Banner from './components/Header'
 import Recipe from './components/Recipe'
 import Loading from '../../components/Loading'
-import { customError } from '../../helpers/utils'
 import Modal from '../../components/Modal'
 import Error from '../../components/Error'
+
+// helper
+import { customError, checkContain } from '../../helpers/utils'
 
 // styles
 import styles from './styles'
@@ -33,13 +35,26 @@ type Props = {
     graphQLErrors: Array<{ message: string }>,
   },
   data: {
-    favoriteRecipe: Array<{id: string}>
+    favoriteRecipe: Array<{id: string}>,
+    followCategory: Array<{
+      id: string,
+      name: string,
+      imgUrl: string,
+      recipes: Array<{
+        id: string,
+        title: string,
+        imgUrl: string,
+        description: string,
+      }>
+    }>,
   },
   userToggleRecipe: (
     id: string,
     favoriteRecipe: Array<{id: string}>,
   ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
   handleRedirectLogin: Function,
+  userToggleCategory: (categoryId: Array<string>) => Promise<{ data: {userToggleCategory: {results: Array<string>}}}>,
+  id: string,
   wrapperIconStyle: Object,
   customIconStyle: Object,
 }
@@ -51,6 +66,8 @@ const CategoryScreen = ({
   userToggleRecipe,
   data = {},
   handleRedirectLogin,
+  userToggleCategory,
+  id,
   wrapperIconStyle,
   customIconStyle,
 }: Props) => {
@@ -58,7 +75,14 @@ const CategoryScreen = ({
   const [columns, setColumns] = useState(LIST_VIEW_COLUMN)
   const [isGrid, setIsGrid] = useState(false)
   const [visible, setVisible] = useState(true)
-  const { favoriteRecipe } = data
+  const [selectedCategories, setSelectedCategories] = useState([])
+
+  const { favoriteRecipe, followCategory } = data
+
+  useEffect(() => {
+    const followCategoryIds = followCategory.map(item => item.id)
+    setSelectedCategories(followCategoryIds)
+  }, [followCategory])
 
   if (loading) return <Loading size="small" />
 
@@ -98,6 +122,14 @@ const CategoryScreen = ({
     await userToggleRecipe(id, favoriteRecipe)
   }
 
+  const handleSaveCategory = async () => {
+    const slectedCategoryIds = checkContain(selectedCategories, id)
+      ? selectedCategories.filter(item => item !== id)
+      : selectedCategories.concat(id)
+    setSelectedCategories(slectedCategoryIds)
+    await userToggleCategory(slectedCategoryIds)
+  }
+
   return (
     <>
       <Banner
@@ -105,6 +137,8 @@ const CategoryScreen = ({
         isGrid={isGrid}
         onSelectListView={handleSelectListView}
         size={size}
+        onFollowing={handleSaveCategory}
+        isFollow={checkContain(selectedCategories, id)}
         wrapperIconStyle={wrapperIconStyle}
       />
       <View style={styles.container}>

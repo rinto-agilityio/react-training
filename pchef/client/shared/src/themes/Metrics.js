@@ -101,6 +101,7 @@ export default {
 
   // button
   largeButton: 260,
+  smallButton: 150,
 
   // Window
   screenWidth: Dimensions.get('window').width,
