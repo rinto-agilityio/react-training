@@ -22,15 +22,10 @@ import {
 // Constants
 import { DEFAULT_IMAGE } from '../../../../constants'
 
+import type { RecipeType } from '../../../../types'
+
 type Props = {
-  recipe: {
-    id: string,
-    title: string,
-    description: string,
-    imgUrl: string,
-    votes: Array<string>,
-    thumbnail: string,
-  },
+  recipe: RecipeType,
   size?: string,
   favoriteRecipe: Array<{
     id: string,

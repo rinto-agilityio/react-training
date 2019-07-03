@@ -12,21 +12,11 @@ import TabContent from '../TabContent'
 // Styles
 import styles from './styles'
 
+import type { RecipeType } from '../../../../types'
+
 type Props = {
-  ownRecipes?: Array<{
-    id: string,
-    title: string,
-    imgUrl: string,
-    description: string,
-    votes: Array<string>,
-  }>,
-  favoriteRecipe?: Array<{
-    id: string,
-    title: string,
-    imgUrl: string,
-    description: string,
-    votes: Array<string>,
-  }>,
+  ownRecipes?: Array<RecipeType>,
+  favoriteRecipe?: Array<RecipeType>,
   userToggleRecipe: (
     recipeId: string,
     favoriteRecipe: Array<{ id: string }>

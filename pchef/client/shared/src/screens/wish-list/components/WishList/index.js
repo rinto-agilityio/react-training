@@ -21,28 +21,17 @@ import Button from '../../../../components/Button'
 // Constants
 import { WEB_PLATFORM } from '../../../../constants'
 
+import type { WishListType, CategoryType, CookingType } from '../../../../types'
+
 type Props = {
-  wishList: Array<{
-    id: string,
-    categoryId: string,
-    cookingTypeId: string,
-    date: string,
-  }>,
+  wishList: Array<WishListType>,
   size: string,
   loading: boolean,
   error: {
     graphQLErrors: Array<{ message: string }>,
   },
-  categories: Array<{
-    id: string,
-    name: string,
-    imgUrl: string,
-  }>,
-  cookingTypes: Array<{
-    id: string,
-    name: string,
-    imgUrl: string,
-  }>,
+  categories: Array<CategoryType>,
+  cookingTypes: Array<CookingType>,
   handleRedirectLogin: () => void,
   handleRedirectWishlistForm: () => void,
 }

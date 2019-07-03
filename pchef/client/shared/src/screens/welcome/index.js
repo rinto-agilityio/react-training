@@ -26,27 +26,21 @@ import { CATEGORIES_PADDING, WEB_PLATFORM } from '../../constants'
 
 const { height } = Dimensions.get('window')
 
+import type { CategoryType } from '../../types'
+
 // Interested Category props type
 type Props = {
   customStyle?: {},
   type?: string,
   handleSkipCategories?: () => void,
   data: {
-    followCategory: Array<{
-      id: string,
-      name: string,
-      imgUrl: string,
-    }>,
+    followCategory: Array<CategoryType>,
   },
   loading: boolean,
   error: {
     graphQLErrors: Array<{message: string}>,
   },
-  categories: Array<{
-    id: string,
-    name: string,
-    imgUrl: string,
-  }>,
+  categories: Array<CategoryType>,
   userToggleCategory: (categoryId: Array<string>) => Promise<{ data: {userToggleCategory: {results: Array<string>}}}>,
   customButtonStyle?: {},
   handleRedirectLogin: () => void,

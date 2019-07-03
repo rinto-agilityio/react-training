@@ -1,13 +1,15 @@
+// @flow
 import React, { useState } from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import Wrapper from '../../../../layout/Wrapper'
 import styles from './styles'
+import type { CategoryType } from '../../../../types'
 
 type Props = {
   type?: string,
   onChooseCategory: (id: string) => Promise<void>,
   activeList: Array<string>,
-  categories: Array<{ id: string, name: string, imgUrl: string }>,
+  categories: Array<CategoryType>,
 }
 
 const InterestedCategories = ({

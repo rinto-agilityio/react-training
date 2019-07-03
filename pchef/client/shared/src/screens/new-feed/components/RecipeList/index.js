@@ -12,19 +12,15 @@ import Loading from '../../../../components/Loading'
 // Utils
 import { sortRecipes } from '../../../../helpers/utils'
 import { NO_RECIPES_MESSAGE } from '../../../../constants'
+
 // Styles
 import styles from './styles'
 
+import type { RecipeType } from '../../../../types'
+
 type Props = {
   loading?: boolean,
-  recipes?: Array<{
-    id: string,
-    title: string,
-    description: string,
-    imgUrl: string,
-    votes: Array<string>,
-    thumbnail: string,
-  }>,
+  recipes?: Array<RecipeType>,
   favoriteRecipe: Array<{
     id: string,
   }>,

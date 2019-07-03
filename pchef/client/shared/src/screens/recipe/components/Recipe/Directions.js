@@ -11,12 +11,10 @@ import styles from './styles'
 // Components
 import Direction from './Direction'
 
+import type { RecipeStepType } from '../../../../types'
+
 type Props = {
-  steps: Array<{
-    step: number,
-    title: string,
-    id: string,
-  }>,
+  steps: Array<RecipeStepType>,
   size: string,
   customDirections?: {},
   customTitle?: {},
