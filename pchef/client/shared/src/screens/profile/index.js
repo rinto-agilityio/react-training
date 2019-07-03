@@ -16,34 +16,14 @@ import styles from './styles'
 // Helpers
 import { customError } from '../../helpers/utils'
 
+import type { UserInfoType } from '../../types'
+
 type Props = {
   loading: boolean,
   error: {
     graphQLErrors: Array<{ message: string }>,
   },
-
-  data: {
-    user: {
-      name: string,
-      avatar: string,
-      id: string,
-      email: string,
-    },
-    ownRecipes: Array<{
-      id: string,
-      title: string,
-      imgUrl: string,
-      votes: Array<string>,
-      description: string,
-    }>,
-    favoriteRecipe: Array<{
-      id: string,
-      title: string,
-      imgUrl: string,
-      votes: Array<string>,
-      description: string,
-    }>,
-  },
+  data: UserInfoType,
   userToggleRecipe: (
     recipeId: string,
     favoriteRecipe: Array<{ id: string }>

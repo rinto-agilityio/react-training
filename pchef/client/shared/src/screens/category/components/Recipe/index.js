@@ -20,13 +20,11 @@ import { COLORS, FONTS } from '../../../../themes'
 // Styles
 import styles from './styles'
 
+// @flow
+import type { RecipeType } from '../../../../types'
+
 type Props = {
-  recipe: {
-    id: string,
-    title: string,
-    imgUrl: string,
-    description: string,
-  },
+  recipe: RecipeType,
   isGrid: boolean,
   isFavorite: boolean,
   onPressIcon?: (id: string) => void | Promise<void>,

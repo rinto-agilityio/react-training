@@ -22,6 +22,8 @@ import { MINIMUM_FOLLOWED_CATEGORY, TABBAR_HEIGHT } from '../../constants/index'
 // Styles
 import styles from './styles'
 
+import type { FollowCategoryType } from '../../types'
+
 const { height } = Dimensions.get('window')
 
 type Props = {
@@ -34,19 +36,7 @@ type Props = {
     favoriteRecipe: Array<{
       id: string,
     }>,
-    followCategory: Array<{
-      id: string,
-      imgUrl: string,
-      name: string,
-      recipes: Array<{
-        id: string,
-        title: string,
-        description: string,
-        imgUrl: string,
-        votes: Array<string>,
-        thumbnail: string,
-      }>,
-    }>,
+    followCategory: Array<FollowCategoryType>,
     user: Object,
   },
   userToggleRecipe: (

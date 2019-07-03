@@ -18,6 +18,8 @@ import Error from '../../../../components/Error'
 // Helper
 import { customError } from '../../../../helpers/utils'
 
+import type { RecipeStepType } from '../../../../types'
+
 type Props = {
   getRecipe: {
     description: string,
@@ -27,11 +29,7 @@ type Props = {
   onSelectStep?: (id: string) => void,
   loading: boolean,
   error: Object,
-  recipeSteps: Array<{
-    step: number,
-    title: string,
-    id: string,
-  }>,
+  recipeSteps: Array<RecipeStepType>,
   handleRedirectLogin: () => void,
 }
 

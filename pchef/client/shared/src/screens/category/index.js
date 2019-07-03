@@ -22,17 +22,15 @@ import { customError, checkContain } from '../../helpers/utils'
 // styles
 import styles from './styles'
 
+// @flow
+import type { RecipeType } from '../../types'
+
 type Props = {
   category: {
     name: string,
     imgUrl: string,
   },
-  recipes: Array<{
-    id: string,
-    title: string,
-    imgUrl: string,
-    description: string,
-  }>,
+  recipes: Array<RecipeType>,
   loading: boolean,
   error: {
     graphQLErrors: Array<{ message: string }>,

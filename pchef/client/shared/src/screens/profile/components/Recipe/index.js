@@ -18,14 +18,10 @@ import { checkContainField, checkContain } from '../../../../helpers/utils'
 // Constanst
 import { DEFAULT_IMAGE } from '../../../../constants'
 
+import type { RecipeType } from '../../../../types'
+
 type Props = {
-  recipe: {
-    id: string,
-    title: string,
-    description: string,
-    imgUrl: string,
-    votes: Array<string>,
-  },
+  recipe: RecipeType,
   size?: string,
   favoriteRecipe: Array<{
     id: string,
