@@ -2,7 +2,6 @@
 // add flow above to fix for using flow with React.memo
 
 // Libs
-// Libs
 import React, { useState, useEffect, memo } from 'react'
 import { View, Text, FlatList } from 'react-native'
 
