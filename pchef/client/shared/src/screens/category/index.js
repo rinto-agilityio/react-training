@@ -2,7 +2,6 @@
 // add flow above to fix for using flow with React.memo
 
 // Libs
-// Libs
 import React, { useState, useEffect, memo } from 'react'
 import { View, Text, FlatList } from 'react-native'
 
@@ -81,12 +80,13 @@ const CategoryScreen = ({
   const [visible, setVisible] = useState(true)
   const [selectedCategories, setSelectedCategories] = useState([])
 
-  const { favoriteRecipe, followCategory } = data
+  const { favoriteRecipe } = data
 
   useEffect(() => {
+    const followCategory = data.followCategory || []
     const followCategoryIds = followCategory.map(item => item.id)
     setSelectedCategories(followCategoryIds)
-  }, [followCategory])
+  }, [data.followCategory])
 
   if (loading) return <Loading size="small" />
 

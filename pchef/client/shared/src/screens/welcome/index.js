@@ -22,7 +22,7 @@ import InterestedCategories from './components/InterestedCategories'
 import styles from './styles'
 
 // Constants
-import { CATEGORIES_PADDING, WEB_PLATFORM } from '../../constants'
+import { CATEGORIES_PADDING, WEB_PLATFORM, MINIMUM_FOLLOWED_CATEGORY } from '../../constants'
 
 const { height } = Dimensions.get('window')
 
@@ -51,6 +51,7 @@ type Props = {
   customButtonStyle?: {},
   handleRedirectLogin: () => void,
   size: string,
+  handleRedirectHome: () => void,
 }
 
 // component Comment Form
@@ -66,6 +67,7 @@ const Welcome = ({
   customButtonStyle,
   handleRedirectLogin,
   size = 'medium',
+  handleRedirectHome,
 }: Props) => {
   const [chosenCategories, setChosenCategories] = useState([])
   const [errors, setErrors] = useState()
@@ -111,13 +113,14 @@ const Welcome = ({
   const handleSaveCategory = async () => {
     try {
       await userToggleCategory(chosenCategories)
+      if (chosenCategories.length >= MINIMUM_FOLLOWED_CATEGORY) handleRedirectHome()
     } catch (error) {
       setErrors(error)
     }
   }
 
   // check user do not choose category
-  const missingCategory = chosenCategories.length < 4
+  const missingCategory = chosenCategories.length < MINIMUM_FOLLOWED_CATEGORY
   const heightCategories = height - heightHeader - CATEGORIES_PADDING
 
   const renderHeaderCategories = () => (
