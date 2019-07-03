@@ -2,7 +2,6 @@
 // add flow above to fix for using flow with React.memo
 
 // Libs
-// Libs
 import React, { memo } from 'react'
 import { View } from 'react-native'
 import { Calendar } from 'react-native-calendars'
