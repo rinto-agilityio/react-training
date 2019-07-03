@@ -81,12 +81,13 @@ const CategoryScreen = ({
   const [visible, setVisible] = useState(true)
   const [selectedCategories, setSelectedCategories] = useState([])
 
-  const { favoriteRecipe, followCategory } = data
+  const { favoriteRecipe } = data
 
   useEffect(() => {
+    const followCategory = data.followCategory || []
     const followCategoryIds = followCategory.map(item => item.id)
     setSelectedCategories(followCategoryIds)
-  }, [followCategory])
+  }, [data.followCategory])
 
   if (loading) return <Loading size="small" />
 
