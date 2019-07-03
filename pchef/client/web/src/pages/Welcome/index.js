@@ -16,6 +16,7 @@ const Welcome = ({ history }: Props) => {
     <WelcomeContainer
       handleSkipCategories={handleSkipCategories}
       handleRedirectLogin={() => history.push('/login')}
+      handleRedirectHome={handleSkipCategories}
     />
   )
 }

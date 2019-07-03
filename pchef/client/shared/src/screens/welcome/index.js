@@ -51,6 +51,7 @@ type Props = {
   customButtonStyle?: {},
   handleRedirectLogin: () => void,
   size: string,
+  handleRedirectHome: () => void,
 }
 
 // component Comment Form
@@ -66,6 +67,7 @@ const Welcome = ({
   customButtonStyle,
   handleRedirectLogin,
   size = 'medium',
+  handleRedirectHome,
 }: Props) => {
   const [chosenCategories, setChosenCategories] = useState([])
   const [errors, setErrors] = useState()
@@ -111,6 +113,7 @@ const Welcome = ({
   const handleSaveCategory = async () => {
     try {
       await userToggleCategory(chosenCategories)
+      if (chosenCategories.length >= 4) handleRedirectHome()
     } catch (error) {
       setErrors(error)
     }
