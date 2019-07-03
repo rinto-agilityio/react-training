@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
   // Wrapper
   wrapper: {
     zIndex: METRICS.iconZindex,
+    width: METRICS.extraLargeWrapper,
   },
 
   // Title
