@@ -1,4 +1,8 @@
-import React from 'react'
+// @flow
+// add flow above to fix for using flow with React.memo
+
+// Libs
+import React, { memo } from 'react'
 
 // Containers
 import NewFeed from 'pchef-shared/src/containers/NewFeed'
@@ -37,4 +41,6 @@ const Home = ({ history }: Props) => {
   )
 }
 
-export default Home
+const areEqual = (prevProps, nextProps) => prevProps.location.pathname === nextProps.location.pathname
+
+export default memo<Props>(Home, areEqual)

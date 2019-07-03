@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React, { useRef } from 'react'
+import React, { useRef, memo } from 'react'
 import { View } from 'react-native'
 
 // Components
@@ -109,4 +112,4 @@ LoginForm.defaultProps = {
   isSubmit: false,
 }
 
-export default LoginForm
+export default memo<Props>(LoginForm)

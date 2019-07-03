@@ -1,4 +1,8 @@
-import React, { useState } from 'react'
+// @flow
+// add flow above to fix for using flow with React.memo
+
+// Libs
+import React, { useState, memo } from 'react'
 
 // Components
 import { View } from 'react-native'
@@ -96,4 +100,4 @@ Tabs.defaultProps = {
   ownRecipes: [],
 }
 
-export default Tabs
+export default memo<Props>(Tabs)

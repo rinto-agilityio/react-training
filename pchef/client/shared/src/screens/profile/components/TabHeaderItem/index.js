@@ -1,4 +1,8 @@
-import React from 'react'
+// @flow
+// add flow above to fix for using flow with React.memo
+
+// Libs
+import React, { memo } from 'react'
 
 // Components
 import { View, TouchableWithoutFeedback, Text } from 'react-native'
@@ -27,4 +31,4 @@ const TabHeaderItem = ({
   </TouchableWithoutFeedback>
 )
 
-export default TabHeaderItem
+export default memo<Props>(TabHeaderItem)

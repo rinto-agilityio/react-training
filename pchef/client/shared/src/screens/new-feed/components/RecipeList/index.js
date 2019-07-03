@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React, { useState } from 'react'
+import React, { useState, memo } from 'react'
 
 // Components
 import { View, Text } from 'react-native'
@@ -127,4 +130,4 @@ RecipeList.defaultProps = {
   loading: false,
 }
 
-export default RecipeList
+export default memo<Props>(RecipeList)

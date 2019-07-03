@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React from 'react'
+import React, { memo } from 'react'
 import { View, Text } from 'react-native'
 import { IconButton } from 'react-native-paper'
 
@@ -60,4 +63,4 @@ Icon.defaultProps = {
   customIconStyles: {},
 };
 
-export default Icon
+export default memo<Props>(Icon)

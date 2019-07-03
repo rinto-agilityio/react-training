@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, memo } from 'react'
 import { View, Text } from 'react-native'
 
 // Styles
@@ -170,6 +173,7 @@ const DirectionsForm = ({
                     onPress={handleAddStepImage}
                     label="Set cover photo"
                     wrapperIconStyle={[styles.wrapperIcon, styles.wrapperIconDirections]}
+                    customIconStyles={styles.customIconStyles}
                   />
                 </Text>
                 <input
@@ -191,7 +195,7 @@ const DirectionsForm = ({
               />
             )}
             {stepUrl ? (
-              <Image url={stepUrl} customImageStyle={{ width: '100%', height: 150 }} />
+              <Image url={stepUrl} customImageStyle={{ width: '100%', height: 150, marginTop: 20 }} />
             ) : null}
           </Wrapper>
         </Wrapper>
@@ -229,4 +233,4 @@ DirectionsForm.defaultProps = {
   handleAddStepImageOnWeb: () => {},
 }
 
-export default DirectionsForm
+export default memo<Props>(DirectionsForm)

@@ -1,5 +1,9 @@
+
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React from 'react'
+import React, { memo } from 'react'
 import { View } from 'react-native'
 import { Avatar, Badge } from 'react-native-paper'
 
@@ -72,4 +76,4 @@ CommentForm.defaultProps = {
   type: 'primary',
 }
 
-export default CommentForm
+export default memo<Props>(CommentForm)

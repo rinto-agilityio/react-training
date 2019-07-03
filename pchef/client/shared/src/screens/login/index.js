@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React, { useState } from 'react'
+import React, { useState, memo } from 'react'
 import { View, Text } from 'react-native'
 
 // Components
@@ -89,4 +92,4 @@ Login.defaultProps = {
   type: 'primary',
 }
 
-export default Login
+export default memo<Props>(Login)

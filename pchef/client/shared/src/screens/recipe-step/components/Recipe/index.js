@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, memo } from 'react'
 import { Text, View } from 'react-native'
 
 // Styles
@@ -304,4 +307,4 @@ const Recipe = ({
   )
 }
 
-export default Recipe
+export default memo<Props>(Recipe)

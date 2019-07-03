@@ -1,4 +1,8 @@
-import React from 'react'
+// @flow
+// add flow above to fix for using flow with React.memo
+
+// Libs
+import React, { memo } from 'react'
 
 // Components
 import { View, Text, TextInput } from 'react-native'
@@ -49,4 +53,4 @@ Settings.defaultProps = {
   handleLogout: () => {},
 }
 
-export default Settings
+export default memo<Props>(Settings)
