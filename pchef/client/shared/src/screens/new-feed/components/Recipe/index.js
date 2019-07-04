@@ -12,13 +12,6 @@ import styles from './styles'
 import Image from '../../../../components/Image'
 import Reaction from '../../../../components/Reaction'
 
-// Helpers
-import {
-  checkContainField,
-  formatFiledOnObject,
-  checkContain,
-} from '../../../../helpers/utils'
-
 // Constants
 import { DEFAULT_IMAGE } from '../../../../constants'
 
@@ -27,61 +20,26 @@ import type { RecipeType } from '../../../../types'
 type Props = {
   recipe: RecipeType,
   size?: string,
-  favoriteRecipe: Array<{
-    id: string,
-  }>,
-  userToggleRecipe: (
-    recipeId: string,
-    favoriteRecipe: Array<{ id: string }>
-  ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
   handleClickRecipe: (recipeId: string) => void,
-  userToggleVote: (
-    recipeId: string,
-    votes: Array<string>,
-    userId: string
-  ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
   userId: string,
   wrapperIconStyle: Object,
+  isFavorited: boolean,
+  isVote: boolean,
+  handleSaveRecipe: (id: string) => Promise<void>,
+  handleToggleVote: (id: string, votes: Array<string>, userId: string) => Promise<void>
 }
-
 const Recipe = ({
   recipe,
   size = 'large',
-  favoriteRecipe,
-  userToggleRecipe,
+  isFavorited,
   handleClickRecipe,
-  userToggleVote,
+  isVote,
   userId,
   wrapperIconStyle,
+  handleSaveRecipe,
+  handleToggleVote,
 }: Props) => {
   const { id, title, description, thumbnail, votes } = recipe
-
-  const isFavorited = checkContainField(favoriteRecipe, id)
-
-  const handleSaveRecipe = async () => {
-    await userToggleRecipe(id, favoriteRecipe).then(({ data }) => {
-      const {
-        userToggleRecipe: { results },
-      } = data
-
-      if (results) {
-        checkContainField(formatFiledOnObject(results), id)
-      }
-    })
-  }
-
-  const handleToggleVote = async () => {
-    await userToggleVote(id, votes, userId)
-      .then(({ data }) => {
-        const {
-          userToggleVote: { results },
-        } = data
-
-        if (results) {
-          checkContain(votes, id)
-        }
-      })
-  }
 
   return (
     <View style={[styles.wrapper, styles[`${size}Wrapper`]]}>
@@ -111,9 +69,9 @@ const Recipe = ({
         votes={votes}
         size={size}
         isFavorited={isFavorited}
-        onPressFavorite={handleSaveRecipe}
-        onPressVote={handleToggleVote}
-        isVote={checkContain(votes, userId)}
+        onPressFavorite={() => handleSaveRecipe(id)}
+        onPressVote={() => handleToggleVote(id, votes, userId)}
+        isVote={isVote}
         wrapperIconStyle={wrapperIconStyle}
       />
     </View>
@@ -124,4 +82,8 @@ Recipe.defaultProps = {
   size: 'large',
 }
 
-export default memo<Props>(Recipe)
+const areEqual = (prevProps, nextProps) => (
+  prevProps.isFavorited === nextProps.isFavorited && prevProps.isVote === nextProps.isVote
+)
+
+export default memo<Props>(Recipe, areEqual)
