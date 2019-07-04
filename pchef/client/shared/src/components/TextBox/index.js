@@ -85,8 +85,6 @@ TextBox.defaultProps = {
   defaultValue: '',
   secureTextEntry: false,
   customContainer: {},
-  onBlur: () => {},
-  onChangeText: () => {},
 }
 
 export default memo<Props>(TextBox)
