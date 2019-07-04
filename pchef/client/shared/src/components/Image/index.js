@@ -4,6 +4,7 @@
 // Libs
 import React, { useState, useEffect, memo, Suspense } from 'react'
 import { Image as ImageNative, TouchableOpacity } from 'react-native'
+import ImageLoad from 'react-native-image-placeholder'
 
 // Styles
 import styles from './styles'
@@ -18,57 +19,32 @@ type Props = {
   customBtnStyle?: {},
   customImageStyle?: {} | Array<{}>,
   resizeMethod?: string,
-  thumbnail?: string
 }
-
-const placeholderImage = require('../../assets/images/placeholder.jpg')
 
 const ImageComponent = ({
   url,
-  thumbnail,
   disabled = false,
   customImageStyle,
   customBtnStyle = {},
-  resizeMethod = 'auto',
+  resizeMethod = 'cover',
   handleTouch = () => {},
-}: Props) => {
-  const [loadImg, setLoadImg] = useState({
-    url: thumbnail || placeholderImage,
-    loaded: false,
-  })
-
-  useEffect(() => {
-    const imgLoader = new Image()
-
-    imgLoader.onload = () => {
-      setLoadImg({
-        url: imgLoader.src,
-        loaded: true,
-      })
-    }
-
-    imgLoader.src = url
-      ? url
-      : placeholderImage
-
-    return () => setLoadImg({ url, loaded: false })
-  }, [url])
-
-  return (
-    <Suspense fallback={<Loading size="small" />}>
-      <TouchableOpacity
-        style={customBtnStyle}
-        onPress={handleTouch}
-        disabled={disabled}
-      >
-        <ImageNative
-          source={{ uri: loadImg.url }}
-          resizeMethod={resizeMethod}
-          style={[styles.image, customImageStyle]}
-        />
-      </TouchableOpacity>
-    </Suspense>
-  )
-}
+}: Props) => (
+  <Suspense fallback={<Loading size="small" />}>
+    <TouchableOpacity
+      style={customBtnStyle}
+      onPress={handleTouch}
+      disabled={disabled}
+    >
+      <ImageLoad
+        resizeMode={resizeMethod}
+        style={[styles.image, customImageStyle]}
+        loadingStyle={{ size: 'large', color: 'blue' }}
+        source={{
+          uri: url,
+        }}
+      />
+    </TouchableOpacity>
+  </Suspense>
+)
 
 export default memo<Props>(ImageComponent)

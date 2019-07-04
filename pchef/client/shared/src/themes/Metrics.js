@@ -124,9 +124,7 @@ export default {
 
   // Truncate text
   truncate: {
-    maxWidth: '250px',
-    whiteSpace: 'nowrap',
+    maxWidth: 250,
     overflow: 'hidden',
-    textOverflow: 'ellipsis',
   },
 }
