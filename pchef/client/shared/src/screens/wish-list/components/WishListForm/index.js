@@ -28,7 +28,7 @@ import { METRICS } from '../../../../themes'
 // Constants
 import { WEB_PLATFORM } from '../../../../constants'
 
-import type { RecipeType, CategoryType, CookingType } from '../../../../types'
+import type { RecipeType } from '../../../../types'
 
 type Props = {
   size: string,
