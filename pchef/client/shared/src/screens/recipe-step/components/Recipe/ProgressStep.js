@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React from 'react'
+import React, { memo } from 'react'
 
 // Styles
 import styles from './styles'
@@ -84,4 +87,4 @@ Progress.defaultProps = {
   onPressSelectStep: () => {},
 }
 
-export default Progress
+export default memo<Props>(Progress)

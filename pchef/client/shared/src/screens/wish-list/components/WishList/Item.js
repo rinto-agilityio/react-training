@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React from 'react'
+import React, { memo } from 'react'
 import { Text, View } from 'react-native'
 
 // Styles
@@ -8,24 +11,13 @@ import styles from './styles'
 // Helpers
 import { getDateForCalendar } from '../../../../helpers/date-time'
 
+import type { WishListType, CategoryType, CookingType } from '../../../../types'
+
 type Props = {
   size: string,
-  item: {
-    id: string,
-    categoryId: string,
-    cookingTypeId: string,
-    date: string,
-  },
-  categories: Array<{
-    id: string,
-    name: string,
-    imgUrl: string,
-  }>,
-  cookingTypes: Array<{
-    id: string,
-    name: string,
-    imgUrl: string,
-  }>,
+  item: WishListType,
+  categories: Array<CategoryType>,
+  cookingTypes: Array<CookingType>,
 }
 
 const Item = ({
@@ -78,4 +70,4 @@ const Item = ({
   )
 }
 
-export default Item
+export default memo<Props>(Item)

@@ -1,4 +1,8 @@
-import React from 'react';
+// @flow
+// add flow above to fix for using flow with React.memo
+
+// Libs
+import React, { memo } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native'
 import { Avatar } from 'react-native-paper'
 
@@ -40,4 +44,4 @@ CategoryPipeLineItem.defaultProps = {
   onPressCategoryPipeline: () => {},
 }
 
-export default CategoryPipeLineItem
+export default memo<Props>(CategoryPipeLineItem)

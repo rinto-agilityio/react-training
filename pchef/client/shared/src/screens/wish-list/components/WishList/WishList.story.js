@@ -5,11 +5,15 @@ import { storiesOf } from '@storybook/react'
 // Components
 import WistList from '.'
 
+// Helper
+import { wInfo } from '../../../../../.storybook/utils';
+
 // Mocks
 import { wishList, categories, cookingTypes } from '../../../../mocks'
 
 storiesOf('Wish list', module)
-  .add('small', () => (
+  .addDecorator(wInfo())
+  .add('Small', () => (
     <WistList
       size="small"
       wishList={wishList}
@@ -17,7 +21,7 @@ storiesOf('Wish list', module)
       cookingTypes={cookingTypes}
     />
   ))
-  .add('medium', () => (
+  .add('Medium', () => (
     <WistList
       wishList={wishList}
       size="medium"
@@ -25,7 +29,7 @@ storiesOf('Wish list', module)
       cookingTypes={cookingTypes}
     />
   ))
-  .add('large', () => (
+  .add('Large', () => (
     <WistList
       size="large"
       wishList={wishList}

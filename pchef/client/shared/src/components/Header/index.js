@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React, { useState } from 'react'
+import React, { useState, memo } from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { Avatar, Provider, Menu } from 'react-native-paper'
 
@@ -126,4 +129,4 @@ const Header = ({
 }
 
 
-export default Header
+export default memo<Props>(Header)

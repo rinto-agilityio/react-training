@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React, { useState } from 'react'
+import React, { useState, memo } from 'react'
 import { View } from 'react-native'
 
 // Helpers
@@ -18,28 +21,17 @@ import Button from '../../../../components/Button'
 // Constants
 import { WEB_PLATFORM } from '../../../../constants'
 
+import type { WishListType, CategoryType, CookingType } from '../../../../types'
+
 type Props = {
-  wishList: Array<{
-    id: string,
-    categoryId: string,
-    cookingTypeId: string,
-    date: string,
-  }>,
+  wishList: Array<WishListType>,
   size: string,
   loading: boolean,
   error: {
     graphQLErrors: Array<{ message: string }>,
   },
-  categories: Array<{
-    id: string,
-    name: string,
-    imgUrl: string,
-  }>,
-  cookingTypes: Array<{
-    id: string,
-    name: string,
-    imgUrl: string,
-  }>,
+  categories: Array<CategoryType>,
+  cookingTypes: Array<CookingType>,
   handleRedirectLogin: () => void,
   handleRedirectWishlistForm: () => void,
 }
@@ -100,4 +92,4 @@ const WishList = ({
   )
 }
 
-export default WishList
+export default memo<Props>(WishList)

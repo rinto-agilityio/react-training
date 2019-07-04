@@ -9,35 +9,44 @@ import Recipe from '.'
 // Mocks
 import { recipes, user } from '../../../../mocks'
 
+// Helper
+import { wInfo } from '../../../../../.storybook/utils';
+
 const getUser = {
   favoriteRecipe: user.favoriteRecipe,
   user,
 }
+
+const getRecipe = {
+  votes: recipes[0].votes,
+}
+
 storiesOf('Recipe by step', module)
-  .add('small', () => (
+  .addDecorator(wInfo())
+  .add('Small', () => (
     <Recipe
       size="small"
       onPress={action('clicked')}
       getUser={getUser}
-      votes={recipes[0].votes}
+      getRecipe={getRecipe}
       recipeSteps={recipes[0].steps}
     />
   ))
-  .add('medium', () => (
+  .add('Medium', () => (
     <Recipe
       size="medium"
       onPress={action('clicked')}
       getUser={getUser}
-      votes={recipes[0].votes}
+      getRecipe={getRecipe}
       recipeSteps={recipes[0].steps}
     />
   ))
-  .add('large', () => (
+  .add('Large', () => (
     <Recipe
       size="large"
       onPress={action('clicked')}
       getUser={getUser}
-      votes={recipes[0].votes}
+      getRecipe={getRecipe}
       recipeSteps={recipes[0].steps}
     />
   ))

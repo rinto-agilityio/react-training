@@ -65,8 +65,11 @@ const CreateRecipe = ({ history }: Props) => {
         fontSize: '60px',
       }}
       // Update style for the remaining icon
-      customIconStyle={{
+      customWrapperIconStyle={{
         fontSize: '30px',
+      }}
+      customIconStyles={{
+        marginTop: '25px',
       }}
     />
   )

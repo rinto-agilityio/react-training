@@ -5,6 +5,9 @@ import { View } from 'react-native'
 import { action } from '@storybook/addon-actions'
 import { categories } from '../../mocks'
 
+// Helper
+import { wInfo } from '../../../.storybook/utils';
+
 // Components
 import Welcome from '.'
 
@@ -15,12 +18,13 @@ const props = {
 }
 
 storiesOf('Welcome', module)
-  .add('primary', () => (
+  .addDecorator(wInfo())
+  .add('Primary', () => (
     <View style={{ width: 400, marginLeft: 'auto', marginRight: 'auto' }}>
       <Welcome {...props} />
     </View>
   ))
-  .add('secondary', () => (
+  .add('Secondary', () => (
     <View>
       <Welcome {...props} type="secondary" />
     </View>

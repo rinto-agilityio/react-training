@@ -1,4 +1,8 @@
-import React from 'react'
+// @flow
+// add flow above to fix for using flow with React.memo
+
+// Libs
+import React, { memo } from 'react'
 
 // Components
 import { View, Text, Platform } from 'react-native'
@@ -47,4 +51,4 @@ const Header = ({ user, handleToSetting = () => {} }: Props) => {
   )
 }
 
-export default Header
+export default memo<Props>(Header)

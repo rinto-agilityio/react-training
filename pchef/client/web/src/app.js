@@ -1,6 +1,9 @@
 // Libs
-import React from 'react'
+import React, { Suspense } from 'react'
 import { ApolloProvider } from 'react-apollo'
+
+// components
+import Loading from 'pchef-shared/src/components/Loading'
 
 // Router
 import MainRouter from 'router/MainRouter'
@@ -10,7 +13,9 @@ import client from 'pchef-shared/src/config/apollo-client'
 
 const App = () => (
   <ApolloProvider client={client}>
-    <MainRouter />
+    <Suspense fallback={<Loading />}>
+      <MainRouter />
+    </Suspense>
   </ApolloProvider>
 )
 

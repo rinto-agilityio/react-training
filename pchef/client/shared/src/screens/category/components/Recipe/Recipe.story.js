@@ -9,11 +9,16 @@ import Recipe from '.'
 // Mock
 import { recipes } from '../../../../mocks'
 
-storiesOf('Recipe in category', module).add('default', () => (
-  <Recipe
-    recipe={recipes[0]}
-    size="small"
-    handlePressImage={action('press image')}
-    handlePressIcon={action('press icon')}
-  />
-))
+// Helper
+import { wInfo } from '../../../../../.storybook/utils';
+
+storiesOf('Recipe in category', module)
+  .addDecorator(wInfo())
+  .add('Default', () => (
+    <Recipe
+      recipe={recipes[0]}
+      size="small"
+      handlePressImage={action('press image')}
+      handlePressIcon={action('press icon')}
+    />
+  ))

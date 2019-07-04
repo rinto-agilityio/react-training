@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React, { useState } from 'react'
+import React, { useState, memo } from 'react'
 import { View } from 'react-native'
 
 // Styles
@@ -15,6 +18,8 @@ import Error from '../../../../components/Error'
 // Helper
 import { customError } from '../../../../helpers/utils'
 
+import type { RecipeStepType } from '../../../../types'
+
 type Props = {
   getRecipe: {
     description: string,
@@ -24,11 +29,7 @@ type Props = {
   onSelectStep?: (id: string) => void,
   loading: boolean,
   error: Object,
-  recipeSteps: Array<{
-    step: number,
-    title: string,
-    id: string,
-  }>,
+  recipeSteps: Array<RecipeStepType>,
   handleRedirectLogin: () => void,
 }
 
@@ -97,4 +98,4 @@ Recipe.defaultProps = {
   onSelectStep: () => {},
 }
 
-export default Recipe
+export default memo<Props>(Recipe)

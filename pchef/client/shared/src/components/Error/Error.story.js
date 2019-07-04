@@ -6,12 +6,17 @@ import { storiesOf } from '@storybook/react'
 import { View } from 'react-native'
 import Error from '.'
 
-storiesOf('Error', module).add('default', () => (
-  <View
-    style={{
-      marginTop: 50,
-    }}
-  >
-    <Error message="Failed!!!" customStyle={{ textAlign: 'center' }} />
-  </View>
-))
+// Helper
+import { wInfo } from '../../../.storybook/utils';
+
+storiesOf('Error', module)
+  .addDecorator(wInfo())
+  .add('Default', () => (
+    <View
+      style={{
+        marginTop: 50,
+      }}
+    >
+      <Error message="Failed!!!" customStyle={{ textAlign: 'center' }} />
+    </View>
+  ))

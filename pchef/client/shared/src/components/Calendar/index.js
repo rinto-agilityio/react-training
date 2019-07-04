@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React from 'react'
+import React, { memo } from 'react'
 import { View } from 'react-native'
 import { Calendar } from 'react-native-calendars'
 
@@ -78,4 +81,4 @@ CalendarComponent.defaultProps = {
   onSelectDay: () => {},
 }
 
-export default CalendarComponent
+export default memo<Props>(CalendarComponent)

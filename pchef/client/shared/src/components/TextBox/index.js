@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React from 'react'
+import React, { memo } from 'react'
 import { TextInput, View } from 'react-native'
 
 // Styles
@@ -28,6 +31,8 @@ type Props = {
   onSubmitEditing?: () => void,
   secureTextEntry?: boolean,
   customContainer?: {} | Array<{}>,
+  onBlur?: (target: Object) => void,
+  onChangeText?: (text: string) => void,
 }
 
 const TextBox = ({
@@ -44,6 +49,8 @@ const TextBox = ({
   onSubmitEditing,
   secureTextEntry,
   customContainer,
+  onBlur = () => {},
+  onChangeText = () => {},
 }: Props) => (
   <View style={[styles.container, customContainer]}>
     <TextInput
@@ -59,6 +66,8 @@ const TextBox = ({
       placeholderTextColor={placeholderTextColor}
       onSubmitEditing={onSubmitEditing}
       secureTextEntry={secureTextEntry}
+      onBlur={e => onBlur(e.target.value)}
+      onChangeText={text => onChangeText(text)}
     />
   </View>
 )
@@ -78,4 +87,4 @@ TextBox.defaultProps = {
   customContainer: {},
 }
 
-export default TextBox
+export default memo<Props>(TextBox)

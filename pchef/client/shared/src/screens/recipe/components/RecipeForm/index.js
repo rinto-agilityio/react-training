@@ -59,7 +59,8 @@ type Props = {
   compressImage: () => Promise<void>,
   handleRedirectLogin: () => void,
   wrapperIconStyle: Object,
-  customIconStyle: Object,
+  customWrapperIconStyle: Object,
+  customIconStyles: Object,
 }
 
 const RecipeForm = forwardRef<Props, Function>(({
@@ -75,13 +76,14 @@ const RecipeForm = forwardRef<Props, Function>(({
   stepUrl = '',
   handleAddRecipeImageOnWeb,
   customStyleLabel,
+  customIconStyles,
   handleAddStepImageOnWeb,
   uploadImage,
   uploadStepImage,
   compressImage,
   handleRedirectLogin,
   wrapperIconStyle,
-  customIconStyle,
+  customWrapperIconStyle,
 }: Props, ref) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
@@ -272,9 +274,10 @@ const RecipeForm = forwardRef<Props, Function>(({
                 styles.icon,
                 styles.classifyIcon,
                 error ? { marginBottom: 0 } : {},
-                customIconStyle,
+                customWrapperIconStyle,
               ]}
               customStyle={styles[`${size}Input`]}
+              customIconStyles={customIconStyles}
             />
             {value ? (
               <Text style={[{ marginBottom: METRICS.largeMargin }, styles[`${size}Input`]]}>
@@ -302,7 +305,7 @@ const RecipeForm = forwardRef<Props, Function>(({
             size={METRICS[`${size}Icon`]}
             onPress={() => onPress(true)}
             label={label}
-            wrapperIconStyle={[styles.icon, styles[`${name}Icon`], styles[`${size}Icon`], customIconStyle]}
+            wrapperIconStyle={[styles.icon, styles[`${name}Icon`], styles[`${size}Icon`], customWrapperIconStyle]}
             customStyle={[style, styles[`${size}Input`]]}
           />
         ))}

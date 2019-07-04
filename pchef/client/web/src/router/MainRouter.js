@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { lazy } from 'react'
 
 // router
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
@@ -6,18 +6,20 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 // components
 import Home from 'pages/Home'
-import Profile from 'pages/Profile'
 import Category from 'pages/Category'
-import Login from '../pages/Login'
-import RecipeDetail from '../pages/RecipeDetail'
-import Welcome from '../pages/Welcome'
-import WishList from '../pages/WishList'
-import WishListForm from '../pages/WishListForm'
-import RecipeStep from '../pages/RecipeStep'
-import CreateRecipe from '../pages/CreateRecipe'
+import Login from 'pages/Login'
+import Welcome from 'pages/Welcome'
+import WishList from 'pages/WishList'
 
 // helpers
 import PrivateRoute from './PrivateRoute'
+
+// lazy import components
+const RecipeDetail = lazy(() => import('pages/RecipeDetail'))
+const Profile = lazy(() => import('pages/Profile'))
+const CreateRecipe = lazy(() => import('pages/CreateRecipe'))
+const RecipeStep = lazy(() => import('pages/RecipeStep'))
+const WishListForm = lazy(() => import('pages/WishListForm'))
 
 const loginPath = '/login'
 

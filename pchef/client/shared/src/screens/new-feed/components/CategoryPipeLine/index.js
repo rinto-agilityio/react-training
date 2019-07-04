@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React from 'react';
+import React, { memo } from 'react';
 import { View } from 'react-native'
 
 // Components
@@ -9,25 +12,11 @@ import CategoryPipeLineItem from './CategoryPipeLineItem'
 import styles from './styles'
 import Loading from '../../../../components/Loading';
 
+import type { CategoryType, FollowCategoryType } from '../../../../types'
+
 type Props = {
-  followCategory: Array<{
-    id: string,
-    name: string,
-    imgUrl: string,
-  }>,
-  followCategory: Array<{
-    id: string,
-    imgUrl: string,
-    name: string,
-    recipes: Array<{
-      id: string,
-      title: string,
-      description: string,
-      imgUrl: string,
-      votes: Array<string>,
-      thumbnail: string,
-    }>,
-  }>,
+  followCategory: Array<CategoryType>,
+  followCategory: Array<FollowCategoryType>,
   onPressCategoryPipeline?: () => void,
   loading: boolean,
 }
@@ -57,4 +46,4 @@ CategoryPipeLine.defaultProps = {
 }
 
 
-export default CategoryPipeLine
+export default memo<Props>(CategoryPipeLine)

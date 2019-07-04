@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, memo } from 'react'
 import { View, Text, TouchableOpacity, ScrollView, Dimensions } from 'react-native'
 import { Divider } from 'react-native-paper'
 
@@ -18,8 +21,10 @@ import InterestedCategories from './components/InterestedCategories'
 // Styles
 import styles from './styles'
 
+import type { CategoryType } from '../../types'
+
 // Constants
-import { CATEGORIES_PADDING, WEB_PLATFORM } from '../../constants'
+import { CATEGORIES_PADDING, WEB_PLATFORM, MINIMUM_FOLLOWED_CATEGORY } from '../../constants'
 
 const { height } = Dimensions.get('window')
 
@@ -29,25 +34,18 @@ type Props = {
   type?: string,
   handleSkipCategories?: () => void,
   data: {
-    followCategory: Array<{
-      id: string,
-      name: string,
-      imgUrl: string,
-    }>,
+    followCategory: Array<CategoryType>,
   },
   loading: boolean,
   error: {
     graphQLErrors: Array<{message: string}>,
   },
-  categories: Array<{
-    id: string,
-    name: string,
-    imgUrl: string,
-  }>,
+  categories: Array<CategoryType>,
   userToggleCategory: (categoryId: Array<string>) => Promise<{ data: {userToggleCategory: {results: Array<string>}}}>,
   customButtonStyle?: {},
   handleRedirectLogin: () => void,
   size: string,
+  handleRedirectHome: () => void,
 }
 
 // component Comment Form
@@ -63,6 +61,7 @@ const Welcome = ({
   customButtonStyle,
   handleRedirectLogin,
   size = 'medium',
+  handleRedirectHome,
 }: Props) => {
   const [chosenCategories, setChosenCategories] = useState([])
   const [errors, setErrors] = useState()
@@ -108,13 +107,14 @@ const Welcome = ({
   const handleSaveCategory = async () => {
     try {
       await userToggleCategory(chosenCategories)
+      if (chosenCategories.length >= MINIMUM_FOLLOWED_CATEGORY) handleRedirectHome()
     } catch (error) {
       setErrors(error)
     }
   }
 
   // check user do not choose category
-  const missingCategory = chosenCategories.length < 4
+  const missingCategory = chosenCategories.length < MINIMUM_FOLLOWED_CATEGORY
   const heightCategories = height - heightHeader - CATEGORIES_PADDING
 
   const renderHeaderCategories = () => (
@@ -188,4 +188,4 @@ Welcome.defaultProps = {
   customButtonStyle: {},
 }
 
-export default Welcome
+export default memo<Props>(Welcome)

@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React from 'react'
+import React, { memo } from 'react'
 import { Text } from 'react-native'
 
 // Styles
@@ -31,4 +34,4 @@ Ingredient.defaultProps = {
   customDescription: {},
 }
 
-export default Ingredient
+export default memo<Props>(Ingredient)

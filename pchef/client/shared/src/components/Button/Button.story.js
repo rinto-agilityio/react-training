@@ -3,11 +3,15 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
+// Helper
+import { wInfo } from '../../../.storybook/utils';
+
 // Component
 import Button from './index'
 
 storiesOf('Button', module)
-  .add('default', () => (
+  .addDecorator(wInfo())
+  .add('Default', () => (
     <Button
       title="Click me"
       onPress={action('clicked')}
@@ -17,7 +21,7 @@ storiesOf('Button', module)
     />
   ))
 
-  .add('success', () => (
+  .add('Success', () => (
     <Button
       type="success"
       title="Click me"
@@ -28,7 +32,7 @@ storiesOf('Button', module)
     />
   ))
 
-  .add('danger', () => (
+  .add('Danger', () => (
     <Button
       type="danger"
       title="Click me"
@@ -39,7 +43,7 @@ storiesOf('Button', module)
     />
   ))
 
-  .add('warning', () => (
+  .add('Warning', () => (
     <Button
       type="warning"
       title="Click me"
@@ -50,7 +54,7 @@ storiesOf('Button', module)
     />
   ))
 
-  .add('info', () => (
+  .add('Info', () => (
     <Button
       type="info"
       title="Click me"

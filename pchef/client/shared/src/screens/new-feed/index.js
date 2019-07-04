@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, memo } from 'react'
 import { View, Platform, ScrollView, Dimensions } from 'react-native'
 
 // Components
@@ -19,6 +22,8 @@ import { MINIMUM_FOLLOWED_CATEGORY, TABBAR_HEIGHT } from '../../constants/index'
 // Styles
 import styles from './styles'
 
+import type { FollowCategoryType } from '../../types'
+
 const { height } = Dimensions.get('window')
 
 type Props = {
@@ -31,19 +36,7 @@ type Props = {
     favoriteRecipe: Array<{
       id: string,
     }>,
-    followCategory: Array<{
-      id: string,
-      imgUrl: string,
-      name: string,
-      recipes: Array<{
-        id: string,
-        title: string,
-        description: string,
-        imgUrl: string,
-        votes: Array<string>,
-        thumbnail: string,
-      }>,
-    }>,
+    followCategory: Array<FollowCategoryType>,
     user: Object,
   },
   userToggleRecipe: (
@@ -169,4 +162,4 @@ const NewFeed = ({
   )
 }
 
-export default NewFeed
+export default memo<Props>(NewFeed)

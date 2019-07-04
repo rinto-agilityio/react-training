@@ -1,4 +1,8 @@
-import React, { useState } from 'react'
+// @flow
+// add flow above to fix for using flow with React.memo
+
+// Libs
+import React, { useState, memo } from 'react'
 
 // Components
 import { View } from 'react-native'
@@ -8,21 +12,11 @@ import TabContent from '../TabContent'
 // Styles
 import styles from './styles'
 
+import type { RecipeType } from '../../../../types'
+
 type Props = {
-  ownRecipes?: Array<{
-    id: string,
-    title: string,
-    imgUrl: string,
-    description: string,
-    votes: Array<string>,
-  }>,
-  favoriteRecipe?: Array<{
-    id: string,
-    title: string,
-    imgUrl: string,
-    description: string,
-    votes: Array<string>,
-  }>,
+  ownRecipes?: Array<RecipeType>,
+  favoriteRecipe?: Array<RecipeType>,
   userToggleRecipe: (
     recipeId: string,
     favoriteRecipe: Array<{ id: string }>
@@ -96,4 +90,4 @@ Tabs.defaultProps = {
   ownRecipes: [],
 }
 
-export default Tabs
+export default memo<Props>(Tabs)

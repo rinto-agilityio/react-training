@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import * as React from 'react'
+import React, { memo } from 'react'
 import { Dialog } from 'react-native-paper'
 
 // Constants
@@ -15,7 +18,7 @@ type Props = {
   size: string,
   title?: string,
   dismissBtn?: boolean,
-  children: React.Node,
+  children: any,
   visible?: boolean,
   customDialog?: {} | Array<{}>,
   onDismiss?: () => void,
@@ -74,4 +77,4 @@ Modal.defaultProps = {
   onDismiss: () => {},
 }
 
-export default Modal
+export default memo<Props>(Modal)

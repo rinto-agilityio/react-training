@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, memo } from 'react'
 import { View, Text, FlatList } from 'react-native'
 
 // Constant
@@ -19,17 +22,15 @@ import { customError, checkContain } from '../../helpers/utils'
 // styles
 import styles from './styles'
 
+// @flow
+import type { RecipeType } from '../../types'
+
 type Props = {
   category: {
     name: string,
     imgUrl: string,
   },
-  recipes: Array<{
-    id: string,
-    title: string,
-    imgUrl: string,
-    description: string,
-  }>,
+  recipes: Array<RecipeType>,
   loading: boolean,
   error: {
     graphQLErrors: Array<{ message: string }>,
@@ -77,12 +78,13 @@ const CategoryScreen = ({
   const [visible, setVisible] = useState(true)
   const [selectedCategories, setSelectedCategories] = useState([])
 
-  const { favoriteRecipe, followCategory } = data
+  const { favoriteRecipe } = data
 
   useEffect(() => {
+    const followCategory = data.followCategory || []
     const followCategoryIds = followCategory.map(item => item.id)
     setSelectedCategories(followCategoryIds)
-  }, [followCategory])
+  }, [data.followCategory])
 
   if (loading) return <Loading size="small" />
 
@@ -173,4 +175,4 @@ const CategoryScreen = ({
   )
 }
 
-export default CategoryScreen
+export default memo<Props>(CategoryScreen)

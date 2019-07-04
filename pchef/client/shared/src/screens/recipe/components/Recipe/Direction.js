@@ -1,5 +1,8 @@
+// @flow
+// add flow above to fix for using flow with React.memo
+
 // Libs
-import React from 'react'
+import React, { memo } from 'react'
 import { Text } from 'react-native'
 
 // Styles
@@ -12,12 +15,10 @@ import { METRICS } from '../../../../themes'
 import Button from '../../../../components/Button'
 import Wrapper from '../../../../layout/Wrapper'
 
+import type { RecipeStepType } from '../../../../types'
+
 type Props = {
-  item: {
-    step: number,
-    title: string,
-    id: string,
-  },
+  item: RecipeStepType,
   size: string,
   customDescription?: {},
   onSelectStep?: (id: string) => void,
@@ -62,4 +63,4 @@ Direction.defaultProps = {
   onSelectStep: () => {},
 }
 
-export default Direction
+export default memo<Props>(Direction)

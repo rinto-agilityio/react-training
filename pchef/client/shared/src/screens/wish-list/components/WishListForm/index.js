@@ -28,6 +28,8 @@ import { METRICS } from '../../../../themes'
 // Constants
 import { WEB_PLATFORM } from '../../../../constants'
 
+import type { RecipeType } from '../../../../types'
+
 type Props = {
   size: string,
   createWishList: (
@@ -38,13 +40,7 @@ type Props = {
   handleRedirectWishlist: () => void,
   customContainer?: {},
   customModal?: {},
-  recipes: Array<{
-    id: string,
-    categoryId: string,
-    cookingTypeId: string,
-    title: string,
-    imgUrl: string,
-  }>,
+  recipes: Array<RecipeType>,
   handleRedirectLogin: () => void,
   wrapperIconStyle: Object,
 }
