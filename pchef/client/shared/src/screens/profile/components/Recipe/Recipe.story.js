@@ -8,10 +8,14 @@ import { recipes } from '../../../../mocks'
 // Components
 import Recipe from '.'
 
+// Helper
+import { wInfo } from '../../../../../.storybook/utils';
+
 storiesOf('Profile recipe', module)
-  .add('medium', () => (
+  .addDecorator(wInfo())
+  .add('Medium', () => (
     <Recipe size="medium" recipe={recipes[0]} favoriteRecipe={['idtest']} />
   ))
-  .add('large', () => (
+  .add('Large', () => (
     <Recipe size="large" recipe={recipes[0]} favoriteRecipe={['idtest']} />
   ))

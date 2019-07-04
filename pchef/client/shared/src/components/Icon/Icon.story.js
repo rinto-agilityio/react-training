@@ -9,15 +9,19 @@ import { COLORS } from '../../themes'
 // Components
 import Icon from '.'
 
+// Helper
+import { wInfo } from '../../../.storybook/utils';
+
 storiesOf('Icon', module)
-  .add('default', () => (
+  .addDecorator(wInfo())
+  .add('Default', () => (
     <Icon
       onPress={action('clicked')}
       color={COLORS.baseBlue}
       name="add-a-photo"
     />
   ))
-  .add('disabled', () => (
+  .add('Disabled', () => (
     <Icon
       onPress={action('clicked')}
       color={COLORS.baseBlue}

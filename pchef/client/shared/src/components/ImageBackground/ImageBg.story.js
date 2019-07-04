@@ -9,8 +9,12 @@ import { METRICS, COLORS } from '../../themes'
 // Components
 import ImageBackground from '.'
 
+// Helper
+import { wInfo } from '../../../.storybook/utils';
+
 storiesOf('ImageBackground', module)
-  .add('text children', () => (
+  .addDecorator(wInfo())
+  .add('Text children', () => (
     <View
       style={{
         width: METRICS.largeBgImage,

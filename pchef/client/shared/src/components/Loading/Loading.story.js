@@ -8,10 +8,14 @@ import { COLORS } from '../../themes'
 // Components
 import Loading from '.'
 
+// Helper
+import { wInfo } from '../../../.storybook/utils';
+
 storiesOf('Loading', module)
-  .add('small', () => (
+  .addDecorator(wInfo())
+  .add('Small', () => (
     <Loading size="small" />
   ))
-  .add('large', () => (
+  .add('Large', () => (
     <Loading size="large" color={COLORS.blue} />
   ))

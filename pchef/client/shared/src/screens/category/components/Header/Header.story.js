@@ -5,9 +5,14 @@ import { storiesOf } from '@storybook/react'
 // Components
 import Header from '.'
 
+// Helper
+import { wInfo } from '../../../../../.storybook/utils';
+
 // Mock
 import { categories } from '../../../../mocks'
 
-storiesOf('Header', module).add('default', () => (
-  <Header category={categories[0]} isGrid size="large" />
-))
+storiesOf('Header', module)
+  .addDecorator(wInfo())
+  .add('Default', () => (
+    <Header category={categories[0]} isGrid size="large" />
+  ))

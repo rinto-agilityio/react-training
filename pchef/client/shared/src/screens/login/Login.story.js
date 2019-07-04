@@ -7,6 +7,9 @@ import { action } from '@storybook/addon-actions'
 // Components
 import LoginForm from '.'
 
+// Helper
+import { wInfo } from '../../../.storybook/utils';
+
 // define props
 const props = {
   handlingLoginSuccess: action('clicked'),
@@ -14,12 +17,13 @@ const props = {
 }
 
 storiesOf('Login Screen', module)
-  .add('primary', () => (
+  .addDecorator(wInfo())
+  .add('Primary', () => (
     <View style={{ height: 500 }}>
       <LoginForm {...props} type="primary" />
     </View>
   ))
-  .add('secondary', () => (
+  .add('Secondary', () => (
     <View style={{ height: 800 }}>
       <LoginForm {...props} type="secondary" />
     </View>

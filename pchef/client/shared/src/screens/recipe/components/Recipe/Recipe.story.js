@@ -9,8 +9,12 @@ import Recipe from '.'
 // Mocks
 import { recipes } from '../../../../mocks'
 
+// Helper
+import { wInfo } from '../../../../../.storybook/utils';
+
 storiesOf('Recipe', module)
-  .add('small', () => (
+  .addDecorator(wInfo())
+  .add('Small', () => (
     <Recipe
       recipe={recipes[0]}
       recipeSteps={recipes[0].steps}
@@ -18,7 +22,7 @@ storiesOf('Recipe', module)
       onSelectStep={action('clicked')}
     />
   ))
-  .add('medium', () => (
+  .add('Medium', () => (
     <Recipe
       recipe={recipes[0]}
       recipeSteps={recipes[0].steps}
@@ -26,7 +30,7 @@ storiesOf('Recipe', module)
       onSelectStep={action('clicked')}
     />
   ))
-  .add('large', () => (
+  .add('Large', () => (
     <Recipe
       recipe={recipes[0]}
       recipeSteps={recipes[0].steps}
