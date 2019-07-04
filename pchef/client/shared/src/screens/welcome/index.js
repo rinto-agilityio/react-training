@@ -21,12 +21,12 @@ import InterestedCategories from './components/InterestedCategories'
 // Styles
 import styles from './styles'
 
+import type { CategoryType } from '../../types'
+
 // Constants
 import { CATEGORIES_PADDING, WEB_PLATFORM, MINIMUM_FOLLOWED_CATEGORY } from '../../constants'
 
 const { height } = Dimensions.get('window')
-
-import type { CategoryType } from '../../types'
 
 // Interested Category props type
 type Props = {
