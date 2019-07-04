@@ -10,17 +10,27 @@ import Recipe from '../Recipe'
 import Loading from '../../../../components/Loading'
 
 // Utils
-import { sortRecipes } from '../../../../helpers/utils'
+import {
+  sortRecipes,
+  checkContainField,
+  formatFiledOnObject,
+  checkContain,
+} from '../../../../helpers/utils'
 import { NO_RECIPES_MESSAGE } from '../../../../constants'
 
 // Styles
 import styles from './styles'
 
-import type { RecipeType } from '../../../../types'
-
 type Props = {
   loading?: boolean,
-  recipes?: Array<RecipeType>,
+  recipes?: Array<{
+    id: string,
+    title: string,
+    description: string,
+    imgUrl: string,
+    votes: Array<string>,
+    thumbnail: string,
+  }>,
   favoriteRecipe: Array<{
     id: string,
   }>,
@@ -57,18 +67,47 @@ const RecipeList = ({
 
   // define recipe size follow type
   const size = type === 'primary' ? 'medium' : 'large'
+
+  const handleSaveRecipe = async id => {
+    await userToggleRecipe(id, favoriteRecipe).then(({ data }) => {
+      const {
+        userToggleRecipe: { results },
+      } = data
+
+      if (results) {
+        checkContainField(formatFiledOnObject(results), id)
+      }
+    })
+  }
+
+  const handleToggleVote = async (id, votes, userId) => {
+    await userToggleVote(id, votes, userId)
+      .then(({ data }) => {
+        const {
+          userToggleVote: { results },
+        } = data
+
+        if (results) {
+          checkContain(votes, id)
+        }
+      })
+  }
+
   const renderRecipeList = () => (isViewRecipeList
     ? (recipes.map(recipe => (
       <Recipe
         key={recipe.id}
         recipe={recipe}
         size={size}
-        favoriteRecipe={favoriteRecipe}
+        handleSaveRecipe={handleSaveRecipe}
         userToggleRecipe={userToggleRecipe}
         handleClickRecipe={handleClickRecipe}
         userToggleVote={userToggleVote}
         userId={userId}
         wrapperIconStyle={wrapperIconStyle}
+        isFavorited={checkContainField(favoriteRecipe, recipe.id)}
+        handleToggleVote={handleToggleVote}
+        isVote={checkContain(recipe.votes, userId)}
       />
     )))
     : (
@@ -78,12 +117,15 @@ const RecipeList = ({
           key={recipe.id}
           recipe={recipe}
           size={size}
-          favoriteRecipe={favoriteRecipe}
+          handleSaveRecipe={handleSaveRecipe}
           userToggleRecipe={userToggleRecipe}
           handleClickRecipe={handleClickRecipe}
           userToggleVote={userToggleVote}
           userId={userId}
           wrapperIconStyle={wrapperIconStyle}
+          isFavorited={checkContainField(favoriteRecipe, recipe.id)}
+          handleToggleVote={handleToggleVote}
+          isVote={checkContain(recipe.votes, userId)}
         />
       ))
     ))
