@@ -13,13 +13,18 @@ const getUser = {
   favoriteRecipe: user.favoriteRecipe,
   user,
 }
+
+const getRecipe = {
+  votes: recipes[0].votes,
+}
+
 storiesOf('Recipe by step', module)
   .add('small', () => (
     <Recipe
       size="small"
       onPress={action('clicked')}
       getUser={getUser}
-      votes={recipes[0].votes}
+      getRecipe={getRecipe}
       recipeSteps={recipes[0].steps}
     />
   ))
@@ -28,7 +33,7 @@ storiesOf('Recipe by step', module)
       size="medium"
       onPress={action('clicked')}
       getUser={getUser}
-      votes={recipes[0].votes}
+      getRecipe={getRecipe}
       recipeSteps={recipes[0].steps}
     />
   ))
@@ -37,7 +42,7 @@ storiesOf('Recipe by step', module)
       size="large"
       onPress={action('clicked')}
       getUser={getUser}
-      votes={recipes[0].votes}
+      getRecipe={getRecipe}
       recipeSteps={recipes[0].steps}
     />
   ))

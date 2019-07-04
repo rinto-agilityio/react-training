@@ -1,7 +1,6 @@
 // @flow
 // add flow above to fix for using flow with React.memo
 
-// Libs
 // libs
 import React, { memo } from 'react'
 import { Button as ButtonComponent, Text } from 'react-native-paper'
