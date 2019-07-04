@@ -31,6 +31,8 @@ type Props = {
   onSubmitEditing?: () => void,
   secureTextEntry?: boolean,
   customContainer?: {} | Array<{}>,
+  onBlur?: (target: Object) => void,
+  onChangeText?: (text: string) => void,
 }
 
 const TextBox = ({
@@ -47,6 +49,8 @@ const TextBox = ({
   onSubmitEditing,
   secureTextEntry,
   customContainer,
+  onBlur = () => {},
+  onChangeText = () => {},
 }: Props) => (
   <View style={[styles.container, customContainer]}>
     <TextInput
@@ -62,6 +66,8 @@ const TextBox = ({
       placeholderTextColor={placeholderTextColor}
       onSubmitEditing={onSubmitEditing}
       secureTextEntry={secureTextEntry}
+      onBlur={e => onBlur(e.target.value)}
+      onChangeText={text => onChangeText(text)}
     />
   </View>
 )
@@ -79,6 +85,8 @@ TextBox.defaultProps = {
   defaultValue: '',
   secureTextEntry: false,
   customContainer: {},
+  onBlur: () => {},
+  onChangeText: () => {},
 }
 
 export default memo<Props>(TextBox)
