@@ -6,8 +6,12 @@ import { action } from '@storybook/addon-actions'
 // Component
 import RadioButton from './index'
 
+// Helper
+import { wInfo } from '../../../.storybook/utils';
+
 storiesOf('Radio Button', module)
-  .add('checked', () => (
+  .addDecorator(wInfo())
+  .add('Checked', () => (
     <RadioButton
       value="first"
       onPress={action('checked')}
@@ -16,7 +20,7 @@ storiesOf('Radio Button', module)
     />
   ))
 
-  .add('unchecked', () => (
+  .add('Unchecked', () => (
     <RadioButton
       value="second"
       onPress={action('checked')}
@@ -25,7 +29,7 @@ storiesOf('Radio Button', module)
     />
   ))
 
-  .add('disabled', () => (
+  .add('Disabled', () => (
     <RadioButton
       value="second"
       onPress={action('checked')}
