@@ -1,4 +1,3 @@
-//@flow
 import React from 'react'
 import { configure } from '@storybook/react'
 import { setDefaults } from "@storybook/addon-info";
