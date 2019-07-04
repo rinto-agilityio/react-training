@@ -7,7 +7,11 @@ import { action } from '@storybook/addon-actions'
 // Components
 import Modal from '.'
 
+// Helper
+import { wInfo } from '../../../.storybook/utils';
+
 storiesOf('Modal', module)
+  .addDecorator(wInfo())
   .add('Have title', () => (
     <Modal
       onDismiss={action('clicked')}
