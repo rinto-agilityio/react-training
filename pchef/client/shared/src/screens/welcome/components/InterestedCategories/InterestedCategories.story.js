@@ -3,7 +3,11 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { View } from 'react-native'
 import { action } from '@storybook/addon-actions'
+
 import { categories } from '../../../../mocks'
+
+// Helper
+import { wInfo } from '../../../../../.storybook/utils';
 
 // Components
 import InterestedCategories from '.'
@@ -16,12 +20,13 @@ const props = {
 }
 
 storiesOf('InterestedCategories', module)
-  .add('primary', () => (
+  .addDecorator(wInfo())
+  .add('Primary', () => (
     <View style={{ width: 400 }}>
       <InterestedCategories {...props} />
     </View>
   ))
-  .add('secondary', () => (
+  .add('Secondary', () => (
     <View style={{ width: 800 }}>
       <InterestedCategories {...props} type="secondary" />
     </View>
