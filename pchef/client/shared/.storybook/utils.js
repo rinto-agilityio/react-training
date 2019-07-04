@@ -15,4 +15,4 @@ const wInfoStyle = {
   },
 }
 
-export const wInfo = () => withInfo({ styles: wInfoStyle })
+export const wInfo = () => withInfo( { styles: wInfoStyle } )
