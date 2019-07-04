@@ -19,6 +19,8 @@ type Props = {
 const Header = ({ user, handleToSetting = () => {} }: Props) => {
   const { name, avatar } = user
   const isMobile = Platform.OS !== 'web'
+  const defaultAvatar =
+    'https://www.pngkey.com/png/full/115-1150152_default-profile-picture-avatar-png-green.png'
 
   return (
     <>
@@ -26,11 +28,7 @@ const Header = ({ user, handleToSetting = () => {} }: Props) => {
         <View style={styles.wrapHeader}>
           <View style={[styles.contentHeader, styles.container]}>
             <Image
-              url={
-                avatar
-                  ? avatar
-                  : require('../../../../assets/images/default_avatar.png')
-              }
+              url={avatar ? avatar : defaultAvatar}
               customImageStyle={styles.image}
             />
           </View>

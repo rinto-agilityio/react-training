@@ -19,10 +19,7 @@ const styles = StyleSheet.create({
   // Title
   title: {
     ...METRICS.truncate,
-    maxWidth: '250px',
-    whiteSpace: 'nowrap',
     overflow: 'hidden',
-    textOverflow: 'ellipsis',
     color: COLORS.black,
     fontWeight: FONTS.fontWeight.large,
     paddingLeft: METRICS.largePadding,
