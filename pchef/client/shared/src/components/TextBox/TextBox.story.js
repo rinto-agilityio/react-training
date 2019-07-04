@@ -8,7 +8,6 @@ import TextBox from '.'
 // Helper
 import { wInfo } from '../../../.storybook/utils';
 
-
 const refInput = {
   current: null,
 }

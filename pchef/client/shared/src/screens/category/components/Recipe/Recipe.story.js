@@ -12,7 +12,6 @@ import { recipes } from '../../../../mocks'
 // Helper
 import { wInfo } from '../../../../../.storybook/utils';
 
-
 storiesOf('Recipe in category', module)
   .addDecorator(wInfo())
   .add('Default', () => (
