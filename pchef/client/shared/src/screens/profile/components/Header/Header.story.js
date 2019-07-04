@@ -9,10 +9,15 @@ import Header from '.'
 // Mock
 import { user } from '../../../../mocks'
 
-storiesOf('Profile header', module).add('medium', () => (
-  <Header
-    size="medium"
-    user={user}
-    handleToSetting={action('direct to Setting')}
-  />
-))
+// Helper
+import { wInfo } from '../../../../../.storybook/utils';
+
+storiesOf('Profile header', module)
+  .addDecorator(wInfo())
+  .add('Medium', () => (
+    <Header
+      size="medium"
+      user={user}
+      handleToSetting={action('direct to Setting')}
+    />
+  ))
