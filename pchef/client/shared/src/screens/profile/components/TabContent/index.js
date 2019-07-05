@@ -5,11 +5,14 @@
 import React, { memo } from 'react'
 
 // COmponents
-import { Text, View } from 'react-native'
+import { Text, View, ScrollView } from 'react-native'
 import Recipe from '../Recipe'
 
 // Styles
 import styles from './styles'
+
+// Themes
+import { METRICS } from '../../../../themes'
 
 import type { RecipeType } from '../../../../types'
 
@@ -26,7 +29,7 @@ type Props = {
     recipeId: string,
     votes: Array<string>,
     userId: string
-  ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
+  ) => Promise<{ data: { userToggleVote: { results: Array<string> } } }>,
   wrapperIconStyle: Object,
 }
 
@@ -48,25 +51,27 @@ const TabContent = ({
     : []
 
   return (
-    <>
-      {recipes.length ? (
-        recipes.map((recipe, index) => (
-          <View key={index} style={styles.tabContentItem}>
-            <Recipe
-              size="medium"
-              recipe={recipe}
-              favoriteRecipe={isRecipeTab ? favoriteRecipeIds : recipeIds}
-              userToggleRecipe={userToggleRecipe}
-              userToggleVote={userToggleVote}
-              userId={userId}
-              wrapperIconStyle={wrapperIconStyle}
-            />
-          </View>
-        ))
-      ) : (
-        <Text>{NO_RECIPES_MESSAGE}</Text>
-      )}
-    </>
+    <View style={{ height: METRICS.screenHeight - 370, marginBottom: 100 }}>
+      <ScrollView>
+        {recipes.length ? (
+          recipes.map((recipe, index) => (
+            <View key={index} style={styles.tabContentItem}>
+              <Recipe
+                size="medium"
+                recipe={recipe}
+                favoriteRecipe={isRecipeTab ? favoriteRecipeIds : recipeIds}
+                userToggleRecipe={userToggleRecipe}
+                userToggleVote={userToggleVote}
+                userId={userId}
+                wrapperIconStyle={wrapperIconStyle}
+              />
+            </View>
+          ))
+        ) : (
+          <Text>{NO_RECIPES_MESSAGE}</Text>
+        )}
+      </ScrollView>
+    </View>
   )
 }
 
