@@ -5,14 +5,14 @@
 import React, { memo } from 'react'
 
 // COmponents
-import { Text, View, ScrollView } from 'react-native'
+import { Text, View, FlatList } from 'react-native'
 import Recipe from '../Recipe'
 
 // Styles
 import styles from './styles'
 
-// Themes
-import { METRICS } from '../../../../themes'
+// Constant
+import { WEB_PLATFORM } from '../../../../constants'
 
 import type { RecipeType } from '../../../../types'
 
@@ -50,15 +50,21 @@ const TabContent = ({
     ? favoriteRecipe.map(recipe => ({ id: recipe.id }))
     : []
 
+  const columns = WEB_PLATFORM ? 3 : 1
+
   return (
-    <View style={{ height: METRICS.screenHeight - 370, marginBottom: 100 }}>
-      <ScrollView>
-        {recipes.length ? (
-          recipes.map((recipe, index) => (
-            <View key={index} style={styles.tabContentItem}>
+    <View style={styles.container}>
+      {recipes.length ? (
+        <FlatList
+          showsHorizontalScrollIndicator={false}
+          numColumns={columns}
+          horizontal={false}
+          data={recipes}
+          renderItem={({ item }) => (
+            <View style={styles.tabContentItem}>
               <Recipe
                 size="medium"
-                recipe={recipe}
+                recipe={item}
                 favoriteRecipe={isRecipeTab ? favoriteRecipeIds : recipeIds}
                 userToggleRecipe={userToggleRecipe}
                 userToggleVote={userToggleVote}
@@ -66,11 +72,13 @@ const TabContent = ({
                 wrapperIconStyle={wrapperIconStyle}
               />
             </View>
-          ))
-        ) : (
-          <Text>{NO_RECIPES_MESSAGE}</Text>
-        )}
-      </ScrollView>
+          )}
+          contentContainerStyle={{ justifyContent: 'space-between' }}
+          keyExtractor={item => item.id}
+        />
+      ) : (
+        <Text>{NO_RECIPES_MESSAGE}</Text>
+      )}
     </View>
   )
 }
