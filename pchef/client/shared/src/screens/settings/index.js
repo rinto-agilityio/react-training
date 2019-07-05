@@ -7,6 +7,7 @@ import React, { memo } from 'react'
 // Components
 import { View, Text, TextInput } from 'react-native'
 import Button from '../../components/Button'
+import TextBox from '../../components/TextBox'
 
 // styles
 import styles from './styles'
@@ -27,16 +28,16 @@ const Settings = ({ user, handleLogout }: Props) => {
     <View style={styles.settingForm}>
       <Text style={styles.settingLabel}>User name:</Text>
 
-      <TextInput
+      <TextBox
         style={styles.settingField}
-        value={name}
+        defaultValue={name}
         editable={false}
       />
 
       <Text style={styles.settingLabel}>Email:</Text>
-      <TextInput
+      <TextBox
         style={styles.settingField}
-        value={email}
+        defaultValue={email}
         editable={false}
       />
 
