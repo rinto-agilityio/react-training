@@ -12584,13 +12584,6 @@ react-native-calendars@1.133.0:
     prop-types "^15.5.10"
     xdate "^0.8.0"
 
-react-native-image-placeholder@1.0.14:
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/react-native-image-placeholder/-/react-native-image-placeholder-1.0.14.tgz#74f8a74f0d9f2732cc55bc65eb9d6adb668c7c1d"
-  integrity sha512-t7A/qb9hW7PoaeY+S65S92l4W4p+pnWI3zPCtOVKgLm6r3fDENNY2UOdI9wl7Mngb32Ql/NXzGdmZ/DBXK2DGg==
-  dependencies:
-    prop-types "^15.5.10"
-
 react-native-paper@^2.15.2:
   version "2.16.0"
   resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-2.16.0.tgz#5a9edd5615bb010ec0d29cbfd5524c2944b2505d"

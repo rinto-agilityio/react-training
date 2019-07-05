@@ -2,9 +2,8 @@
 // add flow above to fix for using flow with React.memo
 
 // Libs
-import React, { useState, useEffect, memo, Suspense } from 'react'
-import { Image as ImageNative, TouchableOpacity } from 'react-native'
-import ImageLoad from 'react-native-image-placeholder'
+import React, { memo, Suspense } from 'react'
+import { View, Image as ImageNative, TouchableOpacity } from 'react-native'
 
 // Styles
 import styles from './styles'
@@ -35,14 +34,13 @@ const ImageComponent = ({
       onPress={handleTouch}
       disabled={disabled}
     >
-      <ImageLoad
-        resizeMode={resizeMethod}
-        style={[styles.image, customImageStyle]}
-        loadingStyle={{ size: 'large', color: 'blue' }}
-        source={{
-          uri: url,
-        }}
-      />
+      <View style={[styles.imageWrapper, customImageStyle]}>
+        <ImageNative
+          source={{ uri: url }}
+          style={[styles.image]}
+          resizeMode={resizeMethod}
+        />
+      </View>
     </TouchableOpacity>
   </Suspense>
 )

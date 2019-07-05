@@ -5,11 +5,14 @@
 import React, { memo } from 'react'
 
 // COmponents
-import { Text, View } from 'react-native'
+import { Text, View, FlatList } from 'react-native'
 import Recipe from '../Recipe'
 
 // Styles
 import styles from './styles'
+
+// Constant
+import { WEB_PLATFORM } from '../../../../constants'
 
 import type { RecipeType } from '../../../../types'
 
@@ -26,7 +29,7 @@ type Props = {
     recipeId: string,
     votes: Array<string>,
     userId: string
-  ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
+  ) => Promise<{ data: { userToggleVote: { results: Array<string> } } }>,
   wrapperIconStyle: Object,
 }
 
@@ -47,26 +50,36 @@ const TabContent = ({
     ? favoriteRecipe.map(recipe => ({ id: recipe.id }))
     : []
 
+  const columns = WEB_PLATFORM ? 3 : 1
+
   return (
-    <>
+    <View style={styles.container}>
       {recipes.length ? (
-        recipes.map((recipe, index) => (
-          <View key={index} style={styles.tabContentItem}>
-            <Recipe
-              size="medium"
-              recipe={recipe}
-              favoriteRecipe={isRecipeTab ? favoriteRecipeIds : recipeIds}
-              userToggleRecipe={userToggleRecipe}
-              userToggleVote={userToggleVote}
-              userId={userId}
-              wrapperIconStyle={wrapperIconStyle}
-            />
-          </View>
-        ))
+        <FlatList
+          showsHorizontalScrollIndicator={false}
+          numColumns={columns}
+          horizontal={false}
+          data={recipes}
+          renderItem={({ item }) => (
+            <View style={styles.tabContentItem}>
+              <Recipe
+                size="medium"
+                recipe={item}
+                favoriteRecipe={isRecipeTab ? favoriteRecipeIds : recipeIds}
+                userToggleRecipe={userToggleRecipe}
+                userToggleVote={userToggleVote}
+                userId={userId}
+                wrapperIconStyle={wrapperIconStyle}
+              />
+            </View>
+          )}
+          contentContainerStyle={{ justifyContent: 'space-between' }}
+          keyExtractor={item => item.id}
+        />
       ) : (
         <Text>{NO_RECIPES_MESSAGE}</Text>
       )}
-    </>
+    </View>
   )
 }
 

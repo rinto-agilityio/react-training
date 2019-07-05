@@ -5,9 +5,14 @@ import { StyleSheet } from 'react-native'
 import { METRICS } from '../../themes'
 
 const styles = StyleSheet.create({
-  image: {
+  imageWrapper: {
     width: METRICS.mediumInput,
     height: METRICS.mediumInput,
+    backgroundColor: '#ccc',
+  },
+  image: {
+    width: '100%',
+    height: '100%',
   },
 })
 

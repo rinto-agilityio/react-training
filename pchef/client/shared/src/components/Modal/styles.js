@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
   largeDialog: {
     width: METRICS.mediumContent,
     alignSelf: 'center',
+    margin: 'auto',
   },
 
   // Button
@@ -30,6 +31,9 @@ const styles = StyleSheet.create({
   },
   largeTitleModal: {
     fontSize: FONTS.fontSize.medium,
+  },
+  dialog: {
+    justifyContent: 'flex-start',
   },
 })
 

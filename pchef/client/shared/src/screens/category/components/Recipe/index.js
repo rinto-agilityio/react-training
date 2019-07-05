@@ -12,7 +12,11 @@ import Image from '../../../../components/Image'
 
 // Constants and Helpers
 import { formatStringToArray } from '../../../../helpers/utils'
-import { SEPARATOR_SPLIT_STRING, ELLIPSIS_LINE, DEFAULT_IMAGE } from '../../../../constants/index'
+import {
+  SEPARATOR_SPLIT_STRING,
+  ELLIPSIS_LINE,
+  DEFAULT_IMAGE,
+} from '../../../../constants/index'
 
 // Themes
 import { COLORS, FONTS } from '../../../../themes'
@@ -49,12 +53,19 @@ const Recipe = ({
     formatStringToArray(description, SEPARATOR_SPLIT_STRING) || []
 
   return (
-    <View style={[styles.recipe, isGrid ? styles[`${size}GridContent`] : styles[`${size}ListContent`]]}>
+    <View
+      style={[
+        styles.recipe,
+        isGrid ? styles[`${size}GridContent`] : styles[`${size}ListContent`],
+      ]}
+    >
       <Text
         numberOfLines={ELLIPSIS_LINE}
         ellipsizeMode="tail"
         style={[styles.title, styles[`${size}Title`]]}
-      > {title}
+      >
+        {' '}
+        {title}
       </Text>
       <Wrapper direction="row" childPosition="left">
         <Image
@@ -65,7 +76,10 @@ const Recipe = ({
         <Wrapper
           direction="column"
           childPosition="middle"
-          customStyles={[styles.wrapper, isGrid ? styles[`${size}GridWrapper`] : styles[`${size}Wrapper`]]}
+          customStyles={[
+            styles.wrapper,
+            isGrid ? styles[`${size}GridWrapper`] : styles[`${size}Wrapper`],
+          ]}
         >
           {/* ingredient description */}
           <View style={styles.wrapperText}>

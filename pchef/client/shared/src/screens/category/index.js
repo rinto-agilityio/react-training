@@ -6,7 +6,12 @@ import React, { useState, useEffect, memo } from 'react'
 import { View, Text, FlatList } from 'react-native'
 
 // Constant
-import { GRID_VIEW_COLUMN, LIST_VIEW_COLUMN, NO_RECIPES_MESSAGE, WEB_PLATFORM } from '../../constants/index'
+import {
+  GRID_VIEW_COLUMN,
+  LIST_VIEW_COLUMN,
+  NO_RECIPES_MESSAGE,
+  WEB_PLATFORM,
+} from '../../constants/index'
 import { checkContainField } from '../../helpers/utils'
 
 // Components
@@ -36,7 +41,7 @@ type Props = {
     graphQLErrors: Array<{ message: string }>,
   },
   data: {
-    favoriteRecipe: Array<{id: string}>,
+    favoriteRecipe: Array<{ id: string }>,
     followCategory: Array<{
       id: string,
       name: string,
@@ -46,15 +51,17 @@ type Props = {
         title: string,
         imgUrl: string,
         description: string,
-      }>
+      }>,
     }>,
   },
   userToggleRecipe: (
     id: string,
-    favoriteRecipe: Array<{id: string}>,
+    favoriteRecipe: Array<{ id: string }>
   ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
   handleRedirectLogin: Function,
-  userToggleCategory: (categoryId: Array<string>) => Promise<{ data: {userToggleCategory: {results: Array<string>}}}>,
+  userToggleCategory: (
+    categoryId: Array<string>
+  ) => Promise<{ data: { userToggleCategory: { results: Array<string> } } }>,
   id: string,
   wrapperIconStyle: Object,
   customIconStyle: Object,
@@ -144,32 +151,29 @@ const CategoryScreen = ({
         wrapperIconStyle={wrapperIconStyle}
       />
       <View style={styles.container}>
-        {
-          recipes
-            ? (
-              <FlatList
-                numColumns={columns}
-                horizontal={false}
-                data={recipes}
-                renderItem={
-                  ({ item }) => (
-                    <Recipe
-                      isGrid={isGrid}
-                      recipe={item}
-                      size={size}
-                      onPressIcon={handleToggleSaveRecipe}
-                      isFavorite={checkContainField(favoriteRecipe, item.id)}
-                      customIconStyle={customIconStyle}
-                    />
-                  )
-                }
-                contentContainerStyle={{ justifyContent: 'space-between' }}
-                keyExtractor={item => item.id}
-                key={columns}
+        {recipes ? (
+          <FlatList
+            showsHorizontalScrollIndicator={false}
+            numColumns={columns}
+            horizontal={false}
+            data={recipes}
+            renderItem={({ item }) => (
+              <Recipe
+                isGrid={isGrid}
+                recipe={item}
+                size={size}
+                onPressIcon={handleToggleSaveRecipe}
+                isFavorite={checkContainField(favoriteRecipe, item.id)}
+                customIconStyle={customIconStyle}
               />
-            )
-            : <Text>{NO_RECIPES_MESSAGE}</Text>
-        }
+            )}
+            contentContainerStyle={{ justifyContent: 'space-between' }}
+            keyExtractor={item => item.id}
+            key={columns}
+          />
+        ) : (
+          <Text>{NO_RECIPES_MESSAGE}</Text>
+        )}
       </View>
     </>
   )

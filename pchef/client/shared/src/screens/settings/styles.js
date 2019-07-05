@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
   },
   settingLabel: {
     color: COLORS.baseGray,
+    marginTop: METRICS.mediumMargin,
   },
   wrapField: {
     width: '100%',
