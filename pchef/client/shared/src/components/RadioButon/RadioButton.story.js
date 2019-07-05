@@ -9,14 +9,26 @@ import RadioButton from './index'
 // Helper
 import { wInfo } from '../../../.storybook/utils';
 
+const group = [
+  {
+    id: '1',
+    name: 'First',
+  },
+  {
+    id: '2',
+    name: 'Second',
+  },
+]
+
 storiesOf('Radio Button', module)
   .addDecorator(wInfo())
   .add('Checked', () => (
     <RadioButton
-      value="first"
+      value={group[0].id}
       onPress={action('checked')}
       label="First"
       status
+      group={group}
     />
   ))
 
@@ -26,6 +38,7 @@ storiesOf('Radio Button', module)
       onPress={action('checked')}
       label="Second"
       status={false}
+      group={group}
     />
   ))
 
@@ -35,5 +48,6 @@ storiesOf('Radio Button', module)
       onPress={action('checked')}
       label="Disabled"
       disabled
+      group={group}
     />
   ))
