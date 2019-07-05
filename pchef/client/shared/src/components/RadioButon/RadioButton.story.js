@@ -20,21 +20,31 @@ const group = [
   },
 ]
 
+type Props = {
+  groups: Array,
+}
+
+const StoryBookRadio = ({
+  groups = [],
+}: Props) => (
+  <RadioButton
+    value={group[0].id}
+    onPress={action('checked')}
+    label="First"
+    status
+    group={groups}
+  />
+)
+
 storiesOf('Radio Button', module)
   .addDecorator(wInfo())
   .add('Checked', () => (
-    <RadioButton
-      value={group[0].id}
-      onPress={action('checked')}
-      label="First"
-      status
-      group={group}
-    />
+    <StoryBookRadio />
   ))
 
   .add('Unchecked', () => (
     <RadioButton
-      value="Second"
+      value="second"
       onPress={action('checked')}
       label="Second"
       status={false}
