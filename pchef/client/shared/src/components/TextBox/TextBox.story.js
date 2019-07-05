@@ -19,7 +19,7 @@ storiesOf('TextBox', module)
     <TextBox
       placeholder="Default"
       refInput={refInput}
-      onBlur={action(value => value.target.value)}
+      onBlur={action(value => value)}
       onChangeText={action(value => value)}
     />
   ))
