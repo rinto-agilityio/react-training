@@ -2,7 +2,7 @@
 // add flow above to fix for using flow with React.memo
 
 // Libs
-import React, { memo } from 'react'
+import React, { memo, useRef } from 'react'
 
 // Components
 import { View, Text, TextInput } from 'react-native'
@@ -22,6 +22,8 @@ type Props = {
 }
 
 const Settings = ({ user, handleLogout }: Props) => {
+  const refInput = useRef(null)
+
   const { name, email } = user
 
   return (
@@ -32,6 +34,7 @@ const Settings = ({ user, handleLogout }: Props) => {
         style={styles.settingField}
         defaultValue={name}
         editable={false}
+        refInput={refInput}
       />
 
       <Text style={styles.settingLabel}>Email:</Text>
@@ -39,6 +42,7 @@ const Settings = ({ user, handleLogout }: Props) => {
         style={styles.settingField}
         defaultValue={email}
         editable={false}
+        refInput={refInput}
       />
 
       <Button
