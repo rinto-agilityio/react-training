@@ -12,7 +12,8 @@ const styles = StyleSheet.create({
     marginBottom: METRICS.largeMargin,
     marginLeft: 'auto',
     position: 'relative',
-    width: METRICS.extraLargeScreen,
+    width: '100%',
+    height: METRICS.screenHeight - 440, // 440 is space of top screen to list recipes
   },
 })
 
