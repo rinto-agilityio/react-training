@@ -11015,7 +11015,6 @@ pbkdf2@^3.0.3:
     react-dom "16.8.6"
     react-native "^0.59.8"
     react-native-calendars "1.133.0"
-    react-native-image-placeholder "1.0.14"
     react-native-paper "^2.15.2"
     react-native-vector-icons "^6.4.2"
     react-native-web "0.11.4"
@@ -12429,13 +12428,6 @@ react-native-image-picker@^0.28.1:
   version "0.28.1"
   resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-0.28.1.tgz#1127460522e0c9741fc62f3d040271d298fb6a6e"
   integrity sha512-CW2dm+cjsdW2fjBW2WD/cSufNG0x0UpljwGHrjSzyB0TckoW+tjYv44UWtckCWxr1JtCg+QrYDO/MzlRyFcjwQ==
-
-react-native-image-placeholder@1.0.14:
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/react-native-image-placeholder/-/react-native-image-placeholder-1.0.14.tgz#74f8a74f0d9f2732cc55bc65eb9d6adb668c7c1d"
-  integrity sha512-t7A/qb9hW7PoaeY+S65S92l4W4p+pnWI3zPCtOVKgLm6r3fDENNY2UOdI9wl7Mngb32Ql/NXzGdmZ/DBXK2DGg==
-  dependencies:
-    prop-types "^15.5.10"
 
 react-native-paper@^2.15.2:
   version "2.16.0"
