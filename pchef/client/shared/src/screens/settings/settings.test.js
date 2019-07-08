@@ -5,6 +5,7 @@ import { user } from '../../mocks'
 
 // Components
 import Settings from '.'
+import Button from '../../components/Button'
 
 const props = {
   user,
@@ -24,7 +25,7 @@ describe('Screens', () => {
       const wrapper = shallow(<Settings {...props} />)
 
       wrapper
-        .find('Button')
+        .find(Button)
         .props()
         .onPress()
       expect(props.handleLogout.mock.calls.length).toBe(1)

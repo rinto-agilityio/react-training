@@ -1,5 +1,6 @@
 // Components
 import LoginForm from '.'
+import Button from '../../../../components/Button'
 
 it('LoginForm snapshots', () => {
   // mock props
@@ -11,10 +12,10 @@ it('LoginForm snapshots', () => {
   }
 
   const primaryComponent = renderer.create(
-    <LoginForm {...props} type="primary" customStyle={{ flex: 1 }} />,
+    <LoginForm {...props} type="primary" customStyle={{ flex: 1 }} />
   )
   const secondaryComponent = renderer.create(
-    <LoginForm {...props} error isSubmit type="secondary" />,
+    <LoginForm {...props} error isSubmit type="secondary" />
   )
 
   expect(primaryComponent).toMatchSnapshot()
@@ -31,7 +32,7 @@ it('LoginForm actions', () => {
   const component = shallow(<LoginForm {...props} />)
 
   component
-    .find('Button')
+    .find(Button)
     .at(0)
     .props()
     .onPress()

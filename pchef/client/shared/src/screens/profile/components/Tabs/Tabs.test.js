@@ -3,6 +3,8 @@ import { JSDOM } from 'jsdom'
 
 // Components
 import Tabs from '.'
+import TabContent from '../TabContent'
+import TabHeaderItem from '../TabHeaderItem'
 
 // Mocks
 import { recipes } from '../../../../mocks'
@@ -31,19 +33,19 @@ describe('Components', () => {
     })
 
     it('should render list own recipes', () => {
-      expect(component.find('TabContent').props().recipes.length).toBe(
-        props.ownRecipes.length,
+      expect(component.find(TabContent).props().recipes.length).toBe(
+        props.ownRecipes.length
       )
     })
 
     it('should render list favorite recipes', () => {
       component
-        .find('TabHeaderItem')
+        .find(TabHeaderItem)
         .at(1)
         .props()
         .handlePressTab()
-      expect(component.find('TabContent').props().recipes.length).toBe(
-        props.favoriteRecipe.length,
+      expect(component.find(TabContent).props().recipes.length).toBe(
+        props.favoriteRecipe.length
       )
     })
   })

@@ -8,6 +8,7 @@ import { JSDOM } from 'jsdom'
 import { FlatList } from 'react-native'
 import Recipe from './components/Recipe'
 import Category from '.'
+import Header from './components/Header'
 
 
 // Mocks
@@ -59,7 +60,7 @@ describe('Screen', () => {
     })
 
     it('should render Header component', () => {
-      expect(component.find('Header')).toHaveLength(1)
+      expect(component.find(Header)).toHaveLength(1)
     })
   })
 })

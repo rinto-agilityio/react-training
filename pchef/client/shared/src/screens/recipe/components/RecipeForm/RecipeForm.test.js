@@ -11,6 +11,12 @@ import Classify from './Classify'
 import Categories from '../../../../containers/Categories'
 import CookingTypes from '../../../../containers/CookingTypes'
 import Button from '../../../../components/Button'
+import Modal from '../../../../components/Modal'
+import Icon from '../../../../components/Icon'
+import TextBox from '../../../../components/TextBox'
+import RadioButton from '../../../../components/RadioButon'
+import Directions from '../Recipe/Directions'
+import Error from '../../../../components/Error'
 
 // Mocks
 import { categories, cookingTypes } from '../../../../mocks'
@@ -60,20 +66,20 @@ describe('recipe form', () => {
 
   it('Should show ingredients form', () => {
     const recipe = shallow(<RecipeForm />)
-    const icon = recipe.find('Icon')
-    expect(recipe.find('IngredientsForm').exists()).toEqual(false)
+    const icon = recipe.find(Icon)
+    expect(recipe.find(IngredientsForm).exists()).toEqual(false)
     icon.at(3).props().onPress()
-    expect(recipe.find('IngredientsForm').exists()).toEqual(true)
+    expect(recipe.find(IngredientsForm).exists()).toEqual(true)
 
     // Submit Ingredients Form
-    const ingredientsProps = recipe.find('IngredientsForm').props()
+    const ingredientsProps = recipe.find(IngredientsForm).props()
     ingredientsProps.handleSubmitIngredients('test')
-    expect(recipe.find('IngredientsForm').exists()).toEqual(false)
+    expect(recipe.find(IngredientsForm).exists()).toEqual(false)
   })
 
   it('Should show directions form', async () => {
     const recipe = shallow(<RecipeForm {...recipeProps} />)
-    const icon = recipe.find('Icon')
+    const icon = recipe.find(Icon)
 
     expect(recipe.find(DirectionFormContainer).exists()).toEqual(false)
 
@@ -91,9 +97,9 @@ describe('recipe form', () => {
 
   it('Should hide ingredients form', () => {
     const recipe = shallow(<RecipeForm />)
-    const icon = recipe.find('Icon')
+    const icon = recipe.find(Icon)
     icon.at(3).props().onPress()
-    recipe.find('IngredientsForm').props().onDismiss()
+    recipe.find(IngredientsForm).props().onDismiss()
     expect(recipe.find('IngredientsForm').exists()).toEqual(false)
   })
 
@@ -105,7 +111,7 @@ describe('recipe form', () => {
       },
     }))
 
-    const icon = recipe.find('Icon')
+    const icon = recipe.find(Icon)
     icon.at(4).props().onPress()
     await wait(0)
 
@@ -132,13 +138,8 @@ describe('recipe form', () => {
       handleSubmitIngredients: jest.fn(),
     }
     const ingredients = shallow(<IngredientsForm {...props} />)
-    ingredients.find('Modal').props().onSubmit()
+    ingredients.find(Modal).props().onSubmit()
     expect(props.handleSubmitIngredients).toHaveBeenCalled()
-  })
-
-  it('Render ingredients form component with defaultProps function', () => {
-    IngredientsForm.defaultProps.onDismiss()
-    expect(IngredientsForm.defaultProps.onDismiss).toBeDefined()
   })
 
   it('Renders correctly directions form commponent', () => {
@@ -158,8 +159,8 @@ describe('recipe form', () => {
 
   it('Renders correctly directions form commponent when click add more step', () => {
     const directions = shallow(<DirectionForm />)
-    directions.find('Icon').last().props().onPress()
-    expect(directions.find('TextBox').exists()).toEqual(true)
+    directions.find(Icon).last().props().onPress()
+    expect(directions.find(TextBox).exists()).toEqual(true)
   })
 
   it('createRecipeStep not called if errors exist', () => {
@@ -173,7 +174,7 @@ describe('recipe form', () => {
 
     const directions = shallow(<DirectionForm {...props} />)
 
-    directions.find('Button').at(1).props().onPress()
+    directions.find(Button).at(1).props().onPress()
 
     expect(props.createRecipeStep).not.toHaveBeenCalled()
   })
@@ -194,12 +195,12 @@ describe('recipe form', () => {
 
     const directions = shallow(<DirectionForm {...props} />)
 
-    directions.find('Button').at(1).props().onPress()
+    directions.find(Button).at(1).props().onPress()
 
     // wait for component update
     await wait(0)
 
-    expect(directions.find('Directions').length).toBe(0)
+    expect(directions.find(Directions).length).toBe(0)
 
     directions.setProps({
       createRecipeStep: () => new Promise(resolve => {
@@ -221,7 +222,7 @@ describe('recipe form', () => {
     // wait for component update
     await wait(0)
 
-    expect(directions.find('Directions').length).toBe(1)
+    expect(directions.find(Directions).length).toBe(1)
   })
 
   it('Should update directions when create recipe step fail', async () => {
@@ -233,25 +234,17 @@ describe('recipe form', () => {
 
     const directions = shallow(<DirectionForm {...props} />)
 
-    directions.find('Button').at(1).props().onPress()
+    directions.find(Button).at(1).props().onPress()
 
     // wait for component update
     await wait(0)
 
-    expect(directions.find('Error').length).toBe(1)
-  })
-
-  it('Render directions form component with defaultProps function', () => {
-    DirectionForm.defaultProps.handleAddStepImageOnWeb()
-    expect(DirectionForm.defaultProps.handleAddStepImageOnWeb).toBeDefined()
-
-    DirectionForm.defaultProps.handleAddStepImage()
-    expect(DirectionForm.defaultProps.handleAddStepImage).toBeDefined()
+    expect(directions.find(Error).length).toBe(1)
   })
 
   it('Should show categories form', () => {
     const recipe = shallow(<RecipeForm />)
-    const icon = recipe.find('Icon')
+    const icon = recipe.find(Icon)
     expect(recipe.find(Categories).exists()).toEqual(false)
     icon.at(1).props().onPress()
     expect(recipe.find(Categories).exists()).toEqual(true)
@@ -267,7 +260,7 @@ describe('recipe form', () => {
 
   it('Should show cooking types form', () => {
     const recipe = shallow(<RecipeForm />)
-    const icon = recipe.find('Icon')
+    const icon = recipe.find(Icon)
     expect(recipe.find(CookingTypes).exists()).toEqual(false)
     icon.at(2).props().onPress()
     expect(recipe.find(CookingTypes).exists()).toEqual(true)
@@ -283,7 +276,7 @@ describe('recipe form', () => {
 
   it('Should hide categories form', () => {
     const recipe = shallow(<RecipeForm />)
-    const icon = recipe.find('Icon')
+    const icon = recipe.find(Icon)
     icon.at(1).props().onPress()
     recipe.find(Categories).props().onDismiss()
     expect(recipe.find(Categories).exists()).toEqual(false)
@@ -291,7 +284,7 @@ describe('recipe form', () => {
 
   it('Should hide cooking types form', () => {
     const recipe = shallow(<RecipeForm />)
-    const icon = recipe.find('Icon')
+    const icon = recipe.find(Icon)
     icon.at(2).props().onPress()
     recipe.find(CookingTypes).props().onDismiss()
     expect(recipe.find(CookingTypes).exists()).toEqual(false)
@@ -339,11 +332,11 @@ describe('recipe form', () => {
       title: 'Categories',
     }
     const classify = shallow(<Classify {...classifyProps} />)
-    classify.find('Modal').props().onSubmit()
+    classify.find(Modal).props().onSubmit()
     expect(classifyProps.handleSubmit).toHaveBeenCalled()
 
     // Should render RadioButton
-    const radioBtn = classify.find('RadioButton')
+    const radioBtn = classify.find(RadioButton)
     expect(radioBtn.exists()).toBe(true)
   })
 })

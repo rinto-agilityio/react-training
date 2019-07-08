@@ -7,9 +7,7 @@ describe('Button', () => {
     status: false,
   }
   it('Renders correctly', () => {
-    const radioBtn = renderer.create(
-      <RadioButton {...props} />,
-    ).toJSON()
+    const radioBtn = renderer.create(<RadioButton {...props} />).toJSON()
 
     expect(radioBtn).toMatchSnapshot()
   })
@@ -19,9 +17,7 @@ describe('Button', () => {
       ...props,
       label: 'First',
     }
-    const radioBtn = renderer.create(
-      <RadioButton {...props} />,
-    ).toJSON()
+    const radioBtn = renderer.create(<RadioButton {...props} />).toJSON()
 
     expect(radioBtn).toMatchSnapshot()
   })
@@ -31,15 +27,8 @@ describe('Button', () => {
       ...props,
       status: true,
     }
-    const radioBtn = renderer.create(
-      <RadioButton {...props} />,
-    ).toJSON()
+    const radioBtn = renderer.create(<RadioButton {...props} />).toJSON()
 
     expect(radioBtn).toMatchSnapshot()
-  })
-
-  it('Function props should be defined', () => {
-    RadioButton.defaultProps.onPress()
-    expect(RadioButton.defaultProps.onPress).toBeDefined()
   })
 })

@@ -188,4 +188,4 @@ Welcome.defaultProps = {
   customButtonStyle: {},
 }
 
-export default memo<Props>(Welcome)
+export default Welcome

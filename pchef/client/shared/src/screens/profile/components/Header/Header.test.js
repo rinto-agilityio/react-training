@@ -1,5 +1,6 @@
 // Components
 import Header from '.'
+import Button from '../../../../components/Button'
 
 // Mocks
 import { user } from '../../../../mocks'
@@ -25,7 +26,7 @@ describe('Components', () => {
 
     it('should call handleToSetting when press on button', () => {
       component
-        .find('Button')
+        .find(Button)
         .props()
         .onPress()
       expect(props.handleToSetting.mock.calls.length).toBe(1)

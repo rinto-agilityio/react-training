@@ -32,11 +32,6 @@ describe('Recipe by step', () => {
     expect(recipeComponent).toMatchSnapshot()
   })
 
-  it('Function props of recipe component should be defined', () => {
-    Recipe.defaultProps.onSelectStep()
-    expect(Recipe.defaultProps.onSelectStep).toBeDefined()
-  })
-
   it('Renders correctly directions commponent', () => {
     expect(directionsComponent).toMatchSnapshot()
   })
@@ -55,11 +50,6 @@ describe('Recipe by step', () => {
     expect(directionsComponent).toMatchSnapshot()
   })
 
-  it('Function props of directions component should be defined', () => {
-    Directions.defaultProps.onSelectStep()
-    expect(Directions.defaultProps.onSelectStep).toBeDefined()
-  })
-
   it('Renders correctly direction commponent', () => {
     expect(directionComponent).toMatchSnapshot()
   })
@@ -76,11 +66,6 @@ describe('Recipe by step', () => {
       item: getRecipe.steps[0],
     })
     expect(directionComponent).toMatchSnapshot()
-  })
-
-  it('Function props of direction component should be defined', () => {
-    Direction.defaultProps.onSelectStep()
-    expect(Direction.defaultProps.onSelectStep).toBeDefined()
   })
 
   it('Renders correctly ingredients commponent', () => {
