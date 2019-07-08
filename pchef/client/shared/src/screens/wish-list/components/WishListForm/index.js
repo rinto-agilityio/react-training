@@ -67,7 +67,7 @@ const WishListForm = forwardRef<Props, Function>(({
   // Default selectedDay is the start date of next week
   const startDateNextWeek = getDateOfWeek().minDate
   const [selectedDay, setSelectedDay] = useState(startDateNextWeek)
-  const isShowSelectedDay = selectedDay && (selectedDay !== startDateNextWeek)
+  const isShowSelectedDay = selectedDay !== startDateNextWeek
 
   const dayRange = getDateOfWeek()
 
@@ -131,7 +131,7 @@ const WishListForm = forwardRef<Props, Function>(({
     return <Error message={error} />
   }
 
-  const suggestedRecipeList = recipeList && category.id && cookingType.id && recipeList.filter(recipe => (recipe.categoryId === category.id && recipe.cookingTypeId === cookingType.id))
+  const suggestedRecipeList = category.id && cookingType.id && recipeList.filter(recipe => (recipe.categoryId === category.id && recipe.cookingTypeId === cookingType.id))
   const recipeListData = suggestedRecipeList && suggestedRecipeList.map(recipe => (
     <Recipe
       recipe={recipe}

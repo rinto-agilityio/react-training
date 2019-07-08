@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     borderRadius: METRICS.largeBorderRadius,
     borderWidth: 2,
     borderColor: COLORS.white,
-    backgroundColor: 'transparent',
+    backgroundColor: COLORS.baseBlue,
     paddingTop: METRICS.smallPadding,
     paddingBottom: METRICS.smallPadding,
     paddingRight: METRICS.largePadding,
