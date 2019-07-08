@@ -2,10 +2,10 @@
 
 exports[`Components Recipe should render Header component with grid 1`] = `
 <div
-  className="css-view-1dbjc4n r-marginBottom-15d164r r-width-1rxrz1c"
+  className="css-view-1dbjc4n r-marginBottom-15d164r r-marginLeft-1f6r7vd r-width-5w8d63"
 >
   <div
-    className="css-text-901oao css-textOneLine-bfa6kz r-fontSize-adyw6z r-maxWidth-14qjzug r-overflow-1udh08x r-paddingBottom-1mi0q7o r-textOverflow-1udbk01 r-whiteSpace-3s2u2q"
+    className="css-text-901oao css-textOneLine-bfa6kz r-fontSize-adyw6z r-maxWidth-14qjzug r-overflow-1udh08x r-paddingBottom-1mi0q7o"
     dir="auto"
   >
      
@@ -37,31 +37,30 @@ exports[`Components Recipe should render Header component with grid 1`] = `
       tabIndex="0"
     >
       <div
-        className="css-view-1dbjc4n r-flexBasis-1mlwlqe r-height-7r4507 r-overflow-1udh08x r-zIndex-417010"
-        style={
-          Object {
-            "width": "150px",
-          }
-        }
+        className="css-view-1dbjc4n r-backgroundColor-7klgxt r-height-7r4507 r-width-1iadsmv"
       >
         <div
-          className="css-view-1dbjc4n r-backgroundColor-1niwhzg r-backgroundPosition-vvn4in r-backgroundRepeat-u6sd8q r-backgroundSize-4gszlv r-bottom-1p0dtai r-height-1pi2tsx r-left-1d2f490 r-position-u8s1d r-right-zchlnj r-top-ipm5af r-width-13qz1uu r-zIndex-1wyyakw"
-          style={
-            Object {
-              "backgroundImage": "url(\\"placeholder.jpg\\")",
+          className="css-view-1dbjc4n r-flexBasis-1mlwlqe r-height-1pi2tsx r-overflow-1udh08x r-width-13qz1uu r-zIndex-417010"
+        >
+          <div
+            className="css-view-1dbjc4n r-backgroundColor-1niwhzg r-backgroundPosition-vvn4in r-backgroundRepeat-u6sd8q r-backgroundSize-4gszlv r-bottom-1p0dtai r-height-1pi2tsx r-left-1d2f490 r-position-u8s1d r-right-zchlnj r-top-ipm5af r-width-13qz1uu r-zIndex-1wyyakw"
+            style={
+              Object {
+                "backgroundImage": "url(\\"https://vcdn-ngoisao.vnecdn.net/2018/01/19/1-8515-1516314392.jpg\\")",
+              }
             }
-          }
-        />
-        <img
-          alt=""
-          className="css-accessibilityImage-9pa8cd"
-          draggable={false}
-          src="placeholder.jpg"
-        />
+          />
+          <img
+            alt=""
+            className="css-accessibilityImage-9pa8cd"
+            draggable={false}
+            src="https://vcdn-ngoisao.vnecdn.net/2018/01/19/1-8515-1516314392.jpg"
+          />
+        </div>
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-7r4507 r-justifyContent-1wtj0ep r-overflow-1udh08x r-width-10gux0o"
+      className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-7r4507 r-justifyContent-1wtj0ep r-overflow-1udh08x r-width-13qz1uu"
       style={
         Object {
           "WebkitBoxFlex": 0,
