@@ -1,11 +1,8 @@
 // Lib
-import { StyleSheet, Dimensions } from 'react-native'
+import { StyleSheet } from 'react-native'
 
 // Themes
 import { METRICS, FONTS, COLORS } from '../../../../themes'
-
-// Define screen width
-const screenWidth = Math.round(Dimensions.get('window').width)
 
 // Create style for Recipe
 const styles = StyleSheet.create({
