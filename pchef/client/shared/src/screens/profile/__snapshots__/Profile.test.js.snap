@@ -171,10 +171,14 @@ exports[`Screen Profile should render Category component with grid 1`] = `
       className="css-view-1dbjc4n r-backgroundColor-n2h5ot r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-marginLeft-1jj8364 r-marginRight-lchren r-maxWidth-c3zab1 r-minHeight-fo66li r-padding-1pcd2l5 r-width-13qz1uu"
     >
       <div
-        className="css-text-901oao"
-        dir="auto"
+        className="css-view-1dbjc4n r-height-yvqi7j r-marginBottom-169s5xo r-width-13qz1uu"
       >
-        No recipes to show
+        <div
+          className="css-text-901oao"
+          dir="auto"
+        >
+          No recipes to show
+        </div>
       </div>
     </div>
   </div>

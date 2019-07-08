@@ -45,7 +45,7 @@ Array [
         Chicken
       </div>
       <div
-        className="css-view-1dbjc4n r-backgroundColor-1niwhzg"
+        className="css-view-1dbjc4n"
         style={
           Object {
             "WebkitAlignItems": "center",
@@ -53,6 +53,7 @@ Array [
             "WebkitBoxPack": "center",
             "WebkitJustifyContent": "center",
             "alignItems": "center",
+            "backgroundColor": "rgba(66,165,245,1.00)",
             "borderBottomColor": "rgba(255,255,255,1.00)",
             "borderBottomLeftRadius": "20px",
             "borderBottomRightRadius": "20px",
