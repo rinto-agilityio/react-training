@@ -1,6 +1,7 @@
 // Components
 import Recipe from '.'
 import ProgressStep from './ProgressStep'
+import Button from '../../../../components/Button'
 
 // Mocks
 import { recipes, user } from '../../../../mocks'
@@ -65,7 +66,7 @@ describe('Recipe by step', () => {
       size: 'medium',
     }
     const progressStep = shallow(<ProgressStep {...props} />)
-    progressStep.find('Button').at(0).props().onPress()
+    progressStep.find(Button).at(0).props().onPress()
     expect(stepProps.onPressStep).toHaveBeenCalled()
   })
 })

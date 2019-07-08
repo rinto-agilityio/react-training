@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer'
 
 // Components
 import Header from '.'
+import Icon from '../../../../components/Icon'
 
 // Mock
 import { categories } from '../../../../mocks'
@@ -28,20 +29,10 @@ describe('Components', () => {
     it('should render Header component without grid', () => {
       expect(
         component
-          .find('Icon')
+          .find(Icon)
           .at(1)
-          .props().color,
+          .props().color
       ).toEqual('#c5c5c5')
     })
-  })
-
-  it('should have default onFollowing props', () => {
-    Header.defaultProps.onFollowing()
-    expect(Header.defaultProps.onFollowing).toBeDefined()
-  })
-
-  it('should have default onSelectListView props', () => {
-    Header.defaultProps.onSelectListView()
-    expect(Header.defaultProps.onSelectListView).toBeDefined()
   })
 })

@@ -69,15 +69,5 @@ describe('Components', () => {
 
       expect(sizeIcon).toEqual(18)
     })
-
-    it('should have default onPressIcon props', () => {
-      Recipe.defaultProps.onPressIcon()
-      expect(Recipe.defaultProps.onPressIcon).toBeDefined()
-    })
-
-    it('should have default handlePressImage props', () => {
-      Recipe.defaultProps.handlePressImage()
-      expect(Recipe.defaultProps.handlePressImage).toBeDefined()
-    })
   })
 })

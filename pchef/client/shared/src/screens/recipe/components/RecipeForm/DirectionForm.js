@@ -233,4 +233,4 @@ DirectionsForm.defaultProps = {
   handleAddStepImageOnWeb: () => {},
 }
 
-export default memo<Props>(DirectionsForm)
+export default DirectionsForm

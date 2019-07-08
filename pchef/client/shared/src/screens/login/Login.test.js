@@ -1,6 +1,7 @@
 // Components
 import wait from 'waait'
 import Login from '.'
+import LoginForm from './components/LoginForm'
 
 it('Login snapshots', () => {
   // mock props
@@ -10,9 +11,11 @@ it('Login snapshots', () => {
   }
 
   const primaryComponent = renderer.create(
-    <Login {...props} type="primary" customStyle={{ flex: 1 }} />,
+    <Login {...props} type="primary" customStyle={{ flex: 1 }} />
   )
-  const secondaryComponent = renderer.create(<Login {...props} type="secondary" />)
+  const secondaryComponent = renderer.create(
+    <Login {...props} type="secondary" />
+  )
 
   expect(primaryComponent).toMatchSnapshot()
   expect(secondaryComponent).toMatchSnapshot()
@@ -21,9 +24,10 @@ it('Login snapshots', () => {
 it('Login actions', async () => {
   // mock props
   const props = {
-    signInUser: () => new Promise((rs, err) => {
-      err()
-    }),
+    signInUser: () =>
+      new Promise((rs, err) => {
+        err()
+      }),
     handlingLoginSuccess: jest.fn(),
   }
 
@@ -31,7 +35,7 @@ it('Login actions', async () => {
 
   // login failed
   component
-    .find('LoginForm')
+    .find(LoginForm)
     .at(0)
     .props()
     .onSubmit()
@@ -39,17 +43,18 @@ it('Login actions', async () => {
   // wait for component update
   await wait(0)
 
-  expect(component.find('Text').length).toBe(2)
+  expect(component.find('Text').length).toBe(1)
 
   // login success
   component.setProps({
-    signInUser: () => new Promise(resolve => {
-      resolve({ data: { signInUser: { token: 'test' } } })
-    }),
+    signInUser: () =>
+      new Promise(resolve => {
+        resolve({ data: { signInUser: { token: 'test' } } })
+      }),
   })
 
   component
-    .find('LoginForm')
+    .find(LoginForm)
     .at(0)
     .props()
     .onSubmit()

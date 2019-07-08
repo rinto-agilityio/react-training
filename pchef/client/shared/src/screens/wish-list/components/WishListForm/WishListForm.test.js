@@ -5,6 +5,9 @@ import wait from 'waait'
 import WistListForm from '.'
 import Categories from '../../../../containers/Categories'
 import CookingTypes from '../../../../containers/CookingTypes'
+import Icon from '../../../../components/Icon'
+import CalendarComponent from '../../../../components/Calendar'
+import Modal from '../../../../components/Modal'
 
 // Mocks
 import { recipes } from '../../../../mocks'
@@ -30,48 +33,48 @@ describe('Wish list', () => {
   })
 
   it('Should show/hide modal calendar when press select date/done button', () => {
-    const icon = component.find('Icon')
+    const icon = component.find(Icon)
 
     // Press select date icon to show modal
     const selectDateIcon = icon.first()
     selectDateIcon.props().onPress()
-    expect(component.find('Modal').props().visible).toEqual(true)
+    expect(component.find(Modal).props().visible).toEqual(true)
 
     component
-      .find('Modal')
+      .find(Modal)
       .props()
       .onSubmit()
-    expect(component.find('Modal').exists()).toEqual(false)
+    expect(component.find(Modal).exists()).toEqual(false)
   })
 
   it('Should hide modal calendar when press dialog', () => {
-    const icon = component.find('Icon')
+    const icon = component.find(Icon)
 
     // Press select date icon to show modal
     const selectDateIcon = icon.first()
     selectDateIcon.props().onPress()
-    const modal = component.find('Modal')
+    const modal = component.find(Modal)
     modal.props().onDismiss()
-    expect(component.find('Modal').exists()).toEqual(false)
+    expect(component.find(Modal).exists()).toEqual(false)
   })
 
   it('Should update selected date when press on calendar', () => {
-    const icon = component.find('Icon')
+    const icon = component.find(Icon)
 
     // Press select date icon to show modal
     const selectDateIcon = icon.first()
     selectDateIcon.props().onPress()
 
-    const calendarProps = component.find('CalendarComponent').props()
+    const calendarProps = component.find(CalendarComponent).props()
     calendarProps.onSelectDay({
       dateString: '2019-05-18',
     })
 
-    expect(component.find('CalendarComponent')).toMatchSnapshot()
+    expect(component.find(CalendarComponent)).toMatchSnapshot()
   })
 
   it('Should show categories form', () => {
-    const icon = component.find('Icon')
+    const icon = component.find(Icon)
     expect(component.find(Categories).exists()).toEqual(false)
     icon
       .at(1)
@@ -89,7 +92,7 @@ describe('Wish list', () => {
   })
 
   it('Should show cooking types form', () => {
-    const icon = component.find('Icon')
+    const icon = component.find(Icon)
     expect(component.find(CookingTypes).exists()).toEqual(false)
     icon
       .at(2)
@@ -107,7 +110,7 @@ describe('Wish list', () => {
   })
 
   it('Should hide categories form', () => {
-    const icon = component.find('Icon')
+    const icon = component.find(Icon)
     icon
       .at(1)
       .props()
@@ -120,7 +123,7 @@ describe('Wish list', () => {
   })
 
   it('Should hide cooking types form', async () => {
-    const icon = component.find('Icon')
+    const icon = component.find(Icon)
     icon
       .at(2)
       .props()
