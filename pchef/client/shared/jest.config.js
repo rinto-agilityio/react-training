@@ -8,4 +8,19 @@ module.exports = {
       './src/config/fileTransformer.js',
   },
   setupFiles: ['./src/config/setupTests.js'],
+  collectCoverageFrom: [
+    'src/**/*.js',
+    '!src/**/*test.js',
+    '!src/**/*story.js',
+    '!src/graphql/**',
+    '!src/themes/**',
+    '!src/config/**',
+    '!src/index.js',
+    '!src/containers/**',
+    '!src/helpers/**',
+    '!src/mocks/**',
+    '!src/types/**',
+    '!src/**/*styles.js',
+
+  ],
 }
