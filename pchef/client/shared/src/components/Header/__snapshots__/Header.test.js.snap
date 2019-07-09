@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Components Header Login snapshots 1`] = `
+exports[`Components Header Should render Header component 1`] = `
 <div
   className="css-view-1dbjc4n r-alignItems-1habvwh r-backgroundColor-kemksi r-paddingBottom-k8qxaj r-paddingLeft-1yt7n81 r-paddingTop-1knelpx"
 >
@@ -277,7 +277,7 @@ exports[`Components Header Login snapshots 1`] = `
 </div>
 `;
 
-exports[`Components Header Login snapshots 2`] = `
+exports[`Components Header Should render Header component 2`] = `
 <div
   className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-kemksi r-flexDirection-1euycsn r-justifyContent-1wtj0ep r-paddingLeft-1fd96xs r-paddingRight-yongw"
 >
