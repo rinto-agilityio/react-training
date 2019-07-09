@@ -65,6 +65,18 @@ declare module 'pages/RecipeDetail' {
   declare module.exports: any
 }
 
+declare module 'pages/WishList' {
+  declare module.exports: any
+}
+
+declare module 'pages/Welcome' {
+  declare module.exports: any
+}
+
+declare module 'pages/WishListForm' {
+  declare module.exports: any
+}
+
 declare module 'router/MainRouter' {
   declare module.exports: any
 }
@@ -78,5 +90,9 @@ declare module 'pchef-shared/src/layout/MainContainer' {
 }
 
 declare module 'pchef-shared/src/containers/Header' {
+  declare module.exports: any
+}
+
+declare module 'pchef-shared/src/components/Loading' {
   declare module.exports: any
 }

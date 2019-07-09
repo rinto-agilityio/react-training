@@ -2,7 +2,7 @@
 // add flow above to fix for using flow with React.memo
 
 // Libs
-import React, { useState, useEffect, memo } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, TouchableOpacity, ScrollView, Dimensions } from 'react-native'
 import { Divider } from 'react-native-paper'
 
