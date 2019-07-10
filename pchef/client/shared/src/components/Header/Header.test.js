@@ -34,13 +34,13 @@ describe('Components', () => {
       expect(props.onPressCategoryIcon).toHaveBeenCalled()
     })
 
-    it('should call to onDirectTo when press on Button', () => {
+    it('Should call to onDirectTo when press on Button', () => {
       const createRecipeButton = component.find(Button)
       createRecipeButton.props().onPress()
       expect(props.onDirectTo).toHaveBeenCalled()
     })
 
-    it('should call to onDirectTo when press on Menu.Item', () => {
+    it('Should call to onDirectTo when press on Menu.Item', () => {
       const firstMenu = component.find(Menu.Item).at(0)
       firstMenu.props().onPress()
       expect(props.onDirectTo).toHaveBeenCalled()
@@ -54,7 +54,7 @@ describe('Components', () => {
       expect(props.onDirectTo).toHaveBeenCalled()
     })
 
-    it('menu should invisible if trigger onDismiss', () => {
+    it('Menu should invisible if trigger onDismiss', () => {
       const menu = component.find(Menu)
       menu.props().onDismiss()
       component.update()

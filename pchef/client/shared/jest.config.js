@@ -21,6 +21,5 @@ module.exports = {
     '!src/mocks/**',
     '!src/types/**',
     '!src/**/*styles.js',
-
   ],
 }

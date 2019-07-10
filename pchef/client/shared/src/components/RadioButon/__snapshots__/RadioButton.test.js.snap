@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button Renders correctly 1`] = `
+exports[`RadioButton Renders correctly 1`] = `
 Array [
   <div
     className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz"
@@ -713,7 +713,7 @@ Array [
 ]
 `;
 
-exports[`Button Renders correctly radio button component with label 1`] = `
+exports[`RadioButton Renders correctly radio button component with label 1`] = `
 Array [
   <div
     className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz"
@@ -1426,7 +1426,7 @@ Array [
 ]
 `;
 
-exports[`Button Renders correctly radio button component with status true 1`] = `
+exports[`RadioButton Renders correctly radio button component with status true 1`] = `
 Array [
   <div
     className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz"

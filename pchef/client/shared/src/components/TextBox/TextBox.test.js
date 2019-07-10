@@ -12,26 +12,25 @@ const props = {
 
 const component = shallow(<TextBox {...props} />)
 
-it('renders correctly', () => {
-  const textbox = renderer.create(
-    <TextBox
-      placeholder="Multiline"
-      multiline
-    />,
-  ).toJSON()
-  expect(textbox).toMatchSnapshot()
-});
-
-it('should call onBlur when blur on text input', () => {
-  const textbox = component.find(TextInput)
-  textbox.simulate('blur', {
-    target: { value: 'hello' },
+describe('TextBox', () => {
+  it('Renders correctly', () => {
+    const textbox = renderer
+      .create(<TextBox placeholder="Multiline" multiline />)
+      .toJSON()
+    expect(textbox).toMatchSnapshot()
   })
-  expect(props.onBlur).toHaveBeenCalled()
-})
 
-it('should call onChangeText when input text', () => {
-  const textbox = component.find(TextInput)
-  textbox.props().onChangeText()
-  expect(props.onChangeText).toHaveBeenCalled()
+  it('Should call onBlur when blur on text input', () => {
+    const textbox = component.find(TextInput)
+    textbox.simulate('blur', {
+      target: { value: 'hello' },
+    })
+    expect(props.onBlur).toHaveBeenCalled()
+  })
+
+  it('Should call onChangeText when input text', () => {
+    const textbox = component.find(TextInput)
+    textbox.props().onChangeText()
+    expect(props.onChangeText).toHaveBeenCalled()
+  })
 })

@@ -14,7 +14,7 @@ let props = {
 
 const component = shallow(<RadioButton {...props} />)
 
-describe('Button', () => {
+describe('RadioButton', () => {
   it('Renders correctly', () => {
     const radioBtn = renderer.create(<RadioButton {...props} />).toJSON()
 
@@ -41,7 +41,7 @@ describe('Button', () => {
     expect(radioBtn).toMatchSnapshot()
   })
 
-  it('should call onPress props when press on radio button', () => {
+  it('Should call onPress props when press on radio button', () => {
     const radioButton = component.find(RadioButtonComponent.Group)
     radioButton.props().onValueChange()
 

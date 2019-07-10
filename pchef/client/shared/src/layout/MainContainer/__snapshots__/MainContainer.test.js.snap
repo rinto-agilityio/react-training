@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MainContainer should render type mobile 1`] = `
+exports[`MainContainer Should render type mobile 1`] = `
 <div
   className="css-view-1dbjc4n"
 >
@@ -13,7 +13,7 @@ exports[`MainContainer should render type mobile 1`] = `
 </div>
 `;
 
-exports[`MainContainer should render type web 1`] = `
+exports[`MainContainer Should render type web 1`] = `
 <div
   className="css-view-1dbjc4n r-marginBottom-p1pxzi r-marginLeft-1jj8364 r-marginRight-lchren r-marginTop-1mnahxq r-width-16k0tzm r-zIndex-1wyyakw"
 >

@@ -3,7 +3,7 @@ import { Text } from 'react-native'
 import MainContainer from '.'
 
 describe('MainContainer', () => {
-  it('should render type web', () => {
+  it('Should render type web', () => {
     const component = renderer
       .create(
         <MainContainer type="web">
@@ -14,7 +14,7 @@ describe('MainContainer', () => {
     expect(component).toMatchSnapshot()
   })
 
-  it('should render type mobile', () => {
+  it('Should render type mobile', () => {
     const component = renderer
       .create(
         <MainContainer type="mobile">

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NewFeed should render component 1`] = `
+exports[`NewFeed Should render component 1`] = `
 <div
   className="css-view-1dbjc4n r-marginLeft-1jj8364 r-marginRight-lchren r-width-16k0tzm"
 >

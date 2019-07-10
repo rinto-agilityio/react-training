@@ -35,12 +35,12 @@ describe('NewFeed', () => {
     component = shallow(<NewFeed {...props} />)
   })
 
-  it('should render component', () => {
+  it('Should render component', () => {
     const component = renderer.create(<NewFeed {...props} />).toJSON()
     expect(component).toMatchSnapshot()
   })
 
-  it('should call handleRedirectLogin when dismiss or submit on modal', () => {
+  it('Should call handleRedirectLogin when dismiss or submit on modal', () => {
     component.setProps({
       error: {
         graphQLErrors: [{ message: 'error' }],
@@ -55,7 +55,7 @@ describe('NewFeed', () => {
     expect(props.handleRedirectLogin).toHaveBeenCalled()
   })
 
-  it('should render Loading component if loading is true', () => {
+  it('Should render Loading component if loading is true', () => {
     component.setProps({
       loading: true,
     })
