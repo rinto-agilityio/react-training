@@ -107,7 +107,9 @@ const Welcome = ({
   const handleSaveCategory = async () => {
     try {
       await userToggleCategory(chosenCategories)
-      if (chosenCategories.length >= MINIMUM_FOLLOWED_CATEGORY) handleRedirectHome()
+      if (WEB_PLATFORM) {
+        if (chosenCategories.length >= MINIMUM_FOLLOWED_CATEGORY) handleRedirectHome()
+      }
     } catch (error) {
       setErrors(error)
     }
