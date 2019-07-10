@@ -16,7 +16,7 @@ type Props = {
 }
 
 const BaseModal = ({
-  closeModal = () => { },
+  closeModal = () => {},
 }: Props) => (
   <Modal
     onDismiss={closeModal}
@@ -29,7 +29,7 @@ const BaseModal = ({
 )
 
 const ModalWithoutTitle = ({
-  closeModal = () => { },
+  closeModal = () => {},
 }: Prop) => (
   <Modal
     onDismiss={closeModal}
@@ -41,7 +41,7 @@ const ModalWithoutTitle = ({
 )
 
 const CustomModal = ({
-  closeModal = () => { },
+  closeModal = () => {},
 }: Props) => (
   <Modal
     onDismiss={closeModal}
@@ -69,6 +69,7 @@ class StorybookModal extends Component<Props> {
   render() {
     const { children } = this.props
     const { openModal } = this.state
+
     return (
       <>
         <Button
