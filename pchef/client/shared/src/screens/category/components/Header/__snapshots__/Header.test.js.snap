@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Components Header should render Header component with grid 1`] = `
+exports[`Components Header Should render Header component with grid 1`] = `
 Array [
   <div
     className="css-view-1dbjc4n r-display-6koalj r-height-1kl1mp1"
