@@ -159,6 +159,7 @@ const CategoryScreen = ({
             data={recipes}
             renderItem={({ item }) => (
               <Recipe
+                testID={`recipe-${item.id}`}
                 isGrid={isGrid}
                 recipe={item}
                 size={size}

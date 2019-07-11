@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Screen Category should render Category screen 1`] = `
+exports[`Screen Category Should render Category screen 1`] = `
 Array [
   <div
     className="css-view-1dbjc4n r-display-6koalj r-height-dcqb1h"
