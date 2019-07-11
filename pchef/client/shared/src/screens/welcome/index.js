@@ -64,7 +64,6 @@ const Welcome = ({
   handleRedirectHome,
 }: Props) => {
   const [chosenCategories, setChosenCategories] = useState([])
-  const [errors, setErrors] = useState()
   const [visible, setVisible] = useState(true)
   const [heightHeader, setHeightHeader] = useState(0)
 
@@ -72,7 +71,6 @@ const Welcome = ({
     const followCategory = data.followCategory || []
     const followCategoryIds = followCategory.map(item => item.id)
     setChosenCategories(followCategoryIds)
-    !loading && setErrors(error)
   }, [loading, data.followCategory, error])
 
   const handleNavigateLogin = () => {
@@ -80,7 +78,7 @@ const Welcome = ({
     handleRedirectLogin()
   }
 
-  if (errors) {
+  if (error) {
     return (
       <Modal
         visible={visible}
@@ -105,13 +103,9 @@ const Welcome = ({
   }
 
   const handleSaveCategory = async () => {
-    try {
-      await userToggleCategory(chosenCategories)
-      if (WEB_PLATFORM) {
-        if (chosenCategories.length >= MINIMUM_FOLLOWED_CATEGORY) handleRedirectHome()
-      }
-    } catch (error) {
-      setErrors(error)
+    await userToggleCategory(chosenCategories)
+    if (WEB_PLATFORM) {
+      if (chosenCategories.length >= MINIMUM_FOLLOWED_CATEGORY) handleRedirectHome()
     }
   }
 

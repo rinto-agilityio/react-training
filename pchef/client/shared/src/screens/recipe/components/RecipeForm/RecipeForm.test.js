@@ -20,7 +20,6 @@ import Error from '../../../../components/Error'
 
 // Mocks
 import { categories, cookingTypes } from '../../../../mocks'
-// import { isError } from 'util';
 
 import { validator } from '../../../../helpers/validators'
 
@@ -28,12 +27,8 @@ jest.mock('../../../../helpers/validators', () => ({
   validator: jest.fn(),
 }))
 
-
 describe('recipe form', () => {
   const recipeProps = {
-    recipre: {
-      id: '1',
-    },
     compressImage: jest.fn(),
     createRecipe: () => new Promise(resolve => {
       resolve({ data: {
@@ -338,5 +333,66 @@ describe('recipe form', () => {
     // Should render RadioButton
     const radioBtn = classify.find(RadioButton)
     expect(radioBtn.exists()).toBe(true)
+  })
+
+  it('Navigate to Login page when closing modal after getting server error', () => {
+    const recipeProps = {
+      error: {
+        graphQLErrors: [{
+          message: 'Error!',
+        }],
+      },
+      handleRedirectLogin: jest.fn(),
+    }
+    const RecipeComponent = shallow(<Classify {...recipeProps} />)
+    const ModalComponent = RecipeComponent.find(Modal).props()
+    ModalComponent.onDismiss()
+    expect(recipeProps.handleRedirectLogin).toHaveBeenCalled()
+  })
+
+  it('Navigate to Login page when submit modal after getting server error', () => {
+    const recipeProps = {
+      error: {
+        graphQLErrors: [{
+          message: 'Error!',
+        }],
+      },
+      handleRedirectLogin: jest.fn(),
+    }
+    const RecipeComponent = shallow(<Classify {...recipeProps} />)
+    const ModalComponent = RecipeComponent.find(Modal).props()
+    ModalComponent.onSubmit()
+    expect(recipeProps.handleRedirectLogin).toHaveBeenCalled()
+  })
+
+  it('Should call onDismiss when trigger DirectionForm popup', () => {
+    const directionProps = {
+      onDismiss: jest.fn(),
+    }
+    const directions = shallow(<DirectionForm {...directionProps} />)
+    const ModalComponent = directions.find(Modal).props()
+    ModalComponent.onSubmit()
+    expect(directionProps.onDismiss).toHaveBeenCalled()
+  })
+
+  it('Navigate to New feed page after create Recipe successfully', async () => {
+    const recipeProps = {
+      ...recipeProps,
+      publishRecipe: () => new Promise(resolve => {
+        resolve({ data: {
+          publishRecipe: {
+            id: '1',
+          },
+        } })
+      }),
+      redirectAfterPublish: jest.fn(),
+    }
+    const recipe = shallow(<RecipeForm {...recipeProps} />)
+    const ButtonComponent = recipe.find(Button).props()
+    ButtonComponent.onPress()
+
+    // wait for component update
+    await wait(0)
+    expect(recipeProps.redirectAfterPublish).toHaveBeenCalled()
   })
 })

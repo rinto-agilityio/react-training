@@ -4,6 +4,8 @@ import Directions from './Directions'
 import Direction from './Direction'
 import Ingredients from './Ingredients'
 import Ingredient from './Ingredient'
+import Button from '../../../../components/Button'
+import Modal from '../../../../components/Modal'
 
 // Mocks
 import { recipes } from '../../../../mocks'
@@ -102,5 +104,66 @@ describe('Recipe by step', () => {
       item: 'recipe description',
     })
     expect(ingredientComponent).toMatchSnapshot()
+  })
+
+  it('Should call onSelectStep at Direction component', () => {
+    const props = {
+      onSelectStep: jest.fn(),
+    }
+    const directionComponent = mount(<Direction {...props} />)
+    const ButtonComponent = directionComponent.find(Button).props()
+    ButtonComponent.onPress()
+    expect(props.onSelectStep).toHaveBeenCalled()
+  })
+
+  it('Should call onSelectStep at Directions component', () => {
+    const props = {
+      onSelectStep: jest.fn(),
+    }
+    const directionsComponent = shallow(<Recipe {...props} />)
+    const ButtonComponent = directionsComponent.find(Directions).props()
+    ButtonComponent.onSelectStep()
+    expect(props.onSelectStep).toHaveBeenCalled()
+  })
+
+  it('Navigate to Login page when closing modal after getting server error', () => {
+    const recipeProps = {
+      ...recipeProps,
+      error: {
+        graphQLErrors: [{
+          message: 'Error!',
+        }],
+      },
+      handleRedirectLogin: jest.fn(),
+    }
+    const RecipeComponent = shallow(<Recipe {...recipeProps} />)
+    const ModalComponent = RecipeComponent.find(Modal).props()
+    ModalComponent.onDismiss()
+    expect(recipeProps.handleRedirectLogin).toHaveBeenCalled()
+  })
+
+  it('Navigate to Login page when submit modal after getting server error', () => {
+    const recipeProps = {
+      ...recipeProps,
+      error: {
+        graphQLErrors: [{
+          message: 'Error!',
+        }],
+      },
+      handleRedirectLogin: jest.fn(),
+    }
+    const RecipeComponent = shallow(<Recipe {...recipeProps} />)
+    const ModalComponent = RecipeComponent.find(Modal).props()
+    ModalComponent.onSubmit()
+    expect(recipeProps.handleRedirectLogin).toHaveBeenCalled()
+  })
+
+  it('Render Recipe component with loading true', () => {
+    const recipeProps = {
+      ...recipeProps,
+      loading: true,
+    }
+    const wishList = renderer.create(<Recipe {...recipeProps} />).toJSON()
+    expect(wishList).toMatchSnapshot()
   })
 })

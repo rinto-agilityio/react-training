@@ -3,6 +3,9 @@ import wait from 'waait'
 
 // Components
 import Welcome from '.'
+import Error from '../../components/Error'
+import Modal from '../../components/Modal'
+import Button from '../../components/Button'
 import { categories } from '../../mocks'
 
 describe('Welcome', () => {
@@ -67,7 +70,7 @@ describe('Welcome', () => {
     expect(component).toMatchSnapshot()
   })
 
-  it('handleSkipCategories action should be called when user press skip button', () => {
+  it('HandleSkipCategories action should be called when user press skip button', () => {
     const props = {
       customStyle: {},
       handleSkipCategories: jest.fn(),
@@ -89,7 +92,7 @@ describe('Welcome', () => {
     expect(Welcome.defaultProps.handleSkipCategories).toBeDefined()
   })
 
-  it('call userToggleCategory when user toggle category', async () => {
+  it('Call userToggleCategory when user toggle category', async () => {
     const props = {
       categories,
       loading: false,
@@ -116,5 +119,60 @@ describe('Welcome', () => {
     component.find('InterestedCategories').props().onChooseCategory()
     await wait()
     expect(component.find('InterestedCategories').props().activeList.length).toEqual(0)
+  })
+
+  it('Should render Error component if return error', async () => {
+    const props = {
+      categories,
+      loading: false,
+      userToggleCategory: jest.fn(),
+      handleRedirectLogin: jest.fn(),
+    }
+    const component = shallow(<Welcome {...props} />)
+    component.setProps({ error: { graphQLErrors: [{ message: 'Error!' }] } })
+    await wait()
+    expect(component.find(Error).exists()).toEqual(true)
+  })
+
+  it('Should call handleRedirectLogin when trigger onDismiss on modal', async () => {
+    const props = {
+      categories,
+      loading: false,
+      userToggleCategory: jest.fn(),
+      handleRedirectLogin: jest.fn(),
+    }
+    const component = shallow(<Welcome {...props} />)
+    component.setProps({ error: { graphQLErrors: [{ message: 'error' }] } })
+    const modal = component.find(Modal)
+
+    modal.props().onDismiss()
+    expect(props.handleRedirectLogin).toHaveBeenCalled()
+  })
+
+  it('Should call handleRedirectLogin when trigger onSubmit on modal', async () => {
+    const props = {
+      categories,
+      loading: false,
+      userToggleCategory: jest.fn(),
+      handleRedirectLogin: jest.fn(),
+    }
+    const component = shallow(<Welcome {...props} />)
+    component.setProps({ error: { graphQLErrors: [{ message: 'error' }] } })
+    const modal = component.find(Modal)
+
+    modal.props().onSubmit()
+    expect(props.handleRedirectLogin).toHaveBeenCalled()
+  })
+
+  it('Should call userToggleCategory when click on Save Category', async () => {
+    const props = {
+      categories,
+      loading: false,
+      userToggleCategory: jest.fn(),
+    }
+    const component = shallow(<Welcome {...props} />)
+    const Buttoncomponent = component.find(Button).props()
+    Buttoncomponent.onPress()
+    expect(props.userToggleCategory).toHaveBeenCalled()
   })
 })
