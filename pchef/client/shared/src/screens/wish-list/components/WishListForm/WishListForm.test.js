@@ -1,6 +1,3 @@
-// Libs
-import wait from 'waait'
-
 // Components
 import WistListForm from '.'
 import Categories from '../../../../containers/Categories'
