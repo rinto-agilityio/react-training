@@ -4,6 +4,7 @@
 .*/node_modules/.*
 .*/.storybook/*
 .*/config/.*
+.*/mocks/.*
 .*/coverage/.*
 .*\test\.js
 .*\.story\.js
