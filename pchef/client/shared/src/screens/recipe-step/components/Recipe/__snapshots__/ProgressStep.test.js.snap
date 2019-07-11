@@ -1,0 +1,681 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recipe by step Render progress step component with steps array 1`] = `
+<div
+  className="css-view-1dbjc4n r-alignItems-1awozwy r-display-6koalj r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-a2tzq0"
+  style={
+    Object {
+      "WebkitBoxFlex": 0,
+      "WebkitFlexGrow": 0,
+      "flexGrow": 0,
+      "msFlexPositive": 0,
+    }
+  }
+>
+  <div
+    className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz"
+  >
+    <div
+      aria-disabled={true}
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-height-1r8g8re r-justifyContent-1777fci r-opacity-qzm50q r-overflow-bztko3 r-userSelect-lrvibr r-width-1acpoxo"
+      disabled={true}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      role="button"
+      style={
+        Object {
+          "marginBottom": "0px",
+          "marginLeft": "0px",
+          "marginRight": "0px",
+          "marginTop": "0px",
+        }
+      }
+    >
+      <span
+        className="css-hitSlop-mjp8i1"
+        style={
+          Object {
+            "bottom": "-6px",
+            "left": "-6px",
+            "right": "-6px",
+            "top": "-6px",
+          }
+        }
+      />
+      <div
+        className="css-view-1dbjc4n"
+      >
+        <div
+          className="css-text-901oao r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+          dir="auto"
+          focusable={false}
+          role="img"
+          style={
+            Object {
+              "WebkitTransform": "scaleX(1)",
+              "color": "rgba(197,197,197,1.00)",
+              "fontFamily": "MaterialIcons",
+              "fontSize": "18px",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "transform": "scaleX(1)",
+            }
+          }
+        >
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-view-1dbjc4n r-alignItems-1awozwy r-display-6koalj r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-justifyContent-a2tzq0"
+    style={
+      Object {
+        "WebkitBoxFlex": 0,
+        "WebkitFlexGrow": 0,
+        "flexGrow": 0,
+        "msFlexPositive": 0,
+      }
+    }
+  >
+    <div
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
+      style={
+        Object {
+          "backgroundColor": "rgba(66,165,245,1.00)",
+          "borderBottomColor": "rgba(0,0,0,0.00)",
+          "borderBottomLeftRadius": "4px",
+          "borderBottomRightRadius": "4px",
+          "borderBottomStyle": "solid",
+          "borderBottomWidth": "0px",
+          "borderLeftColor": "rgba(0,0,0,0.00)",
+          "borderLeftStyle": "solid",
+          "borderLeftWidth": "0px",
+          "borderRightColor": "rgba(0,0,0,0.00)",
+          "borderRightStyle": "solid",
+          "borderRightWidth": "0px",
+          "borderTopColor": "rgba(0,0,0,0.00)",
+          "borderTopLeftRadius": "4px",
+          "borderTopRightRadius": "4px",
+          "borderTopStyle": "solid",
+          "borderTopWidth": "0px",
+          "boxShadow": "0px 0.75px 1.5px rgba(0,0,0,0.24)",
+          "marginRight": "3px",
+          "minWidth": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+        }
+      }
+    >
+      <div
+        className="css-cursor-18t94o4 css-view-1dbjc4n r-backgroundColor-1niwhzg r-cursor-1loqt21 r-touchAction-1otgn73 r-userSelect-lrvibr"
+        data-focusable={true}
+        disabled={false}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        role="button"
+        style={
+          Object {
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "overflowX": "hidden",
+            "overflowY": "hidden",
+          }
+        }
+        tabIndex="0"
+      >
+        <div
+          className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-height-4v7adb r-justifyContent-1777fci r-width-199wky7"
+        >
+          <div
+            className="css-text-901oao css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
+            dir="auto"
+            style={
+              Object {
+                "color": "rgba(0,0,0,1.00)",
+                "direction": "ltr",
+                "fontFamily": "Roboto-Medium, Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              }
+            }
+          >
+            <span
+              className="css-text-901oao css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+              dir="auto"
+              style={
+                Object {
+                  "direction": "ltr",
+                  "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "textAlign": "left",
+                }
+              }
+            >
+              
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
+      style={
+        Object {
+          "backgroundColor": "rgba(197,197,197,1.00)",
+          "borderBottomColor": "rgba(0,0,0,0.00)",
+          "borderBottomLeftRadius": "4px",
+          "borderBottomRightRadius": "4px",
+          "borderBottomStyle": "solid",
+          "borderBottomWidth": "0px",
+          "borderLeftColor": "rgba(0,0,0,0.00)",
+          "borderLeftStyle": "solid",
+          "borderLeftWidth": "0px",
+          "borderRightColor": "rgba(0,0,0,0.00)",
+          "borderRightStyle": "solid",
+          "borderRightWidth": "0px",
+          "borderTopColor": "rgba(0,0,0,0.00)",
+          "borderTopLeftRadius": "4px",
+          "borderTopRightRadius": "4px",
+          "borderTopStyle": "solid",
+          "borderTopWidth": "0px",
+          "boxShadow": "0px 0.75px 1.5px rgba(0,0,0,0.24)",
+          "marginRight": "3px",
+          "minWidth": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+        }
+      }
+    >
+      <div
+        className="css-cursor-18t94o4 css-view-1dbjc4n r-backgroundColor-1niwhzg r-cursor-1loqt21 r-touchAction-1otgn73 r-userSelect-lrvibr"
+        data-focusable={true}
+        disabled={false}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        role="button"
+        style={
+          Object {
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "overflowX": "hidden",
+            "overflowY": "hidden",
+          }
+        }
+        tabIndex="0"
+      >
+        <div
+          className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-height-4v7adb r-justifyContent-1777fci r-width-199wky7"
+        >
+          <div
+            className="css-text-901oao css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
+            dir="auto"
+            style={
+              Object {
+                "color": "rgba(0,0,0,1.00)",
+                "direction": "ltr",
+                "fontFamily": "Roboto-Medium, Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              }
+            }
+          >
+            <span
+              className="css-text-901oao css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+              dir="auto"
+              style={
+                Object {
+                  "direction": "ltr",
+                  "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "textAlign": "left",
+                }
+              }
+            >
+              
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
+      style={
+        Object {
+          "backgroundColor": "rgba(197,197,197,1.00)",
+          "borderBottomColor": "rgba(0,0,0,0.00)",
+          "borderBottomLeftRadius": "4px",
+          "borderBottomRightRadius": "4px",
+          "borderBottomStyle": "solid",
+          "borderBottomWidth": "0px",
+          "borderLeftColor": "rgba(0,0,0,0.00)",
+          "borderLeftStyle": "solid",
+          "borderLeftWidth": "0px",
+          "borderRightColor": "rgba(0,0,0,0.00)",
+          "borderRightStyle": "solid",
+          "borderRightWidth": "0px",
+          "borderTopColor": "rgba(0,0,0,0.00)",
+          "borderTopLeftRadius": "4px",
+          "borderTopRightRadius": "4px",
+          "borderTopStyle": "solid",
+          "borderTopWidth": "0px",
+          "boxShadow": "0px 0.75px 1.5px rgba(0,0,0,0.24)",
+          "marginRight": "3px",
+          "minWidth": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+        }
+      }
+    >
+      <div
+        className="css-cursor-18t94o4 css-view-1dbjc4n r-backgroundColor-1niwhzg r-cursor-1loqt21 r-touchAction-1otgn73 r-userSelect-lrvibr"
+        data-focusable={true}
+        disabled={false}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        role="button"
+        style={
+          Object {
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "overflowX": "hidden",
+            "overflowY": "hidden",
+          }
+        }
+        tabIndex="0"
+      >
+        <div
+          className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-height-4v7adb r-justifyContent-1777fci r-width-199wky7"
+        >
+          <div
+            className="css-text-901oao css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
+            dir="auto"
+            style={
+              Object {
+                "color": "rgba(0,0,0,1.00)",
+                "direction": "ltr",
+                "fontFamily": "Roboto-Medium, Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              }
+            }
+          >
+            <span
+              className="css-text-901oao css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+              dir="auto"
+              style={
+                Object {
+                  "direction": "ltr",
+                  "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "textAlign": "left",
+                }
+              }
+            >
+              
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
+      style={
+        Object {
+          "backgroundColor": "rgba(197,197,197,1.00)",
+          "borderBottomColor": "rgba(0,0,0,0.00)",
+          "borderBottomLeftRadius": "4px",
+          "borderBottomRightRadius": "4px",
+          "borderBottomStyle": "solid",
+          "borderBottomWidth": "0px",
+          "borderLeftColor": "rgba(0,0,0,0.00)",
+          "borderLeftStyle": "solid",
+          "borderLeftWidth": "0px",
+          "borderRightColor": "rgba(0,0,0,0.00)",
+          "borderRightStyle": "solid",
+          "borderRightWidth": "0px",
+          "borderTopColor": "rgba(0,0,0,0.00)",
+          "borderTopLeftRadius": "4px",
+          "borderTopRightRadius": "4px",
+          "borderTopStyle": "solid",
+          "borderTopWidth": "0px",
+          "boxShadow": "0px 0.75px 1.5px rgba(0,0,0,0.24)",
+          "marginRight": "3px",
+          "minWidth": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+        }
+      }
+    >
+      <div
+        className="css-cursor-18t94o4 css-view-1dbjc4n r-backgroundColor-1niwhzg r-cursor-1loqt21 r-touchAction-1otgn73 r-userSelect-lrvibr"
+        data-focusable={true}
+        disabled={false}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        role="button"
+        style={
+          Object {
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "overflowX": "hidden",
+            "overflowY": "hidden",
+          }
+        }
+        tabIndex="0"
+      >
+        <div
+          className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-height-4v7adb r-justifyContent-1777fci r-width-199wky7"
+        >
+          <div
+            className="css-text-901oao css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
+            dir="auto"
+            style={
+              Object {
+                "color": "rgba(0,0,0,1.00)",
+                "direction": "ltr",
+                "fontFamily": "Roboto-Medium, Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              }
+            }
+          >
+            <span
+              className="css-text-901oao css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+              dir="auto"
+              style={
+                Object {
+                  "direction": "ltr",
+                  "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "textAlign": "left",
+                }
+              }
+            >
+              
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
+      style={
+        Object {
+          "backgroundColor": "rgba(197,197,197,1.00)",
+          "borderBottomColor": "rgba(0,0,0,0.00)",
+          "borderBottomLeftRadius": "4px",
+          "borderBottomRightRadius": "4px",
+          "borderBottomStyle": "solid",
+          "borderBottomWidth": "0px",
+          "borderLeftColor": "rgba(0,0,0,0.00)",
+          "borderLeftStyle": "solid",
+          "borderLeftWidth": "0px",
+          "borderRightColor": "rgba(0,0,0,0.00)",
+          "borderRightStyle": "solid",
+          "borderRightWidth": "0px",
+          "borderTopColor": "rgba(0,0,0,0.00)",
+          "borderTopLeftRadius": "4px",
+          "borderTopRightRadius": "4px",
+          "borderTopStyle": "solid",
+          "borderTopWidth": "0px",
+          "boxShadow": "0px 0.75px 1.5px rgba(0,0,0,0.24)",
+          "marginRight": "3px",
+          "minWidth": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+        }
+      }
+    >
+      <div
+        className="css-cursor-18t94o4 css-view-1dbjc4n r-backgroundColor-1niwhzg r-cursor-1loqt21 r-touchAction-1otgn73 r-userSelect-lrvibr"
+        data-focusable={true}
+        disabled={false}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        role="button"
+        style={
+          Object {
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "overflowX": "hidden",
+            "overflowY": "hidden",
+          }
+        }
+        tabIndex="0"
+      >
+        <div
+          className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-height-4v7adb r-justifyContent-1777fci r-width-199wky7"
+        >
+          <div
+            className="css-text-901oao css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
+            dir="auto"
+            style={
+              Object {
+                "color": "rgba(0,0,0,1.00)",
+                "direction": "ltr",
+                "fontFamily": "Roboto-Medium, Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              }
+            }
+          >
+            <span
+              className="css-text-901oao css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+              dir="auto"
+              style={
+                Object {
+                  "direction": "ltr",
+                  "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "textAlign": "left",
+                }
+              }
+            >
+              
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
+      style={
+        Object {
+          "backgroundColor": "rgba(197,197,197,1.00)",
+          "borderBottomColor": "rgba(0,0,0,0.00)",
+          "borderBottomLeftRadius": "4px",
+          "borderBottomRightRadius": "4px",
+          "borderBottomStyle": "solid",
+          "borderBottomWidth": "0px",
+          "borderLeftColor": "rgba(0,0,0,0.00)",
+          "borderLeftStyle": "solid",
+          "borderLeftWidth": "0px",
+          "borderRightColor": "rgba(0,0,0,0.00)",
+          "borderRightStyle": "solid",
+          "borderRightWidth": "0px",
+          "borderTopColor": "rgba(0,0,0,0.00)",
+          "borderTopLeftRadius": "4px",
+          "borderTopRightRadius": "4px",
+          "borderTopStyle": "solid",
+          "borderTopWidth": "0px",
+          "boxShadow": "0px 0.75px 1.5px rgba(0,0,0,0.24)",
+          "marginRight": "3px",
+          "minWidth": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+        }
+      }
+    >
+      <div
+        className="css-cursor-18t94o4 css-view-1dbjc4n r-backgroundColor-1niwhzg r-cursor-1loqt21 r-touchAction-1otgn73 r-userSelect-lrvibr"
+        data-focusable={true}
+        disabled={false}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        role="button"
+        style={
+          Object {
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "overflowX": "hidden",
+            "overflowY": "hidden",
+          }
+        }
+        tabIndex="0"
+      >
+        <div
+          className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-height-4v7adb r-justifyContent-1777fci r-width-199wky7"
+        >
+          <div
+            className="css-text-901oao css-textOneLine-bfa6kz r-letterSpacing-ud0q2t r-marginHorizontal-1ydw1k6 r-marginVertical-712mwr r-textAlign-q4m81j"
+            dir="auto"
+            style={
+              Object {
+                "color": "rgba(0,0,0,1.00)",
+                "direction": "ltr",
+                "fontFamily": "Roboto-Medium, Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              }
+            }
+          >
+            <span
+              className="css-text-901oao css-textHasAncestor-16my406 r-color-jwli3a r-fontWeight-1kfrs79 r-textTransform-tsynxw"
+              dir="auto"
+              style={
+                Object {
+                  "direction": "ltr",
+                  "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "textAlign": "left",
+                }
+              }
+            >
+              
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz"
+  >
+    <div
+      className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
+      data-focusable={true}
+      disabled={false}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      role="button"
+      style={
+        Object {
+          "marginBottom": "0px",
+          "marginLeft": "0px",
+          "marginRight": "0px",
+          "marginTop": "0px",
+        }
+      }
+      tabIndex="0"
+    >
+      <span
+        className="css-hitSlop-mjp8i1"
+        style={
+          Object {
+            "bottom": "-6px",
+            "left": "-6px",
+            "right": "-6px",
+            "top": "-6px",
+          }
+        }
+      />
+      <div
+        className="css-view-1dbjc4n"
+      >
+        <div
+          className="css-text-901oao r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+          dir="auto"
+          focusable={false}
+          role="img"
+          style={
+            Object {
+              "WebkitTransform": "scaleX(1)",
+              "color": "rgba(66,165,245,1.00)",
+              "fontFamily": "MaterialIcons",
+              "fontSize": "18px",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "transform": "scaleX(1)",
+            }
+          }
+        >
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Recipe by step Renders correctly progress steps commponent 1`] = `[Function]`;

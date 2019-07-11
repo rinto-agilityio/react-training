@@ -1,12 +1,15 @@
 // Components
 import Recipe from '.'
-import ProgressStep from './ProgressStep'
-import Button from '../../../../components/Button'
+import Loading from '../../../../components/Loading'
+import Errors from '../../../../components/Error'
+import Modal from '../../../../components/Modal'
+import Reaction from '../../../../components/Reaction'
 
 // Mocks
 import { recipes, user } from '../../../../mocks'
 
 const recipe = recipes[0]
+
 describe('Recipe by step', () => {
   const recipeProps = {
     recipeSteps: recipe.steps,
@@ -17,23 +20,22 @@ describe('Recipe by step', () => {
     onSelectStep: jest.fn(),
     getRecipe: recipe,
     onPress: jest.fn(),
+    handleRedirectLogin: jest.fn(),
+    userToggleVote: jest.fn(),
+    userToggleRecipe: jest.fn(),
   }
 
-  const stepProps = {
-    steps: recipe.steps,
-    step: 1,
-    onPressStep: jest.fn(),
-    onPressSelectStep: jest.fn(),
-  }
+  let recipeComponent
 
-  it('Renders correctly recipe commponent', () => {
-    const recipeComponent = renderer.create(<Recipe {...recipeProps} />).toJSON()
-    expect(recipeComponent).toMatchSnapshot()
+  beforeEach(() => {
+    recipeComponent = shallow(<Recipe {...recipeProps} />)
   })
 
-  it('Renders correctly progress steps commponent', () => {
-    const progressStepComponent = renderer.create(<ProgressStep {...stepProps} />).toJSON
-    expect(progressStepComponent).toMatchSnapshot()
+  it('Renders correctly recipe commponent', () => {
+    const recipeComponent = renderer
+      .create(<Recipe {...recipeProps} />)
+      .toJSON()
+    expect(recipeComponent).toMatchSnapshot()
   })
 
   it('Render recipe component with size medium', () => {
@@ -45,28 +47,56 @@ describe('Recipe by step', () => {
     expect(recipeComponent).toMatchSnapshot()
   })
 
-  it('Render progress step component with steps array', () => {
-    const props = {
-      ...stepProps,
-      size: 'medium',
-    }
-    const progressStepComponent = renderer.create(<ProgressStep {...props} />).toJSON()
-    expect(progressStepComponent).toMatchSnapshot()
+  it('Should render Loading if request is loading', () => {
+    recipeComponent.setProps({ loading: true })
+    expect(recipeComponent.find(Loading)).toHaveLength(1)
+  })
+
+  it('Should render Error if request is error', () => {
+    recipeComponent.setProps({
+      error: { graphQLErrors: [{ message: 'error' }] },
+    })
+    expect(recipeComponent.find(Errors)).toHaveLength(1)
   })
 
   it('Should call onPress when press on Title', () => {
-    const recipeComponent = shallow(<Recipe {...recipeProps} />)
-    recipeComponent.find('Text').at(1).props().onPress()
+    recipeComponent
+      .find('Text')
+      .at(1)
+      .props()
+      .onPress()
     expect(recipeProps.onPress).toHaveBeenCalled()
   })
 
-  it('Should call onPressStep when press on Button of ProgressStep', () => {
-    const props = {
-      ...stepProps,
-      size: 'medium',
-    }
-    const progressStep = shallow(<ProgressStep {...props} />)
-    progressStep.find(Button).at(0).props().onPress()
-    expect(stepProps.onPressStep).toHaveBeenCalled()
+  it('Should call handleRedirectLogin when trigger onDismiss on Modal', () => {
+    recipeComponent.setProps({
+      error: { graphQLErrors: [{ message: 'error' }] },
+    })
+
+    const modal = recipeComponent.find(Modal)
+    modal.props().onDismiss()
+    expect(recipeProps.handleRedirectLogin).toHaveBeenCalled()
+  })
+
+  it('Should call handleRedirectLogin when trigger onSubmit on Modal', () => {
+    recipeComponent.setProps({
+      error: { graphQLErrors: [{ message: 'error' }] },
+    })
+
+    const modal = recipeComponent.find(Modal)
+    modal.props().onSubmit()
+    expect(recipeProps.handleRedirectLogin).toHaveBeenCalled()
+  })
+
+  it('Should call userToggleVote when press on vote', () => {
+    const reaction = recipeComponent.find(Reaction)
+    reaction.props().onPressVote()
+    expect(recipeProps.userToggleVote).toHaveBeenCalled()
+  })
+
+  it('Should call userToggleRecipe when press on favorite', () => {
+    const reaction = recipeComponent.find(Reaction)
+    reaction.props().onPressFavorite()
+    expect(recipeProps.userToggleRecipe).toHaveBeenCalled()
   })
 })
