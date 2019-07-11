@@ -3,6 +3,7 @@ import { categories } from './categories'
 import { recipes } from './recipes'
 import { wishList } from './wish-list'
 import { cookingTypes } from './cooking-types'
+import { localStorageMock } from './localStorage'
 
 export {
   user,
@@ -10,4 +11,5 @@ export {
   recipes,
   wishList,
   cookingTypes,
+  localStorageMock,
 }

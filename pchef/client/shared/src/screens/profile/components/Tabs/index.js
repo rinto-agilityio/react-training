@@ -25,7 +25,7 @@ type Props = {
     recipeId: string,
     votes: Array<string>,
     userId: string
-  ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
+  ) => Promise<{ data: { userToggleVote: { results: Array<string> } } }>,
   userId: string,
   wrapperIconStyle: Object,
 }
