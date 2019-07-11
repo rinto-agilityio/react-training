@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Screen Profile should render Category component with grid 1`] = `
+exports[`Screen Profile Should render Category component with grid 1`] = `
 <div
   className="css-view-1dbjc4n r-backgroundColor-14lw9ot r-width-13qz1uu"
 >
@@ -185,7 +185,7 @@ exports[`Screen Profile should render Category component with grid 1`] = `
 </div>
 `;
 
-exports[`Screen Profile should render Error when query failed 1`] = `
+exports[`Screen Profile Should render Error when query failed 1`] = `
 <div
   aria-live="polite"
   className="css-view-1dbjc4n"
@@ -265,7 +265,7 @@ exports[`Screen Profile should render Error when query failed 1`] = `
           className="css-text-901oao r-color-1vs7qoz r-fontSize-1i10wst r-fontStyle-36ujnk"
           dir="auto"
         >
-          
+          error
         </div>
       </div>
       <div
@@ -356,7 +356,7 @@ exports[`Screen Profile should render Error when query failed 1`] = `
 </div>
 `;
 
-exports[`Screen Profile should render Loading component when query is loading 1`] = `
+exports[`Screen Profile Should render Loading component when query is loading 1`] = `
 <div
   className="css-view-1dbjc4n r-justifyContent-1777fci"
   style={

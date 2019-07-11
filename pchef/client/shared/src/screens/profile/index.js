@@ -32,7 +32,7 @@ type Props = {
     recipeId: string,
     votes: Array<string>,
     userId: string
-  ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
+  ) => Promise<{ data: { userToggleVote: { results: Array<string> } } }>,
   size: string,
   store: Object,
   handleRedirectLogin?: () => void,
@@ -62,9 +62,6 @@ const Profile = ({
     handleRedirectLogin()
   }
 
-  const errorMessage =
-    'Can not load information of user. Please check for connection!!!'
-
   if (loading) {
     return <Loading size={size} />
   }
@@ -88,18 +85,11 @@ const Profile = ({
     )
   }
 
-  if (error) {
-    return <Error message={errorMessage} />
-  }
-
   const { user, favoriteRecipe, ownRecipes } = data
 
   return (
     <View style={styles.profile}>
-      <Header
-        user={user}
-        handleToSetting={handleToSetting}
-      />
+      <Header user={user} handleToSetting={handleToSetting} />
       <Tabs
         ownRecipes={ownRecipes}
         favoriteRecipe={favoriteRecipe}
@@ -115,10 +105,7 @@ const Profile = ({
         onSubmit={handleToSetting}
         size="medium"
       >
-        <Setting
-          user={user}
-          handleLogout={handleLogout}
-        />
+        <Setting user={user} handleLogout={handleLogout} />
       </Modal>
     </View>
   )
