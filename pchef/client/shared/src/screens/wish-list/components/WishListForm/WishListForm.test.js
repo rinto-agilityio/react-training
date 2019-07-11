@@ -1,6 +1,3 @@
-// Libs
-import wait from 'waait'
-
 // Components
 import WistListForm from '.'
 import Categories from '../../../../containers/Categories'
@@ -8,6 +5,8 @@ import CookingTypes from '../../../../containers/CookingTypes'
 import Icon from '../../../../components/Icon'
 import CalendarComponent from '../../../../components/Calendar'
 import Modal from '../../../../components/Modal'
+import Error from '../../../../components/Error'
+import Button from '../../../../components/Button'
 
 // Mocks
 import { recipes } from '../../../../mocks'
@@ -18,7 +17,7 @@ describe('Wish list', () => {
   }
   const component = shallow(<WistListForm {...props} />)
 
-  it('Renders correctly wish list form commponent', () => {
+  it('Renders correctly wish list form component', () => {
     const wishList = renderer.create(<WistListForm />).toJSON()
     expect(wishList).toMatchSnapshot()
   })
@@ -83,8 +82,8 @@ describe('Wish list', () => {
     expect(component.find(Categories).exists()).toEqual(true)
 
     // Submit Categories form
-    const cookingTypesProps = component.find(Categories).props()
-    cookingTypesProps.handleSubmit({
+    const categoryProps = component.find(Categories).props()
+    categoryProps.handleSubmit({
       id: '1',
       name: 'test',
     })
@@ -134,5 +133,12 @@ describe('Wish list', () => {
       .props()
       .onDismiss()
     expect(component.find(CookingTypes).exists()).toEqual(false)
+  })
+
+  it('Error displays when submiting form without selecting any items', () => {
+    const ButtonProps = component.find(Button).props()
+    expect(component.find(Button).exists()).toEqual(true)
+    ButtonProps.onPress()
+    expect(component.find(Error).exists()).toEqual(true)
   })
 })

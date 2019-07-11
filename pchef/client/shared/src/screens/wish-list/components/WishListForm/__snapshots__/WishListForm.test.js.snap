@@ -307,7 +307,7 @@ exports[`Wish list Render wish list form component with size medium 1`] = `
 </div>
 `;
 
-exports[`Wish list Renders correctly wish list form commponent 1`] = `
+exports[`Wish list Renders correctly wish list form component 1`] = `
 <div
   className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
 >
