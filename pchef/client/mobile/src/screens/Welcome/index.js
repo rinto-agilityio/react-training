@@ -26,6 +26,7 @@ const Welcome = ({ navigation }: Props) => (
   <WelcomeContainer
     customButtonStyle={styles.button}
     handleSkipCategories={() => navigation.navigate(ROUTES.HOME)}
+    handleRedirectHome={() => navigation.navigate(ROUTES.HOME)}
     handleRedirectLogin={() => navigation.navigate(ROUTES.LOGIN)}
   />
 )

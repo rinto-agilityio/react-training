@@ -3,7 +3,13 @@
 
 // Libs
 import React, { useState, useEffect } from 'react'
-import { View, Text, TouchableOpacity, ScrollView, Dimensions } from 'react-native'
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+  Dimensions,
+} from 'react-native'
 import { Divider } from 'react-native-paper'
 
 // Helpers
@@ -24,7 +30,11 @@ import styles from './styles'
 import type { CategoryType } from '../../types'
 
 // Constants
-import { CATEGORIES_PADDING, WEB_PLATFORM, MINIMUM_FOLLOWED_CATEGORY } from '../../constants'
+import {
+  CATEGORIES_PADDING,
+  WEB_PLATFORM,
+  MINIMUM_FOLLOWED_CATEGORY,
+} from '../../constants'
 
 const { height } = Dimensions.get('window')
 
@@ -38,10 +48,12 @@ type Props = {
   },
   loading: boolean,
   error: {
-    graphQLErrors: Array<{message: string}>,
+    graphQLErrors: Array<{ message: string }>,
   },
   categories: Array<CategoryType>,
-  userToggleCategory: (categoryId: Array<string>) => Promise<{ data: {userToggleCategory: {results: Array<string>}}}>,
+  userToggleCategory: (
+    categoryId: Array<string>
+  ) => Promise<{ data: { userToggleCategory: { results: Array<string> } } }>,
   customButtonStyle?: {},
   handleRedirectLogin: () => void,
   size: string,
@@ -104,8 +116,9 @@ const Welcome = ({
 
   const handleSaveCategory = async () => {
     await userToggleCategory(chosenCategories)
-    if (WEB_PLATFORM) {
-      if (chosenCategories.length >= MINIMUM_FOLLOWED_CATEGORY) handleRedirectHome()
+
+    if (chosenCategories.length >= MINIMUM_FOLLOWED_CATEGORY) {
+      handleRedirectHome()
     }
   }
 
@@ -148,12 +161,23 @@ const Welcome = ({
           Skip
         </Text>
       </TouchableOpacity>
-      {WEB_PLATFORM ? renderHeaderCategories() : (
-        <View onLayout={event => event && setHeightHeader(event.nativeEvent.layout.height)}>
+      {WEB_PLATFORM ? (
+        renderHeaderCategories()
+      ) : (
+        <View
+          onLayout={event =>
+            event && setHeightHeader(event.nativeEvent.layout.height)
+          }
+        >
           {renderHeaderCategories()}
         </View>
       )}
-      <View style={[styles.categoryWrapper, WEB_PLATFORM ? {} : { height: heightCategories || '100%' }]}>
+      <View
+        style={[
+          styles.categoryWrapper,
+          WEB_PLATFORM ? {} : { height: heightCategories || '100%' },
+        ]}
+      >
         {WEB_PLATFORM ? (
           <InterestedCategories
             categories={categories}

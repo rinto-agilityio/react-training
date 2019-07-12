@@ -91,7 +91,8 @@ const styles = StyleSheet.create({
   },
   saveCategoryBtn: {
     width: METRICS.mediumWrapper,
-    margin: 'auto',
+    marginLeft: 'auto',
+    marginRight: 'auto',
     marginBottom: METRICS.largeMargin,
   },
 })

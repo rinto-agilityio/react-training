@@ -46,7 +46,7 @@ exports[`Welcome Render Welcome component with categories empty 1`] = `
     className="css-view-1dbjc4n r-backgroundColor-1g6456j r-height-hdaws3 r-marginBottom-117bsoe r-marginLeft-1jj8364 r-marginRight-lchren r-marginTop-1x0uki6 r-width-1glkqn6"
   />
   <div
-    className="css-view-1dbjc4n r-margin-ywje51 r-marginBottom-117bsoe r-width-l0gwng"
+    className="css-view-1dbjc4n r-marginBottom-117bsoe r-marginLeft-1jj8364 r-marginRight-lchren r-width-l0gwng"
   >
     <div
       className="css-view-1dbjc4n"
@@ -209,7 +209,7 @@ exports[`Welcome Render Welcome component with data 1`] = `
     className="css-view-1dbjc4n r-backgroundColor-1g6456j r-height-hdaws3 r-marginBottom-117bsoe r-marginLeft-1jj8364 r-marginRight-lchren r-marginTop-1x0uki6 r-width-1glkqn6"
   />
   <div
-    className="css-view-1dbjc4n r-margin-ywje51 r-marginBottom-117bsoe r-width-l0gwng"
+    className="css-view-1dbjc4n r-marginBottom-117bsoe r-marginLeft-1jj8364 r-marginRight-lchren r-width-l0gwng"
   >
     <div
       className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
@@ -1134,7 +1134,7 @@ exports[`Welcome Render Welcome component with missingCategory 1`] = `
     className="css-view-1dbjc4n r-backgroundColor-1g6456j r-height-hdaws3 r-marginBottom-117bsoe r-marginLeft-1jj8364 r-marginRight-lchren r-marginTop-1x0uki6 r-width-1glkqn6"
   />
   <div
-    className="css-view-1dbjc4n r-margin-ywje51 r-marginBottom-117bsoe r-width-l0gwng"
+    className="css-view-1dbjc4n r-marginBottom-117bsoe r-marginLeft-1jj8364 r-marginRight-lchren r-width-l0gwng"
   >
     <div
       className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
