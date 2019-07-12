@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag Renders correctly modal commponent 1`] = `
+<div
+  className="css-view-1dbjc4n"
+  style={
+    Object {
+      "backgroundColor": "rgba(235,235,235,1.00)",
+      "borderBottomColor": "rgba(235,235,235,1.00)",
+      "borderBottomLeftRadius": "16px",
+      "borderBottomRightRadius": "16px",
+      "borderBottomStyle": "solid",
+      "borderBottomWidth": "1px",
+      "borderLeftColor": "rgba(235,235,235,1.00)",
+      "borderLeftStyle": "solid",
+      "borderLeftWidth": "1px",
+      "borderRightColor": "rgba(235,235,235,1.00)",
+      "borderRightStyle": "solid",
+      "borderRightWidth": "1px",
+      "borderTopColor": "rgba(235,235,235,1.00)",
+      "borderTopLeftRadius": "16px",
+      "borderTopRightRadius": "16px",
+      "borderTopStyle": "solid",
+      "borderTopWidth": "1px",
+      "marginRight": "5px",
+      "width": "100px",
+    }
+  }
+>
+  <div
+    aria-disabled={true}
+    className="css-view-1dbjc4n r-backgroundColor-1niwhzg r-userSelect-lrvibr"
+    disabled={true}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    role="button"
+    style={
+      Object {
+        "borderBottomLeftRadius": "16px",
+        "borderBottomRightRadius": "16px",
+        "borderTopLeftRadius": "16px",
+        "borderTopRightRadius": "16px",
+        "overflowX": "hidden",
+        "overflowY": "hidden",
+      }
+    }
+  >
+    <div
+      className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-paddingHorizontal-s1qlax"
+    >
+      <div
+        className="css-text-901oao css-textOneLine-bfa6kz r-lineHeight-135wba7 r-marginVertical-1p6iasa r-minHeight-1ceczpf r-textAlignVertical-1vzi8xi"
+        dir="auto"
+        style={
+          Object {
+            "color": "rgba(0,0,0,0.87)",
+            "direction": "ltr",
+            "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "marginLeft": "8px",
+            "marginRight": "4px",
+            "textAlign": "left",
+          }
+        }
+      />
+      <div
+        className="css-cursor-18t94o4 css-view-1dbjc4n r-cursor-1loqt21 r-padding-tuq35u r-touchAction-1otgn73"
+        data-focusable={true}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <div
+          className="css-text-901oao r-backgroundColor-1niwhzg r-pointerEvents-633pao"
+          dir="auto"
+          focusable={false}
+          role="img"
+          style={
+            Object {
+              "WebkitTransform": "scaleX(1)",
+              "color": "rgba(0,0,0,0.54)",
+              "fontFamily": "MaterialIcons",
+              "fontSize": "16px",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+              "transform": "scaleX(1)",
+            }
+          }
+        >
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
