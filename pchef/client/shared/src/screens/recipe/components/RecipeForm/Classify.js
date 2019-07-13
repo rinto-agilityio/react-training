@@ -67,7 +67,7 @@ const Classify = forwardRef<Props, Function>(({
   ), [loading, defaultValue.id])
 
   if (loading) {
-    return <Loading size={size} />
+    return <Loading size="large" />
   }
 
   const handleNavigateLogin = () => {

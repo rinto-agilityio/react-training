@@ -5,3 +5,9 @@ span[role='img']{
   padding-bottom: 55px;
   margin-top: 30px;
 }
+
+/* Style for icon of tag component */
+div[role='button'] > div[role='img']{
+  padding:0;
+  margin:0;
+}

@@ -71,6 +71,9 @@ const CreateRecipe = ({ history }: Props) => {
       customIconStyles={{
         marginTop: '25px',
       }}
+      customWrapperTagStyles={{
+        justifyContent: 'start',
+      }}
     />
   )
 }
