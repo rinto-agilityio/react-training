@@ -16,12 +16,16 @@ import { SEPARATOR_SPLIT_STRING } from '../../../../constants'
 
 // Components
 import Ingredient from './Ingredient'
+import Wrapper from '../../../../layout/Wrapper'
 
 type Props = {
   description: string,
   size: string,
   customIngredients?: {},
   customTitle?: {},
+  onClose?: (item: string) => void,
+  disabled?: boolean,
+  customWrapperTagStyles: Object,
 }
 
 const Ingredients = ({
@@ -29,6 +33,9 @@ const Ingredients = ({
   size = 'medium',
   customIngredients,
   customTitle,
+  onClose = () => { },
+  disabled = false,
+  customWrapperTagStyles,
 }: Props) => {
   const ingredients = formatStringToArray(description, SEPARATOR_SPLIT_STRING)
 
@@ -49,13 +56,16 @@ const Ingredients = ({
       >
         What you will need
       </Text>
-      {ingredients.map((item, index) => (
-        <Ingredient
-          item={item}
-          key={`${item}_${index}`}
-          size={size}
-        />
-      ))}
+      <Wrapper customStyles={customWrapperTagStyles}>
+        { ingredients.map((item, index) => (
+          <Ingredient
+            item={item}
+            key={`${item}_${index}`}
+            onClose={item => onClose(item)}
+            disabled={disabled}
+          />
+        )) }
+      </Wrapper>
     </View>
   )
 }

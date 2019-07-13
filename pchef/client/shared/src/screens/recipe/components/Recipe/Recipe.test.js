@@ -6,6 +6,7 @@ import Ingredients from './Ingredients'
 import Ingredient from './Ingredient'
 import Button from '../../../../components/Button'
 import Modal from '../../../../components/Modal'
+import Tag from '../../../../components/Tag'
 
 // Mocks
 import { recipes } from '../../../../mocks'
@@ -94,7 +95,7 @@ describe('Recipe by step', () => {
 
   it('Render ingredient component with size medium', () => {
     ingredientComponent.setProps({
-      size: 'medium',
+      disabled: 'true',
     })
     expect(ingredientComponent).toMatchSnapshot()
   })
@@ -165,5 +166,15 @@ describe('Recipe by step', () => {
     }
     const wishList = renderer.create(<Recipe {...recipeProps} />).toJSON()
     expect(wishList).toMatchSnapshot()
+  })
+
+  it('Test', () => {
+    const props = {
+      onClose: jest.fn(),
+    }
+    const ingredientComponent = shallow(<Ingredient {...props} />)
+    const TagComponent = ingredientComponent.find(Tag).props()
+    TagComponent.onClose()
+    expect(props.onClose).toHaveBeenCalled()
   })
 })

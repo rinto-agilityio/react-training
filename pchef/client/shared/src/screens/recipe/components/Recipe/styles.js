@@ -96,6 +96,11 @@ const styles = StyleSheet.create({
   largeTitleBtn: {
     fontSize: FONTS.fontSize.extraLarge,
   },
+
+  // Style for text in tag component
+  customTextStyle: {
+    marginBottom: '5px',
+  },
 })
 
 export default styles
