@@ -163,12 +163,12 @@ const RecipeForm = forwardRef<Props, Function>(({
     }
   }
 
-  // Update IngredientList after closing ingredient item
+  // Update IngredientList after closing ingredient tag
   const handleCloseIngredient = ingredient => {
     const ingredientList = ingredients && ingredients.split(SEPARATOR_SPLIT_STRING)
     const filterIngredient = ingredientList && ingredientList.filter(item => item !== ingredient)
-    const ingredientLists = filterIngredient && filterIngredient.join()
-    setIngredients(ingredientLists)
+    const ingreList = filterIngredient && filterIngredient.join()
+    setIngredients(ingreList)
   }
 
   useImperativeHandle(ref, () => ({

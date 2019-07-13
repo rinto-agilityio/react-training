@@ -37,8 +37,8 @@ const Ingredients = ({
   disabled = false,
   customWrapperTagStyles,
 }: Props) => {
-  const ingredients = formatStringToArray(description, SEPARATOR_SPLIT_STRING)
-
+  const ingredients = (description && formatStringToArray(description, SEPARATOR_SPLIT_STRING)) || []
+  const ingredientAmount = ingredients.length
   return (
     <View
       style={[
@@ -57,14 +57,17 @@ const Ingredients = ({
         What you will need
       </Text>
       <Wrapper customStyles={customWrapperTagStyles}>
-        { ingredients.map((item, index) => (
-          <Ingredient
-            item={item}
-            key={`${item}_${index}`}
-            onClose={item => onClose(item)}
-            disabled={disabled}
-          />
-        )) }
+        {
+          ingredientAmount > 0 ?
+            ingredients.map((item, index) => (
+              <Ingredient
+                item={item}
+                key={`${item}_${index}`}
+                onClose={item => onClose(item)}
+                disabled={disabled}
+              />
+            )) : <Text>No ingredients to show</Text>
+        }
       </Wrapper>
     </View>
   )
