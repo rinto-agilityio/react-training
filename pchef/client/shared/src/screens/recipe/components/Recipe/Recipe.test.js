@@ -95,7 +95,7 @@ describe('Recipe by step', () => {
 
   it('Render ingredient component with size medium', () => {
     ingredientComponent.setProps({
-      disabled: 'true',
+      disabled: true,
     })
     expect(ingredientComponent).toMatchSnapshot()
   })
