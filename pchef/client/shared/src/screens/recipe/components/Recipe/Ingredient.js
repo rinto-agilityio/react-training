@@ -3,35 +3,29 @@
 
 // Libs
 import React, { memo } from 'react'
-import { Text } from 'react-native'
-
+import Tag from '../../../../components/Tag'
 // Styles
 import styles from './styles'
 
 type Props = {
   item: string,
-  size: string,
-  customDescription?: {},
+  onClose: (item: string) => void,
+  disabled: boolean,
 }
 
 const Ingredient = ({
   item = '',
-  size = 'medium',
-  customDescription,
+  onClose = () => {},
+  disabled,
 }: Props) => (
-  <Text
-    style={[
-      styles.descriptionIngredients,
-      styles[`${size}Description`],
-      customDescription,
-    ]}
+  <Tag
+    onClose={() => onClose(item)}
+    mode="flat"
+    customTextStyle={styles.customTextStyle}
+    disabled={disabled}
   >
     {item ? item.trim() : ''}
-  </Text>
+  </Tag>
 )
-
-Ingredient.defaultProps = {
-  customDescription: {},
-}
 
 export default memo<Props>(Ingredient)

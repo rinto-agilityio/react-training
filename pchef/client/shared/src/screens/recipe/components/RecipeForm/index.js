@@ -29,7 +29,7 @@ import Image from '../../../../components/Image'
 import Button from '../../../../components/Button'
 
 // Constants
-import { WEB_PLATFORM } from '../../../../constants'
+import { WEB_PLATFORM, SEPARATOR_SPLIT_STRING } from '../../../../constants'
 
 type Props = {
   size: string,
@@ -61,6 +61,7 @@ type Props = {
   wrapperIconStyle: Object,
   customWrapperIconStyle: Object,
   customIconStyles: Object,
+  customWrapperTagStyles: Object,
 }
 
 const RecipeForm = forwardRef<Props, Function>(({
@@ -84,6 +85,7 @@ const RecipeForm = forwardRef<Props, Function>(({
   handleRedirectLogin,
   wrapperIconStyle,
   customWrapperIconStyle,
+  customWrapperTagStyles,
 }: Props, ref) => {
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
@@ -159,6 +161,14 @@ const RecipeForm = forwardRef<Props, Function>(({
     } catch (err) {
       setError(err)
     }
+  }
+
+  // Update IngredientList after closing ingredient tag
+  const handleCloseIngredient = ingredient => {
+    const ingredientList = ingredients && ingredients.split(SEPARATOR_SPLIT_STRING)
+    const filterIngredient = ingredientList && ingredientList.filter(item => item !== ingredient)
+    const ingreList = filterIngredient && filterIngredient.join()
+    setIngredients(ingreList)
   }
 
   useImperativeHandle(ref, () => ({
@@ -317,6 +327,8 @@ const RecipeForm = forwardRef<Props, Function>(({
           customIngredients={{
             marginTop: METRICS.largeMargin,
           }}
+          onClose={handleCloseIngredient}
+          customWrapperTagStyles={customWrapperTagStyles}
         />
       ) : null}
       {visibleIngredients && (

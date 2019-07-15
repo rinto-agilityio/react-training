@@ -31,6 +31,7 @@ type Props = {
   error: Object,
   recipeSteps: Array<RecipeStepType>,
   handleRedirectLogin: () => void,
+  customWrapperTagStyles: Object,
 }
 
 const Recipe = ({
@@ -48,11 +49,12 @@ const Recipe = ({
     id: '',
   }],
   handleRedirectLogin,
+  customWrapperTagStyles,
 }: Props) => {
   const [visible, setVisible] = useState(true)
 
   if (loading) {
-    return <Loading size={size} />
+    return <Loading size="large" />
   }
 
   const handleNavigateLogin = () => {
@@ -84,6 +86,8 @@ const Recipe = ({
       <Ingredients
         description={description}
         size={size}
+        disabled
+        customWrapperTagStyles={customWrapperTagStyles}
       />
       <Directions
         steps={recipeSteps}

@@ -22,6 +22,9 @@ const RecipeDetail = ({ match, history }: Props) => {
       id={recipeId}
       onSelectStep={handleClickRecipeStep}
       handleRedirectLogin={() => history.push('/login')}
+      customWrapperTagStyles={{
+        justifyContent: 'start',
+      }}
     />
   )
 }

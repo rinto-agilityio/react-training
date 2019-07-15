@@ -25,7 +25,7 @@ exports[`Recipe by step Render Recipe component with loading true 1`] = `
     role="progressbar"
   >
     <div
-      className="css-view-1dbjc4n r-animationDuration-17bb2tj r-animationIterationCount-1muvv40 r-animationKeyframes-127358a r-animationTimingFunction-1ldzwu0 r-height-z80fyv r-width-19wmn03"
+      className="css-view-1dbjc4n r-animationDuration-17bb2tj r-animationIterationCount-1muvv40 r-animationKeyframes-127358a r-animationTimingFunction-1ldzwu0 r-height-1r8g8re r-width-1acpoxo"
     >
       <svg
         height="100%"
