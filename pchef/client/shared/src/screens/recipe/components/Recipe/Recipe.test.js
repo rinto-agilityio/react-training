@@ -168,7 +168,7 @@ describe('Recipe by step', () => {
     expect(wishList).toMatchSnapshot()
   })
 
-  it('Test', () => {
+  it('Should call onClose when closing tag item', () => {
     const props = {
       onClose: jest.fn(),
     }
