@@ -15,8 +15,8 @@ type Props = {
 
 const Ingredient = ({
   item = '',
-  onClose = () => { },
-  disabled = false,
+  onClose = () => {},
+  disabled,
 }: Props) => (
   <Tag
     onClose={() => onClose(item)}
