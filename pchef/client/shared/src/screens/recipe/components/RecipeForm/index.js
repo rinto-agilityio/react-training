@@ -27,6 +27,7 @@ import DirectionForm from '../../../../containers/DirectionForm'
 import Error from '../../../../components/Error'
 import Image from '../../../../components/Image'
 import Button from '../../../../components/Button'
+import Loading from '../../../../components/Loading'
 
 // Constants
 import { WEB_PLATFORM, SEPARATOR_SPLIT_STRING } from '../../../../constants'
@@ -100,6 +101,7 @@ const RecipeForm = forwardRef<Props, Function>(({
   const [error, setError] = useState('')
   const [directors, setDirectors] = useState([])
   const [errorValidator, setErrorValidator] = useState({})
+  const [loading, setLoading] = useState(false)
   const isDisabled = directors.length > 0 ? false : true
 
   const handleCreateRecipe = async isOnpen => {
@@ -118,6 +120,7 @@ const RecipeForm = forwardRef<Props, Function>(({
 
     if (!errors.isError) {
       try {
+        setLoading(true)
         const imageUrl = await compressImage()
         const thumbnail = await compressImage()
 
@@ -132,8 +135,8 @@ const RecipeForm = forwardRef<Props, Function>(({
           true,
         ).then(({ data }) => {
           const { id } = data.createRecipe
-
           if (id) {
+            setLoading(false)
             setVisibleDirections(isOnpen)
           }
           setRecipe(data.createRecipe)
@@ -381,6 +384,9 @@ const RecipeForm = forwardRef<Props, Function>(({
           handleRedirectLogin={handleRedirectLogin}
         />
       )}
+      {
+        loading && <Loading />
+      }
       {WEB_PLATFORM ? (
         <View style={[styles.wrapperButton]}>
           <Button
