@@ -1,6 +1,3 @@
-// @flow
-// add flow above to fix for using flow with React.memo
-
 // Libs
 import React from 'react'
 import { Chip } from 'react-native-paper';
