@@ -24,7 +24,7 @@ const Ingredient = ({
     customTextStyle={styles.customTextStyle}
     disabled={disabled}
   >
-    { item ? item.trim() : '' }
+    {item ? item.trim() : ''}
   </Tag>
 )
 
