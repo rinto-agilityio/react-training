@@ -2,7 +2,7 @@
 // add flow above to fix for using flow with React.memo
 
 // Libs
-import React, { memo } from 'react'
+import React from 'react'
 import { Text, View } from 'react-native'
 
 // Styles
@@ -62,4 +62,4 @@ Directions.defaultProps = {
   onSelectStep: () => {},
 }
 
-export default memo<Props>(Directions)
+export default Directions

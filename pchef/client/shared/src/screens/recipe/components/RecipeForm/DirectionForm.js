@@ -2,7 +2,7 @@
 // add flow above to fix for using flow with React.memo
 
 // Libs
-import React, { useRef, useState, memo } from 'react'
+import React, { useRef, useState } from 'react'
 import { View, Text } from 'react-native'
 
 // Styles
@@ -24,6 +24,7 @@ import TextBox from '../../../../components/TextBox'
 import Icon from '../../../../components/Icon'
 import Error from '../../../../components/Error'
 import Image from '../../../../components/Image'
+import Loading from '../../../../components/Loading'
 
 // Constants
 import { WEB_PLATFORM } from '../../../../constants'
@@ -69,6 +70,7 @@ const DirectionsForm = ({
   const [directions, setDirections] = useState([])
   const [isShowForm, setNextStep] = useState(!directions.length)
   const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
   const nextStep = directions.length + 1
 
   const data = [
@@ -91,6 +93,7 @@ const DirectionsForm = ({
     })
     if (!errors.isError) {
       try {
+        setLoading(true)
         const imageStep = await uploadStepImage()
         await createRecipeStep(
           recipeId,
@@ -102,6 +105,7 @@ const DirectionsForm = ({
           directions.push(data.createRecipeStep)
           setDirections(directions)
           setNextStep(false)
+          setLoading(false)
         })
       } catch (err) {
         setError(err)
@@ -222,6 +226,9 @@ const DirectionsForm = ({
           onPress={handleSubmit}
         />
       </Wrapper>
+      {
+        loading && <Loading />
+      }
     </Modal>
   )
 }
