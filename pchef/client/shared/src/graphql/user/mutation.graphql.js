@@ -80,7 +80,7 @@ const userToggleCategory = graphql(USER_TOGGLE_CATEGORY, {
         }
         proxy.writeQuery({ query: GET_USER, data: dataUpdated })
       } catch (err) {
-        return { error: 'Failed!' }
+        console.error(err)
       }
     },
   },
@@ -129,7 +129,7 @@ const userToggleRecipe = graphql(TOGGLE_RECIPE, {
 
         proxy.writeQuery({ query: GET_USER, data: dataUpdated })
       } catch (err) {
-        return { error: 'Failed!' }
+        console.error(err)
       }
     },
   },
