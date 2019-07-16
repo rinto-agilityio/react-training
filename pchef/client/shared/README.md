@@ -13,7 +13,7 @@
 - User can see the Wishlist page
 - User can see the Wishlist form page
 
-### Environment
+## Environment
 - MacOS 10.13.3
 - VS code
 - Git
@@ -24,7 +24,7 @@
 - JavaScript
 - GraphQL
 
-### Page
+## Page
 - LogIn
 - Welcome
 - Home
@@ -35,7 +35,7 @@
 - Wishlist form
 - Profile
 
-#### Tools and libs
+## Tools and libs
 - **React latest version( hooks )** - [https://reactjs.org/docs/getting-started.html] - A JavaScript library for building user interface.
 - **React native** - [https://facebook.github.io/react-native/docs/getting-started] - A JavaScript library for building your React Native app
 - **React native web** - [https://github.com/necolas/react-native-web/blob/master/docs/guides/getting-started.md] - A JavaScript library for help you render components and applications with React Native for Web
@@ -45,7 +45,7 @@
 - **GraphQL** - [https://graphql.org]: A query language for APIs and a runtime for fulfilling those queries with your existing data
 - **Apollo** - [https://www.apollographql.com/]: An implementation of GraphQL that helps you manage data from the cloud to your UI. It's incrementally adoptable and can be layered over your existing services, including REST APIs and databases
 
-### Structure
+## Structure
 /
 |- shared/
 |  |- .storybook/
