@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
   title: {
     color: COLORS.black,
     fontWeight: 'bold',
-    paddingLeft: METRICS.largePadding,
-    paddingRight: METRICS.largePadding,
+    paddingLeft: METRICS.padding.lg,
+    paddingRight: METRICS.padding.lg,
   },
   smallTitle: {
     fontSize: FONTS.fontSize.medium,
@@ -33,16 +33,16 @@ const styles = StyleSheet.create({
     color: COLORS.baseGray,
     fontWeight: 'bold',
     backgroundColor: COLORS.blackLighter,
-    paddingLeft: METRICS.largePadding,
-    paddingRight: METRICS.largePadding,
+    paddingLeft: METRICS.padding.lg,
+    paddingRight: METRICS.padding.lg,
   },
 
   // Description
   description: {
     color: COLORS.black,
-    marginTop: METRICS.mediumMargin,
-    paddingLeft: METRICS.largePadding,
-    paddingRight: METRICS.largePadding,
+    marginTop: METRICS.margin.md,
+    paddingLeft: METRICS.padding.lg,
+    paddingRight: METRICS.padding.lg,
   },
   smallDescription: {
     fontSize: FONTS.fontSize.small,
@@ -57,17 +57,17 @@ const styles = StyleSheet.create({
   // Image
   image: {
     width: '100%',
-    marginTop: METRICS.mediumMargin,
+    marginTop: METRICS.margin.md,
     justifyContent: 'space-between',
   },
   smallImage: {
-    height: METRICS.smallBgImage,
+    height: METRICS.bgImage.sm,
   },
   mediumImage: {
-    height: METRICS.mediumBgImage,
+    height: METRICS.bgImage.md,
   },
   largeImage: {
-    height: METRICS.largeBgImage,
+    height: METRICS.bgImage.lg,
   },
 
   // Step
@@ -84,26 +84,26 @@ const styles = StyleSheet.create({
   },
   smallStep: {
     width: 25,
-    height: METRICS.smallPadding,
+    height: METRICS.padding.sm,
   },
   mediumStep: {
-    width: METRICS.extraLargePadding,
-    height: METRICS.smallPadding,
+    width: METRICS.padding.xl,
+    height: METRICS.padding.sm,
   },
   largeStep: {
     width: 35,
-    height: METRICS.smallPadding,
+    height: METRICS.padding.sm,
   },
 
   // views
   views: {
     textTransform: 'uppercase',
     color: COLORS.baseGray,
-    paddingLeft: METRICS.largePadding,
-    paddingRight: METRICS.largePadding,
+    paddingLeft: METRICS.padding.lg,
+    paddingRight: METRICS.padding.lg,
   },
   smallViews: {
-    fontSize: METRICS.smallPosition,
+    fontSize: METRICS.position.sm,
   },
   mediumViews: {
     fontSize: 12,

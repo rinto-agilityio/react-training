@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   // Wrapper
   wrapper: {
     zIndex: METRICS.iconZindex,
-    width: METRICS.extraLargeWrapper,
+    width: METRICS.wrapper.xl,
   },
 
   // Title
@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
     ...METRICS.truncate,
     color: COLORS.black,
     fontWeight: FONTS.fontWeight.large,
-    paddingLeft: METRICS.largePadding,
-    paddingRight: METRICS.largePadding,
+    paddingLeft: METRICS.padding.lg,
+    paddingRight: METRICS.padding.lg,
   },
   smallTitle: {
     fontSize: FONTS.fontSize.medium,
@@ -32,16 +32,16 @@ const styles = StyleSheet.create({
   // Image
   image: {
     width: '100%',
-    marginTop: METRICS.mediumMargin,
+    marginTop: METRICS.margin.md,
   },
   smallImage: {
-    height: METRICS.smallBgImage,
+    height: METRICS.bgImage.sm,
   },
   mediumImage: {
-    height: METRICS.mediumBgImage,
+    height: METRICS.bgImage.md,
   },
   largeImage: {
-    height: METRICS.largeBgImage,
+    height: METRICS.bgImage.lg,
   },
 })
 

@@ -7,9 +7,9 @@ import { METRICS } from '../../themes'
 // Create style for header category
 const styles = StyleSheet.create({
   container: {
-    marginTop: METRICS.largeMargin,
+    marginTop: METRICS.margin.lg,
     marginRight: 'auto',
-    marginBottom: METRICS.largeMargin,
+    marginBottom: METRICS.margin.lg,
     marginLeft: 'auto',
     position: 'relative',
     width: '100%',

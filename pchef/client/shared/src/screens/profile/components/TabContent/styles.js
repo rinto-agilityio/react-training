@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
       METRICS.screenWidth > METRICS.mediumScreen
         ? METRICS.smallPercentItem
         : '100%',
-    paddingLeft: METRICS.smallPadding,
-    paddingRight: METRICS.smallPadding,
+    paddingLeft: METRICS.padding.sm,
+    paddingRight: METRICS.padding.sm,
   },
 })
 

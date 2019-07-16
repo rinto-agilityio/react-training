@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   wrapperItem: {
     display: 'flex',
     width: '100%',
-    padding: METRICS.largePadding,
+    padding: METRICS.padding.lg,
     borderBottomColor: COLORS.baseGray,
     borderBottomWidth: METRICS.smallBorderWidth,
   },
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   date: {
     color: COLORS.black,
     fontWeight: 'bold',
-    marginBottom: METRICS.largeMargin,
+    marginBottom: METRICS.margin.lg,
   },
   smallDate: {
     fontSize: FONTS.fontSize.medium,
@@ -50,8 +50,8 @@ const styles = StyleSheet.create({
 
   // Button
   button: {
-    marginTop: METRICS.largeMargin,
-    marginBottom: METRICS.largeMargin,
+    marginTop: METRICS.margin.lg,
+    marginBottom: METRICS.margin.lg,
   },
 })
 

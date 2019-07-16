@@ -13,12 +13,12 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   primaryButton: {
-    top: METRICS.largeMargin,
-    right: METRICS.mediumMargin + METRICS.smallMargin,
+    top: METRICS.margin.lg,
+    right: METRICS.margin.md + METRICS.margin.sm,
   },
   secondaryButton: {
-    top: METRICS.extraLargeMargin,
-    right: METRICS.largeMargin,
+    top: METRICS.margin.xl,
+    right: METRICS.margin.lg,
   },
   next: {
     fontWeight: FONTS.fontWeight.large,
@@ -48,23 +48,23 @@ const styles = StyleSheet.create({
   },
   primaryContent: {
     fontSize: FONTS.fontSize.base,
-    marginTop: METRICS.smallMargin,
+    marginTop: METRICS.margin.sm,
   },
   secondaryContent: {
-    marginTop: METRICS.mediumMargin,
+    marginTop: METRICS.margin.md,
     fontSize: FONTS.fontSize.base,
   },
   introduction: {
     color: COLORS.flowerBlue,
     textAlign: 'center',
     fontWeight: FONTS.fontWeight.large,
-    marginTop: METRICS.mediumMargin + METRICS.smallMargin,
+    marginTop: METRICS.margin.md + METRICS.margin.sm,
   },
   primaryIntroduction: {
     fontSize: FONTS.fontSize.medium,
   },
   secondaryIntroduction: {
-    marginTop: METRICS.largeMargin,
+    marginTop: METRICS.margin.lg,
     fontSize: FONTS.fontSize.large,
   },
   divider: {
@@ -75,25 +75,25 @@ const styles = StyleSheet.create({
   primaryDivider: {
     width: 80,
     height: 4,
-    marginTop: METRICS.largeMargin,
-    marginBottom: METRICS.largeMargin,
+    marginTop: METRICS.margin.lg,
+    marginBottom: METRICS.margin.lg,
   },
   secondaryDivider: {
     width: 120,
     height: 6,
-    marginTop: METRICS.extraLargeMargin,
-    marginBottom: METRICS.extraLargeMargin,
+    marginTop: METRICS.margin.xl,
+    marginBottom: METRICS.margin.xl,
   },
   categoryWrapper: {
-    maxWidth: METRICS.largeContent,
+    maxWidth: METRICS.content.lg,
     marginLeft: 'auto',
     marginRight: 'auto',
   },
   saveCategoryBtn: {
-    width: METRICS.mediumWrapper,
+    width: METRICS.wrapper.md,
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginBottom: METRICS.largeMargin,
+    marginBottom: METRICS.margin.lg,
   },
 })
 

@@ -14,21 +14,21 @@ export default StyleSheet.create({
   },
   input: {
     borderBottomWidth: 0,
-    borderRadius: METRICS.mediumBorderRadius,
-    height: METRICS.mediumInput,
+    borderRadius: METRICS.borderRadius.md,
+    height: METRICS.input.md,
     color: COLORS.black,
-    paddingLeft: METRICS.smallPadding,
-    paddingRight: METRICS.smallPadding,
+    paddingLeft: METRICS.padding.sm,
+    paddingRight: METRICS.padding.sm,
   },
   primaryInput: {
     fontSize: FONTS.fontSize.base,
-    marginLeft: METRICS.smallMargin,
+    marginLeft: METRICS.margin.sm,
   },
   secondaryInput: {
     fontSize: FONTS.fontSize.medium,
-    marginLeft: METRICS.mediumMargin,
-    paddingLeft: METRICS.smallPadding,
-    paddingRight: METRICS.smallPadding,
+    marginLeft: METRICS.margin.md,
+    paddingLeft: METRICS.padding.sm,
+    paddingRight: METRICS.padding.sm,
   },
   badgeContainer: {
     position: 'absolute',
@@ -37,9 +37,9 @@ export default StyleSheet.create({
     backgroundColor: COLORS.green,
   },
   primaryBadge: {
-    right: METRICS.mediumBadge,
+    right: METRICS.badge.md,
   },
   secondaryBadge: {
-    right: METRICS.smallBadge,
+    right: METRICS.badge.sm,
   },
 })

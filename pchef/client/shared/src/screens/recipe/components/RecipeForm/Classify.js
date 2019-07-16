@@ -102,7 +102,7 @@ const Classify = forwardRef<Props, Function>(({
         direction="row"
         childPosition="spaceBetween"
         customStyles={{
-          marginBottom: METRICS.largeMargin,
+          marginBottom: METRICS.margin.lg,
           paddingRight: 0,
           paddingLeft: 0,
         }}

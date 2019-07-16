@@ -285,7 +285,7 @@ const Recipe = ({
         publishedAt={Date.now()}
         isGetTime
         customStyle={{
-          paddingLeft: METRICS.largePadding,
+          paddingLeft: METRICS.padding.lg,
         }}
         customNameStyles={{
           fontWeight: 'bold',

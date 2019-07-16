@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    padding: METRICS.largePadding,
+    padding: METRICS.padding.lg,
   },
 })
 

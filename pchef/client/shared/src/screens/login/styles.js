@@ -13,11 +13,11 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   secondaryContainer: {
-    paddingTop: METRICS.largePadding * 10,
+    paddingTop: METRICS.padding.lg * 10,
   },
   text: {
     textAlign: 'center',
-    marginTop: METRICS.largeMargin * 5,
+    marginTop: METRICS.margin.lg * 5,
     fontWeight: 'bold',
     fontSize: FONTS.fontSize.moreExtraLarge,
     color: COLORS.white,
@@ -32,20 +32,20 @@ const styles = StyleSheet.create({
   },
   errorWrapper: {
     backgroundColor: COLORS.cherub,
-    paddingTop: METRICS.smallPadding + METRICS.mediumPadding,
-    paddingRight: METRICS.smallPadding,
-    paddingBottom: METRICS.smallPadding + METRICS.mediumPadding,
-    paddingLeft: METRICS.smallPadding,
+    paddingTop: METRICS.padding.sm + METRICS.padding.sm,
+    paddingRight: METRICS.padding.sm,
+    paddingBottom: METRICS.padding.sm + METRICS.padding.sm,
+    paddingLeft: METRICS.padding.sm,
     position: 'absolute',
-    borderRadius: METRICS.smallBorderRadius,
+    borderRadius: METRICS.borderRadius.xs,
   },
   primaryErrorWrapper: {
-    top: METRICS.largeMargin,
-    width: METRICS.largeWrapper,
+    top: METRICS.margin.lg,
+    width: METRICS.wrapper.lg,
   },
   secondaryErrorWrapper: {
-    top: METRICS.largeMargin + METRICS.extraLargeMargin,
-    width: METRICS.mediumWrapper * 2,
+    top: METRICS.margin.lg + METRICS.margin.xl,
+    width: METRICS.wrapper.md * 2,
   },
 })
 

@@ -10,34 +10,27 @@ import { METRICS } from '../../themes'
 import Reaction from '.'
 
 // Helper
-import { wInfo } from '../../../.storybook/utils';
+import { wInfo } from '../../../.storybook/utils'
 
 storiesOf('Reaction', module)
   .addDecorator(wInfo())
   .add('Favorited', () => (
     <View
       style={{
-        width: METRICS.largeBgImage,
-        height: METRICS.largeBgImage,
+        width: METRICS.bgImage.lg,
+        height: METRICS.bgImage.lg,
       }}
     >
-      <Reaction
-        votes={[1]}
-        size="medium"
-        isFavorited
-      />
+      <Reaction votes={[1]} size="medium" isFavorited />
     </View>
   ))
   .add('Not favorited', () => (
     <View
       style={{
-        width: METRICS.largeBgImage,
-        height: METRICS.largeBgImage,
+        width: METRICS.bgImage.lg,
+        height: METRICS.bgImage.lg,
       }}
     >
-      <Reaction
-        votes={[1]}
-        size="medium"
-      />
+      <Reaction votes={[1]} size="medium" />
     </View>
   ))

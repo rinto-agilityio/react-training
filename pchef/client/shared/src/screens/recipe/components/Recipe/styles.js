@@ -7,14 +7,14 @@ import { COLORS, METRICS, FONTS } from '../../../../themes'
 const styles = StyleSheet.create({
   wrapper: {
     display: 'flex',
-    padding: METRICS.mediumPadding,
+    padding: METRICS.padding.sm,
   },
 
   // Title
   title: {
     color: COLORS.black,
     fontWeight: 'bold',
-    marginBottom: METRICS.largeMargin,
+    marginBottom: METRICS.margin.lg,
   },
   smallTitle: {
     fontSize: FONTS.fontSize.medium,
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   // Ingredients
   descriptionIngredients: {
     color: COLORS.black,
-    marginBottom: METRICS.mediumMargin,
+    marginBottom: METRICS.margin.md,
   },
   ingredients: {
     borderBottomColor: COLORS.baseGray,
@@ -49,10 +49,10 @@ const styles = StyleSheet.create({
 
   // Directions
   directions: {
-    marginTop: METRICS.largeMargin,
+    marginTop: METRICS.margin.lg,
   },
   wrapperDescriptions: {
-    lineHeight: METRICS.smallLineHeight,
+    lineHeight: METRICS.lineHeight.sm,
     width: '85%',
   },
   mediumWrapperDescriptions: {
@@ -62,27 +62,27 @@ const styles = StyleSheet.create({
     color: COLORS.white,
     backgroundColor: COLORS.black,
     fontWeight: 'bold',
-    paddingLeft: METRICS.largePadding,
-    paddingRight: METRICS.smallPadding,
+    paddingLeft: METRICS.padding.lg,
+    paddingRight: METRICS.padding.sm,
   },
 
   // Button
   button: {
     backgroundColor: COLORS.black,
     borderColor: COLORS.black,
-    minWidth: METRICS.largeIcon,
+    minWidth: METRICS.icon.lg,
   },
   smallButton: {
-    borderRadius: METRICS.smallBorderRadius,
+    borderRadius: METRICS.borderRadius.xs,
     padding: 0,
   },
   mediumButton: {
-    borderRadius: METRICS.mediumBorderRadius,
-    padding: METRICS.smallPadding,
+    borderRadius: METRICS.borderRadius.md,
+    padding: METRICS.padding.sm,
   },
   largeButton: {
-    borderRadius: METRICS.mediumBorderRadius,
-    padding: METRICS.mediumPadding,
+    borderRadius: METRICS.borderRadius.md,
+    padding: METRICS.padding.sm,
   },
   titleBtn: {
     fontWeight: 'bold',

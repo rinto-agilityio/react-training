@@ -8,19 +8,19 @@ const styles = StyleSheet.create({
   // Dialog
   // Width full container for small/medium dialog
   largeDialog: {
-    width: METRICS.mediumContent,
+    width: METRICS.content.md,
     alignSelf: 'center',
     margin: 'auto',
   },
 
   // Button
   btnModal: {
-    marginRight: METRICS.mediumMargin,
+    marginRight: METRICS.margin.md,
   },
 
   // Title
   titleModal: {
-    marginLeft: METRICS.extraLargeMargin,
+    marginLeft: METRICS.margin.xl,
     fontWeight: 'bold',
   },
   smallTitleModal: {

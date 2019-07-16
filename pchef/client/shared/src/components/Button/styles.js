@@ -8,7 +8,7 @@ import { COLORS, METRICS, FONTS } from '../../themes'
 const styles = StyleSheet.create({
   button: {
     ...METRICS.flexCenter,
-    padding: METRICS.smallPadding,
+    padding: METRICS.padding.sm,
   },
   title: {
     color: COLORS.white,

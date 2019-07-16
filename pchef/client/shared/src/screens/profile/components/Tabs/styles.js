@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         : screenWidth,
     width: '100%',
     flexDirection: 'row',
-    padding: METRICS.largePadding,
+    padding: METRICS.padding.lg,
     paddingBottom: 0,
     backgroundColor: COLORS.white,
   },
@@ -30,13 +30,13 @@ const styles = StyleSheet.create({
         ? METRICS.extraLargeScreen
         : screenWidth,
     width: '100%',
-    padding: METRICS.largePadding,
+    padding: METRICS.padding.lg,
     backgroundColor: COLORS.lightSliver,
     flexDirection: screenWidth > METRICS.mediumScreen ? 'row' : 'column',
     flexWrap: screenWidth > METRICS.mediumScreen ? 'wrap' : 'nowrap',
     marginLeft: 'auto',
     marginRight: 'auto',
-    minHeight: METRICS.screenHeight - METRICS.smallHeader,
+    minHeight: METRICS.screenHeight - METRICS.header.sm,
   },
 })
 

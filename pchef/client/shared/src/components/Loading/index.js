@@ -14,12 +14,16 @@ type Props = {
 
 const Loading = ({ size, color, customStyle }: Props) => (
   <View style={{ flex: 1, justifyContent: 'center' }}>
-    <ActivityIndicator size={size === 'medium' ? 'small' : size} color={color} style={customStyle} />
+    <ActivityIndicator
+      size={size === 'medium' ? 'small' : size}
+      color={color}
+      style={customStyle}
+    />
   </View>
 )
 
 Loading.defaultProps = {
-  size: METRICS.largeIcon,
+  size: METRICS.icon.lg,
   color: COLORS.baseGray,
   customStyle: {},
 }

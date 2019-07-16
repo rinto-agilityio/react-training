@@ -34,7 +34,7 @@ const Direction = ({
     direction="row"
     childPosition="middle"
     customStyles={{
-      marginBottom: METRICS.largeMargin,
+      marginBottom: METRICS.margin.lg,
     }}
   >
     <Button
@@ -43,7 +43,9 @@ const Direction = ({
       titleStyle={[styles.titleBtn, styles[`${size}TitleBtn`]]}
       onPress={() => onSelectStep(item.id)}
     />
-    <Text style={[styles.wrapperDescriptions, styles[`${size}WrapperDescriptions`]]}>
+    <Text
+      style={[styles.wrapperDescriptions, styles[`${size}WrapperDescriptions`]]}
+    >
       <Text
         style={[
           styles.descriptionDirections,

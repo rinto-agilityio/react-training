@@ -2,52 +2,68 @@ import { Dimensions } from 'react-native'
 
 export default {
   // Padding
-  smallPadding: 5,
-  mediumPadding: 10,
-  largePadding: 20,
-  extraLargePadding: 30,
+  padding: {
+    sm: 5,
+    md: 10,
+    lg: 20,
+    xl: 30,
+  },
 
   // Margin
-  resetMargin: 0,
-  smallMargin: 5,
-  mediumMargin: 10,
-  largeMargin: 20,
-  extraLargeMargin: 30,
-  superLargeMargin: 200,
+  margin: {
+    none: 0,
+    sm: 5,
+    md: 10,
+    lg: 20,
+    xl: 30,
+    hg: 200,
+  },
 
   // Input
-  smallInput: 20,
-  mediumInput: 40,
-  largeInput: 60,
+  input: {
+    sm: 20,
+    md: 40,
+    lg: 60,
+  },
 
   // Image
-  extraExtraSmallImage: 60,
-  extraSmallImage: 80,
-  smallImage: 100,
-  mediumImage: 150,
-  largeImage: 300,
+  image: {
+    xs: 60,
+    sm: 80,
+    md: 100,
+    lg: 150,
+    xl: 300,
+  },
 
   // Content
-  smallContent: 400,
-  mediumContent: 500,
-  largeContent: 700,
+  content: {
+    sm: 400,
+    md: 500,
+    lg: 700,
+  },
 
   // Wrapper
-  smallWrapper: 150,
-  mediumWrapper: 200,
-  largeWrapper: 300,
-  extraLargeWrapper: 380,
+  wrapper: {
+    sm: 150,
+    md: 200,
+    lg: 300,
+    xl: 380,
+  },
 
   // Position
-  resetPosition: 0,
-  smallPosition: 10,
-  mediumPosition: 15,
-  largePosition: 50,
-  extraLargePosition: 150,
+  position: {
+    none: 0,
+    sm: 10,
+    md: 15,
+    lg: 50,
+    xl: 150,
+  },
 
   // Line Height
-  smallLineHeight: 21,
-  mediumLineHeight: 25,
+  lineHeight: {
+    sm: 21,
+    md: 25,
+  },
 
   // Flex
   flexCenter: {
@@ -56,30 +72,40 @@ export default {
   },
 
   // Icon
-  smallIcon: 20,
-  mediumIcon: 30,
-  largeIcon: 40,
+  icon: {
+    sm: 20,
+    md: 30,
+    lg: 40,
+  },
 
   // Header
-  smallHeader: 250,
-  mediumHeader: 300,
-  largeHeader: 500,
+  header: {
+    sm: 250,
+    md: 300,
+    lg: 500,
+  },
 
   // Border Radius
-  smallBorderRadius: 5,
-  baseBorderRadius: 8,
-  mediumBorderRadius: 10,
-  largeBorderRadius: 20,
+  borderRadius: {
+    xs: 5,
+    sm: 8,
+    md: 10,
+    lg: 20,
+  },
 
   // Backgroud Image
-  smallBgImage: 150,
-  mediumBgImage: 230,
-  largeBgImage: 300,
+  bgImage: {
+    sm: 150,
+    md: 230,
+    lg: 300,
+  },
 
   // Badge
-  smallBadge: 5,
-  mediumBadge: 10,
-  largeBadge: 16,
+  badge: {
+    sm: 5,
+    md: 10,
+    lg: 16,
+  },
 
   // Avatar
   smallAvatar: 40,
