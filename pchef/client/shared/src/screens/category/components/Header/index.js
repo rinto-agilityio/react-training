@@ -25,7 +25,7 @@ type Props = {
   isGrid: boolean,
   customWrapperIcon?: {},
   size?: string,
-  onFollowing?: () => void | Promise<void>,
+  onFollowing: () => void | Promise<void>,
   onSelectListView?: (itemName: string) => void,
   isFollow: boolean,
   wrapperIconStyle: Object,
@@ -98,7 +98,6 @@ Header.defaultProps = {
   customWrapperIcon: {},
   customTitle: {},
   size: 'small',
-  onFollowing: () => {},
   onSelectListView: () => {},
 }
 
