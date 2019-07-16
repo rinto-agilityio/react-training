@@ -18,10 +18,17 @@
 ; Ignore duplicate module providers
 ; For RN Apps installed via npm, "Libraries" folder is inside
 ; "node_modules/react-native" but in the source repo it is in the root
-.*/Libraries/react-native/React.js
+node_modules/react-native/Libraries/react-native/React.js
 
 ; Ignore polyfills
-.*/Libraries/polyfills/.*
+node_modules/react-native/Libraries/polyfills/.*
+
+; These should not be required directly
+; require from fbjs/lib instead: require('fbjs/lib/warning')
+node_modules/warning/.*
+
+; Flow doesn't support platforms
+.*/Libraries/Utilities/HMRLoadingView.js
 
 ; Ignore metro
 .*/node_modules/metro/.*
@@ -55,6 +62,9 @@ module.system.haste.paths.blacklist=.*/__tests__/.*
 module.system.haste.paths.blacklist=.*/__mocks__/.*
 module.system.haste.paths.blacklist=<PROJECT_ROOT>/node_modules/react-native/Libraries/Animated/src/polyfills/.*
 module.system.haste.paths.whitelist=<PROJECT_ROOT>/node_modules/react-native/Libraries/.*
+module.system.haste.paths.whitelist=<PROJECT_ROOT>/node_modules/react-native/RNTester/.*
+module.system.haste.paths.whitelist=<PROJECT_ROOT>/node_modules/react-native/IntegrationTests/.*
+module.system.haste.paths.blacklist=<PROJECT_ROOT>/node_modules/react-native/Libraries/react-native/react-native-implementation.js
 
 munge_underscores=true
 
@@ -64,6 +74,7 @@ module.file_ext=.js
 module.file_ext=.jsx
 module.file_ext=.json
 module.file_ext=.native.js
+module.file_ext=.ios.js
 
 suppress_type=$FlowIssue
 suppress_type=$FlowFixMe
