@@ -22,7 +22,7 @@ type Props = {
   size: string,
   visible?: boolean,
   handleSubmitIngredients: (value?: string) => void,
-  onDismiss?: () => void,
+  onDismiss: () => void,
 }
 
 const IngredientsForm = ({
@@ -57,7 +57,6 @@ const IngredientsForm = ({
 
 IngredientsForm.defaultProps = {
   visible: false,
-  onDismiss: () => {},
 }
 
 export default memo<Props>(IngredientsForm)

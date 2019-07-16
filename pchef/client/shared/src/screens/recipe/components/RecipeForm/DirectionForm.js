@@ -151,6 +151,7 @@ const DirectionsForm = ({
             title={nextStep.toString()}
             buttonStyle={[styles.button, styles[`${size}Button`]]}
             titleStyle={[styles.titleBtn, styles[`${size}TitleBtn`]]}
+            onPress={() => {}}
           />
           <Wrapper
             direction="column"
