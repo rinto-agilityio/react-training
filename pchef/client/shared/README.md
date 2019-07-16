@@ -52,18 +52,18 @@
 |  |- coverage/
 |  |- flow-typed/
 |  |- public/
-|  |- src
-|  |  |- assets
-|  |  |- components
-|  |  |- config
-|  |  |- constants
-|  |  |- containers
-|  |  |- graphql
-|  |  |- helpers
-|  |  |- layout
-|  |  |- mocks
-|  |  |- screens
-|  |  |- themes
+|  |- src/
+|  |  |- assets/
+|  |  |- components/
+|  |  |- config/
+|  |  |- constants/
+|  |  |- containers/
+|  |  |- graphql/
+|  |  |- helpers/
+|  |  |- layout/
+|  |  |- mocks/
+|  |  |- screens/
+|  |  |- themes/
 |  |  |- App.js
 |  |  |- App.test.js
 |  |  |- AppStyle.js
