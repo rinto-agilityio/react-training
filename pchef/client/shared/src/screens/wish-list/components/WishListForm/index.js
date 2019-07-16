@@ -74,7 +74,7 @@ const WishListForm = forwardRef<Props, Function>(({
   useEffect(() => {
     const recipeList = recipes
     setRecipeList(recipeList)
-  }, [recipes])
+  }, [recipes.length])
 
   const dataIconClassify = [
     {
