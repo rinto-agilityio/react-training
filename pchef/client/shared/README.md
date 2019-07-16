@@ -45,6 +45,43 @@
 - **GraphQL** - [https://graphql.org]: A query language for APIs and a runtime for fulfilling those queries with your existing data
 - **Apollo** - [https://www.apollographql.com/]: An implementation of GraphQL that helps you manage data from the cloud to your UI. It's incrementally adoptable and can be layered over your existing services, including REST APIs and databases
 
+### Structure
+/
+|- shared/
+|  |- .storybook/
+|  |- coverage/
+|  |- flow-typed/
+|  |- public/
+|  |- src
+|  |  |- assets
+|  |  |- components
+|  |  |- config
+|  |  |- constants
+|  |  |- containers
+|  |  |- graphql
+|  |  |- helpers
+|  |  |- layout
+|  |  |- mocks
+|  |  |- screens
+|  |  |- themes
+|  |  |- App.js
+|  |  |- App.test.js
+|  |  |- AppStyle.js
+|  |  |- index.js
+|  |- type-def-lib/
+|  |- .env
+|  |- .eslintrc
+|  |- .flowconfig
+|  |- .gitignore
+|  |- jest.config.js
+|  |- babel.config.js
+|  |- config-overrides.js
+|  |- index.js
+|  |- package.json
+|  |- README.md
+|  |- yarn.lock
+\
+
 ## Installation
 1. Set up client
   ```
