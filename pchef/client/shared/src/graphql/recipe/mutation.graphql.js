@@ -140,7 +140,7 @@ const publishRecipe = graphql(PUBLISH_RECIPE, {
         }
         proxy.writeQuery({ query: GET_RECIPES, data: dataUpdated })
       } catch (err) {
-        return { error: 'Failed!' }
+        return { err }
       }
     },
   },
@@ -202,7 +202,7 @@ const userToggleRecipe = graphql(TOGGLE_RECIPE, {
         }
         proxy.writeQuery({ query: GET_RECIPES, data: dataUpdated })
       } catch (err) {
-        return { error: 'Failed!' }
+        return { err }
       }
     },
   },
@@ -264,7 +264,7 @@ const userToggleVote = graphql(TOGGLE_VOTE, {
 
         proxy.writeQuery({ query: GET_RECIPES, data: dataUpdated })
       } catch (err) {
-        console.error(err)
+        return { err }
       }
     },
   }),

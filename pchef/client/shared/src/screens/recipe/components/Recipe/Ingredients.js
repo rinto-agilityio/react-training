@@ -33,7 +33,7 @@ const Ingredients = ({
   size = 'medium',
   customIngredients,
   customTitle,
-  onClose = () => { },
+  onClose = () => {},
   disabled = false,
   customWrapperTagStyles,
 }: Props) => {

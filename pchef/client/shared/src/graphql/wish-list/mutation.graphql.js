@@ -43,7 +43,7 @@ const createWishList = graphql(CREATE_WISHLIST, {
         dataQuery.getAllWishList.push(createWishList)
         proxy.writeQuery({ query: GET_ALL_WISH_LIST, data: dataQuery })
       } catch (err) {
-        return { error: 'Failed!' }
+        return { err }
       }
     },
   },

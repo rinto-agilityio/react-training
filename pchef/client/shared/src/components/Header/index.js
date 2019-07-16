@@ -11,7 +11,7 @@ import Icon from '../Icon'
 import Button from '../Button'
 
 // Themes
-import { COLORS, FONTS } from '../../themes'
+import { COLORS, FONTS, IMAGES } from '../../themes'
 
 // Styles
 import styles from './styles'
@@ -78,7 +78,7 @@ const Header = ({
             <TouchableOpacity onPress={onPressLogo} style={styles.logo}>
               <View style={[styles.imageWrapper, styles[`${type}ImageWrapper`]]}>
                 <Image
-                  source={require('../../assets/images/logo.png')}
+                  source={IMAGES.logo}
                   style={[styles.image, styles[`${type}Image`]]}
                 />
               </View>
@@ -107,7 +107,7 @@ const Header = ({
                             uri: (
                               avatar
                                 ? avatar
-                                : require('../../assets/images/default_avatar.png')
+                                : IMAGES.defaultAvatar
                             ),
                           }}
                         />
