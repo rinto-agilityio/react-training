@@ -6,8 +6,9 @@ import { WEB_PLATFORM } from '../constants'
  * @param {string} separator
  * @return {array} array of string
  */
-export const formatStringToArray = (string: string, separator: string) =>
-  string.split(separator) // Split string to array by separator
+export const formatStringToArray = (string?: string, separator: string) => (
+  string && string.split(separator) // Split string to array by separator
+)
 
 // init default value for stepInfo
 const defaultValue = {
@@ -24,10 +25,11 @@ const defaultValue = {
  */
 export const findStep = (
   arr: Array<{
-    description: string,
+    id: string,
+    description?: string,
     imgUrl: string,
     step: number,
-    title: string,
+    title?: string,
   }>,
   index: number
 ) => arr.find(item => item.step === index) || defaultValue
@@ -98,9 +100,9 @@ export const formatFiledOnObject = (arr: Array<string>, typename?: string) => {
  */
 type Item = {
   id: string,
-  title: string,
+  title?: string,
   imgUrl: string,
-  description: string,
+  description?: string,
   votes: Array<string>,
   thumbnail: string,
 }

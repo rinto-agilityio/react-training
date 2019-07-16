@@ -18,7 +18,7 @@ import Error from '../../../../components/Error'
 // Helper
 import { customError } from '../../../../helpers/utils'
 
-import type { RecipeStepType } from '../../../../types'
+import type { RecipeStep } from '../../../../flow-types/recipe-step'
 
 type Props = {
   getRecipe: {
@@ -29,7 +29,7 @@ type Props = {
   onSelectStep?: (id: string) => void,
   loading: boolean,
   error: Object,
-  recipeSteps: Array<RecipeStepType>,
+  recipeSteps: Array<RecipeStep>,
   handleRedirectLogin: () => void,
   customWrapperTagStyles: Object,
 }
@@ -47,6 +47,7 @@ const Recipe = ({
     step: 1,
     title: '',
     id: '',
+    imgUrl: '',
   }],
   handleRedirectLogin,
   customWrapperTagStyles,

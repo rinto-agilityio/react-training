@@ -25,7 +25,7 @@ import { COLORS, FONTS } from '../../../../themes'
 import styles from './styles'
 
 // @flow
-import type { RecipeType } from '../../../../types'
+import type { Recipe as RecipeType } from '../../../../flow-types/recipe'
 
 type Props = {
   recipe: RecipeType,
@@ -39,7 +39,14 @@ type Props = {
 }
 
 const Recipe = ({
-  recipe,
+  recipe = {
+    id: '',
+    title: '',
+    imgUrl: '',
+    description: '',
+    thumbnail: '',
+    votes: [],
+  },
   onPressIcon = () => {},
   size = '',
   color,

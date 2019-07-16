@@ -19,7 +19,7 @@ const Tag = ({
   customStyle,
   customTextStyle,
   mode,
-  onClose = () => {},
+  onClose,
   disabled,
 }: Props) => (
   <Chip

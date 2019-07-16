@@ -11,12 +11,14 @@ import styles from './styles'
 // Helpers
 import { getDateForCalendar } from '../../../../helpers/date-time'
 
-import type { WishListType, CategoryType, CookingType } from '../../../../types'
+import type { WishList } from '../../../../flow-types/wish-list'
+import type { Category } from '../../../../flow-types/category'
+import type { CookingType } from '../../../../flow-types/cooking-type'
 
 type Props = {
   size: string,
-  item: WishListType,
-  categories: Array<CategoryType>,
+  item: WishList,
+  categories: Array<Category>,
   cookingTypes: Array<CookingType>,
 }
 

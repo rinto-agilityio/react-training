@@ -10,7 +10,7 @@ import styles from './styles'
 import { COLORS } from '../../themes/index'
 
 type Props = {
-  onPress?: () => void | Promise<void>,
+  onPress: () => void | Promise<void>,
   buttonStyle?: {} | Array<{}>,
   title: string,
   titleStyle?: {} | Array<{}>,
@@ -48,7 +48,6 @@ const Button = ({
 )
 
 Button.defaultProps = {
-  onPress: () => {},
   buttonStyle: {},
   titleStyle: {},
   disabled: false,

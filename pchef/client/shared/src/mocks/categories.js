@@ -67,7 +67,7 @@ export const categories = [
   },
   {
     id: 'Easy Lunch',
-    name: 'Easy Lunch',
+    name: null,
     imgUrl:
       'https://realhousemoms.com/wp-content/uploads/Honey-Butter-Chicken-IG.jpg',
   },

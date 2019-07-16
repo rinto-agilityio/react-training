@@ -21,8 +21,8 @@ type Props = {
   children: any,
   visible?: boolean,
   customDialog?: {} | Array<{}>,
-  onDismiss?: () => void,
-  onSubmit?: () => void,
+  onDismiss: () => void,
+  onSubmit: () => void,
 }
 
 const Modal = ({
@@ -73,8 +73,6 @@ Modal.defaultProps = {
   title: '',
   visible: false,
   customDialog: {},
-  onSubmit: () => {},
-  onDismiss: () => {},
 }
 
 export default memo<Props>(Modal)

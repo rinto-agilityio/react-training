@@ -17,8 +17,8 @@ type Props = {
   customWrapperIcon?: {},
   size: string,
   votes: Array<string>,
-  onPressFavorite?: () => void | Promise<void>,
-  onPressVote?: () => void | Promise<void>,
+  onPressFavorite: () => void | Promise<void>,
+  onPressVote: () => void | Promise<void>,
   wrapperIconStyle?: Object,
 }
 
@@ -68,8 +68,6 @@ const Reaction = ({
 
 Reaction.defaultProps = {
   customWrapperIcon: {},
-  onPressFavorite: () => {},
-  onPressVote: () => {},
   isFavorited: false,
   isVote: false,
 }

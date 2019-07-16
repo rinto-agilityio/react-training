@@ -27,7 +27,7 @@ import InterestedCategories from './components/InterestedCategories'
 // Styles
 import styles from './styles'
 
-import type { CategoryType } from '../../types'
+import type { Category } from '../../flow-types/category'
 
 // Constants
 import {
@@ -44,13 +44,13 @@ type Props = {
   type?: string,
   handleSkipCategories?: () => void,
   data: {
-    followCategory: Array<CategoryType>,
+    followCategory: Array<Category>,
   },
   loading: boolean,
   error: {
     graphQLErrors: Array<{ message: string }>,
   },
-  categories: Array<CategoryType>,
+  categories: Array<Category>,
   userToggleCategory: (
     categoryId: Array<string>
   ) => Promise<{ data: { userToggleCategory: { results: Array<string> } } }>,
