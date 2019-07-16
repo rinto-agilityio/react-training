@@ -15,13 +15,10 @@ import Button from '../../../../components/Button'
 import Wrapper from '../../../../layout/Wrapper'
 import Icon from '../../../../components/Icon'
 
+import type { RecipeStep } from '../../../../flow-types/recipe-step'
+
 type Props = {
-  steps: Array<{
-    description: string,
-    imgUrl: string,
-    step: number,
-    title: string,
-  }>,
+  steps: Array<RecipeStep>,
   size: string,
   step: number,
   onPressStep?: (step: number) => void,

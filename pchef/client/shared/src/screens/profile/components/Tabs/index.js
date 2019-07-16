@@ -12,11 +12,11 @@ import TabContent from '../TabContent'
 // Styles
 import styles from './styles'
 
-import type { RecipeType } from '../../../../types'
+import type { Recipe } from '../../../../flow-types/recipe'
 
 type Props = {
-  ownRecipes?: Array<RecipeType>,
-  favoriteRecipe?: Array<RecipeType>,
+  ownRecipes?: Array<Recipe>,
+  favoriteRecipe?: Array<Recipe>,
   userToggleRecipe: (
     recipeId: string,
     favoriteRecipe: Array<{ id: string }>

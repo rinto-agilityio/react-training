@@ -46,7 +46,9 @@ type Props = {
       createRecipeStep: {
         id: string,
         step: number,
-        title: string,
+        title?: string,
+        description?: string,
+        imgUrl: string,
       }
     }}>,
   stepUrl?: string,

@@ -14,7 +14,7 @@ import styles from './styles'
 // Constant
 import { WEB_PLATFORM } from '../../../../constants'
 
-import type { RecipeType } from '../../../../types'
+import type { Recipe as RecipeType } from '../../../../flow-types/recipe'
 
 type Props = {
   recipes: Array<RecipeType>,
