@@ -54,7 +54,7 @@ const userToggleRecipe = graphql(TOGGLE_RECIPE, {
         }
         proxy.writeQuery({ query: GET_USER, data: dataUpdated })
       } catch (err) {
-        console.error(err)
+        return { err }
       }
     },
   },
@@ -93,7 +93,7 @@ const userToggleVote = graphql(TOGGLE_VOTE, {
         }
         proxy.writeQuery({ query: GET_RECIPE_DETAIL, variables: { id }, data: dataUpdated })
       } catch (err) {
-        console.error(err)
+        return { err }
       }
     },
   }),
