@@ -60,46 +60,11 @@ exports[`Tag Renders correctly modal commponent 1`] = `
             "direction": "ltr",
             "fontFamily": "Roboto, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
             "marginLeft": "8px",
-            "marginRight": "4px",
+            "marginRight": "8px",
             "textAlign": "left",
           }
         }
       />
-      <div
-        className="css-cursor-18t94o4 css-view-1dbjc4n r-cursor-1loqt21 r-padding-tuq35u r-touchAction-1otgn73"
-        data-focusable={true}
-        onKeyDown={[Function]}
-        onKeyPress={[Function]}
-        onKeyUp={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        <div
-          className="css-text-901oao r-backgroundColor-1niwhzg r-pointerEvents-633pao"
-          dir="auto"
-          focusable={false}
-          role="img"
-          style={
-            Object {
-              "WebkitTransform": "scaleX(1)",
-              "color": "rgba(0,0,0,0.54)",
-              "fontFamily": "MaterialIcons",
-              "fontSize": "16px",
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-              "transform": "scaleX(1)",
-            }
-          }
-        >
-          
-        </div>
-      </div>
     </div>
   </div>
 </div>

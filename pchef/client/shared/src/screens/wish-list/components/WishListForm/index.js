@@ -28,7 +28,7 @@ import { METRICS } from '../../../../themes'
 // Constants
 import { WEB_PLATFORM } from '../../../../constants'
 
-import type { RecipeType } from '../../../../types'
+import type { Recipe as RecipeType} from '../../../../flow-types/recipe'
 
 type Props = {
   size: string,

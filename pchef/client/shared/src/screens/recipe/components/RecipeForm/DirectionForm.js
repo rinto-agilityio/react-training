@@ -46,10 +46,11 @@ type Props = {
       createRecipeStep: {
         id: string,
         step: number,
-        title: string,
-      },
-    },
-  }>,
+        title?: string,
+        description?: string,
+        imgUrl: string,
+      }
+    }}>,
   stepUrl?: string,
   handleAddStepImageOnWeb?: () => void,
   uploadStepImage: () => Promise<void>,
@@ -145,6 +146,7 @@ const DirectionsForm = ({
             title={nextStep.toString()}
             buttonStyle={[styles.button, styles[`${size}Button`]]}
             titleStyle={[styles.titleBtn, styles[`${size}TitleBtn`]]}
+            onPress={() => {}}
           />
           <Wrapper direction="column" customStyles={styles.wrapperDirections}>
             {data.map(({ placeholder, refInput }) => (

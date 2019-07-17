@@ -703,12 +703,6 @@ Array [
         }
       />
     </div>
-    <div
-      className="css-text-901oao r-marginLeft-1n0xq6e"
-      dir="auto"
-    >
-      Easy Lunch
-    </div>
   </div>,
 ]
 `;
@@ -1416,12 +1410,6 @@ Array [
         }
       />
     </div>
-    <div
-      className="css-text-901oao r-marginLeft-1n0xq6e"
-      dir="auto"
-    >
-      Easy Lunch
-    </div>
   </div>,
 ]
 `;
@@ -2128,12 +2116,6 @@ Array [
           }
         }
       />
-    </div>
-    <div
-      className="css-text-901oao r-marginLeft-1n0xq6e"
-      dir="auto"
-    >
-      Easy Lunch
     </div>
   </div>,
 ]

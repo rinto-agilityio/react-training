@@ -18,7 +18,7 @@ import { checkContainField, checkContain } from '../../../../helpers/utils'
 // Constanst
 import { DEFAULT_IMAGE } from '../../../../constants'
 
-import type { RecipeType } from '../../../../types'
+import type { Recipe as RecipeType } from '../../../../flow-types/recipe'
 
 type Props = {
   recipe: RecipeType,

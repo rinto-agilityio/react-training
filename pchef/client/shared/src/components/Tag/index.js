@@ -14,7 +14,7 @@ type Props = {
 const Tag = ({
   children,
   mode,
-  onClose = () => {},
+  onClose,
   disabled,
 }: Props) => (
   <Chip

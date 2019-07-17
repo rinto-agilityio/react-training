@@ -13,7 +13,7 @@ import styles from './styles'
 import { COLORS } from '../../themes'
 
 type Props = {
-  onPress?: (value: string) => void,
+  onPress: (value: string) => void,
   customStyle?: {} | Array<{}>,
   color?: string,
   value: string,
@@ -27,13 +27,13 @@ type Props = {
 };
 
 const RadioButton = ({
-  onPress = () => {},
+  onPress,
   customStyle,
   color,
   value,
   customWrapperStyle,
   disabled,
-  group = [],
+  group,
 }: Props) => (
   <RadioButtonComponent.Group
     onValueChange={value => onPress(value)}
@@ -59,7 +59,6 @@ const RadioButton = ({
 )
 
 RadioButton.defaultProps = {
-  onPress: () => {},
   customStyle: {},
   color: COLORS.black,
   customWrapperStyle: {},

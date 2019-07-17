@@ -22,7 +22,7 @@ import { MINIMUM_FOLLOWED_CATEGORY, TABBAR_HEIGHT } from '../../constants/index'
 // Styles
 import styles from './styles'
 
-import type { FollowCategoryType } from '../../types'
+import type { Category } from '../../flow-types/category'
 
 const { height } = Dimensions.get('window')
 
@@ -36,7 +36,7 @@ type Props = {
     favoriteRecipe: Array<{
       id: string,
     }>,
-    followCategory: Array<FollowCategoryType>,
+    followCategory: Array<Category>,
     user: Object,
   },
   userToggleRecipe: (

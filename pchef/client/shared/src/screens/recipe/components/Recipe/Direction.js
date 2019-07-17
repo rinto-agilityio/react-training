@@ -15,10 +15,10 @@ import { METRICS } from '../../../../themes'
 import Button from '../../../../components/Button'
 import Wrapper from '../../../../layout/Wrapper'
 
-import type { RecipeStepType } from '../../../../types'
+import type { RecipeStep } from '../../../../flow-types/recipe-step'
 
 type Props = {
-  item: RecipeStepType,
+  item: RecipeStep,
   size: string,
   customDescription?: {},
   onSelectStep?: (id: string) => void,

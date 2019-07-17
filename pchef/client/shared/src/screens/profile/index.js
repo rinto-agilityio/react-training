@@ -16,14 +16,14 @@ import styles from './styles'
 // Helpers
 import { customError } from '../../helpers/utils'
 
-import type { UserInfoType } from '../../types'
+import type { User } from '../../flow-types/user'
 
 type Props = {
   loading: boolean,
   error: {
     graphQLErrors: Array<{ message: string }>,
   },
-  data: UserInfoType,
+  data: User,
   userToggleRecipe: (
     recipeId: string,
     favoriteRecipe: Array<{ id: string }>

@@ -21,7 +21,9 @@ import Button from '../../../../components/Button'
 // Constants
 import { WEB_PLATFORM } from '../../../../constants'
 
-import type { WishListType, CategoryType, CookingType } from '../../../../types'
+import type { WishList as WishListType } from '../../../../flow-types/wish-list'
+import type { Category } from '../../../../flow-types/category'
+import type { CookingType } from '../../../../flow-types/cooking-type'
 
 type Props = {
   wishList: Array<WishListType>,
@@ -30,7 +32,7 @@ type Props = {
   error: {
     graphQLErrors: Array<{ message: string }>,
   },
-  categories: Array<CategoryType>,
+  categories: Array<Category>,
   cookingTypes: Array<CookingType>,
   handleRedirectLogin: () => void,
   handleRedirectWishlistForm: () => void,

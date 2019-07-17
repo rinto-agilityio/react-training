@@ -18,7 +18,7 @@ type Props = {
     name: string,
     email: string,
   },
-  handleLogout?: () => void,
+  handleLogout: () => void,
 }
 
 const Settings = ({ user, handleLogout }: Props) => {

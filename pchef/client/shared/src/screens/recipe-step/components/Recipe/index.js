@@ -26,13 +26,11 @@ import { findStep, customError, checkContainField, formatFiledOnObject, compareS
 // Constants
 import { DEFAULT_IMAGE } from '../../../../constants'
 
+import type { RecipeStep } from '../../../../flow-types/recipe-step'
+import type { UserInfo } from '../../../../flow-types/user'
+
 type Props = {
-  recipeSteps: Array<{
-    description: string,
-    imgUrl: string,
-    step: number,
-    title: string,
-  }>,
+  recipeSteps: Array<RecipeStep>,
   getRecipe: {
     title: string,
     votes: Array<string>,
@@ -55,11 +53,7 @@ type Props = {
   loading: boolean,
   error: string,
   getUser: {
-    user: {
-      id: string,
-      name: string,
-      avatar: string,
-    },
+    user: UserInfo,
     favoriteRecipe: Array<{id: string}>
   },
   userToggleRecipe: (
@@ -82,6 +76,7 @@ const Recipe = ({
   size = 'large',
   getUser,
   recipeSteps = [{
+    id: '',
     description: '',
     imgUrl: '',
     step: 1,

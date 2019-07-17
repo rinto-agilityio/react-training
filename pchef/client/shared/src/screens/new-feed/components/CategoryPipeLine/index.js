@@ -12,10 +12,10 @@ import CategoryPipeLineItem from './CategoryPipeLineItem'
 import styles from './styles'
 import Loading from '../../../../components/Loading'
 
-import type { FollowCategoryType } from '../../../../types'
+import type { Category } from '../../../../flow-types/category'
 
 type Props = {
-  followCategory: Array<FollowCategoryType>,
+  followCategory: Array<Category>,
   onPressCategoryPipeline?: () => void,
   loading: boolean,
 }

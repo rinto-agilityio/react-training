@@ -81,7 +81,6 @@ TextBox.defaultProps = {
   placeholder: '',
   customStyle: {},
   placeholderTextColor: COLORS.black,
-  onSubmitEditing: () => {},
   defaultValue: '',
   secureTextEntry: false,
   customContainer: {},

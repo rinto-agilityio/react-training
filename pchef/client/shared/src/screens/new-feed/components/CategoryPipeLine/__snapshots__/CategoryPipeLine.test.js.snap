@@ -747,9 +747,7 @@ exports[`Components CategoryPipeLine Should render CategoryPipeLine component 1`
     <div
       className="css-text-901oao r-fontWeight-majxgm r-paddingBottom-1inuy60 r-textAlign-q4m81j"
       dir="auto"
-    >
-      Easy Lunch
-    </div>
+    />
     <div
       className="css-view-1dbjc4n r-cursor-1loqt21 r-touchAction-1otgn73 r-transitionDuration-eafdt9 r-transitionProperty-1i6wzkk r-userSelect-lrvibr"
       data-focusable={true}

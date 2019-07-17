@@ -801,9 +801,7 @@ exports[`Welcome Render Welcome component with data 1`] = `
           <div
             className="css-text-901oao r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
             dir="auto"
-          >
-            Easy Lunch
-          </div>
+          />
           <div
             className="css-view-1dbjc4n r-backgroundColor-kemksi r-opacity-17tb59b r-position-u8s1d r-zIndex-184en5c"
             style={
@@ -1663,9 +1661,7 @@ exports[`Welcome Render Welcome component with missingCategory 1`] = `
           <div
             className="css-text-901oao r-color-1rqp49e r-fontSize-ubezar r-fontWeight-vw2c0b r-left-1n430bm r-position-u8s1d r-top-1yxedwg r-zIndex-136ojw6"
             dir="auto"
-          >
-            Easy Lunch
-          </div>
+          />
           <div
             className="css-view-1dbjc4n r-backgroundColor-kemksi r-opacity-17tb59b r-position-u8s1d r-zIndex-184en5c"
             style={

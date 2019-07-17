@@ -28,7 +28,8 @@ import { customError, checkContain } from '../../helpers/utils'
 import styles from './styles'
 
 // @flow
-import type { RecipeType } from '../../types'
+import type { Category } from '../../flow-types/category'
+import type { Recipe as RecipeType } from '../../flow-types/recipe'
 
 type Props = {
   category: {
@@ -42,17 +43,7 @@ type Props = {
   },
   data: {
     favoriteRecipe: Array<{ id: string }>,
-    followCategory: Array<{
-      id: string,
-      name: string,
-      imgUrl: string,
-      recipes: Array<{
-        id: string,
-        title: string,
-        imgUrl: string,
-        description: string,
-      }>,
-    }>,
+    followCategory: Array<Category>,
   },
   userToggleRecipe: (
     id: string,
