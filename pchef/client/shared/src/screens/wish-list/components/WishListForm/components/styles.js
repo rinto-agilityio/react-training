@@ -7,7 +7,7 @@ import { METRICS, FONTS, COLORS } from '../../../../../themes'
 const styles = StyleSheet.create({
   // Wrapper
   wrapper: {
-    zIndex: METRICS.iconZindex,
+    zIndex: METRICS.zIndex.min,
     width: METRICS.wrapper.xl,
   },
 

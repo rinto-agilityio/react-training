@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     position: 'relative',
     width: '100%',
-    height: METRICS.screenHeight - 440, // 440 is space of top screen to list recipes
+    height: METRICS.screen.height - 440, // 440 is space of top screen to list recipes
   },
 })
 

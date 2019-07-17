@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     width: '100%',
     padding: METRICS.padding.lg,
     borderBottomColor: COLORS.baseGray,
-    borderBottomWidth: METRICS.smallBorderWidth,
+    borderBottomWidth: METRICS.borderWidth.sm,
   },
 
   // Date

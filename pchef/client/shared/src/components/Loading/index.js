@@ -23,7 +23,7 @@ const Loading = ({ size, color, customStyle }: Props) => (
 )
 
 Loading.defaultProps = {
-  size: METRICS.icon.lg,
+  size: METRICS.largeIcon,
   color: COLORS.baseGray,
   customStyle: {},
 }

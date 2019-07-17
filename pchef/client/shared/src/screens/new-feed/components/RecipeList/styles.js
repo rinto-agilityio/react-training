@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   secondaryContainer: {
     flex: 1,
     paddingTop: METRICS.padding.xl + METRICS.padding.lg,
-    maxWidth: METRICS.extraLargeScreen,
+    maxWidth: METRICS.screen.xl,
     width: '100%',
     margin: 'auto',
     flexDirection: 'row',
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   tabWrap: {
     display: 'flex',
     flexDirection: 'row',
-    borderBottomWidth: METRICS.smallBorderWidth,
+    borderBottomWidth: METRICS.borderWidth.sm,
     borderColor: COLORS.baseGray,
     marginTop: METRICS.margin.lg,
     marginBottom: METRICS.margin.xl,
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     paddingLeft: METRICS.padding.lg,
     color: COLORS.white,
     textTransform: 'uppercase',
-    borderWidth: METRICS.smallBorderWidth,
+    borderWidth: METRICS.borderWidth.sm,
     borderTopLeftRadius: METRICS.borderRadius.md,
     borderTopRightRadius: METRICS.borderRadius.md,
   },

@@ -37,7 +37,7 @@ const CommentForm = ({
 }: Props) => {
   // define avatar/badge size follow type
   const avatarSize =
-    type === 'primary' ? METRICS.mediumAvatar : METRICS.largeAvatar
+    type === 'primary' ? METRICS.avatar.md : METRICS.avatar.lg
   const badgeSize =
     type === 'primary' ? METRICS.badge.md : METRICS.badge.lg
 

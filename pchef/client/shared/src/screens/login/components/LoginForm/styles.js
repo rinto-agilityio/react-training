@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     borderRadius: METRICS.borderRadius.sm,
     marginBottom: METRICS.margin.sm + METRICS.margin.md,
     borderColor: COLORS.ghost,
-    borderWidth: METRICS.smallBorderWidth,
+    borderWidth: METRICS.borderWidth.sm,
     width: '100%',
   },
   errorFormGroup: {
@@ -49,12 +49,12 @@ const styles = StyleSheet.create({
     padding: 0,
   },
   button: {
-    height: METRICS.mediumHeight,
+    height: METRICS.height.md,
     borderRadius: METRICS.borderRadius.sm,
     backgroundColor: COLORS.mantisGreen,
   },
   primaryButton: {
-    width: METRICS.largeButton,
+    width: METRICS.button.lg,
   },
   secondaryButton: {
     width: METRICS.wrapper.lg,

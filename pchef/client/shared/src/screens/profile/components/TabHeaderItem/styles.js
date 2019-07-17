@@ -8,7 +8,7 @@ import { COLORS, METRICS, FONTS } from '../../../../themes'
 const styles = StyleSheet.create({
   tabItem: {
     width: METRICS.wrapper.sm,
-    borderBottomWidth: METRICS.smallBorderWidth,
+    borderBottomWidth: METRICS.borderWidth.sm,
     borderStyle: 'solid',
     borderColor: 'transparent',
     paddingLeft: METRICS.padding.sm,

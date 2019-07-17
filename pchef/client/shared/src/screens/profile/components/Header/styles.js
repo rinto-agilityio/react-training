@@ -12,9 +12,9 @@ const styles = StyleSheet.create({
   },
   container: {
     maxWidth:
-      METRICS.screenWidth > METRICS.mediumScreen
-        ? METRICS.extraLargeScreen
-        : METRICS.screenWidth,
+      METRICS.screen.width > METRICS.screen.md
+        ? METRICS.screen.xl
+        : METRICS.screen.width,
     width: '100%',
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   image: {
     width: METRICS.image.sm,
     height: METRICS.image.sm,
-    borderWidth: METRICS.mediumBorderWidth,
+    borderWidth: METRICS.borderWidth.md,
     borderColor: COLORS.white,
     borderRadius: METRICS.image.sm / 2,
     marginBottom: -METRICS.margin.md,
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   },
   userButton: {
     backgroundColor: COLORS.white,
-    borderWidth: METRICS.smallBorderWidth,
+    borderWidth: METRICS.borderWidth.sm,
     borderColor: COLORS.black,
     borderRadius: METRICS.borderRadius.lg,
     padding: 0,

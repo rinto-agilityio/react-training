@@ -27,9 +27,9 @@ const styles = StyleSheet.create({
   },
   container: {
     maxWidth:
-      METRICS.screenWidth > METRICS.mediumScreen
-        ? METRICS.extraLargeScreen
-        : METRICS.screenWidth,
+      METRICS.screen.width > METRICS.screen.md
+        ? METRICS.screen.xl
+        : METRICS.screen.width,
     width: '100%',
     marginLeft: 'auto',
     marginRight: 'auto',

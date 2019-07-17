@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     fontSize: FONTS.fontSize.large,
   },
   disabledNext: {
-    opacity: METRICS.inactiveItem,
+    opacity: METRICS.layer.inactive,
   },
   description: {
     fontWeight: FONTS.fontWeight.medium,

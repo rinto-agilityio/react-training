@@ -6,12 +6,12 @@ import { METRICS } from '../../themes'
 
 const styles = StyleSheet.create({
   webContainer: {
-    width: METRICS.extraLargeScreen,
+    width: METRICS.screen.xl,
     marginTop: METRICS.margin.none,
     marginBottom: METRICS.margin.none,
     marginRight: 'auto',
     marginLeft: 'auto',
-    zIndex: METRICS.iconZindex,
+    zIndex: METRICS.zIndex.min,
   },
   mobileContainer: {},
 })

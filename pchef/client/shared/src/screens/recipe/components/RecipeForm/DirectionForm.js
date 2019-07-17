@@ -126,7 +126,7 @@ const DirectionsForm = ({
       visible={visible}
       size={size}
       customDialog={{
-        width: size === 'large' ? METRICS.largeScreen : 'auto',
+        width: size === 'large' ? METRICS.screen.lg : 'auto',
       }}
     >
       {/* Show steps after create success */}

@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: COLORS.black,
     borderColor: COLORS.black,
-    minWidth: METRICS.icon.lg,
+    minWidth: METRICS.largeIcon,
   },
   smallButton: {
     borderRadius: METRICS.borderRadius.xs,

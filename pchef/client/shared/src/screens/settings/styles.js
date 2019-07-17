@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     marginBottom: METRICS.margin.xl,
     marginTop: METRICS.margin.md,
     borderColor: COLORS.grayDarker,
-    borderBottomWidth: METRICS.smallBorderWidth,
+    borderBottomWidth: METRICS.borderWidth.sm,
     borderStyle: 'solid',
     fontSize: FONTS.fontSize.medium,
     color: COLORS.black,
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
   settingUrl: {
     fontSize: FONTS.fontSize.medium,
-    borderBottomWidth: METRICS.smallBorderWidth,
+    borderBottomWidth: METRICS.borderWidth.sm,
     marginBottom: METRICS.margin.lg,
   },
 })

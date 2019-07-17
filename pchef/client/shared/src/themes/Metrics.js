@@ -71,13 +71,6 @@ export default {
     alignItems: 'center',
   },
 
-  // Icon
-  icon: {
-    sm: 20,
-    md: 30,
-    lg: 40,
-  },
-
   // Header
   header: {
     sm: 250,
@@ -108,45 +101,71 @@ export default {
   },
 
   // Avatar
-  smallAvatar: 40,
-  mediumAvatar: 60,
-  largeAvatar: 70,
+  avatar: {
+    sm: 40,
+    md: 60,
+    lg: 70,
+  },
 
   // Layer
-  activeItem: 0.2,
-  inactiveItem: 0.7,
+  layer: {
+    active: 0.2,
+    inactive: 0.7,
+  },
 
   // Border
-  smallBorderWidth: 1,
-  mediumBorderWidth: 3,
-  largeBorderWidth: 5,
+  borderWidth: {
+    sm: 1,
+    md: 3,
+    lg: 5,
+  },
 
-  // height
-  smallHeight: 30,
-  mediumHeight: 50,
+  // Height
+  height: {
+    sm: 30,
+    md: 50,
+  },
 
-  // button
-  largeButton: 260,
-  smallButton: 150,
+  // Button
+  button: {
+    sm: 150,
+    lg: 260,
+  },
 
   // Window
-  screenWidth: Dimensions.get('window').width,
-  screenHeight: Dimensions.get('window').height,
-  smallScreen: 320,
-  mediumScreen: 640,
-  largeScreen: 840,
-  extraLargeScreen: 1024,
-  smallPercentItem: '33.33%',
-  mediumPercentItem: '50%',
+  screen: {
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
+    sm: 320,
+    md: 640,
+    lg: 840,
+    xl: 1024,
+  },
+
+  // Item
+  item: {
+    sm: '33.33%',
+    md: '50%',
+    lg: '100%',
+  },
 
   // z-index
-  modalZindex: 1000,
-  iconZindex: -1,
+  zIndex: {
+    min: -1,
+    max: 1000,
+  },
 
   // Directions icon
-  smallDirectionsIcon: 120,
-  mediumDirectionsIcon: 170,
-  largeDirectionsIcon: 190,
+  directionIcon: {
+    sm: 120,
+    md: 170,
+    lg: 190,
+  },
+
+  // Icon
+  smallIcon: 20,
+  mediumIcon: 30,
+  largeIcon: 40,
 
   // Truncate text
   truncate: {

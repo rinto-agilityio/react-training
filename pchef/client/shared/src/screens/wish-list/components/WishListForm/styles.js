@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.baseGray,
     padding: METRICS.padding.lg,
     marginTop: METRICS.margin.md,
-    zIndex: METRICS.iconZindex,
+    zIndex: METRICS.zIndex.min,
   },
   icon: {
     display: 'flex',
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
 
   // Button
   button: {
-    zIndex: METRICS.iconZindex,
+    zIndex: METRICS.zIndex.min,
     marginTop: METRICS.margin.lg,
     marginBottom: METRICS.margin.lg,
   },

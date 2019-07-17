@@ -10,10 +10,10 @@ const styles = StyleSheet.create({
   },
 
   largeWrapper: {
-    width: METRICS.smallPercentItem,
+    width: METRICS.item.sm,
     paddingLeft: METRICS.padding.sm,
     paddingRight: METRICS.padding.sm,
-    minWidth: METRICS.smallScreen,
+    minWidth: METRICS.screen.sm,
   },
 
   // Title
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     fontWeight: FONTS.fontWeight.large,
     paddingLeft: METRICS.padding.lg,
     paddingRight: METRICS.padding.lg,
-    height: METRICS.smallHeight,
+    height: METRICS.height.sm,
   },
   smallDescription: {
     fontSize: FONTS.fontSize.small,

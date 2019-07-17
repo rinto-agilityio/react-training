@@ -12,10 +12,10 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   activeLayer: {
-    opacity: METRICS.activeItem,
+    opacity: METRICS.layer.active,
   },
   inactiveLayer: {
-    opacity: METRICS.inactiveItem,
+    opacity: METRICS.layer.inactive,
   },
   name: {
     position: 'absolute',

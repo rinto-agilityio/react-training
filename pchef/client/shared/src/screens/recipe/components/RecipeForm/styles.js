@@ -42,16 +42,16 @@ const styles = StyleSheet.create({
     marginLeft: METRICS.margin.md,
   },
   smallIcon: {
-    width: METRICS.smallDirectionsIcon,
-    height: METRICS.smallDirectionsIcon,
+    width: METRICS.directionIcon.sm,
+    height: METRICS.directionIcon.sm,
   },
   mediumIcon: {
-    width: METRICS.mediumDirectionsIcon,
-    height: METRICS.mediumDirectionsIcon,
+    width: METRICS.directionIcon.md,
+    height: METRICS.directionIcon.md,
   },
   largeIcon: {
-    width: METRICS.largeDirectionsIcon,
-    height: METRICS.largeDirectionsIcon,
+    width: METRICS.directionIcon.lg,
+    height: METRICS.directionIcon.lg,
   },
 
   // Label
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: COLORS.black,
     borderColor: COLORS.black,
-    minWidth: METRICS.icon.lg,
+    minWidth: METRICS.largeIcon,
   },
   smallButton: {
     borderRadius: METRICS.borderRadius.xs,
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     width: '75%',
     padding: METRICS.padding.lg,
     borderColor: COLORS.baseGray,
-    borderWidth: METRICS.smallBorderWidth,
+    borderWidth: METRICS.borderWidth.sm,
     borderRadius: METRICS.borderRadius.md,
   },
 

@@ -38,15 +38,15 @@ const styles = StyleSheet.create({
     right: METRICS.position.md,
   },
   largeGridContent: {
-    borderWidth: METRICS.smallBorderWidth,
+    borderWidth: METRICS.borderWidth.sm,
     borderColor: COLORS.baseGray,
     borderRadius: METRICS.borderRadius.xs,
     marginBottom: METRICS.margin.md,
     padding: METRICS.padding.sm,
   },
   largeListContent: {
-    width: METRICS.extraLargeScreen,
-    borderBottomWidth: METRICS.smallBorderWidth,
+    width: METRICS.screen.xl,
+    borderBottomWidth: METRICS.borderWidth.sm,
     borderColor: COLORS.baseGray,
     height: METRICS.content.sm,
     position: 'relative',
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     marginTop: METRICS.padding.sm,
   },
   largeWrapper: {
-    width: METRICS.extraLargeScreen - METRICS.image.xl - METRICS.margin.xl,
+    width: METRICS.screen.xl - METRICS.image.xl - METRICS.margin.xl,
     height: METRICS.wrapper.lg,
     paddingLeft: METRICS.padding.sm,
     marginLeft: METRICS.margin.md,

@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
   },
   wrapTabs: {
     maxWidth:
-      screenWidth > METRICS.mediumScreen
-        ? METRICS.extraLargeScreen
+      screenWidth > METRICS.screen.md
+        ? METRICS.screen.xl
         : screenWidth,
     width: '100%',
     flexDirection: 'row',
@@ -26,17 +26,17 @@ const styles = StyleSheet.create({
   },
   wrapContent: {
     maxWidth:
-      screenWidth > METRICS.mediumScreen
-        ? METRICS.extraLargeScreen
+      screenWidth > METRICS.screen.md
+        ? METRICS.screen.xl
         : screenWidth,
     width: '100%',
     padding: METRICS.padding.lg,
     backgroundColor: COLORS.lightSliver,
-    flexDirection: screenWidth > METRICS.mediumScreen ? 'row' : 'column',
-    flexWrap: screenWidth > METRICS.mediumScreen ? 'wrap' : 'nowrap',
+    flexDirection: screenWidth > METRICS.screen.md ? 'row' : 'column',
+    flexWrap: screenWidth > METRICS.screen.md ? 'wrap' : 'nowrap',
     marginLeft: 'auto',
     marginRight: 'auto',
-    minHeight: METRICS.screenHeight - METRICS.header.sm,
+    minHeight: METRICS.screen.height - METRICS.header.sm,
   },
 })
 
