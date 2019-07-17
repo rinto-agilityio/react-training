@@ -3,41 +3,41 @@ declare module 'pchef-shared' {
   declare module.exports: any
 }
 
-declare module 'pchef-shared/src/containers/Login' {
+declare module 'pchef-shared/src/screens/login/containers' {
   declare module.exports: any
 }
 
-declare module 'pchef-shared/src/containers/RecipeForm' {
+declare module 'pchef-shared/src/screens/recipe/containers/RecipeForm' {
   declare module.exports: any
 }
 
-declare module 'pchef-shared/src/containers/Profile' {
+declare module 'pchef-shared/src/screens/profile/containers' {
   declare module.exports: any
 }
-declare module 'pchef-shared/src/containers/Category' {
-  declare module.exports: any
-}
-
-declare module 'pchef-shared/src/containers/NewFeed' {
+declare module 'pchef-shared/src/screens/category/containers' {
   declare module.exports: any
 }
 
-declare module 'pchef-shared/src/containers/Recipe' {
+declare module 'pchef-shared/src/screens/new-feed/containers' {
+  declare module.exports: any
+}
+
+declare module 'pchef-shared/src/screens/recipe/containers' {
   declare module.exports: any
 }
 
 declare module 'pchef-shared/src/containers/RecipeStep' {
   declare module.exports: any
 }
-declare module 'pchef-shared/src/containers/Welcome' {
+declare module 'pchef-shared/src/screens/welcome/containers' {
   declare module.exports: any
 }
 
-declare module 'pchef-shared/src/containers/WishList' {
+declare module 'pchef-shared/src/screens/wish-list/containers/WishList' {
   declare module.exports: any
 }
 
-declare module 'pchef-shared/src/containers/WishListForm' {
+declare module 'pchef-shared/src/screens/wish-list/containers/WishListForm' {
   declare module.exports: any
 }
 
@@ -81,7 +81,7 @@ declare module 'router/MainRouter' {
   declare module.exports: any
 }
 
-declare module 'pchef-shared/src/containers/Category' {
+declare module 'pchef-shared/src/screens/category/containers' {
   declare module.exports: any
 }
 
@@ -89,7 +89,7 @@ declare module 'pchef-shared/src/layout/MainContainer' {
   declare module.exports: any
 }
 
-declare module 'pchef-shared/src/containers/Header' {
+declare module 'pchef-shared/src/components/Header/containers' {
   declare module.exports: any
 }
 
