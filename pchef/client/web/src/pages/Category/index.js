@@ -1,5 +1,5 @@
 import React from 'react'
-import CategoryContainer from 'pchef-shared/src/containers/Category'
+import CategoryContainer from 'pchef-shared/src/screens/category/containers'
 
 type Props = {
   history: Object,
