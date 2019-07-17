@@ -2,7 +2,7 @@ import { compose } from 'react-apollo'
 
 // GraphQL
 import { getRecipes } from '../../../graphql/recipe'
-import NewFeed from '../index'
+import NewFeed from '../'
 
 export default compose(
   getRecipes,

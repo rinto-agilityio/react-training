@@ -6,6 +6,6 @@ import { userToggleRecipe, getRecipes } from '../../../graphql/recipe'
 import { userToggleCategory } from '../../../graphql/user'
 
 // component
-import Category from '../index'
+import Category from '../'
 
 export default compose(getCategory, userToggleRecipe, getRecipes, userToggleCategory)(Category)
