@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 // Containers
-import RecipeFormContainer from 'pchef-shared/src/containers/RecipeForm'
+import RecipeFormContainer from 'pchef-shared/src/screens/recipe/containers/RecipeForm'
 
 // helpers
 import { handleUploadImage, compressImage } from '../../helpers/upload-image'

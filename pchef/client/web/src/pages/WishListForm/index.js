@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Containers
-import WishListFormContainer from 'pchef-shared/src/containers/WishListForm'
+import WishListFormContainer from 'pchef-shared/src/screens/wish-list/containers/WishListForm'
 
 type Props = {
   history: Object
