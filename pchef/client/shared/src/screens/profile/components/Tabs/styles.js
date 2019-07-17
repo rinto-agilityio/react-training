@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         : screenWidth,
     width: '100%',
     padding: METRICS.largePadding,
-    backgroundColor: COLORS.lightSliver,
+    backgroundColor: COLORS.tab.bg,
     flexDirection: screenWidth > METRICS.mediumScreen ? 'row' : 'column',
     flexWrap: screenWidth > METRICS.mediumScreen ? 'wrap' : 'nowrap',
     marginLeft: 'auto',

@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     color: COLORS.white,
   },
   inactiveName: {
-    color: COLORS.halfWhite,
+    color: COLORS.welcome.disableItem,
   },
   primaryName: {
     left: METRICS.smallMargin,

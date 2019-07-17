@@ -163,7 +163,7 @@ const DirectionsForm = ({
                 placeholder={placeholder}
                 refInput={refInput}
                 customStyle={[styles.input, styles[`${size}Input`]]}
-                placeholderTextColor={COLORS.grayNavy}
+                placeholderTextColor={COLORS.input.placeholder}
                 multiline={placeholder === 'Step description'}
                 customContainer={styles.inputDirections}
               />

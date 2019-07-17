@@ -111,7 +111,7 @@ const Recipe = ({
                 : FONTS.fontSize.medium
             }
             onPress={() => onPressIcon(id)}
-            color={isFavorite ? COLORS.red : color}
+            color={isFavorite ? COLORS.icon.favorite : color}
           />
         </Wrapper>
       </Wrapper>
@@ -122,7 +122,7 @@ const Recipe = ({
 Recipe.defaultProps = {
   onPressIcon: () => {},
   size: 'medium',
-  color: COLORS.grayDarker,
+  color: COLORS.icon.default,
   handlePressImage: () => {},
 }
 

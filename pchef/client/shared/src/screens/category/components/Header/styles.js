@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     borderRadius: METRICS.largeBorderRadius,
     borderWidth: 2,
     borderColor: COLORS.white,
-    backgroundColor: COLORS.baseBlue,
+    backgroundColor: COLORS.button.default,
     paddingTop: METRICS.smallPadding,
     paddingBottom: METRICS.smallPadding,
     paddingRight: METRICS.largePadding,
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     fontSize: FONTS.fontSize.small,
   },
   wrapperHeaderIcon: {
-    backgroundColor: COLORS.lightBlue,
+    backgroundColor: COLORS.mainHeader.iconBg,
     display: 'flex',
     flexDirection: 'row',
     padding: METRICS.mediumPadding,

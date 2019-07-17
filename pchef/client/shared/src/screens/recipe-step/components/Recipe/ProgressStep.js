@@ -30,7 +30,7 @@ const chevronIcon = (name, size, disabled, onPress) => (
   <Icon
     name={name}
     size={FONTS.fontSize[`${size}`]}
-    color={disabled ? COLORS.baseGray : COLORS.baseBlue}
+    color={disabled ? COLORS.baseGray : COLORS.icon.recipeStep}
     onPress={onPress}
     disabled={disabled}
     customIconStyles={{

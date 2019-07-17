@@ -16,19 +16,19 @@ const styles = StyleSheet.create({
     fontWeight: FONTS.fontWeight.large,
   },
   default: {
-    backgroundColor: COLORS.baseBlue,
+    backgroundColor: COLORS.button.default,
   },
   success: {
-    backgroundColor: COLORS.green,
+    backgroundColor: COLORS.button.success,
   },
   danger: {
-    backgroundColor: COLORS.red,
+    backgroundColor: COLORS.button.danger,
   },
   warning: {
-    backgroundColor: COLORS.yellow,
+    backgroundColor: COLORS.button.warning,
   },
   info: {
-    backgroundColor: COLORS.darkWhite,
+    backgroundColor: COLORS.button.info,
   },
 })
 

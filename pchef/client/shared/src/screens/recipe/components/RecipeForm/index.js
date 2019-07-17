@@ -219,7 +219,7 @@ const RecipeForm = forwardRef<Props, Function>(({
         placeholder="Name"
         refInput={titleRef}
         customStyle={[styles.input, styles.inputTitle, styles[`${size}Input`]]}
-        placeholderTextColor={COLORS.grayNavy}
+        placeholderTextColor={COLORS.input.placeholder}
       />
       <Error
         message={errorValidator.title}
@@ -269,7 +269,7 @@ const RecipeForm = forwardRef<Props, Function>(({
         placeholder="Description"
         refInput={subTitleRef}
         customStyle={[styles.input, styles.inputTitle, styles[`${size}Input`]]}
-        placeholderTextColor={COLORS.grayNavy}
+        placeholderTextColor={COLORS.input.placeholder}
       />
       <Wrapper
         direction="column"

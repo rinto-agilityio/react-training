@@ -28,12 +28,12 @@ const styles = StyleSheet.create({
   formGroup: {
     borderRadius: METRICS.baseBorderRadius,
     marginBottom: METRICS.smallMargin + METRICS.mediumMargin,
-    borderColor: COLORS.ghost,
+    borderColor: COLORS.login.border,
     borderWidth: METRICS.smallBorderWidth,
     width: '100%',
   },
   errorFormGroup: {
-    borderColor: COLORS.baseRed,
+    borderColor: COLORS.login.errorBorder,
   },
   input: {
     borderRadius: METRICS.baseBorderRadius,
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   button: {
     height: METRICS.mediumHeight,
     borderRadius: METRICS.baseBorderRadius,
-    backgroundColor: COLORS.mantisGreen,
+    backgroundColor: COLORS.login.button,
   },
   primaryButton: {
     width: METRICS.largeButton,

@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: METRICS.mediumBorderRadius,
   },
   tabViewActive: {
-    backgroundColor: COLORS.red,
+    backgroundColor: COLORS.tab.active,
   },
   tabView: {
     backgroundColor: COLORS.baseGray,

@@ -30,9 +30,9 @@ const styles = StyleSheet.create({
 
   // Title step
   titleStep: {
-    color: COLORS.baseGray,
+    color: COLORS.recipe.stepTitle,
     fontWeight: 'bold',
-    backgroundColor: COLORS.blackLighter,
+    backgroundColor: COLORS.recipe.stepTitleBg,
     paddingLeft: METRICS.largePadding,
     paddingRight: METRICS.largePadding,
   },
@@ -77,10 +77,10 @@ const styles = StyleSheet.create({
     minWidth: 0,
   },
   activeStep: {
-    backgroundColor: COLORS.baseBlue,
+    backgroundColor: COLORS.recipe.stepActive,
   },
   inactiveStep: {
-    backgroundColor: COLORS.baseGray,
+    backgroundColor: COLORS.recipe.stepInActive,
   },
   smallStep: {
     width: 25,

@@ -51,9 +51,9 @@ const CalendarComponent = ({
       monthFormat={CALENDAR_TITLE_FORMAT}
       style={[styles.calendar, customCalendarStyles]}
       theme={{
-        selectedDayBackgroundColor: COLORS.baseBlue,
-        selectedDayTextColor: COLORS.white,
-        todayTextColor: COLORS.darkBlue,
+        selectedDayBackgroundColor: COLORS.calendar.selectDayBg,
+        selectedDayTextColor: COLORS.calendar.selectDayText,
+        todayTextColor: COLORS.calendar.todayText,
         ...customThemes,
       }}
       markedDates={{
@@ -64,7 +64,7 @@ const CalendarComponent = ({
         <Icon
           name={direction === 'left' ? 'chevron-left' : 'chevron-right'}
           size={FONTS.fontSize.large}
-          color={COLORS.baseBlue}
+          color={COLORS.icon.calendar}
           wrapperIconStyle={{
             zIndex: -2,
           }}

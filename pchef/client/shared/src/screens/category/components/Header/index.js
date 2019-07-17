@@ -49,11 +49,11 @@ const Header = ({
   const data = [
     {
       name: 'view-list',
-      color: isGrid ? COLORS.baseGray : COLORS.lighterGray,
+      color: isGrid ? COLORS.icon.categoryInActive : COLORS.icon.categoryActive,
     },
     {
       name: 'apps',
-      color: isGrid ? COLORS.lighterGray : COLORS.baseGray,
+      color: isGrid ? COLORS.icon.categoryActive : COLORS.icon.categoryInActive,
     },
   ]
 
