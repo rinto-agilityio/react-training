@@ -22,8 +22,6 @@ exports[`Tag Renders correctly modal commponent 1`] = `
       "borderTopRightRadius": "16px",
       "borderTopStyle": "solid",
       "borderTopWidth": "1px",
-      "marginRight": "5px",
-      "width": "100px",
     }
   }
 >

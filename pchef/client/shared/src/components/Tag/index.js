@@ -2,9 +2,6 @@
 import React from 'react'
 import { Chip } from 'react-native-paper';
 
-// Styles
-import styles from './styles'
-
 type Props = {
   mode: string,
   customTextStyle?: {} | Array<{}>,
@@ -16,15 +13,11 @@ type Props = {
 
 const Tag = ({
   children,
-  customStyle,
-  customTextStyle,
   mode,
   onClose = () => {},
   disabled,
 }: Props) => (
   <Chip
-    style={[styles.tagStyles, customStyle]}
-    textStyle={customTextStyle}
     mode={mode}
     onClose={onClose}
     disabled={disabled}
@@ -32,10 +25,5 @@ const Tag = ({
     { children }
   </Chip>
 )
-
-Tag.defaultProps = {
-  customStyle: {},
-  customTextStyle: {},
-}
 
 export default Tag

@@ -33,7 +33,7 @@ Array [
         Chicken
       </div>
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci r-padding-1uu6nss r-paddingBottom-1inuy60"
         style={
           Object {
             "backgroundColor": "rgba(66,165,245,1.00)",
@@ -55,7 +55,6 @@ Array [
             "borderTopWidth": "2px",
             "boxShadow": "0px 0.75px 1.5px rgba(0,0,0,0.24)",
             "minWidth": "64px",
-            "paddingBottom": "5px",
             "paddingLeft": "20px",
             "paddingRight": "20px",
             "paddingTop": "5px",
@@ -120,7 +119,7 @@ Array [
     </div>
   </div>,
   <div
-    className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-4rzz9f r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1777fci r-padding-1sp51qo"
+    className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-4rzz9f r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1777fci r-padding-1uu6nss"
   >
     <div
       className="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz"
@@ -261,7 +260,7 @@ Array [
             className="css-view-1dbjc4n r-borderBottomWidth-qklmqi r-borderColor-35fm6a r-height-cqilzk r-marginBottom-117bsoe r-marginLeft-1f6r7vd r-overflow-1udh08x r-position-bnwqim r-width-16k0tzm"
           >
             <div
-              className="css-text-901oao css-textOneLine-bfa6kz r-fontSize-zz5t5d r-maxWidth-14qjzug r-overflow-1udh08x r-paddingBottom-1mi0q7o r-paddingRight-1qfoi16"
+              className="css-text-901oao css-textOneLine-bfa6kz r-fontSize-zz5t5d r-maxWidth-14qjzug r-overflow-1udh08x r-paddingBottom-1inuy60 r-paddingRight-19gegkz"
               dir="auto"
             >
                
@@ -316,7 +315,7 @@ Array [
                 </div>
               </div>
               <div
-                className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-erd55g r-justifyContent-1wtj0ep r-marginLeft-1n0xq6e r-overflow-1udh08x r-paddingLeft-1hfyk0a r-width-9oysn0"
+                className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-erd55g r-justifyContent-1wtj0ep r-marginLeft-1n0xq6e r-overflow-1udh08x r-paddingLeft-qhyqy2 r-width-9oysn0"
                 style={
                   Object {
                     "WebkitBoxFlex": 0,
@@ -413,7 +412,7 @@ Array [
             className="css-view-1dbjc4n r-borderBottomWidth-qklmqi r-borderColor-35fm6a r-height-cqilzk r-marginBottom-117bsoe r-marginLeft-1f6r7vd r-overflow-1udh08x r-position-bnwqim r-width-16k0tzm"
           >
             <div
-              className="css-text-901oao css-textOneLine-bfa6kz r-fontSize-zz5t5d r-maxWidth-14qjzug r-overflow-1udh08x r-paddingBottom-1mi0q7o r-paddingRight-1qfoi16"
+              className="css-text-901oao css-textOneLine-bfa6kz r-fontSize-zz5t5d r-maxWidth-14qjzug r-overflow-1udh08x r-paddingBottom-1inuy60 r-paddingRight-19gegkz"
               dir="auto"
             >
                
@@ -468,7 +467,7 @@ Array [
                 </div>
               </div>
               <div
-                className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-erd55g r-justifyContent-1wtj0ep r-marginLeft-1n0xq6e r-overflow-1udh08x r-paddingLeft-1hfyk0a r-width-9oysn0"
+                className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-erd55g r-justifyContent-1wtj0ep r-marginLeft-1n0xq6e r-overflow-1udh08x r-paddingLeft-qhyqy2 r-width-9oysn0"
                 style={
                   Object {
                     "WebkitBoxFlex": 0,
@@ -553,7 +552,7 @@ Array [
             className="css-view-1dbjc4n r-borderBottomWidth-qklmqi r-borderColor-35fm6a r-height-cqilzk r-marginBottom-117bsoe r-marginLeft-1f6r7vd r-overflow-1udh08x r-position-bnwqim r-width-16k0tzm"
           >
             <div
-              className="css-text-901oao css-textOneLine-bfa6kz r-fontSize-zz5t5d r-maxWidth-14qjzug r-overflow-1udh08x r-paddingBottom-1mi0q7o r-paddingRight-1qfoi16"
+              className="css-text-901oao css-textOneLine-bfa6kz r-fontSize-zz5t5d r-maxWidth-14qjzug r-overflow-1udh08x r-paddingBottom-1inuy60 r-paddingRight-19gegkz"
               dir="auto"
             >
                
@@ -608,7 +607,7 @@ Array [
                 </div>
               </div>
               <div
-                className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-erd55g r-justifyContent-1wtj0ep r-marginLeft-1n0xq6e r-overflow-1udh08x r-paddingLeft-1hfyk0a r-width-9oysn0"
+                className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-erd55g r-justifyContent-1wtj0ep r-marginLeft-1n0xq6e r-overflow-1udh08x r-paddingLeft-qhyqy2 r-width-9oysn0"
                 style={
                   Object {
                     "WebkitBoxFlex": 0,
@@ -693,7 +692,7 @@ Array [
             className="css-view-1dbjc4n r-borderBottomWidth-qklmqi r-borderColor-35fm6a r-height-cqilzk r-marginBottom-117bsoe r-marginLeft-1f6r7vd r-overflow-1udh08x r-position-bnwqim r-width-16k0tzm"
           >
             <div
-              className="css-text-901oao css-textOneLine-bfa6kz r-fontSize-zz5t5d r-maxWidth-14qjzug r-overflow-1udh08x r-paddingBottom-1mi0q7o r-paddingRight-1qfoi16"
+              className="css-text-901oao css-textOneLine-bfa6kz r-fontSize-zz5t5d r-maxWidth-14qjzug r-overflow-1udh08x r-paddingBottom-1inuy60 r-paddingRight-19gegkz"
               dir="auto"
             >
                
@@ -748,7 +747,7 @@ Array [
                 </div>
               </div>
               <div
-                className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-erd55g r-justifyContent-1wtj0ep r-marginLeft-1n0xq6e r-overflow-1udh08x r-paddingLeft-1hfyk0a r-width-9oysn0"
+                className="css-view-1dbjc4n r-alignItems-1habvwh r-display-6koalj r-flexDirection-eqz5dr r-flexWrap-1w6e6rj r-height-erd55g r-justifyContent-1wtj0ep r-marginLeft-1n0xq6e r-overflow-1udh08x r-paddingLeft-qhyqy2 r-width-9oysn0"
                 style={
                   Object {
                     "WebkitBoxFlex": 0,

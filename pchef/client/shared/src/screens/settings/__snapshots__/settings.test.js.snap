@@ -2,7 +2,7 @@
 
 exports[`Screens Settings should render Setting screen 1`] = `
 <div
-  className="css-view-1dbjc4n r-padding-1sp51qo r-width-13qz1uu"
+  className="css-view-1dbjc4n r-padding-1uu6nss r-width-13qz1uu"
 >
   <div
     className="css-text-901oao r-color-1h2fve2 r-marginTop-156q2ks"
@@ -63,7 +63,7 @@ exports[`Screens Settings should render Setting screen 1`] = `
     />
   </div>
   <div
-    className="css-view-1dbjc4n"
+    className="css-view-1dbjc4n r-padding-1uu6nss"
     style={
       Object {
         "WebkitAlignItems": "center",
@@ -94,10 +94,6 @@ exports[`Screens Settings should render Setting screen 1`] = `
         "minWidth": "64px",
         "msFlexAlign": "center",
         "msFlexPack": "center",
-        "paddingBottom": "5px",
-        "paddingLeft": "5px",
-        "paddingRight": "5px",
-        "paddingTop": "5px",
       }
     }
   >

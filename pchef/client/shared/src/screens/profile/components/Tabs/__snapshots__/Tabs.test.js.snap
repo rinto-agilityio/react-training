@@ -5,10 +5,10 @@ exports[`Components Tabs should render Tabs component 1`] = `
   className="css-view-1dbjc4n r-marginLeft-1jj8364 r-marginRight-lchren r-width-13qz1uu"
 >
   <div
-    className="css-view-1dbjc4n r-backgroundColor-14lw9ot r-flexDirection-18u37iz r-marginLeft-1jj8364 r-marginRight-lchren r-maxWidth-c3zab1 r-padding-1pcd2l5 r-paddingBottom-1mdbw0j r-width-13qz1uu"
+    className="css-view-1dbjc4n r-backgroundColor-14lw9ot r-flexDirection-18u37iz r-marginLeft-1jj8364 r-marginRight-lchren r-padding-1pcd2l5 r-paddingBottom-1mdbw0j r-width-13qz1uu"
   >
     <div
-      className="css-view-1dbjc4n r-borderBottomWidth-qklmqi r-borderColor-1xc7w19 r-borderStyle-1phboty r-cursor-1loqt21 r-paddingBottom-1inuy60 r-paddingLeft-1hfyk0a r-touchAction-1otgn73 r-width-1iadsmv"
+      className="css-view-1dbjc4n r-borderBottomWidth-qklmqi r-borderColor-1xc7w19 r-borderStyle-1phboty r-cursor-1loqt21 r-paddingBottom-1inuy60 r-paddingLeft-qhyqy2 r-touchAction-1otgn73 r-width-1iadsmv"
       data-focusable={true}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -34,7 +34,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
       </div>
     </div>
     <div
-      className="css-view-1dbjc4n r-borderBottomWidth-qklmqi r-borderColor-42olwf r-borderStyle-1phboty r-cursor-1loqt21 r-paddingBottom-1inuy60 r-paddingLeft-1hfyk0a r-touchAction-1otgn73 r-width-1iadsmv"
+      className="css-view-1dbjc4n r-borderBottomWidth-qklmqi r-borderColor-42olwf r-borderStyle-1phboty r-cursor-1loqt21 r-paddingBottom-1inuy60 r-paddingLeft-qhyqy2 r-touchAction-1otgn73 r-width-1iadsmv"
       data-focusable={true}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -61,7 +61,7 @@ exports[`Components Tabs should render Tabs component 1`] = `
     </div>
   </div>
   <div
-    className="css-view-1dbjc4n r-backgroundColor-n2h5ot r-flexDirection-18u37iz r-flexWrap-1w6e6rj r-marginLeft-1jj8364 r-marginRight-lchren r-maxWidth-c3zab1 r-minHeight-fo66li r-padding-1pcd2l5 r-width-13qz1uu"
+    className="css-view-1dbjc4n r-backgroundColor-n2h5ot r-flexDirection-eqz5dr r-flexWrap-tzz3ar r-marginLeft-1jj8364 r-marginRight-lchren r-minHeight-fo66li r-padding-1pcd2l5 r-width-13qz1uu"
   >
     <div
       className="css-view-1dbjc4n r-height-yvqi7j r-marginBottom-169s5xo r-width-13qz1uu"

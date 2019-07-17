@@ -2,7 +2,7 @@
 
 exports[`Components Header Should render Header component 1`] = `
 <div
-  className="css-view-1dbjc4n r-alignItems-1habvwh r-backgroundColor-kemksi r-paddingBottom-k8qxaj r-paddingLeft-1yt7n81 r-paddingTop-1knelpx"
+  className="css-view-1dbjc4n r-alignItems-1habvwh r-backgroundColor-kemksi r-paddingBottom-k8qxaj r-paddingLeft-1vwolk8 r-paddingTop-1knelpx"
 >
   <div
     className="css-view-1dbjc4n r-marginLeft-1jj8364 r-marginRight-lchren r-maxWidth-c3zab1 r-width-13qz1uu"
