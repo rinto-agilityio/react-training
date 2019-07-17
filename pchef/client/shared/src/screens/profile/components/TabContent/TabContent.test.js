@@ -1,3 +1,6 @@
+// libs
+import { MockedProvider } from 'react-apollo/test-utils'
+
 // Components
 import { Text } from 'react-native'
 import { JSDOM } from 'jsdom'
@@ -5,6 +8,7 @@ import TabContent from '.'
 
 // Mocks
 import { recipes } from '../../../../mocks'
+
 
 const { document } = new JSDOM('').window
 global.document = document
@@ -25,7 +29,11 @@ describe('Components', () => {
     })
 
     it('should render TabContent component', () => {
-      const renderComponent = renderer.create(<TabContent {...props} />)
+      const renderComponent = renderer.create(
+        <MockedProvider>
+          <TabContent {...props} />
+        </MockedProvider>,
+      )
       expect(renderComponent).toMatchSnapshot()
     })
 

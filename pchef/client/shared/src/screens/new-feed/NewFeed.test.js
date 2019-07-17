@@ -1,10 +1,10 @@
+import { MockedProvider } from 'react-apollo/test-utils'
 import { Platform } from 'react-native'
 
 // Components
 import NewFeed from '.'
 import Modal from '../../components/Modal'
 import Loading from '../../components/Loading'
-import Header from '../../components/Header'
 
 // Mocks
 import { categories, user, recipes } from '../../mocks'
@@ -36,7 +36,11 @@ describe('NewFeed', () => {
   })
 
   it('Should render component', () => {
-    const component = renderer.create(<NewFeed {...props} />).toJSON()
+    const component = renderer.create(
+      <MockedProvider>
+        <NewFeed {...props} />)
+      </MockedProvider>,
+    )
     expect(component).toMatchSnapshot()
   })
 

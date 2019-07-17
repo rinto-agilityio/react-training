@@ -1,5 +1,6 @@
 // Libs
 import { JSDOM } from 'jsdom'
+import { MockedProvider } from 'react-apollo/test-utils'
 
 // Components
 import Tabs from '.'
@@ -28,7 +29,11 @@ describe('Components', () => {
     })
 
     it('should render Tabs component', () => {
-      const renderComponent = renderer.create(<Tabs {...props} />)
+      const renderComponent = renderer.create(
+        <MockedProvider>
+          <Tabs {...props} />
+        </MockedProvider>,
+      )
       expect(renderComponent).toMatchSnapshot()
     })
 
