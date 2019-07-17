@@ -3,7 +3,7 @@ import wait from 'waait'
 
 // Components
 import RecipeForm from '.'
-import DirectionFormContainer from '../../../../containers/DirectionForm'
+import DirectionFormContainer from '../../containers/RecipeForm/DirectionForm'
 import DirectionForm from './DirectionForm'
 
 import IngredientsForm from './IngredientsForm'
