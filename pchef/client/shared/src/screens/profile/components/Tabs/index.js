@@ -17,23 +17,12 @@ import type { Recipe } from '../../../../flow-types/recipe'
 type Props = {
   ownRecipes?: Array<Recipe>,
   favoriteRecipe?: Array<Recipe>,
-  userToggleRecipe: (
-    recipeId: string,
-    favoriteRecipe: Array<{ id: string }>
-  ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
-  userToggleVote: (
-    recipeId: string,
-    votes: Array<string>,
-    userId: string
-  ) => Promise<{ data: { userToggleVote: { results: Array<string> } } }>,
   userId: string,
   wrapperIconStyle: Object,
 }
 const Tabs = ({
   ownRecipes = [],
   favoriteRecipe = [],
-  userToggleRecipe,
-  userToggleVote,
   userId,
   wrapperIconStyle,
 }: Props) => {
@@ -64,18 +53,14 @@ const Tabs = ({
         {tabActive === 0 ? (
           <TabContent
             recipes={ownRecipes}
-            userToggleRecipe={userToggleRecipe}
             favoriteRecipe={favoriteRecipe}
             isRecipeTab
-            userToggleVote={userToggleVote}
             userId={userId}
             wrapperIconStyle={wrapperIconStyle}
           />
         ) : (
           <TabContent
             recipes={favoriteRecipe}
-            userToggleRecipe={userToggleRecipe}
-            userToggleVote={userToggleVote}
             userId={userId}
             wrapperIconStyle={wrapperIconStyle}
           />

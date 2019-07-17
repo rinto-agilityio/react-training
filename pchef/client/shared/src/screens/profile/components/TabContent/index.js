@@ -6,7 +6,7 @@ import React, { memo } from 'react'
 
 // COmponents
 import { Text, View, FlatList } from 'react-native'
-import Recipe from '../Recipe'
+import RecipeContainer from '../../containers/recipe'
 
 // Styles
 import styles from './styles'
@@ -21,24 +21,13 @@ type Props = {
   userId: string,
   favoriteRecipe?: Array<RecipeType>,
   isRecipeTab?: boolean,
-  userToggleRecipe: (
-    recipeId: string,
-    favoriteRecipe: Array<{ id: string }>
-  ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
-  userToggleVote: (
-    recipeId: string,
-    votes: Array<string>,
-    userId: string
-  ) => Promise<{ data: { userToggleVote: { results: Array<string> } } }>,
   wrapperIconStyle: Object,
 }
 
 const TabContent = ({
   recipes,
-  userToggleRecipe,
   favoriteRecipe,
   isRecipeTab,
-  userToggleVote,
   userId,
   wrapperIconStyle,
 }: Props) => {
@@ -62,12 +51,10 @@ const TabContent = ({
           data={recipes}
           renderItem={({ item }) => (
             <View style={styles.tabContentItem}>
-              <Recipe
+              <RecipeContainer
                 size="medium"
                 recipe={item}
                 favoriteRecipe={isRecipeTab ? favoriteRecipeIds : recipeIds}
-                userToggleRecipe={userToggleRecipe}
-                userToggleVote={userToggleVote}
                 userId={userId}
                 wrapperIconStyle={wrapperIconStyle}
               />
