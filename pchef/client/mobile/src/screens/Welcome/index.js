@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native'
 import { NavigationScreenProps } from 'react-navigation'
 
 // Components
-import WelcomeContainer from 'pchef-shared/src/containers/Welcome'
+import WelcomeContainer from 'pchef-shared/src/screens/welcome/containers'
 
 // Themes
 import { METRICS } from 'pchef-shared/src/themes'

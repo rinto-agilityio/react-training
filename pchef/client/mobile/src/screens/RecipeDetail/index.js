@@ -3,7 +3,7 @@ import React from 'react'
 import { NavigationScreenProps } from 'react-navigation'
 
 // Containers
-import RecipeDetailContainer from 'pchef-shared/src/containers/Recipe'
+import RecipeDetailContainer from 'pchef-shared/src/screens/recipe/containers'
 
 // Constants
 import ROUTES from '@constants/routes'

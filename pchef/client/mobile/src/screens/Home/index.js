@@ -3,7 +3,7 @@ import React from 'react'
 import { NavigationScreenProps } from 'react-navigation'
 
 // Components
-import NewFeed from 'pchef-shared/src/containers/NewFeed'
+import NewFeed from 'pchef-shared/src/screens/new-feed/containers'
 
 // Constants
 import ROUTES from '@constants/routes'
