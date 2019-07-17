@@ -61,7 +61,7 @@ const CommentForm = ({
           refInput={commentRef}
           onSubmitEditing={onSubmit}
           customStyle={[styles.input, styles[`${type}Input`]]}
-          placeholderTextColor={COLORS.grayNavy}
+          placeholderTextColor={COLORS.input.placeholder}
         />
       </View>
     </View>

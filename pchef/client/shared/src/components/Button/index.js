@@ -53,7 +53,7 @@ Button.defaultProps = {
   disabled: false,
   mode: 'contained',
   contentStyle: {},
-  color: COLORS.baseBlue,
+  color: COLORS.button.default,
   loading: false,
   type: 'default',
 }

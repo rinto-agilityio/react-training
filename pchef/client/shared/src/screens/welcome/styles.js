@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     fontSize: FONTS.fontSize.base,
   },
   introduction: {
-    color: COLORS.flowerBlue,
+    color: COLORS.welcome.text,
     textAlign: 'center',
     fontWeight: FONTS.fontWeight.large,
     marginTop: METRICS.margin.md + METRICS.margin.sm,

@@ -221,12 +221,12 @@ const RecipeForm = forwardRef<Props, Function>(({
       <TextBox
         placeholder="Name"
         refInput={titleRef}
+        placeholderTextColor={COLORS.input.placeholder}
         customStyle={[
           styles.input,
           styles.inputTitle,
           styles[`${size}Input`],
         ]}
-        placeholderTextColor={COLORS.grayNavy}
       />
       <Error message={errorValidator.title} customStyle={customStyleError} />
       <View>
@@ -282,12 +282,12 @@ const RecipeForm = forwardRef<Props, Function>(({
       <TextBox
         placeholder="Description"
         refInput={subTitleRef}
+        placeholderTextColor={COLORS.input.placeholder}
         customStyle={[
           styles.input,
           styles.inputTitle,
           styles[`${size}Input`],
         ]}
-        placeholderTextColor={COLORS.grayNavy}
       />
       <Wrapper
         direction="column"

@@ -17,5 +17,5 @@ storiesOf('Loading', module)
     <Loading size="small" />
   ))
   .add('Large', () => (
-    <Loading size="large" color={COLORS.blue} />
+    <Loading size="large" color={COLORS.icon.default} />
   ))

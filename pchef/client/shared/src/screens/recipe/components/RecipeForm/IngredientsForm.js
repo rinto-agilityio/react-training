@@ -46,11 +46,10 @@ const IngredientsForm = ({
         placeholder="Write your ingredients"
         refInput={ingredientRef}
         customStyle={[styles.input, styles[`${size}Input`]]}
-        placeholderTextColor={COLORS.grayNavy}
+        placeholderTextColor={COLORS.input.placeholder}
       />
-      <Text style={{ marginTop: METRICS.margin.md, color: COLORS.red }}>
-        Note: If you typing multiple ingredients, each ingredient separated by
-        commas (,)
+      <Text style={{ marginTop: METRICS.mediumMargin, color: COLORS.text.error }}>
+          Note: If you typing multiple ingredients, each ingredient separated by commas (,)
       </Text>
     </Modal>
   )

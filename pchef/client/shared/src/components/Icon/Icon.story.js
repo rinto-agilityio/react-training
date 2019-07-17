@@ -17,14 +17,14 @@ storiesOf('Icon', module)
   .add('Default', () => (
     <Icon
       onPress={action('clicked')}
-      color={COLORS.baseBlue}
+      color={COLORS.icon.default}
       name="add-a-photo"
     />
   ))
   .add('Disabled', () => (
     <Icon
       onPress={action('clicked')}
-      color={COLORS.baseBlue}
+      color={COLORS.icon.default}
       name="add-a-photo"
       disabled
     />

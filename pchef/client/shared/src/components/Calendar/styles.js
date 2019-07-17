@@ -8,7 +8,7 @@ import { COLORS } from '../../themes'
 const styles = StyleSheet.create({
   calendar: {
     borderWidth: 1,
-    borderColor: COLORS.grayDarker,
+    borderColor: COLORS.border.default,
   },
 })
 

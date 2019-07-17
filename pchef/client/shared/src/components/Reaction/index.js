@@ -36,13 +36,13 @@ const Reaction = ({
   const data = [
     {
       name: 'favorite',
-      color: isFavorited ? COLORS.red : COLORS.grayDarker,
+      color: isFavorited ? COLORS.icon.favorite : COLORS.icon.default,
       label: 'Save',
       onPress: onPressFavorite,
     },
     {
       name: 'thumb-up',
-      color: isVote ? COLORS.blue : COLORS.grayDarker,
+      color: isVote ? COLORS.icon.vote : COLORS.icon.default,
       label: votes.length,
       onPress: onPressVote,
     },

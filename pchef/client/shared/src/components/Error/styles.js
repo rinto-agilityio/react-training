@@ -7,7 +7,7 @@ import { COLORS, FONTS } from '../../themes'
 // Create style for button
 const styles = StyleSheet.create({
   error: {
-    color: COLORS.red,
+    color: COLORS.text.error,
     fontSize: FONTS.fontSize.medium,
     fontStyle: FONTS.fontStyle.italic,
   },

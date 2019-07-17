@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     flex: 1,
-    backgroundColor: COLORS.mantisGreen,
+    backgroundColor: COLORS.login.bg,
     alignItems: 'center',
     position: 'relative',
   },
@@ -25,13 +25,13 @@ const styles = StyleSheet.create({
   error: {
     textAlign: 'center',
     fontSize: FONTS.fontSize.base,
-    color: COLORS.persianPlum,
+    color: COLORS.login.errorText,
   },
   primaryError: {
     fontSize: FONTS.fontSize.small,
   },
   errorWrapper: {
-    backgroundColor: COLORS.cherub,
+    backgroundColor: COLORS.login.errorBg,
     paddingTop: METRICS.padding.sm + METRICS.padding.sm,
     paddingRight: METRICS.padding.sm,
     paddingBottom: METRICS.padding.sm + METRICS.padding.sm,

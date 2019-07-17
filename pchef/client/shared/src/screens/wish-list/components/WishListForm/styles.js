@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   icon: {
     display: 'flex',
     flexDirection: 'column',
-    backgroundColor: COLORS.baseBlue,
+    backgroundColor: COLORS.icon.wishList,
     borderRadius: METRICS.borderRadius.md,
     ...METRICS.flexCenter,
     paddingRight: METRICS.padding.sm,
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   wrapperMainPhoto: {
     ...METRICS.flexCenter,
     flexDirection: 'column',
-    backgroundColor: COLORS.baseBlue,
+    backgroundColor: COLORS.icon.wishList,
     marginTop: METRICS.margin.md,
     marginBottom: METRICS.margin.md,
     paddingBottom: METRICS.padding.sm,

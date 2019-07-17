@@ -26,14 +26,14 @@ const styles = StyleSheet.create({
     paddingLeft: METRICS.padding.xl + METRICS.padding.lg,
   },
   formGroup: {
+    borderColor: COLORS.login.border,
     borderRadius: METRICS.borderRadius.sm,
     marginBottom: METRICS.margin.sm + METRICS.margin.md,
-    borderColor: COLORS.ghost,
     borderWidth: METRICS.borderWidth.sm,
     width: '100%',
   },
   errorFormGroup: {
-    borderColor: COLORS.baseRed,
+    borderColor: COLORS.login.errorBorder,
   },
   input: {
     borderRadius: METRICS.borderRadius.sm,
@@ -49,9 +49,9 @@ const styles = StyleSheet.create({
     padding: 0,
   },
   button: {
+    backgroundColor: COLORS.login.button,
     height: METRICS.height.md,
     borderRadius: METRICS.borderRadius.sm,
-    backgroundColor: COLORS.mantisGreen,
   },
   primaryButton: {
     width: METRICS.button.lg,

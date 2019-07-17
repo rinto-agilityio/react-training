@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
         ? METRICS.screen.xl
         : screen.width,
     width: '100%',
+    backgroundColor: COLORS.tab.bg,
     padding: METRICS.padding.lg,
-    backgroundColor: COLORS.lightSliver,
     flexDirection: screen.width > METRICS.screen.md ? 'row' : 'column',
     flexWrap: screen.width > METRICS.screen.md ? 'wrap' : 'nowrap',
     marginLeft: 'auto',
