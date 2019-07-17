@@ -6,12 +6,14 @@ import React, { useState, useEffect, memo } from 'react'
 import { View, Platform, ScrollView, Dimensions } from 'react-native'
 
 // Components
-import RecipeList from './components/RecipeList'
 import Loading from '../../components/Loading'
 import CategoryPipeLine from './components/CategoryPipeLine'
 import Modal from '../../components/Modal'
 import Error from '../../components/Error'
 import Header from '../../components/Header'
+
+// containers
+import RecipeListContainer from './containers/RecipeList'
 
 // Helpers
 import { customError } from '../../helpers/utils'
@@ -39,15 +41,6 @@ type Props = {
     followCategory: Array<Category>,
     user: Object,
   },
-  userToggleRecipe: (
-    recipeId: string,
-    favoriteRecipe: Array<{ id: string }>
-  ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
-  userToggleVote: (
-    recipeId: string,
-    votes: Array<string>,
-    userId: string
-  ) => Promise<{ data: { userToggleVote: { results: Array<string>}}}>,
   type?: string,
   handleClickRecipe: () => void,
   size: string,
@@ -64,12 +57,10 @@ const NewFeed = ({
   loading,
   error,
   data = {},
-  userToggleRecipe,
   handleClickRecipe,
   handleRedirectLogin = () => {},
   onPressCategoryPipeline,
   size = 'medium',
-  userToggleVote,
   customStyleWrapRecipes,
   wrapperIconStyle,
 }: Props) => {
@@ -126,13 +117,11 @@ const NewFeed = ({
 
       {
         recipesList && (
-          <RecipeList
+          <RecipeListContainer
             recipes={recipesList}
             type={type}
             favoriteRecipe={favoriteRecipe}
-            userToggleRecipe={userToggleRecipe}
             handleClickRecipe={handleClickRecipe}
-            userToggleVote={userToggleVote}
             userId={user.id}
             customStyleWrapRecipes={customStyleWrapRecipes}
             wrapperIconStyle={wrapperIconStyle}

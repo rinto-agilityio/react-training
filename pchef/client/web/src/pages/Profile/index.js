@@ -1,5 +1,5 @@
 import React from 'react'
-import ProfileContainer from 'pchef-shared/src/containers/Profile'
+import ProfileContainer from 'pchef-shared/src/screens/profile/containers'
 
 type Props = {
   history: Object

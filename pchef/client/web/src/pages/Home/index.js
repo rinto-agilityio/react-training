@@ -5,7 +5,7 @@
 import React, { memo } from 'react'
 
 // Containers
-import NewFeed from 'pchef-shared/src/containers/NewFeed'
+import NewFeed from 'pchef-shared/src/screens/new-feed/containers'
 
 type Props = {
   history: Object

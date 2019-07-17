@@ -24,15 +24,6 @@ type Props = {
     graphQLErrors: Array<{ message: string }>,
   },
   data: User,
-  userToggleRecipe: (
-    recipeId: string,
-    favoriteRecipe: Array<{ id: string }>
-  ) => Promise<{ data: { userToggleRecipe: { results: Array<string> } } }>,
-  userToggleVote: (
-    recipeId: string,
-    votes: Array<string>,
-    userId: string
-  ) => Promise<{ data: { userToggleVote: { results: Array<string> } } }>,
   size: string,
   store: Object,
   handleRedirectLogin?: () => void,
@@ -42,8 +33,6 @@ const Profile = ({
   data,
   loading,
   error,
-  userToggleRecipe,
-  userToggleVote,
   size = 'small',
   store,
   handleRedirectLogin = () => {},
@@ -93,8 +82,6 @@ const Profile = ({
       <Tabs
         ownRecipes={ownRecipes}
         favoriteRecipe={favoriteRecipe}
-        userToggleRecipe={userToggleRecipe}
-        userToggleVote={userToggleVote}
         userId={user.id}
         wrapperIconStyle={wrapperIconStyle}
       />
