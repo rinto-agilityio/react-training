@@ -4,7 +4,7 @@ import { ScrollView } from 'react-native'
 import { NavigationScreenProps } from 'react-navigation'
 
 // Containers
-import RecipeFormContainer from 'pchef-shared/src/containers/RecipeForm'
+import RecipeFormContainer from 'pchef-shared/src/screens/recipe/containers/RecipeForm'
 
 // Helpers
 import { selectImage, uploadImage } from '@helpers/upload-image'

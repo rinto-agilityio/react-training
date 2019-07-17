@@ -3,7 +3,7 @@ import React from 'react'
 import { NavigationScreenProps } from 'react-navigation'
 
 // Containers
-import CategoryContainer from 'pchef-shared/src/containers/Category'
+import CategoryContainer from 'pchef-shared/src/screens/category/containers'
 
 type Props = {
   navigation: NavigationScreenProps

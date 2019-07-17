@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import { NavigationScreenProps } from 'react-navigation'
 
 // Containers
-import WishListFormContainer from 'pchef-shared/src/containers/WishListForm'
+import WishListFormContainer from 'pchef-shared/src/screens/wish-list/containers/WishListForm'
 
 // Constants
 import ROUTES from '@constants/routes'

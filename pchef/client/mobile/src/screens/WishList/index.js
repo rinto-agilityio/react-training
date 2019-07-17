@@ -4,7 +4,7 @@ import { NavigationScreenProps } from 'react-navigation'
 import { ScrollView } from 'react-native'
 
 // Containers
-import WishListContainer from 'pchef-shared/src/containers/WishList'
+import WishListContainer from 'pchef-shared/src/screens/wish-list/containers/WishList'
 
 // Constants
 import ROUTES from '@constants/routes'

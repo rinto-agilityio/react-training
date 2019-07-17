@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-community/async-storage'
 import { NavigationScreenProps } from 'react-navigation'
 
 // Component
-import LoginContainer from 'pchef-shared/src/containers/Login'
+import LoginContainer from 'pchef-shared/src/screens/login/containers'
 
 // Constants
 import ROUTES from '@constants/routes'
