@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   secondaryRecipeListContainer: {
-    width: METRICS.extraLargeScreen,
+    width: METRICS.screen.xl,
     marginRight: 'auto',
     marginLeft: 'auto',
   },

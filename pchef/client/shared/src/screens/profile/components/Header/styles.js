@@ -12,9 +12,9 @@ const styles = StyleSheet.create({
   },
   container: {
     maxWidth:
-      METRICS.screenWidth > METRICS.mediumScreen
-        ? METRICS.extraLargeScreen
-        : METRICS.screenWidth,
+      METRICS.screen.width > METRICS.screen.md
+        ? METRICS.screen.xl
+        : METRICS.screen.width,
     width: '100%',
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -23,31 +23,31 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'flex-end',
 
-    height: METRICS.smallBgImage,
-    paddingHorizontal: METRICS.largePadding,
+    height: METRICS.bgImage.sm,
+    paddingHorizontal: METRICS.padding.lg,
   },
   image: {
-    width: METRICS.extraSmallImage,
-    height: METRICS.extraSmallImage,
-    borderWidth: METRICS.mediumBorderWidth,
+    width: METRICS.image.sm,
+    height: METRICS.image.sm,
+    borderWidth: METRICS.borderWidth.md,
     borderColor: COLORS.white,
-    borderRadius: METRICS.extraSmallImage / 2,
-    marginBottom: -METRICS.mediumMargin,
+    borderRadius: METRICS.image.sm / 2,
+    marginBottom: -METRICS.margin.md,
   },
   largeImage: {
-    width: METRICS.mediumImage,
-    height: METRICS.mediumImage,
+    width: METRICS.image.lg,
+    height: METRICS.image.lg,
   },
   largeContent: {
     alignItems: 'center',
     flexDirection: 'row-reverse',
     justifyContent: 'space-between',
-    paddingRight: METRICS.extraLargePadding,
+    paddingRight: METRICS.padding.xl,
   },
   user: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    padding: METRICS.largePadding,
+    padding: METRICS.padding.lg,
     backgroundColor: COLORS.white,
     zIndex: -1,
   },
@@ -57,9 +57,9 @@ const styles = StyleSheet.create({
   },
   userButton: {
     backgroundColor: COLORS.white,
-    borderWidth: METRICS.smallBorderWidth,
+    borderWidth: METRICS.borderWidth.sm,
     borderColor: COLORS.black,
-    borderRadius: METRICS.largeBorderRadius,
+    borderRadius: METRICS.borderRadius.lg,
     padding: 0,
   },
   userTitleButton: {

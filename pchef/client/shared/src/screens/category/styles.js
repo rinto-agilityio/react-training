@@ -7,13 +7,13 @@ import { METRICS } from '../../themes'
 // Create style for header category
 const styles = StyleSheet.create({
   container: {
-    marginTop: METRICS.largeMargin,
+    marginTop: METRICS.margin.lg,
     marginRight: 'auto',
-    marginBottom: METRICS.largeMargin,
+    marginBottom: METRICS.margin.lg,
     marginLeft: 'auto',
     position: 'relative',
     width: '100%',
-    height: METRICS.screenHeight - 440, // 440 is space of top screen to list recipes
+    height: METRICS.screen.height - 440, // 440 is space of top screen to list recipes
   },
 })
 

@@ -6,7 +6,7 @@ import { METRICS } from '../../themes'
 
 const styles = StyleSheet.create({
   tagStyles: {
-    marginRight: METRICS.smallMargin,
+    marginRight: METRICS.margin.sm,
     width: '100px',
   },
 })

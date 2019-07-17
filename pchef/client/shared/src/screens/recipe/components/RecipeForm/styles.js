@@ -10,15 +10,15 @@ const styles = StyleSheet.create({
     ...METRICS.flexCenter,
     flexDirection: 'column',
     backgroundColor: COLORS.baseGray,
-    marginTop: METRICS.mediumMargin,
-    marginBottom: METRICS.mediumMargin,
+    marginTop: METRICS.margin.md,
+    marginBottom: METRICS.margin.md,
     height: 150,
     width: '100%',
   },
   wrapperIcon: {
     backgroundColor: COLORS.baseGray,
-    padding: METRICS.largePadding,
-    marginTop: METRICS.mediumMargin,
+    padding: METRICS.padding.lg,
+    marginTop: METRICS.margin.md,
   },
   wrapperClassifyIcon: {
     paddingBottom: 0,
@@ -30,28 +30,28 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     backgroundColor: COLORS.white,
-    borderRadius: METRICS.mediumBorderRadius,
+    borderRadius: METRICS.borderRadius.md,
     ...METRICS.flexCenter,
   },
   classifyIcon: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    marginBottom: METRICS.largeMargin,
+    marginBottom: METRICS.margin.lg,
   },
   createIcon: {
-    marginLeft: METRICS.mediumMargin,
+    marginLeft: METRICS.margin.md,
   },
   smallIcon: {
-    width: METRICS.smallDirectionsIcon,
-    height: METRICS.smallDirectionsIcon,
+    width: METRICS.directionIcon.sm,
+    height: METRICS.directionIcon.sm,
   },
   mediumIcon: {
-    width: METRICS.mediumDirectionsIcon,
-    height: METRICS.mediumDirectionsIcon,
+    width: METRICS.directionIcon.md,
+    height: METRICS.directionIcon.md,
   },
   largeIcon: {
-    width: METRICS.largeDirectionsIcon,
-    height: METRICS.largeDirectionsIcon,
+    width: METRICS.directionIcon.lg,
+    height: METRICS.directionIcon.lg,
   },
 
   // Label
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     marginLeft: 0,
   },
   labelMainPhoto: {
-    marginTop: METRICS.largeMargin,
+    marginTop: METRICS.margin.lg,
   },
 
   // Input
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   },
   inputDirections: {
     width: '100%',
-    marginBottom: METRICS.largeMargin,
+    marginBottom: METRICS.margin.lg,
   },
   smallInput: {
     fontSize: FONTS.fontSize.small,
@@ -87,16 +87,16 @@ const styles = StyleSheet.create({
     minWidth: METRICS.largeIcon,
   },
   smallButton: {
-    borderRadius: METRICS.smallBorderRadius,
+    borderRadius: METRICS.borderRadius.xs,
     padding: 0,
   },
   mediumButton: {
-    borderRadius: METRICS.mediumBorderRadius,
-    padding: METRICS.smallPadding,
+    borderRadius: METRICS.borderRadius.md,
+    padding: METRICS.padding.sm,
   },
   largeButton: {
-    borderRadius: METRICS.mediumBorderRadius,
-    padding: METRICS.mediumPadding,
+    borderRadius: METRICS.borderRadius.md,
+    padding: METRICS.padding.sm,
   },
   smallTitleBtn: {
     fontSize: FONTS.fontSize.small,
@@ -111,23 +111,23 @@ const styles = StyleSheet.create({
   // Directions
   wrapperDirections: {
     width: '75%',
-    padding: METRICS.largePadding,
+    padding: METRICS.padding.lg,
     borderColor: COLORS.baseGray,
-    borderWidth: METRICS.smallBorderWidth,
-    borderRadius: METRICS.mediumBorderRadius,
+    borderWidth: METRICS.borderWidth.sm,
+    borderRadius: METRICS.borderRadius.md,
   },
 
   wrapperButton: {
-    marginTop: METRICS.largeMargin,
+    marginTop: METRICS.margin.lg,
     marginBottom: '0',
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginBottom: METRICS.largeMargin,
+    marginBottom: METRICS.margin.lg,
   },
 
   headerForm: {
     textAlign: 'center',
-    marginTop: METRICS.largeMargin,
+    marginTop: METRICS.margin.lg,
     fontSize: FONTS.fontSize.large,
   },
 })

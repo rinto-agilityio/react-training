@@ -39,6 +39,7 @@ const Ingredients = ({
 }: Props) => {
   const ingredients = (description && formatStringToArray(description, SEPARATOR_SPLIT_STRING)) || []
   const ingredientAmount = ingredients.length
+
   return (
     <View
       style={[

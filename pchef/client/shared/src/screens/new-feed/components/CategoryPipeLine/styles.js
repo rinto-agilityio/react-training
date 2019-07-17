@@ -8,15 +8,15 @@ const styles = StyleSheet.create({
   pipelineWrapper: {
     display: 'flex',
     flexDirection: 'row',
-    padding: METRICS.largePadding,
+    padding: METRICS.padding.lg,
   },
   pipelineItem: {
-    marginRight: METRICS.largeMargin,
+    marginRight: METRICS.margin.lg,
   },
   pipelineItemName: {
     fontWeight: FONTS.fontWeight.medium,
     textAlign: 'center',
-    paddingBottom: METRICS.mediumPadding,
+    paddingBottom: METRICS.padding.sm,
   },
 })
 

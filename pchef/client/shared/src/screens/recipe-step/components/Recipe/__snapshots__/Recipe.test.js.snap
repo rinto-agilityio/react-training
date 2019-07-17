@@ -837,7 +837,7 @@ exports[`Recipe by step Render recipe component with size medium 1`] = `
     </div>
   </div>
   <div
-    className="css-view-1dbjc4n r-flexDirection-18u37iz r-paddingBottom-1mi0q7o r-paddingLeft-b5h31w r-paddingRight-1qfoi16 r-paddingTop-m611by"
+    className="css-view-1dbjc4n r-flexDirection-18u37iz r-paddingBottom-1inuy60 r-paddingLeft-b5h31w r-paddingRight-19gegkz r-paddingTop-glunga"
   >
     <div
       className="css-view-1dbjc4n r-marginRight-zso239"
@@ -1753,7 +1753,7 @@ exports[`Recipe by step Renders correctly recipe commponent 1`] = `
     </div>
   </div>
   <div
-    className="css-view-1dbjc4n r-flexDirection-18u37iz r-paddingBottom-1mi0q7o r-paddingLeft-b5h31w r-paddingRight-1qfoi16 r-paddingTop-m611by"
+    className="css-view-1dbjc4n r-flexDirection-18u37iz r-paddingBottom-1inuy60 r-paddingLeft-b5h31w r-paddingRight-19gegkz r-paddingTop-glunga"
   >
     <div
       className="css-view-1dbjc4n r-marginRight-zso239"

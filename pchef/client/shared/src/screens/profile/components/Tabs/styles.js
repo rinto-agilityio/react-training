@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native'
 // Themes
 import { COLORS, METRICS } from '../../../../themes'
 
-const { screenWidth } = METRICS
+const { screen } = METRICS
 
 // Create style for Header
 const styles = StyleSheet.create({
@@ -15,28 +15,28 @@ const styles = StyleSheet.create({
   },
   wrapTabs: {
     maxWidth:
-      screenWidth > METRICS.mediumScreen
-        ? METRICS.extraLargeScreen
-        : screenWidth,
+      screen.width > METRICS.screen.md
+        ? METRICS.screen.xl
+        : screen.width,
     width: '100%',
     flexDirection: 'row',
-    padding: METRICS.largePadding,
+    padding: METRICS.padding.lg,
     paddingBottom: 0,
     backgroundColor: COLORS.white,
   },
   wrapContent: {
     maxWidth:
-      screenWidth > METRICS.mediumScreen
-        ? METRICS.extraLargeScreen
-        : screenWidth,
+      screen.width > METRICS.screen.md
+        ? METRICS.screen.xl
+        : screen.width,
     width: '100%',
-    padding: METRICS.largePadding,
+    padding: METRICS.padding.lg,
     backgroundColor: COLORS.lightSliver,
-    flexDirection: screenWidth > METRICS.mediumScreen ? 'row' : 'column',
-    flexWrap: screenWidth > METRICS.mediumScreen ? 'wrap' : 'nowrap',
+    flexDirection: screen.width > METRICS.screen.md ? 'row' : 'column',
+    flexWrap: screen.width > METRICS.screen.md ? 'wrap' : 'nowrap',
     marginLeft: 'auto',
     marginRight: 'auto',
-    minHeight: METRICS.screenHeight - METRICS.smallHeader,
+    minHeight: METRICS.screen.height - METRICS.header.sm,
   },
 })
 

@@ -40,7 +40,7 @@ type Props = {
     title: string,
     step: number,
     imgUrl: string,
-    description: string,
+    description: string
   ) => Promise<{
     data: {
       createRecipeStep: {
@@ -127,16 +127,11 @@ const DirectionsForm = ({
       visible={visible}
       size={size}
       customDialog={{
-        width: size === 'large' ? METRICS.largeScreen : 'auto',
+        width: size === 'large' ? METRICS.screen.lg : 'auto',
       }}
     >
       {/* Show steps after create success */}
-      {directions.length ? (
-        <Directions
-          steps={directions}
-          size={size}
-        />
-      ) : null}
+      {directions.length ? <Directions steps={directions} size={size} /> : null}
 
       {/* Show create step form  */}
       {isShowForm ? (
@@ -144,7 +139,7 @@ const DirectionsForm = ({
           direction="row"
           childPosition="middle"
           customStyles={{
-            marginBottom: METRICS.largeMargin,
+            marginBottom: METRICS.margin.lg,
           }}
         >
           <Button
@@ -153,10 +148,7 @@ const DirectionsForm = ({
             titleStyle={[styles.titleBtn, styles[`${size}TitleBtn`]]}
             onPress={() => {}}
           />
-          <Wrapper
-            direction="column"
-            customStyles={styles.wrapperDirections}
-          >
+          <Wrapper direction="column" customStyles={styles.wrapperDirections}>
             {data.map(({ placeholder, refInput }) => (
               <TextBox
                 key={placeholder}
@@ -170,16 +162,16 @@ const DirectionsForm = ({
             ))}
             {WEB_PLATFORM ? (
               <View>
-                <Text
-                  for="file-input-step"
-                  accessibilityRole="label"
-                >
+                <Text for="file-input-step" accessibilityRole="label">
                   <Icon
                     name="add-a-photo"
                     size={METRICS[`${size}Icon`]}
                     onPress={handleAddStepImage}
                     label="Set cover photo"
-                    wrapperIconStyle={[styles.wrapperIcon, styles.wrapperIconDirections]}
+                    wrapperIconStyle={[
+                      styles.wrapperIcon,
+                      styles.wrapperIconDirections,
+                    ]}
                     customIconStyles={styles.customIconStyles}
                   />
                 </Text>
@@ -198,20 +190,26 @@ const DirectionsForm = ({
                 size={METRICS[`${size}Icon`]}
                 onPress={handleAddStepImage}
                 label="Set cover photo"
-                wrapperIconStyle={[styles.wrapperIcon, styles.wrapperIconDirections]}
+                wrapperIconStyle={[
+                  styles.wrapperIcon,
+                  styles.wrapperIconDirections,
+                ]}
               />
             )}
             {stepUrl ? (
-              <Image url={stepUrl} customImageStyle={{ width: '100%', height: 150, marginTop: 20 }} />
+              <Image
+                url={stepUrl}
+                customImageStyle={{ width: '100%', height: 150, marginTop: 20 }}
+              />
             ) : null}
           </Wrapper>
         </Wrapper>
-      ) : null }
+      ) : null}
       <Wrapper
         direction="row"
         childPosition="middle"
         customStyles={{
-          marginBottom: METRICS.largeMargin,
+          marginBottom: METRICS.margin.lg,
         }}
       >
         <Icon
@@ -229,9 +227,7 @@ const DirectionsForm = ({
           onPress={handleSubmit}
         />
       </Wrapper>
-      {
-        loading && <Loading />
-      }
+      {loading && <Loading />}
     </Modal>
   )
 }
