@@ -1,9 +1,9 @@
 import { compose } from 'react-apollo'
 
 // graphQL query
-import { getUser } from '../graphql/user'
+import { getUser } from '../../../graphql/user'
 
 // component
-import Header from '../components/Header'
+import Header from '../index'
 
 export default compose(getUser)(Header)
