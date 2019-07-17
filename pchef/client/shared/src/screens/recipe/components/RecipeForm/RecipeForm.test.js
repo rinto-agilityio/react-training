@@ -3,12 +3,12 @@ import wait from 'waait'
 
 // Components
 import RecipeForm from '.'
-import DirectionFormContainer from '../../../../containers/DirectionForm'
+import DirectionFormContainer from '../../containers/RecipeForm/DirectionForm'
 import DirectionForm from './DirectionForm'
 
 import IngredientsForm from './IngredientsForm'
 import Classify from './Classify'
-import Categories from '../../../../containers/Categories'
+import Categories from '../../containers/RecipeForm'
 import CookingTypes from '../../../../containers/CookingTypes'
 import Button from '../../../../components/Button'
 import Modal from '../../../../components/Modal'

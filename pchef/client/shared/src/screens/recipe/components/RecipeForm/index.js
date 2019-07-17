@@ -21,9 +21,9 @@ import Ingredients from '../Recipe/Ingredients'
 import TextBox from '../../../../components/TextBox'
 import Icon from '../../../../components/Icon'
 import Wrapper from '../../../../layout/Wrapper'
-import Categories from '../../../../containers/Categories'
-import CookingTypes from '../../../../containers/CookingTypes'
-import DirectionForm from '../../../../containers/DirectionForm'
+import Categories from '../../containers/RecipeForm/Categories'
+import CookingTypes from '../../containers/RecipeForm/CookingType'
+import DirectionForm from '../../containers/RecipeForm/DirectionForm'
 import Error from '../../../../components/Error'
 import Image from '../../../../components/Image'
 import Button from '../../../../components/Button'
@@ -43,10 +43,12 @@ type Props = {
     imgUrl: string,
     thumbnail: string,
     description: string,
-    isDraft: boolean,
+    isDraft: boolean
   ) => Promise<{ data: { createRecipe: { id: string } } }>,
   previewImage?: string,
-  publishRecipe: (id: string) => Promise<{ data: { publishRecipe: { id: string } } }>,
+  publishRecipe: (
+    id: string
+  ) => Promise<{ data: { publishRecipe: { id: string } } }>,
   redirectAfterPublish: () => {},
   customStyle: Object,
   customStyleError: Object,
@@ -154,13 +156,12 @@ const RecipeForm = forwardRef<Props, Function>(({
 
   const handlePublishRecipe = async () => {
     try {
-      await publishRecipe(recipe.id)
-        .then(({ data }) => {
-          const { id } = data.publishRecipe
-          if (id) {
-            redirectAfterPublish()
-          }
-        })
+      await publishRecipe(recipe.id).then(({ data }) => {
+        const { id } = data.publishRecipe
+        if (id) {
+          redirectAfterPublish()
+        }
+      })
     } catch (err) {
       setError(err)
     }
@@ -168,8 +169,10 @@ const RecipeForm = forwardRef<Props, Function>(({
 
   // Update IngredientList after closing ingredient tag
   const handleCloseIngredient = ingredient => {
-    const ingredientList = ingredients && ingredients.split(SEPARATOR_SPLIT_STRING)
-    const filterIngredient = ingredientList && ingredientList.filter(item => item !== ingredient)
+    const ingredientList =
+      ingredients && ingredients.split(SEPARATOR_SPLIT_STRING)
+    const filterIngredient =
+      ingredientList && ingredientList.filter(item => item !== ingredient)
     const ingreList = filterIngredient && filterIngredient.join()
     setIngredients(ingreList)
   }
@@ -218,27 +221,30 @@ const RecipeForm = forwardRef<Props, Function>(({
       <TextBox
         placeholder="Name"
         refInput={titleRef}
-        customStyle={[styles.input, styles.inputTitle, styles[`${size}Input`]]}
         placeholderTextColor={COLORS.input.placeholder}
+        customStyle={[
+          styles.input,
+          styles.inputTitle,
+          styles[`${size}Input`],
+        ]}
       />
-      <Error
-        message={errorValidator.title}
-        customStyle={customStyleError}
-      />
+      <Error message={errorValidator.title} customStyle={customStyleError} />
       <View>
         {WEB_PLATFORM ? (
           <>
-            <Text
-              for="file-input"
-              accessibilityRole="label"
-            >
+            <Text for="file-input" accessibilityRole="label">
               <Icon
                 name="add-a-photo"
                 size={METRICS[`${size}Icon`] * 2}
                 onPress={handleAddRecipeImage}
                 label="Set cover photo"
                 wrapperIconStyle={[styles.wrapperMainPhoto, wrapperIconStyle]}
-                customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`], customStyleLabel]}
+                customStyle={[
+                  styles.label,
+                  styles.labelMainPhoto,
+                  styles[`${size}Input`],
+                  customStyleLabel,
+                ]}
               />
             </Text>
             <input
@@ -257,19 +263,31 @@ const RecipeForm = forwardRef<Props, Function>(({
             onPress={handleAddRecipeImage}
             label="Set cover photo"
             wrapperIconStyle={[styles.wrapperMainPhoto, wrapperIconStyle]}
-            customStyle={[styles.label, styles.labelMainPhoto, styles[`${size}Input`], customStyleLabel]}
+            customStyle={[
+              styles.label,
+              styles.labelMainPhoto,
+              styles[`${size}Input`],
+              customStyleLabel,
+            ]}
           />
         )}
       </View>
 
       {previewImage ? (
-        <Image url={previewImage} customImageStyle={{ width: '100%', height: 150 }} />
+        <Image
+          url={previewImage}
+          customImageStyle={{ width: '100%', height: 150 }}
+        />
       ) : null}
       <TextBox
         placeholder="Description"
         refInput={subTitleRef}
-        customStyle={[styles.input, styles.inputTitle, styles[`${size}Input`]]}
         placeholderTextColor={COLORS.input.placeholder}
+        customStyle={[
+          styles.input,
+          styles.inputTitle,
+          styles[`${size}Input`],
+        ]}
       />
       <Wrapper
         direction="column"
@@ -293,15 +311,17 @@ const RecipeForm = forwardRef<Props, Function>(({
               customIconStyles={customIconStyles}
             />
             {value ? (
-              <Text style={[{ marginBottom: METRICS.largeMargin }, styles[`${size}Input`]]}>
+              <Text
+                style={[
+                  { marginBottom: METRICS.margin.lg },
+                  styles[`${size}Input`],
+                ]}
+              >
                 {value}
               </Text>
             ) : null}
             {error ? (
-              <Error
-                message={error}
-                customStyle={customStyleError}
-              />
+              <Error message={error} customStyle={customStyleError} />
             ) : null}
           </View>
         ))}
@@ -318,7 +338,12 @@ const RecipeForm = forwardRef<Props, Function>(({
             size={METRICS[`${size}Icon`]}
             onPress={() => onPress(true)}
             label={label}
-            wrapperIconStyle={[styles.icon, styles[`${name}Icon`], styles[`${size}Icon`], customWrapperIconStyle]}
+            wrapperIconStyle={[
+              styles.icon,
+              styles[`${name}Icon`],
+              styles[`${size}Icon`],
+              customWrapperIconStyle,
+            ]}
             customStyle={[style, styles[`${size}Input`]]}
           />
         ))}
@@ -328,7 +353,7 @@ const RecipeForm = forwardRef<Props, Function>(({
           description={ingredients}
           size={size}
           customIngredients={{
-            marginTop: METRICS.largeMargin,
+            marginTop: METRICS.margin.lg,
           }}
           onClose={handleCloseIngredient}
           customWrapperTagStyles={customWrapperTagStyles}
@@ -384,9 +409,7 @@ const RecipeForm = forwardRef<Props, Function>(({
           handleRedirectLogin={handleRedirectLogin}
         />
       )}
-      {
-        loading && <Loading />
-      }
+      {loading && <Loading />}
       {WEB_PLATFORM ? (
         <View style={[styles.wrapperButton]}>
           <Button

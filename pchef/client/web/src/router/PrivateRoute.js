@@ -5,7 +5,7 @@ import { Platform } from 'react-native'
 // Layouts
 import MainContainer from 'pchef-shared/src/layout/MainContainer'
 
-import Header from 'pchef-shared/src/containers/Header'
+import Header from 'pchef-shared/src/components/Header/containers'
 
 import './CustomStyle.css'
 

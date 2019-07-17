@@ -16,7 +16,7 @@ import { Provider as PaperProvider } from 'react-native-paper'
 import client from './config/apollo-client'
 
 // Containers
-import LoginContainer from './containers/Login'
+import LoginContainer from './screens/login/containers'
 
 // Styles
 import styles from './AppStyle'

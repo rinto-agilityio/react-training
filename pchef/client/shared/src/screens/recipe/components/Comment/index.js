@@ -45,7 +45,7 @@ const Comment = ({
   const containerStyle = [styles.container, customStyle]
 
   // define avatar size follow type
-  const avatarSize = type === 'primary' ? METRICS.mediumAvatar : METRICS.largeAvatar
+  const avatarSize = type === 'primary' ? METRICS.avatar.md : METRICS.avatar.lg
 
   return (
     <View style={containerStyle}>

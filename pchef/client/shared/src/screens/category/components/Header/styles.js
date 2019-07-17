@@ -10,18 +10,18 @@ const styles = StyleSheet.create({
     display: 'flex',
   },
   smallHeader: {
-    height: METRICS.smallHeader,
+    height: METRICS.header.sm,
   },
   mediumHeader: {
-    height: METRICS.mediumHeader,
+    height: METRICS.header.md,
   },
   largeHeader: {
-    height: METRICS.largeHeader,
+    height: METRICS.header.lg,
   },
   title: {
     color: COLORS.white,
     fontWeight: FONTS.fontWeight.large,
-    marginBottom: METRICS.smallMargin,
+    marginBottom: METRICS.margin.sm,
   },
   smallTitle: {
     fontSize: FONTS.fontSize.medium,
@@ -33,14 +33,14 @@ const styles = StyleSheet.create({
     fontSize: FONTS.fontSize.extraLarge,
   },
   button: {
-    borderRadius: METRICS.largeBorderRadius,
+    borderRadius: METRICS.borderRadius.lg,
     borderWidth: 2,
     borderColor: COLORS.white,
     backgroundColor: COLORS.button.default,
-    paddingTop: METRICS.smallPadding,
-    paddingBottom: METRICS.smallPadding,
-    paddingRight: METRICS.largePadding,
-    paddingLeft: METRICS.largePadding,
+    paddingTop: METRICS.padding.sm,
+    paddingBottom: METRICS.padding.sm,
+    paddingRight: METRICS.padding.lg,
+    paddingLeft: METRICS.padding.lg,
   },
   titleBtn: {
     fontWeight: FONTS.fontWeight.large,
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.mainHeader.iconBg,
     display: 'flex',
     flexDirection: 'row',
-    padding: METRICS.mediumPadding,
+    padding: METRICS.padding.sm,
     ...METRICS.flexCenter,
   },
 })

@@ -1,4 +1,3 @@
-
 // @flow
 // add flow above to fix for using flow with React.memo
 
@@ -25,8 +24,7 @@ type Props = {
     current: {
       _node: HTMLInputElement,
       _lastNativeText: string,
-    } |
-    null
+    } | null,
   },
 }
 
@@ -39,9 +37,9 @@ const CommentForm = ({
 }: Props) => {
   // define avatar/badge size follow type
   const avatarSize =
-    type === 'primary' ? METRICS.mediumAvatar : METRICS.largeAvatar
+    type === 'primary' ? METRICS.avatar.md : METRICS.avatar.lg
   const badgeSize =
-    type === 'primary' ? METRICS.mediumBadge : METRICS.largeBadge
+    type === 'primary' ? METRICS.badge.md : METRICS.badge.lg
 
   return (
     <View style={[styles.container, customStyle]}>

@@ -6,8 +6,8 @@ import { COLORS, METRICS, FONTS } from '../../themes'
 
 const styles = StyleSheet.create({
   default: {
-    height: METRICS.mediumInput,
     borderColor: COLORS.border.default,
+    height: METRICS.input.md,
     borderBottomWidth: 1,
     fontSize: FONTS.fontSize.medium,
     color: COLORS.black,

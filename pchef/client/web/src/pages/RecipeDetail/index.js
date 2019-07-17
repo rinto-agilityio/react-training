@@ -1,5 +1,5 @@
 import React from 'react'
-import RecipeDetailContainer from 'pchef-shared/src/containers/Recipe'
+import RecipeDetailContainer from 'pchef-shared/src/screens/recipe/containers'
 
 type Props = {
   match: {

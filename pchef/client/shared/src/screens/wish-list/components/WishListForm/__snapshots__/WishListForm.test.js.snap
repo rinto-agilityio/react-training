@@ -5,7 +5,7 @@ exports[`Wish list Render wish list form component with size medium 1`] = `
   className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
 >
   <div
-    className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-xmd3h9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-justifyContent-1777fci r-marginBottom-15d164r r-marginTop-156q2ks r-paddingBottom-1mi0q7o r-paddingRight-1qfoi16"
+    className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-xmd3h9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-justifyContent-1777fci r-marginBottom-15d164r r-marginTop-156q2ks r-paddingBottom-1inuy60 r-paddingRight-19gegkz"
   >
     <div
       className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -85,7 +85,7 @@ exports[`Wish list Render wish list form component with size medium 1`] = `
       }
     >
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-xmd3h9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe r-paddingRight-1qfoi16"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-xmd3h9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe r-paddingRight-19gegkz"
       >
         <div
           className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -155,7 +155,7 @@ exports[`Wish list Render wish list form component with size medium 1`] = `
       }
     >
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-xmd3h9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe r-paddingRight-1qfoi16"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-xmd3h9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe r-paddingRight-19gegkz"
       >
         <div
           className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -312,7 +312,7 @@ exports[`Wish list Renders correctly wish list form component 1`] = `
   className="css-view-1dbjc4n r-alignItems-1awozwy r-justifyContent-1777fci"
 >
   <div
-    className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-xmd3h9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-justifyContent-1777fci r-marginBottom-15d164r r-marginTop-156q2ks r-paddingBottom-1mi0q7o r-paddingRight-1qfoi16"
+    className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-xmd3h9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-eqz5dr r-justifyContent-1777fci r-marginBottom-15d164r r-marginTop-156q2ks r-paddingBottom-1inuy60 r-paddingRight-19gegkz"
   >
     <div
       className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -392,7 +392,7 @@ exports[`Wish list Renders correctly wish list form component 1`] = `
       }
     >
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-xmd3h9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe r-paddingRight-1qfoi16"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-xmd3h9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe r-paddingRight-19gegkz"
       >
         <div
           className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"
@@ -462,7 +462,7 @@ exports[`Wish list Renders correctly wish list form component 1`] = `
       }
     >
       <div
-        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-xmd3h9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe r-paddingRight-1qfoi16"
+        className="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-xmd3h9 r-borderRadius-1dzdj1l r-display-6koalj r-flexDirection-18u37iz r-justifyContent-1h0z5md r-marginBottom-117bsoe r-paddingRight-19gegkz"
       >
         <div
           className="css-cursor-18t94o4 css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-1niwhzg r-borderRadius-6ncur5 r-cursor-1loqt21 r-height-1r8g8re r-justifyContent-1777fci r-margin-5scogr r-overflow-bztko3 r-touchAction-1otgn73 r-userSelect-lrvibr r-width-1acpoxo"

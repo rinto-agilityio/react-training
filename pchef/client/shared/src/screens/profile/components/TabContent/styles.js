@@ -7,17 +7,17 @@ import { METRICS } from '../../../../themes'
 // Create style for Header
 const styles = StyleSheet.create({
   container: {
-    height: METRICS.screenHeight - 370,
+    height: METRICS.screen.height - 370,
     marginBottom: 100,
     width: '100%',
   },
   tabContentItem: {
     width:
-      METRICS.screenWidth > METRICS.mediumScreen
-        ? METRICS.smallPercentItem
+      METRICS.screen.width > METRICS.screen.md
+        ? METRICS.item.sm
         : '100%',
-    paddingLeft: METRICS.smallPadding,
-    paddingRight: METRICS.smallPadding,
+    paddingLeft: METRICS.padding.sm,
+    paddingRight: METRICS.padding.sm,
   },
 })
 

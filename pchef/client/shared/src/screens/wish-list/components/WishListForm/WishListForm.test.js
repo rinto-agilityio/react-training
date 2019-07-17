@@ -1,7 +1,7 @@
 // Components
 import WistListForm from '.'
-import Categories from '../../../../containers/Categories'
-import CookingTypes from '../../../../containers/CookingTypes'
+import Categories from '../../../recipe/containers/RecipeForm/Categories'
+import CookingTypes from '../../../recipe/containers/RecipeForm/CookingType'
 import Icon from '../../../../components/Icon'
 import CalendarComponent from '../../../../components/Calendar'
 import Modal from '../../../../components/Modal'

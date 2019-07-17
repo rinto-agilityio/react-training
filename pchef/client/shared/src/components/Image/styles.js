@@ -6,8 +6,8 @@ import { METRICS } from '../../themes'
 
 const styles = StyleSheet.create({
   imageWrapper: {
-    width: METRICS.mediumInput,
-    height: METRICS.mediumInput,
+    width: METRICS.input.md,
+    height: METRICS.input.md,
     backgroundColor: '#ccc',
   },
   image: {

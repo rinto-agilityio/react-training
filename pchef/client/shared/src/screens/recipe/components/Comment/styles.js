@@ -7,17 +7,17 @@ import { METRICS, FONTS } from '../../../../themes'
 export default StyleSheet.create({
   container: {
     flexDirection: 'row',
-    paddingLeft: METRICS.mediumPadding,
-    paddingRight: METRICS.mediumPadding,
-    paddingTop: METRICS.mediumPadding,
-    paddingBottom: METRICS.mediumPadding,
+    paddingLeft: METRICS.padding.sm,
+    paddingRight: METRICS.padding.sm,
+    paddingTop: METRICS.padding.sm,
+    paddingBottom: METRICS.padding.sm,
   },
   dash: {
-    marginLeft: METRICS.smallMargin,
-    marginRight: METRICS.smallMargin,
+    marginLeft: METRICS.margin.sm,
+    marginRight: METRICS.margin.sm,
   },
   userAvatar: {
-    marginRight: METRICS.mediumMargin,
+    marginRight: METRICS.margin.md,
   },
   commentWrapper: {
     flex: 1,
@@ -33,10 +33,10 @@ export default StyleSheet.create({
   },
   primaryContent: {
     fontSize: FONTS.fontSize.base,
-    marginTop: METRICS.smallMargin,
+    marginTop: METRICS.margin.sm,
   },
   secondaryContent: {
     fontSize: FONTS.fontSize.medium,
-    marginTop: METRICS.mediumMargin,
+    marginTop: METRICS.margin.md,
   },
 })

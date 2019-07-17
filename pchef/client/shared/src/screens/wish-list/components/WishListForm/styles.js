@@ -11,42 +11,42 @@ const styles = StyleSheet.create({
   },
   wrapperIcon: {
     backgroundColor: COLORS.baseGray,
-    padding: METRICS.largePadding,
-    marginTop: METRICS.mediumMargin,
-    zIndex: METRICS.iconZindex,
+    padding: METRICS.padding.lg,
+    marginTop: METRICS.margin.md,
+    zIndex: METRICS.zIndex.min,
   },
   icon: {
     display: 'flex',
     flexDirection: 'column',
     backgroundColor: COLORS.icon.wishList,
-    borderRadius: METRICS.mediumBorderRadius,
+    borderRadius: METRICS.borderRadius.md,
     ...METRICS.flexCenter,
-    paddingRight: METRICS.mediumPadding,
+    paddingRight: METRICS.padding.sm,
   },
   classifyIcon: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    marginBottom: METRICS.largeMargin,
+    marginBottom: METRICS.margin.lg,
   },
   wrapperMainPhoto: {
     ...METRICS.flexCenter,
     flexDirection: 'column',
     backgroundColor: COLORS.icon.wishList,
-    marginTop: METRICS.mediumMargin,
-    marginBottom: METRICS.mediumMargin,
-    paddingBottom: METRICS.mediumPadding,
+    marginTop: METRICS.margin.md,
+    marginBottom: METRICS.margin.md,
+    paddingBottom: METRICS.padding.sm,
   },
 
   // Dialog
   // Width full container for small/medium dialog
   largeDialog: {
-    width: METRICS.mediumContent,
+    width: METRICS.content.md,
     alignSelf: 'center',
   },
 
   // Text
   text: {
-    marginBottom: METRICS.largeMargin,
+    marginBottom: METRICS.margin.lg,
   },
 
   // Input
@@ -62,14 +62,14 @@ const styles = StyleSheet.create({
 
   // Modal
   modal: {
-    marginTop: METRICS.superLargeMargin,
+    marginTop: METRICS.margin.hg,
   },
 
   // Button
   button: {
-    zIndex: METRICS.iconZindex,
-    marginTop: METRICS.largeMargin,
-    marginBottom: METRICS.largeMargin,
+    zIndex: METRICS.zIndex.min,
+    marginTop: METRICS.margin.lg,
+    marginBottom: METRICS.margin.lg,
   },
 })
 

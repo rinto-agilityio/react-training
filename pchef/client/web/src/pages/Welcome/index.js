@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Containers
-import WelcomeContainer from 'pchef-shared/src/containers/Welcome'
+import WelcomeContainer from 'pchef-shared/src/screens/welcome/containers'
 
 type Props = {
   history: Object

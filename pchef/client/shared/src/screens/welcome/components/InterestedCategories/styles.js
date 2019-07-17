@@ -12,10 +12,10 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   activeLayer: {
-    opacity: METRICS.activeItem,
+    opacity: METRICS.layer.active,
   },
   inactiveLayer: {
-    opacity: METRICS.inactiveItem,
+    opacity: METRICS.layer.inactive,
   },
   name: {
     position: 'absolute',
@@ -29,13 +29,13 @@ const styles = StyleSheet.create({
     color: COLORS.welcome.disableItem,
   },
   primaryName: {
-    left: METRICS.smallMargin,
+    left: METRICS.margin.sm,
     top: 8,
     fontSize: FONTS.fontSize.base,
   },
   secondaryName: {
-    left: METRICS.mediumMargin,
-    top: METRICS.smallMargin + METRICS.mediumMargin,
+    left: METRICS.margin.md,
+    top: METRICS.margin.sm + METRICS.margin.md,
     fontSize: FONTS.fontSize.large,
   },
 })

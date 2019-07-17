@@ -10,10 +10,10 @@ const styles = StyleSheet.create({
   },
 
   largeWrapper: {
-    width: METRICS.smallPercentItem,
-    paddingLeft: METRICS.mediumPadding,
-    paddingRight: METRICS.mediumPadding,
-    minWidth: METRICS.smallScreen,
+    width: METRICS.item.sm,
+    paddingLeft: METRICS.padding.sm,
+    paddingRight: METRICS.padding.sm,
+    minWidth: METRICS.screen.sm,
   },
 
   // Title
@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
     ...METRICS.truncate,
     color: COLORS.black,
     fontWeight: FONTS.fontWeight.large,
-    paddingLeft: METRICS.largePadding,
-    paddingRight: METRICS.largePadding,
+    paddingLeft: METRICS.padding.lg,
+    paddingRight: METRICS.padding.lg,
   },
   smallTitle: {
     fontSize: FONTS.fontSize.medium,
@@ -38,9 +38,9 @@ const styles = StyleSheet.create({
   description: {
     color: COLORS.baseGray,
     fontWeight: FONTS.fontWeight.large,
-    paddingLeft: METRICS.largePadding,
-    paddingRight: METRICS.largePadding,
-    height: METRICS.smallHeight,
+    paddingLeft: METRICS.padding.lg,
+    paddingRight: METRICS.padding.lg,
+    height: METRICS.height.sm,
   },
   smallDescription: {
     fontSize: FONTS.fontSize.small,
@@ -55,16 +55,16 @@ const styles = StyleSheet.create({
   // Image
   image: {
     width: '100%',
-    marginTop: METRICS.mediumMargin,
+    marginTop: METRICS.margin.md,
   },
   smallImage: {
-    height: METRICS.smallBgImage,
+    height: METRICS.bgImage.sm,
   },
   mediumImage: {
-    height: METRICS.mediumBgImage,
+    height: METRICS.bgImage.md,
   },
   largeImage: {
-    height: METRICS.largeBgImage,
+    height: METRICS.bgImage.lg,
   },
 })
 

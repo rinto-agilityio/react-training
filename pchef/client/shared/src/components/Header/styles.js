@@ -19,38 +19,38 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   createRecipeBtn: {
-    marginRight: METRICS.largeMargin,
+    marginRight: METRICS.margin.lg,
   },
   avataDropdown: {
-    left: METRICS.extraLargePosition,
-    top: METRICS.largePosition,
+    left: METRICS.position.xl,
+    top: METRICS.position.lg,
   },
   container: {
     maxWidth:
-      METRICS.screenWidth > METRICS.mediumScreen
-        ? METRICS.extraLargeScreen
-        : METRICS.screenWidth,
+      METRICS.screen.width > METRICS.screen.md
+        ? METRICS.screen.xl
+        : METRICS.screen.width,
     width: '100%',
     marginLeft: 'auto',
     marginRight: 'auto',
   },
   primaryContainer: {
     alignItems: 'flex-start',
-    paddingBottom: METRICS.largePadding,
-    paddingTop: METRICS.largePadding,
-    paddingLeft: METRICS.smallPadding + METRICS.mediumPadding,
+    paddingBottom: METRICS.padding.lg,
+    paddingTop: METRICS.padding.lg,
+    paddingLeft: METRICS.padding.lg + METRICS.padding.md,
   },
   secondaryContainer: {
-    paddingLeft: METRICS.largePadding * 2 + METRICS.mediumPadding,
-    paddingRight: METRICS.largePadding * 2 + METRICS.mediumPadding,
+    paddingLeft: METRICS.padding.lg * 2 + METRICS.padding.md,
+    paddingRight: METRICS.padding.lg * 2 + METRICS.padding.md,
     flexDirection: 'row-reverse',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
   primaryWrapIcon: {
-    marginTop: METRICS.mediumMargin,
-    marginLeft: METRICS.largeMargin,
-    marginBottom: METRICS.mediumMargin,
+    marginTop: METRICS.margin.md,
+    marginLeft: METRICS.margin.lg,
+    marginBottom: METRICS.margin.md,
   },
 
   text: {
@@ -59,34 +59,34 @@ const styles = StyleSheet.create({
     fontWeight: FONTS.fontWeight.large,
   },
   image: {
-    width: METRICS.extraSmallImage / 2,
-    height: METRICS.extraSmallImage / 2,
+    width: METRICS.image.sm / 2,
+    height: METRICS.image.sm / 2,
   },
   secondaryImage: {
-    width: METRICS.smallImage / 2,
-    height: METRICS.smallImage / 2,
+    width: METRICS.image.md / 2,
+    height: METRICS.image.md / 2,
   },
   secondaryContent: {
     alignItems: 'center',
     flexDirection: 'row-reverse',
     justifyContent: 'space-between',
-    paddingRight: METRICS.extraLargePadding,
+    paddingRight: METRICS.padding.xl,
   },
   imageWrapper: {
     backgroundColor: COLORS.white,
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: METRICS.smallMargin,
-    width: METRICS.extraExtraSmallImage,
-    height: METRICS.extraExtraSmallImage,
-    borderRadius: METRICS.mediumBorderRadius + METRICS.largeBorderRadius,
+    marginRight: METRICS.margin.sm,
+    width: METRICS.image.xs,
+    height: METRICS.image.xs,
+    borderRadius: METRICS.borderRadius.md + METRICS.borderRadius.lg,
   },
   primaryImageWrapper: {
-    marginLeft: METRICS.mediumMargin,
+    marginLeft: METRICS.margin.md,
   },
   secondaryImageWrapper: {
-    marginTop: METRICS.largeMargin,
-    marginBottom: METRICS.largeMargin,
+    marginTop: METRICS.margin.lg,
+    marginBottom: METRICS.margin.lg,
   },
   logo: {
     flexDirection: 'row',
