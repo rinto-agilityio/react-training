@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native'
 // Themes
 import { COLORS, METRICS } from '../../../../themes'
 
-const { screenWidth } = METRICS
+const { screen } = METRICS
 
 // Create style for Header
 const styles = StyleSheet.create({
@@ -15,9 +15,9 @@ const styles = StyleSheet.create({
   },
   wrapTabs: {
     maxWidth:
-      screenWidth > METRICS.screen.md
+      screen.width > METRICS.screen.md
         ? METRICS.screen.xl
-        : screenWidth,
+        : screen.width,
     width: '100%',
     flexDirection: 'row',
     padding: METRICS.padding.lg,
@@ -26,14 +26,14 @@ const styles = StyleSheet.create({
   },
   wrapContent: {
     maxWidth:
-      screenWidth > METRICS.screen.md
+      screen.width > METRICS.screen.md
         ? METRICS.screen.xl
-        : screenWidth,
+        : screen.width,
     width: '100%',
     padding: METRICS.padding.lg,
     backgroundColor: COLORS.lightSliver,
-    flexDirection: screenWidth > METRICS.screen.md ? 'row' : 'column',
-    flexWrap: screenWidth > METRICS.screen.md ? 'wrap' : 'nowrap',
+    flexDirection: screen.width > METRICS.screen.md ? 'row' : 'column',
+    flexWrap: screen.width > METRICS.screen.md ? 'wrap' : 'nowrap',
     marginLeft: 'auto',
     marginRight: 'auto',
     minHeight: METRICS.screen.height - METRICS.header.sm,
