@@ -3,6 +3,7 @@
 // Libs
 import React, { useState, forwardRef, useImperativeHandle, useEffect } from 'react'
 import { View, Text } from 'react-native'
+import whyDidYouRender from '@welldone-software/why-did-you-render'
 
 // Styles
 import styles from './styles'
@@ -43,6 +44,14 @@ type Props = {
   recipes: Array<RecipeType>,
   handleRedirectLogin: () => void,
   wrapperIconStyle: Object,
+}
+
+if (process.env.NODE_ENV !== 'production') {
+  whyDidYouRender(React, {
+    onlyLogs: true,
+    titleColor: 'green',
+    diffNameColor: 'aqua',
+  })
 }
 
 const WishListForm = forwardRef<Props, Function>(({
@@ -241,5 +250,7 @@ const WishListForm = forwardRef<Props, Function>(({
     </View>
   )
 })
+
+WishListForm.whyDidYouRender = true
 
 export default WishListForm

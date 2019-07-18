@@ -4,6 +4,7 @@
 // Libs
 import React, { useRef, memo } from 'react'
 import { Text } from 'react-native'
+import whyDidYouRender from '@welldone-software/why-did-you-render'
 
 // Styles
 import styles from './styles'
@@ -17,6 +18,14 @@ import Modal from '../../../../components/Modal'
 
 // Helpers
 import { getValueTextBox } from '../../../../helpers/utils'
+
+if (process.env.NODE_ENV !== 'production') {
+  whyDidYouRender(React, {
+    onlyLogs: true,
+    titleColor: 'green',
+    diffNameColor: 'aqua',
+  })
+}
 
 type Props = {
   size: string,
@@ -58,5 +67,7 @@ const IngredientsForm = ({
 IngredientsForm.defaultProps = {
   visible: false,
 }
+
+IngredientsForm.whyDidYouRender = true
 
 export default memo<Props>(IngredientsForm)

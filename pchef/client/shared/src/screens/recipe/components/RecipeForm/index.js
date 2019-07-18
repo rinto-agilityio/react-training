@@ -2,8 +2,9 @@
 
 /* eslint-disable react/require-default-props */
 // Libs
-import React, { useRef, useState, forwardRef, useImperativeHandle } from 'react'
+import React, { useRef, useState, forwardRef, useImperativeHandle, memo } from 'react'
 import { View, Text } from 'react-native'
+import whyDidYouRender from '@welldone-software/why-did-you-render'
 
 // Styles
 import styles from './styles'
@@ -31,6 +32,14 @@ import Loading from '../../../../components/Loading'
 
 // Constants
 import { WEB_PLATFORM, SEPARATOR_SPLIT_STRING } from '../../../../constants'
+
+if (process.env.NODE_ENV !== 'production') {
+  whyDidYouRender(React, {
+    onlyLogs: true,
+    titleColor: 'green',
+    diffNameColor: 'aqua',
+  })
+}
 
 type Props = {
   size: string,
@@ -424,4 +433,6 @@ const RecipeForm = forwardRef<Props, Function>(({
   )
 })
 
-export default RecipeForm
+RecipeForm.whyDidYouRender = true
+
+export default memo<Props>(RecipeForm)

@@ -4,6 +4,7 @@
 // Libs
 import React, { useState, memo } from 'react'
 import { View } from 'react-native'
+import whyDidYouRender from '@welldone-software/why-did-you-render'
 
 // Styles
 import styles from './styles'
@@ -19,6 +20,14 @@ import Error from '../../../../components/Error'
 import { customError } from '../../../../helpers/utils'
 
 import type { RecipeStep } from '../../../../flow-types/recipe-step'
+
+if (process.env.NODE_ENV !== 'production') {
+  whyDidYouRender(React, {
+    onlyLogs: true,
+    titleColor: 'green',
+    diffNameColor: 'aqua',
+  })
+}
 
 type Props = {
   getRecipe: {
@@ -102,5 +111,7 @@ const Recipe = ({
 Recipe.defaultProps = {
   onSelectStep: () => {},
 }
+
+Recipe.whyDidYouRender = true
 
 export default memo<Props>(Recipe)

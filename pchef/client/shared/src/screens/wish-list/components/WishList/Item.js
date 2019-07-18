@@ -4,6 +4,7 @@
 // Libs
 import React, { memo } from 'react'
 import { Text, View } from 'react-native'
+import whyDidYouRender from '@welldone-software/why-did-you-render'
 
 // Styles
 import styles from './styles'
@@ -14,6 +15,14 @@ import { getDateForCalendar } from '../../../../helpers/date-time'
 import type { WishList } from '../../../../flow-types/wish-list'
 import type { Category } from '../../../../flow-types/category'
 import type { CookingType } from '../../../../flow-types/cooking-type'
+
+if (process.env.NODE_ENV !== 'production') {
+  whyDidYouRender(React, {
+    onlyLogs: true,
+    titleColor: 'green',
+    diffNameColor: 'aqua',
+  })
+}
 
 type Props = {
   size: string,
@@ -71,5 +80,7 @@ const Item = ({
     ) : null
   )
 }
+
+Item.whyDidYouRender = true
 
 export default memo<Props>(Item)
