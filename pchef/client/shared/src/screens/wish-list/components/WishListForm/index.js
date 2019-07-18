@@ -1,7 +1,7 @@
 // @flow
 /* eslint-disable react/require-default-props */
 // Libs
-import React, { useState, forwardRef, useImperativeHandle, useEffect } from 'react'
+import React, { useState, forwardRef, useImperativeHandle, useEffect, memo } from 'react'
 import { View, Text } from 'react-native'
 import whyDidYouRender from '@welldone-software/why-did-you-render'
 
@@ -253,4 +253,4 @@ const WishListForm = forwardRef<Props, Function>(({
 
 WishListForm.whyDidYouRender = true
 
-export default WishListForm
+export default memo<Props>(WishListForm)

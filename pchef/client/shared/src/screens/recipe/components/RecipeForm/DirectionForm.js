@@ -4,7 +4,6 @@
 // Libs
 import React, { useRef, useState, memo } from 'react'
 import { View, Text } from 'react-native'
-import whyDidYouRender from '@welldone-software/why-did-you-render'
 
 // Styles
 import styles from './styles'
@@ -29,14 +28,6 @@ import Loading from '../../../../components/Loading'
 
 // Constants
 import { WEB_PLATFORM } from '../../../../constants'
-
-if (process.env.NODE_ENV !== 'production') {
-  whyDidYouRender(React, {
-    onlyLogs: true,
-    titleColor: 'green',
-    diffNameColor: 'aqua',
-  })
-}
 
 type Props = {
   size: string,
@@ -248,6 +239,4 @@ DirectionsForm.defaultProps = {
   handleAddStepImageOnWeb: () => {},
 }
 
-DirectionsForm.whyDidYouRender = true
-
-export default memo<Props>(DirectionsForm)
+export default DirectionsForm

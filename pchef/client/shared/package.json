@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "apollo-boost": "0.4.1",
-    "dotenv": "^8.0.0",
     "fromnow": "3.0.0",
     "graphql": "^14.3.0",
     "graphql-tag": "^2.10.1",
@@ -28,8 +27,7 @@
     "react-native-calendars": "1.133.0",
     "react-native-paper": "^2.15.2",
     "react-native-vector-icons": "^6.4.2",
-    "react-native-web": "0.11.4",
-    "react-scripts": "^3.0.1"
+    "react-native-web": "0.11.4"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
@@ -67,7 +65,6 @@
     "flow-bin": "0.98.0",
     "flow-typed": "^2.5.1",
     "husky": "^2.2.0",
-    "identity-obj-proxy": "^3.0.0",
     "imagemin-lint-staged": "^0.4.0",
     "jest": "^24.8.0",
     "jsdom": "^15.1.0",
@@ -78,7 +75,9 @@
     "react-native-testing-library": "^1.9.1",
     "react-test-renderer": "16.8.6",
     "url-loader": "^1.1.2",
-    "waait": "^1.0.4"
+    "waait": "^1.0.4",
+    "react-scripts": "^3.0.1",
+    "dotenv": "^8.0.0"
   },
   "browserslist": {
     "production": [
