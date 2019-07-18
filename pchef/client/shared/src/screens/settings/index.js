@@ -3,6 +3,7 @@
 
 // Libs
 import React, { memo, useRef } from 'react'
+import whyDidYouRender from '@welldone-software/why-did-you-render'
 
 // Components
 import { View, Text, TextInput } from 'react-native'
@@ -19,6 +20,14 @@ type Props = {
     email: string,
   },
   handleLogout: () => void,
+}
+
+if (process.env.NODE_ENV !== 'production') {
+  whyDidYouRender(React, {
+    onlyLogs: true,
+    titleColor: 'green',
+    diffNameColor: 'aqua',
+  })
 }
 
 const Settings = ({ user, handleLogout }: Props) => {
@@ -57,5 +66,7 @@ const Settings = ({ user, handleLogout }: Props) => {
 Settings.defaultProps = {
   handleLogout: () => {},
 }
+
+Settings.whyDidYouRender = true
 
 export default memo<Props>(Settings)

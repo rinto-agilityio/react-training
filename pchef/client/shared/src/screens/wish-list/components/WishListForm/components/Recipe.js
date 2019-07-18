@@ -1,6 +1,8 @@
+// @flow
 // Libs
-import React from 'react'
+import React, { memo } from 'react'
 import { Text, View } from 'react-native'
+import whyDidYouRender from '@welldone-software/why-did-you-render'
 
 // Styles
 import styles from './styles'
@@ -10,6 +12,14 @@ import Image from '../../../../../components/Image'
 
 // Constants
 import { DEFAULT_IMAGE } from '../../../../../constants'
+
+if (process.env.NODE_ENV !== 'production') {
+  whyDidYouRender(React, {
+    onlyLogs: true,
+    titleColor: 'green',
+    diffNameColor: 'aqua',
+  })
+}
 
 type Props = {
   recipe: {
@@ -44,4 +54,6 @@ const Recipe = ({
   )
 }
 
-export default Recipe
+Recipe.whyDidYouRender = true
+
+export default memo<Props>(Recipe)

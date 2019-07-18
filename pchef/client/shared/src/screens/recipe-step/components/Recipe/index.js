@@ -4,6 +4,7 @@
 // Libs
 import React, { useEffect, useState, memo } from 'react'
 import { Text, View } from 'react-native'
+import whyDidYouRender from '@welldone-software/why-did-you-render'
 
 // Styles
 import styles from './styles'
@@ -28,6 +29,14 @@ import { DEFAULT_IMAGE } from '../../../../constants'
 
 import type { RecipeStep } from '../../../../flow-types/recipe-step'
 import type { UserInfo } from '../../../../flow-types/user'
+
+if (process.env.NODE_ENV !== 'production') {
+  whyDidYouRender(React, {
+    onlyLogs: true,
+    titleColor: 'green',
+    diffNameColor: 'aqua',
+  })
+}
 
 type Props = {
   recipeSteps: Array<RecipeStep>,
@@ -301,5 +310,7 @@ const Recipe = ({
     </View>
   )
 }
+
+Recipe.whyDidYouRender = true
 
 export default memo<Props>(Recipe)

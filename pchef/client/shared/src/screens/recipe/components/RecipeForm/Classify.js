@@ -132,4 +132,4 @@ const Classify = forwardRef<Props, Function>(({
 
 Classify.whyDidYouRender = true
 
-export default memo<Props, Function>(Classify)
+export default memo<Props>(Classify)

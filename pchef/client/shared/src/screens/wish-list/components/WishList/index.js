@@ -4,6 +4,7 @@
 // Libs
 import React, { useState, memo } from 'react'
 import { View } from 'react-native'
+import whyDidYouRender from '@welldone-software/why-did-you-render'
 
 // Helpers
 import { customError } from '../../../../helpers/utils'
@@ -24,6 +25,14 @@ import { WEB_PLATFORM } from '../../../../constants'
 import type { WishList as WishListType } from '../../../../flow-types/wish-list'
 import type { Category } from '../../../../flow-types/category'
 import type { CookingType } from '../../../../flow-types/cooking-type'
+
+if (process.env.NODE_ENV !== 'production') {
+  whyDidYouRender(React, {
+    onlyLogs: true,
+    titleColor: 'green',
+    diffNameColor: 'aqua',
+  })
+}
 
 type Props = {
   wishList: Array<WishListType>,
@@ -93,5 +102,7 @@ const WishList = ({
     </View>
   )
 }
+
+WishList.whyDidYouRender = true
 
 export default memo<Props>(WishList)
