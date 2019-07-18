@@ -29,7 +29,8 @@
     "react-native-paper": "^2.15.2",
     "react-native-vector-icons": "^6.4.2",
     "react-native-web": "0.11.4",
-    "react-scripts": "^3.0.1"
+    "react-scripts": "^3.0.1",
+    "@welldone-software/why-did-you-render": "^3.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",

@@ -11,6 +11,7 @@ import {
   Dimensions,
 } from 'react-native'
 import { Divider } from 'react-native-paper'
+import whyDidYouRender from '@welldone-software/why-did-you-render'
 
 // Helpers
 import { customError, checkContain } from '../../helpers/utils'
@@ -35,6 +36,14 @@ import {
   WEB_PLATFORM,
   MINIMUM_FOLLOWED_CATEGORY,
 } from '../../constants'
+
+if (process.env.NODE_ENV !== 'production') {
+  whyDidYouRender(React, {
+    onlyLogs: true,
+    titleColor: 'green',
+    diffNameColor: 'aqua',
+  })
+}
 
 const { height } = Dimensions.get('window')
 
@@ -82,7 +91,9 @@ const Welcome = ({
   useEffect(() => {
     const followCategory = data.followCategory || []
     const followCategoryIds = followCategory.map(item => item.id)
-    setChosenCategories(followCategoryIds)
+    if (followCategoryIds.length !== chosenCategories.length) {
+      setChosenCategories(followCategoryIds)
+    }
   }, [loading, data.followCategory, error])
 
   const handleNavigateLogin = () => {
@@ -207,5 +218,7 @@ Welcome.defaultProps = {
   handleSkipCategories: () => {},
   customButtonStyle: {},
 }
+
+Welcome.whyDidYouRender = true
 
 export default Welcome
