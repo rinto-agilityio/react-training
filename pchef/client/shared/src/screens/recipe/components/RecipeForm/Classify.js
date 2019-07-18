@@ -2,7 +2,8 @@
 
 /* eslint-disable react/require-default-props */
 // Libs
-import React, { useState, useEffect, forwardRef } from 'react'
+import React, { useState, useEffect, forwardRef, memo } from 'react'
+import whyDidYouRender from '@welldone-software/why-did-you-render'
 
 // Themes
 import { METRICS } from '../../../../themes'
@@ -19,6 +20,14 @@ import { MODAL_PADDING } from '../../../../constants'
 
 // Helpers
 import { customError } from '../../../../helpers/utils'
+
+if (process.env.NODE_ENV !== 'production') {
+  whyDidYouRender(React, {
+    onlyLogs: true,
+    titleColor: 'green',
+    diffNameColor: 'aqua',
+  })
+}
 
 type Props = {
   size: string,
@@ -121,4 +130,6 @@ const Classify = forwardRef<Props, Function>(({
   )
 })
 
-export default Classify
+Classify.whyDidYouRender = true
+
+export default memo<Props, Function>(Classify)
