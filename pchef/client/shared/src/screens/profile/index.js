@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+// @flow
+import React, { useState, memo } from 'react'
 import { withApollo } from 'react-apollo'
+import whyDidYouRender from '@welldone-software/why-did-you-render'
 
 // Components
 import { View } from 'react-native'
@@ -17,6 +19,14 @@ import styles from './styles'
 import { customError } from '../../helpers/utils'
 
 import type { User } from '../../flow-types/user'
+
+if (process.env.NODE_ENV !== 'production') {
+  whyDidYouRender(React, {
+    onlyLogs: true,
+    titleColor: 'green',
+    diffNameColor: 'aqua',
+  })
+}
 
 type Props = {
   loading: boolean,
@@ -98,4 +108,6 @@ const Profile = ({
   )
 }
 
-export default withApollo(Profile)
+Profile.whyDidYouRender = true
+
+export default memo<Props>(withApollo(Profile))
