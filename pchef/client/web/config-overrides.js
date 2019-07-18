@@ -19,6 +19,7 @@ module.exports = override(
     resolveApp('./node_modules/react-native-elements'), // Will be removed after migrated
     resolveApp('./node_modules/react-native-ratings'),
     resolveApp('./node_modules/react-native-vector-icons'),
+    resolveApp('./node_modules/@welldone-software/why-did-you-render'),
 
     // 3rd lib: react-native-calendars
     resolveApp('./node_modules/react-native-calendars'),
