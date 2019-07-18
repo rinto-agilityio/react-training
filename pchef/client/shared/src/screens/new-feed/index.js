@@ -4,6 +4,7 @@
 // Libs
 import React, { useState, useEffect, memo } from 'react'
 import { View, Platform, ScrollView, Dimensions } from 'react-native'
+import whyDidYouRender from '@welldone-software/why-did-you-render'
 
 // Components
 import Loading from '../../components/Loading'
@@ -27,6 +28,14 @@ import styles from './styles'
 import type { Category } from '../../flow-types/category'
 
 const { height } = Dimensions.get('window')
+
+if (process.env.NODE_ENV !== 'production') {
+  whyDidYouRender(React, {
+    onlyLogs: true,
+    titleColor: 'green',
+    diffNameColor: 'aqua',
+  })
+}
 
 type Props = {
   handleNavigateWelcome?: () => void,
@@ -150,5 +159,7 @@ const NewFeed = ({
     </View>
   )
 }
+
+NewFeed.whyDidYouRender = true
 
 export default memo<Props>(NewFeed)
