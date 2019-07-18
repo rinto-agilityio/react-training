@@ -4,6 +4,7 @@
 // Libs
 import React, { useState, useEffect, memo } from 'react'
 import { View, Text, FlatList } from 'react-native'
+import whyDidYouRender from '@welldone-software/why-did-you-render'
 
 // Constant
 import {
@@ -30,6 +31,14 @@ import styles from './styles'
 // @flow
 import type { Category } from '../../flow-types/category'
 import type { Recipe as RecipeType } from '../../flow-types/recipe'
+
+if (process.env.NODE_ENV !== 'production') {
+  whyDidYouRender(React, {
+    onlyLogs: true,
+    titleColor: 'green',
+    diffNameColor: 'aqua',
+  })
+}
 
 type Props = {
   category: {
@@ -81,7 +90,9 @@ const CategoryScreen = ({
   useEffect(() => {
     const followCategory = data.followCategory || []
     const followCategoryIds = followCategory.map(item => item.id)
-    setSelectedCategories(followCategoryIds)
+    if (followCategoryIds.length !== selectedCategories.length) {
+      setSelectedCategories(followCategoryIds)
+    }
   }, [data.followCategory])
 
   if (loading) return <Loading size="small" />
@@ -170,5 +181,7 @@ const CategoryScreen = ({
     </>
   )
 }
+
+CategoryScreen.whyDidYouRender = true
 
 export default memo<Props>(CategoryScreen)
