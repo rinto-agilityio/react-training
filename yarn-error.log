@@ -1,0 +1,31 @@
+Arguments: 
+  /home/rinto/.nvm/versions/node/v10.7.0/bin/node /usr/local/bin/yarn test:coverage
+
+PATH: 
+  /home/rinto/.nvm/versions/node/v10.7.0/bin:/home/rinto/bin:/home/rinto/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/rinto/Android/Sdk/emulator:/home/rinto/Android/Sdk/tools:/home/rinto/Android/Sdk/tools/bin:/home/rinto/Android/Sdk/platform-tools:/home/rinto/Android/Sdk/emulator:/home/rinto/Android/Sdk/tools:/home/rinto/Android/Sdk/tools/bin:/home/rinto/Android/Sdk/platform-tools:/home/rinto/Android/Sdk/emulator:/home/rinto/Android/Sdk/tools:/home/rinto/Android/Sdk/tools/bin:/home/rinto/Android/Sdk/platform-tools:/home/rinto/Android/Sdk/emulator:/home/rinto/Android/Sdk/tools:/home/rinto/Android/Sdk/tools/bin:/home/rinto/Android/Sdk/platform-tools
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  10.7.0
+
+Platform: 
+  linux x64
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Couldn't find a package.json file in "/home/rinto/react-training"
+      at new MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:40048:15
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:98:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:109:13
