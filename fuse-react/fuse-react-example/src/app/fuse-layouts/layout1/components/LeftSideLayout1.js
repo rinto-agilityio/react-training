@@ -1,11 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 const LeftSideLayout1 = () => {
-    return (
-        <React.Fragment>
+  return <React.Fragment></React.Fragment>
+}
 
-        </React.Fragment>
-    );
-};
-
-export default LeftSideLayout1;
+export default LeftSideLayout1

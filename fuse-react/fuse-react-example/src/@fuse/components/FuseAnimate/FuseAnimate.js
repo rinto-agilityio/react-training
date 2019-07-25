@@ -1,33 +1,39 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {VelocityComponent} from 'velocity-react';
-import 'velocity-animate/velocity.ui';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { VelocityComponent } from 'velocity-react'
+import 'velocity-animate/velocity.ui'
 
-const FuseAnimate = (props) => {
-    const children = React.cloneElement(props.children, {
-        style: {
-            ...props.children.style,
-            visibility: 'hidden'
-        }
-    });
-    return <VelocityComponent ref={ev => props.setRef && props.setRef(ev)} {...props} children={children}/>
-};
+const FuseAnimate = props => {
+  const children = React.cloneElement(props.children, {
+    style: {
+      ...props.children.style,
+      visibility: 'hidden',
+    },
+  })
+  return (
+    <VelocityComponent
+      ref={ev => props.setRef && props.setRef(ev)}
+      {...props}
+      children={children}
+    />
+  )
+}
 
 FuseAnimate.propTypes = {
-    children: PropTypes.element.isRequired
-};
+  children: PropTypes.element.isRequired,
+}
 
 FuseAnimate.defaultProps = {
-    animation          : 'transition.fadeIn',
-    runOnMount         : true,
-    targetQuerySelector: null,
-    interruptBehavior  : 'stop',
-    visibility         : 'visible',
-    duration           : 300,
-    delay              : 50,
-    easing             : [0.4, 0.0, 0.2, 1],
-    display            : null,
-    setRef             : undefined
-};
+  animation: 'transition.fadeIn',
+  runOnMount: true,
+  targetQuerySelector: null,
+  interruptBehavior: 'stop',
+  visibility: 'visible',
+  duration: 300,
+  delay: 50,
+  easing: [0.4, 0.0, 0.2, 1],
+  display: null,
+  setRef: undefined,
+}
 
-export default FuseAnimate;
+export default FuseAnimate

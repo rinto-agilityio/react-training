@@ -1,1 +1,1 @@
-export * from './quickPanel.actions';
+export * from './quickPanel.actions'
