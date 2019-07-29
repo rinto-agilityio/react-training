@@ -59,7 +59,7 @@ class FuseAuthorization extends Component {
         state: { redirectUrl: pathname },
       })
     } else {
-    /*
+      /*
         User is member
         User must be on unAuthorized page or just logged in
         Redirect to dashboard or redirectUrl
