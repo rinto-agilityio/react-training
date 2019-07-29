@@ -1,9 +1,9 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
 import { FuseUtils } from '@fuse/index'
-import { ExampleConfig } from 'app/main/example/ExampleConfig'
+import { appsConfigs } from 'app/main/appsConfig'
 
-const routeConfigs = [ExampleConfig]
+const routeConfigs = [...appsConfigs]
 
 const routes = [
   ...FuseUtils.generateRoutesFromConfigs(routeConfigs),
@@ -12,6 +12,6 @@ const routes = [
     component: () => <Redirect to="/example" />,
   },
 ]
-console.log('routes', routes);
+console.log('routes', routes)
 
 export default routes
