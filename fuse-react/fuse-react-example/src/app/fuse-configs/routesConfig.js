@@ -12,6 +12,5 @@ const routes = [
     component: () => <Redirect to="/todo" />,
   },
 ]
-console.log('routes', routes)
 
 export default routes

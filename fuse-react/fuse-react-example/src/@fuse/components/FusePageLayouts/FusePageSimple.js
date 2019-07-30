@@ -358,7 +358,6 @@ FusePageSimple.propTypes = propTypes
 FusePageSimple.defaultProps = defaultProps
 
 function mapStateToProps({ fuse }) {
-  console.log('fuse', fuse)
   return {
     mainThemeDark: fuse.settings.mainThemeDark,
   }

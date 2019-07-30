@@ -337,8 +337,6 @@ const todoDB = {
 }
 
 mock.onGet('/api/todo-app/todos').reply(config => {
-  console.log('run...')
-
   const params = config.params
   let response = []
   if (params.labelHandle) {

@@ -35,6 +35,18 @@ const todosReducer = function(state = initialState, action) {
         },
       }
     }
+    case Actions.OPEN_NEW_TODO_DIALOG: {
+      return {
+        ...state,
+        todoDialog: {
+          type: 'new',
+          props: {
+            open: true,
+          },
+          data: null,
+        },
+      }
+    }
     default:
       return state
   }

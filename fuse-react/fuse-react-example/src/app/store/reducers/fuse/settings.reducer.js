@@ -131,9 +131,6 @@ function getInitialSettings() {
  * THEMES
  */
 function getInitialThemes() {
-  console.log('FuseThemesConfig', FuseThemesConfig)
-  console.log('defaultThemeOptions', defaultThemeOptions)
-
   const themesObj =
     Object.keys(FuseThemesConfig).length !== 0
       ? FuseThemesConfig
@@ -155,8 +152,6 @@ function getInitialThemes() {
       }
     })
   )
-  console.log('themesObj', themesObj)
-  console.log('initialSettings', initialSettings)
   return {
     ...themes,
     ...mainThemeVariations(themesObj[initialSettings.theme.main]),

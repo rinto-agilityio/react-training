@@ -15,7 +15,7 @@ function mapStateToProps({ todoApp }) {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
-      getTodos: Actions.getTodos,
+      getData: Actions.getData,
     },
     dispatch
   )

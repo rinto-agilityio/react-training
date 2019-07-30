@@ -5,6 +5,11 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import _ from '@lodash'
 import TodoItemContainer from '../../containers/todo/TodoItem'
+import whyDidYouRender from '@welldone-software/why-did-you-render'
+
+if (process.env.NODE_ENV !== 'production') {
+  whyDidYouRender(React)
+}
 
 function getFilteredArray(entities, searchText) {
   const arr = Object.keys(entities).map(id => entities[id])
@@ -51,4 +56,9 @@ function mapStateToProps({ todoApp }) {
   }
 }
 
-export default memo(withRouter(connect(mapStateToProps)(TodoList)))
+TodoList.whyDidYouRender = true
+
+function areEqual(prevProps, nextProps) {
+  return prevProps.todos === nextProps.todos
+}
+export default memo(withRouter(connect(mapStateToProps)(TodoList)), areEqual)

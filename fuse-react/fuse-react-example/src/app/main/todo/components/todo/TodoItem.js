@@ -12,6 +12,11 @@ import amber from '@material-ui/core/colors/amber'
 import _ from '@lodash'
 
 import classNames from 'classnames'
+import whyDidYouRender from '@welldone-software/why-did-you-render'
+
+if (process.env.NODE_ENV !== 'production') {
+  whyDidYouRender(React)
+}
 
 const styles = theme => ({
   todoItem: {
@@ -33,7 +38,6 @@ const TodoItem = ({
   toggleStarred,
   toggleCompleted,
 }) => {
-
   return (
     <ListItem
       onClick={ev => {
@@ -118,5 +122,7 @@ const TodoItem = ({
 function areEqual(prevProps, nextProps) {
   return prevProps.todo.completed === nextProps.todo.completed
 }
+
+TodoItem.whyDidYouRender = true
 
 export default memo(withStyles(styles, { withTheme: true })(TodoItem), areEqual)

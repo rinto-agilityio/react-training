@@ -1,18 +1,23 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, memo } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { FusePageSimple } from '@fuse'
 import Header from './containers/header'
 import TodoList from './components/todo/TodoList'
+import whyDidYouRender from '@welldone-software/why-did-you-render'
+import SidebarContent from './components/sidebar/SidebarContent'
 
 const styles = () => ({
   layoutRoot: {},
 })
 
-const TodoApp = ({ classes, getTodos, match, entities }) => {
+if (process.env.NODE_ENV !== 'production') {
+  whyDidYouRender(React)
+}
+
+const TodoApp = ({ classes, getData, match, entities }) => {
   useEffect(() => {
-    getTodos(match)
+    getData(match)
   }, [])
-  console.log('entities', entities)
 
   return (
     <FusePageSimple
@@ -21,8 +26,11 @@ const TodoApp = ({ classes, getTodos, match, entities }) => {
       }}
       header={<Header />}
       content={<TodoList />}
+      leftSidebarContent={<SidebarContent />}
     ></FusePageSimple>
   )
 }
 
-export default withStyles(styles, { withTheme: true })(TodoApp)
+TodoApp.whyDidYouRender = true
+
+export default memo(withStyles(styles, { withTheme: true })(TodoApp))
