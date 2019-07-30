@@ -26,6 +26,15 @@ const todosReducer = function(state = initialState, action) {
         routeParams: action.routeParams,
       }
     }
+    case Actions.UPDATE_TODO: {
+      return {
+        ...state,
+        entities: {
+          ...state.entities,
+          [action.payload.id]: { ...action.payload },
+        },
+      }
+    }
     default:
       return state
   }

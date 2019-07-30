@@ -7,7 +7,9 @@ import * as Actions from '../store/actions'
 import withReducer from 'app/store/withReducer'
 
 function mapStateToProps({ todoApp }) {
-  return {}
+  return {
+    entities: todoApp.todos.entities,
+  }
 }
 
 function mapDispatchToProps(dispatch) {
