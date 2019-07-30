@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { List, Typography } from '@material-ui/core'
-import { FuseUtils, FuseAnimate, FuseAnimateGroup } from '@fuse'
+import { FuseUtils, FuseAnimate } from '@fuse'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import _ from '@lodash'
@@ -35,15 +35,9 @@ const TodoList = ({ todos, searchText, orderBy, orderDescending }) => {
 
   return (
     <List className="p-0">
-      <FuseAnimateGroup
-        enter={{
-          animation: 'transition.slideUpBigIn',
-        }}
-      >
-        {arr.map(todo => (
-          <TodoItemContainer todo={todo} key={todo.id} />
-        ))}
-      </FuseAnimateGroup>
+      {arr.map(todo => (
+        <TodoItemContainer todo={todo} key={todo.id} />
+      ))}
     </List>
   )
 }
@@ -57,4 +51,4 @@ function mapStateToProps({ todoApp }) {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(TodoList))
+export default memo(withRouter(connect(mapStateToProps)(TodoList)))

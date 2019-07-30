@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import {
   withStyles,
   IconButton,
@@ -33,7 +33,6 @@ const TodoItem = ({
   toggleStarred,
   toggleCompleted,
 }) => {
-  console.log('toggleCompleted', toggleCompleted)
 
   return (
     <ListItem
@@ -116,4 +115,8 @@ const TodoItem = ({
   )
 }
 
-export default withStyles(styles, { withTheme: true })(TodoItem)
+function areEqual(prevProps, nextProps) {
+  return prevProps.todo.completed === nextProps.todo.completed
+}
+
+export default memo(withStyles(styles, { withTheme: true })(TodoItem), areEqual)

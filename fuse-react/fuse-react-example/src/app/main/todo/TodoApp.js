@@ -2,16 +2,17 @@ import React, { useEffect } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { FusePageSimple } from '@fuse'
 import Header from './containers/header'
+import TodoList from './components/todo/TodoList'
 
 const styles = () => ({
   layoutRoot: {},
 })
 
-const TodoApp = ({ classes, getTodos, match }) => {
+const TodoApp = ({ classes, getTodos, match, entities }) => {
   useEffect(() => {
     getTodos(match)
   }, [])
-  console.log('match', match)
+  console.log('entities', entities)
 
   return (
     <FusePageSimple
@@ -19,6 +20,7 @@ const TodoApp = ({ classes, getTodos, match }) => {
         root: classes.layoutRoot,
       }}
       header={<Header />}
+      content={<TodoList />}
     ></FusePageSimple>
   )
 }
