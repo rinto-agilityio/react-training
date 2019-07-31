@@ -38,12 +38,13 @@ const TodoItem = ({
   toggleStarred,
   toggleCompleted,
 }) => {
+  const handleClickTodoItem = event => {
+    event.preventDefault()
+    openEditTodoDialog(todo)
+  }
   return (
     <ListItem
-      onClick={ev => {
-        ev.preventDefault()
-        openEditTodoDialog(todo)
-      }}
+      onClick={event => handleClickTodoItem(event)}
       dense
       button
       className={classNames(

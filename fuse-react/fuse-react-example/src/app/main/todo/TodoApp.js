@@ -18,7 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
 const TodoApp = ({ classes, getData, match, todos }) => {
   useEffect(() => {
     getData(match)
-  }, [])
+  }, [todos.length])
 
   return (
     <>
@@ -27,10 +27,9 @@ const TodoApp = ({ classes, getData, match, todos }) => {
           root: classes.layoutRoot,
         }}
         header={<Header />}
-        content={<TodoListContainer todos={todos}/>}
+        content={<TodoListContainer todos={todos} />}
         leftSidebarContent={<SidebarContent />}
-      >
-      </FusePageSimple>
+      ></FusePageSimple>
       <TodoDialogContainer />
     </>
   )

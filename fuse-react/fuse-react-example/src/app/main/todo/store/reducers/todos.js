@@ -51,37 +51,37 @@ const todosReducer = function(state = initialState, action) {
       return {
         ...state,
         todoDialog: {
-          type: "new",
+          type: 'new',
           props: {
-            open: false
+            open: false,
           },
-          data: null
-        }
-      };
+          data: null,
+        },
+      }
     }
     case Actions.OPEN_EDIT_TODO_DIALOG: {
       return {
         ...state,
         todoDialog: {
-          type: "edit",
+          type: 'edit',
           props: {
-            open: true
+            open: true,
           },
-          data: action.data
-        }
-      };
+          data: action.data,
+        },
+      }
     }
     case Actions.CLOSE_EDIT_TODO_DIALOG: {
       return {
         ...state,
         todoDialog: {
-          type: "edit",
+          type: 'edit',
           props: {
-            open: false
+            open: false,
           },
-          data: null
-        }
-      };
+          data: null,
+        },
+      }
     }
     // case Actions.ADD_TODO: {
     //   const todoAdd = _.keyBy([action.payload], 'id')
@@ -94,8 +94,8 @@ const todosReducer = function(state = initialState, action) {
     case Actions.UPDATE_TODOS: {
       return {
         ...state,
-        entities: _.keyBy(action.payload, "id")
-      };
+        entities: _.keyBy(action.payload, 'id'),
+      }
     }
     default:
       return state

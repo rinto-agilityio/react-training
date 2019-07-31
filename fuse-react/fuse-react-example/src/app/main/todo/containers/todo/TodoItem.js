@@ -17,7 +17,7 @@ function mapDispatchToProps(dispatch) {
       toggleCompleted: Actions.toggleCompleted,
       // toggleImportant: Actions.toggleImportant,
       // toggleStarred: Actions.toggleStarred,
-      // openEditTodoDialog: Actions.openEditTodoDialog
+      openEditTodoDialog: Actions.openEditTodoDialog,
     },
     dispatch
   )

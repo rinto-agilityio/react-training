@@ -1,8 +1,8 @@
 import React, { useState, memo } from 'react'
-import red from "@material-ui/core/colors/red"
-import amber from "@material-ui/core/colors/amber"
+import red from '@material-ui/core/colors/red'
+import amber from '@material-ui/core/colors/amber'
 import _ from 'lodash'
-import moment from "moment/moment";
+import moment from 'moment/moment'
 
 import {
   TextField,
@@ -20,21 +20,29 @@ import {
   Divider,
   DialogActions,
   Button,
-} from "@material-ui/core"
+} from '@material-ui/core'
 
-const TodoDialogContent = ({ labels, todoDialog, addTodo, closeTodoDialog }) => {
-  const [form, setForm] = useState({
-    id: "",
-    title: "",
-    notes: "",
-    startDate: new Date(),
-    dueDate: new Date(),
-    completed: false,
-    starred: false,
-    important: false,
-    deleted: false,
-    labels: []
-  })
+const TodoDialogContent = ({
+  labels,
+  todoDialog,
+  addTodo,
+  closeTodoDialog,
+  updateTodo,
+}) => {
+  const [form, setForm] = useState(
+    todoDialog.data || {
+      id: '',
+      title: '',
+      notes: '',
+      startDate: new Date(),
+      dueDate: new Date(),
+      completed: false,
+      starred: false,
+      important: false,
+      deleted: false,
+      labels: [],
+    }
+  )
 
   const [labelMenuEl, setLabelMenuEl] = useState(null)
 
@@ -52,53 +60,62 @@ const TodoDialogContent = ({ labels, todoDialog, addTodo, closeTodoDialog }) => 
     const { name, value } = event.target
     setForm({
       ...form,
-      [name]: value
+      [name]: value,
     })
   }
 
-  const toggleCompleted = () => (
+  const toggleCompleted = () =>
     setForm({
       ...form,
-      completed: !form.completed
+      completed: !form.completed,
     })
-  )
 
-  const handleToggleImportant = () => (
+  const handleToggleImportant = () =>
     setForm({
       ...form,
-      important: !form.important
+      important: !form.important,
     })
-  )
 
-  const handleToggleStarred = () => (
+  const handleToggleStarred = () =>
     setForm({
       ...form,
-      starred: !form.starred
+      starred: !form.starred,
     })
-  )
 
   const handleLabelMenuOpen = event => setLabelMenuEl(event.currentTarget)
 
   const handleLabelMenuClose = () => setLabelMenuEl(null)
 
   const handleToggleLabel = (event, id) => {
-    event.stopPropagation();
+    event.stopPropagation()
     setForm({
       ...form,
       labels: form.labels.includes(id)
         ? form.labels.filter(labelId => labelId !== id)
-        : [...form.labels, id]
+        : [...form.labels, id],
     })
   }
 
   const handleSubmitData = () => {
-    const idGeneral = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
-    addTodo({...form, id: idGeneral})
+    const idGeneral =
+      Math.random()
+        .toString(36)
+        .substring(2, 15) +
+      Math.random()
+        .toString(36)
+        .substring(2, 15)
+    if (todoDialog.type === 'edit') {
+      updateTodo(form)
+    } else {
+      addTodo({ ...form, id: idGeneral })
+    }
     closeTodoDialog()
   }
 
+  const canBeSubmitted = () => form.title.length > 0
+
   return (
-    <DialogContent classes={{ root: "p-0" }}>
+    <DialogContent classes={{ root: 'p-0' }}>
       <div className="mb-16">
         <div className="flex items-center justify-between p-12">
           <div className="flex">
@@ -131,7 +148,7 @@ const TodoDialogContent = ({ labels, todoDialog, addTodo, closeTodoDialog }) => 
             </IconButton>
             <div>
               <IconButton
-                aria-owns={labelMenuEl ? "label-menu" : null}
+                aria-owns={labelMenuEl ? 'label-menu' : null}
                 aria-haspopup="true"
                 onClick={handleLabelMenuOpen}
               >
@@ -152,8 +169,8 @@ const TodoDialogContent = ({ labels, todoDialog, addTodo, closeTodoDialog }) => 
                       <ListItemIcon>
                         <Icon className="mr-0" color="action">
                           {form.labels.includes(label.id)
-                            ? "check_box"
-                            : "check_box_outline_blank"}
+                            ? 'check_box'
+                            : 'check_box_outline_blank'}
                         </Icon>
                       </ListItemIcon>
                       <ListItemText
@@ -183,7 +200,7 @@ const TodoDialogContent = ({ labels, todoDialog, addTodo, closeTodoDialog }) => 
           {form.labels.map(label => (
             <Chip
               avatar={
-                <Avatar classes={{ colorDefault: "bg-transparent" }}>
+                <Avatar classes={{ colorDefault: 'bg-transparent' }}>
                   <Icon
                     className="text-20"
                     style={{ color: _.find(labels, { id: label }).color }}
@@ -195,7 +212,7 @@ const TodoDialogContent = ({ labels, todoDialog, addTodo, closeTodoDialog }) => 
               label={_.find(labels, { id: label }).title}
               onDelete={ev => handleToggleLabel(ev, label)}
               className="mr-8 my-8"
-              classes={{ label: "pl-4" }}
+              classes={{ label: 'pl-4' }}
               key={label}
             />
           ))}
@@ -233,10 +250,10 @@ const TodoDialogContent = ({ labels, todoDialog, addTodo, closeTodoDialog }) => 
             type="datetime-local"
             className="mt-8 mb-16 mr-8"
             InputLabelProps={{
-              shrink: true
+              shrink: true,
             }}
             inputProps={{
-              max: dueDate
+              max: dueDate,
             }}
             value={startDate}
             onChange={handleChange}
@@ -248,10 +265,10 @@ const TodoDialogContent = ({ labels, todoDialog, addTodo, closeTodoDialog }) => 
             type="datetime-local"
             className="mt-8 mb-16 ml-8"
             InputLabelProps={{
-              shrink: true
+              shrink: true,
             }}
             inputProps={{
-              min: startDate
+              min: startDate,
             }}
             value={dueDate}
             onChange={handleChange}
@@ -260,13 +277,13 @@ const TodoDialogContent = ({ labels, todoDialog, addTodo, closeTodoDialog }) => 
         </div>
       </div>
       <div>
-        {todoDialog.type === "new" ? (
+        {todoDialog.type === 'new' ? (
           <DialogActions className="justify-between pl-8 sm:pl-16">
             <Button
               variant="contained"
               color="primary"
               onClick={handleSubmitData}
-              // disabled={!this.canBeSubmitted()}
+              disabled={!this.canBeSubmitted()}
             >
               Add
             </Button>
@@ -276,11 +293,8 @@ const TodoDialogContent = ({ labels, todoDialog, addTodo, closeTodoDialog }) => 
             <Button
               variant="contained"
               color="primary"
-              // onClick={() => {
-              //   updateTodo(this.state.form);
-              //   this.closeTodoDialog();
-              // }}
-              disabled={!this.canBeSubmitted()}
+              onClick={handleSubmitData}
+              disabled={!canBeSubmitted()}
             >
               Save
             </Button>
