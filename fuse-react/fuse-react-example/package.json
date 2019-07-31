@@ -58,7 +58,7 @@
         "redux": "4.0.1",
         "redux-thunk": "2.3.0",
         "typeface-muli": "0.0.71",
-        "velocity-react": "1.4.1",
+        "velocity-react": "1.4.1"
     },
     "resolutions": {
         "react": "16.8.5",

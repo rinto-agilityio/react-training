@@ -1,8 +1,6 @@
 import React, { memo } from 'react'
 import { List, Typography } from '@material-ui/core'
 import { FuseUtils, FuseAnimate } from '@fuse'
-import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
 import _ from '@lodash'
 import TodoItemContainer from '../../containers/todo/TodoItem'
 import whyDidYouRender from '@welldone-software/why-did-you-render'
@@ -47,18 +45,9 @@ const TodoList = ({ todos, searchText, orderBy, orderDescending }) => {
   )
 }
 
-function mapStateToProps({ todoApp }) {
-  return {
-    todos: todoApp.todos.entities,
-    searchText: todoApp.todos.searchText,
-    orderBy: todoApp.todos.orderBy,
-    orderDescending: todoApp.todos.orderDescending,
-  }
-}
-
 TodoList.whyDidYouRender = true
 
 function areEqual(prevProps, nextProps) {
   return prevProps.todos === nextProps.todos
 }
-export default memo(withRouter(connect(mapStateToProps)(TodoList)), areEqual)
+export default memo(TodoList, areEqual)

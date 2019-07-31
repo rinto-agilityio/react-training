@@ -47,6 +47,56 @@ const todosReducer = function(state = initialState, action) {
         },
       }
     }
+    case Actions.CLOSE_NEW_TODO_DIALOG: {
+      return {
+        ...state,
+        todoDialog: {
+          type: "new",
+          props: {
+            open: false
+          },
+          data: null
+        }
+      };
+    }
+    case Actions.OPEN_EDIT_TODO_DIALOG: {
+      return {
+        ...state,
+        todoDialog: {
+          type: "edit",
+          props: {
+            open: true
+          },
+          data: action.data
+        }
+      };
+    }
+    case Actions.CLOSE_EDIT_TODO_DIALOG: {
+      return {
+        ...state,
+        todoDialog: {
+          type: "edit",
+          props: {
+            open: false
+          },
+          data: null
+        }
+      };
+    }
+    // case Actions.ADD_TODO: {
+    //   const todoAdd = _.keyBy([action.payload], 'id')
+
+    //   return {
+    //     ...state,
+    //     entities: Object.assign(state.entities, todoAdd)
+    //   }
+    // }
+    case Actions.UPDATE_TODOS: {
+      return {
+        ...state,
+        entities: _.keyBy(action.payload, "id")
+      };
+    }
     default:
       return state
   }
