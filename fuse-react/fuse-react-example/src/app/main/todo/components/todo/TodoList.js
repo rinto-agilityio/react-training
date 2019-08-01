@@ -47,7 +47,7 @@ const TodoList = ({ todos, searchText, orderBy, orderDescending }) => {
 
 TodoList.whyDidYouRender = true
 
-function areEqual(prevProps, nextProps) {
-  return prevProps.todos === nextProps.todos
-}
-export default memo(TodoList, areEqual)
+// function areEqual(prevProps, nextProps) {
+//   return prevProps.todos === nextProps.todos
+// }
+export default memo(TodoList)

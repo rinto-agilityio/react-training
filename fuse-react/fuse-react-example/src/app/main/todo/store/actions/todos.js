@@ -59,14 +59,14 @@ export function toggleCompleted(todo) {
 }
 
 export function updateTodo(todo) {
-  const request = axios.post('/api/todo-app/update-todo', todo)
+  const request = firebaseService.updateTodoItemData(todo)
 
   return dispatch =>
     request.then(response => {
       Promise.all([
         dispatch({
           type: UPDATE_TODO,
-          payload: response.data,
+          payload: response,
         }),
       ])
     })

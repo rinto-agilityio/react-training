@@ -31,7 +31,6 @@ const TodoDialogContent = ({
 }) => {
   const [form, setForm] = useState(
     todoDialog.data || {
-      id: '',
       title: '',
       notes: '',
       startDate: new Date(),
@@ -97,17 +96,10 @@ const TodoDialogContent = ({
   }
 
   const handleSubmitData = () => {
-    const idGeneral =
-      Math.random()
-        .toString(36)
-        .substring(2, 15) +
-      Math.random()
-        .toString(36)
-        .substring(2, 15)
     if (todoDialog.type === 'edit') {
       updateTodo(form)
     } else {
-      addTodo({ ...form, id: idGeneral })
+      addTodo(form)
     }
     closeTodoDialog()
   }

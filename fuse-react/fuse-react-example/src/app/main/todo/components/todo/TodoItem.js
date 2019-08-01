@@ -121,7 +121,17 @@ const TodoItem = ({
 }
 
 function areEqual(prevProps, nextProps) {
-  return prevProps.todo.completed === nextProps.todo.completed
+  return (
+    prevProps.todo.completed === nextProps.todo.completed &&
+    prevProps.todo.labels === nextProps.todo.labels &&
+    prevProps.todo.title === nextProps.todo.title &&
+    prevProps.todo.notes === nextProps.todo.notes &&
+    prevProps.todo.startDate === nextProps.todo.startDate &&
+    prevProps.todo.dueDate === nextProps.todo.dueDate &&
+    prevProps.todo.important === nextProps.todo.important &&
+    prevProps.todo.deleted === nextProps.todo.deleted &&
+    prevProps.todo.startDate === nextProps.todo.startDate
+  )
 }
 
 TodoItem.whyDidYouRender = true
