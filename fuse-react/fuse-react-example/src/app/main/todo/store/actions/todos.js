@@ -2,6 +2,7 @@ import axios from 'axios'
 import { getFilters } from './filters'
 import { getFolders } from './folders'
 import { getLabels } from './labels'
+import firebaseService from '../../../../services/firebaseService'
 
 export const GET_TODOS = '[TODO APP] GET TODOS'
 export const TOGGLE_COMPLETED = '[TODO APP] TOGGLE COMPLETED'
@@ -17,26 +18,34 @@ export function getData(match) {
   return dispatch => {
     Promise.all([
       dispatch(getFilters()),
-      dispatch(getFolders()),
       dispatch(getLabels()),
+      dispatch(getFolders()),
     ]).then(() => dispatch(getTodos(match)))
   }
 }
 
-export function getTodos(match) {
-  const request = axios.get('/api/todo-app/todos', {
-    params: match.params,
-  })
+// export function getTodos(match) {
+//   const request = axios.get('/api/todo-app/todos', {
+//     params: match.params,
+//   })
 
-  return dispatch =>
-    request.then(response =>
-      dispatch({
-        type: GET_TODOS,
-        routeParams: match.params,
-        payload: response.data,
-      })
-    )
-}
+//   return dispatch =>
+//     request.then(response =>
+//       dispatch({
+//         type: GET_TODOS,
+//         routeParams: match.params,
+//         payload: response.data,
+//       })
+//     )
+// }
+
+export const getTodos = () => dispatch =>
+  firebaseService.getTodosData().then(data =>
+    dispatch({
+      type: GET_TODOS,
+      payload: data,
+    })
+  )
 
 export function toggleCompleted(todo) {
   const newTodo = {
@@ -54,8 +63,6 @@ export function updateTodo(todo) {
 
   return dispatch =>
     request.then(response => {
-      console.log('response', response)
-
       Promise.all([
         dispatch({
           type: UPDATE_TODO,
@@ -108,14 +115,15 @@ export function updateTodos() {
 }
 
 export function addTodo(todo) {
-  const request = axios.post('/api/todo-app/new-todo', todo)
+  const request = firebaseService.addNewTodoData(todo)
 
   return dispatch =>
-    request.then(response =>
-      Promise.all([
+    request.then(response => {
+      return Promise.all([
         dispatch({
           type: ADD_TODO,
+          payload: response,
         }),
-      ]).then(() => dispatch(updateTodos()))
-    )
+      ])
+    })
 }

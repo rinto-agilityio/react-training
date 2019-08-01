@@ -283,7 +283,7 @@ const TodoDialogContent = ({
               variant="contained"
               color="primary"
               onClick={handleSubmitData}
-              disabled={!this.canBeSubmitted()}
+              disabled={!canBeSubmitted()}
             >
               Add
             </Button>

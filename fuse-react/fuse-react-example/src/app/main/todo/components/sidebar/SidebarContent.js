@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import {
   withStyles,
   Icon,
@@ -9,10 +9,7 @@ import {
   Button,
 } from '@material-ui/core'
 import { FuseAnimate } from '@fuse'
-import { NavLink, withRouter } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import * as Actions from '../../store/actions/todos'
+import { NavLink } from 'react-router-dom'
 
 const styles = theme => ({
   listItem: {
@@ -145,28 +142,4 @@ function SidebarContent({
   )
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    {
-      openNewTodoDialog: Actions.openNewTodoDialog,
-    },
-    dispatch
-  )
-}
-
-function mapStateToProps({ todoApp }) {
-  return {
-    folders: todoApp.folders,
-    labels: todoApp.labels,
-    filters: todoApp.filters,
-  }
-}
-
-export default withStyles(styles, { withTheme: true })(
-  withRouter(
-    connect(
-      mapStateToProps,
-      mapDispatchToProps
-    )(SidebarContent)
-  )
-)
+export default memo(withStyles(styles, { withTheme: true })(SidebarContent))

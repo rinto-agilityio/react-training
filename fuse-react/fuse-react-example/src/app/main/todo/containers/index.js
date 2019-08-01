@@ -8,7 +8,6 @@ import withReducer from 'app/store/withReducer'
 
 function mapStateToProps({ todoApp }) {
   return {
-    entities: todoApp.todos.entities,
     todos: todoApp.todos.entities,
   }
 }

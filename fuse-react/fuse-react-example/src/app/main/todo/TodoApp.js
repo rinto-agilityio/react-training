@@ -4,7 +4,7 @@ import { FusePageSimple } from '@fuse'
 import Header from './containers/header'
 import TodoListContainer from './containers/todo/TodoList'
 import whyDidYouRender from '@welldone-software/why-did-you-render'
-import SidebarContent from './components/sidebar/SidebarContent'
+import SidebarContentContainer from './containers/sidebar'
 import TodoDialogContainer from './containers/dialog'
 
 const styles = () => ({
@@ -18,7 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
 const TodoApp = ({ classes, getData, match, todos }) => {
   useEffect(() => {
     getData(match)
-  }, [todos.length])
+  }, [])
 
   return (
     <>
@@ -28,7 +28,7 @@ const TodoApp = ({ classes, getData, match, todos }) => {
         }}
         header={<Header />}
         content={<TodoListContainer todos={todos} />}
-        leftSidebarContent={<SidebarContent />}
+        leftSidebarContent={<SidebarContentContainer />}
       ></FusePageSimple>
       <TodoDialogContainer />
     </>

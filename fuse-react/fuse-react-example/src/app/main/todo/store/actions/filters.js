@@ -1,15 +1,15 @@
-import axios from 'axios'
+import firebaseService from '../../../../services/firebaseService'
 
 export const GET_FILTERS = '[TODO APP] GET FILTERS'
 
 export function getFilters() {
-  const request = axios.get('/api/todo-app/filters')
+  const request = firebaseService.getFiltersData()
 
   return dispatch =>
-    request.then(response =>
+    request.then(data =>
       dispatch({
         type: GET_FILTERS,
-        payload: response.data,
+        payload: data,
       })
     )
 }

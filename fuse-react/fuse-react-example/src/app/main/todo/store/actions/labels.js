@@ -1,15 +1,15 @@
-import axios from 'axios'
+import firebaseService from '../../../../services/firebaseService'
 
 export const GET_LABELS = '[TODO APP] GET LABELS'
 
 export function getLabels() {
-  const request = axios.get('/api/todo-app/labels')
+  const request = firebaseService.getLabelsData()
 
   return dispatch =>
-    request.then(response =>
+    request.then(data =>
       dispatch({
         type: GET_LABELS,
-        payload: response.data,
+        payload: data,
       })
     )
 }
