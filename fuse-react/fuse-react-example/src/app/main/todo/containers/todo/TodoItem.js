@@ -15,8 +15,8 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
       toggleCompleted: Actions.toggleCompleted,
-      // toggleImportant: Actions.toggleImportant,
-      // toggleStarred: Actions.toggleStarred,
+      toggleImportant: Actions.toggleImportant,
+      toggleStarred: Actions.toggleStarred,
       openEditTodoDialog: Actions.openEditTodoDialog,
     },
     dispatch

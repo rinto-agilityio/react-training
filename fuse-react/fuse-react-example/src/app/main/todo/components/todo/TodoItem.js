@@ -41,7 +41,6 @@ const TodoItem = ({
   toggleStarred,
   toggleCompleted,
   todo,
-  labels,
 }) => {
   const handleClickTodoItem = event => {
     event.preventDefault()

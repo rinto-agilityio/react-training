@@ -6,6 +6,8 @@ import firebaseService from '../../../../services/firebaseService'
 
 export const GET_TODOS = '[TODO APP] GET TODOS'
 export const TOGGLE_COMPLETED = '[TODO APP] TOGGLE COMPLETED'
+export const TOGGLE_STARRED = '[TODO APP] TOGGLE STARRED'
+export const TOGGLE_IMPORTANT = '[TODO APP] TOGGLE IMPORTANT'
 export const UPDATE_TODO = '[TODO APP] UPDATE TODO'
 export const OPEN_NEW_TODO_DIALOG = '[TODO APP] OPEN NEW TODO DIALOG'
 export const CLOSE_NEW_TODO_DIALOG = '[TODO APP] CLOSE NEW TODO DIALOG'
@@ -56,6 +58,29 @@ export function toggleCompleted(todo) {
     Promise.all([dispatch({ type: TOGGLE_COMPLETED })]).then(() =>
       dispatch(updateTodo(newTodo))
     )
+}
+
+export function toggleStarred(todo) {
+  const newTodo = {
+    ...todo,
+    starred: !todo.starred
+  };
+  return dispatch =>
+    Promise.all([dispatch({ type: TOGGLE_STARRED })]).then(() =>
+      dispatch(updateTodo(newTodo))
+    );
+}
+
+export function toggleImportant(todo) {
+  const newTodo = {
+    ...todo,
+    important: !todo.important
+  };
+
+  return dispatch =>
+    Promise.all([dispatch({ type: TOGGLE_IMPORTANT })]).then(() =>
+      dispatch(updateTodo(newTodo))
+    );
 }
 
 export function updateTodo(todo) {
