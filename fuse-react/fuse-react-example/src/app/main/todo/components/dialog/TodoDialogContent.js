@@ -45,15 +45,12 @@ const TodoDialogContent = ({
 
   const [labelMenuEl, setLabelMenuEl] = useState(null)
 
-  let startDate, dueDate
-  if (form) {
-    startDate = moment(form.startDate).format(
-      moment.HTML5_FMT.DATETIME_LOCAL_SECONDS
-    )
-    dueDate = moment(form.dueDate).format(
-      moment.HTML5_FMT.DATETIME_LOCAL_SECONDS
-    )
-  }
+  const startDate = moment(form.startDate).format(
+    moment.HTML5_FMT.DATETIME_LOCAL_SECONDS
+  )
+  const dueDate = moment(form.dueDate).format(
+    moment.HTML5_FMT.DATETIME_LOCAL_SECONDS
+  )
 
   const handleChange = event => {
     const { name, value } = event.target
