@@ -11,6 +11,9 @@ import red from '@material-ui/core/colors/red'
 import amber from '@material-ui/core/colors/amber'
 import _ from '@lodash'
 
+// components
+import TodoChip from '../chip'
+
 import classNames from 'classnames'
 import whyDidYouRender from '@welldone-software/why-did-you-render'
 
@@ -41,6 +44,7 @@ const TodoItem = ({
   toggleStarred,
   toggleCompleted,
   todo,
+  labels
 }) => {
   const handleClickTodoItem = event => {
     event.preventDefault()
@@ -81,7 +85,7 @@ const TodoItem = ({
           })}
         </Typography>
 
-        {/* <div className={classNames(classes.labels, "flex mt-8")}>
+        <div className={classNames(classes.labels, "flex mt-8")}>
           {todo.labels.map(label => (
             <TodoChip
               className="mr-4"
@@ -90,7 +94,7 @@ const TodoItem = ({
               key={label}
             />
           ))}
-        </div> */}
+        </div>
       </div>
 
       <div className="px-8">
