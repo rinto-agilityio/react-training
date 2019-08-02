@@ -58,9 +58,10 @@ class firebaseService {
   addNewTodoData = data => {
     const todoCollection = this.dbFileStore.collection('todos')
     return todoCollection
-      .doc()
-      .set(data)
-      .then(() => data)
+      .add(data)
+      .then(docRef => {
+        return {...data, id: docRef.id}
+      })
       .catch(error => error)
   }
 
@@ -69,6 +70,15 @@ class firebaseService {
     const todoRef = this.dbFileStore.collection('todos').doc(data.id)
     return todoRef
       .update(data)
+      .then(() => data)
+      .catch(error => error)
+  }
+
+  // Delete data
+  deleteTodoItemData = data => {
+    const todoRef = this.dbFileStore.collection('todos').doc(data.id)
+    return todoRef
+      .delete()
       .then(() => data)
       .catch(error => error)
   }
