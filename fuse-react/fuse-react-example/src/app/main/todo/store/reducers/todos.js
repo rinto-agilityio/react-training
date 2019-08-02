@@ -86,10 +86,15 @@ const todosReducer = function(state = initialState, action) {
     }
     case Actions.ADD_TODO: {
       const todoAdd = _.keyBy([action.payload], 'id')
-
       return state.merge({
         ...state,
-        entities: { ...todoAdd, ...state.entities },
+        entities: {...todoAdd, ...state.entities},
+      })
+    }
+    case Actions.DELETE_TODO: {
+      return state.merge({
+        ...state,
+        entities: _.pickBy(state.entities, value => value.id !== action.payload.id)
       })
     }
     default:

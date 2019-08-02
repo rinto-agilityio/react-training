@@ -15,6 +15,8 @@ export const OPEN_EDIT_TODO_DIALOG = '[TODO APP] OPEN EDIT TODO DIALOG'
 export const CLOSE_EDIT_TODO_DIALOG = '[TODO APP] CLOSE EDIT TODO DIALOG'
 export const ADD_TODO = '[TODO APP] ADD TODO'
 export const UPDATE_TODOS = '[TODO APP] UPDATE TODOS'
+export const DELETE_TODO = '[TODO APP] DELETE TODO'
+
 
 export function getData(match) {
   return dispatch => {
@@ -25,21 +27,6 @@ export function getData(match) {
     ]).then(() => dispatch(getTodos(match)))
   }
 }
-
-// export function getTodos(match) {
-//   const request = axios.get('/api/todo-app/todos', {
-//     params: match.params,
-//   })
-
-//   return dispatch =>
-//     request.then(response =>
-//       dispatch({
-//         type: GET_TODOS,
-//         routeParams: match.params,
-//         payload: response.data,
-//       })
-//     )
-// }
 
 export const getTodos = () => dispatch =>
   firebaseService.getTodosData().then(data =>
@@ -91,6 +78,20 @@ export function updateTodo(todo) {
       Promise.all([
         dispatch({
           type: UPDATE_TODO,
+          payload: response,
+        }),
+      ])
+    })
+}
+
+export function deleteTodo(todo) {
+  const request = firebaseService.deleteTodoItemData(todo)
+
+  return dispatch =>
+    request.then(response => {
+      Promise.all([
+        dispatch({
+          type: DELETE_TODO,
           payload: response,
         }),
       ])

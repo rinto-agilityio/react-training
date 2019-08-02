@@ -44,11 +44,18 @@ const TodoItem = ({
   toggleStarred,
   toggleCompleted,
   todo,
-  labels
+  labels,
+  deleteTodo,
 }) => {
   const handleClickTodoItem = event => {
     event.preventDefault()
     openEditTodoDialog(todo)
+  }
+
+  const handleDeleteTodoItem = (event) => {
+    event.preventDefault()
+    event.stopPropagation()
+    deleteTodo(todo)
   }
 
   return (
@@ -123,6 +130,12 @@ const TodoItem = ({
           ) : (
             <Icon>star_outline</Icon>
           )}
+        </IconButton>
+        <IconButton
+          className="min-w-auto"
+          onClick={event => handleDeleteTodoItem(event)}
+        >
+          <Icon>delete</Icon>
         </IconButton>
       </div>
     </ListItem>

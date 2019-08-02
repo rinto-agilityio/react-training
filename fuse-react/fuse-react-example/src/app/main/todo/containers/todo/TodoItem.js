@@ -18,6 +18,7 @@ function mapDispatchToProps(dispatch) {
       toggleImportant: Actions.toggleImportant,
       toggleStarred: Actions.toggleStarred,
       openEditTodoDialog: Actions.openEditTodoDialog,
+      deleteTodo: Actions.deleteTodo,
     },
     dispatch
   )

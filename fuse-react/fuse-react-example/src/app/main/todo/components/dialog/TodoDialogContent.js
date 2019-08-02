@@ -287,15 +287,6 @@ const TodoDialogContent = ({
             >
               Save
             </Button>
-            <IconButton
-              className="min-w-auto"
-              onClick={() => {
-                // removeTodo(this.state.form.id);
-                // this.closeTodoDialog();
-              }}
-            >
-              <Icon>delete</Icon>
-            </IconButton>
           </DialogActions>
         )}
       </div>
