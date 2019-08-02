@@ -83,6 +83,21 @@ class firebaseService {
       .catch(error => error)
   }
 
+  // signin user with firebase
+  signInWithEmailAndPassword = ({email, password}) => (
+    this.auth.signInWithEmailAndPassword(email, password)
+      .then(data => (
+        data.user.getIdToken()
+          .then(token => {
+            console.log('token', token);
+
+          })
+          .catch(error => error)
+      ))
+      .catch(error => error)
+  )
+
+
   getUserData = userId => {
     if (!firebase.apps.length) {
       return

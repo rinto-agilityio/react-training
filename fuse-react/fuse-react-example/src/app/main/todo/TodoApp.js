@@ -1,6 +1,6 @@
 import React, { useEffect, memo } from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import { FusePageSimple } from '@fuse'
+import { FusePageCarded } from '@fuse'
 import Header from './containers/header'
 import TodoListContainer from './containers/todo/TodoList'
 import whyDidYouRender from '@welldone-software/why-did-you-render'
@@ -22,14 +22,14 @@ const TodoApp = ({ classes, getData, match, todos }) => {
 
   return (
     <>
-      <FusePageSimple
+      <FusePageCarded
         classes={{
           root: classes.layoutRoot,
         }}
         header={<Header />}
         content={<TodoListContainer todos={todos} />}
         leftSidebarContent={<SidebarContentContainer />}
-      ></FusePageSimple>
+      ></FusePageCarded>
       <TodoDialogContainer />
     </>
   )
