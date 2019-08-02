@@ -67,7 +67,8 @@ class firebaseService {
   // Update data
   updateTodoItemData = data => {
     const todoRef = this.dbFileStore.collection('todos').doc(data.id)
-    return todoRef.update(data)
+    return todoRef
+      .update(data)
       .then(() => data)
       .catch(error => error)
   }

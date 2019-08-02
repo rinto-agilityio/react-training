@@ -39,7 +39,7 @@ const TodoList = ({ todos, searchText, orderBy, orderDescending }) => {
   return (
     <List className="p-0">
       {arr.map(todo => (
-        <TodoItemContainer todo={todo} key={todo.id} />
+        <TodoItemContainer {...todo} key={todo.id} todo={todo} />
       ))}
     </List>
   )
@@ -47,7 +47,4 @@ const TodoList = ({ todos, searchText, orderBy, orderDescending }) => {
 
 TodoList.whyDidYouRender = true
 
-// function areEqual(prevProps, nextProps) {
-//   return prevProps.todos === nextProps.todos
-// }
 export default memo(TodoList)

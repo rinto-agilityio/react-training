@@ -30,18 +30,24 @@ const styles = theme => ({
 })
 
 const TodoItem = ({
-  todo,
-  labels,
+  completed,
+  title,
+  notes,
+  important,
   classes,
+  starred,
   openEditTodoDialog,
   toggleImportant,
   toggleStarred,
   toggleCompleted,
+  todo,
+  labels,
 }) => {
   const handleClickTodoItem = event => {
     event.preventDefault()
     openEditTodoDialog(todo)
   }
+
   return (
     <ListItem
       onClick={event => handleClickTodoItem(event)}
@@ -49,14 +55,14 @@ const TodoItem = ({
       button
       className={classNames(
         classes.todoItem,
-        { completed: todo.completed },
+        { completed: completed },
         'border-solid border-b-1 py-16  px-0 sm:px-8'
       )}
     >
       <Checkbox
         tabIndex={-1}
         disableRipple
-        checked={todo.completed}
+        checked={completed}
         onChange={() => toggleCompleted(todo)}
         onClick={ev => ev.stopPropagation()}
       />
@@ -65,13 +71,13 @@ const TodoItem = ({
         <Typography
           variant="subtitle1"
           className="todo-title truncate"
-          color={todo.completed ? 'textSecondary' : 'default'}
+          color={completed ? 'textSecondary' : 'default'}
         >
-          {todo.title}
+          {title}
         </Typography>
 
         <Typography color="textSecondary" className="todo-notes truncate">
-          {_.truncate(todo.notes.replace(/<(?:.|\n)*?>/gm, ''), {
+          {_.truncate(notes.replace(/<(?:.|\n)*?>/gm, ''), {
             length: 180,
           })}
         </Typography>
@@ -96,7 +102,7 @@ const TodoItem = ({
             toggleImportant(todo)
           }}
         >
-          {todo.important ? (
+          {important ? (
             <Icon style={{ color: red[500] }}>error</Icon>
           ) : (
             <Icon>error_outline</Icon>
@@ -109,7 +115,7 @@ const TodoItem = ({
             toggleStarred(todo)
           }}
         >
-          {todo.starred ? (
+          {starred ? (
             <Icon style={{ color: amber[500] }}>star</Icon>
           ) : (
             <Icon>star_outline</Icon>
@@ -120,20 +126,6 @@ const TodoItem = ({
   )
 }
 
-function areEqual(prevProps, nextProps) {
-  return (
-    prevProps.todo.completed === nextProps.todo.completed &&
-    prevProps.todo.labels === nextProps.todo.labels &&
-    prevProps.todo.title === nextProps.todo.title &&
-    prevProps.todo.notes === nextProps.todo.notes &&
-    prevProps.todo.startDate === nextProps.todo.startDate &&
-    prevProps.todo.dueDate === nextProps.todo.dueDate &&
-    prevProps.todo.important === nextProps.todo.important &&
-    prevProps.todo.deleted === nextProps.todo.deleted &&
-    prevProps.todo.startDate === nextProps.todo.startDate
-  )
-}
-
 TodoItem.whyDidYouRender = true
 
-export default memo(withStyles(styles, { withTheme: true })(TodoItem), areEqual)
+export default memo(withStyles(styles, { withTheme: true })(TodoItem))
