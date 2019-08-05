@@ -25,7 +25,7 @@ class Auth extends Component {
     /**
      * Comment the line if you do not use Firebase
      */
-    this.firebaseCheck();
+    this.firebaseCheck()
   }
 
   jwtCheck = () => {

@@ -52,7 +52,7 @@ const TodoItem = ({
     openEditTodoDialog(todo)
   }
 
-  const handleDeleteTodoItem = (event) => {
+  const handleDeleteTodoItem = event => {
     event.preventDefault()
     event.stopPropagation()
     deleteTodo(todo)
@@ -92,7 +92,7 @@ const TodoItem = ({
           })}
         </Typography>
 
-        <div className={classNames(classes.labels, "flex mt-8")}>
+        <div className={classNames(classes.labels, 'flex mt-8')}>
           {todo.labels.map(label => (
             <TodoChip
               className="mr-4"
@@ -144,4 +144,6 @@ const TodoItem = ({
 
 TodoItem.whyDidYouRender = true
 
-export default memo(withStyles(styles, { withTheme: true })(TodoItem))
+const areEqual = (prevProps, nextProps) => prevProps.labels === nextProps.labels
+
+export default memo(withStyles(styles, { withTheme: true })(TodoItem), areEqual)

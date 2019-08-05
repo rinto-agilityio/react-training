@@ -1,24 +1,24 @@
-import React from "react";
-import { withStyles } from "@material-ui/core";
-import classNames from "classnames";
+import React from 'react'
+import { withStyles } from '@material-ui/core'
+import classNames from 'classnames'
 
 const styles = theme => ({
   root: {
-    display: "flex",
-    alignItems: "center",
+    display: 'flex',
+    alignItems: 'center',
     height: 21,
     borderRadius: 2,
-    padding: "0 6px",
+    padding: '0 6px',
     fontSize: 11,
-    backgroundColor: "rgba(0,0,0,.08);"
+    backgroundColor: 'rgba(0,0,0,.08);',
   },
   color: {
     width: 8,
     height: 8,
     marginRight: 4,
-    borderRadius: "50%"
-  }
-});
+    borderRadius: '50%',
+  },
+})
 
 function TodoChip({ classes, title, color, className }) {
   return (
@@ -26,7 +26,7 @@ function TodoChip({ classes, title, color, className }) {
       <div className={classes.color} style={{ backgroundColor: color }} />
       <div>{title}</div>
     </div>
-  );
+  )
 }
 
-export default withStyles(styles, { withTheme: true })(TodoChip);
+export default withStyles(styles, { withTheme: true })(TodoChip)

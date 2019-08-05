@@ -1,9 +1,8 @@
-
-import React, { useRef } from "react";
-import { Button, InputAdornment, Icon } from "@material-ui/core";
-import { TextFieldFormsy } from "@fuse";
-import Formsy from "formsy-react";
-import { withRouter } from "react-router-dom";
+import React, { useRef } from 'react'
+import { Button, InputAdornment, Icon } from '@material-ui/core'
+import { TextFieldFormsy } from '@fuse'
+import Formsy from 'formsy-react'
+import { withRouter } from 'react-router-dom'
 
 const FirebaseLoginForm = ({ submitLoginWithFireBase }) => {
   const formEl = useRef('')
@@ -25,10 +24,10 @@ const FirebaseLoginForm = ({ submitLoginWithFireBase }) => {
           name="username"
           label="User Name"
           validations={{
-            minLength: 4
+            minLength: 4,
           }}
           validationErrors={{
-            minLength: "Min character length is 4"
+            minLength: 'Min character length is 4',
           }}
           InputProps={{
             endAdornment: (
@@ -37,7 +36,7 @@ const FirebaseLoginForm = ({ submitLoginWithFireBase }) => {
                   email
                 </Icon>
               </InputAdornment>
-            )
+            ),
           }}
           variant="outlined"
           required
@@ -50,10 +49,10 @@ const FirebaseLoginForm = ({ submitLoginWithFireBase }) => {
           name="password"
           label="Password"
           validations={{
-            minLength: 4
+            minLength: 4,
           }}
           validationErrors={{
-            minLength: "Min character length is 4"
+            minLength: 'Min character length is 4',
           }}
           InputProps={{
             endAdornment: (
@@ -62,7 +61,7 @@ const FirebaseLoginForm = ({ submitLoginWithFireBase }) => {
                   vpn_key
                 </Icon>
               </InputAdornment>
-            )
+            ),
           }}
           variant="outlined"
           required

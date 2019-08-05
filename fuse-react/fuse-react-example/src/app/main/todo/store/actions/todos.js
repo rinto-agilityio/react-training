@@ -17,7 +17,6 @@ export const ADD_TODO = '[TODO APP] ADD TODO'
 export const UPDATE_TODOS = '[TODO APP] UPDATE TODOS'
 export const DELETE_TODO = '[TODO APP] DELETE TODO'
 
-
 export function getData() {
   return dispatch => {
     Promise.all([
@@ -50,24 +49,24 @@ export function toggleCompleted(todo) {
 export function toggleStarred(todo) {
   const newTodo = {
     ...todo,
-    starred: !todo.starred
-  };
+    starred: !todo.starred,
+  }
   return dispatch =>
     Promise.all([dispatch({ type: TOGGLE_STARRED })]).then(() =>
       dispatch(updateTodo(newTodo))
-    );
+    )
 }
 
 export function toggleImportant(todo) {
   const newTodo = {
     ...todo,
-    important: !todo.important
-  };
+    important: !todo.important,
+  }
 
   return dispatch =>
     Promise.all([dispatch({ type: TOGGLE_IMPORTANT })]).then(() =>
       dispatch(updateTodo(newTodo))
-    );
+    )
 }
 
 export function updateTodo(todo) {

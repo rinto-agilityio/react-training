@@ -60,7 +60,7 @@ class firebaseService {
     return todoCollection
       .add(data)
       .then(docRef => {
-        return {...data, id: docRef.id}
+        return { ...data, id: docRef.id }
       })
       .catch(error => error)
   }

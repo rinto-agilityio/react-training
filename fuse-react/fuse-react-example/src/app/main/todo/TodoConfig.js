@@ -8,11 +8,11 @@ export const TodoAppConfig = {
   },
   routes: [
     {
-      path: '/todo',
+      path: '/todos',
       component: TodoApp,
     },
     {
-      path: '/todo',
+      path: '/todos',
       component: () => <Redirect to="/todo/all" />,
     },
   ],

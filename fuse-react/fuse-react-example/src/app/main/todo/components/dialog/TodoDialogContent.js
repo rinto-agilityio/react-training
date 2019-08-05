@@ -29,12 +29,15 @@ const TodoDialogContent = ({
   closeTodoDialog,
   updateTodo,
 }) => {
+  const currentDay = moment(new Date()).format(
+    moment.HTML5_FMT.DATETIME_LOCAL_SECONDS
+  )
   const [form, setForm] = useState(
     todoDialog.data || {
       title: '',
       notes: '',
-      startDate: new Date(),
-      dueDate: new Date(),
+      startDate: currentDay,
+      dueDate: currentDay,
       completed: false,
       starred: false,
       important: false,
@@ -54,6 +57,8 @@ const TodoDialogContent = ({
 
   const handleChange = event => {
     const { name, value } = event.target
+    console.log('value', value)
+
     setForm({
       ...form,
       [name]: value,
@@ -96,6 +101,8 @@ const TodoDialogContent = ({
     if (todoDialog.type === 'edit') {
       updateTodo(form)
     } else {
+      console.log('form', form)
+
       addTodo(form)
     }
     closeTodoDialog()

@@ -2,15 +2,15 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Login from '../../components/login'
 import { withRouter } from 'react-router-dom'
-import * as authActions from "app/auth/store/actions";
+import * as authActions from 'app/auth/store/actions'
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
-      submitLoginWithFireBase: authActions.submitLoginWithFireBase
+      submitLoginWithFireBase: authActions.submitLoginWithFireBase,
     },
     dispatch
-  );
+  )
 }
 
 function mapStateToProps({ auth }) {
@@ -20,4 +20,9 @@ function mapStateToProps({ auth }) {
   }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login))
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Login)
+)
