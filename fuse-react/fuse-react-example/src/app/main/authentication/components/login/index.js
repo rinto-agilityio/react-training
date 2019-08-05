@@ -35,7 +35,7 @@ class Login extends Component {
   };
 
   render() {
-    const { classes, loginWithFirebase } = this.props;
+    const { classes, submitLoginWithFireBase } = this.props;
     const { tabValue } = this.state;
 
     return (
@@ -99,7 +99,7 @@ class Login extends Component {
                 />
               </Tabs>
 
-              {tabValue === 0 && <FirebaseLoginForm loginWithFirebase={loginWithFirebase}/>}
+              {tabValue === 0 && <FirebaseLoginForm submitLoginWithFireBase={submitLoginWithFireBase}/>}
 
               <div className="flex flex-col items-center justify-center pt-32">
                 <span className="font-medium">Don't have an account?</span>

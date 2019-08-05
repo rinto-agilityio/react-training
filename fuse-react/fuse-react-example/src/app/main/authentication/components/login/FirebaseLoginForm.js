@@ -5,10 +5,10 @@ import { TextFieldFormsy } from "@fuse";
 import Formsy from "formsy-react";
 import { withRouter } from "react-router-dom";
 
-const FirebaseLoginForm = (loginWithFirebase) => {
+const FirebaseLoginForm = ({ submitLoginWithFireBase }) => {
   const formEl = useRef('')
   const onSubmit = model => {
-    loginWithFirebase(model)
+    submitLoginWithFireBase(model)
   }
   return (
     <div className="w-full">
@@ -22,8 +22,8 @@ const FirebaseLoginForm = (loginWithFirebase) => {
         <TextFieldFormsy
           className="mb-16"
           type="text"
-          name="email"
-          label="Email"
+          name="username"
+          label="User Name"
           validations={{
             minLength: 4
           }}

@@ -9,7 +9,7 @@ const routes = [
   ...FuseUtils.generateRoutesFromConfigs(routeConfigs),
   {
     path: '/',
-    component: () => <Redirect to="/todo" />,
+    component: () => <Redirect to="/todos" />,
   },
 ]
 
