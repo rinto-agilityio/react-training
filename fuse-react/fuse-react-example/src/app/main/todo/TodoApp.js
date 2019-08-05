@@ -15,9 +15,9 @@ if (process.env.NODE_ENV !== 'production') {
   whyDidYouRender(React)
 }
 
-const TodoApp = ({ classes, getData, match, todos }) => {
+const TodoApp = ({ classes, getData, todos }) => {
   useEffect(() => {
-    getData(match)
+    getData()
   }, [])
 
   return (

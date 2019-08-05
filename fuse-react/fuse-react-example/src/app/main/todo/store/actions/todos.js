@@ -18,13 +18,13 @@ export const UPDATE_TODOS = '[TODO APP] UPDATE TODOS'
 export const DELETE_TODO = '[TODO APP] DELETE TODO'
 
 
-export function getData(match) {
+export function getData() {
   return dispatch => {
     Promise.all([
       dispatch(getFilters()),
       dispatch(getLabels()),
       dispatch(getFolders()),
-    ]).then(() => dispatch(getTodos(match)))
+    ]).then(() => dispatch(getTodos()))
   }
 }
 
