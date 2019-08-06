@@ -1,17 +1,19 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
-import TodoApp from './containers'
 import { authRoles } from 'app/auth'
+import FuseLoadable from '@fuse/components/FuseLoadable/FuseLoadable';
 
 export const TodoAppConfig = {
   settings: {
     layout: {},
   },
-  auth: authRoles.staff,
+  auth: authRoles.admin,
   routes: [
     {
       path: '/todos',
-      component: TodoApp,
+      component: FuseLoadable({
+        loader: () => import('./containers')
+      }),
     },
     {
       path: '/todos',
