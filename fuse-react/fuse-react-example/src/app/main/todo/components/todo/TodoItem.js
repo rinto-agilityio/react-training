@@ -144,6 +144,6 @@ const TodoItem = ({
 
 TodoItem.whyDidYouRender = true
 
-const areEqual = (prevProps, nextProps) => prevProps.labels === nextProps.labels
+// const areEqual = (prevProps, nextProps) => prevProps.labels === nextProps.labels
 
-export default memo(withStyles(styles, { withTheme: true })(TodoItem), areEqual)
+export default memo(withStyles(styles, { withTheme: true })(TodoItem))
