@@ -1,5 +1,12 @@
 import React, { Component } from 'react'
-import { withStyles, Card, CardContent, Typography } from '@material-ui/core'
+import {
+  withStyles,
+  Card,
+  CardContent,
+  Tab,
+  Tabs,
+  Typography,
+} from '@material-ui/core'
 import { darken } from '@material-ui/core/styles/colorManipulator'
 import { FuseAnimate } from '@fuse'
 import { connect } from 'react-redux'
@@ -7,7 +14,8 @@ import { bindActionCreators } from 'redux'
 import { Link, withRouter } from 'react-router-dom'
 import classNames from 'classnames'
 import * as Actions from 'app/auth/store/actions'
-import FirebaseRegisterTab from './FirebaseRegisterForm'
+import FirebaseRegisterForm from './FirebaseRegisterForm'
+import JwtRegisterForm from './JwtRegisterForm'
 
 const styles = theme => ({
   root: {
@@ -22,6 +30,14 @@ const styles = theme => ({
 })
 
 class Register extends Component {
+  state = {
+    tabValue: 0,
+  }
+
+  handleTabChange = (event, value) => {
+    this.setState({ tabValue: value })
+  }
+
   form = React.createRef()
 
   disableButton = () => {
@@ -64,7 +80,8 @@ class Register extends Component {
   }
 
   render() {
-    const { classes, register, registerWithFirebase } = this.props
+    const { classes, registerWithFirebase, register } = this.props
+    const { tabValue } = this.state
 
     return (
       <div
@@ -107,10 +124,56 @@ class Register extends Component {
               <Typography variant="h6" className="md:w-full mb-32">
                 CREATE AN ACCOUNT
               </Typography>
-              <FirebaseRegisterTab
-                registerWithFirebase={registerWithFirebase}
-                register={register}
-              />
+
+              <Tabs
+                value={tabValue}
+                onChange={this.handleTabChange}
+                variant="fullWidth"
+                className="mb-32"
+              >
+                <Tab
+                  icon={
+                    <img
+                      className="h-40"
+                      src="assets/images/logos/firebase.svg"
+                      alt="firebase"
+                    />
+                  }
+                  className="min-w-0"
+                  label="Firebase"
+                />
+                <Tab
+                  icon={
+                    <img
+                      className="h-40 p-4 bg-black rounded-12"
+                      src="assets/images/logos/jwt.svg"
+                      alt="firebase"
+                    />
+                  }
+                  className="min-w-0"
+                  label="JWT"
+                />
+                {/* <Tab
+                  icon={
+                    <img
+                      className="h-40"
+                      src="assets/images/logos/auth0.svg"
+                      alt="auth0"
+                    />
+                  }
+                  className="min-w-0"
+                  label="Auth0"
+                /> */}
+              </Tabs>
+
+              {tabValue === 0 && (
+                <FirebaseRegisterForm
+                  registerWithFirebase={registerWithFirebase}
+                  register={register}
+                />
+              )}
+              {tabValue === 1 && <JwtRegisterForm />}
+              {/* {tabValue === 2 && <Auth0RegisterTab />} */}
 
               <div className="flex flex-col items-center justify-center pt-32 pb-24">
                 <span className="font-medium">Already have an account?</span>
