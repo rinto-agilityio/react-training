@@ -1,26 +1,31 @@
-import * as reduxModule from 'redux'
-import { applyMiddleware, compose, createStore } from 'redux'
-import createReducer from './reducers'
-import thunk from 'redux-thunk'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
+import { createLogger } from 'redux-logger'
+import createSagaMiddleware from 'redux-saga'
+import RootSagas from './RootSagas'
+import fuse from './reducers/fuse/index'
+import auth from 'app/auth/store/reducers'
+import quickPanel from 'app/fuse-layouts/shared-components/quickPanel/store/reducers'
 
-/*
-Fix for Firefox redux dev tools extension
-https://github.com/zalmoxisus/redux-devtools-instrument/pull/19#issuecomment-400637274
- */
-reduxModule.__DO_NOT_USE__ActionTypes.REPLACE = '@@redux/INIT'
+const sagaMiddleware = createSagaMiddleware()
+const loggerMiddleware = createLogger()
 
-const composeEnhancers =
-  process.env.NODE_ENV !== 'production' &&
-  typeof window === 'object' &&
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-        // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
-      })
-    : compose
+// Create root reducer for store
+const rootReducer = combineReducers({
+  auth,
+  fuse,
+  quickPanel,
+})
 
-const enhancer = composeEnhancers(applyMiddleware(thunk))
+let middleWares = [sagaMiddleware]
 
-const store = createStore(createReducer(), enhancer)
+if (process.env.NODE_ENV === 'development') {
+  middleWares = [loggerMiddleware, sagaMiddleware]
+}
+
+const store = createStore(rootReducer, applyMiddleware(...middleWares))
+
+// RUN SAGA
+sagaMiddleware.run(RootSagas)
 
 store.asyncReducers = {}
 
@@ -29,7 +34,7 @@ export const injectReducer = (key, reducer) => {
     return
   }
   store.asyncReducers[key] = reducer
-  store.replaceReducer(createReducer(store.asyncReducers))
+  store.replaceReducer(rootReducer)
   return store
 }
 
