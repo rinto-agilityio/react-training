@@ -78,8 +78,6 @@ class Auth extends Component {
     firebaseService.init()
 
     firebaseService.onAuthStateChanged(authUser => {
-      console.log('authUser', authUser)
-
       if (authUser) {
         this.props.showMessage({ message: 'Logging in with Firebase' })
 
@@ -87,9 +85,10 @@ class Auth extends Component {
          * Retrieve user data from Firebase
          */
         firebaseService.getUserData(authUser.uid).then(user => {
-          this.props.setUserDataFirebase(user, authUser)
-          this.props.showMessage({ message: 'Logged in with Firebase' })
-        })
+          return dispatch => {
+            dispatch(this.props.setUserDataFirebase(user, authUser))
+            dispatch(this.props.showMessage({ message: 'Logged in with Firebase' }))
+        }})
       }
     })
   }
