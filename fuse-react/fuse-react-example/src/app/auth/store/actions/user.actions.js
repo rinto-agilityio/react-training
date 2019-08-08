@@ -50,10 +50,14 @@ export function setUserDataFirebase(user, authUser) {
     user.data.settings.layout.style
   ) {
     // Set user data but do not update
-    return setUserData(user)
+    return dispatch => {
+      dispatch(setUserData(user))
+    }
   } else {
     // Create missing user settings
-    return createUserSettingsFirebase(authUser)
+    return dispatch => {
+      dispatch(createUserSettingsFirebase(authUser))
+    }
   }
 }
 
