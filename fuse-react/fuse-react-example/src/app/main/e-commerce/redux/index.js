@@ -1,5 +1,6 @@
 import { createActions, createReducer } from 'reduxsauce'
 import Immutable from 'seamless-immutable'
+
 export const { Types, Creators } = createActions({
   getProductsProcessing: null,
   getProductsSuccess: null,
@@ -20,6 +21,7 @@ const getProductsProcessing = (state, action) => {
 const getProductsSuccess = (state, action) => {
   return state.merge({
     isProcessing: false,
+    productList: action.productList,
   })
 }
 
