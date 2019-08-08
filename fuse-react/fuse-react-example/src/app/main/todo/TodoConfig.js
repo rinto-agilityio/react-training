@@ -1,7 +1,7 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
 import { authRoles } from 'app/auth'
-import FuseLoadable from '@fuse/components/FuseLoadable/FuseLoadable';
+import FuseLoadable from '@fuse/components/FuseLoadable/FuseLoadable'
 
 export const TodoAppConfig = {
   settings: {
@@ -12,7 +12,7 @@ export const TodoAppConfig = {
     {
       path: '/todos',
       component: FuseLoadable({
-        loader: () => import('./containers')
+        loader: () => import('./containers'),
       }),
     },
     {
