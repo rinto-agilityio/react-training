@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import withReducer from 'app/store/withReducer'
 
-import Products from '../../components/product/Products'
+import Table from '../../components/table'
 
 import { Creators, eCommerceReducer } from '../../redux'
 
@@ -19,5 +19,5 @@ export default withReducer('eCommerceApp', eCommerceReducer)(
   connect(
     mapStateToProps,
     dispatchToProps
-  )(Products)
+  )(Table)
 )

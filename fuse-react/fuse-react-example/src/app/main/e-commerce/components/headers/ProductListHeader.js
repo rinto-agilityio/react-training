@@ -13,8 +13,6 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 const ProductListHeader = ({ mainTheme, searchText, setSearchText }) => {
-  console.log('mainTheme', mainTheme)
-
   return (
     <div className="flex flex-1 w-full items-center justify-between">
       <div className="flex items-center">

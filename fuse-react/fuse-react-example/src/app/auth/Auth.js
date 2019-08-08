@@ -87,8 +87,11 @@ class Auth extends Component {
         firebaseService.getUserData(authUser.uid).then(user => {
           return dispatch => {
             dispatch(this.props.setUserDataFirebase(user, authUser))
-            dispatch(this.props.showMessage({ message: 'Logged in with Firebase' }))
-        }})
+            dispatch(
+              this.props.showMessage({ message: 'Logged in with Firebase' })
+            )
+          }
+        })
       }
     })
   }
