@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import * as userActions from 'app/auth/store/actions'
 import { bindActionCreators } from 'redux'
 import * as Actions from 'app/store/actions'
+import { Creators as UserCreators } from './redux/user'
 import firebaseService from 'app/services/firebaseService'
 import auth0Service from 'app/services/auth0Service'
 import jwtService from 'app/services/jwtService'
@@ -78,20 +79,15 @@ class Auth extends Component {
     firebaseService.init()
 
     firebaseService.onAuthStateChanged(authUser => {
+
       if (authUser) {
         this.props.showMessage({ message: 'Logging in with Firebase' })
 
         /**
          * Retrieve user data from Firebase
          */
-        firebaseService.getUserData(authUser.uid).then(user => {
-          return dispatch => {
-            dispatch(this.props.setUserDataFirebase(user, authUser))
-            dispatch(
-              this.props.showMessage({ message: 'Logged in with Firebase' })
-            )
-          }
-        })
+        this.props.getUserData(authUser.uid)
+
       }
     })
   }
@@ -103,6 +99,7 @@ class Auth extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
+
   return bindActionCreators(
     {
       logout: userActions.logoutUser,
@@ -111,6 +108,7 @@ function mapDispatchToProps(dispatch) {
       setUserDataFirebase: userActions.setUserDataFirebase,
       showMessage: Actions.showMessage,
       hideMessage: Actions.hideMessage,
+      getUserData: UserCreators.getUserData
     },
     dispatch
   )
