@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects'
 import { Types } from '../redux'
-import { getProductApi } from '../../utils/Apis'
+import { getProductApi } from '../../../utils/Apis'
 
 function* getProducts() {
   try {
