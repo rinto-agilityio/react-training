@@ -26,7 +26,7 @@ const styles = theme => ({
   },
 })
 
-const Login = ({ classes, submitLoginWithFireBase }) => {
+const Login = ({ classes, loginWithFirebase }) => {
   const [tabValue, setTabValue] = useState(0)
 
   const handleTabChange = (event, value) => {
@@ -116,7 +116,7 @@ const Login = ({ classes, submitLoginWithFireBase }) => {
             </Tabs>
             {tabValue === 0 && (
               <FirebaseLoginForm
-                submitLoginWithFireBase={submitLoginWithFireBase}
+                submitLoginWithFireBase={loginWithFirebase}
               />
             )}
             {tabValue === 1 && <JwtLoginForm />}

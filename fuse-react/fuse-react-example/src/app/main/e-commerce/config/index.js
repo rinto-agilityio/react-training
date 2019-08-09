@@ -7,7 +7,7 @@ export const ECommerceAppConfig = {
   settings: {
     layout: {},
   },
-  auth: authRoles.onlyGuest,
+  auth: authRoles.admin,
   routes: [
     // {
     //   path: "/e-commerce/products/:productId/:productHandle?",

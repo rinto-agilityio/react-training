@@ -2,12 +2,12 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Login from '../../components/login'
 import { withRouter } from 'react-router-dom'
-import * as authActions from 'app/auth/store/actions'
+import { Creators } from 'app/auth/redux/login'
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
-      submitLoginWithFireBase: authActions.submitLoginWithFireBase,
+      loginWithFirebase: Creators.loginWithFirebaseProcessing,
     },
     dispatch
   )
