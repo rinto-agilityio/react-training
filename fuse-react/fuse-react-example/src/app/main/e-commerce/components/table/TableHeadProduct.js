@@ -23,7 +23,7 @@ const styles = theme => ({
   },
 })
 
-const TableHeadProduct = ({ classes }) => {
+const TableHeadProduct = ({ classes, onSelectAllClick, numSelected, rowCount }) => {
   const [selectedProductsMenu, setSelectedProductsMenu] = useState(null)
 
   const rows = [
@@ -84,9 +84,9 @@ const TableHeadProduct = ({ classes }) => {
       <TableRow className="h-64">
         <TableCell padding="checkbox" className="relative pl-4 sm:pl-12">
           <Checkbox
-          // indeterminate={numSelected > 0 && numSelected < rowCount}
-          // checked={numSelected === rowCount}
-          // onChange={onSelectAllClick}
+          indeterminate={numSelected > 0 && numSelected < rowCount}
+          checked={numSelected === rowCount}
+          onChange={event=> onSelectAllClick(event)}
           />
           {true && (
             <div

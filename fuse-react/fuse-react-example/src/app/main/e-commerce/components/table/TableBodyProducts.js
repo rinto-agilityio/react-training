@@ -9,7 +9,7 @@ import {
 import classNames from 'classnames'
 import _ from '@lodash'
 
-const TableBodyProduct = ({ data }) => {
+const TableBodyProduct = ({ data, checkSelected, handleSelectItem }) => {
   const renderListProduct = data.map(item => {
     return (
       <TableRow
@@ -24,9 +24,9 @@ const TableBodyProduct = ({ data }) => {
       >
         <TableCell className="w-48 pl-4 sm:pl-12" padding="checkbox">
           <Checkbox
-          // checked={isSelected}
-          // onClick={event => event.stopPropagation()}
-          // onChange={event => this.handleCheck(event, n.id)}
+            checked={checkSelected(item.id)}
+            onClick={event => event.stopPropagation()}
+            onChange={() => handleSelectItem(item.id)}
           />
         </TableCell>
 

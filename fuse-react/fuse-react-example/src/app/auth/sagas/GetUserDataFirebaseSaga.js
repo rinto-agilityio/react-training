@@ -8,8 +8,6 @@ function* getUserData(action) {
       [firebaseService, firebaseService.getUserData],
       action.uid
     )
-    console.log('response', response);
-
     yield put({
       type: Types.SET_USER_DATA,
       user: response
