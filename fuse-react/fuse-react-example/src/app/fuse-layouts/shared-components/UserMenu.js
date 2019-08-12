@@ -10,10 +10,14 @@ import {
   Typography,
 } from '@material-ui/core'
 import { connect } from 'react-redux'
-import * as authActions from 'app/auth/store/actions'
+import { Creators as authActions} from 'app/auth/redux/user'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 
+// services
+import firebaseService from 'app/services/firebaseService'
+import auth0Service from 'app/services/auth0Service'
+import jwtService from 'app/services/jwtService'
 class UserMenu extends Component {
   state = {
     userMenu: null,
@@ -27,10 +31,27 @@ class UserMenu extends Component {
     this.setState({ userMenu: null })
   }
 
-  render() {
+  handleLogOutUser = () => {
     const { user, logout } = this.props
-    const { userMenu } = this.state
+    switch (user.from) {
+      case 'firebase': {
+        firebaseService.signOut()
+        break
+      }
+      case 'auth0': {
+        auth0Service.logout()
+        break
+      }
+      default: {
+        jwtService.logout()
+      }
+    }
+    logout()
+  }
 
+  render() {
+    const { user } = this.props
+    const { userMenu } = this.state
     return (
       <React.Fragment>
         <Button className="h-64" onClick={this.userMenuClick}>
@@ -109,7 +130,7 @@ class UserMenu extends Component {
               </MenuItem>
               <MenuItem
                 onClick={() => {
-                  logout()
+                  this.handleLogOutUser()
                   this.userMenuClose()
                 }}
               >
@@ -129,7 +150,7 @@ class UserMenu extends Component {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
-      logout: authActions.logoutUser,
+      logout: authActions.logOutUser,
     },
     dispatch
   )

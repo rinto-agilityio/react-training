@@ -18,7 +18,7 @@ const TableBodyProduct = ({ data }) => {
       // role="checkbox"
       // aria-checked={isSelected}
       // tabIndex={-1}
-      // key={n.id}
+      key={item.id}
       // selected={isSelected}
       // onClick={event => this.handleClick(n)}
       >
