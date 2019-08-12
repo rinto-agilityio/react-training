@@ -24,7 +24,7 @@ const ProductsTable = ({ productList, getProductsProcessing }) => {
     const itemSlected = data.map(item => item.id)
     if (event.target.checked) {
       setSlected(itemSlected)
-      return
+      return;
     }
     setSlected([])
   }

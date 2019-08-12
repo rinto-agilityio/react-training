@@ -1,71 +1,89 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { Icon, TableCell, TableRow, Checkbox } from '@material-ui/core'
 import classNames from 'classnames'
 import _ from '@lodash'
+import whyDidYouRender from '@welldone-software/why-did-you-render'
 
-const TableRowProduct = ({ checkSelected, handleSelectItem, product }) => {
+if (process.env.NODE_ENV !== 'production') {
+  whyDidYouRender(React)
+}
+
+const TableRowProduct = ({
+  isSelected,
+  handleSelectItem,
+  name,
+  categories,
+  featuredImageId,
+  images,
+  priceTaxIncl,
+  quantity,
+  active,
+  id,
+}) => {
+  console.log('render');
+
   return (
     <TableRow
       className="h-64 cursor-pointer"
       hover
       role="checkbox"
-      // aria-checked={isSelected}
-      // tabIndex={-1}
-      key={product.id}
+      aria-checked={isSelected}
+      tabIndex={-1}
+      key={id}
       // selected={isSelected}
       // onClick={event => this.handleClick(n)}
     >
       <TableCell className="w-48 pl-4 sm:pl-12" padding="checkbox">
         <Checkbox
-          checked={checkSelected(product.id)}
+          checked={isSelected}
           onClick={event => event.stopPropagation()}
-          onChange={() => handleSelectItem(product.id)}
+          onChange={() => handleSelectItem(id)}
         />
       </TableCell>
 
       <TableCell className="w-52" component="th" scope="row" padding="none">
-        {product.images.length > 0 ? (
+        {images.length > 0 ? (
           <img
             className="w-full block rounded"
-            src={_.find(product.images, { id: product.featuredImageId }).url}
-            alt={product.name}
+            src={_.find(images, { id: featuredImageId }).url}
+            alt={name}
           />
         ) : (
           <img
             className="w-full block rounded"
-            src="assets/images/ecommerce/product-image-placeholder.png"
-            alt={product.name}
+            src="assets/images/ecommerce/image-placeholder.png"
+            alt={name}
           />
         )}
       </TableCell>
 
       <TableCell component="th" scope="row">
-        {product.name}
+        {name}
       </TableCell>
 
       <TableCell className="truncate" component="th" scope="row">
-        {product.categories.join(', ')}
+        {categories.join(', ')}
       </TableCell>
 
       <TableCell component="th" scope="row" align="right">
         <span>$</span>
-        {product.priceTaxIncl}
+        {priceTaxIncl}
       </TableCell>
 
       <TableCell component="th" scope="row" align="right">
-        {product.quantity}
+        {quantity}
         <i
           className={classNames(
             'inline-block w-8 h-8 rounded ml-8',
-            product.quantity <= 5 && 'bg-red',
-            product.quantity > 5 && product.quantity <= 25 && 'bg-orange',
-            product.quantity > 25 && 'bg-green'
+            quantity <= 5 && 'bg-red',
+            quantity > 5 && quantity <= 25 && 'bg-orange',
+            quantity > 25 && 'bg-green'
           )}
         />
       </TableCell>
 
       <TableCell component="th" scope="row" align="right">
-        {product.active ? (
+        {active ? (
           <Icon className="text-green text-20">check_circle</Icon>
         ) : (
           <Icon className="text-red text-20">remove_circle</Icon>
@@ -75,4 +93,8 @@ const TableRowProduct = ({ checkSelected, handleSelectItem, product }) => {
   )
 }
 
-export default TableRowProduct
+TableRowProduct.whyDidYouRender = true
+
+const areEqual = (prevProps, nextProps) =>  prevProps.isSelected === nextProps.isSelected
+
+export default memo(TableRowProduct, areEqual)

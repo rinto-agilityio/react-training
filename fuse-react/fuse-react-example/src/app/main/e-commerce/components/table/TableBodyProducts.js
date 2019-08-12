@@ -36,9 +36,9 @@ const TableBodyProduct = ({
           return (
             <TableRowProduct
               index
-              checkSelected={checkSelected}
+              isSelected={checkSelected(row.id)}
               handleSelectItem={handleSelectItem}
-              product={row}
+              {...row}
             />
           )
         })}
