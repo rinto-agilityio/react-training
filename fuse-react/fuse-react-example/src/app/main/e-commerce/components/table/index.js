@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Table } from '@material-ui/core'
+import { Table, TablePagination } from '@material-ui/core'
 import { FuseScrollbars } from '@fuse'
 import { withRouter } from 'react-router-dom'
 import TableHeadProduct from './TableHeadProduct'
 import TableBodyProduct from './TableBodyProducts'
-import { AppConfig } from '../../config/index'
+import { AppConfig } from '../../config/AppConfig'
 
 const ProductsTable = ({ productList, getProductsProcessing }) => {
   const [order, setOrder] = useState('asc')
@@ -43,6 +43,15 @@ const ProductsTable = ({ productList, getProductsProcessing }) => {
         : selected.filter(item => item !== id)
     setSlected(newSelected)
   }
+
+  const handleChangePage = (event, page) => {
+    setPage(page)
+  }
+
+  const handleChangeRowsPerPage = event => {
+    setRowsPerPage(event.target.value)
+  }
+
   const checkSelected = id => selected.indexOf(id) !== -1
 
   return (
@@ -70,20 +79,20 @@ const ProductsTable = ({ productList, getProductsProcessing }) => {
         </Table>
       </FuseScrollbars>
 
-      {/* <TablePagination
+      <TablePagination
         component="div"
         count={data.length}
         rowsPerPage={rowsPerPage}
         page={page}
         backIconButtonProps={{
-          "aria-label": "Previous Page"
+          'aria-label': 'Previous Page',
         }}
         nextIconButtonProps={{
-          "aria-label": "Next Page"
+          'aria-label': 'Next Page',
         }}
-        onChangePage={this.handleChangePage}
-        onChangeRowsPerPage={this.handleChangeRowsPerPage}
-      /> */}
+        onChangePage={handleChangePage}
+        onChangeRowsPerPage={handleChangeRowsPerPage}
+      />
     </div>
   )
 }
