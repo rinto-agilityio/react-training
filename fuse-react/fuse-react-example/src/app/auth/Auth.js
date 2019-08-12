@@ -79,7 +79,6 @@ class Auth extends Component {
     firebaseService.init()
 
     firebaseService.onAuthStateChanged(authUser => {
-
       if (authUser) {
         this.props.showMessage({ message: 'Logging in with Firebase' })
 
@@ -87,7 +86,6 @@ class Auth extends Component {
          * Retrieve user data from Firebase
          */
         this.props.getUserData(authUser.uid)
-
       }
     })
   }
@@ -99,7 +97,6 @@ class Auth extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-
   return bindActionCreators(
     {
       logout: userActions.logoutUser,
@@ -108,7 +105,7 @@ function mapDispatchToProps(dispatch) {
       setUserDataFirebase: userActions.setUserDataFirebase,
       showMessage: Actions.showMessage,
       hideMessage: Actions.hideMessage,
-      getUserData: UserCreators.getUserData
+      getUserData: UserCreators.getUserData,
     },
     dispatch
   )

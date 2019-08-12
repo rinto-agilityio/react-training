@@ -6,7 +6,7 @@ export const { Types, Creators } = createActions({
   getUserDataFailed: null,
   setUserData: ['user'],
   showMessage: ['message'],
-  logOutUser: null
+  logOutUser: null,
 })
 
 const InitialState = Immutable({
@@ -40,7 +40,7 @@ const setUserData = (state, action) => {
 
 const logOutUser = state => {
   return state.merge({
-    ...InitialState
+    ...InitialState,
   })
 }
 
@@ -48,7 +48,7 @@ const showMessage = (state, action) => {
   return state.merge({
     isProcessing: false,
     success: false,
-    error: action.payload
+    error: action.payload,
   })
 }
 
@@ -58,7 +58,7 @@ const HANDLERS = {
   [Types.SET_USER_DATA]: setUserData,
   [Types.SHOW_MESSAGE]: showMessage,
   [Types.GET_USER_DATA_FAILED]: getUserDataFailed,
-  [Types.LOG_OUT_USER]: logOutUser
+  [Types.LOG_OUT_USER]: logOutUser,
 }
 
 // Create reducers by pass state and handlers

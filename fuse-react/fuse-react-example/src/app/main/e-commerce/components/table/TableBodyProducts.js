@@ -1,88 +1,49 @@
 import React from 'react'
-import {
-  Icon,
-  TableBody,
-  TableCell,
-  TableRow,
-  Checkbox,
-} from '@material-ui/core'
-import classNames from 'classnames'
-import _ from '@lodash'
+import { TableBody } from '@material-ui/core'
+import _ from 'lodash'
 
-const TableBodyProduct = ({ data, checkSelected, handleSelectItem }) => {
-  const renderListProduct = data.map(item => {
-    return (
-      <TableRow
-      // className="h-64 cursor-pointer"
-      // hover
-      // role="checkbox"
-      // aria-checked={isSelected}
-      // tabIndex={-1}
-      key={item.id}
-      // selected={isSelected}
-      // onClick={event => this.handleClick(n)}
-      >
-        <TableCell className="w-48 pl-4 sm:pl-12" padding="checkbox">
-          <Checkbox
-            checked={checkSelected(item.id)}
-            onClick={event => event.stopPropagation()}
-            onChange={() => handleSelectItem(item.id)}
-          />
-        </TableCell>
+import TableRowProduct from './TableRowProduct'
 
-        <TableCell className="w-52" component="th" scope="row" padding="none">
-          {item.images.length > 0 ? (
-            <img
-              className="w-full block rounded"
-              src={_.find(item.images, { id: item.featuredImageId }).url}
-              alt={item.name}
+const TableBodyProduct = ({
+  data,
+  checkSelected,
+  handleSelectItem,
+  order,
+  orderBy,
+  page,
+  rowsPerPage,
+}) => {
+  return (
+    <TableBody>
+      {_.orderBy(
+        data,
+        [
+          o => {
+            switch (orderBy) {
+              case 'categories': {
+                return o.categories[0]
+              }
+              default: {
+                return o[orderBy]
+              }
+            }
+          },
+        ],
+        [order]
+      )
+        .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+        .map(row => {
+          return (
+            <TableRowProduct
+              index
+              checkSelected={checkSelected}
+              handleSelectItem={handleSelectItem}
+              product={row}
             />
-          ) : (
-            <img
-              className="w-full block rounded"
-              src="assets/images/ecommerce/product-image-placeholder.png"
-              alt={item.name}
-            />
-          )}
-        </TableCell>
-
-        <TableCell component="th" scope="row">
-          {item.name}
-        </TableCell>
-
-        <TableCell className="truncate" component="th" scope="row">
-          {item.categories.join(', ')}
-        </TableCell>
-
-        <TableCell component="th" scope="row" align="right">
-          <span>$</span>
-          {item.priceTaxIncl}
-        </TableCell>
-
-        <TableCell component="th" scope="row" align="right">
-          {item.quantity}
-          <i
-            className={classNames(
-              'inline-block w-8 h-8 rounded ml-8',
-              item.quantity <= 5 && 'bg-red',
-              item.quantity > 5 && item.quantity <= 25 && 'bg-orange',
-              item.quantity > 25 && 'bg-green'
-            )}
-          />
-        </TableCell>
-
-        <TableCell component="th" scope="row" align="right">
-          {item.active ? (
-            <Icon className="text-green text-20">check_circle</Icon>
-          ) : (
-            <Icon className="text-red text-20">remove_circle</Icon>
-          )}
-        </TableCell>
-      </TableRow>
-    )
-  })
-
-  return <TableBody>{renderListProduct}</TableBody>
+          )
+        })}
+    </TableBody>
+  )
 }
 
 export default TableBodyProduct

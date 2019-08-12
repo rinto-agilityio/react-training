@@ -115,9 +115,7 @@ const Login = ({ classes, loginWithFirebase }) => {
               />
             </Tabs>
             {tabValue === 0 && (
-              <FirebaseLoginForm
-                submitLoginWithFireBase={loginWithFirebase}
-              />
+              <FirebaseLoginForm submitLoginWithFireBase={loginWithFirebase} />
             )}
             {tabValue === 1 && <JwtLoginForm />}
             {tabValue === 2 && <h1>tab2</h1>}

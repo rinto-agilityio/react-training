@@ -25,7 +25,7 @@ const loginWithFirebaseProcessing = (state, action) => {
 const loginWithFirebaseSuccess = (state, action) => {
   return state.merge({
     isProcessing: false,
-    success: true
+    success: true,
   })
 }
 
@@ -33,7 +33,7 @@ const loginWithFirebaseFailed = (state, action) => {
   return state.merge({
     isProcessing: false,
     success: false,
-    error: action.payload
+    error: action.payload,
   })
 }
 

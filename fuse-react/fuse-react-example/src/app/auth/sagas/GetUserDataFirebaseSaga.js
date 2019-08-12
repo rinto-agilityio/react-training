@@ -10,7 +10,7 @@ function* getUserData(action) {
     )
     yield put({
       type: Types.SET_USER_DATA,
-      user: response
+      user: response,
     })
   } catch (error) {
     yield put({ type: Types.GET_USER_DATA_FAILED, error: error })

@@ -10,7 +10,7 @@ import {
   Typography,
 } from '@material-ui/core'
 import { connect } from 'react-redux'
-import { Creators as authActions} from 'app/auth/redux/user'
+import { Creators as authActions } from 'app/auth/redux/user'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 
