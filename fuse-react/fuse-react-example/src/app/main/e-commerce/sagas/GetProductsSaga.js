@@ -7,7 +7,6 @@ function* getProducts() {
     // create a saga call with API get getProducts
     const response = yield call(getProductApi)
     if (response.status === 200) {
-      // In case: upload students successfully
       yield put({
         type: Types.GET_PRODUCTS_SUCCESS,
         productList: response.data,
@@ -25,8 +24,8 @@ function* getProducts() {
 /*
   Starts uploadStudents on each dispatched `UPLOAD_STUDENTS` action.
 */
-function* getProductsSaga() {
+function* GetProductsSaga() {
   yield takeLatest(Types.GET_PRODUCTS_PROCESSING, getProducts)
 }
 
-export default getProductsSaga
+export default GetProductsSaga

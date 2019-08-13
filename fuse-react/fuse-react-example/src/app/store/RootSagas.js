@@ -1,14 +1,16 @@
 // import libs
 import { all } from 'redux-saga/effects'
 
-import getProductsSaga from '../main/e-commerce/sagas/getProductsSaga'
+import GetProductsSaga from '../main/e-commerce/sagas/GetProductsSaga'
+import GetProductDetailSaga from '../main/e-commerce/sagas/GetProductDetailSaga'
 import LoginwithFirebaseSaga from '../../app/auth/sagas/LoginWithFirebaseSaga'
 import GetUserDataFirebaseSaga from '../../app/auth/sagas/GetUserDataFirebaseSaga'
 
 export default function* RootSagas() {
   yield all([
-    getProductsSaga(),
+    GetProductsSaga(),
     LoginwithFirebaseSaga(),
-    GetUserDataFirebaseSaga()
+    GetUserDataFirebaseSaga(),
+    GetProductDetailSaga(),
   ])
 }

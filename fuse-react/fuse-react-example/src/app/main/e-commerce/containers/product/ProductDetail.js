@@ -1,0 +1,23 @@
+import { connect } from 'react-redux'
+import withReducer from 'app/store/withReducer'
+
+import ProductDetail from '../../components/product/ProductDetail'
+
+import { Creators, eCommerceReducer } from '../../redux'
+
+const mapStateToProps = ({ eCommerceApp }) => {
+  return {
+    productEditing: eCommerceApp.productEditing,
+  }
+}
+
+const dispatchToProps = {
+  getProductDetail: Creators.getProductDetailProcessing,
+}
+
+export default withReducer('eCommerceApp', eCommerceReducer)(
+  connect(
+    mapStateToProps,
+    dispatchToProps
+  )(ProductDetail)
+)
