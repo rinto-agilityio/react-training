@@ -6,7 +6,12 @@ import TableHeadProduct from './TableHeadProduct'
 import TableBodyProduct from './TableBodyProducts'
 import { AppConfig } from '../../config/AppConfig'
 
-const ProductsTable = ({ productList, getProductsProcessing }) => {
+const ProductsTable = ({
+  productList,
+  getProductsProcessing,
+  history,
+  getProductDetail,
+}) => {
   const [order, setOrder] = useState('asc')
   const [orderBy, setOrderBy] = useState(null)
   const [selected, setSlected] = useState([])
@@ -24,7 +29,7 @@ const ProductsTable = ({ productList, getProductsProcessing }) => {
     const itemSlected = data.map(item => item.id)
     if (event.target.checked) {
       setSlected(itemSlected)
-      return;
+      return
     }
     setSlected([])
   }
@@ -52,6 +57,10 @@ const ProductsTable = ({ productList, getProductsProcessing }) => {
     setRowsPerPage(event.target.value)
   }
 
+  const handleClickRowItem = id => {
+    history.push('/e-commerce/products/' + id)
+  }
+
   const checkSelected = id => selected.indexOf(id) !== -1
 
   return (
@@ -75,6 +84,7 @@ const ProductsTable = ({ productList, getProductsProcessing }) => {
             order={order}
             page={page}
             rowsPerPage={rowsPerPage}
+            handleClickRowItem={handleClickRowItem}
           />
         </Table>
       </FuseScrollbars>

@@ -12,6 +12,7 @@ const TableBodyProduct = ({
   orderBy,
   page,
   rowsPerPage,
+  handleClickRowItem,
 }) => {
   return (
     <TableBody>
@@ -32,12 +33,13 @@ const TableBodyProduct = ({
         [order]
       )
         .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-        .map(row => {
+        .map((row, index) => {
           return (
             <TableRowProduct
-              index
+              key={index}
               isSelected={checkSelected(row.id)}
               handleSelectItem={handleSelectItem}
+              handleClickRowItem={handleClickRowItem}
               {...row}
             />
           )

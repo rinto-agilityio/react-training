@@ -19,9 +19,8 @@ const TableRowProduct = ({
   quantity,
   active,
   id,
+  handleClickRowItem,
 }) => {
-  console.log('render');
-
   return (
     <TableRow
       className="h-64 cursor-pointer"
@@ -31,7 +30,7 @@ const TableRowProduct = ({
       tabIndex={-1}
       key={id}
       // selected={isSelected}
-      // onClick={event => this.handleClick(n)}
+      onClick={() => handleClickRowItem(id)}
     >
       <TableCell className="w-48 pl-4 sm:pl-12" padding="checkbox">
         <Checkbox
@@ -95,6 +94,7 @@ const TableRowProduct = ({
 
 TableRowProduct.whyDidYouRender = true
 
-const areEqual = (prevProps, nextProps) =>  prevProps.isSelected === nextProps.isSelected
+const areEqual = (prevProps, nextProps) =>
+  prevProps.isSelected === nextProps.isSelected
 
 export default memo(TableRowProduct, areEqual)

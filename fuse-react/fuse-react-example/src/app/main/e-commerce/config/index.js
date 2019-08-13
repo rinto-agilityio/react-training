@@ -9,12 +9,12 @@ export const ECommerceAppConfig = {
   },
   auth: authRoles.admin,
   routes: [
-    // {
-    //   path: "/e-commerce/products/:productId/:productHandle?",
-    //   component: FuseLoadable({
-    //     loader: () => import("./product/Product")
-    //   })
-    // },
+    {
+      path: '/e-commerce/products/:productId',
+      component: FuseLoadable({
+        loader: () => import('../containers/product/ProductDetail'),
+      }),
+    },
     {
       path: '/e-commerce/products',
       component: FuseLoadable({
