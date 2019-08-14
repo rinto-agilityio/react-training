@@ -3178,6 +3178,13 @@ mock.onGet('/api/e-commerce-app/product').reply(request => {
   return [200, response]
 })
 
+mock.onPost('/api/e-commerce-app/product/add-new').reply(request => {
+  const data = JSON.parse(request.data)
+  let product = data
+  eCommerceDB.products = [data, ...eCommerceDB.products]
+  return [200, product]
+})
+
 mock.onPost('/api/e-commerce-app/product/save').reply(request => {
   const data = JSON.parse(request.data)
   let product = null

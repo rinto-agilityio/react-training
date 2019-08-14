@@ -96,8 +96,6 @@ let authDB = {
 }
 
 mock.onGet('/api/auth').reply(config => {
-  console.log('config', config)
-
   const data = JSON.parse(config.data)
   const { email, password } = data
 
