@@ -10,8 +10,12 @@ import ProductTabs from '../ProductDetailTabs/ProductTabs'
 import BasicInfoTab from '../ProductDetailTabs/BasicInfoTab'
 import ImageTab from '../ProductDetailTabs/ImageTab'
 import PricingTab from '../ProductDetailTabs/PricingTab'
+import { FuseUtils } from '@fuse'
 
 const styles = theme => ({
+  input: {
+    display: 'none',
+  },
   productImageFeaturedStar: {
     position: 'absolute',
     top: 0,
@@ -47,7 +51,9 @@ const ProductDetail = ({
   match,
   getProductDetail,
   updateProduct,
-  classes
+  classes,
+  addNewProduct,
+  history,
 }) => {
   const [tabValue, setTabValue] = useState(0)
   const [form, setForm] = useState()
@@ -70,6 +76,22 @@ const ProductDetail = ({
     })
   }
 
+  const handleImageChange = e => {
+    const url =
+      e.target.files[0] &&
+      (window.URL || window.webkitURL).createObjectURL(e.target.files[0])
+    const imageItem = {
+      id: Math.floor(Math.random() * 10),
+      url: url,
+      type: 'image',
+    }
+    setForm({
+      ...form,
+      images: form.images.concat(imageItem),
+      featuredImageId: imageItem.id,
+    })
+  }
+
   const handleChipChange = (value, name) =>
     setForm({
       ...form,
@@ -77,35 +99,37 @@ const ProductDetail = ({
     })
 
   const submitSaveProduct = () => {
-    updateProduct(form)
+    if (form.id) {
+      updateProduct(form)
+    } else {
+      addNewProduct({ ...form, id: FuseUtils.generateGUID() })
+      history.push('/e-commerce/products')
+    }
   }
 
-  const setFeaturedImage = id => setForm({
-    ...form,
-    'featuredImageId': id
-  })
+  const setFeaturedImage = id =>
+    setForm({
+      ...form,
+      featuredImageId: id,
+    })
 
   const canBeSubmitted = () => {
     return _.isEqual(productEditing, form)
   }
 
   const renderContentTab = () => {
-    switch(tabValue) {
+    switch (tabValue) {
       case 1:
         return (
           <ImageTab
             form={form}
             setFeaturedImage={setFeaturedImage}
             classes={classes}
+            handleChange={handleImageChange}
           />
         )
       case 2:
-        return (
-          <PricingTab
-            form={form}
-            handleChange={handleChange}
-          />
-        )
+        return <PricingTab form={form} handleChange={handleChange} />
       default:
         return (
           <BasicInfoTab
@@ -145,6 +169,7 @@ PropTypes.ProductDetail = {
     categories: PropTypes.array,
     description: PropTypes.string,
     name: PropTypes.string,
+    images: PropTypes.array,
   }),
   match: PropTypes.object,
   getProductDetail: PropTypes.func,
@@ -155,6 +180,7 @@ ProductDetail.defaultProps = {
     tags: '',
     categories: [],
     description: [],
+    images: [],
     name: '',
     handle: '',
     featuredImageId: 1,

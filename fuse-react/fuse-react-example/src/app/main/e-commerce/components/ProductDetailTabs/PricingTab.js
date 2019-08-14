@@ -1,8 +1,5 @@
 import React from 'react'
-import {
-  TextField,
-  InputAdornment,
-} from "@material-ui/core"
+import { TextField, InputAdornment } from '@material-ui/core'
 import PropTypes from 'prop-types'
 
 const PricingTab = ({ handleChange, form }) => (
@@ -15,9 +12,7 @@ const PricingTab = ({ handleChange, form }) => (
       value={form.priceTaxExcl}
       onChange={handleChange}
       InputProps={{
-        startAdornment: (
-          <InputAdornment position="start">$</InputAdornment>
-        )
+        startAdornment: <InputAdornment position="start">$</InputAdornment>,
       }}
       type="number"
       variant="outlined"
@@ -33,9 +28,7 @@ const PricingTab = ({ handleChange, form }) => (
       value={form.priceTaxIncl}
       onChange={handleChange}
       InputProps={{
-        startAdornment: (
-          <InputAdornment position="start">$</InputAdornment>
-        )
+        startAdornment: <InputAdornment position="start">$</InputAdornment>,
       }}
       type="number"
       variant="outlined"
@@ -50,9 +43,7 @@ const PricingTab = ({ handleChange, form }) => (
       value={form.taxRate}
       onChange={handleChange}
       InputProps={{
-        startAdornment: (
-          <InputAdornment position="start">$</InputAdornment>
-        )
+        startAdornment: <InputAdornment position="start">$</InputAdornment>,
       }}
       type="number"
       variant="outlined"
@@ -67,9 +58,7 @@ const PricingTab = ({ handleChange, form }) => (
       value={form.comparedPrice}
       onChange={handleChange}
       InputProps={{
-        startAdornment: (
-          <InputAdornment position="start">$</InputAdornment>
-        )
+        startAdornment: <InputAdornment position="start">$</InputAdornment>,
       }}
       type="number"
       variant="outlined"
@@ -84,7 +73,7 @@ PropTypes.PricingTab = {
     comparedPrice: PropTypes.number,
     taxRate: PropTypes.number,
     priceTaxIncl: PropTypes.number,
-    priceTaxExcl: PropTypes.number
+    priceTaxExcl: PropTypes.number,
   }),
   handleChange: PropTypes.func,
 }
@@ -94,7 +83,7 @@ PricingTab.defaultProps = {
     comparedPrice: 0,
     taxRate: 0,
     priceTaxIncl: 0,
-    priceTaxExcl: 0
+    priceTaxExcl: 0,
   },
   handleChange: () => {},
 }

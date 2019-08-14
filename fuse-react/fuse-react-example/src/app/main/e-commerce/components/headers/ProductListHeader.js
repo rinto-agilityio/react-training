@@ -7,10 +7,10 @@ import {
   Icon,
   Typography,
   MuiThemeProvider,
-  Link,
 } from '@material-ui/core'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const ProductListHeader = ({ mainTheme, searchText, setSearchText }) => {
   return (
@@ -55,7 +55,7 @@ const ProductListHeader = ({ mainTheme, searchText, setSearchText }) => {
       <FuseAnimate animation="transition.slideRightIn" delay={300}>
         <Button
           component={Link}
-          to="/apps/e-commerce/products/new"
+          to="/e-commerce/products/new"
           className="whitespace-no-wrap"
           variant="contained"
         >
