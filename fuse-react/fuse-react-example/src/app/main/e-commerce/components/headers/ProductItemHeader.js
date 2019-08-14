@@ -5,7 +5,7 @@ import _ from '@lodash'
 import PropTypes from 'prop-types'
 import { FuseAnimate } from '@fuse'
 
-const ProductItemHeader = ({ form, canBeSubmitted }) => {
+const ProductItemHeader = ({ form, canBeSubmitted, submitSaveProduct }) => {
   return (
     <div className="flex flex-1 w-full items-center justify-between">
       <div className="flex flex-col items-start max-w-full">
@@ -54,7 +54,7 @@ const ProductItemHeader = ({ form, canBeSubmitted }) => {
           className="whitespace-no-wrap"
           variant="contained"
           disabled={canBeSubmitted()}
-          // onClick={() => saveProduct(form)}
+          onClick={submitSaveProduct}
         >
           Save
         </Button>

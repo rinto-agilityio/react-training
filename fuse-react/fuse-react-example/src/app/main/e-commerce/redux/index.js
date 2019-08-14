@@ -8,6 +8,9 @@ export const { Types, Creators } = createActions({
   getProductDetailProcessing: ['productId'],
   getProductDetailSuccess: null,
   getProductDetailFailed: null,
+  updateProductProcessing: ['data'],
+  updateProductSuccess: null,
+  updateProductFailed: null,
 })
 
 const InitialState = Immutable({
@@ -58,6 +61,21 @@ const getProductDetailFailed = (state, action) =>
     isProcessing: false,
   })
 
+const updateProductProcessing = (state, action) =>
+  state.merge({
+    isProcessing: true,
+  })
+
+const updateProductSuccess = (state, action) =>
+  state.merge({
+    isProcessing: false,
+  })
+
+const updateProductFailed = (state, action) =>
+  state.merge({
+    isProcessing: false,
+  })
+
 // Assign handler to types.
 const HANDLERS = {
   [Types.GET_PRODUCTS_PROCESSING]: getProductsProcessing,
@@ -66,6 +84,9 @@ const HANDLERS = {
   [Types.GET_PRODUCT_DETAIL_PROCESSING]: getProductDetailProcessing,
   [Types.GET_PRODUCT_DETAIL_SUCCESS]: getProductDetailSuccess,
   [Types.GET_PRODUCT_DETAIL_FAILED]: getProductDetailFailed,
+  [Types.UPDATE_PRODUCT_PROCESSING]: updateProductProcessing,
+  [Types.UPDATE_PRODUCT_SUCCESS]: updateProductSuccess,
+  [Types.UPDATE_PRODUCT_FAILED]: updateProductFailed,
 }
 
 // Create reducers by pass state and handlers

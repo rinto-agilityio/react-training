@@ -40,7 +40,12 @@ const styles = theme => ({
   },
 })
 
-const ProductDetail = ({ productEditing, match, getProductDetail }) => {
+const ProductDetail = ({
+  productEditing,
+  match,
+  getProductDetail,
+  updateProduct,
+}) => {
   const [tabValue, setTabValue] = useState(0)
   const [form, setForm] = useState()
 
@@ -62,6 +67,16 @@ const ProductDetail = ({ productEditing, match, getProductDetail }) => {
     })
   }
 
+  const handleChipChange = (value, name) =>
+    setForm({
+      ...form,
+      [name]: value.map(item => item.value),
+    })
+
+  const submitSaveProduct = () => {
+    updateProduct(form)
+  }
+
   const canBeSubmitted = () => {
     return _.isEqual(productEditing, form)
   }
@@ -77,12 +92,19 @@ const ProductDetail = ({ productEditing, match, getProductDetail }) => {
           form={form}
           handleChange={handleChange}
           canBeSubmitted={canBeSubmitted}
+          submitSaveProduct={submitSaveProduct}
         />
       }
       contentToolbar={
         <ProductTabs handleChangeTab={handleChangeTab} tabValue={tabValue} />
       }
-      content={<BasicInfoTab form={form} handleChange={handleChange} />}
+      content={
+        <BasicInfoTab
+          form={form}
+          handleChange={handleChange}
+          handleChipChange={handleChipChange}
+        />
+      }
     />
   )
 }
