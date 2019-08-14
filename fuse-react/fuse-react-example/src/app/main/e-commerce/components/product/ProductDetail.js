@@ -7,7 +7,9 @@ import { FusePageCarded } from '@fuse'
 import { orange } from '@material-ui/core/colors'
 import ProductItemHeader from '../headers/ProductItemHeader'
 import ProductTabs from '../ProductDetailTabs/ProductTabs'
-import BasicInfoTab from '../product/BasicInfoTab'
+import BasicInfoTab from '../ProductDetailTabs/BasicInfoTab'
+import ImageTab from '../ProductDetailTabs/ImageTab'
+import PricingTab from '../ProductDetailTabs/PricingTab'
 
 const styles = theme => ({
   productImageFeaturedStar: {
@@ -45,6 +47,7 @@ const ProductDetail = ({
   match,
   getProductDetail,
   updateProduct,
+  classes
 }) => {
   const [tabValue, setTabValue] = useState(0)
   const [form, setForm] = useState()
@@ -77,8 +80,41 @@ const ProductDetail = ({
     updateProduct(form)
   }
 
+  const setFeaturedImage = id => setForm({
+    ...form,
+    'featuredImageId': id
+  })
+
   const canBeSubmitted = () => {
     return _.isEqual(productEditing, form)
+  }
+
+  const renderContentTab = () => {
+    switch(tabValue) {
+      case 1:
+        return (
+          <ImageTab
+            form={form}
+            setFeaturedImage={setFeaturedImage}
+            classes={classes}
+          />
+        )
+      case 2:
+        return (
+          <PricingTab
+            form={form}
+            handleChange={handleChange}
+          />
+        )
+      default:
+        return (
+          <BasicInfoTab
+            form={form}
+            handleChange={handleChange}
+            handleChipChange={handleChipChange}
+          />
+        )
+    }
   }
 
   return (
@@ -98,13 +134,7 @@ const ProductDetail = ({
       contentToolbar={
         <ProductTabs handleChangeTab={handleChangeTab} tabValue={tabValue} />
       }
-      content={
-        <BasicInfoTab
-          form={form}
-          handleChange={handleChange}
-          handleChipChange={handleChipChange}
-        />
-      }
+      content={renderContentTab()}
     />
   )
 }

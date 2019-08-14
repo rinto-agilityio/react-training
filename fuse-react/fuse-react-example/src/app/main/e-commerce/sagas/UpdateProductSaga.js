@@ -4,12 +4,8 @@ import { updateProductApi } from '../../../utils/Apis'
 
 function* updateProduct(action) {
   try {
-    console.log('action', action)
-
     // create a saga call with API update product
     const response = yield call(updateProductApi, action.data)
-    console.log('response', response)
-
     if (response.status === 200) {
       yield put({
         type: Types.UPDATE_PRODUCT_SUCCESS,
@@ -17,7 +13,7 @@ function* updateProduct(action) {
       })
     }
   } catch (e) {
-    // In case: getProducts failed
+    // In case: update product failed
     yield put({
       type: Types.UPDATE_PRODUCT_FAILED,
       error: e,

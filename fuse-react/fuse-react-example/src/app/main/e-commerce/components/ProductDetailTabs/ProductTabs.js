@@ -6,8 +6,6 @@ const tabItems = [
   'Basic Info',
   'Product Images',
   'Pricing',
-  'Inventory',
-  'Shipping',
 ]
 
 const ProductTabs = ({ tabValue, handleChangeTab }) => (
