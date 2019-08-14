@@ -6,12 +6,7 @@ import TableHeadProduct from './TableHeadProduct'
 import TableBodyProduct from './TableBodyProducts'
 import { AppConfig } from '../../config/AppConfig'
 
-const ProductsTable = ({
-  productList,
-  getProductsProcessing,
-  history,
-  getProductDetail,
-}) => {
+const ProductsTable = ({ productList, getProductsProcessing, history }) => {
   const [order, setOrder] = useState('asc')
   const [orderBy, setOrderBy] = useState(null)
   const [selected, setSlected] = useState([])
@@ -20,9 +15,10 @@ const ProductsTable = ({
   const [rowsPerPage, setRowsPerPage] = useState(AppConfig.rowsPerPage)
   useEffect(() => {
     getProductsProcessing()
-    if (productList.length > 0) {
-      setData(productList)
-    }
+  }, [])
+
+  useEffect(() => {
+    setData(productList)
   }, [productList.length])
 
   const handleSelectAll = event => {
@@ -77,7 +73,7 @@ const ProductsTable = ({
           />
 
           <TableBodyProduct
-            data={productList}
+            data={data}
             checkSelected={checkSelected}
             handleSelectItem={handleSelectItem}
             orderBy={orderBy}

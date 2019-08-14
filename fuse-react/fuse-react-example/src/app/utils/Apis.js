@@ -7,3 +7,6 @@ export const getProductDetailApi = productId =>
 
 export const updateProductApi = data =>
   axios.post('/api/e-commerce-app/product/save', data)
+
+export const addNewProductApi = data =>
+  axios.post('/api/e-commerce-app/product/add-new', data)

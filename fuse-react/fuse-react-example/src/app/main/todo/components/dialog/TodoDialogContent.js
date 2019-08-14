@@ -57,8 +57,6 @@ const TodoDialogContent = ({
 
   const handleChange = event => {
     const { name, value } = event.target
-    console.log('value', value)
-
     setForm({
       ...form,
       [name]: value,
@@ -101,8 +99,6 @@ const TodoDialogContent = ({
     if (todoDialog.type === 'edit') {
       updateTodo(form)
     } else {
-      console.log('form', form)
-
       addTodo(form)
     }
     closeTodoDialog()

@@ -3,6 +3,7 @@ import { Icon, TableCell, TableRow, Checkbox } from '@material-ui/core'
 import classNames from 'classnames'
 import _ from '@lodash'
 import whyDidYouRender from '@welldone-software/why-did-you-render'
+import PropTypes from 'prop-types'
 
 if (process.env.NODE_ENV !== 'production') {
   whyDidYouRender(React)
@@ -41,7 +42,7 @@ const TableRowProduct = ({
       </TableCell>
 
       <TableCell className="w-52" component="th" scope="row" padding="none">
-        {images.length > 0 ? (
+        {images && images.length > 0 ? (
           <img
             className="w-full block rounded"
             src={_.find(images, { id: featuredImageId }).url}
@@ -94,7 +95,33 @@ const TableRowProduct = ({
 
 TableRowProduct.whyDidYouRender = true
 
-const areEqual = (prevProps, nextProps) =>
-  prevProps.isSelected === nextProps.isSelected
+// const areEqual = (prevProps, nextProps) => prevProps.isSelected === nextProps.isSelected
 
-export default memo(TableRowProduct, areEqual)
+PropTypes.TableRowProduct = {
+  isSelected: PropTypes.bool,
+  handleSelectItem: PropTypes.func,
+  name: PropTypes.string,
+  categories: PropTypes.array,
+  featuredImageId: PropTypes.string,
+  images: PropTypes.array,
+  priceTaxIncl: PropTypes.number,
+  quantity: PropTypes.number,
+  active: PropTypes.bool,
+  id: PropTypes.string,
+  handleClickRowItem: PropTypes.func,
+}
+
+TableRowProduct.defaultProps = {
+  isSelected: false,
+  handleSelectItem: () => {},
+  name: '',
+  categories: [],
+  featuredImageId: '',
+  images: [],
+  priceTaxIncl: 0,
+  quantity: 0,
+  active: false,
+  id: '',
+  handleClickRowItem: () => {},
+}
+export default memo(TableRowProduct)

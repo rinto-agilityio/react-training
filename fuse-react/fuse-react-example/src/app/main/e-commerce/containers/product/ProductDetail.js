@@ -14,6 +14,7 @@ const mapStateToProps = ({ eCommerceApp }) => {
 const dispatchToProps = {
   getProductDetail: Creators.getProductDetailProcessing,
   updateProduct: Creators.updateProductProcessing,
+  addNewProduct: Creators.addNewProductProcessing,
 }
 
 export default withReducer('eCommerceApp', eCommerceReducer)(
