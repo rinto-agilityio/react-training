@@ -5,14 +5,16 @@ import { withRouter } from 'react-router-dom'
 import TableHeadProduct from './TableHeadProduct'
 import TableBodyProduct from './TableBodyProducts'
 import { AppConfig } from '../../config/AppConfig'
+import { getFilteredArray } from '../../../../utils'
 
-const ProductsTable = ({ productList, getProductsProcessing, history }) => {
+const ProductsTable = ({ productList, getProductsProcessing, history, deleteProduct, searchText }) => {
   const [order, setOrder] = useState('asc')
   const [orderBy, setOrderBy] = useState(null)
   const [selected, setSlected] = useState([])
   const [data, setData] = useState([])
   const [page, setPage] = useState(0)
   const [rowsPerPage, setRowsPerPage] = useState(AppConfig.rowsPerPage)
+
   useEffect(() => {
     getProductsProcessing()
   }, [])
@@ -20,6 +22,11 @@ const ProductsTable = ({ productList, getProductsProcessing, history }) => {
   useEffect(() => {
     setData(productList)
   }, [productList.length])
+
+  useEffect(() => {
+    const datafilter = getFilteredArray(productList, searchText)
+    setData(datafilter)
+  }, [searchText])
 
   const handleSelectAll = event => {
     const itemSlected = data.map(item => item.id)
@@ -57,6 +64,8 @@ const ProductsTable = ({ productList, getProductsProcessing, history }) => {
     history.push('/e-commerce/products/' + id)
   }
 
+  const handleDeleteProduct = () => deleteProduct(selected)
+
   const checkSelected = id => selected.indexOf(id) !== -1
 
   return (
@@ -70,6 +79,7 @@ const ProductsTable = ({ productList, getProductsProcessing, history }) => {
             onSelectAllClick={handleSelectAll}
             onRequestSort={handleRequestSort}
             rowCount={data.length}
+            handleDeleteProduct={handleDeleteProduct}
           />
 
           <TableBodyProduct

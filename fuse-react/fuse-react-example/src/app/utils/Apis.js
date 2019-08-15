@@ -10,3 +10,6 @@ export const updateProductApi = data =>
 
 export const addNewProductApi = data =>
   axios.post('/api/e-commerce-app/product/add-new', data)
+
+export const deleteProductApi = data =>
+  axios.put('/api/e-commerce-app/products/delete', data)

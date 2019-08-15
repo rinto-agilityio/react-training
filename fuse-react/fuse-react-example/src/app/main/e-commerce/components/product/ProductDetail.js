@@ -10,6 +10,8 @@ import ProductTabs from '../ProductDetailTabs/ProductTabs'
 import BasicInfoTab from '../ProductDetailTabs/BasicInfoTab'
 import ImageTab from '../ProductDetailTabs/ImageTab'
 import PricingTab from '../ProductDetailTabs/PricingTab'
+import InventoryTab from '../ProductDetailTabs/InventoryTab'
+
 import { FuseUtils } from '@fuse'
 
 const styles = theme => ({
@@ -130,6 +132,8 @@ const ProductDetail = ({
         )
       case 2:
         return <PricingTab form={form} handleChange={handleChange} />
+      case 3:
+        return <InventoryTab form={form} handleChange={handleChange} />
       default:
         return (
           <BasicInfoTab
@@ -170,6 +174,8 @@ PropTypes.ProductDetail = {
     description: PropTypes.string,
     name: PropTypes.string,
     images: PropTypes.array,
+    sku: PropTypes.string,
+    quantity: PropTypes.number
   }),
   match: PropTypes.object,
   getProductDetail: PropTypes.func,
@@ -185,6 +191,8 @@ ProductDetail.defaultProps = {
     handle: '',
     featuredImageId: 1,
     active: false,
+    sku: '',
+    quantity: 0
   },
   match: {},
   getProductDetail: () => {},

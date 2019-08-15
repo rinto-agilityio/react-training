@@ -14,6 +14,10 @@ export const { Types, Creators } = createActions({
   addNewProductProcessing: ['data'],
   addNewProductSuccess: null,
   addNewProductFailed: null,
+  deleteProductProcessing: ['listId'],
+  deleteProductSuccess: null,
+  deleteProductFailed: null,
+  getValueSearch: ['value']
 })
 
 const InitialState = Immutable({
@@ -32,7 +36,7 @@ const InitialState = Immutable({
     taxRate: 0,
     comparedPrice: 0,
     quantity: 0,
-    sku: 'A445BV',
+    sku: '',
     width: '1cm',
     height: '1cm',
     depth: '1cm',
@@ -40,6 +44,7 @@ const InitialState = Immutable({
     extraShippingFee: 0,
     active: false,
   },
+  searchText: ''
 })
 
 const getProductsProcessing = (state, action) => {
@@ -107,6 +112,27 @@ const addNewProductFailed = (state, action) =>
     isProcessing: false,
   })
 
+const deleteProductProcessing = (state, action) =>
+state.merge({
+  isProcessing: false,
+})
+
+const deleteProductSuccess = (state, action) =>
+state.merge({
+  isProcessing: false,
+  productList: action.products
+})
+
+const deleteProductFailed = (state, action) =>
+state.merge({
+  isProcessing: false,
+})
+
+const getValueSearch = (state, action) =>
+state.merge({
+  searchText: action.value,
+})
+
 // Assign handler to types.
 const HANDLERS = {
   [Types.GET_PRODUCTS_PROCESSING]: getProductsProcessing,
@@ -121,6 +147,10 @@ const HANDLERS = {
   [Types.ADD_NEW_PRODUCT_PROCESSING]: addNewProductProcessing,
   [Types.ADD_NEW_PRODUCT_SUCCESS]: addNewProductSuccess,
   [Types.ADD_NEW_PRODUCT_FAILED]: addNewProductFailed,
+  [Types.DELETE_PRODUCT_PROCESSING]: deleteProductProcessing,
+  [Types.DELETE_PRODUCT_SUCCESS]: deleteProductSuccess,
+  [Types.DELETE_PRODUCT_FAILED]: deleteProductFailed,
+  [Types.GET_VALUE_SEARCH]: getValueSearch
 }
 
 // Create reducers by pass state and handlers

@@ -8,11 +8,13 @@ import { Creators, eCommerceReducer } from '../../redux'
 const mapStateToProps = ({ eCommerceApp }) => {
   return {
     productList: eCommerceApp.productList,
+    searchText: eCommerceApp.searchText
   }
 }
 
 const dispatchToProps = {
   getProductsProcessing: Creators.getProductsProcessing,
+  deleteProduct: Creators.deleteProductProcessing
 }
 
 export default withReducer('eCommerceApp', eCommerceReducer)(

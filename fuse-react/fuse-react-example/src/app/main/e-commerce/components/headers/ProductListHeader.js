@@ -8,11 +8,10 @@ import {
   Typography,
   MuiThemeProvider,
 } from '@material-ui/core'
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-const ProductListHeader = ({ mainTheme, searchText, setSearchText }) => {
+const ProductListHeader = ({ mainTheme, searchText, handleSearch }) => {
   return (
     <div className="flex flex-1 w-full items-center justify-between">
       <div className="flex items-center">
@@ -46,7 +45,7 @@ const ProductListHeader = ({ mainTheme, searchText, setSearchText }) => {
                 inputProps={{
                   'aria-label': 'Search',
                 }}
-                onChange={setSearchText}
+                onChange={handleSearch}
               />
             </Paper>
           </FuseAnimate>
@@ -67,25 +66,14 @@ const ProductListHeader = ({ mainTheme, searchText, setSearchText }) => {
   )
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    {
-      // setSearchText: Actions.setProductsSearchText
-    },
-    dispatch
-  )
-}
-
 function mapStateToProps({ eCommerceApp, fuse }) {
   return {
-    // searchText: eCommerceApp.products.searchText,
+    searchText: eCommerceApp.searchText,
     mainTheme: fuse.settings.mainTheme,
   }
 }
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(ProductListHeader)
-
-// export default ProductListHeader
