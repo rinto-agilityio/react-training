@@ -2,7 +2,7 @@ import React from 'react'
 import { Tab, Tabs } from '@material-ui/core'
 import PropTypes from 'prop-types'
 
-const tabItems = ['Basic Info', 'Product Images', 'Pricing']
+const tabItems = ['Basic Info', 'Product Images', 'Pricing', 'Inventory']
 
 const ProductTabs = ({ tabValue, handleChangeTab }) => (
   <Tabs
