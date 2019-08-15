@@ -24,6 +24,7 @@ const TableHeadProduct = ({
   onRequestSort,
   orderBy,
   order,
+  handleDeleteProduct
 }) => {
   const createSortHandler = property => event => {
     onRequestSort(event, property)
@@ -38,7 +39,7 @@ const TableHeadProduct = ({
             checked={numSelected === rowCount}
             onChange={event => onSelectAllClick(event)}
           />
-          {numSelected > 0 && <MoreAction classes={classes} />}
+          {numSelected > 0 && <MoreAction classes={classes} handleDeleteProduct={handleDeleteProduct}/>}
         </TableCell>
         {rows.map(row => {
           return (

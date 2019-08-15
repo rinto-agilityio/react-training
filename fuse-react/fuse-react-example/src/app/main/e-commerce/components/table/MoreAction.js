@@ -10,7 +10,7 @@ import {
 } from '@material-ui/core'
 import classNames from 'classnames'
 
-const MoreAction = ({ classes }) => {
+const MoreAction = ({ classes, handleDeleteProduct }) => {
   const [selectedProductsMenu, setSelectedProductsMenu] = useState(null)
 
   const openSelectedProductsMenu = event => {
@@ -20,7 +20,10 @@ const MoreAction = ({ classes }) => {
   const closeSelectedProductsMenu = () => {
     setSelectedProductsMenu(null)
   }
-
+  const deleteProduct = () => {
+    handleDeleteProduct()
+    closeSelectedProductsMenu()
+  }
   return (
     <div
       className={classNames(
@@ -43,9 +46,7 @@ const MoreAction = ({ classes }) => {
       >
         <MenuList>
           <MenuItem
-            onClick={() => {
-              closeSelectedProductsMenu()
-            }}
+            onClick={deleteProduct}
           >
             <ListItemIcon className={classes.icon}>
               <Icon>delete</Icon>
