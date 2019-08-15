@@ -3209,6 +3209,13 @@ mock.onGet('/api/e-commerce-app/orders').reply(() => {
   return [200, eCommerceDB.orders]
 })
 
+mock.onPut('/api/e-commerce-app/products/delete').reply(request => {
+  const data = JSON.parse(request.data)
+  const products = eCommerceDB.products.filter(product => data.indexOf(product.id) === -1)
+
+  return [200, products]
+})
+
 mock.onGet('/api/e-commerce-app/order').reply(request => {
   const { orderId } = request.params
   const response = _.find(eCommerceDB.orders, { id: orderId })
