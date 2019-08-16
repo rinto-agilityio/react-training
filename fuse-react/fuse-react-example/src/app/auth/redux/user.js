@@ -19,38 +19,25 @@ const InitialState = Immutable({
   },
 })
 
-const getUserData = (state, action) => {
-  return state.merge({
-    isProcessing: true,
-  })
-}
+const getUserData = state => (
+  state.merge({ isProcessing: true })
+)
 
-const getUserDataFailed = (state, action) => {
-  return state.merge({
-    error: action.error,
-  })
-}
 
-const setUserData = (state, action) => {
-  return state.merge({
-    ...state,
-    ...action.user,
-  })
-}
+const getUserDataFailed = (state, action) => state.merge({ error: action.error })
 
-const logOutUser = state => {
-  return state.merge({
-    ...InitialState,
-  })
-}
+const setUserData = (state, action) => state.merge({ ...state, ...action.user })
 
-const showMessage = (state, action) => {
-  return state.merge({
+
+const logOutUser = state => state.merge({ ...InitialState })
+
+const showMessage = (state, action) => (
+  state.merge({
     isProcessing: false,
     success: false,
     error: action.payload,
   })
-}
+)
 
 // Assign handler to types.
 const HANDLERS = {

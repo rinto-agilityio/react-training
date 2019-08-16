@@ -6,8 +6,6 @@ function* deleteProduct(action) {
   try {
     // create a saga call with API delete product
     const response = yield call(deleteProductApi, action.listId)
-    console.log('response', response);
-
     if (response.status === 200) {
       yield put({
         type: Types.DELETE_PRODUCT_SUCCESS,
@@ -15,7 +13,7 @@ function* deleteProduct(action) {
       })
     }
   } catch (e) {
-    // In case: getProducts failed
+    // In case: delete products failed
     yield put({
       type: Types.DELETE_PRODUCT_FAILED,
       error: e,
