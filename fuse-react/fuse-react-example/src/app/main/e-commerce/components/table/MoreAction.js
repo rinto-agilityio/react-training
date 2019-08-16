@@ -9,7 +9,6 @@ import {
   ListItemText,
 } from '@material-ui/core'
 import PropTypes from 'prop-types'
-
 import classNames from 'classnames'
 
 const MoreAction = ({ classes, handleDeleteProduct }) => {
@@ -60,6 +59,7 @@ const MoreAction = ({ classes, handleDeleteProduct }) => {
     </div>
   )
 }
+
 MoreAction.propTypes = {
   classes: PropTypes.shape({
     actionsButtonWrapper: PropTypes.string,

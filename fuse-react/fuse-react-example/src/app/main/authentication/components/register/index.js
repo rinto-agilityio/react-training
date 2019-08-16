@@ -9,11 +9,8 @@ import {
 } from '@material-ui/core'
 import { darken } from '@material-ui/core/styles/colorManipulator'
 import { FuseAnimate } from '@fuse'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import classNames from 'classnames'
-import * as Actions from 'app/auth/store/actions'
 import FirebaseRegisterForm from './FirebaseRegisterForm'
 import JwtRegisterForm from './JwtRegisterForm'
 
@@ -194,27 +191,4 @@ class Register extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    {
-      registerWithFirebase: Actions.registerWithFirebase,
-    },
-    dispatch
-  )
-}
-
-function mapStateToProps({ auth }) {
-  return {
-    login: auth.login,
-    user: auth.user,
-  }
-}
-
-export default withStyles(styles, { withTheme: true })(
-  withRouter(
-    connect(
-      mapStateToProps,
-      mapDispatchToProps
-    )(Register)
-  )
-)
+export default withStyles(styles, { withTheme: true })(Register)

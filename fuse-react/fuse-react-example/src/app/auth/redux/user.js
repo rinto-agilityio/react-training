@@ -23,7 +23,6 @@ const getUserData = state => (
   state.merge({ isProcessing: true })
 )
 
-
 const getUserDataFailed = (state, action) => (
   state.merge({ error: action.error })
 )

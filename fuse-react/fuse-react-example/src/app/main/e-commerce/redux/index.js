@@ -122,7 +122,7 @@ const addNewProductFailed = state => (
   })
 )
 
-const deleteProductProcessing = (state, action) => (
+const deleteProductProcessing = state => (
   state.merge({
     isProcessing: false,
   })

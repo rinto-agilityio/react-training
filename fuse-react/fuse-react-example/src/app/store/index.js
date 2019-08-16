@@ -3,6 +3,8 @@ import { applyMiddleware, createStore } from 'redux'
 import { createLogger } from 'redux-logger'
 import { persistStore, persistReducer } from 'redux-persist'
 import createSagaMiddleware from 'redux-saga'
+import immutableTransform from 'redux-persist-transform-immutable'
+
 import storage from 'redux-persist/lib/storage'
 import createReducer from './reducers'
 import rootSagas from './RootSagas'
@@ -16,6 +18,7 @@ const sagaMiddileware = createSagaMiddleware()
 const loggerMiddleware = createLogger()
 let middleWares = [sagaMiddileware]
 const persistConfig = {
+  transforms: [immutableTransform()],
   key: 'root',
   storage,
   whitelist: ['auth'],

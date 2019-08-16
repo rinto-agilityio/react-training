@@ -12,13 +12,13 @@ const navigationConfig = [
         icon: 'whatshot',
         url: '/example',
       },
-      {
-        id: 'todo',
-        title: 'To-Do',
-        type: 'item',
-        icon: 'check_box',
-        url: '/todos',
-      },
+      // {
+      //   id: 'todo',
+      //   title: 'To-Do',
+      //   type: 'item',
+      //   icon: 'check_box',
+      //   url: '/todos',
+      // },
       {
         id: 'e-commerce',
         title: 'E-Commerce',

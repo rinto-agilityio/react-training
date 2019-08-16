@@ -1,15 +1,15 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import Register from '../../components/register'
 import { withRouter } from 'react-router-dom'
-import * as authActions from 'app/auth/store/actions'
+import { Creators } from 'app/auth/redux/register'
+import Register from '../../components/register'
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
-      registerWithFirebase: authActions.registerWithFirebase,
+      registerWithFirebase: Creators.registerWithFirebaseProcessing,
     },
-    dispatch
+    dispatch,
   )
 }
 
@@ -24,6 +24,6 @@ function mapStateToProps({ auth }) {
 export default withRouter(
   connect(
     mapStateToProps,
-    mapDispatchToProps
-  )(Register)
+    mapDispatchToProps,
+  )(Register),
 )

@@ -67,4 +67,5 @@ TableBodyProduct.defaultProps = {
   rowsPerPage: 0,
   handleClickRowItem: () => {},
 }
+
 export default TableBodyProduct

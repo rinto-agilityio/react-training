@@ -16,7 +16,7 @@ const InitialState = Immutable({
   },
 })
 
-const loginWithFirebaseProcessing = (state, action) => (
+const loginWithFirebaseProcessing = state => (
   state.merge({
     isProcessing: true,
   })
