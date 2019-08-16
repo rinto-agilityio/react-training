@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Table, TablePagination } from '@material-ui/core'
 import { FuseScrollbars } from '@fuse'
 import { withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import TableHeadProduct from './TableHeadProduct'
 import TableBodyProduct from './TableBodyProducts'
 import { AppConfig } from '../../config/AppConfig'
@@ -61,7 +62,7 @@ const ProductsTable = ({ productList, getProductsProcessing, history, deleteProd
   }
 
   const handleClickRowItem = id => {
-    history.push('/e-commerce/products/' + id)
+    history.push(`/e-commerce/products/ + ${id}`)
   }
 
   const handleDeleteProduct = () => deleteProduct(selected)
@@ -111,6 +112,22 @@ const ProductsTable = ({ productList, getProductsProcessing, history, deleteProd
       />
     </div>
   )
+}
+
+ProductsTable.propTypes = {
+  productList: PropTypes.array,
+  getProductsProcessing: PropTypes.func,
+  history: PropTypes.object,
+  deleteProduct: PropTypes.func,
+  searchText: PropTypes.string,
+}
+
+ProductsTable.defaultProps = {
+  productList: [],
+  getProductsProcessing: () => {},
+  history: {},
+  deleteProduct: () => {},
+  searchText: '',
 }
 
 export default withRouter(ProductsTable)

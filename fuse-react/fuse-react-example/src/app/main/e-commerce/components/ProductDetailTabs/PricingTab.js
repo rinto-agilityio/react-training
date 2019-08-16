@@ -68,7 +68,7 @@ const PricingTab = ({ handleChange, form }) => (
   </div>
 )
 
-PropTypes.PricingTab = {
+PricingTab.propTypes = {
   form: PropTypes.shape({
     comparedPrice: PropTypes.number,
     taxRate: PropTypes.number,

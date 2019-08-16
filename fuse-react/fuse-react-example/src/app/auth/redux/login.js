@@ -16,26 +16,26 @@ const InitialState = Immutable({
   },
 })
 
-const loginWithFirebaseProcessing = (state, action) => {
-  return state.merge({
+const loginWithFirebaseProcessing = (state, action) => (
+  state.merge({
     isProcessing: true,
   })
-}
+)
 
-const loginWithFirebaseSuccess = (state, action) => {
-  return state.merge({
+const loginWithFirebaseSuccess = state => (
+  state.merge({
     isProcessing: false,
     success: true,
   })
-}
+)
 
-const loginWithFirebaseFailed = (state, action) => {
-  return state.merge({
+const loginWithFirebaseFailed = (state, action) => (
+  state.merge({
     isProcessing: false,
     success: false,
     error: action.payload,
   })
-}
+)
 
 // Assign handler to types.
 const HANDLERS = {

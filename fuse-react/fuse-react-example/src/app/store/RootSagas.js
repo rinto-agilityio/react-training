@@ -17,6 +17,6 @@ export default function* RootSagas() {
     GetProductDetailSaga(),
     UpdateProduct(),
     AddNewProductSaga(),
-    DeleteProductSaga()
+    DeleteProductSaga(),
   ])
 }

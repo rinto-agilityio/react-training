@@ -77,7 +77,7 @@ const BasicInfoTab = ({ handleChange, form, handleChipChange }) => (
   </div>
 )
 
-PropTypes.BasicInfoTab = {
+BasicInfoTab.propTypes = {
   form: PropTypes.shape({
     tags: PropTypes.array,
     categories: PropTypes.array,
@@ -85,6 +85,7 @@ PropTypes.BasicInfoTab = {
     name: PropTypes.string,
   }),
   handleChange: PropTypes.func,
+  handleChipChange: PropTypes.func,
 }
 
 BasicInfoTab.defaultProps = {
@@ -94,8 +95,8 @@ BasicInfoTab.defaultProps = {
     description: [],
     name: '',
   },
-  match: {},
   handleChange: () => {},
+  handleChipChange: () => {},
 }
 
 export default BasicInfoTab

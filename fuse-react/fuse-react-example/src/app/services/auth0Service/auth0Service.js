@@ -67,7 +67,7 @@ class auth0Service {
   setSession = authResult => {
     if (authResult && authResult.accessToken && authResult.idToken) {
       // Set the time that the access token will expire at
-      let expiresAt = JSON.stringify(
+      const expiresAt = JSON.stringify(
         authResult.expiresIn * 1000 + new Date().getTime()
       )
       localStorage.setItem('access_token', authResult.accessToken)
@@ -90,18 +90,18 @@ class auth0Service {
     }
     // Check whether the current time is past the
     // access token's expiry time
-    let expiresAt = JSON.parse(localStorage.getItem('expires_at'))
+    const expiresAt = JSON.parse(localStorage.getItem('expires_at'))
     const isNotExpired = new Date().getTime() < expiresAt
     if (isNotExpired) {
       return true
-    } else {
-      this.logout()
-      return false
     }
+
+    this.logout()
+    return false
   }
 
-  getUserData = () => {
-    return new Promise((resolve, reject) => {
+  getUserData = () => (
+    new Promise((resolve, reject) => {
       const tokenData = this.getTokenData()
       const { sub: userId } = tokenData
 
@@ -124,7 +124,7 @@ class auth0Service {
           reject(error)
         })
     })
-  }
+  )
 
   updateUserData = user_metadata => {
     const tokenData = this.getTokenData()

@@ -21,9 +21,6 @@ function* deleteProduct(action) {
   }
 }
 
-/*
-  Starts uploadStudents on each dispatched `UPLOAD_STUDENTS` action.
-*/
 function* DeleteProductSaga() {
   yield takeLatest(Types.DELETE_PRODUCT_PROCESSING, deleteProduct)
 }

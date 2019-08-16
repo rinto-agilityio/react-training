@@ -24,12 +24,18 @@ const getUserData = state => (
 )
 
 
-const getUserDataFailed = (state, action) => state.merge({ error: action.error })
+const getUserDataFailed = (state, action) => (
+  state.merge({ error: action.error })
+)
 
-const setUserData = (state, action) => state.merge({ ...state, ...action.user })
+const setUserData = (state, action) => (
+  state.merge({ ...state, ...action.user })
+)
 
 
-const logOutUser = state => state.merge({ ...InitialState })
+const logOutUser = state => (
+  state.merge({ ...InitialState })
+)
 
 const showMessage = (state, action) => (
   state.merge({

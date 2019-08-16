@@ -20,7 +20,7 @@ const ProductTabs = ({ tabValue, handleChangeTab }) => (
   </Tabs>
 )
 
-PropTypes.ProductTabs = {
+ProductTabs.propTypes = {
   tabValue: PropTypes.number,
   handleChangeTab: PropTypes.func,
 }

@@ -45,18 +45,22 @@ const ImageTab = ({ form, setFeaturedImage, classes, handleChange }) => (
   </div>
 )
 
-PropTypes.ImageTab = {
+ImageTab.propTypes = {
   form: PropTypes.shape({
     images: PropTypes.array,
   }),
   setFeaturedImage: PropTypes.func,
+  classes: PropTypes.object,
+  handleChange: PropTypes.func,
 }
 
 ImageTab.defaultProps = {
   form: {
     images: [],
   },
-  images: () => {},
+  setFeaturedImage: () => {},
+  classes: {},
+  handleChange: () => {},
 }
 
 export default ImageTab

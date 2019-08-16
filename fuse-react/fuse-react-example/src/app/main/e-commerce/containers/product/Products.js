@@ -5,12 +5,10 @@ import Products from '../../components/product/Products'
 
 import { Creators, eCommerceReducer } from '../../redux'
 
-const mapStateToProps = ({ eCommerceApp }) => {
-  return {
-    productList: eCommerceApp.productList,
-    searchText: eCommerceApp.searchText
-  }
-}
+const mapStateToProps = ({ eCommerceApp }) => ({
+  productList: eCommerceApp.productList,
+  searchText: eCommerceApp.searchText,
+})
 
 const dispatchToProps = {
   getProductsProcessing: Creators.getProductsProcessing,
@@ -20,6 +18,6 @@ const dispatchToProps = {
 export default withReducer('eCommerceApp', eCommerceReducer)(
   connect(
     mapStateToProps,
-    dispatchToProps
-  )(Products)
+    dispatchToProps,
+  )(Products),
 )

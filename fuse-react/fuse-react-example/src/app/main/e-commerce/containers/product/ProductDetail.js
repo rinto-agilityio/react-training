@@ -5,11 +5,9 @@ import ProductDetail from '../../components/product/ProductDetail'
 
 import { Creators, eCommerceReducer } from '../../redux'
 
-const mapStateToProps = ({ eCommerceApp }) => {
-  return {
-    productEditing: eCommerceApp.productEditing,
-  }
-}
+const mapStateToProps = ({ eCommerceApp }) => ({
+  productEditing: eCommerceApp.productEditing,
+})
 
 const dispatchToProps = {
   getProductDetail: Creators.getProductDetailProcessing,
@@ -20,6 +18,6 @@ const dispatchToProps = {
 export default withReducer('eCommerceApp', eCommerceReducer)(
   connect(
     mapStateToProps,
-    dispatchToProps
-  )(ProductDetail)
+    dispatchToProps,
+  )(ProductDetail),
 )

@@ -1,12 +1,13 @@
-import React, { useState }from 'react'
+import React, { useState } from 'react'
 import { FusePageCarded } from '@fuse'
+import PropTypes from 'prop-types'
 import ProductsTable from '../../containers/table'
-import ProductListHeader from '../headers/ProductListHeader'
+import ProductListHeader from '../../containers/header/ProductListHeader'
 
 const Products = ({ getValueSearch }) => {
   const [searchText, setSearchText] = useState('')
 
-  const handleSearch = (event) => {
+  const handleSearch = event => {
     setSearchText(event.target.value)
     getValueSearch(event.target.value)
   }
@@ -22,6 +23,14 @@ const Products = ({ getValueSearch }) => {
       innerScroll
     />
   )
+}
+
+Products.propTypes = {
+  getValueSearch: PropTypes.func,
+}
+
+Products.defaultProps = {
+  getValueSearch: () => {},
 }
 
 export default Products

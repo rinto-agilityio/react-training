@@ -8,6 +8,8 @@ import {
   ListItemIcon,
   ListItemText,
 } from '@material-ui/core'
+import PropTypes from 'prop-types'
+
 import classNames from 'classnames'
 
 const MoreAction = ({ classes, handleDeleteProduct }) => {
@@ -28,7 +30,7 @@ const MoreAction = ({ classes, handleDeleteProduct }) => {
     <div
       className={classNames(
         'flex items-center justify-center absolute w-64 pin-t pin-l ml-68 h-64 z-10',
-        classes.actionsButtonWrapper
+        classes.actionsButtonWrapper,
       )}
     >
       <IconButton
@@ -57,6 +59,21 @@ const MoreAction = ({ classes, handleDeleteProduct }) => {
       </Menu>
     </div>
   )
+}
+MoreAction.propTypes = {
+  classes: PropTypes.shape({
+    actionsButtonWrapper: PropTypes.string,
+    icon: PropTypes.string,
+  }),
+  handleDeleteProduct: PropTypes.func,
+}
+
+MoreAction.defaultProps = {
+  classes: {
+    actionsButtonWrapper: '',
+    icon: '',
+  },
+  handleDeleteProduct: () => {},
 }
 
 export default MoreAction

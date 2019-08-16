@@ -21,9 +21,6 @@ function* getProducts() {
   }
 }
 
-/*
-  Starts uploadStudents on each dispatched `UPLOAD_STUDENTS` action.
-*/
 function* GetProductsSaga() {
   yield takeLatest(Types.GET_PRODUCTS_PROCESSING, getProducts)
 }

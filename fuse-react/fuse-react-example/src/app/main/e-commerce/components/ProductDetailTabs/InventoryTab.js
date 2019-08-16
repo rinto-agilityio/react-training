@@ -1,7 +1,8 @@
 import React from 'react'
 import {
   TextField,
-} from "@material-ui/core"
+} from '@material-ui/core'
+
 import PropTypes from 'prop-types'
 
 const InventoryTab = ({ handleChange, form }) => (
@@ -33,10 +34,10 @@ const InventoryTab = ({ handleChange, form }) => (
   </div>
 )
 
-PropTypes.InventoryTab = {
+InventoryTab.propTypes = {
   form: PropTypes.shape({
     sku: PropTypes.string,
-    quantity: PropTypes.number
+    quantity: PropTypes.number,
   }),
   handleChange: PropTypes.func,
 }
@@ -44,9 +45,9 @@ PropTypes.InventoryTab = {
 InventoryTab.defaultProps = {
   form: {
     sku: '',
-    quantity: 0
+    quantity: 0,
   },
-  handleChange: () => {}
+  handleChange: () => {},
 }
 
 export default InventoryTab

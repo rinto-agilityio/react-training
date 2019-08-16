@@ -24,9 +24,6 @@ function* getProductDetail(action) {
   }
 }
 
-/*
-  Starts uploadStudents on each dispatched `UPLOAD_STUDENTS` action.
-*/
 function* GetProductDetailSaga() {
   yield takeLatest(Types.GET_PRODUCT_DETAIL_PROCESSING, getProductDetail)
 }

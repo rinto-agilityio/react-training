@@ -84,7 +84,7 @@ const ProductDetail = ({
       (window.URL || window.webkitURL).createObjectURL(e.target.files[0])
     const imageItem = {
       id: Math.floor(Math.random() * 10),
-      url: url,
+      url,
       type: 'image',
     }
     setForm({
@@ -94,11 +94,12 @@ const ProductDetail = ({
     })
   }
 
-  const handleChipChange = (value, name) =>
+  const handleChipChange = (value, name) => (
     setForm({
       ...form,
       [name]: value.map(item => item.value),
     })
+  )
 
   const submitSaveProduct = () => {
     if (form.id) {
@@ -109,15 +110,15 @@ const ProductDetail = ({
     }
   }
 
-  const setFeaturedImage = id =>
+  const setFeaturedImage = id => (
     setForm({
       ...form,
       featuredImageId: id,
     })
+  )
 
-  const canBeSubmitted = () => {
-    return _.isEqual(productEditing, form)
-  }
+  const canBeSubmitted = () => _.isEqual(productEditing, form)
+
 
   const renderContentTab = () => {
     switch (tabValue) {
@@ -151,14 +152,14 @@ const ProductDetail = ({
         toolbar: 'p-0',
         header: 'min-h-72 h-72 sm:h-136 sm:min-h-136',
       }}
-      header={
+      header={(
         <ProductItemHeader
           form={form}
           handleChange={handleChange}
           canBeSubmitted={canBeSubmitted}
           submitSaveProduct={submitSaveProduct}
         />
-      }
+      )}
       contentToolbar={
         <ProductTabs handleChangeTab={handleChangeTab} tabValue={tabValue} />
       }
@@ -167,7 +168,7 @@ const ProductDetail = ({
   )
 }
 
-PropTypes.ProductDetail = {
+ProductDetail.propTypes = {
   productEditing: PropTypes.shape({
     tags: PropTypes.array,
     categories: PropTypes.array,
@@ -175,10 +176,14 @@ PropTypes.ProductDetail = {
     name: PropTypes.string,
     images: PropTypes.array,
     sku: PropTypes.string,
-    quantity: PropTypes.number
+    quantity: PropTypes.number,
   }),
   match: PropTypes.object,
   getProductDetail: PropTypes.func,
+  updateProduct: PropTypes.func,
+  addNewProduct: PropTypes.func,
+  classes: PropTypes.object,
+  history: PropTypes.object,
 }
 
 ProductDetail.defaultProps = {
@@ -192,9 +197,13 @@ ProductDetail.defaultProps = {
     featuredImageId: 1,
     active: false,
     sku: '',
-    quantity: 0
+    quantity: 0,
   },
   match: {},
   getProductDetail: () => {},
+  updateProduct: () => {},
+  addNewProduct: () => {},
+  classes: {},
+  history: {},
 }
 export default withStyles(styles, { withTheme: true })(ProductDetail)

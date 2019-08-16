@@ -17,7 +17,7 @@ export const { Types, Creators } = createActions({
   deleteProductProcessing: ['listId'],
   deleteProductSuccess: null,
   deleteProductFailed: null,
-  getValueSearch: ['value']
+  getValueSearch: ['value'],
 })
 
 const InitialState = Immutable({
@@ -44,94 +44,108 @@ const InitialState = Immutable({
     extraShippingFee: 0,
     active: false,
   },
-  searchText: ''
+  searchText: '',
 })
 
-const getProductsProcessing = (state, action) => {
-  return state.merge({
+const getProductsProcessing = state => (
+  state.merge({
     isProcessing: true,
   })
-}
+)
 
-const getProductsSuccess = (state, action) => {
-  return state.merge({
+const getProductsSuccess = (state, action) => (
+  state.merge({
     isProcessing: false,
     productList: action.productList,
   })
-}
+)
 
-const getProductsFailed = (state, action) =>
+const getProductsFailed = state => (
   state.merge({
     isProcessing: false,
   })
+)
 
-const getProductDetailProcessing = (state, action) =>
+const getProductDetailProcessing = state => (
   state.merge({
     isProcessing: true,
   })
+)
 
-const getProductDetailSuccess = (state, action) =>
+const getProductDetailSuccess = (state, action) => (
   state.merge({
     isProcessing: false,
     productEditing: action.productEditing,
   })
+)
 
-const getProductDetailFailed = (state, action) =>
+const getProductDetailFailed = state => (
   state.merge({
     isProcessing: false,
   })
+)
 
-const updateProductProcessing = (state, action) =>
+const updateProductProcessing = state => (
   state.merge({
     isProcessing: true,
   })
+)
 
-const updateProductSuccess = (state, action) =>
+const updateProductSuccess = state => (
   state.merge({
     isProcessing: false,
   })
+)
 
-const updateProductFailed = (state, action) =>
+const updateProductFailed = state => (
   state.merge({
     isProcessing: false,
   })
+)
 
-const addNewProductProcessing = (state, action) =>
+const addNewProductProcessing = state => (
   state.merge({
     isProcessing: false,
   })
+)
 
-const addNewProductSuccess = (state, action) =>
+const addNewProductSuccess = (state, action) => (
   state.merge({
     isProcessing: false,
     productList: [action.product, ...state.productList],
   })
+)
 
-const addNewProductFailed = (state, action) =>
+const addNewProductFailed = state => (
   state.merge({
     isProcessing: false,
   })
+)
 
-const deleteProductProcessing = (state, action) =>
-state.merge({
-  isProcessing: false,
-})
+const deleteProductProcessing = (state, action) => (
+  state.merge({
+    isProcessing: false,
+  })
+)
 
-const deleteProductSuccess = (state, action) =>
-state.merge({
-  isProcessing: false,
-  productList: action.products
-})
+const deleteProductSuccess = (state, action) => (
+  state.merge({
+    isProcessing: false,
+    productList: action.products,
+  })
+)
 
-const deleteProductFailed = (state, action) =>
-state.merge({
-  isProcessing: false,
-})
+const deleteProductFailed = state => (
+  state.merge({
+    isProcessing: false,
+  })
+)
 
-const getValueSearch = (state, action) =>
-state.merge({
-  searchText: action.value,
-})
+const getValueSearch = (state, action) => (
+  state.merge({
+    searchText: action.value,
+  })
+)
 
 // Assign handler to types.
 const HANDLERS = {

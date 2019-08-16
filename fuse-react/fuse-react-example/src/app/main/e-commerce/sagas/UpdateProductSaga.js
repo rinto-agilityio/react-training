@@ -21,9 +21,6 @@ function* updateProduct(action) {
   }
 }
 
-/*
-  Starts uploadStudents on each dispatched `UPLOAD_STUDENTS` action.
-*/
 function* UpdateProductsSaga() {
   yield takeLatest(Types.UPDATE_PRODUCT_PROCESSING, updateProduct)
 }

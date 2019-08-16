@@ -8,8 +8,10 @@ import {
   Tooltip,
   withStyles,
 } from '@material-ui/core'
+import PropTypes from 'prop-types'
 import { rows } from '../../../../contants/DataRows'
 import MoreAction from './MoreAction'
+
 const styles = theme => ({
   actionsButtonWrapper: {
     background: theme.palette.background.paper,
@@ -24,7 +26,7 @@ const TableHeadProduct = ({
   onRequestSort,
   orderBy,
   order,
-  handleDeleteProduct
+  handleDeleteProduct,
 }) => {
   const createSortHandler = property => event => {
     onRequestSort(event, property)
@@ -39,39 +41,60 @@ const TableHeadProduct = ({
             checked={numSelected === rowCount}
             onChange={event => onSelectAllClick(event)}
           />
-          {numSelected > 0 && <MoreAction classes={classes} handleDeleteProduct={handleDeleteProduct}/>}
+          {numSelected > 0 && <MoreAction classes={classes} handleDeleteProduct={handleDeleteProduct} />}
         </TableCell>
-        {rows.map(row => {
-          return (
-            <TableCell
-              key={row.id}
-              align={row.align}
-              padding={row.disablePadding ? 'none' : 'default'}
-              sortDirection={orderBy === row.id ? order : false}
-            >
-              {row.sort && (
-                <Tooltip
-                  title="Sort"
-                  placement={
-                    row.align === 'right' ? 'bottom-end' : 'bottom-start'
-                  }
-                  enterDelay={300}
+        {rows.map(row => (
+          <TableCell
+            key={row.id}
+            align={row.align}
+            padding={row.disablePadding ? 'none' : 'default'}
+            sortDirection={orderBy === row.id ? order : false}
+          >
+            {row.sort && (
+              <Tooltip
+                title="Sort"
+                placement={
+                  row.align === 'right' ? 'bottom-end' : 'bottom-start'
+                }
+                enterDelay={300}
+              >
+                <TableSortLabel
+                  active={orderBy === row.id}
+                  direction={order}
+                  onClick={createSortHandler(row.id)}
                 >
-                  <TableSortLabel
-                    active={orderBy === row.id}
-                    direction={order}
-                    onClick={createSortHandler(row.id)}
-                  >
-                    {row.label}
-                  </TableSortLabel>
-                </Tooltip>
-              )}
-            </TableCell>
-          )
-        })}
+                  {row.label}
+                </TableSortLabel>
+              </Tooltip>
+            )}
+          </TableCell>
+        ))}
       </TableRow>
     </TableHead>
   )
 }
+
+TableHeadProduct.propTypes = {
+  classes: PropTypes.object,
+  onSelectAllClick: PropTypes.func,
+  numSelected: PropTypes.number,
+  rowCount: PropTypes.number,
+  onRequestSort: PropTypes.func,
+  orderBy: PropTypes.string,
+  order: PropTypes.string,
+  handleDeleteProduct: PropTypes.func,
+}
+
+TableHeadProduct.defaultProps = {
+  classes: {},
+  onSelectAllClick: () => {},
+  numSelected: 0,
+  rowCount: 0,
+  onRequestSort: () => {},
+  orderBy: '',
+  order: '',
+  handleDeleteProduct: () => {},
+}
+
 
 export default withStyles(styles, { withTheme: true })(TableHeadProduct)
