@@ -2,26 +2,26 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as userActions from 'app/auth/store/actions'
 import { bindActionCreators } from 'redux'
+import PropTypes from 'prop-types'
 import * as Actions from 'app/store/actions'
-import { Creators as UserCreators } from './redux/user'
 import firebaseService from 'app/services/firebaseService'
 import auth0Service from 'app/services/auth0Service'
 import jwtService from 'app/services/jwtService'
+import { Creators as UserCreators } from './redux/user'
 
 class Auth extends Component {
-  /*eslint-disable-next-line no-useless-constructor*/
   constructor(props) {
     super(props)
 
     /**
      * Comment the line if you do not use JWt
      */
-    this.jwtCheck()
+    // this.jwtCheck()
 
     /**
      * Comment the line if you do not use Auth0
      */
-    //this.auth0Check();
+    // this.auth0Check();
 
     /**
      * Comment the line if you do not use Firebase
@@ -30,8 +30,9 @@ class Auth extends Component {
   }
 
   jwtCheck = () => {
+    const { showMessage, setUserData, logout } = this.props
     jwtService.on('onAutoLogin', () => {
-      this.props.showMessage({ message: 'Logging in with JWT' })
+      showMessage({ message: 'Logging in with JWT' })
 
       /**
        * Sign in and retrieve user data from Api
@@ -39,20 +40,20 @@ class Auth extends Component {
       jwtService
         .signInWithToken()
         .then(user => {
-          this.props.setUserData(user)
+          setUserData(user)
 
-          this.props.showMessage({ message: 'Logged in with JWT' })
+          showMessage({ message: 'Logged in with JWT' })
         })
         .catch(error => {
-          this.props.showMessage({ message: error })
+          showMessage({ message: error })
         })
     })
 
     jwtService.on('onAutoLogout', message => {
       if (message) {
-        this.props.showMessage({ message })
+        showMessage({ message })
       }
-      this.props.logout()
+      logout()
     })
 
     jwtService.init()
@@ -60,32 +61,34 @@ class Auth extends Component {
 
   auth0Check = () => {
     auth0Service.init()
+    const { showMessage, setUserDataAuth0 } = this.props
+
 
     if (auth0Service.isAuthenticated()) {
-      this.props.showMessage({ message: 'Logging in with Auth0' })
+      showMessage({ message: 'Logging in with Auth0' })
 
       /**
        * Retrieve user data from Auth0
        */
       auth0Service.getUserData().then(tokenData => {
-        this.props.setUserDataAuth0(tokenData)
+        setUserDataAuth0(tokenData)
 
-        this.props.showMessage({ message: 'Logged in with Auth0' })
+        showMessage({ message: 'Logged in with Auth0' })
       })
     }
   }
 
   firebaseCheck = () => {
     firebaseService.init()
-
+    const { showMessage, getUserData } = this.props
     firebaseService.onAuthStateChanged(authUser => {
       if (authUser) {
-        this.props.showMessage({ message: 'Logging in with Firebase' })
+        showMessage({ message: 'Logging in with Firebase' })
 
         /**
          * Retrieve user data from Firebase
          */
-        this.props.getUserData(authUser.uid)
+        getUserData(authUser.uid)
       }
     })
   }
@@ -107,11 +110,29 @@ function mapDispatchToProps(dispatch) {
       hideMessage: Actions.hideMessage,
       getUserData: UserCreators.getUserData,
     },
-    dispatch
+    dispatch,
   )
+}
+
+Auth.propTypes = {
+  showMessage: PropTypes.func,
+  setUserData: PropTypes.func,
+  logout: PropTypes.func,
+  getUserData: PropTypes.func,
+  children: PropTypes.object,
+  setUserDataAuth0: PropTypes.func,
+}
+
+Auth.defaultProps = {
+  setUserData: () => {},
+  showMessage: () => {},
+  logout: () => {},
+  getUserData: () => {},
+  children: {},
+  setUserDataAuth0: () => {},
 }
 
 export default connect(
   null,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Auth)
