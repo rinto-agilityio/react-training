@@ -5,11 +5,14 @@ import Formsy from 'formsy-react'
 import { withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-const FirebaseLoginForm = ({ submitLoginWithFireBase }) => {
+const FirebaseLoginForm = ({ submitLoginWithFireBase, error }) => {
   const formEl = useRef('')
 
   const onSubmit = model => {
     submitLoginWithFireBase(model)
+  }
+  const getErrorMessage = (error, name) => {
+    return error[name]
   }
 
   return (
@@ -41,6 +44,7 @@ const FirebaseLoginForm = ({ submitLoginWithFireBase }) => {
           }}
           variant="outlined"
           required
+          getErrorMessage={() => getErrorMessage(error, 'username')}
         />
 
         <TextFieldFormsy
@@ -63,6 +67,7 @@ const FirebaseLoginForm = ({ submitLoginWithFireBase }) => {
               </InputAdornment>
             ),
           }}
+          getErrorMessage={() => getErrorMessage(error, 'password')}
           variant="outlined"
           required
         />
@@ -84,10 +89,12 @@ const FirebaseLoginForm = ({ submitLoginWithFireBase }) => {
 
 FirebaseLoginForm.propTypes = {
   submitLoginWithFireBase: PropTypes.func,
+  error: PropTypes.object,
 }
 
 FirebaseLoginForm.defaultProps = {
   submitLoginWithFireBase: () => {},
+  error: {},
 }
 
 export default withRouter(FirebaseLoginForm)

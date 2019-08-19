@@ -17,14 +17,11 @@ const InitialState = Immutable({
   },
 })
 
-const registerWithFirebaseProcessing = state => {
-  console.log('run...');
-
-  return state.merge({
+const registerWithFirebaseProcessing = state => (
+  state.merge({
     isProcessing: true,
   })
-}
-
+)
 
 const registerWithFirebaseSuccess = state => (
   state.merge({

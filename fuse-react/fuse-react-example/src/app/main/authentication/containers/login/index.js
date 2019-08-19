@@ -11,6 +11,7 @@ const dispatchToProps = {
 const mapStateToProps = ({ auth }) => ({
   login: auth.login,
   user: auth.user,
+  error: auth.login.error,
 })
 
 export default withRouter(

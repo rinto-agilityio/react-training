@@ -26,7 +26,7 @@ const styles = theme => ({
   },
 })
 
-const Login = ({ classes, loginWithFirebase }) => (
+const Login = ({ classes, loginWithFirebase, error }) => (
   <div
     className={classNames(
       classes.root,
@@ -78,7 +78,10 @@ const Login = ({ classes, loginWithFirebase }) => (
             className="min-w-0"
             label="Firebase"
           />
-          <FirebaseLoginForm submitLoginWithFireBase={loginWithFirebase} />
+          <FirebaseLoginForm
+            submitLoginWithFireBase={loginWithFirebase}
+            error={error}
+          />
           <div className="flex flex-col items-center justify-center pt-32">
             <span className="font-medium">Don't have an account?</span>
             <Link className="font-medium" to="/register">
@@ -94,11 +97,13 @@ const Login = ({ classes, loginWithFirebase }) => (
 Login.propTypes = {
   classes: PropTypes.object,
   loginWithFirebase: PropTypes.func,
+  error: PropTypes.object,
 }
 
 Login.defaultProps = {
   classes: {},
   loginWithFirebase: () => {},
+  error: {},
 }
 
 export default withStyles(styles, { withTheme: true })(withRouter(Login))
