@@ -11,7 +11,6 @@ function* registerWithFirebase(action) {
     const { auth } = firebaseService
     const { email, password, displayName } = action.data
     const response = yield call([auth, auth.createUserWithEmailAndPassword], email, password)
-
     if (response.user) {
       const { user } = response
       const newUser = {
@@ -24,6 +23,8 @@ function* registerWithFirebase(action) {
           settings: { ...defaultSettings },
         },
       }
+      yield call([auth, auth.currentUser.updateProfile], newUser)
+      yield call([firebaseService, firebaseService.updateUserData], newUser)
 
       yield put({
         type: userTypes.SET_USER_DATA,
