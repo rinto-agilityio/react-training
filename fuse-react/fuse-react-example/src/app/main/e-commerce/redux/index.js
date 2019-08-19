@@ -164,7 +164,7 @@ const HANDLERS = {
   [Types.DELETE_PRODUCT_PROCESSING]: deleteProductProcessing,
   [Types.DELETE_PRODUCT_SUCCESS]: deleteProductSuccess,
   [Types.DELETE_PRODUCT_FAILED]: deleteProductFailed,
-  [Types.GET_VALUE_SEARCH]: getValueSearch
+  [Types.GET_VALUE_SEARCH]: getValueSearch,
 }
 
 // Create reducers by pass state and handlers

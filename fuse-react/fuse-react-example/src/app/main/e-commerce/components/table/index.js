@@ -62,7 +62,7 @@ const ProductsTable = ({ productList, getProductsProcessing, history, deleteProd
   }
 
   const handleClickRowItem = id => {
-    history.push(`/e-commerce/products/ + ${id}`)
+    history.push(`/e-commerce/products/${id}`)
   }
 
   const handleDeleteProduct = () => deleteProduct(selected)
