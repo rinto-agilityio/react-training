@@ -3,7 +3,7 @@ import { applyMiddleware, createStore } from 'redux'
 import { createLogger } from 'redux-logger'
 import { persistStore, persistReducer } from 'redux-persist'
 import createSagaMiddleware from 'redux-saga'
-import immutableTransform from 'redux-persist-transform-immutable'
+import { seamlessImmutableReconciler, seamlessImmutableTransformCreator } from 'redux-persist-seamless-immutable'
 
 import storage from 'redux-persist/lib/storage'
 import createReducer from './reducers'
@@ -17,11 +17,19 @@ reduxModule.__DO_NOT_USE__ActionTypes.REPLACE = '@@redux/INIT'
 const sagaMiddileware = createSagaMiddleware()
 const loggerMiddleware = createLogger()
 let middleWares = [sagaMiddileware]
+
+const transformerConfig = {
+  whitelistPerReducer: {
+    reducerA: ['auth'],
+  },
+}
+
 const persistConfig = {
-  transforms: [immutableTransform()],
+  stateReconciler: seamlessImmutableReconciler,
   key: 'root',
   storage,
   whitelist: ['auth'],
+  transforms: [seamlessImmutableTransformCreator(transformerConfig)],
 }
 
 const persistedReducer = persistReducer(persistConfig, createReducer())
