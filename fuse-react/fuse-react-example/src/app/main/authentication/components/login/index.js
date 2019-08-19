@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   withStyles,
   Card,
   CardContent,
   Typography,
-  Tabs,
+  // Tabs,
   Tab,
 } from '@material-ui/core'
 import { darken } from '@material-ui/core/styles/colorManipulator'
@@ -12,7 +12,7 @@ import { FuseAnimate } from '@fuse'
 import { Link, withRouter } from 'react-router-dom'
 import classNames from 'classnames'
 import FirebaseLoginForm from './FirebaseLoginForm'
-import JwtLoginForm from './JwtLoginForm'
+// import JwtLoginForm from './JwtLoginForm'
 
 const styles = theme => ({
   root: {
@@ -27,11 +27,11 @@ const styles = theme => ({
 })
 
 const Login = ({ classes, loginWithFirebase }) => {
-  const [tabValue, setTabValue] = useState(0)
+  // const [tabValue, setTabValue] = useState(0)
 
-  const handleTabChange = (event, value) => {
-    setTabValue(value)
-  }
+  // const handleTabChange = (event, value) => {
+  //   setTabValue(value)
+  // }
 
   return (
     <div
@@ -74,60 +74,71 @@ const Login = ({ classes, loginWithFirebase }) => {
             <Typography variant="h6" className="text-center md:w-full mb-48">
               LOGIN TO YOUR ACCOUNT
             </Typography>
-            <Tabs
+            <Tab
+              icon={(
+                <img
+                  className="h-40"
+                  src="assets/images/logos/firebase.svg"
+                  alt="firebase"
+                />
+              )}
+              className="min-w-0"
+              label="Firebase"
+            />
+            {/* <Tabs
               value={tabValue}
               onChange={handleTabChange}
               variant="fullWidth"
               className="mb-32"
             >
               <Tab
-                icon={
+                icon={(
                   <img
                     className="h-40"
                     src="assets/images/logos/firebase.svg"
                     alt="firebase"
                   />
-                }
+                )}
                 className="min-w-0"
                 label="Firebase"
               />
               <Tab
-                icon={
+                icon={(
                   <img
                     className="h-40 p-4 bg-black rounded-12"
                     src="assets/images/logos/jwt.svg"
                     alt="firebase"
                   />
-                }
+                )}
                 className="min-w-0"
                 label="JWT"
               />
               <Tab
-                icon={
+                icon={(
                   <img
                     className="h-40"
                     src="assets/images/logos/auth0.svg"
                     alt="auth0"
                   />
-                }
+                )}
                 className="min-w-0"
                 label="Auth0"
               />
-            </Tabs>
-            {tabValue === 0 && (
-              <FirebaseLoginForm submitLoginWithFireBase={loginWithFirebase} />
-            )}
-            {tabValue === 1 && <JwtLoginForm />}
-            {tabValue === 2 && <h1>tab2</h1>}
+            </Tabs> */}
+            {/* {tabValue === 0 && ( */}
+            <FirebaseLoginForm submitLoginWithFireBase={loginWithFirebase} />
+            {/* )} */}
+            {/* {tabValue === 1 && <JwtLoginForm />} */}
+            {/* {tabValue === 2 && <h1>tab2</h1>} */}
 
             <div className="flex flex-col items-center justify-center pt-32">
               <span className="font-medium">Don't have an account?</span>
               <Link className="font-medium" to="/register">
                 Create an account
               </Link>
-              <Link className="font-medium mt-8" to="/">
+              {/* <Link className="font-medium mt-8" to="/">
                 Back to Dashboard
-              </Link>
+              </Link> */}
             </div>
           </CardContent>
         </Card>

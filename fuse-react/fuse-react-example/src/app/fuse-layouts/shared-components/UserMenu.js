@@ -46,6 +46,7 @@ class UserMenu extends Component {
         jwtService.logout()
       }
     }
+    localStorage.removeItem('persist:root')
     logout()
   }
 
