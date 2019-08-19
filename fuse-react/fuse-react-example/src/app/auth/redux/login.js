@@ -26,6 +26,7 @@ const loginWithFirebaseSuccess = state => (
   state.merge({
     isProcessing: false,
     success: true,
+    error: {},
   })
 )
 

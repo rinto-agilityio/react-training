@@ -27,6 +27,7 @@ const registerWithFirebaseSuccess = state => (
   state.merge({
     isProcessing: false,
     success: true,
+    error: {},
   })
 )
 
