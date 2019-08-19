@@ -20,7 +20,7 @@ let middleWares = [sagaMiddileware]
 
 const transformerConfig = {
   whitelistPerReducer: {
-    reducerA: ['auth'],
+    reducerA: ['auth', 'eCommerceReducer'],
   },
 }
 
@@ -28,7 +28,7 @@ const persistConfig = {
   stateReconciler: seamlessImmutableReconciler,
   key: 'root',
   storage,
-  whitelist: ['auth'],
+  whitelist: ['auth', 'eCommerceReducer'],
   transforms: [seamlessImmutableTransformCreator(transformerConfig)],
 }
 

@@ -21,10 +21,12 @@ const MoreAction = ({ classes, handleDeleteProduct }) => {
   const closeSelectedProductsMenu = () => {
     setSelectedProductsMenu(null)
   }
+
   const deleteProduct = () => {
     handleDeleteProduct()
     closeSelectedProductsMenu()
   }
+
   return (
     <div
       className={classNames(

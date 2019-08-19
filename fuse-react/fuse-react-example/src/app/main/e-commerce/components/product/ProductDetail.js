@@ -59,15 +59,25 @@ const ProductDetail = ({
 }) => {
   const [tabValue, setTabValue] = useState(0)
   const [form, setForm] = useState()
-
+  /**
+   * Effect for get product detail
+   */
   useEffect(() => {
     getProductDetail(match.params.productId)
   }, [match.params.productId])
 
+  /**
+   * set state form data if recevice new data from effect
+   */
   useEffect(() => {
     setForm(productEditing)
   }, [productEditing])
 
+  /**
+   * Handle when user click change tab on view product detail page
+   * @param {Dom} event
+   * @param {number} value
+   */
   const handleChangeTab = (event, value) => setTabValue(value)
 
   const handleChange = event => {
@@ -78,6 +88,9 @@ const ProductDetail = ({
     })
   }
 
+  /**
+   * Handle when user click select image
+   */
   const handleImageChange = e => {
     const url =
       e.target.files[0] &&
@@ -94,6 +107,9 @@ const ProductDetail = ({
     })
   }
 
+  /**
+   * Handle when user onChange on chip element
+   */
   const handleChipChange = (value, name) => (
     setForm({
       ...form,
@@ -101,6 +117,9 @@ const ProductDetail = ({
     })
   )
 
+  /**
+   * Handle when user click button save
+   */
   const submitSaveProduct = () => {
     if (form.id) {
       updateProduct(form)
@@ -110,6 +129,9 @@ const ProductDetail = ({
     }
   }
 
+  /**
+   * Set new feature image when user choose bookmark image
+   */
   const setFeaturedImage = id => (
     setForm({
       ...form,
@@ -117,9 +139,14 @@ const ProductDetail = ({
     })
   )
 
+  /**
+   * Handle disable button submit save product
+  */
   const canBeSubmitted = () => _.isEqual(productEditing, form)
 
-
+  /**
+   * Render body of tab item
+   */
   const renderContentTab = () => {
     switch (tabValue) {
       case 1:
@@ -206,4 +233,5 @@ ProductDetail.defaultProps = {
   classes: {},
   history: {},
 }
+
 export default withStyles(styles, { withTheme: true })(ProductDetail)

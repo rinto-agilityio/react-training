@@ -122,4 +122,5 @@ TableRowProduct.defaultProps = {
   id: '',
   handleClickRowItem: () => {},
 }
+
 export default memo(TableRowProduct)

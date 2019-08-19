@@ -1,5 +1,5 @@
-import Login from '../../containers/login'
 import { authRoles } from 'app/auth'
+import Login from '../../containers/login'
 
 export const LoginConfig = {
   settings: {

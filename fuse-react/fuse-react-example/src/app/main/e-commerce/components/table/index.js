@@ -16,10 +16,16 @@ const ProductsTable = ({ productList, getProductsProcessing, history, deleteProd
   const [page, setPage] = useState(0)
   const [rowsPerPage, setRowsPerPage] = useState(AppConfig.rowsPerPage)
 
+  /**
+   * Effect get list products
+   */
   useEffect(() => {
     getProductsProcessing()
   }, [])
 
+  /**
+   * Set again productList state if recevice new data
+   */
   useEffect(() => {
     setData(productList)
   }, [productList.length])
@@ -29,6 +35,9 @@ const ProductsTable = ({ productList, getProductsProcessing, history, deleteProd
     setData(datafilter)
   }, [searchText])
 
+  /**
+   * Handle when user check select all product
+   */
   const handleSelectAll = event => {
     const itemSlected = data.map(item => item.id)
     if (event.target.checked) {
@@ -38,12 +47,18 @@ const ProductsTable = ({ productList, getProductsProcessing, history, deleteProd
     setSlected([])
   }
 
+  /**
+   * Handle when user click sort
+   */
   const handleRequestSort = (event, property) => {
     const isDesc = orderBy === property && order === 'desc'
     setOrder(isDesc ? 'asc' : 'desc')
     setOrderBy(property)
   }
 
+  /**
+   * handle when user check select item product
+   */
   const handleSelectItem = id => {
     const selectedIndex = selected.indexOf(id)
     const newSelected =
@@ -53,20 +68,36 @@ const ProductsTable = ({ productList, getProductsProcessing, history, deleteProd
     setSlected(newSelected)
   }
 
+  /**
+   * Handle when change page of table product
+   */
   const handleChangePage = (event, page) => {
     setPage(page)
   }
-
+  /**
+   * Handle when user need change number row will show per page
+   */
   const handleChangeRowsPerPage = event => {
     setRowsPerPage(event.target.value)
   }
 
+  /**
+   * handle when user click a item product
+   * redirect to detial page with item checked
+   * @param {string} id
+   */
   const handleClickRowItem = id => {
     history.push(`/e-commerce/products/${id}`)
   }
 
+  /**
+   * Delete list product checked
+   */
   const handleDeleteProduct = () => deleteProduct(selected)
 
+  /**
+   * Check item product checked or not
+   */
   const checkSelected = id => selected.indexOf(id) !== -1
 
   return (

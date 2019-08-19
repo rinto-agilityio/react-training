@@ -3,6 +3,7 @@ import Formsy from 'formsy-react'
 import { TextFieldFormsy } from '@fuse'
 import { Button, InputAdornment, Icon } from '@material-ui/core'
 import { withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const FirebaseRegisterForm = ({ registerWithFirebase, register }) => {
   const [canSubmit, setCanSubmit] = useState(false)
@@ -145,6 +146,16 @@ const FirebaseRegisterForm = ({ registerWithFirebase, register }) => {
       </Formsy>
     </div>
   )
+}
+
+FirebaseRegisterForm.propTypes = {
+  register: PropTypes.object,
+  registerWithFirebase: PropTypes.func,
+}
+
+FirebaseRegisterForm.defaultProps = {
+  register: {},
+  registerWithFirebase: () => {},
 }
 
 export default withRouter(FirebaseRegisterForm)

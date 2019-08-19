@@ -3,18 +3,19 @@ import { Button, InputAdornment, Icon } from '@material-ui/core'
 import { TextFieldFormsy } from '@fuse'
 import Formsy from 'formsy-react'
 import { withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const FirebaseLoginForm = ({ submitLoginWithFireBase }) => {
   const formEl = useRef('')
+
   const onSubmit = model => {
     submitLoginWithFireBase(model)
   }
+
   return (
     <div className="w-full">
       <Formsy
         onValidSubmit={onSubmit}
-        // onValid={this.enableButton}
-        // onInvalid={this.disableButton}
         className="flex flex-col justify-center w-full"
         ref={formEl}
       >
@@ -40,7 +41,6 @@ const FirebaseLoginForm = ({ submitLoginWithFireBase }) => {
           }}
           variant="outlined"
           required
-          // ref={inputEmailEl}
         />
 
         <TextFieldFormsy
@@ -65,7 +65,6 @@ const FirebaseLoginForm = ({ submitLoginWithFireBase }) => {
           }}
           variant="outlined"
           required
-          // ref={inputPassEl}
         />
 
         <Button
@@ -74,7 +73,6 @@ const FirebaseLoginForm = ({ submitLoginWithFireBase }) => {
           color="primary"
           className="w-full mx-auto normal-case mt-16"
           aria-label="LOG IN"
-          // disabled={!canSubmit}
           value="firebase"
         >
           Log in with Firebase
@@ -82,6 +80,14 @@ const FirebaseLoginForm = ({ submitLoginWithFireBase }) => {
       </Formsy>
     </div>
   )
+}
+
+FirebaseLoginForm.propTypes = {
+  submitLoginWithFireBase: PropTypes.func,
+}
+
+FirebaseLoginForm.defaultProps = {
+  submitLoginWithFireBase: () => {},
 }
 
 export default withRouter(FirebaseLoginForm)
