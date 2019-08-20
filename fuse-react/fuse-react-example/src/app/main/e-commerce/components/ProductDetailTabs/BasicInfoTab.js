@@ -4,7 +4,7 @@ import { FuseChipSelect } from '@fuse'
 import PropTypes from 'prop-types'
 
 const BasicInfoTab = ({ handleChange, form, handleChipChange }) => (
-  <div>
+  <>
     <TextField
       className="mt-8 mb-16"
       error={form.name === ''}
@@ -74,7 +74,7 @@ const BasicInfoTab = ({ handleChange, form, handleChipChange }) => (
       }}
       isMulti
     />
-  </div>
+  </>
 )
 
 BasicInfoTab.propTypes = {
@@ -90,9 +90,9 @@ BasicInfoTab.propTypes = {
 
 BasicInfoTab.defaultProps = {
   form: {
-    tags: '',
+    tags: [],
     categories: [],
-    description: [],
+    description: '',
     name: '',
   },
   handleChange: () => {},

@@ -215,9 +215,9 @@ ProductDetail.propTypes = {
 
 ProductDetail.defaultProps = {
   productEditing: {
-    tags: '',
+    tags: [],
     categories: [],
-    description: [],
+    description: '',
     images: [],
     name: '',
     handle: '',

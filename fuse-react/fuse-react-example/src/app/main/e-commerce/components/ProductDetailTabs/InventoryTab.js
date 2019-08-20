@@ -6,7 +6,7 @@ import {
 import PropTypes from 'prop-types'
 
 const InventoryTab = ({ handleChange, form }) => (
-  <div>
+  <>
     <TextField
       className="mt-8 mb-16"
       required
@@ -31,7 +31,7 @@ const InventoryTab = ({ handleChange, form }) => (
       type="number"
       fullWidth
     />
-  </div>
+  </>
 )
 
 InventoryTab.propTypes = {

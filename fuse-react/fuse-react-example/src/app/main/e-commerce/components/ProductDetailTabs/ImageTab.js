@@ -4,7 +4,7 @@ import { Icon, Button } from '@material-ui/core'
 import PropTypes from 'prop-types'
 
 const ImageTab = ({ form, setFeaturedImage, classes, handleChange }) => (
-  <div>
+  <>
     <div className="flex justify-center w-full mt-20 mb-20">
       <input
         accept="image/*"
@@ -42,7 +42,7 @@ const ImageTab = ({ form, setFeaturedImage, classes, handleChange }) => (
           </div>
         ))}
     </div>
-  </div>
+  </>
 )
 
 ImageTab.propTypes = {

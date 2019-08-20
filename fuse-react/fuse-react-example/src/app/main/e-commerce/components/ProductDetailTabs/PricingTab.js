@@ -3,7 +3,7 @@ import { TextField, InputAdornment } from '@material-ui/core'
 import PropTypes from 'prop-types'
 
 const PricingTab = ({ handleChange, form }) => (
-  <div>
+  <>
     <TextField
       className="mt-8 mb-16"
       label="Tax Excluded Price"
@@ -65,7 +65,7 @@ const PricingTab = ({ handleChange, form }) => (
       fullWidth
       helperText="Add a compare price to show next to the real price"
     />
-  </div>
+  </>
 )
 
 PricingTab.propTypes = {
