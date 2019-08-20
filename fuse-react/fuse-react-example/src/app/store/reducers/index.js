@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import auth from 'app/auth/redux'
 import quickPanel from 'app/fuse-layouts/shared-components/quickPanel/store/reducers'
-import { eCommerceReducer } from 'app/main/e-commerce/redux'
+import { eCommerceReducer } from 'app/main/e-commerce/redux/reducers'
 import fuse from './fuse'
 
 const createReducer = asyncReducers => (

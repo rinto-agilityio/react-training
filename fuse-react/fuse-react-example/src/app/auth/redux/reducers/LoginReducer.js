@@ -1,11 +1,6 @@
-import { createActions, createReducer } from 'reduxsauce'
+import { createReducer } from 'reduxsauce'
 import Immutable from 'seamless-immutable'
-
-export const { Types, Creators } = createActions({
-  loginWithFirebaseProcessing: ['data'],
-  loginWithFirebaseSuccess: null,
-  loginWithFirebaseFailed: null,
-})
+import { Types } from '../actions/LoginAction'
 
 const InitialState = Immutable({
   success: false,
@@ -18,12 +13,14 @@ const InitialState = Immutable({
 
 const loginWithFirebaseProcessing = state => (
   state.merge({
+    ...state,
     isProcessing: true,
   })
 )
 
 const loginWithFirebaseSuccess = state => (
   state.merge({
+    ...state,
     isProcessing: false,
     success: true,
     error: {},
@@ -32,6 +29,7 @@ const loginWithFirebaseSuccess = state => (
 
 const loginWithFirebaseFailed = (state, action) => (
   state.merge({
+    ...state,
     isProcessing: false,
     success: false,
     error: action.payload,

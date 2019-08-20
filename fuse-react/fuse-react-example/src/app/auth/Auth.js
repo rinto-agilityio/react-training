@@ -7,7 +7,7 @@ import * as Actions from 'app/store/actions'
 import firebaseService from 'app/services/firebaseService'
 import auth0Service from 'app/services/auth0Service'
 import jwtService from 'app/services/jwtService'
-import { Creators as UserCreators } from './redux/user'
+import { Creators as UserCreators } from './redux/actions/UserAction'
 
 class Auth extends Component {
   constructor(props) {

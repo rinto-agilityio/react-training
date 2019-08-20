@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects'
 import firebaseService from 'app/services/firebaseService'
-import { Types } from '../redux/login'
+import { Types } from '../redux/actions/LoginAction'
 
 function* loginWithFirebase(action) {
   try {

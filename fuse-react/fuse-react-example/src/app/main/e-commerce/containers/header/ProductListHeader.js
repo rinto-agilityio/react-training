@@ -3,7 +3,7 @@ import withReducer from 'app/store/withReducer'
 
 import ProductListHeader from '../../components/headers/ProductListHeader'
 
-import { eCommerceReducer } from '../../redux'
+import { eCommerceReducer } from '../../redux/reducers'
 
 const mapStateToProps = ({ eCommerceApp, fuse }) => ({
   mainTheme: fuse.settings.mainTheme,

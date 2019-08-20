@@ -10,7 +10,7 @@ import {
   Typography,
 } from '@material-ui/core'
 import { connect } from 'react-redux'
-import { Creators as authActions } from 'app/auth/redux/user'
+import { Creators as authActions } from 'app/auth/redux/actions/UserAction/'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 
@@ -18,6 +18,7 @@ import { Link } from 'react-router-dom'
 import firebaseService from 'app/services/firebaseService'
 import auth0Service from 'app/services/auth0Service'
 import jwtService from 'app/services/jwtService'
+
 class UserMenu extends Component {
   state = {
     userMenu: null,

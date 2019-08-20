@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { Creators } from 'app/auth/redux/login'
+import { Creators } from 'app/auth/redux/actions/LoginAction'
 import Login from '../../components/login'
 
 

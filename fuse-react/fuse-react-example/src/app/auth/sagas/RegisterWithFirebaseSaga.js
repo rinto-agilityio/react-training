@@ -3,8 +3,8 @@ import firebaseService from 'app/services/firebaseService'
 import {
   defaultSettings,
 } from '@fuse/FuseDefaultSettings'
-import { Types } from '../redux/register'
-import { Types as userTypes } from '../redux/user'
+import { Types } from '../redux/actions/RegisterAction'
+import { Types as userTypes } from '../redux/actions/UserAction'
 
 function* registerWithFirebase(action) {
   try {

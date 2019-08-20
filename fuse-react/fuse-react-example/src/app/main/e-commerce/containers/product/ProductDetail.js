@@ -3,7 +3,8 @@ import withReducer from 'app/store/withReducer'
 
 import ProductDetail from '../../components/product/ProductDetail'
 
-import { Creators, eCommerceReducer } from '../../redux'
+import { Creators } from '../../redux/actions'
+import { eCommerceReducer } from '../../redux/reducers'
 
 const mapStateToProps = ({ eCommerceApp }) => ({
   productEditing: eCommerceApp.productEditing,

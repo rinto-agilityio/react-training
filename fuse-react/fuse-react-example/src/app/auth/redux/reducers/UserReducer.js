@@ -1,13 +1,6 @@
-import { createActions, createReducer } from 'reduxsauce'
+import { createReducer } from 'reduxsauce'
 import Immutable from 'seamless-immutable'
-
-export const { Types, Creators } = createActions({
-  getUserData: ['uid'],
-  getUserDataFailed: null,
-  setUserData: ['user'],
-  showMessage: ['message'],
-  logOutUser: null,
-})
+import { Types } from '../actions/UserAction'
 
 const InitialState = Immutable({
   role: 'guest',
@@ -24,11 +17,17 @@ const getUserData = state => (
 )
 
 const getUserDataFailed = (state, action) => (
-  state.merge({ error: action.error })
+  state.merge({
+    ...state,
+    error: action.error,
+  })
 )
 
 const setUserData = (state, action) => (
-  state.merge({ ...state, ...action.user })
+  state.merge({
+    ...state,
+    ...action.user,
+  })
 )
 
 
@@ -38,6 +37,7 @@ const logOutUser = state => (
 
 const showMessage = (state, action) => (
   state.merge({
+    ...state,
     isProcessing: false,
     success: false,
     error: action.payload,

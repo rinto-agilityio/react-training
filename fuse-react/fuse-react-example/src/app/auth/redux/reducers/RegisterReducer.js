@@ -1,12 +1,7 @@
 
-import { createActions, createReducer } from 'reduxsauce'
+import { createReducer } from 'reduxsauce'
 import Immutable from 'seamless-immutable'
-
-export const { Types, Creators } = createActions({
-  registerWithFirebaseProcessing: ['data'],
-  registerWithFirebaseSuccess: null,
-  registerWithFirebaseFailed: null,
-})
+import { Types } from '../actions/RegisterAction'
 
 const InitialState = Immutable({
   success: false,

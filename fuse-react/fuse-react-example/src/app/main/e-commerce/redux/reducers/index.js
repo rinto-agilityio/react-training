@@ -1,24 +1,6 @@
-import { createActions, createReducer } from 'reduxsauce'
+import { createReducer } from 'reduxsauce'
 import Immutable from 'seamless-immutable'
-
-export const { Types, Creators } = createActions({
-  getProductsProcessing: null,
-  getProductsSuccess: null,
-  getProductsFailed: null,
-  getProductDetailProcessing: ['productId'],
-  getProductDetailSuccess: null,
-  getProductDetailFailed: null,
-  updateProductProcessing: ['data'],
-  updateProductSuccess: null,
-  updateProductFailed: null,
-  addNewProductProcessing: ['data'],
-  addNewProductSuccess: null,
-  addNewProductFailed: null,
-  deleteProductProcessing: ['listId'],
-  deleteProductSuccess: null,
-  deleteProductFailed: null,
-  getValueSearch: ['value'],
-})
+import { Types } from '../actions/index'
 
 const InitialState = Immutable({
   productList: [],
@@ -49,12 +31,14 @@ const InitialState = Immutable({
 
 const getProductsProcessing = state => (
   state.merge({
+    ...state,
     isProcessing: true,
   })
 )
 
 const getProductsSuccess = (state, action) => (
   state.merge({
+    ...state,
     isProcessing: false,
     productList: action.productList,
   })
@@ -62,18 +46,21 @@ const getProductsSuccess = (state, action) => (
 
 const getProductsFailed = state => (
   state.merge({
+    ...state,
     isProcessing: false,
   })
 )
 
 const getProductDetailProcessing = state => (
   state.merge({
+    ...state,
     isProcessing: true,
   })
 )
 
 const getProductDetailSuccess = (state, action) => (
   state.merge({
+    ...state,
     isProcessing: false,
     productEditing: action.productEditing,
   })
@@ -81,18 +68,21 @@ const getProductDetailSuccess = (state, action) => (
 
 const getProductDetailFailed = state => (
   state.merge({
+    ...state,
     isProcessing: false,
   })
 )
 
 const updateProductProcessing = state => (
   state.merge({
+    ...state,
     isProcessing: true,
   })
 )
 
 const updateProductSuccess = state => (
   state.merge({
+    ...state,
     isProcessing: false,
   })
 )
@@ -105,12 +95,14 @@ const updateProductFailed = state => (
 
 const addNewProductProcessing = state => (
   state.merge({
+    ...state,
     isProcessing: false,
   })
 )
 
 const addNewProductSuccess = (state, action) => (
   state.merge({
+    ...state,
     isProcessing: false,
     productList: [action.product, ...state.productList],
   })
@@ -118,18 +110,21 @@ const addNewProductSuccess = (state, action) => (
 
 const addNewProductFailed = state => (
   state.merge({
+    ...state,
     isProcessing: false,
   })
 )
 
 const deleteProductProcessing = state => (
   state.merge({
+    ...state,
     isProcessing: false,
   })
 )
 
 const deleteProductSuccess = (state, action) => (
   state.merge({
+    ...state,
     isProcessing: false,
     productList: action.products,
   })
@@ -137,12 +132,14 @@ const deleteProductSuccess = (state, action) => (
 
 const deleteProductFailed = state => (
   state.merge({
+    ...state,
     isProcessing: false,
   })
 )
 
 const getValueSearch = (state, action) => (
   state.merge({
+    ...state,
     searchText: action.value,
   })
 )
