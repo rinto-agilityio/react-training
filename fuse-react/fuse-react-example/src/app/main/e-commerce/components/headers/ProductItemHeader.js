@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Icon, Typography } from '@material-ui/core'
 import { Link } from 'react-router-dom'
-import _ from '@lodash'
+import _ from 'lodash'
 import PropTypes from 'prop-types'
 import { FuseAnimate } from '@fuse'
 
